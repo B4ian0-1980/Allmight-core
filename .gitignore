@@ -1,0 +1,99 @@
+# Dependências e caches de linguagens
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+dist/
+build/
+*.egg-info/
+
+# Variáveis de ambiente e segredos
+.env
+.env.local
+*.pem
+*.key
+*.cert
+*.pfx
+
+# Logs e arquivos temporários de crash
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Pasta de lixo e arquivos legados
+old_garbage/
+
+# Caches de IDEs e sistemas operacionais
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Exceção desbloqueada: .agent/skills/ruview/v2/crates/homecore-migrate/src/secrets.rs
+!.agent/skills/ruview/v2/crates/homecore-migrate/src/secrets.rs
+
+# Exceção desbloqueada: .agent/skills/ruview/scripts/redact-secrets.py
+!.agent/skills/ruview/scripts/redact-secrets.py
+
+# Exceção desbloqueada: .agent/skills/ruview/firmware/esp32-csi-node/tests/test_provision_secrets.py
+!.agent/skills/ruview/firmware/esp32-csi-node/tests/test_provision_secrets.py
+
+# Exceção desbloqueada: .agent/skills/ruflo/v3/@claude-flow/security/__tests__/credential-generator.test.ts
+!.agent/skills/ruflo/v3/@claude-flow/security/__tests__/credential-generator.test.ts
+
+# Exceção desbloqueada: .agent/skills/ruflo/v3/@claude-flow/security/src/credential-generator.ts
+!.agent/skills/ruflo/v3/@claude-flow/security/src/credential-generator.ts
+
+
+# Exceção desbloqueada: .agent/skills/ruflo/v3/@claude-flow/cli/__tests__/security-scan-secret-regex-2931.test.ts
+!.agent/skills/ruflo/v3/@claude-flow/cli/__tests__/security-scan-secret-regex-2931.test.ts
+
+# Exceção desbloqueada: .agent/skills/ruflo/plugins/ruflo-console/tests/model-secrets.spec.ts
+!.agent/skills/ruflo/plugins/ruflo-console/tests/model-secrets.spec.ts
+
+# Exceção desbloqueada: .agent/skills/ruflo/v3/@claude-flow/security/__tests__/unit/credential-generator.test.ts
+!.agent/skills/ruflo/v3/@claude-flow/security/__tests__/unit/credential-generator.test.ts
+
+# Exceção desbloqueada: .agent/skills/awesome-llm-apps/advanced_ai_agents/single_agent_apps/windows_use_autonomous_agent/.env-example
+!.agent/skills/awesome-llm-apps/advanced_ai_agents/single_agent_apps/windows_use_autonomous_agent/.env-example
+
+# Exceção desbloqueada: .agent/skills/free-claude-code/src/free_claude_code/providers/credential_validation.py
+!.agent/skills/free-claude-code/src/free_claude_code/providers/credential_validation.py
+
+# Exceção desbloqueada: .agent/skills/free-claude-code/tests/config/test_admin_credential_changes.py
+!.agent/skills/free-claude-code/tests/config/test_admin_credential_changes.py
+
+# Exceção desbloqueada: .agent/skills/free-claude-code/tests/providers/test_credential_validation.py
+!.agent/skills/free-claude-code/tests/providers/test_credential_validation.py
+
+# Exceção desbloqueada: .agent/skills/freellmapi/server/src/lib/credential.ts
+!.agent/skills/freellmapi/server/src/lib/credential.ts
+
+# Exceção desbloqueada: .agent/skills/freellmapi/server/src/services/provider-credential.ts
+!.agent/skills/freellmapi/server/src/services/provider-credential.ts
+
+# Exceção desbloqueada: .agent/skills/laya-nandha/.envrc
+!.agent/skills/laya-nandha/.envrc
+
+# Exceção desbloqueada: .agent/skills/LlamaFactory/.env.local
+!.agent/skills/LlamaFactory/.env.local
+
+# Exceção desbloqueada: .agent/skills/media-inference-worker/.env
+!.agent/skills/media-inference-worker/.env
+
+# Exceção desbloqueada: .agent/skills/musica/apps/musica-vj/scripts/verify-no-secrets.mjs
+!.agent/skills/musica/apps/musica-vj/scripts/verify-no-secrets.mjs
+
+# Exceção desbloqueada: .agent/skills/musica/docs/adr/ADR-179-sign-in-and-lyria-works-credential-broker.md
+!.agent/skills/musica/docs/adr/ADR-179-sign-in-and-lyria-works-credential-broker.md
+
+# Exceção desbloqueada: .agent/skills/rea/src/browser/BrowserScenarioSecrets.ts
+!.agent/skills/rea/src/browser/BrowserScenarioSecrets.ts

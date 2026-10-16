@@ -1,0 +1,19 @@
+id,nome,categoria,tier,linguagem
+stk_01,Laravel,frameworks,1,PHP
+stk_02,Next.js,frameworks,1,TypeScript
+stk_03,React,frameworks,1,TypeScript
+stk_04,Vue,frameworks,1,JavaScript
+stk_05,Angular,frameworks,2,TypeScript
+stk_06,Tailwind CSS,frameworks,1,CSS
+stk_07,Python,linguagens,1,Python
+stk_08,Java,linguagens,2,Java
+stk_09,Go,linguagens,2,Go
+stk_10,PostgreSQL,banco-dados,1,SQL
+stk_11,MySQL,banco-dados,1,SQL
+stk_12,Docker,devops-infra,1,Shell
+stk_13,Nginx,devops-infra,1,Conf
+stk_14,n8n,automacao,1,JSON
+stk_15,Agent Substrate,ia-runtime,1,Go/gVisor
+stk_16,Google AX,ia-orchestration,1,Go/YAML
+stk_17,Vectorize Hindsight,ia-memory,1,TypeScript/Python
+stk_18,Paperclip,gestao-agentes,1,TypeScript/React

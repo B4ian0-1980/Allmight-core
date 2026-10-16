@@ -1,0 +1,138 @@
+---
+name: offensive-graphql
+description: "Offensive methodology for attacking GraphQL APIs during penetration tests and bug bounty engagements. Covers the full attack lifecycle: endpoint discovery, introspection abuse and blind schema reconstruction when introspection is disabled, authentication and authorization bypass through Relay node IDs and nested object traversal, injection via variables and directives, query batching for brute force and OTP bypass, denial of service through depth bombs and alias amplification, WebSocket subscription hijacking, information disclosure through verbose errors and field suggestion oracles, and file upload abuse via the multipart GraphQL specification. Includes tool-specific guidance for InQL, graphql-cop, CrackQL, BatchQL, Altair, GraphQL Voyager, and clairvoyance. Trigger on: GraphQL, graphql, introspection query, batching attack, query depth, GraphQL injection, GraphQL IDOR, field suggestion, GraphQL auth bypass, GraphQL DoS, GraphQL security, graphql-cop, InQL, CrackQL, BatchQL, Relay node, alias amplification, subscription abuse, multipart upload GraphQL, schema enumeration, __schema, __type."
+---
+
+# Offensive GraphQL
+
+GraphQL consolidates an entire API surface behind a single endpoint, making it a high-value target during web application assessments. Unlike REST, where each route maps to a discrete resource, a GraphQL schema exposes every type, field, mutation, and subscription in one queryable structure. Attackers who obtain or reconstruct that schema gain a complete map of the application's data model before writing a single exploit. This skill walks you through each phase of a GraphQL engagement with concrete queries, tool invocations, and chaining patterns.
+
+## Quick Workflow
+
+1. Discover the endpoint -- probe common paths, inspect client-side JS bundles, check WebSocket upgrade headers.
+2. Fingerprint the implementation -- use graphw00f to identify the engine and tailor payloads.
+3. Dump or reconstruct the schema -- full introspection query; if blocked, field suggestion probing or clairvoyance.
+4. Map the attack surface -- feed the schema into GraphQL Voyager or InQL.
+5. Test authentication and authorization -- every query and mutation with no token, low-privilege, and cross-user tokens.
+6. Inject through resolvers -- SQL, NoSQL, and OS command payloads through arguments and variables.
+7. Abuse batching -- arrayed operations for brute force, OTP bypass, and rate limit evasion.
+8. Stress depth and complexity -- nested queries, alias fans, and circular fragments.
+9. Probe subscriptions -- WebSocket with expired or missing tokens, subscribe to sensitive streams.
+10. Exfiltrate via errors -- verbose stack traces, type mismatches, field suggestions.
+11. Test file upload -- multipart GraphQL specification for oversized or malicious files.
+12. Chain and escalate -- combine findings into multi-step attack paths with proof-of-concept queries.
+
+---
+
+## 1 -- Endpoint Discovery and Fingerprinting
+
+Probe common paths with a minimal query body. A `__typename` response confirms a live GraphQL endpoint.
+
+```bash
+curl -s -X POST https://target.com/graphql \
+  -H "Content-Type: application/json" \
+  -d '{"query":"{__typename}"}' | jq .
+```
+
+Paths to probe: `/graphql`, `/graphiql`, `/v1/graphql`, `/v2/graphql`, `/api/graphql`, `/graphql/console`, `/playground`, `/explorer`, `/query`. Some servers accept GET requests:
+
+```bash
+curl -s "https://target.com/graphql?query=\{__typename\}"
+```
+
+Fingerprint the implementation to determine default behaviors (introspection state, error format, batching syntax):
+
+```bash
+python3 graphw00f.py -t https://target.com/graphql
+```
+
+Run graphql-cop for a one-pass configuration audit -- it reports introspection status, field suggestion leaks, GET-based query acceptance (CSRF risk), and unrestricted batching:
+
+```bash
+python3 graphql-cop.py -t https://target.com/graphql
+```
+
+---
+
+## 2 -- Introspection and Blind Schema Reconstruction
+
+### Full Introspection Dump
+
+When introspection is enabled, pull the entire schema in one request. This is the single most valuable recon step.
+
+```graphql
+query FullIntrospection {
+  __schema {
+    queryType { name }
+    mutationType { name }
+    subscriptionType { name }
+    types {
+      kind name description
+      fields(includeDeprecated: true) {
+        name args { name type { ...T } defaultValue } type { ...T }
+      }
+      inputFields { name type { ...T } defaultValue }
+      interfaces { ...T }
+      enumValues(includeDeprecated: true) { name description }
+      possibleTypes { ...T }
+    }
+    directives { name description locations args { name type { ...T } } }
+  }
+}
+fragment T on __Type {
+  kind name ofType { kind name ofType { kind name ofType { kind name } } }
+}
+```
+
+Pipe the result into GraphQL Voyager for visual exploration, or load InQL in Burp Suite -- it parses the schema and generates individual queries for every field and mutation.
+
+### Targeted __type Queries
+
+When full introspection is disabled but `__type` lookups still work (a common misconfiguration where the server blocks `__schema` but forgets `__type`):
+
+```graphql
+query { __type(name: "User") { name fields { name type { name kind } } } }
+```
+
+### Bypassing Disabled Introspection
+
+**Field suggestion oracle.** Most engines return "Did you mean..." when you query a non-existent field. Submit plausible names and harvest suggestions:
+
+```graphql
+query { __typename aaa }
+```
+
+```json
+{
+  "errors": [{
+    "message": "Cannot query field \"aaa\" on type \"Query\". Did you mean \"user\", \"users\", \"admin\"?"
+  }]
+}
+```
+
+Automate this with clairvoyance, which iterates a wordlist, collects suggestions, and assembles a reconstructed schema:
+
+```bash
+python3 clairvoyance.py -t https://target.com/graphql -w wordlist.txt -o schema.json
+```
+
+**Apollo Sandbox.** If the target runs Apollo Server v3+, navigate to the endpoint in a browser. Apollo Sandbox performs introspection client-side even when the production toggle is off. Check Apollo Studio explorer if the server is registered there.
+
+**Client-side bundles.** Search JS files for query strings, fragment definitions, and type names:
+
+```bash
+curl -s https://target.com/static/js/main.js | grep -oP '(query|mutation|fragment)\s+\w+'
+```
+
+---
+
+
+---
+
+## 📚 Deep Reference (Progressive Disclosure)
+
+> ⚠️ **CONTEXT OPTIMIZATION:** The detailed methodology, edge cases, attack vectors, and advanced configurations for this skill are stored externally to save tokens.
+
+To access the full technical reference, you MUST use your iew_file tool to read:
+
+d:\xampp\htdocs\0-fonte\.agent\skills\claude-red-offensive-graphql\references\reference.md

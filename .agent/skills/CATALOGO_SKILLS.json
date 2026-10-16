@@ -1,0 +1,962 @@
+[
+  {
+    "name": "accelerator-application",
+    "dir": "accelerator-application",
+    "desc": "When the user wants to apply to startup accelerators, incubators, or fellowship programs. Also use when the user mentions \"YC application\", \"Techstars\", \"accelerator\", or \"apply to programs\"."
+  },
+  {
+    "name": "airllm",
+    "dir": "airllm",
+    "desc": "Guidance for running and fine-tuning massive open-source LLMs (DeepSeek-V3 671B, Kimi K3 2.8T, Llama 3 70B/405B, Qwen3.8 125B) on low-VRAM GPUs (4GB/8GB/12GB) using the AirLLM framework by Gavin Li."
+  },
+  {
+    "name": "api-patterns",
+    "dir": "api-patterns",
+    "desc": "API design principles and decision-making. REST vs GraphQL vs tRPC selection, response formats, versioning, pagination."
+  },
+  {
+    "name": "app-builder",
+    "dir": "app-builder",
+    "desc": "Main application building orchestrator. Creates full-stack applications from natural language requests. Determines project type, selects tech stack, coordinates agents."
+  },
+  {
+    "name": "architecture",
+    "dir": "architecture",
+    "desc": "Architectural decision-making framework. Requirements analysis, trade-off evaluation, ADR documentation. Use when making architecture decisions or analyzing system design."
+  },
+  {
+    "name": "architecture-design",
+    "dir": "architecture-design",
+    "desc": "When the user needs to design or evaluate system architecture — service boundaries, data models, API contracts, infrastructure topology, database selection, or dependency analysis. Also activate for \"design the system\", \"how should I architect this\", \"monolith vs microservices\", or architecture decision records."
+  },
+  {
+    "name": "autoharness",
+    "dir": "autoharness",
+    "desc": "Self-learning skill layer for coding agents. Automatically distills real working sessions into reusable skills, merges same-scenario duplicates, validates by usage, and prunes stale skills with a dedicated ledger."
+  },
+  {
+    "name": "awesome-design-md",
+    "dir": "awesome-design-md",
+    "desc": "Curated collection and specification guide for DESIGN.md design system documents (Google Stitch standard). Contains analyzed design tokens, colors, typography, component rules, and visual guidelines from 73+ top tech products (Claude, Vercel, Linear, Cursor, Stripe, Mistral, Raycast)."
+  },
+  {
+    "name": "awesome-llm-apps",
+    "dir": "awesome-llm-apps",
+    "desc": "A reference catalogue of 100+ open-source AI agents, agent skills, and RAG apps built with various LLMs (Claude, GPT, Llama, etc.). Use this skill as a codebase reference when the user asks to build a specific AI application, RAG architecture, or agentic workflow."
+  },
+  {
+    "name": "awesome-web-hosting",
+    "dir": "awesome-web-hosting",
+    "desc": "A definitive guide to free cloud infrastructure, PaaS, and hosting platforms. Use this skill when the user asks for recommendations on where to deploy frontend, backend, databases, or AI models for free."
+  },
+  {
+    "name": "bash-linux",
+    "dir": "bash-linux",
+    "desc": "Bash/Linux terminal patterns. Critical commands, piping, error handling, scripting. Use when working on macOS or Linux systems."
+  },
+  {
+    "name": "behavioral-modes",
+    "dir": "behavioral-modes",
+    "desc": "AI operational modes (brainstorm, implement, debug, review, teach, ship, orchestrate). Use to adapt behavior based on task type."
+  },
+  {
+    "name": "board-update",
+    "dir": "board-update",
+    "desc": "When the user needs to write a monthly or quarterly investor update, prepare a board deck, or communicate company progress to stakeholders."
+  },
+  {
+    "name": "book-to-skill",
+    "dir": "book-to-skill",
+    "desc": "Converts books and documents (PDF, EPUB, DOCX, HTML, Markdown, plain text, RTF, MOBI/AZW with Calibre) into structured agent skills, extracting frameworks, mental models, principles, techniques, and anti-patterns. Use when the user wants to study a document through GitHub Copilot CLI, Amp, Claude Code, Hermes Agent, OpenCode, or OpenClaw, apply an author's frameworks while working, or build a reusable knowledge base from a file."
+  },
+  {
+    "name": "brainstorming",
+    "dir": "brainstorming",
+    "desc": "Socratic questioning protocol + user communication. MANDATORY for complex requests, new features, or unclear requirements. Includes progress reporting and error handling."
+  },
+  {
+    "name": "brand-copywriter",
+    "dir": "brand-copywriter",
+    "desc": "Writes marketing copy using proven copywriting frameworks. Use when user needs copy for ads (Facebook, Instagram, TikTok, YouTube), landing pages, sales pages, email sequences, LinkedIn posts, product descriptions, or any marketing content."
+  },
+  {
+    "name": "churn-analysis",
+    "dir": "churn-analysis",
+    "desc": "When the user needs to identify at-risk accounts, understand why customers are leaving, reduce churn rate, build health scores, design save plays, or create win-back campaigns."
+  },
+  {
+    "name": "cicd-setup",
+    "dir": "cicd-setup",
+    "desc": "When the user needs to set up or improve CI/CD pipelines — GitHub Actions, GitLab CI, deployment automation, or says \"set up CI\", \"automate deployment\", \"add tests to pipeline\", \"fix my build\"."
+  },
+  {
+    "name": "offensive-api-abuse",
+    "dir": "claude-red-offensive-api-abuse",
+    "desc": "Advanced API exploitation methodology focused on business logic abuse and sophisticated attack patterns that bypass traditional security controls. Covers business logic bypass through API call chaining and workflow manipulation. Addresses GraphQL-specific attacks including batching for credential brute-force, query depth exploitation, and introspection abuse. Includes pagination exploitation for data exfiltration, webhook hijacking for SSRF and data interception, and resource exhaustion through algorithmic complexity attacks. Covers race conditions in API transactions using parallel request techniques. Provides comprehensive JWT manipulation including algorithm confusion, kid injection, jku/x5u abuse, and claim tampering. Details API key leakage detection across source repositories, client-side code, and error messages. Covers undocumented endpoint discovery through predictable naming, debug routes, and source map analysis. Tooling includes Arjun, ParamSpider, jwt_tool, and GraphQL Voyager. Designed for authorized penetration testers targeting business logic layers that automated scanners miss."
+  },
+  {
+    "name": "offensive-api-security",
+    "dir": "claude-red-offensive-api-security",
+    "desc": "Comprehensive API security testing methodology covering REST, gRPC, and WebSocket attack surfaces. Addresses the full OWASP API Security Top 10 2023 including BOLA/IDOR, broken authentication, excessive data exposure, rate limiting bypass, BFLA, mass assignment, SSRF, and security misconfiguration. Includes REST-specific attacks such as HTTP verb tampering, content-type switching, and parameter pollution. Covers gRPC exploitation through protobuf interception, reflection API enumeration, and metadata injection. Addresses WebSocket vulnerabilities including origin bypass, message injection, and cross-site WebSocket hijacking. Provides tooling guidance for Burp Suite, Postman, grpcurl, websocat, and mitmproxy. Each technique includes detection signatures and defensive indicators so you understand what artifacts your testing leaves behind. Designed for authorized penetration testing engagements against API-driven architectures."
+  },
+  {
+    "name": "offensive-business-logic",
+    "dir": "claude-red-offensive-business-logic",
+    "desc": "Business logic vulnerability testing for web/mobile/API engagements. Covers workflow bypass, state machine violations, multi-step process abuse, price/quantity/discount manipulation, currency confusion, coupon stacking, refund/chargeback abuse, race conditions on logic boundaries, parameter tampering for hidden flows, role/tenant boundary violations, time-of-check vs use, anti-automation defeat, fraud-detection evasion, and subscription/quota abuse. Use when scoping an application after surface-level OWASP Top 10 has been covered, or when the asset is a transactional/marketplace/fintech/e-commerce/SaaS app where logic flaws produce direct financial impact."
+  },
+  {
+    "name": "offensive-cloud",
+    "dir": "claude-red-offensive-cloud",
+    "desc": "Cloud security attack methodology covering AWS, Azure, and GCP. Includes credential harvesting (IMDS, ~/.aws, env vars, leaked CI secrets, instance roles), enumeration with cloud-specific tools (pacu, ScoutSuite, Prowler, ROADtools, gcp_enum), privilege escalation paths (IAM PassRole, AssumeRole chains, Lambda/Functions privilege flips, Azure Owner-on-self, GCP serviceAccountTokenCreator), persistence techniques (IAM user/key creation, AAD app registration, GCP svc account key creation, EventBridge/Logic Apps backdoors), data exfiltration (S3/Blob/GCS, snapshot share, RDS/CosmosDB/Cloud SQL exfil), cloud-native lateral movement (cross-account assume, Azure AD multi-tenant, GCP project hierarchy), serverless attacks (Lambda env vars, layer hijack, Step Functions), Kubernetes-on-cloud (EKS/AKS/GKE-specific paths to node and AWS metadata), and CSPM evasion (CloudTrail blind spots, GuardDuty mute, Sentinel rule shaping). Use when the engagement scope is cloud accounts, when you've stolen cloud credentials, or when assessing cloud posture."
+  },
+  {
+    "name": "offensive-container-escape",
+    "dir": "claude-red-offensive-container-escape",
+    "desc": "Container escape and breakout techniques targeting Docker, containerd, and Podman runtimes. Covers privileged container breakout via host filesystem mount and nsenter, Docker socket abuse through /var/run/docker.sock, Linux capability exploitation including CAP_SYS_ADMIN, CAP_SYS_PTRACE, and CAP_NET_ADMIN, cgroup v1 notify_on_release escape, runc CVEs such as CVE-2019-5736 and CVE-2024-21626 Leaky Vessels, kernel exploits from within containers, and Dockerfile misconfigurations like --privileged and host namespace sharing. Includes enumeration with capsh, amicontained, deepce, CDK, and nsenter. Maps to MITRE ATT&CK T1611 Escape to Host. Use this skill when the engagement scope includes container breakout, Docker escape, container privilege escalation, host access from container, or when you land inside a containerized environment and need to reach the underlying host."
+  },
+  {
+    "name": "offensive-deserialization",
+    "dir": "claude-red-offensive-deserialization",
+    "desc": "Insecure deserialization exploitation across Java, PHP, .NET, Python, Node.js, and Ruby. Covers gadget chain construction with ysoserial/phpggc/ysoserial.net, ObjectInputStream and BinaryFormatter sink identification, pickle __reduce__ RCE, phar:// wrapper abuse, Jackson polymorphic typing, Json.NET TypeNameHandling, ViewState tampering, node-serialize IIFE injection, Ruby Marshal.load and YAML.load gadgets, framework-specific chains for Spring/Hibernate/Laravel/Symfony, modern attack surfaces including Kubernetes admission webhooks and message queue consumers, WAF bypass through encoding layers and content-type manipulation, and serialVersionUID/JMX/RMI vectors. Activate when the engagement involves deserialization sinks, serialized data in cookies or request bodies, gadget chain development, magic method abuse, ysoserial payload generation, or any review of marshalling and unmarshalling logic in target applications."
+  },
+  {
+    "name": "claude-red-offensive-file-upload",
+    "dir": "claude-red-offensive-file-upload",
+    "desc": "Sem descricao"
+  },
+  {
+    "name": "offensive-graphql",
+    "dir": "claude-red-offensive-graphql",
+    "desc": "Offensive methodology for attacking GraphQL APIs during penetration tests and bug bounty engagements. Covers the full attack lifecycle: endpoint discovery, introspection abuse and blind schema reconstruction when introspection is disabled, authentication and authorization bypass through Relay node IDs and nested object traversal, injection via variables and directives, query batching for brute force and OTP bypass, denial of service through depth bombs and alias amplification, WebSocket subscription hijacking, information disclosure through verbose errors and field suggestion oracles, and file upload abuse via the multipart GraphQL specification. Includes tool-specific guidance for InQL, graphql-cop, CrackQL, BatchQL, Altair, GraphQL Voyager, and clairvoyance. Trigger on: GraphQL, graphql, introspection query, batching attack, query depth, GraphQL injection, GraphQL IDOR, field suggestion, GraphQL auth bypass, GraphQL DoS, GraphQL security, graphql-cop, InQL, CrackQL, BatchQL, Relay node, alias amplification, subscription abuse, multipart upload GraphQL, schema enumeration, __schema, __type."
+  },
+  {
+    "name": "claude-red-offensive-idor",
+    "dir": "claude-red-offensive-idor",
+    "desc": "Sem descricao"
+  },
+  {
+    "name": "offensive-jwt",
+    "dir": "claude-red-offensive-jwt",
+    "desc": "JWT attack methodology for penetration testers. Covers algorithm confusion (alg:none, RS256→HS256), weak HMAC secret brute force, kid parameter injection (SQLi, path traversal), jku/x5u/jwk header injection, JWKS cache poisoning, JWS/JWE confusion, timing attacks, and mobile JWT storage extraction. Use when testing JWT-based authentication, hunting auth bypass via token manipulation, or evaluating JWT implementation security in web or mobile apps."
+  },
+  {
+    "name": "offensive-k8s-attacks",
+    "dir": "claude-red-offensive-k8s-attacks",
+    "desc": "Kubernetes cluster attack techniques covering the full attack lifecycle from initial foothold in a pod to cluster-wide compromise. Covers service account token theft and impersonation, RBAC misconfiguration exploitation including wildcard permissions and privilege escalation via role binding, direct etcd access for secret extraction, kubelet API abuse on port 10250 and read-only port 10255, pod escape via hostPID hostNetwork and hostPath volume mounts, Kubernetes secrets enumeration and decoding, admission controller bypass techniques, network policy bypass and lateral movement, cloud metadata service access from pods for credential theft on AWS EKS GCP GKE and Azure AKS, CRD and operator abuse for persistence, and node compromise via DaemonSet deployment. Tools include kubectl, kube-hunter, peirates, kubeaudit, kdigger, kubeletctl. Maps to MITRE ATT&CK T1609 Container Administration Command, T1610 Deploy Container, T1613 Container and Resource Discovery. Use this skill when assessing Kubernetes clusters, attacking from within a compromised pod, exploiting RBAC or kubelet misconfigurations, or performing cloud-native lateral movement."
+  },
+  {
+    "name": "claude-red-offensive-oauth",
+    "dir": "claude-red-offensive-oauth",
+    "desc": "Sem descricao"
+  },
+  {
+    "name": "claude-red-offensive-open-redirect",
+    "dir": "claude-red-offensive-open-redirect",
+    "desc": "Sem descricao"
+  },
+  {
+    "name": "claude-red-offensive-parameter-pollution",
+    "dir": "claude-red-offensive-parameter-pollution",
+    "desc": "Sem descricao"
+  },
+  {
+    "name": "claude-red-offensive-race-condition",
+    "dir": "claude-red-offensive-race-condition",
+    "desc": "Sem descricao"
+  },
+  {
+    "name": "claude-red-offensive-rce",
+    "dir": "claude-red-offensive-rce",
+    "desc": "Sem descricao"
+  },
+  {
+    "name": "claude-red-offensive-request-smuggling",
+    "dir": "claude-red-offensive-request-smuggling",
+    "desc": "Sem descricao"
+  },
+  {
+    "name": "claude-red-offensive-sqli",
+    "dir": "claude-red-offensive-sqli",
+    "desc": "Sem descricao"
+  },
+  {
+    "name": "claude-red-offensive-ssrf",
+    "dir": "claude-red-offensive-ssrf",
+    "desc": "Sem descricao"
+  },
+  {
+    "name": "offensive-ssti",
+    "dir": "claude-red-offensive-ssti",
+    "desc": "Dense description covering Server-Side Template Injection across Jinja2, Twig, Freemarker, Velocity, Pebble, Smarty, Mako, Handlebars, ERB, Thymeleaf, EJS, Pug. Engine fingerprinting, filter bypass, blind exploitation, WAF evasion, SSTI-to-RCE chains. Tools: tplmap. CWE-1336. MITRE T1190. Use when testing template rendering endpoints or exploiting template injection for code execution."
+  },
+  {
+    "name": "claude-red-offensive-waf-bypass",
+    "dir": "claude-red-offensive-waf-bypass",
+    "desc": "Sem descricao"
+  },
+  {
+    "name": "claude-red-offensive-xss",
+    "dir": "claude-red-offensive-xss",
+    "desc": "Sem descricao"
+  },
+  {
+    "name": "claude-red-offensive-xxe",
+    "dir": "claude-red-offensive-xxe",
+    "desc": "Sem descricao"
+  },
+  {
+    "name": "claudex",
+    "dir": "claudex",
+    "desc": "Dual-AI adversarial planning loop where two models cross-examine and harden implementation plans through 3 rounds of review (Senior Engineer, Security/Data Integrity, Ops/SRE) until complete convergence."
+  },
+  {
+    "name": "clean-code",
+    "dir": "clean-code",
+    "desc": "Pragmatic coding standards - concise, direct, no over-engineering, no unnecessary comments"
+  },
+  {
+    "name": "code-review",
+    "dir": "code-review",
+    "desc": "When the user asks for a code review, shares code for feedback, or says \"review this\", \"check my code\", \"what's wrong with this\". Also activate when reviewing a pull request or diff."
+  },
+  {
+    "name": "code-review-checklist",
+    "dir": "code-review-checklist",
+    "desc": "Code review guidelines covering code quality, security, and best practices."
+  },
+  {
+    "name": "coding-discipline",
+    "dir": "coding-discipline",
+    "desc": "Strict coding discipline based on Karpathy's rules - surgical changes, goal-driven execution, and radical simplicity."
+  },
+  {
+    "name": "cold-outreach",
+    "dir": "cold-outreach",
+    "desc": "When a founder needs to write cold emails or LinkedIn messages to prospects, partners, or investors. Activate when the user mentions cold email, outbound, prospecting, LinkedIn outreach, or needs help getting replies from people who don't know them."
+  },
+  {
+    "name": "community-discovery",
+    "dir": "community-discovery",
+    "desc": "When the user wants to find Slack groups, Discord servers, Reddit communities, forums, or online communities where their target audience hangs out. Also use when the user mentions \"where to promote\", \"find communities\", \"community marketing\", or \"distribution channels\"."
+  },
+  {
+    "name": "competitive-analysis",
+    "dir": "competitive-analysis",
+    "desc": "When the user needs to evaluate competitors, understand the competitive landscape, or position their product against alternatives."
+  },
+  {
+    "name": "competitor-intel",
+    "dir": "competitor-intel",
+    "desc": "Analyzes competitors using web research to provide verified business metrics, actionable leverage strategies, and predicted next moves. Use when user needs competitive intelligence, competitor analysis, market positioning insights, or strategic leverage opportunities."
+  },
+  {
+    "name": "competitor-monitoring",
+    "dir": "competitor-monitoring",
+    "desc": "When the user wants to set up ongoing tracking of competitor activity — pricing changes, feature launches, hiring signals, content, or public mentions. Also use when the user mentions \"track competitors\", \"what are competitors doing\", \"competitor alerts\", or \"market watch\"."
+  },
+  {
+    "name": "content-strategy",
+    "dir": "content-strategy",
+    "desc": "When the user needs to plan, prioritize, or structure a content program -- including identifying content pillars, mapping content to the buyer journey, choosing content types, or building an editorial calendar."
+  },
+  {
+    "name": "contract-review",
+    "dir": "contract-review",
+    "desc": "When the user needs to review an existing contract, assess risk in proposed terms, or evaluate a contract before signing."
+  },
+  {
+    "name": "cro-optimization",
+    "dir": "cro-optimization",
+    "desc": "Analyzes landing pages and provides detailed CRO (Conversion Rate Optimization) recommendations. Use when user provides a landing page URL or HTML/CSS code and needs optimization advice to maximize conversions, signups, or sales. Extracts page elements, audits against proven CRO principles, and delivers actionable recommendations in report format."
+  },
+  {
+    "name": "daily-product-digest",
+    "dir": "daily-product-digest",
+    "desc": "When the user wants a summary of what's trending on Product Hunt, Hacker News, Indie Hackers, or other product/startup communities. Also use when the user mentions \"what launched today\", \"trending products\", \"HN front page\", or \"keep up with the market\"."
+  },
+  {
+    "name": "data-room",
+    "dir": "data-room",
+    "desc": "When the user wants to prepare a due diligence data room for fundraising, or when an investor has requested additional materials after a pitch. Also activates for \"data room\", \"due diligence\", \"DD checklist\", or \"what documents do investors need?\"."
+  },
+  {
+    "name": "database-design",
+    "dir": "database-design",
+    "desc": "Database design principles and decision-making. Schema design, indexing strategy, ORM selection, serverless databases."
+  },
+  {
+    "name": "deployment-procedures",
+    "dir": "deployment-procedures",
+    "desc": "Production deployment principles and decision-making. Safe deployment workflows, rollback strategies, and verification. Teaches thinking, not scripts."
+  },
+  {
+    "name": "diagram-design",
+    "dir": "diagram-design",
+    "desc": "Create branded architecture, architecture delta, IT current-state, flowchart, sequence, state machine, ER/data model, timeline, swimlane, quadrant, radar/spider, polar chart (polar/radial lollipop), loop/flywheel, nested, tree, org chart, layer stack, exploded axonometric, axonometric plan, Venn, pyramid/funnel, treemap and marimekko, heatmap, bar and dumbbell, waterfall, line (slopegraph, ridgeline, streamgraph, bump), Gantt and scatter charts (bubble, beeswarm), high-level, process, medallion, data flow, DP integration, DP security matrix, Sankey, fishbone, Wardley map, kanban, user journey, deployment, dependency graph, UML class, story map, or database schema diagrams as HTML/SVG/PNG, with .drawio, Mermaid, and .excalidraw import, plus lifecycle phase maps, block decomposition trees, and onboarding guidance."
+  },
+  {
+    "name": "documentation-templates",
+    "dir": "documentation-templates",
+    "desc": "Documentation templates and structure guidelines. README, API docs, code comments, and AI-friendly documentation."
+  },
+  {
+    "name": "drawdb",
+    "dir": "drawdb",
+    "desc": "Visual entity-relationship diagram (ERD) editor, database schema designer, and multi-dialect SQL generator supporting PostgreSQL, MySQL, SQLite, MariaDB, and SQL Server."
+  },
+  {
+    "name": "earned-media-outreach",
+    "dir": "earned-media-outreach",
+    "desc": "When the user wants to get press coverage, appear on podcasts, or build relationships with journalists and content creators. Also use when the user mentions \"podcast guesting\", \"press outreach\", \"PR\", \"media exposure\", \"get on podcasts\", or \"journalist outreach\"."
+  },
+  {
+    "name": "email-marketing",
+    "dir": "email-marketing",
+    "desc": "When the user needs to design, write, or optimize email sequences -- including welcome series, nurture campaigns, re-engagement flows, onboarding emails, or newsletter strategy."
+  },
+  {
+    "name": "employer-brand",
+    "dir": "employer-brand",
+    "desc": "When the user needs to create or improve content that shapes how candidates and the public perceive the company as a place to work."
+  },
+  {
+    "name": "event-hosting",
+    "dir": "event-hosting",
+    "desc": "When the user wants to host a tech event, meetup, workshop, or community gathering — especially using Luma. Also use when the user mentions \"host an event\", \"meetup\", \"workshop\", \"Luma event\", or \"community event\"."
+  },
+  {
+    "name": "fast-check",
+    "dir": "fast-check",
+    "desc": "Use esta skill para validar rapidamente tipagem, lint e testes locais sem poluir a janela de contexto com logs gigantes."
+  },
+  {
+    "name": "feedback-synthesis",
+    "dir": "feedback-synthesis",
+    "desc": "When the user needs to analyze, categorize, or extract actionable insights from customer feedback across multiple sources, especially feature requests."
+  },
+  {
+    "name": "find-skills",
+    "dir": "find-skills",
+    "desc": "Discovers, recommends, and installs agent skills from the open skills ecosystem (skills.sh, npx skills, GitHub). Use when the user asks 'how do I do X', 'find a skill for X', or needs new capabilities."
+  },
+  {
+    "name": "founder-board",
+    "dir": "founder-board",
+    "desc": "Your board of directors. Puts a business idea in front of a three-member board, each a sub-agent reading the idea through one published framework: the Offers lens (from Alex Hormozi's $100M Offers), the Monopoly lens (from Peter Thiel's Zero to One) and the Product lens (from Walter Isaacson's biography of Steve Jobs). Each member scores the idea, names the risks that would kill it and votes fund, fund with conditions, or pass. Use when the user says \"test my business idea\", \"would this work\", \"pressure-test this\", \"what would a board say\", \"is this a good business\", or starts the founder pack on a new idea."
+  },
+  {
+    "name": "founder-brand",
+    "dir": "founder-brand",
+    "desc": "Your brand designer. Names the business (with the trademark, domain and handle checks to run before falling in love with a name), writes the voice, a one-line promise and a tagline, and briefs the look: colours, type, logo and the first things a customer sees, so they match the positioning the marketing director chose. Use when the user says \"name my business\", \"brand this\", \"logo\", \"brand identity\", \"what should it look like\", \"tagline\", or \"brand voice\"."
+  },
+  {
+    "name": "founder-cfo",
+    "dir": "founder-cfo",
+    "desc": "Your CFO. Builds the unit economics of a business before money is spent: what one unit earns after its direct costs, the real profit margin at the planned volume, the break-even point in units a day, year 1 month by month, the cash needed before it pays for itself, how long the startup spend takes to earn back, and what happens if the price drops, sales come in low or costs rise. Every number traces to an input the user can check. Use when the user says \"find the profit margins\", \"do the numbers\", \"is this profitable\", \"break-even\", \"unit economics\", \"how much do I need to start\", or \"run the CFO\"."
+  },
+  {
+    "name": "founder-competitors",
+    "dir": "founder-competitors",
+    "desc": "Maps every competitor and the gap they leave. Finds the direct competitors, indirect ones and the substitutes a buyer would use instead, from public sources only, and records what each sells, at what price, how they position themselves and what their customers complain about in public reviews, every fact with a link. Ends with a positioning map and the gap the new business can own. Use when the user says \"who are my competitors\", \"is this market crowded\", \"what else is out there\", \"competitor analysis\", \"find the gap\", or \"who am I up against\"."
+  },
+  {
+    "name": "founder-consumer",
+    "dir": "founder-consumer",
+    "desc": "The consumer panel. Spins up a swarm of buyer sub-agents (default 100, --quick for 20) trained on the user's target customer, each with a different income, age, buying behaviour and objection, shows every one the same pitch, and runs the business through 100 buyer scenarios to see who buys, who doesn't, and why. Tallies the answers into buy rates by segment, the reasons people pass in their own words, what would flip a no, and price answers for founder-pricing. Use when the user says \"would people buy this\", \"test it on customers\", \"run the consumer panel\", \"simulate buyers\", \"who is my customer\", or \"validate demand\"."
+  },
+  {
+    "name": "founder-launch",
+    "dir": "founder-launch",
+    "desc": "Your launch lead. Builds a dated, step-by-step launch plan: a cheap real-world test first (a waitlist, a pre-sale or a pop-up with a real price, so real buyers confirm what the simulated panel said), then the countdown to opening day with owners and deadlines, the launch-day run sheet, and the first 30 days of what to measure and what to change. Use when the user says \"how do I launch\", \"launch plan\", \"when can I open\", \"launch checklist\", \"go live\", or \"soft open\"."
+  },
+  {
+    "name": "founder-marketing",
+    "dir": "founder-marketing",
+    "desc": "Your marketing director. Turns the buyer panel and the competitor map into positioning, the channels the target customer actually uses, a 30-day launch campaign with dated posts and ads, the first ten hooks, a budget split and the numbers to watch. Every message answers an objection real or simulated buyers raised. Use when the user says \"how do I market this\", \"marketing plan\", \"launch campaign\", \"how do I get customers\", \"where do I advertise\", \"write my ads\", or \"positioning\"."
+  },
+  {
+    "name": "founder-offer",
+    "dir": "founder-offer",
+    "desc": "Builds an offer too good to refuse. Lists every problem the buyer hits on the way to the result they want, turns each into a solution, trims to what is cheap to deliver and valuable to the buyer, and stacks it with honest bonuses, a guarantee the CFO can afford, real urgency and a clear name. Scores it on the value equation (outcome, likelihood, time, effort) and re-tests it on a quick buyer panel. Use when the user says \"make my offer better\", \"why won't people buy\", \"what should I include\", \"guarantee\", \"bonuses\", \"grand slam offer\", or after the panel shows people passing."
+  },
+  {
+    "name": "founder-ops",
+    "dir": "founder-ops",
+    "desc": "Your operations manager. Works out how the business actually runs on day one: suppliers and what they cost, who works when, the step-by-step routines for opening, serving or shipping and closing, the tools to run it, the licences and permits to check, and a risk register with what to do when each thing goes wrong. Feeds real costs back to the CFO. Use when the user says \"how do I run this\", \"operations\", \"suppliers\", \"staffing\", \"SOPs\", \"what do I need to open\", \"permits\", or \"day one\"."
+  },
+  {
+    "name": "founder-plan",
+    "dir": "founder-plan",
+    "desc": "Your business planner. Compiles everything the other founder skills wrote (the board's verdict, the competitors, the buyer panel, pricing, the offer, the CFO's numbers, marketing, brand, operations and the launch plan) into one business plan with a verdict at the top that is computed from the numbers, never written by hand: Profitable, Not yet (with the failing numbers) or Incomplete. Adds an executive summary and a one-page version for a partner, lender or investor. Use when the user says \"write my business plan\", \"put it all together\", \"is it profitable\", \"give me the plan\", or at the end of the founder pack."
+  },
+  {
+    "name": "founder-pricing",
+    "dir": "founder-pricing",
+    "desc": "Finds the price buyers will actually pay. Reads the consumer panel's four price answers per buyer into a Van Westendorp price-sensitivity range (too cheap, a bargain, getting expensive, too expensive), sets it against what competitors really charge and against the CFO's margin, and recommends a price, a price ladder (good / better / best) and an opening offer to test. Use when the user says \"how much should I charge\", \"price this\", \"is $X too expensive\", \"pricing strategy\", \"what price\", or after the consumer panel."
+  },
+  {
+    "name": "founder-thought-leadership",
+    "dir": "founder-thought-leadership",
+    "desc": "When the user wants to build personal brand, thought leadership, or IP as a founder on Twitter/X or LinkedIn. Also use when the user mentions \"founder brand\", \"personal content\", \"build audience\", or \"grow my following\"."
+  },
+  {
+    "name": "free-claude-code",
+    "dir": "free-claude-code",
+    "desc": "Guidance for setting up and using the Free Claude Code (FCC) proxy tool to route Claude Code, Cline, Aider, and other AI coding agents to alternative or free LLM providers."
+  },
+  {
+    "name": "freellmapi",
+    "dir": "freellmapi",
+    "desc": "Unified proxy gateway aggregating 34 free LLM providers, 635 free model endpoints, and ~7.4 billion free tokens/month into a single OpenAI-compatible /v1 endpoint with auto-failover, quota tracking, and prompt compression."
+  },
+  {
+    "name": "frontend-design",
+    "dir": "frontend-design",
+    "desc": "Design thinking and decision-making for web UI. Use when designing components, layouts, color schemes, typography, or creating aesthetic interfaces. Teaches principles, not fixed values."
+  },
+  {
+    "name": "fundraising-email",
+    "dir": "fundraising-email",
+    "desc": "When the user wants to write an email to an investor — cold outreach, warm intro request, follow-up after a meeting, monthly investor update, or thank-you note. Also activates for \"intro email\", \"investor email\", \"follow up with VC\", or \"investor update\"."
+  },
+  {
+    "name": "game-development",
+    "dir": "game-development",
+    "desc": "Game development orchestrator. Routes to platform-specific skills based on project needs."
+  },
+  {
+    "name": "geo-fundamentals",
+    "dir": "geo-fundamentals",
+    "desc": "Generative Engine Optimization for AI search engines (ChatGPT, Claude, Perplexity)."
+  },
+  {
+    "name": "go-to-market-plan",
+    "dir": "go-to-market-plan",
+    "desc": "Analyzes the founder's business context to deliver 3 best go-to-market strategies tailored to their current stage, product, and market. Asks up to 10 diagnostic questions when needed to understand product readiness, target market clarity, competitive positioning, and distribution channels. Use when user needs go-to-market strategy, launch planning, market entry strategy, or actionable GTM roadmap."
+  },
+  {
+    "name": "graphify",
+    "dir": "graphify",
+    "desc": "Multimodal Knowledge Graph builder for codebases, documents, research papers, and images. Extracts concepts, detects communities, and generates interactive 2D/3D graphs, Obsidian vaults, and GraphRAG JSON with 71.5x token savings."
+  },
+  {
+    "name": "i18n-localization",
+    "dir": "i18n-localization",
+    "desc": "Internationalization and localization patterns. Detecting hardcoded strings, managing translations, locale files, RTL support."
+  },
+  {
+    "name": "image-to-code",
+    "dir": "image-to-code",
+    "desc": "Multimodal AI converter translating UI mockups, screenshots, whiteboard wireframes, and design images directly into production-ready HTML, Tailwind CSS, and React components."
+  },
+  {
+    "name": "impeccable",
+    "dir": "impeccable-design",
+    "desc": "Use when the user wants to design, redesign, shape, critique, audit, polish, clarify, distill, harden, optimize, adapt, animate, colorize, extract, or otherwise improve a frontend interface. Covers websites, landing pages, dashboards, product UI, app shells, components, forms, settings, onboarding, and empty states. Handles UX review, visual hierarchy, information architecture, cognitive load, accessibility, performance, responsive behavior, theming, anti-patterns, typography, fonts, spacing, layout, alignment, color, motion, micro-interactions, UX copy, error states, edge cases, i18n, and reusable design systems or tokens. Also use for bland designs that need to become bolder or more delightful, loud designs that should become quieter, live browser iteration on UI elements, or ambitious visual effects that should feel technically extraordinary. Not for backend-only or non-UI tasks."
+  },
+  {
+    "name": "intelligent-routing",
+    "dir": "intelligent-routing",
+    "desc": "Automatic agent selection and intelligent task routing. Analyzes user requests and automatically selects the best specialist agent(s) without requiring explicit user mentions."
+  },
+  {
+    "name": "interview-kit",
+    "dir": "interview-kit",
+    "desc": "When the user needs to design an interview process, create interview questions, build scorecards, calibrate interviewers, or evaluate candidates for a role."
+  },
+  {
+    "name": "investor-research",
+    "dir": "investor-research",
+    "desc": "When the user wants to identify, evaluate, or prioritize potential investors for a fundraising round. Also activates when the user asks \"who should I pitch?\", \"find me investors\", \"build an investor list\", or mentions VC/angel targeting."
+  },
+  {
+    "name": "job-description",
+    "dir": "job-description",
+    "desc": "When the user needs to write, review, or improve a job posting for a startup role."
+  },
+  {
+    "name": "knowledge-base",
+    "dir": "knowledge-base",
+    "desc": "Protocolo de consulta à base AllMight para busca de padrões, templates e arquitetura."
+  },
+  {
+    "name": "landing-page",
+    "dir": "landing-page",
+    "desc": "When the user needs to create, critique, or optimize a landing page for conversion -- including headline rewrites, CTA placement, layout restructuring, or full page copy drafts."
+  },
+  {
+    "name": "launch-strategy",
+    "dir": "launch-strategy",
+    "desc": "When the user needs to plan or execute a product launch — including pre-launch content sequences, launch funnels, JV/affiliate launches, cart open/close strategy, or evergreen launch funnels."
+  },
+  {
+    "name": "laws-of-ux",
+    "dir": "laws-of-ux",
+    "desc": "Psychology-based design principles, cognitive heuristics, diagnostic decision trees, and usability laws (Jon Yablonski, Laws of UX 2nd ed. O'Reilly 2024). Guides UI design, accessibility, progressive disclosure, touch targets, and UX audits."
+  },
+  {
+    "name": "laya",
+    "dir": "laya",
+    "desc": "Guidance for integrating and using Laya, an open-source System 1 decision model by Convai Innovations, inside Node.js/TypeScript environments. Use this when the user needs fast, local classification, scoring, or decision-making without calling external LLM APIs."
+  },
+  {
+    "name": "laya-nandha",
+    "dir": "laya-nandha",
+    "desc": "Guidance for integrating and using the Python implementation of Laya (NandhaKishorM/laya), a multilingual System 1 decision engine. Use this when the user needs fast classification, scoring, or decision-making in Python environments (or advanced fine-tuning), without calling external LLMs."
+  },
+  {
+    "name": "lead-magnet-generator",
+    "dir": "lead-magnet-generator",
+    "desc": "Creates viral lead magnet posts that drive comments and DMs. Produces 2 versions - a quick punchy format and a detailed format with bullet points. Use when user needs social media posts to give away a lead magnet in exchange for engagement."
+  },
+  {
+    "name": "lead-scoring",
+    "dir": "lead-scoring",
+    "desc": "When a founder needs to qualify inbound leads, define their ICP, build a lead scoring model, set MQL criteria, or route prospects through pipeline stages. Activate when the user mentions lead scoring, ICP, MQL, SQL, lead qualification, inbound leads, or pipeline design."
+  },
+  {
+    "name": "linkedin-writer",
+    "dir": "linkedin-writer",
+    "desc": "Creates viral LinkedIn posts using proven formats, post templates, and voice matching. Use when user needs engaging, high-performing posts for LinkedIn."
+  },
+  {
+    "name": "lint-and-validate",
+    "dir": "lint-and-validate",
+    "desc": "Sem descricao"
+  },
+  {
+    "name": "LlamaFactory",
+    "dir": "LlamaFactory",
+    "desc": "Guidance for integrating and using LLaMA-Factory, a zero-code fine-tuning framework for LLMs. Use this skill when asked to fine-tune local models (LLaMA, Qwen, Mistral, DeepSeek) using LoRA, QLoRA, DPO, PPO, or when building a local model training pipeline."
+  },
+  {
+    "name": "loop-engineering",
+    "dir": "loop-engineering",
+    "desc": "Design, audit, run, and bound autonomous AI agent loops (autoloop, loopy, Copilot agent-loop). Prevents runaway executions, enforces verification gates, and guarantees evidence-backed stopping criteria."
+  },
+  {
+    "name": "manual-generator",
+    "dir": "manual-generator",
+    "desc": "Guidance for using manual-generator, a Crystal program to generate PDF manuals from HTML documentation sites. Use this skill when asked to scrape an online HTML documentation and convert it into a single, unified PDF file."
+  },
+  {
+    "name": "market-research",
+    "dir": "market-research",
+    "desc": "When the user needs to estimate market size, understand market dynamics, or validate that a market opportunity is large enough to pursue."
+  },
+  {
+    "name": "marketing-ideas",
+    "dir": "marketing-ideas",
+    "desc": "Produces the best marketing ideas for your business by analyzing your FOUNDER_CONTEXT and matching it against a curated database of 170+ proven marketing strategies. Use when user needs creative, actionable marketing ideas tailored to their business."
+  },
+  {
+    "name": "mcp-builder",
+    "dir": "mcp-builder",
+    "desc": "MCP (Model Context Protocol) server building principles. Tool design, resource patterns, best practices."
+  },
+  {
+    "name": "media-inference-worker",
+    "dir": "media-inference-worker",
+    "desc": "Higgsfield AI media inference pipeline worker for cutting-edge text-to-image and text-to-video models (Qwen-Image-3, Minimax H3, Kling 3.0, LTX 2.5 Pro, Veo 3.1 Fast, GPT Image 2). Use when generating high-end AI images and cinematic videos via asynchronous job polling."
+  },
+  {
+    "name": "mobile-design",
+    "dir": "mobile-design",
+    "desc": "Mobile-first design thinking and decision-making for iOS and Android apps. Touch interaction, performance patterns, platform conventions. Teaches principles, not fixed values. Use when building React Native, Flutter, or native mobile apps."
+  },
+  {
+    "name": "MoneyPrinterTurbo",
+    "dir": "MoneyPrinterTurbo",
+    "desc": "Guidance for integrating and using MoneyPrinterTurbo, an All-in-One AI Short Video Generator. Use this skill when the user asks to generate automated short videos (TikTok/Reels/Shorts) from a text topic or keyword, including script generation, footage matching, subtitles, and background music."
+  },
+  {
+    "name": "musica",
+    "dir": "musica",
+    "desc": "Guidance for integrating and using Musica VJ, an open-source AI DJ + VJ desktop application built in Rust and Tauri. Use this skill when the user asks about audio-reactive WebGL, Tauri 2 desktop app structure, or AI-directed music workstations."
+  },
+  {
+    "name": "mvp-scoping",
+    "dir": "mvp-scoping",
+    "desc": "When the user needs to decide what to build, cut, and defer for a first release or minimum viable version of a product or feature."
+  },
+  {
+    "name": "react-best-practices",
+    "dir": "nextjs-react-expert",
+    "desc": "React and Next.js performance optimization from Vercel Engineering. Use when building React components, optimizing performance, eliminating waterfalls, reducing bundle size, reviewing code for performance issues, or implementing server/client-side optimizations."
+  },
+  {
+    "name": "nodejs-best-practices",
+    "dir": "nodejs-best-practices",
+    "desc": "Node.js development principles and decision-making. Framework selection, async patterns, security, and architecture. Teaches thinking, not copying."
+  },
+  {
+    "name": "onboarding-flow",
+    "dir": "onboarding-flow",
+    "desc": "When the user needs to design, improve, or audit a post-signup activation flow to get new users to their first value moment. Activate when activation is lagging, time-to-value feels excessive, or first sessions lack impact."
+  },
+  {
+    "name": "open-generative-ai",
+    "dir": "open-generative-ai",
+    "desc": "Guidance for integrating Open Generative AI, an open-source alternative to AI Video/Image Platforms using MuAPI. Use this when the user wants to implement multi-modal AI generation (text-to-video, text-to-audio, lip sync) or review how an AI studio application is built."
+  },
+  {
+    "name": "open-seo",
+    "dir": "open-seo",
+    "desc": "Open-source Semrush and Ahrefs alternative with native MCP server and Agent Skills for keyword research, backlink analysis, competitor intelligence, and programmatic SEO."
+  },
+  {
+    "name": "opencode-agent",
+    "dir": "opencode-agent",
+    "desc": "OpenCode v2 coding agent for terminal and multi-session workflows. Use when the user asks to run opencode, use anomalyco/opencode, execute multi-provider AI coding sessions, or trigger terminal-based pair programming agents."
+  },
+  {
+    "name": "outreach-specialist",
+    "dir": "outreach-specialist",
+    "desc": "Crafts high-converting outreach messages and email sequences for cold outreach, LinkedIn DMs, and follow-ups. Use when user needs personalized outreach messages that book calls and get replies."
+  },
+  {
+    "name": "parallel-agents",
+    "dir": "parallel-agents",
+    "desc": "Multi-agent orchestration patterns. Use when multiple independent tasks can run with different domain expertise or when comprehensive analysis requires multiple perspectives."
+  },
+  {
+    "name": "partnership-outreach",
+    "dir": "partnership-outreach",
+    "desc": "When a founder needs to write partnership or BD emails, craft integration pitches, or create co-marketing proposals. Activate when the user mentions partnerships, business development, integration proposals, co-marketing, channel partnerships, or strategic alliances."
+  },
+  {
+    "name": "performance-profiling",
+    "dir": "performance-profiling",
+    "desc": "Performance profiling principles. Measurement, analysis, and optimization techniques."
+  },
+  {
+    "name": "pitch-deck",
+    "dir": "pitch-deck",
+    "desc": "When the user wants to create, review, or restructure a fundraising pitch deck for seed or Series A. Also activates when the user mentions \"deck\", \"pitch\", \"investor presentation\", or \"slide structure\"."
+  },
+  {
+    "name": "plan-writing",
+    "dir": "plan-writing",
+    "desc": "Structured task planning with clear breakdowns, dependencies, and verification criteria. Use when implementing features, refactoring, or any multi-step work."
+  },
+  {
+    "name": "playwright-cli",
+    "dir": "playwright-cli",
+    "desc": "Token-efficient Playwright CLI browser automation and testing designed specifically for coding agents. Executes concise commands (open, click, type, screenshot) without dumping verbose DOM trees into LLM context."
+  },
+  {
+    "name": "ponytail",
+    "dir": "ponytail",
+    "desc": "Lazy senior dev mode: the smallest change that fully solves the task, and a reply a busy human understands in one read. Use on any coding task (writing, fixing, refactoring, reviewing, choosing dependencies) and when the user says \"ponytail\", \"be lazy\", \"simplest solution\", \"yagni\", or complains about over-engineering or bloat. Levels: lite, full (default), ultra."
+  },
+  {
+    "name": "ponytail-audit",
+    "dir": "ponytail-audit",
+    "desc": "Quality audit of a whole repo: bugs, security holes, what breaks under real load, risky code without tests, slow paths, and what to delete, merge or split. Ranked, each finding explained in plain English. One-shot report, changes nothing. Use for \"audit this codebase\", \"review the whole repo\", \"find bloat\", \"what can I delete\", /ponytail-audit."
+  },
+  {
+    "name": "ponytail-debt",
+    "dir": "ponytail-debt",
+    "desc": "List every `shortcut:` comment (and older `ponytail:` ones) as a debt ledger. One-shot report, changes nothing. Use for \"ponytail debt\", \"what did ponytail defer\", \"list the shortcuts\", /ponytail-debt."
+  },
+  {
+    "name": "ponytail-gain",
+    "dir": "ponytail-gain",
+    "desc": "Show ponytail's measured savings (code, cost, speed) from the benchmark. One-shot display. Use for /ponytail-gain, \"what does ponytail save\", \"ponytail impact\"."
+  },
+  {
+    "name": "ponytail-help",
+    "dir": "ponytail-help",
+    "desc": "Quick reference for ponytail levels, skills and commands. One-shot display. Use for /ponytail-help, \"ponytail help\", \"how do I use ponytail\"."
+  },
+  {
+    "name": "ponytail-review",
+    "dir": "ponytail-review",
+    "desc": "Quality review of a change: is the logic right, is it safe, does it hold under real load, is risky code tested, is it fast enough, and is every line needed. Reads the connected code, not only the diff. Each finding is explained in plain English. Use for \"review this\", \"code review\", \"review the last commit\", \"review my PR\", \"is this over-engineered\", /ponytail-review."
+  },
+  {
+    "name": "powershell-windows",
+    "dir": "powershell-windows",
+    "desc": "PowerShell Windows patterns. Critical pitfalls, operator syntax, error handling."
+  },
+  {
+    "name": "prd-generator",
+    "dir": "prd-generator",
+    "desc": "Generates professional PRD (Product Requirements Document) files optimized for AI coding tools. Takes a rough product idea, asks clarifying questions, and outputs a structured PDF ready to feed into AI coding assistants."
+  },
+  {
+    "name": "prd-writing",
+    "dir": "prd-writing",
+    "desc": "When the user needs to define a product feature, write a product requirements document, or translate an idea into a structured spec."
+  },
+  {
+    "name": "pre-mortem",
+    "dir": "pre-mortem",
+    "desc": "Cognitive risk discovery and failure anticipation methodology. Run before writing code or launching features: assumes project has already failed in the future to uncover blind spots, technical traps, and false assumptions."
+  },
+  {
+    "name": "pricing-strategist",
+    "dir": "pricing-strategist",
+    "desc": "Builds comprehensive pricing strategies by reading business context and asking targeted questions interactively. Use when user needs pricing plans, tier structures, price points, pricing model recommendations, or any pricing-related strategy for their product or service."
+  },
+  {
+    "name": "privacy-policy",
+    "dir": "privacy-policy",
+    "desc": "When the user needs to draft, review, or update a privacy policy for their product, or needs to understand data privacy obligations across jurisdictions."
+  },
+  {
+    "name": "process-docs",
+    "dir": "process-docs",
+    "desc": "When the user needs to create SOPs, playbooks, runbooks, or other operational documentation that defines how a recurring process should be executed."
+  },
+  {
+    "name": "product-hunt-launch-plan",
+    "dir": "product-hunt-launch-plan",
+    "desc": "Creates a comprehensive, personalized Product Hunt launch plan to rank"
+  },
+  {
+    "name": "product-launch-motion",
+    "dir": "product-launch-motion",
+    "desc": "Guidance for creating programmatic product launch videos from code using HTML, CSS, and GSAP. Use this skill when asked to automate or direct a high-quality product launch film via code."
+  },
+  {
+    "name": "proposal-generation",
+    "dir": "proposal-generation",
+    "desc": "When a founder needs to create a sales proposal, statement of work, contract, NDA, or master service agreement. Activate when the user mentions proposal, SOW, quote, contract, NDA, MSA, or needs to formalize a deal."
+  },
+  {
+    "name": "public-apis",
+    "dir": "public-apis",
+    "desc": "A collective list of free APIs for use in software and web development. Use this skill as a knowledge base when looking for free data sources, mock APIs, or public services to integrate into an application."
+  },
+  {
+    "name": "python-patterns",
+    "dir": "python-patterns",
+    "desc": "Python development principles and decision-making. Framework selection, async patterns, type hints, project structure. Teaches thinking, not copying."
+  },
+  {
+    "name": "rea",
+    "dir": "rea",
+    "desc": "REA (Reverse Engineer Anything): One MCP for reverse engineering across binaries, applications, and runtime behavior. Use this skill when asked to investigate how an external application works, analyze an ASAR/Electron app, or reverse engineer a binary feature to rebuild it."
+  },
+  {
+    "name": "red-team-tactics",
+    "dir": "red-team-tactics",
+    "desc": "Red team tactics principles based on MITRE ATT&CK. Attack phases, detection evasion, reporting."
+  },
+  {
+    "name": "build-models",
+    "dir": "replicate-build-models",
+    "desc": "Package and build custom AI models with Cog for deployment on Replicate. Use when creating a cog.yaml or predict.py, defining model inputs and outputs, loading model weights at setup time, building Docker images for ML models, serving locally with cog serve or cog predict, or porting a HuggingFace, GitHub, or ComfyUI model to run on Replicate. Trigger on phrases like \"build a model\", \"package a model\", \"create a Cog model\", \"wrap a model\", \"containerize an AI model\", \"predict.py\", \"cog.yaml\", \"BasePredictor\", or \"Cog container\", and when referencing cog.run, github.com/replicate/cog, or github.com/replicate/cog-examples. Covers GPU and CUDA setup, pget for fast weight downloads, async predictors with continuous batching, streaming outputs, and cold-boot optimization for image, video, audio, and LLM models. For pushing built models to Replicate, see publish-models. For running existing models, see run-models."
+  },
+  {
+    "name": "compare-models",
+    "dir": "replicate-compare-models",
+    "desc": "Compare Replicate models by cost, speed, quality, and capabilities."
+  },
+  {
+    "name": "find-models",
+    "dir": "replicate-find-models",
+    "desc": "Find AI models on Replicate using search and curated collections."
+  },
+  {
+    "name": "prompt-images",
+    "dir": "replicate-prompt-images",
+    "desc": "Prompting techniques for AI image generation and editing models on Replicate. Use when writing prompts for image models or building image generation features."
+  },
+  {
+    "name": "prompt-videos",
+    "dir": "replicate-prompt-videos",
+    "desc": "Prompting techniques for AI video generation models on Replicate. Use when writing prompts for video models or building video generation features."
+  },
+  {
+    "name": "publish-models",
+    "dir": "replicate-publish-models",
+    "desc": "Push and publish custom AI models to Replicate, and set up CI/CD for releasing new model versions safely. Use when running cog push, deploying a model to Replicate, releasing a new version, validating a model with cog-safe-push before publishing, configuring a Replicate deployment, setting up GitHub Actions for model releases, or porting a community model to an official one. Trigger on phrases like \"push a model to Replicate\", \"publish a model\", \"deploy a model\", \"release a new version\", \"cog push\", \"cog-safe-push\", \"model CI\", \"r8.im\", or \"schema compatibility\", and when referencing github.com/replicate/cog-safe-push or github.com/replicate/model-ci-template. Covers cog push, the full cog-safe-push config (test cases, fuzz, deployment, official_model), GitHub Actions patterns, multi-model matrix pushes, and post-publish monitoring. Assumes you already have a working Cog project; see build-models if you need to package one first."
+  },
+  {
+    "name": "run-models",
+    "dir": "replicate-run-models",
+    "desc": "Run AI models on Replicate via predictions, webhooks, and streaming."
+  },
+  {
+    "name": "reverse-skill",
+    "dir": "reverse-skill",
+    "desc": "Cybersecurity Skills Router and Reverse Engineering framework for AI agents. Routes tasks across APK decompilation (jadx/Frida), binary disassembly (IDA/Ghidra/radare2), frontend JS deobfuscation, firmware emulation, and CTF challenges with strict authorization gates."
+  },
+  {
+    "name": "review-mining",
+    "dir": "review-mining",
+    "desc": "When the user wants to research customer pain points, complaints, or sentiment using review platforms like Trustpilot, G2, Capterra, or app stores. Also use when the user mentions \"what are users saying\", \"competitor reviews\", \"pain points\", or \"voice of customer research\"."
+  },
+  {
+    "name": "roadmap-planning",
+    "dir": "roadmap-planning",
+    "desc": "When the user needs to organize product initiatives into a prioritized, time-sequenced plan with outcomes and dependencies."
+  },
+  {
+    "name": "ruflo",
+    "dir": "ruflo",
+    "desc": "Ruflo is a multi-agent orchestration platform for AI coding agents (Claude Code, Cursor, Codex, Copilot, Gemini, Amp, +12 more). Use this skill when the user wants to (1) install/init ruflo in a project, (2) run multi-agent swarms with hierarchical coordination, (3) use ruflo's 314+ MCP tools for memory, routing, hooks, sub-agents, or workflows, (4) check ruflo status/version/doctor health, or (5) discover which of ruflo's 30+ plugins fits their task."
+  },
+  {
+    "name": "rust-pro",
+    "dir": "rust-pro",
+    "desc": "Master Rust 1.75+ with modern async patterns, advanced type system features, and production-ready systems programming. Expert in the latest Rust ecosystem including Tokio, axum, and cutting-edge crates. Use PROACTIVELY for Rust development, performance optimization, or systems programming."
+  },
+  {
+    "name": "ruview",
+    "dir": "ruview",
+    "desc": "Guidance for integrating and using RuView (WiFi DensePose), an MCP server and WiFi sensing platform that turns ordinary WiFi into a spatial intelligence/sensing system. Use this skill when asked to integrate presence detection, vitals sensing, or pose estimation using WiFi/Matter/Home Assistant."
+  },
+  {
+    "name": "sales-script",
+    "dir": "sales-script",
+    "desc": "When a founder needs demo scripts, discovery call frameworks, objection handling, RFP/RFI responses, competitive feature matrices, POC planning, or closing playbooks. Activate for sales calls, demo prep, talk tracks, bid responses, competitor comparisons, or pre-sales engineering."
+  },
+  {
+    "name": "security-audit",
+    "dir": "security-audit",
+    "desc": "Security guidance and vulnerability review for codebases, APIs, services, CLI tools, libraries, and daemons. Use for security questions, focused reviews, vulnerability research, security audits, or pen tests. Run the complete workflow only for explicit codebase audit or pen-test requests, full/comprehensive/end-to-end reviews, or requested report artifacts."
+  },
+  {
+    "name": "security-review",
+    "dir": "security-review",
+    "desc": "When the user needs a security assessment — threat modeling, vulnerability review, auth flow audit, dependency scanning, or says \"is this secure\", \"review for vulnerabilities\", \"threat model\", \"security audit\", \"pen test prep\"."
+  },
+  {
+    "name": "sentiment-monitoring",
+    "dir": "sentiment-monitoring",
+    "desc": "When the user wants to monitor reviews, mentions, and community sentiment about their own product. Also use when the user mentions \"track our reviews\", \"what are people saying about us\", \"brand monitoring\", \"reputation management\", or \"review alerts\"."
+  },
+  {
+    "name": "seo-fundamentals",
+    "dir": "seo-fundamentals",
+    "desc": "SEO fundamentals, E-E-A-T, Core Web Vitals, and Google algorithm principles."
+  },
+  {
+    "name": "seo-technical",
+    "dir": "seo-technical",
+    "desc": "When the user needs a technical SEO audit, on-page optimization guidance, or help resolving crawlability, indexation, or performance issues that affect search rankings."
+  },
+  {
+    "name": "server-management",
+    "dir": "server-management",
+    "desc": "Server management principles and decision-making. Process management, monitoring strategy, and scaling decisions. Teaches thinking, not commands."
+  },
+  {
+    "name": "soc2-prep",
+    "dir": "soc2-prep",
+    "desc": "When the user needs to prepare for SOC 2, build a compliance roadmap, assess security posture, quantify security risk, or says \"we need SOC 2\", \"security audit\", \"compliance\", \"enterprise customer wants SOC 2\", \"CISO advice\"."
+  },
+  {
+    "name": "social-content",
+    "dir": "social-content",
+    "desc": "When the user needs to build a LinkedIn authority system, create social content strategy, define content pillars, write posts, or establish thought leadership positioning. Activate on \"LinkedIn strategy,\" \"content pillars,\" \"what should I post,\" or \"build my personal brand.\""
+  },
+  {
+    "name": "sop-creator",
+    "dir": "sop-creator",
+    "desc": "Creates detailed Standard Operating Procedures (SOPs) for business processes. Use when user needs SOPs, process documentation, operational guides, workflow documentation, or step-by-step instructions for repeatable business processes."
+  },
+  {
+    "name": "sourcing-outreach",
+    "dir": "sourcing-outreach",
+    "desc": "When the user needs to write recruiting outreach messages to attract passive candidates or request referrals."
+  },
+  {
+    "name": "spec-kit",
+    "dir": "spec-kit",
+    "desc": "GitHub's official Spec-Driven Development (SDD) toolkit for AI coding agents. Provides structured processes for building features from specs, diagnosing and repairing bugs, and assessing ideas with reusable templates and documented outcomes."
+  },
+  {
+    "name": "startup-context",
+    "dir": "startup-context",
+    "desc": "When the user wants to create or update their startup context document. Also use when the user mentions \"set up context\", \"tell you about my startup\", or any other skill needs context that doesn't exist yet."
+  },
+  {
+    "name": "strategic-planning",
+    "dir": "strategic-planning",
+    "desc": "Analyzes the founder's business context to deliver the 3 highest-impact next moves for growth (marketing or sales). Asks up to 10 diagnostic questions when needed to uncover bottlenecks, struggles, and opportunities. Use when user needs strategic guidance, next steps, growth planning, or actionable business strategy."
+  },
+  {
+    "name": "support-docs",
+    "dir": "support-docs",
+    "desc": "When the user needs to create help center articles, FAQs, troubleshooting guides, API documentation, or getting-started guides for customers."
+  },
+  {
+    "name": "system-audit",
+    "dir": "system-audit",
+    "desc": "Comprehensive checklists and methodology for software system auditing, diagnostics, and verification. Based on universal auditing standards and security best practices."
+  },
+  {
+    "name": "systematic-debugging",
+    "dir": "systematic-debugging",
+    "desc": "4-phase systematic debugging methodology with root cause analysis and evidence-based verification. Use when debugging complex issues."
+  },
+  {
+    "name": "tailwind-patterns",
+    "dir": "tailwind-patterns",
+    "desc": "Tailwind CSS v4 principles. CSS-first configuration, container queries, modern patterns, design token architecture."
+  },
+  {
+    "name": "taste-skill",
+    "dir": "taste-skill",
+    "desc": "Anti-slop frontend framework for AI agents. Eliminates generic boilerplate UIs by enforcing sophisticated layout, bespoke typography, intentional motion, fluid spacing, and curated reference design boards."
+  },
+  {
+    "name": "tdd-workflow",
+    "dir": "tdd-workflow",
+    "desc": "Test-Driven Development workflow principles. RED-GREEN-REFACTOR cycle."
+  },
+  {
+    "name": "tech-stack-eval",
+    "dir": "tech-stack-eval",
+    "desc": "When the user needs to choose between technologies, frameworks, or tools — or says \"which framework should I use\", \"compare X vs Y\", \"should we migrate from X to Y\", \"what database should I use\", \"calculate TCO\"."
+  },
+  {
+    "name": "terms-of-service",
+    "dir": "terms-of-service",
+    "desc": "When the user needs to draft, review, or update terms of service for their SaaS product or web application."
+  },
+  {
+    "name": "testing-patterns",
+    "dir": "testing-patterns",
+    "desc": "Testing patterns and principles. Unit, integration, mocking strategies."
+  },
+  {
+    "name": "user-research-synthesis",
+    "dir": "user-research-synthesis",
+    "desc": "When the user has raw customer interview transcripts, survey responses, support tickets, or other qualitative data and needs to extract actionable insights."
+  },
+  {
+    "name": "viral-hook-creator",
+    "dir": "viral-hook-creator",
+    "desc": "Creates viral social media hooks using proven psychological patterns and trigger words. Use when user needs attention-grabbing openings for posts, threads, videos, or content."
+  },
+  {
+    "name": "vulnerability-scanner",
+    "dir": "vulnerability-scanner",
+    "desc": "Advanced vulnerability analysis principles. OWASP 2025, Supply Chain Security, attack surface mapping, risk prioritization."
+  },
+  {
+    "name": "wa-akg",
+    "dir": "wa-akg",
+    "desc": "Professional multi-session WhatsApp Gateway, Dashboard, and Automation System powered by Next.js 15, Baileys (@whiskeysockets/baileys), and Prisma ORM. Provides 109+ REST API endpoints, webhooks, auto-replies, and scheduled broadcasts."
+  },
+  {
+    "name": "web-design-guidelines",
+    "dir": "web-design-guidelines",
+    "desc": "Review UI code for Web Interface Guidelines compliance. Use when asked to \"review my UI\", \"check accessibility\", \"audit design\", \"review UX\", or \"check my site against best practices\"."
+  },
+  {
+    "name": "webapp-testing",
+    "dir": "webapp-testing",
+    "desc": "Web application testing principles. E2E, Playwright, deep audit strategies."
+  },
+  {
+    "name": "x-writer",
+    "dir": "x-writer",
+    "desc": "Creates viral X (Twitter) posts using proven formats, post templates, and creator voice matching. Use when user needs engaging, high-performing posts for X/Twitter."
+  }
+]

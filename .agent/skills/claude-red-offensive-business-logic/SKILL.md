@@ -1,0 +1,133 @@
+---
+name: offensive-business-logic
+description: "Business logic vulnerability testing for web/mobile/API engagements. Covers workflow bypass, state machine violations, multi-step process abuse, price/quantity/discount manipulation, currency confusion, coupon stacking, refund/chargeback abuse, race conditions on logic boundaries, parameter tampering for hidden flows, role/tenant boundary violations, time-of-check vs use, anti-automation defeat, fraud-detection evasion, and subscription/quota abuse. Use when scoping an application after surface-level OWASP Top 10 has been covered, or when the asset is a transactional/marketplace/fintech/e-commerce/SaaS app where logic flaws produce direct financial impact."
+---
+
+# Business Logic — Offensive Testing Methodology
+
+Business logic flaws are the highest-paying class of vulnerability for bug bounty and the hardest for scanners to detect. They live in the gap between what the developer specified and what an attacker can convince the system to accept.
+
+## Quick Workflow
+
+1. Map every multi-step flow as a state machine (states + allowed transitions + side effects)
+2. For each transition, ask: who can call it, in what state, with what inputs, how many times
+3. Probe each axis (state, identity, input, frequency) for assumptions
+4. Combine flaws — single-axis flaws are usually low severity; chains are critical
+5. Quantify financial impact per finding (loss-per-attack × scale)
+
+---
+
+## Reconnaissance — Mapping the Logic
+
+### Build the State Machine
+
+For each user flow, draw:
+- **States**: cart, pending payment, paid, shipped, refunded, cancelled
+- **Transitions**: which API/UI action, which role, which preconditions
+- **Side effects**: balance change, inventory change, email, webhook
+
+Look for transitions that:
+- Skip intermediate states (`cart` → `shipped` without `paid`)
+- Are reversible when they shouldn't be (`shipped` → `cart`)
+- Trigger side effects more than once
+- Allow cross-role invocation
+
+### Hidden / Internal Endpoints
+
+```bash
+# Compare authenticated and unauthenticated JS bundles for buried admin routes
+diff <(curl https://app/main.js) <(curl -H "Cookie: ..." https://app/main.js)
+
+# Look for flag/feature toggles that change UI but not server-side enforcement
+grep -E '(isAdmin|isInternal|featureFlag|debug)' bundle.js
+
+# API spec (OpenAPI/Swagger) often lists endpoints the UI never calls
+curl https://app/api/openapi.json | jq '.paths | keys'
+```
+
+---
+
+## Workflow / State-Machine Bypass
+
+### Skip a Required Step
+
+```http
+# Normal flow: /verify-email → /set-password → /enable-2fa → /dashboard
+# Try jumping directly:
+GET /dashboard
+GET /api/account/details
+POST /api/payout-settings
+```
+
+```http
+# Checkout flow: /cart → /address → /shipping → /payment → /confirm
+# Skip /payment by replaying /confirm with a previous order's payment-token reference:
+POST /api/order/confirm
+{ "cartId": "current", "paymentRef": "<old-paid-order-payment-ref>" }
+```
+
+### Replay a One-Time Action
+
+```http
+# Refund endpoint without idempotency
+POST /api/orders/123/refund   # First call: $50 refunded, order marked refunded
+POST /api/orders/123/refund   # Second call: server checks "is order refunded?" — race the check (see TOCTOU)
+```
+
+### State Downgrade
+
+Move a finalized object back to an editable state where mutations have effect:
+
+```http
+PUT /api/order/123
+{ "status": "draft" }   # If accepted, you can now edit the price field
+PUT /api/order/123
+{ "items": [{ "id": "tv", "price": 1 }] }
+```
+
+### Direct Endpoint Invocation
+
+Many admin/backend transitions are reachable from any authenticated user if route-level RBAC is missing while the UI hides them.
+
+```bash
+# Enumerate verbs on every discovered path
+for path in $(cat paths.txt); do
+  for v in GET POST PUT PATCH DELETE OPTIONS; do
+    code=$(curl -s -o /dev/null -w "%{http_code}" -X $v -H "Authorization: Bearer $T" https://app$path)
+    echo "$v $path $code"
+  done
+done | grep -v -E ' (401|403|404) '
+```
+
+---
+
+## Price / Quantity / Currency Manipulation
+
+### Negative / Zero / Float Quantities
+
+```http
+POST /api/cart/add
+{ "sku": "tv", "qty": -1 }      # Refund issued for adding negative items?
+{ "sku": "tv", "qty": 0.0001 }  # Float rounding: $0 line item, full product shipped?
+{ "sku": "tv", "qty": 9e99 }    # Overflow → wraps to small number, $0 cost?
+```
+
+### Hidden Price Fields
+
+```http
+POST /api/checkout
+{ "items": [{"sku":"tv","qty":1,"price":1}], "total": 1, "tax": 0, "shipping": 0 }
+```
+
+If the server trusts client-supplied `price`, you set the price. Test every numeric field — `price`, `total`, `discount`, `tax`, `shipping`, `subtotal`, `currency`.
+
+
+---
+
+## 📚 Deep Reference (Progressive Disclosure)
+
+> ⚠️ **CONTEXT OPTIMIZATION:** The detailed methodology, edge cases, attack vectors, and advanced configurations for this skill are stored externally to save tokens.
+
+To access the full technical reference, you MUST use your iew_file tool to read:
+
+d:\xampp\htdocs\0-fonte\.agent\skills\claude-red-offensive-business-logic\references\reference.md

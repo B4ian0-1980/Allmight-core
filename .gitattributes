@@ -1,0 +1,44 @@
+# ==========================================
+#  GITATTRIBUTES - AUTO-GENERATED
+#  Cross-Platform Line Ending & Binary Rules
+# ==========================================
+
+# 1. Normalização padrão automática
+* text=auto
+
+# 2. Scripts Shell Linux (SEMPRE LF para evitar quebra no Linux/Docker)
+*.sh text eol=lf
+*.bash text eol=lf
+
+# 3. Código Fonte Textual (LF recomendado)
+*.py text eol=lf
+*.php text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.js text eol=lf
+*.jsx text eol=lf
+*.json text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.sql text eol=lf
+
+# 4. Scripts Windows Batch (SEMPRE CRLF)
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# 5. Arquivos Binários (Proteção contra conversão de fim de linha)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.tar binary
+*.gz binary
+*.tgz binary
+*.db binary
+*.sqlite3 binary

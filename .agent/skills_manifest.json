@@ -1,0 +1,2972 @@
+{
+  "generated_at": "2026-10-15T12:56:45.609107",
+  "host_environment": {
+    "python": {
+      "available": true,
+      "version": "3.13.2",
+      "path": "C:\\Users\\SESAU\\AppData\\Local\\Programs\\Python\\Python313\\python.exe"
+    },
+    "node": {
+      "available": true,
+      "path": "C:\\Program Files\\nodejs\\node.EXE"
+    },
+    "docker": {
+      "available": false,
+      "path": null
+    },
+    "git": {
+      "available": true,
+      "path": "D:\\Git\\cmd\\git.EXE"
+    },
+    "crystal": {
+      "available": false,
+      "path": null
+    },
+    "platform": "win32"
+  },
+  "skills_summary": {
+    "total": 191,
+    "ready": 38,
+    "playbook": 152,
+    "blocked": 1,
+    "broken": 0
+  },
+  "agents_summary": {
+    "total": 21,
+    "critical_tax": 0,
+    "high_tax": 3
+  },
+  "skills": {
+    "accelerator-application": {
+      "name": "accelerator-application",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 10909,
+      "tokens": 2934,
+      "scripts": []
+    },
+    "airllm": {
+      "name": "airllm",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (2 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 5021,
+      "tokens": 1350,
+      "scripts": [
+        "scripts/gen_star_history.py",
+        "scripts/test_cn_dataset_lenghts.py"
+      ]
+    },
+    "api-patterns": {
+      "name": "api-patterns",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (1 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 2435,
+      "tokens": 654,
+      "scripts": [
+        "scripts/api_validator.py"
+      ]
+    },
+    "app-builder": {
+      "name": "app-builder",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 3172,
+      "tokens": 850,
+      "scripts": []
+    },
+    "architecture": {
+      "name": "architecture",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 1759,
+      "tokens": 473,
+      "scripts": []
+    },
+    "architecture-design": {
+      "name": "architecture-design",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 8523,
+      "tokens": 2286,
+      "scripts": []
+    },
+    "autoharness": {
+      "name": "autoharness",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 4445,
+      "tokens": 1193,
+      "scripts": []
+    },
+    "awesome-design-md": {
+      "name": "awesome-design-md",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 5038,
+      "tokens": 1356,
+      "scripts": []
+    },
+    "awesome-llm-apps": {
+      "name": "awesome-llm-apps",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 2052,
+      "tokens": 554,
+      "scripts": []
+    },
+    "awesome-web-hosting": {
+      "name": "awesome-web-hosting",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 1189,
+      "tokens": 321,
+      "scripts": []
+    },
+    "bash-linux": {
+      "name": "bash-linux",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 4156,
+      "tokens": 1123,
+      "scripts": []
+    },
+    "behavioral-modes": {
+      "name": "behavioral-modes",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 4522,
+      "tokens": 1204,
+      "scripts": []
+    },
+    "board-update": {
+      "name": "board-update",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 9440,
+      "tokens": 2537,
+      "scripts": []
+    },
+    "book-to-skill": {
+      "name": "book-to-skill",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (1 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 55009,
+      "tokens": 14734,
+      "scripts": [
+        "scripts/extract.py"
+      ]
+    },
+    "brainstorming": {
+      "name": "brainstorming",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 4660,
+      "tokens": 1238,
+      "scripts": []
+    },
+    "brand-copywriter": {
+      "name": "brand-copywriter",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 12686,
+      "tokens": 3422,
+      "scripts": []
+    },
+    "churn-analysis": {
+      "name": "churn-analysis",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 9323,
+      "tokens": 2505,
+      "scripts": []
+    },
+    "cicd-setup": {
+      "name": "cicd-setup",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 6980,
+      "tokens": 1874,
+      "scripts": []
+    },
+    "claude-red-offensive-api-abuse": {
+      "name": "claude-red-offensive-api-abuse",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 8491,
+      "tokens": 2292,
+      "scripts": []
+    },
+    "claude-red-offensive-api-security": {
+      "name": "claude-red-offensive-api-security",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 5946,
+      "tokens": 1605,
+      "scripts": []
+    },
+    "claude-red-offensive-business-logic": {
+      "name": "claude-red-offensive-business-logic",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 5055,
+      "tokens": 1355,
+      "scripts": []
+    },
+    "claude-red-offensive-cloud": {
+      "name": "claude-red-offensive-cloud",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 5924,
+      "tokens": 1595,
+      "scripts": []
+    },
+    "claude-red-offensive-container-escape": {
+      "name": "claude-red-offensive-container-escape",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 5807,
+      "tokens": 1567,
+      "scripts": []
+    },
+    "claude-red-offensive-deserialization": {
+      "name": "claude-red-offensive-deserialization",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 6872,
+      "tokens": 1855,
+      "scripts": []
+    },
+    "claude-red-offensive-file-upload": {
+      "name": "claude-red-offensive-file-upload",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 3217,
+      "tokens": 869,
+      "scripts": []
+    },
+    "claude-red-offensive-graphql": {
+      "name": "claude-red-offensive-graphql",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 6663,
+      "tokens": 1798,
+      "scripts": []
+    },
+    "claude-red-offensive-idor": {
+      "name": "claude-red-offensive-idor",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 9838,
+      "tokens": 2650,
+      "scripts": []
+    },
+    "claude-red-offensive-jwt": {
+      "name": "claude-red-offensive-jwt",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 6125,
+      "tokens": 1611,
+      "scripts": []
+    },
+    "claude-red-offensive-k8s-attacks": {
+      "name": "claude-red-offensive-k8s-attacks",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 5783,
+      "tokens": 1561,
+      "scripts": []
+    },
+    "claude-red-offensive-oauth": {
+      "name": "claude-red-offensive-oauth",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 6220,
+      "tokens": 1678,
+      "scripts": []
+    },
+    "claude-red-offensive-open-redirect": {
+      "name": "claude-red-offensive-open-redirect",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 6587,
+      "tokens": 1778,
+      "scripts": []
+    },
+    "claude-red-offensive-parameter-pollution": {
+      "name": "claude-red-offensive-parameter-pollution",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 8072,
+      "tokens": 2179,
+      "scripts": []
+    },
+    "claude-red-offensive-race-condition": {
+      "name": "claude-red-offensive-race-condition",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 6796,
+      "tokens": 1834,
+      "scripts": []
+    },
+    "claude-red-offensive-rce": {
+      "name": "claude-red-offensive-rce",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 2985,
+      "tokens": 806,
+      "scripts": []
+    },
+    "claude-red-offensive-request-smuggling": {
+      "name": "claude-red-offensive-request-smuggling",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 6960,
+      "tokens": 1879,
+      "scripts": []
+    },
+    "claude-red-offensive-sqli": {
+      "name": "claude-red-offensive-sqli",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 2857,
+      "tokens": 772,
+      "scripts": []
+    },
+    "claude-red-offensive-ssrf": {
+      "name": "claude-red-offensive-ssrf",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 5114,
+      "tokens": 1380,
+      "scripts": []
+    },
+    "claude-red-offensive-ssti": {
+      "name": "claude-red-offensive-ssti",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 5823,
+      "tokens": 1571,
+      "scripts": []
+    },
+    "claude-red-offensive-waf-bypass": {
+      "name": "claude-red-offensive-waf-bypass",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 5287,
+      "tokens": 1424,
+      "scripts": []
+    },
+    "claude-red-offensive-xss": {
+      "name": "claude-red-offensive-xss",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 7472,
+      "tokens": 2017,
+      "scripts": []
+    },
+    "claude-red-offensive-xxe": {
+      "name": "claude-red-offensive-xxe",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 10776,
+      "tokens": 2909,
+      "scripts": []
+    },
+    "claudex": {
+      "name": "claudex",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (1 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 4170,
+      "tokens": 1041,
+      "scripts": [
+        "scripts/plan_cross_examiner.py"
+      ]
+    },
+    "clean-code": {
+      "name": "clean-code",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 6741,
+      "tokens": 1798,
+      "scripts": []
+    },
+    "code-review": {
+      "name": "code-review",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 7726,
+      "tokens": 2068,
+      "scripts": []
+    },
+    "code-review-checklist": {
+      "name": "code-review-checklist",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 2574,
+      "tokens": 684,
+      "scripts": []
+    },
+    "coding-discipline": {
+      "name": "coding-discipline",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 2868,
+      "tokens": 769,
+      "scripts": []
+    },
+    "cold-outreach": {
+      "name": "cold-outreach",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 7217,
+      "tokens": 1933,
+      "scripts": []
+    },
+    "community-discovery": {
+      "name": "community-discovery",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 7094,
+      "tokens": 1907,
+      "scripts": []
+    },
+    "competitive-analysis": {
+      "name": "competitive-analysis",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 7086,
+      "tokens": 1915,
+      "scripts": []
+    },
+    "competitor-intel": {
+      "name": "competitor-intel",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 10452,
+      "tokens": 2819,
+      "scripts": []
+    },
+    "competitor-monitoring": {
+      "name": "competitor-monitoring",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 6144,
+      "tokens": 1648,
+      "scripts": []
+    },
+    "content-strategy": {
+      "name": "content-strategy",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 8274,
+      "tokens": 2236,
+      "scripts": []
+    },
+    "contract-review": {
+      "name": "contract-review",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 8862,
+      "tokens": 2388,
+      "scripts": []
+    },
+    "cro-optimization": {
+      "name": "cro-optimization",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 9759,
+      "tokens": 2633,
+      "scripts": []
+    },
+    "daily-product-digest": {
+      "name": "daily-product-digest",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 5540,
+      "tokens": 1487,
+      "scripts": []
+    },
+    "data-room": {
+      "name": "data-room",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 6749,
+      "tokens": 1815,
+      "scripts": []
+    },
+    "database-design": {
+      "name": "database-design",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (1 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 1527,
+      "tokens": 408,
+      "scripts": [
+        "scripts/schema_validator.py"
+      ]
+    },
+    "deployment-procedures": {
+      "name": "deployment-procedures",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 5708,
+      "tokens": 1512,
+      "scripts": []
+    },
+    "diagram-design": {
+      "name": "diagram-design",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (5 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 12332,
+      "tokens": 3316,
+      "scripts": [
+        "scripts/drawio_extract.py",
+        "scripts/excalidraw_extract.py",
+        "scripts/export_svg.py",
+        "scripts/mermaid_extract.py",
+        "scripts/self_check.py"
+      ]
+    },
+    "documentation-templates": {
+      "name": "documentation-templates",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 3312,
+      "tokens": 893,
+      "scripts": []
+    },
+    "drawdb": {
+      "name": "drawdb",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (1 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 3281,
+      "tokens": 827,
+      "scripts": [
+        "scripts/schema_exporter.py"
+      ]
+    },
+    "earned-media-outreach": {
+      "name": "earned-media-outreach",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 8017,
+      "tokens": 2155,
+      "scripts": []
+    },
+    "email-marketing": {
+      "name": "email-marketing",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 7677,
+      "tokens": 2074,
+      "scripts": []
+    },
+    "employer-brand": {
+      "name": "employer-brand",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 9254,
+      "tokens": 2490,
+      "scripts": []
+    },
+    "event-hosting": {
+      "name": "event-hosting",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 7039,
+      "tokens": 1886,
+      "scripts": []
+    },
+    "fast-check": {
+      "name": "fast-check",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 833,
+      "tokens": 220,
+      "scripts": []
+    },
+    "feedback-synthesis": {
+      "name": "feedback-synthesis",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 8989,
+      "tokens": 2429,
+      "scripts": []
+    },
+    "find-skills": {
+      "name": "find-skills",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 2196,
+      "tokens": 587,
+      "scripts": []
+    },
+    "founder-board": {
+      "name": "founder-board",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 4538,
+      "tokens": 1226,
+      "scripts": []
+    },
+    "founder-brand": {
+      "name": "founder-brand",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 3149,
+      "tokens": 851,
+      "scripts": []
+    },
+    "founder-cfo": {
+      "name": "founder-cfo",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (1 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 4567,
+      "tokens": 1234,
+      "scripts": [
+        "unit_economics.py"
+      ]
+    },
+    "founder-competitors": {
+      "name": "founder-competitors",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 3373,
+      "tokens": 911,
+      "scripts": []
+    },
+    "founder-consumer": {
+      "name": "founder-consumer",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (1 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 5767,
+      "tokens": 1558,
+      "scripts": [
+        "panel.py"
+      ]
+    },
+    "founder-launch": {
+      "name": "founder-launch",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 2844,
+      "tokens": 768,
+      "scripts": []
+    },
+    "founder-marketing": {
+      "name": "founder-marketing",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 3356,
+      "tokens": 907,
+      "scripts": []
+    },
+    "founder-offer": {
+      "name": "founder-offer",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 3576,
+      "tokens": 966,
+      "scripts": []
+    },
+    "founder-ops": {
+      "name": "founder-ops",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 3035,
+      "tokens": 820,
+      "scripts": []
+    },
+    "founder-plan": {
+      "name": "founder-plan",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (1 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 3430,
+      "tokens": 927,
+      "scripts": [
+        "compile.py"
+      ]
+    },
+    "founder-pricing": {
+      "name": "founder-pricing",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (1 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 3528,
+      "tokens": 953,
+      "scripts": [
+        "van_westendorp.py"
+      ]
+    },
+    "founder-thought-leadership": {
+      "name": "founder-thought-leadership",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 5318,
+      "tokens": 1429,
+      "scripts": []
+    },
+    "free-claude-code": {
+      "name": "free-claude-code",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (12 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 2296,
+      "tokens": 620,
+      "scripts": [
+        "conftest.py",
+        "scripts/check_version_policy.py",
+        "scripts/ci.ps1",
+        "scripts/ci.sh",
+        "scripts/install-muse.ps1",
+        "scripts/install.ps1",
+        "scripts/install.sh",
+        "scripts/publish_release.py",
+        "scripts/uninstall-muse.ps1",
+        "scripts/uninstall.ps1",
+        "scripts/uninstall.sh",
+        "scripts/validate_release.py"
+      ]
+    },
+    "freellmapi": {
+      "name": "freellmapi",
+      "status": "READY",
+      "reason": "Runnable locally via script entrypoint",
+      "has_skill_md": true,
+      "size_bytes": 1799,
+      "tokens": 486,
+      "scripts": [
+        "docker-entrypoint.sh",
+        "scripts/dev-bootstrap.ps1",
+        "scripts/dev-bootstrap.sh"
+      ]
+    },
+    "frontend-design": {
+      "name": "frontend-design",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (2 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 5427,
+      "tokens": 1453,
+      "scripts": [
+        "scripts/accessibility_checker.py",
+        "scripts/ux_audit.py"
+      ]
+    },
+    "fundraising-email": {
+      "name": "fundraising-email",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 6604,
+      "tokens": 1770,
+      "scripts": []
+    },
+    "game-development": {
+      "name": "game-development",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 4682,
+      "tokens": 1255,
+      "scripts": []
+    },
+    "geo-fundamentals": {
+      "name": "geo-fundamentals",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (1 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 3445,
+      "tokens": 930,
+      "scripts": [
+        "scripts/geo_checker.py"
+      ]
+    },
+    "go-to-market-plan": {
+      "name": "go-to-market-plan",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 22224,
+      "tokens": 6000,
+      "scripts": []
+    },
+    "graphify": {
+      "name": "graphify",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 3807,
+      "tokens": 1012,
+      "scripts": []
+    },
+    "i18n-localization": {
+      "name": "i18n-localization",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (1 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 3121,
+      "tokens": 819,
+      "scripts": [
+        "scripts/i18n_checker.py"
+      ]
+    },
+    "image-to-code": {
+      "name": "image-to-code",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 3101,
+      "tokens": 833,
+      "scripts": []
+    },
+    "impeccable-design": {
+      "name": "impeccable-design",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (5 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 12962,
+      "tokens": 3500,
+      "scripts": [
+        "scripts/live-browser-dom.js",
+        "scripts/live-browser-ignores.js",
+        "scripts/live-browser-session.js",
+        "scripts/live-browser.js",
+        "scripts/modern-screenshot.umd.js"
+      ]
+    },
+    "intelligent-routing": {
+      "name": "intelligent-routing",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 7889,
+      "tokens": 2110,
+      "scripts": []
+    },
+    "interview-kit": {
+      "name": "interview-kit",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 8537,
+      "tokens": 2297,
+      "scripts": []
+    },
+    "investor-research": {
+      "name": "investor-research",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 7800,
+      "tokens": 2095,
+      "scripts": []
+    },
+    "job-description": {
+      "name": "job-description",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 6149,
+      "tokens": 1653,
+      "scripts": []
+    },
+    "knowledge-base": {
+      "name": "knowledge-base",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 1181,
+      "tokens": 310,
+      "scripts": []
+    },
+    "landing-page": {
+      "name": "landing-page",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 7942,
+      "tokens": 2146,
+      "scripts": []
+    },
+    "launch-strategy": {
+      "name": "launch-strategy",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 9134,
+      "tokens": 2452,
+      "scripts": []
+    },
+    "laws-of-ux": {
+      "name": "laws-of-ux",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 7542,
+      "tokens": 1908,
+      "scripts": []
+    },
+    "laya": {
+      "name": "laya",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (1 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 2178,
+      "tokens": 588,
+      "scripts": [
+        "eslint.config.js"
+      ]
+    },
+    "laya-nandha": {
+      "name": "laya-nandha",
+      "status": "READY",
+      "reason": "Runnable locally via script entrypoint",
+      "has_skill_md": true,
+      "size_bytes": 2310,
+      "tokens": 624,
+      "scripts": [
+        "setup.py",
+        "setup_laya.sh",
+        "scripts/check_aoti.py",
+        "scripts/export_onnx.py",
+        "scripts/test_suites.py"
+      ]
+    },
+    "lead-magnet-generator": {
+      "name": "lead-magnet-generator",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 11874,
+      "tokens": 3200,
+      "scripts": []
+    },
+    "lead-scoring": {
+      "name": "lead-scoring",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 8049,
+      "tokens": 2157,
+      "scripts": []
+    },
+    "linkedin-writer": {
+      "name": "linkedin-writer",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 13662,
+      "tokens": 3658,
+      "scripts": []
+    },
+    "lint-and-validate": {
+      "name": "lint-and-validate",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (2 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 1727,
+      "tokens": 466,
+      "scripts": [
+        "scripts/lint_runner.py",
+        "scripts/type_coverage.py"
+      ]
+    },
+    "LlamaFactory": {
+      "name": "LlamaFactory",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (10 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 1641,
+      "tokens": 443,
+      "scripts": [
+        "scripts/bench_qwen.py",
+        "scripts/dcp2hf.py",
+        "scripts/eval_bleu_rouge.py",
+        "scripts/hf2dcp.py",
+        "scripts/llama_pro.py",
+        "scripts/loftq_init.py",
+        "scripts/megatron_merge.py",
+        "scripts/pissa_init.py",
+        "scripts/qwen_omni_merge.py",
+        "scripts/vllm_infer.py"
+      ]
+    },
+    "loop-engineering": {
+      "name": "loop-engineering",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 3444,
+      "tokens": 917,
+      "scripts": []
+    },
+    "manual-generator": {
+      "name": "manual-generator",
+      "status": "BLOCKED",
+      "reason": "Requires Crystal compiler (crystal is not installed)",
+      "has_skill_md": true,
+      "size_bytes": 1575,
+      "tokens": 425,
+      "scripts": []
+    },
+    "market-research": {
+      "name": "market-research",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 7756,
+      "tokens": 2096,
+      "scripts": []
+    },
+    "marketing-ideas": {
+      "name": "marketing-ideas",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 12621,
+      "tokens": 3405,
+      "scripts": []
+    },
+    "mcp-builder": {
+      "name": "mcp-builder",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 3308,
+      "tokens": 887,
+      "scripts": []
+    },
+    "media-inference-worker": {
+      "name": "media-inference-worker",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (1 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 2122,
+      "tokens": 573,
+      "scripts": [
+        "generate.py"
+      ]
+    },
+    "mobile-design": {
+      "name": "mobile-design",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (1 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 6934,
+      "tokens": 1851,
+      "scripts": [
+        "scripts/mobile_audit.py"
+      ]
+    },
+    "MoneyPrinterTurbo": {
+      "name": "MoneyPrinterTurbo",
+      "status": "READY",
+      "reason": "Runnable locally via script entrypoint",
+      "has_skill_md": true,
+      "size_bytes": 1626,
+      "tokens": 439,
+      "scripts": [
+        "cli.py",
+        "main.py",
+        "webui.sh"
+      ]
+    },
+    "musica": {
+      "name": "musica",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (6 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 1553,
+      "tokens": 419,
+      "scripts": [
+        "scripts/check_wasm.sh",
+        "scripts/download_test_audio.sh",
+        "scripts/minimax_music3_batch3.py",
+        "scripts/minimax_music3_expanded.py",
+        "scripts/minimax_music3_generate.py",
+        "scripts/minimax_music3_multi_style.py"
+      ]
+    },
+    "mvp-scoping": {
+      "name": "mvp-scoping",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 7149,
+      "tokens": 1924,
+      "scripts": []
+    },
+    "nextjs-react-expert": {
+      "name": "nextjs-react-expert",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (2 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 5380,
+      "tokens": 1407,
+      "scripts": [
+        "scripts/convert_rules.py",
+        "scripts/react_performance_checker.py"
+      ]
+    },
+    "nodejs-best-practices": {
+      "name": "nodejs-best-practices",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 3395,
+      "tokens": 852,
+      "scripts": []
+    },
+    "onboarding-flow": {
+      "name": "onboarding-flow",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 10382,
+      "tokens": 2792,
+      "scripts": []
+    },
+    "open-generative-ai": {
+      "name": "open-generative-ai",
+      "status": "READY",
+      "reason": "Runnable locally via script entrypoint",
+      "has_skill_md": true,
+      "size_bytes": 1876,
+      "tokens": 507,
+      "scripts": [
+        "afterpack.js",
+        "middleware.js",
+        "postcss.config.js",
+        "tailwind.config.js",
+        "scripts/package-linux-deb.js",
+        "scripts/stage-local-ai-binary.js",
+        "scripts/test_minimax_provider.js"
+      ]
+    },
+    "open-seo": {
+      "name": "open-seo",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (1 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 3483,
+      "tokens": 879,
+      "scripts": [
+        "scripts/seo_audit_cli.py"
+      ]
+    },
+    "outreach-specialist": {
+      "name": "outreach-specialist",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 12984,
+      "tokens": 3499,
+      "scripts": []
+    },
+    "parallel-agents": {
+      "name": "parallel-agents",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 5340,
+      "tokens": 1435,
+      "scripts": []
+    },
+    "partnership-outreach": {
+      "name": "partnership-outreach",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 10743,
+      "tokens": 2879,
+      "scripts": []
+    },
+    "performance-profiling": {
+      "name": "performance-profiling",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (2 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 3101,
+      "tokens": 834,
+      "scripts": [
+        "scripts/bundle_analyzer.py",
+        "scripts/lighthouse_audit.py"
+      ]
+    },
+    "pitch-deck": {
+      "name": "pitch-deck",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 7136,
+      "tokens": 1922,
+      "scripts": []
+    },
+    "plan-writing": {
+      "name": "plan-writing",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 4000,
+      "tokens": 1074,
+      "scripts": []
+    },
+    "playwright-cli": {
+      "name": "playwright-cli",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 3181,
+      "tokens": 853,
+      "scripts": []
+    },
+    "ponytail": {
+      "name": "ponytail",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 3492,
+      "tokens": 943,
+      "scripts": []
+    },
+    "ponytail-audit": {
+      "name": "ponytail-audit",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 5417,
+      "tokens": 1464,
+      "scripts": []
+    },
+    "ponytail-debt": {
+      "name": "ponytail-debt",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 1810,
+      "tokens": 489,
+      "scripts": []
+    },
+    "ponytail-gain": {
+      "name": "ponytail-gain",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 2206,
+      "tokens": 548,
+      "scripts": []
+    },
+    "ponytail-help": {
+      "name": "ponytail-help",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 2901,
+      "tokens": 784,
+      "scripts": []
+    },
+    "ponytail-review": {
+      "name": "ponytail-review",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 5143,
+      "tokens": 1390,
+      "scripts": []
+    },
+    "powershell-windows": {
+      "name": "powershell-windows",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 3500,
+      "tokens": 933,
+      "scripts": []
+    },
+    "prd-generator": {
+      "name": "prd-generator",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 9348,
+      "tokens": 2518,
+      "scripts": []
+    },
+    "prd-writing": {
+      "name": "prd-writing",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 7641,
+      "tokens": 2065,
+      "scripts": []
+    },
+    "pre-mortem": {
+      "name": "pre-mortem",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 2258,
+      "tokens": 609,
+      "scripts": []
+    },
+    "pricing-strategist": {
+      "name": "pricing-strategist",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 9540,
+      "tokens": 2559,
+      "scripts": []
+    },
+    "privacy-policy": {
+      "name": "privacy-policy",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 8754,
+      "tokens": 2365,
+      "scripts": []
+    },
+    "process-docs": {
+      "name": "process-docs",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 7676,
+      "tokens": 2068,
+      "scripts": []
+    },
+    "product-hunt-launch-plan": {
+      "name": "product-hunt-launch-plan",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 10153,
+      "tokens": 2741,
+      "scripts": []
+    },
+    "product-launch-motion": {
+      "name": "product-launch-motion",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (2 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 1715,
+      "tokens": 461,
+      "scripts": [
+        "scripts/master.sh",
+        "scripts/verify-cue.sh"
+      ]
+    },
+    "proposal-generation": {
+      "name": "proposal-generation",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 7590,
+      "tokens": 2030,
+      "scripts": []
+    },
+    "public-apis": {
+      "name": "public-apis",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (1 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 1136,
+      "tokens": 307,
+      "scripts": [
+        "scripts/github_pull_request.sh"
+      ]
+    },
+    "python-patterns": {
+      "name": "python-patterns",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 3301,
+      "tokens": 834,
+      "scripts": []
+    },
+    "rea": {
+      "name": "rea",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (8 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 1738,
+      "tokens": 469,
+      "scripts": [
+        "install.sh",
+        "vitest.config.ts",
+        "scripts/audit-website-links.py",
+        "scripts/hopper-demo-x11.py",
+        "scripts/prepare-website.py",
+        "scripts/test-website.py",
+        "scripts/verify-website.py",
+        "scripts/website.py"
+      ]
+    },
+    "red-team-tactics": {
+      "name": "red-team-tactics",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 4405,
+      "tokens": 1179,
+      "scripts": []
+    },
+    "replicate-build-models": {
+      "name": "replicate-build-models",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 5883,
+      "tokens": 1588,
+      "scripts": []
+    },
+    "replicate-compare-models": {
+      "name": "replicate-compare-models",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 2421,
+      "tokens": 654,
+      "scripts": []
+    },
+    "replicate-find-models": {
+      "name": "replicate-find-models",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 3095,
+      "tokens": 836,
+      "scripts": []
+    },
+    "replicate-prompt-images": {
+      "name": "replicate-prompt-images",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 12676,
+      "tokens": 3425,
+      "scripts": []
+    },
+    "replicate-prompt-videos": {
+      "name": "replicate-prompt-videos",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 6449,
+      "tokens": 1741,
+      "scripts": []
+    },
+    "replicate-publish-models": {
+      "name": "replicate-publish-models",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 5743,
+      "tokens": 1548,
+      "scripts": []
+    },
+    "replicate-run-models": {
+      "name": "replicate-run-models",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 3618,
+      "tokens": 977,
+      "scripts": []
+    },
+    "reverse-skill": {
+      "name": "reverse-skill",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 5453,
+      "tokens": 1460,
+      "scripts": []
+    },
+    "review-mining": {
+      "name": "review-mining",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 6162,
+      "tokens": 1655,
+      "scripts": []
+    },
+    "roadmap-planning": {
+      "name": "roadmap-planning",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 7687,
+      "tokens": 2077,
+      "scripts": []
+    },
+    "ruflo": {
+      "name": "ruflo",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (13 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 2428,
+      "tokens": 655,
+      "scripts": [
+        "scripts/bench-mods-latency.ts",
+        "scripts/cleanup-v3.sh",
+        "scripts/install.sh",
+        "scripts/live-agentdb-recall.sh",
+        "scripts/live-agentdb-writers.sh",
+        "scripts/live-ruflo-mods-options.sh",
+        "scripts/live-ruflo-mods-paths.sh",
+        "scripts/live-ruflo-mods-trim.sh",
+        "scripts/live-ruflo-mods.sh",
+        "scripts/smoke-agentbbs.sh",
+        "scripts/smoke-agenticow.sh",
+        "scripts/verify-appliance.sh",
+        "scripts/verify-federation-plugin.sh"
+      ]
+    },
+    "rust-pro": {
+      "name": "rust-pro",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 7555,
+      "tokens": 2041,
+      "scripts": []
+    },
+    "ruview": {
+      "name": "ruview",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (93 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 1561,
+      "tokens": 421,
+      "scripts": [
+        "deploy.sh",
+        "install.sh",
+        "scripts/align-ground-truth.js",
+        "scripts/apnea-detector.js",
+        "scripts/benchmark-model.py",
+        "scripts/benchmark-rf-scan.js",
+        "scripts/benchmark-rtl8721dx-csi.py",
+        "scripts/benchmark-ruvllm.js",
+        "scripts/benchmark-wiflow.js",
+        "scripts/c6-presence-watcher.py",
+        "scripts/calibrate-camera-room.py",
+        "scripts/calibration_lib.py",
+        "scripts/check_fix_markers.py",
+        "scripts/check_health.py",
+        "scripts/collect-ground-truth.py",
+        "scripts/collect-training-data.py",
+        "scripts/csi-data-policy-check.sh",
+        "scripts/csi-graph-visualizer.js",
+        "scripts/csi-spectrogram.js",
+        "scripts/csi-udp-relay.py",
+        "scripts/deep-scan.js",
+        "scripts/device-fingerprint.js",
+        "scripts/esp32_jsonl_to_rvcsi.py",
+        "scripts/esp32_wasm_test.py",
+        "scripts/eval-wiflow.js",
+        "scripts/export-onnx.py",
+        "scripts/firmware-release-guard.sh",
+        "scripts/gait-analyzer.js",
+        "scripts/gcloud-train.sh",
+        "scripts/generate-witness-bundle.sh",
+        "scripts/generate_nvs_matrix.py",
+        "scripts/hap-test-sensor.py",
+        "scripts/homecore-seed.sh",
+        "scripts/inject_fault.py",
+        "scripts/install-qemu.sh",
+        "scripts/mac-mini-train.sh",
+        "scripts/material-classifier.js",
+        "scripts/material-detector.js",
+        "scripts/mediatek-csi-phase-stability.py",
+        "scripts/mesh-graph-transformer.js",
+        "scripts/mincut-person-counter.js",
+        "scripts/mmwave_fusion_bridge.py",
+        "scripts/occworld_retrain.py",
+        "scripts/occworld_server.py",
+        "scripts/overnight-empty-capture.py",
+        "scripts/passive-radar.js",
+        "scripts/probe-fft-platform.py",
+        "scripts/prove.sh",
+        "scripts/provision.py",
+        "scripts/publish-huggingface.py",
+        "scripts/publish-huggingface.sh",
+        "scripts/qemu-chaos-test.sh",
+        "scripts/qemu-cli.sh",
+        "scripts/qemu-esp32s3-test.sh",
+        "scripts/qemu-mesh-test.sh",
+        "scripts/qemu-snapshot-test.sh",
+        "scripts/qemu_swarm.py",
+        "scripts/record-csi-udp.py",
+        "scripts/redact-secrets.py",
+        "scripts/release-v0.5.4.sh",
+        "scripts/replay-pose-physics-golden.sh",
+        "scripts/rf-scan-multifreq.js",
+        "scripts/rf-scan.js",
+        "scripts/rf-tomography.js",
+        "scripts/room-fingerprint.js",
+        "scripts/rotate-npm-token.sh",
+        "scripts/run-ruforecast-benchmarks.sh",
+        "scripts/ruview-hap-bridge.py",
+        "scripts/ruview-sensing-server.py",
+        "scripts/ruview_occ_dataset.py",
+        "scripts/rvagent-mcp-consumer.py",
+        "scripts/seed_csi_bridge.py",
+        "scripts/sleep-monitor.js",
+        "scripts/snn-csi-processor.js",
+        "scripts/stress-monitor.js",
+        "scripts/swarm_health.py",
+        "scripts/synth-csi-udp.py",
+        "scripts/through-wall-detector.js",
+        "scripts/train-camera-free.js",
+        "scripts/train-count.py",
+        "scripts/train-ruvllm.js",
+        "scripts/train-wiflow-supervised.js",
+        "scripts/train-wiflow.js",
+        "scripts/udp-relay.py",
+        "scripts/validate-esp32-mqtt.sh",
+        "scripts/validate-ha-blueprints.py",
+        "scripts/validate_mesh_test.py",
+        "scripts/validate_qemu_output.py",
+        "scripts/verify-calibration-proof.sh",
+        "scripts/verify-cir-proof.sh",
+        "scripts/verify-pose-physics-splits.sh",
+        "scripts/wiflow-model.js",
+        "scripts/witness-adr-115.sh"
+      ]
+    },
+    "sales-script": {
+      "name": "sales-script",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 9499,
+      "tokens": 2553,
+      "scripts": []
+    },
+    "security-audit": {
+      "name": "security-audit",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 22026,
+      "tokens": 5943,
+      "scripts": []
+    },
+    "security-review": {
+      "name": "security-review",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 7471,
+      "tokens": 1996,
+      "scripts": []
+    },
+    "sentiment-monitoring": {
+      "name": "sentiment-monitoring",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 7950,
+      "tokens": 2132,
+      "scripts": []
+    },
+    "seo-fundamentals": {
+      "name": "seo-fundamentals",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (1 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 2787,
+      "tokens": 752,
+      "scripts": [
+        "scripts/seo_checker.py"
+      ]
+    },
+    "seo-technical": {
+      "name": "seo-technical",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 8288,
+      "tokens": 2232,
+      "scripts": []
+    },
+    "server-management": {
+      "name": "server-management",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 3734,
+      "tokens": 1008,
+      "scripts": []
+    },
+    "soc2-prep": {
+      "name": "soc2-prep",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 10090,
+      "tokens": 2716,
+      "scripts": []
+    },
+    "social-content": {
+      "name": "social-content",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 7748,
+      "tokens": 2078,
+      "scripts": []
+    },
+    "sop-creator": {
+      "name": "sop-creator",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 8556,
+      "tokens": 2303,
+      "scripts": []
+    },
+    "sourcing-outreach": {
+      "name": "sourcing-outreach",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 7753,
+      "tokens": 2086,
+      "scripts": []
+    },
+    "spec-kit": {
+      "name": "spec-kit",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 6125,
+      "tokens": 1637,
+      "scripts": []
+    },
+    "startup-context": {
+      "name": "startup-context",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 3487,
+      "tokens": 937,
+      "scripts": []
+    },
+    "strategic-planning": {
+      "name": "strategic-planning",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 18361,
+      "tokens": 4955,
+      "scripts": []
+    },
+    "support-docs": {
+      "name": "support-docs",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 8473,
+      "tokens": 2283,
+      "scripts": []
+    },
+    "system-audit": {
+      "name": "system-audit",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 2995,
+      "tokens": 804,
+      "scripts": []
+    },
+    "systematic-debugging": {
+      "name": "systematic-debugging",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 2405,
+      "tokens": 647,
+      "scripts": []
+    },
+    "tailwind-patterns": {
+      "name": "tailwind-patterns",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 3499,
+      "tokens": 943,
+      "scripts": []
+    },
+    "taste-skill": {
+      "name": "taste-skill",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 3715,
+      "tokens": 998,
+      "scripts": []
+    },
+    "tdd-workflow": {
+      "name": "tdd-workflow",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 2813,
+      "tokens": 753,
+      "scripts": []
+    },
+    "tech-stack-eval": {
+      "name": "tech-stack-eval",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 8088,
+      "tokens": 2167,
+      "scripts": []
+    },
+    "terms-of-service": {
+      "name": "terms-of-service",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 9877,
+      "tokens": 2657,
+      "scripts": []
+    },
+    "testing-patterns": {
+      "name": "testing-patterns",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (1 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 3488,
+      "tokens": 941,
+      "scripts": [
+        "scripts/test_runner.py"
+      ]
+    },
+    "user-research-synthesis": {
+      "name": "user-research-synthesis",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 7809,
+      "tokens": 2110,
+      "scripts": []
+    },
+    "viral-hook-creator": {
+      "name": "viral-hook-creator",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 7668,
+      "tokens": 2069,
+      "scripts": []
+    },
+    "vulnerability-scanner": {
+      "name": "vulnerability-scanner",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (2 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 3852,
+      "tokens": 1023,
+      "scripts": [
+        "scripts/dependency_analyzer.py",
+        "scripts/security_scan.py"
+      ]
+    },
+    "wa-akg": {
+      "name": "wa-akg",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 4727,
+      "tokens": 1272,
+      "scripts": []
+    },
+    "web-design-guidelines": {
+      "name": "web-design-guidelines",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 1771,
+      "tokens": 475,
+      "scripts": []
+    },
+    "webapp-testing": {
+      "name": "webapp-testing",
+      "status": "READY",
+      "reason": "Runnable local entrypoint (1 script(s) found)",
+      "has_skill_md": true,
+      "size_bytes": 3815,
+      "tokens": 1022,
+      "scripts": [
+        "scripts/playwright_runner.py"
+      ]
+    },
+    "x-writer": {
+      "name": "x-writer",
+      "status": "PLAYBOOK",
+      "reason": "Pure Markdown guidelines / Cognitive prompt playbook",
+      "has_skill_md": true,
+      "size_bytes": 11900,
+      "tokens": 3193,
+      "scripts": []
+    }
+  },
+  "agents": {
+    "auditor-specialist": {
+      "name": "auditor-specialist",
+      "filename": "auditor-specialist.md",
+      "lines": 76,
+      "size_bytes": 3466,
+      "direct_tokens": 929,
+      "declared_skills": [
+        "clean-code",
+        "system-audit",
+        "security-audit",
+        "security-scan",
+        "performance-profiling",
+        "architecture",
+        "testing-patterns"
+      ],
+      "skills_count": 7,
+      "cascade_tokens": 10793,
+      "total_tokens": 11722,
+      "tax_level": "MEDIUM",
+      "skills_detail": [
+        {
+          "name": "clean-code",
+          "tokens": 1798,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "system-audit",
+          "tokens": 804,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "security-audit",
+          "tokens": 5943,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "security-scan",
+          "tokens": 0,
+          "status": "UNKNOWN"
+        },
+        {
+          "name": "performance-profiling",
+          "tokens": 834,
+          "status": "READY"
+        },
+        {
+          "name": "architecture",
+          "tokens": 473,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "testing-patterns",
+          "tokens": 941,
+          "status": "READY"
+        }
+      ]
+    },
+    "backend-specialist": {
+      "name": "backend-specialist",
+      "filename": "backend-specialist.md",
+      "lines": 263,
+      "size_bytes": 8626,
+      "direct_tokens": 2302,
+      "declared_skills": [
+        "clean-code",
+        "nodejs-best-practices",
+        "python-patterns",
+        "api-patterns",
+        "database-design",
+        "mcp-builder",
+        "lint-and-validate",
+        "powershell-windows",
+        "bash-linux",
+        "rust-pro",
+        "coding-discipline"
+      ],
+      "skills_count": 11,
+      "cascade_tokens": 10765,
+      "total_tokens": 13067,
+      "tax_level": "MEDIUM",
+      "skills_detail": [
+        {
+          "name": "clean-code",
+          "tokens": 1798,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "nodejs-best-practices",
+          "tokens": 852,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "python-patterns",
+          "tokens": 834,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "api-patterns",
+          "tokens": 654,
+          "status": "READY"
+        },
+        {
+          "name": "database-design",
+          "tokens": 408,
+          "status": "READY"
+        },
+        {
+          "name": "mcp-builder",
+          "tokens": 887,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "lint-and-validate",
+          "tokens": 466,
+          "status": "READY"
+        },
+        {
+          "name": "powershell-windows",
+          "tokens": 933,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "bash-linux",
+          "tokens": 1123,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "rust-pro",
+          "tokens": 2041,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "coding-discipline",
+          "tokens": 769,
+          "status": "PLAYBOOK"
+        }
+      ]
+    },
+    "code-archaeologist": {
+      "name": "code-archaeologist",
+      "filename": "code-archaeologist.md",
+      "lines": 106,
+      "size_bytes": 3339,
+      "direct_tokens": 893,
+      "declared_skills": [
+        "clean-code",
+        "refactoring-patterns",
+        "code-review-checklist"
+      ],
+      "skills_count": 3,
+      "cascade_tokens": 2482,
+      "total_tokens": 3375,
+      "tax_level": "LOW",
+      "skills_detail": [
+        {
+          "name": "clean-code",
+          "tokens": 1798,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "refactoring-patterns",
+          "tokens": 0,
+          "status": "UNKNOWN"
+        },
+        {
+          "name": "code-review-checklist",
+          "tokens": 684,
+          "status": "PLAYBOOK"
+        }
+      ]
+    },
+    "database-architect": {
+      "name": "database-architect",
+      "filename": "database-architect.md",
+      "lines": 226,
+      "size_bytes": 6857,
+      "direct_tokens": 1828,
+      "declared_skills": [
+        "clean-code",
+        "database-design"
+      ],
+      "skills_count": 2,
+      "cascade_tokens": 2206,
+      "total_tokens": 4034,
+      "tax_level": "LOW",
+      "skills_detail": [
+        {
+          "name": "clean-code",
+          "tokens": 1798,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "database-design",
+          "tokens": 408,
+          "status": "READY"
+        }
+      ]
+    },
+    "debugger": {
+      "name": "debugger",
+      "filename": "debugger.md",
+      "lines": 225,
+      "size_bytes": 7833,
+      "direct_tokens": 1811,
+      "declared_skills": [
+        "clean-code",
+        "systematic-debugging"
+      ],
+      "skills_count": 2,
+      "cascade_tokens": 2445,
+      "total_tokens": 4256,
+      "tax_level": "LOW",
+      "skills_detail": [
+        {
+          "name": "clean-code",
+          "tokens": 1798,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "systematic-debugging",
+          "tokens": 647,
+          "status": "PLAYBOOK"
+        }
+      ]
+    },
+    "devops-engineer": {
+      "name": "devops-engineer",
+      "filename": "devops-engineer.md",
+      "lines": 242,
+      "size_bytes": 6299,
+      "direct_tokens": 1666,
+      "declared_skills": [
+        "clean-code",
+        "deployment-procedures",
+        "server-management",
+        "powershell-windows",
+        "bash-linux"
+      ],
+      "skills_count": 5,
+      "cascade_tokens": 6374,
+      "total_tokens": 8040,
+      "tax_level": "MEDIUM",
+      "skills_detail": [
+        {
+          "name": "clean-code",
+          "tokens": 1798,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "deployment-procedures",
+          "tokens": 1512,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "server-management",
+          "tokens": 1008,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "powershell-windows",
+          "tokens": 933,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "bash-linux",
+          "tokens": 1123,
+          "status": "PLAYBOOK"
+        }
+      ]
+    },
+    "documentation-writer": {
+      "name": "documentation-writer",
+      "filename": "documentation-writer.md",
+      "lines": 104,
+      "size_bytes": 2545,
+      "direct_tokens": 662,
+      "declared_skills": [
+        "clean-code",
+        "documentation-templates"
+      ],
+      "skills_count": 2,
+      "cascade_tokens": 2691,
+      "total_tokens": 3353,
+      "tax_level": "LOW",
+      "skills_detail": [
+        {
+          "name": "clean-code",
+          "tokens": 1798,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "documentation-templates",
+          "tokens": 893,
+          "status": "PLAYBOOK"
+        }
+      ]
+    },
+    "explorer-agent": {
+      "name": "explorer-agent",
+      "filename": "explorer-agent.md",
+      "lines": 73,
+      "size_bytes": 3951,
+      "direct_tokens": 1064,
+      "declared_skills": [
+        "clean-code",
+        "architecture",
+        "plan-writing",
+        "brainstorming",
+        "systematic-debugging"
+      ],
+      "skills_count": 5,
+      "cascade_tokens": 5230,
+      "total_tokens": 6294,
+      "tax_level": "LOW",
+      "skills_detail": [
+        {
+          "name": "clean-code",
+          "tokens": 1798,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "architecture",
+          "tokens": 473,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "plan-writing",
+          "tokens": 1074,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "brainstorming",
+          "tokens": 1238,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "systematic-debugging",
+          "tokens": 647,
+          "status": "PLAYBOOK"
+        }
+      ]
+    },
+    "frontend-specialist": {
+      "name": "frontend-specialist",
+      "filename": "frontend-specialist.md",
+      "lines": 593,
+      "size_bytes": 25822,
+      "direct_tokens": 6858,
+      "declared_skills": [
+        "clean-code",
+        "laws-of-ux",
+        "nextjs-react-expert",
+        "web-design-guidelines",
+        "tailwind-patterns",
+        "frontend-design",
+        "lint-and-validate",
+        "coding-discipline"
+      ],
+      "skills_count": 8,
+      "cascade_tokens": 9219,
+      "total_tokens": 16077,
+      "tax_level": "HIGH",
+      "skills_detail": [
+        {
+          "name": "clean-code",
+          "tokens": 1798,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "laws-of-ux",
+          "tokens": 1908,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "nextjs-react-expert",
+          "tokens": 1407,
+          "status": "READY"
+        },
+        {
+          "name": "web-design-guidelines",
+          "tokens": 475,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "tailwind-patterns",
+          "tokens": 943,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "frontend-design",
+          "tokens": 1453,
+          "status": "READY"
+        },
+        {
+          "name": "lint-and-validate",
+          "tokens": 466,
+          "status": "READY"
+        },
+        {
+          "name": "coding-discipline",
+          "tokens": 769,
+          "status": "PLAYBOOK"
+        }
+      ]
+    },
+    "game-developer": {
+      "name": "game-developer",
+      "filename": "game-developer.md",
+      "lines": 162,
+      "size_bytes": 4696,
+      "direct_tokens": 1232,
+      "declared_skills": [
+        "clean-code",
+        "game-development",
+        "game-development/pc-games",
+        "game-development/web-games",
+        "game-development/mobile-games",
+        "game-development/game-design",
+        "game-development/multiplayer",
+        "game-development/vr-ar",
+        "game-development/2d-games",
+        "game-development/3d-games",
+        "game-development/game-art",
+        "game-development/game-audio"
+      ],
+      "skills_count": 12,
+      "cascade_tokens": 15603,
+      "total_tokens": 16835,
+      "tax_level": "HIGH",
+      "skills_detail": [
+        {
+          "name": "clean-code",
+          "tokens": 1798,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "game-development",
+          "tokens": 1255,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "game-development/pc-games",
+          "tokens": 1255,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "game-development/web-games",
+          "tokens": 1255,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "game-development/mobile-games",
+          "tokens": 1255,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "game-development/game-design",
+          "tokens": 1255,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "game-development/multiplayer",
+          "tokens": 1255,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "game-development/vr-ar",
+          "tokens": 1255,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "game-development/2d-games",
+          "tokens": 1255,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "game-development/3d-games",
+          "tokens": 1255,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "game-development/game-art",
+          "tokens": 1255,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "game-development/game-audio",
+          "tokens": 1255,
+          "status": "PLAYBOOK"
+        }
+      ]
+    },
+    "mobile-developer": {
+      "name": "mobile-developer",
+      "filename": "mobile-developer.md",
+      "lines": 377,
+      "size_bytes": 12924,
+      "direct_tokens": 3438,
+      "declared_skills": [
+        "clean-code",
+        "mobile-design"
+      ],
+      "skills_count": 2,
+      "cascade_tokens": 3649,
+      "total_tokens": 7087,
+      "tax_level": "LOW",
+      "skills_detail": [
+        {
+          "name": "clean-code",
+          "tokens": 1798,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "mobile-design",
+          "tokens": 1851,
+          "status": "READY"
+        }
+      ]
+    },
+    "orchestrator": {
+      "name": "orchestrator",
+      "filename": "orchestrator.md",
+      "lines": 416,
+      "size_bytes": 13879,
+      "direct_tokens": 3703,
+      "declared_skills": [
+        "clean-code",
+        "parallel-agents",
+        "behavioral-modes",
+        "plan-writing",
+        "brainstorming",
+        "architecture",
+        "lint-and-validate",
+        "powershell-windows",
+        "bash-linux",
+        "coding-discipline",
+        "loop-engineering",
+        "find-skills"
+      ],
+      "skills_count": 12,
+      "cascade_tokens": 12017,
+      "total_tokens": 15720,
+      "tax_level": "HIGH",
+      "skills_detail": [
+        {
+          "name": "clean-code",
+          "tokens": 1798,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "parallel-agents",
+          "tokens": 1435,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "behavioral-modes",
+          "tokens": 1204,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "plan-writing",
+          "tokens": 1074,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "brainstorming",
+          "tokens": 1238,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "architecture",
+          "tokens": 473,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "lint-and-validate",
+          "tokens": 466,
+          "status": "READY"
+        },
+        {
+          "name": "powershell-windows",
+          "tokens": 933,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "bash-linux",
+          "tokens": 1123,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "coding-discipline",
+          "tokens": 769,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "loop-engineering",
+          "tokens": 917,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "find-skills",
+          "tokens": 587,
+          "status": "PLAYBOOK"
+        }
+      ]
+    },
+    "penetration-tester": {
+      "name": "penetration-tester",
+      "filename": "penetration-tester.md",
+      "lines": 188,
+      "size_bytes": 4807,
+      "direct_tokens": 1284,
+      "declared_skills": [
+        "clean-code",
+        "vulnerability-scanner",
+        "red-team-tactics",
+        "api-patterns"
+      ],
+      "skills_count": 4,
+      "cascade_tokens": 4654,
+      "total_tokens": 5938,
+      "tax_level": "LOW",
+      "skills_detail": [
+        {
+          "name": "clean-code",
+          "tokens": 1798,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "vulnerability-scanner",
+          "tokens": 1023,
+          "status": "READY"
+        },
+        {
+          "name": "red-team-tactics",
+          "tokens": 1179,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "api-patterns",
+          "tokens": 654,
+          "status": "READY"
+        }
+      ]
+    },
+    "performance-optimizer": {
+      "name": "performance-optimizer",
+      "filename": "performance-optimizer.md",
+      "lines": 187,
+      "size_bytes": 4384,
+      "direct_tokens": 1151,
+      "declared_skills": [
+        "clean-code",
+        "performance-profiling"
+      ],
+      "skills_count": 2,
+      "cascade_tokens": 2632,
+      "total_tokens": 3783,
+      "tax_level": "LOW",
+      "skills_detail": [
+        {
+          "name": "clean-code",
+          "tokens": 1798,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "performance-profiling",
+          "tokens": 834,
+          "status": "READY"
+        }
+      ]
+    },
+    "product-manager": {
+      "name": "product-manager",
+      "filename": "product-manager.md",
+      "lines": 112,
+      "size_bytes": 3154,
+      "direct_tokens": 847,
+      "declared_skills": [
+        "plan-writing",
+        "brainstorming",
+        "clean-code"
+      ],
+      "skills_count": 3,
+      "cascade_tokens": 4110,
+      "total_tokens": 4957,
+      "tax_level": "LOW",
+      "skills_detail": [
+        {
+          "name": "plan-writing",
+          "tokens": 1074,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "brainstorming",
+          "tokens": 1238,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "clean-code",
+          "tokens": 1798,
+          "status": "PLAYBOOK"
+        }
+      ]
+    },
+    "product-owner": {
+      "name": "product-owner",
+      "filename": "product-owner.md",
+      "lines": 95,
+      "size_bytes": 3889,
+      "direct_tokens": 1045,
+      "declared_skills": [
+        "plan-writing",
+        "brainstorming",
+        "clean-code"
+      ],
+      "skills_count": 3,
+      "cascade_tokens": 4110,
+      "total_tokens": 5155,
+      "tax_level": "LOW",
+      "skills_detail": [
+        {
+          "name": "plan-writing",
+          "tokens": 1074,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "brainstorming",
+          "tokens": 1238,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "clean-code",
+          "tokens": 1798,
+          "status": "PLAYBOOK"
+        }
+      ]
+    },
+    "project-planner": {
+      "name": "project-planner",
+      "filename": "project-planner.md",
+      "lines": 408,
+      "size_bytes": 13877,
+      "direct_tokens": 3698,
+      "declared_skills": [
+        "clean-code",
+        "app-builder",
+        "plan-writing",
+        "brainstorming",
+        "pre-mortem",
+        "coding-discipline",
+        "loop-engineering"
+      ],
+      "skills_count": 7,
+      "cascade_tokens": 7255,
+      "total_tokens": 10953,
+      "tax_level": "MEDIUM",
+      "skills_detail": [
+        {
+          "name": "clean-code",
+          "tokens": 1798,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "app-builder",
+          "tokens": 850,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "plan-writing",
+          "tokens": 1074,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "brainstorming",
+          "tokens": 1238,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "pre-mortem",
+          "tokens": 609,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "coding-discipline",
+          "tokens": 769,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "loop-engineering",
+          "tokens": 917,
+          "status": "PLAYBOOK"
+        }
+      ]
+    },
+    "qa-automation-engineer": {
+      "name": "qa-automation-engineer",
+      "filename": "qa-automation-engineer.md",
+      "lines": 103,
+      "size_bytes": 3202,
+      "direct_tokens": 860,
+      "declared_skills": [
+        "webapp-testing",
+        "testing-patterns",
+        "web-design-guidelines",
+        "clean-code",
+        "lint-and-validate"
+      ],
+      "skills_count": 5,
+      "cascade_tokens": 4702,
+      "total_tokens": 5562,
+      "tax_level": "LOW",
+      "skills_detail": [
+        {
+          "name": "webapp-testing",
+          "tokens": 1022,
+          "status": "READY"
+        },
+        {
+          "name": "testing-patterns",
+          "tokens": 941,
+          "status": "READY"
+        },
+        {
+          "name": "web-design-guidelines",
+          "tokens": 475,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "clean-code",
+          "tokens": 1798,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "lint-and-validate",
+          "tokens": 466,
+          "status": "READY"
+        }
+      ]
+    },
+    "security-auditor": {
+      "name": "security-auditor",
+      "filename": "security-auditor.md",
+      "lines": 170,
+      "size_bytes": 4683,
+      "direct_tokens": 1243,
+      "declared_skills": [
+        "clean-code",
+        "vulnerability-scanner",
+        "security-audit",
+        "red-team-tactics",
+        "api-patterns"
+      ],
+      "skills_count": 5,
+      "cascade_tokens": 10597,
+      "total_tokens": 11840,
+      "tax_level": "MEDIUM",
+      "skills_detail": [
+        {
+          "name": "clean-code",
+          "tokens": 1798,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "vulnerability-scanner",
+          "tokens": 1023,
+          "status": "READY"
+        },
+        {
+          "name": "security-audit",
+          "tokens": 5943,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "red-team-tactics",
+          "tokens": 1179,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "api-patterns",
+          "tokens": 654,
+          "status": "READY"
+        }
+      ]
+    },
+    "seo-specialist": {
+      "name": "seo-specialist",
+      "filename": "seo-specialist.md",
+      "lines": 111,
+      "size_bytes": 2729,
+      "direct_tokens": 737,
+      "declared_skills": [
+        "clean-code",
+        "seo-fundamentals",
+        "geo-fundamentals"
+      ],
+      "skills_count": 3,
+      "cascade_tokens": 3480,
+      "total_tokens": 4217,
+      "tax_level": "LOW",
+      "skills_detail": [
+        {
+          "name": "clean-code",
+          "tokens": 1798,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "seo-fundamentals",
+          "tokens": 752,
+          "status": "READY"
+        },
+        {
+          "name": "geo-fundamentals",
+          "tokens": 930,
+          "status": "READY"
+        }
+      ]
+    },
+    "test-engineer": {
+      "name": "test-engineer",
+      "filename": "test-engineer.md",
+      "lines": 158,
+      "size_bytes": 3182,
+      "direct_tokens": 854,
+      "declared_skills": [
+        "clean-code",
+        "testing-patterns",
+        "tdd-workflow",
+        "webapp-testing",
+        "code-review-checklist",
+        "lint-and-validate"
+      ],
+      "skills_count": 6,
+      "cascade_tokens": 5664,
+      "total_tokens": 6518,
+      "tax_level": "LOW",
+      "skills_detail": [
+        {
+          "name": "clean-code",
+          "tokens": 1798,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "testing-patterns",
+          "tokens": 941,
+          "status": "READY"
+        },
+        {
+          "name": "tdd-workflow",
+          "tokens": 753,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "webapp-testing",
+          "tokens": 1022,
+          "status": "READY"
+        },
+        {
+          "name": "code-review-checklist",
+          "tokens": 684,
+          "status": "PLAYBOOK"
+        },
+        {
+          "name": "lint-and-validate",
+          "tokens": 466,
+          "status": "READY"
+        }
+      ]
+    }
+  }
+}

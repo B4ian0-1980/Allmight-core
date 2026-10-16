@@ -1,0 +1,14 @@
+# Extensoes e diretorios proibidos na Base de Conhecimento v5
+node_modules/
+.venv/
+venv/
+__pycache__/
+.git/
+dist/
+build/
+*.pyc
+*.map
+*.lock
+*.exe
+*.dll
+*.so

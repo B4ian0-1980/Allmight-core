@@ -1,0 +1,5433 @@
+---json
+{
+  "id": "a_web_mobile_programe_para_um_mundo_de_muitos_dispositivos_1",
+  "title": "A Web Mobile Programe para um mundo de muitos dispositivos",
+  "categoria": "04-frameworks",
+  "subcategoria": "mobile",
+  "resumo": "**Arquivo Original:** `A Web Mobile Programe para um mundo de muitos dispositivos.pdf` **Data Conversão:** 1643798097.0",
+  "gatilhos": [
+    "dispositivos",
+    "frameworks",
+    "mobile",
+    "muitos",
+    "mundo",
+    "para",
+    "programe",
+    "web"
+  ],
+  "perguntas_tipo": [
+    "Como utilizar A Web Mobile Programe para um mundo de muitos dispositivos?",
+    "Quais as boas praticas de mobile?"
+  ],
+  "nao_cobre": [],
+  "target_agent": [
+    "general-assistant"
+  ],
+  "source": {
+    "origin": "AllMight Knowledge Base",
+    "original_format": "markdown"
+  },
+  "atualizado_em": "2026-10-15",
+  "verificado_em": "2026-10-15",
+  "dono": "stack-mobile",
+  "prioridade": 2
+}
+---
+
+# A Web Mobile Programe para um mundo de muitos dispositivos
+
+> **Arquivo Original:** `A Web Mobile Programe para um mundo de muitos dispositivos.pdf`
+> **Data Conversão:** 1643798097.0
+
+---
+
+
+## Página 2
+
+© 2013, Casa do Código
+Todos os direitos reservados e protegidos pela Lei nº9.610, de 10/02/1998.
+Nenhuma parte deste livro poderá ser reproduzida, nem transmitida, sem auto-
+rização prévia por escrito da editora, sejam quais forem os meios: fotográficos,
+eletrônicos, mecânicos, gravação ou quaisquer outros.
+Casa do Código
+Livros para o programador
+Rua Vergueiro, 3185 - 8º andar
+04101-300 – Vila Mariana – São Paulo – SP – Brasil
+
+## Página 5
+
+CasadoCódigo
+Sobremim
+Escreviminhaprimeiralinhadecódigocom14anosem1999eelafoiemHTML.Daí
+praCSSeJavaScriptfoiumpulo.Emseguida,meaventureiemSSIePHP,incluindo
+bancosdedados.Em2003,inicieimeucursodeCiênciadaComputa çãonaUSPe
+nadeiemáguasmaisprofundasdesdeentão—Java,C,Python.Crescibastanteem
+programaçãobackend.
+Mas eu sempre fui apaixonado por front-end.
+ComorenascimentodaWebatravésdoHTML5nosúltimosanos,volteiafocar
+naminhapaixão.Respirofront-endodiatodo.Leiomuito,estudomuito,escrevo
+muitoeprogramomuito—desdequeenvolvabastanteHTML,CSSeJavaScript.
+E,dealgumtempopracá,resolvifocarem mobile.Meuprimeirositemobileeu
+escreviháquaseumadécadausandoWMLpraredesWAP(sevocêénovo,talvez
+precisedaWikipediapraentenderafraseanterior).Imagineminhaanima çãoentão
+nessanovaeradossmartphoneseoquesignificamparaaWeb.Acreditomuitona
+Webúnicacomoplataformademocráticaeuniversal.
+Játrabalheiemalgumasempresas,programandoemváriaslinguagens(jáaté
+i
+
+## Página 6
+
+CasadoCódigo
+ganheidinheirocomopensource).Desde2004,trabalhona Caelumcomoinstrutor
+edesenvolvedor.Foiondeminhacarreiradecoloueondemaisaprendi,eaprendo
+tododia.Éondepretendopassaraindamuitosemuitosanos.
+Ensinareescreversãoumapaixãodesdeocolégio—lembroadecep çãodami-
+nhaprofessoradeportuguêsquandoeladescobriuqueeuseguiriacarreiraemexatas.
+Daraulas,escreverartigos,blogarepalestrarsãominhamaneirademisturaressas
+habilidades.
+Esselivroépontoaltoemtodaessatrajetória.Esperoquesejadivertidopravocê
+lertantoquantofoi,paramim,escrever.Obrigadoporacreditarneleecomprá-lo.
+VocêpodemeencontrartambémescrevendoporaínaWeb:
+• MeublogpessoalondeescrevobastantesobreWeb,mobile,front-endemge-
+ral:http://sergiolopes.org
+• OblogdaCaelum,ondesemprepublicoartigossobrefront-end: http://blog.
+caelum.com.br
+• Meu Twitter e meu Facebook onde posto muitos links pra coisas baca-
+nasdefront-endemobile: https://twitter.com/sergio_caelumehttps://www.
+facebook.com/sergio.caelum
+• Etambémparticipodeváriosfóruns,gruposelistasdediscussãodeWeb,
+ondeagentepodeseencontrar.MeufavoritoéonovoGUJ: http://www.guj.
+com.br/perguntas
+E,senostoparmosumdiaemalgumevento,nãodeixedemechamarprabater-
+mosumpapo.
+—SérgioLopes,2013
+ii
+
+## Página 7
+
+CasadoCódigo Sumário
+Sumário
+1 AWebMobile 1
+Estratégiamobile 5
+2 Oscaminhosdeumaestratégiamobile 7
+3 AppouWeb?Comparativodepossibilidades 13
+4 HTML5édiferentedeHTML5:ocasodaspackagedapps 21
+5 DesignResponsivoporumaWebúnica 27
+6 Mobile-first 33
+7 Mercado,Browsers,suporteetestes 39
+ProgramandoaWebmoderna 47
+8 FlexibilidadenaWebcomlayoutsfluídos 49
+9 Mediaqueries:asmelhorescompanheirasdeumlayoutfluído 59
+10 Tudoquevocêqueriasabersobreviewport 67
+11 Asagados3pixelseastelasdealtaresolu çãoeretina 79
+12 Nãoremovaozoomdosseususuários 87
+iii
+
+## Página 8
+
+Sumário CasadoCódigo
+13 Usesempremediaqueriesbaseadasnoconteúdodasuapágina 91
+14 Mediaqueriesmobilefirstoudesktopfirst? 95
+15 Asmediaqueriespararesoluçõesdiferenteseretina 101
+16 Mediaqueriestambémajudamnaacessibilidade 105
+AWebadaptativa 111
+17 Progressiveenhancementefeaturedetection 113
+18 RESS—Designresponsivoscomcomponentesnoladodoservidor 119
+19 Ocomplicadocenáriodasimagensresponsivas 129
+20 Designadaptativoecarregamentocondicional 143
+Gestoseentradadedados 153
+21 GestosnaWeb 155
+22 ImplementandogestoscomJavaScript 161
+23 DesafiosdeUXeminterfacestouch 173
+24 UseosnovosinputtypessemânticosdoHTML5 183
+25 Revisitandoosantigoscomponentesdeformulários 199
+26 Usabilidadedeformuláriosmobile 207
+Conclusão 215
+iv
+
+## Página 9
+
+Capítulo1
+AWebMobile
+Eunãogostodotítulodesselivro. “ A W e b M o b i l e ”.Querdizer,éumtítulobacanae
+fuieumesmoquedei.Masnãofiqueisatisfeito.Elesócontaumapartedahistória
+dolivro.
+Fatoéquenãoexisteuma W e b m o b i l e. Existea Web,queagenteacessatanto
+docomputadorquantodocelularoudotablet.ÉomesmoHTML,CSSeJavaScript
+querodamnosnavegadoresindependentedodispositivo.Elestêmdiferen çasentre
+si,claro,masamaiorparteéamesmacoisa.Étudo W e b.
+Váriostópicosdolivronãosãoespecíficosdedispositivosmóveis. Media queries,
+porexemplo,umassuntoquevocêtalvezjátenhovistosempreligadoasitesmobile;
+aquinolivro,quandochegarmosnelas,vamosveratécomoafetamaacessibilidade
+noDesktop.Ouaindaquandofalarmosde touch screens:nãodáprachamarissode
+mobile,jáquecomputadorescomtouchsãocadavezmaiscomunshoje.
+Penseiemdarotítuloprolivrode “ A Web moderna”,oualgoassim.Masseria
+muitogenérico,afinalotemacentralaquiacabasendo mobilemesmo.
+OlivroésobrecomoprogramaraWebatual,comtecnologiasnovas,pensando
+
+## Página 10
+
+CasadoCódigo
+nosdispositivosdehojeedeamanhã.Emuitasdastransforma çõesrecentesdaWeb
+foramcausadaspelasrevolu çõesenovidadesdosdispositivosmóveis.Então,nãoé
+queotítulodolivroestáincorreto,mas,talvez,incompleto.Deveriaseralgocomo
+“ A Web moderna e como ela foi afetada pelos dispositivos móveis”.Acabeiresumindo
+para “ A W e b M o b i l e ”.
+Omercadomobile
+Decidiquenãoiacome çarolivrocitandoestatísticasdecomoomercadomobile
+cresceumuitonosúltimosanosecomoelevaiestourarnospróximos.Nemmostrar
+aevolu çãodo3Gou4GnoBrasiloufalardequantodeparticipa çãonomercado
+cadaplataformamóveltem.
+Qualquernúmerodessesficariadesatualizadopoucodepoisdapublica ção. E
+tambémachoque,sevocêestálendoesselivro,éporquenãoprecisaserconvencido
+dequeomercadomobiletemumpotencialgigantesco .
+Sevocêprecisardeinforma çõesdetalhadassobreocrescimentodessemercado,
+comportamentodosconsumidoreseoutrosdados,recomendoo OurMobilePlanet
+doGoogle( http://www.thinkwithgoogle.com/mobileplanet/pt-br/).Eletemdados
+domundotodo,inclusivedepesquisasespecíficasdoBrasil.
+OutrafonteondevocêconseguenúmerosatualizadosmêsamêséoStatCoun-
+ter,sobreacessoaWeb( http://gs.statcounter.com/).Eossitesdenotíciasdetecno-
+logiaestãosempremostrandomatériasatualizadascomnovosdadosepesquisasde
+mercado—Info,Techtudo,GizmodoBrasil.
+Fatoéqueomercadoparadispositivosmóveiségigantescoecheiodeoportu-
+nidades. Muitagenteestásedandobem: fabricantesdeaparelhos,operadorasde
+telefonia,criadoresdasplataformas,desenvolvedoresdeaplicativoseosqueacredi-
+tamnoacessoaWebviamobile.Ofocodolivroénesseúltimogrupo. Éparatodos
+quequeremexploraropotencialdeseterumnavegadordeInternetnobolsode
+milhõesdepessoas .
+Olivro
+Organizeiolivrocomoumasériedetópicoscomtemasdiversos.Nãoéumlivro
+parainiciantes;vocêprecisaterfamiliaridadecomWebeHTML,CSSeJavaScript.
+Tambémnãoéumlivrocomoqualvocêvaidesenvolverumprojetopráticodoinício
+aofim—recomendoolivro “Web Design Responsivo”doamigoTárcioZemelsevocê
+querumpassoapassomaispráticocomprojetinho( http://www.casadocodigo.com.
+2
+
+## Página 11
+
+CasadoCódigo Capítulo1. AWebMobile
+br/products/livro-web-design-responsivo).
+Esselivroécomoumacole çãodeartigossobreWeb,mobileeassuntosrelacio-
+nados.Cadase çãoemgeralécurtaepodeserlidaindependentementedasoutras.
+Vocêpodeatélerforadeordemoupularalgumaquenãolheinteresse.
+Emdiversosmomentos,voumostrarexemplospráticospravocêtestar.Alémdo
+códigomostrado,vocêtambémpodeexecutardiretonoseudispositivoacessandoas
+URLsdeexemploouos qrcodesqueespalheipelolivro.Seestiverlendooebook,to-
+dasasreferênciassãoclicáveis;paraosleitoresdoimpresso,coloqueioslinksdeto-
+dasasreferênciasem http://sergiolopes.org/livro-web-mobile/referencias.htmlpra
+facilitar.
+Apesardeserumlivrobemtécnicoeprático,eutomeialiberdadededarminhas
+opiniõespessoaisemalgunsmomentos.Tentodeixarclarosemprequealgoéuma
+opiniãopravocêanalisar,julgarediscordardemimàvontade.
+ExisteumgrupodediscussõesoficialdolivronoGoogleGroupspravocêti-
+rardúvidasediscutircomigoeoutrosleitores( https://groups.google.com/d/forum/
+livro-web-mobile). EtemoGUJPerguntas( http://www.guj.com.br/perguntas/)
+ondevocêtambémpodepostarseusquestionamentos.
+Essenãoéumlivrocompleto.No brainstormoriginalquefiz,acabeicomuma
+listadeassuntosparauns10volumesdiferentes. Tivequeescolheroqueiaentrar
+aquieoqueiaficardefora.Gosteidasele çãofinaldetópicosmastalvezeutenha
+deixadodeforajusto aqueleassuntoquevocêqueriasaber. Quemsabeumdiaeu
+escrevaosoutros9volumesmas,atélá,vocêpodemeencontrarnomeublogonde
+escrevomais: http://sergiolopes.org
+Boaleitura!
+3
+
+## Página 13
+
+P a r t e I
+Estratégiamobile
+
+
+## Página 15
+
+Capítulo2
+Oscaminhosdeumaestratégia
+mobile
+Entãovocê,convencidodopotencialdomercadomobile,decideatacá-lo.Poronde
+começar? Oprimeiropontoédiscutiroscaminhospossíveise,então,tra çaruma
+estratégia mobile.
+Porquemobile?
+Oprimeiropontoédefiniromotivodenossaempresaouprojetoencararo
+mundomobile.Queobjetivosqueremosatingir?Qualopúblico-alvoedoqueele
+precisa?
+Todareuniãoquecome çacomafrase “precisamos de uma App pro iPhone”já
+começouerrada.AAppouositemobilesãomeiospraumfimmaior.Queobjetivos
+meuusuárioqueratingircomessaApp?
+Esselevantamentodoporquêéimportanteparadefinirseuspassosnomundo
+mobile. Dependendodoresultado,podemosconcluirqueumaAppnativapara
+
+## Página 16
+
+CasadoCódigo
+iPhoneéomelhor. Ouqueomelhoréumsitemobile. Ouquenãoprecisamos
+denadadisso.
+OsitedaApple,amãedaeramobilemoderna,atéhojenãotemumaversão
+mobile.EnãotemApppraiPhonetambém,nempraiPad.Noslevantamentosdeles,
+provavelmenteconcluíramqueositeDesktopbemconstruídoésuficientepratodo
+mundo. Umtantoirônico,masumbomexemplodequemontarumaAppousite
+mobilesópelooba-obanãoéumaboaideia.
+AppouWeb?
+Umavezdecididaainvestidaemumapresen çamobile,aprimeiraresolu ção
+necessáriacostumasersecriamosumaAppouseinvestimosnaWebmobile. O
+próximotópicodolivro( 3)vaiseaprofundarnasdiferen çaspráticasetécnicasdessas
+duasabordagens.Depois,notópico 4,vamosdiscutirAppshíbridasconstruídascom
+tecnologiasdaWeb.
+Asdiferen çascomumentecitadasdeperformance,acessoarecursosdehardware
+eetceunemconsiderotãorelevantesassim.Agora,querofocarnadiscussãomais
+estratégicaportrazdessadecisão. Osaspectosmaistécnicos,aliás,muitasvezes,
+sãoirrelevantes.Apesardeexistiremdiferen ças,sim,deperformanceentrenativoe
+Web,elasnãosãodeterminantesparaamaioriadasaplica çõeseusuários.AWebé
+boa o suficienteparaamaiorpartedoscenários,assimcomoelaéboaosuficienteno
+Desktopapesardeperderemperformanceparasoftwaresnativosporlátambém.
+Expectativas
+Naminhaopinião,oaspectoquemaisdevepesarnadecisãoporAppouWebé
+aexpectativadousuáriocomrela çãoasuaempresa,seuprojeto,suamarca.
+Sevocêestácriandoumnovoprodutoounovaempresa,pensandoemalgoino-
+vador,podenãofazermuitadiferen çaseéumaAppouWeb.Vocêaindanãotem
+usuários,entãonãoháexpectativascomrela çãoaseuproduto.Vocêpodecriaralgo
+novoeforteemumadire çãoespecíficaenãoperderninguém.
+Umexemploprático:o InstagramnasceucomoumaAppparaiPhoneesó.Era
+umnovoservi çocomobjetivodeexplorarjustoonichodecompartilhamentode
+fotosnosmartphonedaApple.Estrategicamente,aempresafocounumcertonicho
+einovoucomumprodutodiferente. NãotinhaumaAppparaAndroid,umsite
+mobileenemmesmoumaversãodaApppraiPad. Eraumfocoestratégicoede
+negóciosquesóumaempresanovapodiater.Depois,comocrescimento,lan çaram
+8
+
+## Página 17
+
+CasadoCódigo Capítulo2. Oscaminhosdeumaestratégiamobile
+aversãoparaAndroidmasnadamuitoalémdisso.
+Agora,sevocêjátemumapresen çanaWeb,umprodutoconsolidado,iniciar
+suaestratégiamobilecomumaAppnativapodeserumtironopé. Imagineum
+portaldenotíciasnacionaldecidirentrarnomundomobilelan çandoumaApppra
+iPhone.Alémdedeixaramaiorpartedomercadodefora,éumasitua çãoquepode
+seranormalatéparaoprópriousuáriodoiPhone.OportalétãofortenaWebqueo
+usuárioestáacostumadoalerasnotíciasnonavegadore,provavelmente,deveabrir
+ositemesmonoiPhone.
+Qualéaexpectativadousuário?
+Webfirst
+EugostomuitodaWeb.Acreditodemaisnelacomoplataformaportáveledemo-
+crática.EscreviesselivrosobreWeb!Mas,apesardetudoisso,concordoqueApps
+têmseulugarnomundo,claro.HámuitoscenáriosondeumaApptrazmelhorex-
+periênciaparaousuárioesatisfazmelhorsuasexpectativas,sobretudocomrela ção
+àusabilidade.
+MasomercadodeAppshojeéexclusivo,eapostaremumaplataformaXéarris-
+cado.Algunsanosatrás,apostarnoiOSpareciaotirocerteiroparaatingiramaioria
+domercado. Hoje,oAndroidédominantenamaiorpartedomundo(eganhade
+lavadanoBrasil).Eamanhã?
+MuitagentequeapostounumaAppiOSháalgunsanosestáagoracorrendoatrás
+daversãoAndroid.Evãoprecisarcorreratrásdequalplataformadepois?Jáquem
+apostounaWebestátranquilo.
+UmaestratégiaécomeçarsemprepelaversãoWebdoseuprodutoouwebapp.
+Sedimentarbemsuapresen çamobileviaWeb,garantindoacessouniversalemul-
+tiplataforma.Aí,conformeasnecessidadessurgiremeseuplanejamentofinanceiro
+permitir,vocêpodeinvestiremAppsespecíficasdeplataformascomrecursoseex-
+periênciasnativas.W e b fi r s t.
+VáriasgrandesempresasdaWebseguiramessecaminho. Facebook,Googlee
+Twittersãoexemplosóbvios. OFacebooktemAppsparaiOSeAndroidbemin-
+tegradasàsplataformas,maselassóforamconstruídasdepoisdositemobileque
+atéhojeoferecesuporteatodotipodeplataformamóvel.AquinoBrasil,portaisde
+notíciasgrandesseguiramamesmaestratégia—UOL,Globo,etc—,assimcomoa
+maioriadaslojasvirtuais.
+Emcomumatodoseles? JáeramumamarcafortenaWebeocaminhomais
+lógicoerasuportarmobiletambémcomaWeb.Éoqueosusuáriosdelesesperam.
+9
+
+## Página 18
+
+CasadoCódigo
+E,depois,senecessário,Appsespecíficasforamcriadas.
+AWebMobile
+AquinolivrovamosclaramenteseguirocaminhodaWeb.Mas,logodecara,já
+temosumaoutradecisãoimportanteatomar:vamosdeúnicositeresponsivooude
+sitemobileespecífico?
+Dopontodevistadousuário,éumadecisãonãomuitoimportante.Nãointe-
+ressatantoparaeleseestáacessandoumsitetotalmentereescritoparamobileouseé
+amesmaversão,desdequeeleatinjaseusobjetivos.Adecisãoémuitomaistécnica,
+evamosdiscutirbastantesobreelanostópicos 5e6.
+Umacoisaimportanteparateremmentesãoasdiferen çasnausabilidadeentre
+dispositivosmóveiseDesktops. Opapadausabilidade,JakobNielsen,falaqueas
+diferençassãotãobrutaisqueprecisamosde designs diferentesparaatacaressespú-
+blicos.Issopodeserfeitodeváriasmaneiras:sitesdiferentespramobileeDesktop;
+servidorotimizandoapágina(RESS,tópico 18);oudesignresponsivoeadapta ção
+dodesignnocliente.
+De qualquer maneira, ele fala ( http://m.netmagazine.com/interviews/
+nielsen-responds-mobile-criticism):
+“Desde que cada usuário veja o design apropriado, a escolha entre essas opções de
+implementação deve ser uma decisão de engenharia e não uma decisão de usabilidade. ”
+Vamosfalarbastantenolivrosobreasdiferen çasdeusabilidadeentremobilee
+Desktop,emespecialnaparte4. Adecisãotécnicapreferidaserápelodesignres-
+ponsivo,apesardeapresentarcenáriosmistosdeadapta çãocomRESS(tópico 18)e
+carregamentocondicional(tópico 20).
+Oprincipalargumentoafavordodesignresponsivoéasimplifica çãododesen-
+volvimento.Umúnicoprojeto,umsócódigo,umsóconteúdo—mas,claro,comas
+devidasadapta çõesdedesign.
+Design responsivo é também arecomendação oficial do Googlepara
+os sites a serem indexados por eles (https://developers.google.com/webmasters/
+smartphone-sites/details).UmaúnicaURLservindoatodososusuárioséomelhor
+paraSEOeparaaexperiênciadosusuários.
+Conclusão
+AWebcomoplataformaúnicaeportáveléasolu çãomaisadequadaparauma
+estratégiamobiledemocráticaeacessível. Semprequepossível,comecesuainves-
+10
+
+## Página 19
+
+CasadoCódigo Capítulo2. Oscaminhosdeumaestratégiamobile
+tidanomobilepelaWeb( W e b fi r s t)usando design responsivo.Cuidedasadapta ções
+necessáriasnodesigneusabilidadedependendodocontextodeuso,efoquenaex-
+periênciaenasexpectativasdousuário.
+11
+
+## Página 21
+
+Capítulo3
+AppouWeb?Comparativode
+possibilidades
+Euseiqueesselivroésobre W e b,entãoháumaclaratendênciaminhaedogrupo
+deleitoresparaessecaminho. Masnemsempreessaescolhaétãosimples,eacho
+quevaleumabrevediscussãotécnica.E,mesmosevocêjátiversedecididoporum
+caminho,ébomanalisarosprósecontrasdessadecisão.
+Agrandediferen çaentreAppseaWebquegeralmentesediscuteéqueuma
+Appdámelhoracessoeintegra çãoaohardwareeàplataformanativadoaparelho,
+enquantoqueaWebtrazindependênciadeplataformaeportabilidade.Masexistem
+milhõesdedetalhesaínomeioqueprecisamserdiscutidos.
+Integraçãocomhardwareeplataforma
+UmaApptemacessodiretoaohardwaredoaparelhoearecursosdosistema
+operacional. Consegueseintegrarcomfun çõesavan çadaseaoutrasApps. Pode
+manipularofuncionamentodoaparelhoeatésubstituiroucomplementarfun ções
+
+## Página 22
+
+CasadoCódigo
+nativas.
+Já aWebrodaenjauladadentrodonavegador e,porrazõesdeseguran ça,não
+temacessodiretoàplataformanativa.MasexistemdiversasAPIsnovasdoHTML
+5queexpõemacessoarecursosantesexclusivosdasApps—exemplosclássicossão
+acessoàcâmera,geolocaliza ção,informa çõesdeacelerômetroegiroscópio,eanima-
+ções3Dcomacelera çãonaGPU.Mas,claro,hámuitascoisasmaisespecíficasque
+aindasóasAppstêmacessoequenãosãopossíveispelaWeb.
+Oqueéprecisodefiniraquiéquetipoderequisitovocêtem.Sevocêprecisarde
+coisasmuitoespecíficas,umaAppseráocaminho.MasascapacidadesdaWebsão
+suficientesparagrandepartedoscenários.
+Segurançaeprivacidade
+Rodardentrodonavegadortemsuasvantagens.Asrestri çõesdeseguran çasão
+forteseachancedeaconteceralgoderuimébempequena. Ousuárioestámais
+protegidoabrindoumsiteWebdoqueinstalandoumaAppemseuaparelho.
+AslojasdeAppstentamminimizaroimpactoruimnaseguran çacomrestri ções
+epermissõesexplícitasqueousuáriotemqueaprovar.Masaverdadeéqueamaioria
+dosusuáriosnãocompreendeosimpactosdaspermissõesqueaprova,aindamais
+quandoalistaégrandeecheiadetermosestranhos(comonainstala çãodeuma
+AppnoAndroid).
+Outramaneiradetentarevitarproblemassãoosmecanismosdeaprova çãodas
+lojascomodaApplequefazemumpentefino.Ouaindaosistemadedetec çãode
+códigomaliciosoqueoAndroidtem.Masexistemvárioscasosdetudoissosendo
+burlado,eAppsqueroubamdadospessoaisvãopararnalojadoiOSeváriosvírus
+nadoAndroid.
+Issotudopelopontodevistadousuário,queprefereestarmaisprotegido.Do
+pontodevistadodesenvolvedor,ocenáriopodeseroinverso:sevocêquerumaApp
+queacesseosdadosdousuárioetenhaaltosprivilégios,aWebvailimitá-lo. Mas,
+prousuário,Webémaissegura.
+AWebnãoéisentadeproblemas,claro.Masasdécadasdeevolu çãodosnave-
+gadoresfeztudosermaisseguro. Maislimitadotambém,masporboasrazõesde
+segurançaedeprivacidade.
+Performance
+AppssempreserãomaisrápidasqueaWeb.Elasrodamdiretonosistemaopera-
+14
+
+## Página 23
+
+CasadoCódigo Capítulo3. AppouWeb?Comparativodepossibilidades
+cionale,namaioriadoscasos,sãoescritasnativamenteparaaplataformaespecífica,
+oquedámuitaperformance.AWebrodadentrodonavegador,queinterpretaseu
+HTML,CSSeJavaScript,umprocessorelativamentemaislento.
+Maspoucasaplica ções r e a l m e n t e p r e c i s a mdeperformanceabsurda.Nãomeen-
+tendamal:nãoestoudizendoqueétudobemserlento.Demodoalgum.Oponto
+éque,paramuitoscasos,adiferen çadeperformanceentreaWebeumaAppnativa
+nãoéperceptívelparaousuário.Osnavegadoresdehojesãoexcelentesecadavez
+maisrápidos,esóperdemdeformaperceptívelemcasosbemespecíficosqueexigem
+altaperformance.
+Amaiordiferen çadeperformanceparaousuárionãoéaexecu çãodocódigo
+emsi,masocarregamentoinicial. ApáginaWebprecisaserbaixadadoservidor
+comtodassuasdependências,oquepodedemorar.Mas,claro,umaAppprecisaser
+instalada,oquepodeserumprocessomaislentoainda.
+Usabilidadeevisual
+UmaspectobastantecitadocomovantagemdasAppséaintegra çãovisualda
+mesmacomaplataformaemsi.Todaaexperiênciadeusodaplataforma,suausa-
+bilidadeecomponentesvisuais,sãotransportadospraApp.Elatem acaradapla-
+taformaeéfamiliarparaousuário .Pensenaqueleestilocaraterísticodosbotões
+doiOS,porexemplo,queseriamumfrankensteinseusadosnomeiodeumaApp
+Android.
+Figura3.1:Exemplosdebotõesenavega çãodoiOS.
+Enãoésóvisualmente;tambémhádiferen çasdeusabilidade.Umafrequente-
+mentelevantadaécomrela çãoao botãodevoltar .OiOSnãotembotãodevoltar
+ecadateladecadaAppprecisaproverseupróprio voltar.OAndroideoWindows
+Phonejátêmobotãovoltarnativo,sejafisicamentenoaparelhoouvirtualmentena
+barradebaixodosistema.ÉestranhofazerumbotãodevoltarnumaAppAndroid,
+assimcomonãosedevefazerumaAppiOSsembotãodevoltar.
+15
+
+## Página 24
+
+CasadoCódigo
+Nãohácertoouerrado.Oquehásãodiferen çasdeusabilidadedasplataformas
+ediferen çasnaexpectativadousuáriodecadauma.Appsvãodarapossibilidadede
+criarumaexperiêncianativacompletaeespecíficaparacadaambiente.
+EaWeb? Algumascoisasjáseresolvemsozinhas—oproblemadobotãode
+voltarnãoexistejáquetodonavegador(iOSouAndroid)jáincluielelá. Paraas
+outrasdiferen çasvisuais, vocêatépodecriarumCSSpracadaplataforma, mas
+issoémeioinviávelepodegerarresultadosbizarros(tentarrecriarcomponen-
+tesnativosemCSSéumpratocheiopracairnumcasode Vale da Estranheza—
+http://pt.wikipedia.org/wiki/Vale_da_estranheza).
+Omaiscomuméteruma linguagemvisualúnicanaWeb ,nãoatreladaane-
+nhumaplataformaespecífica.ÉcomoaWebsemprefuncionounoDesktop.Ossites
+ouwebappscostumamter umestilomaisligadoàidentidadevisualdamarcaeda
+empresa,doquedaplataformadeacesso.
+Pegueoexemplodosemails.SevocêabriroOutlooknoWindowsvaiverum
+programanativocomcaradeWindows.SeabriroAppleMailnoMacOSX,cara
+deMac.Mas,emambososcasos,vocêpodeabriroGmailnonavegadorenãovai
+sesentirnemnoWindowsnemnoMac;vaisesentirnoGmail,comcaradeGmail,
+umaidentidadevisualúnica.
+EunãovejoproblemaemtransporessemesmoconceitopraWebmóvel.Muita
+gentediscordaeachaqueasAppsmobileprecisamestaratreladasaovisualdecada
+plataforma.Euprefiropensarque,nosúltimos20anosdeWeb,osusuáriosapren-
+deramanãoesperarnenhumtipodeuniformidadevisualnaspáginasqueacessam,
+eatépassaramagostardessadiversidade.
+Maseuseiqueotemaépolêmico.Sevocêédotimequeprefereovisualnativo,
+nãofecheolivroagora,sóconsidereessaideiadequeaexpectativadeumusuário
+daWebémaisrelaxadanessequesito.
+Instalaçãoedistribui ção
+Adiferen çaébemóbviaaqui,masvalediscutirasimplica ções.UmaApppre-
+cisaserinstaladaeisso,geralmente,envolveumalojadofabricanteondevocêvai
+disponibilizarsuaApp. Existetodooprocessolentoeburocráticodeserumde-
+senvolvedorcadastradonaplataforma(epagarporisso),alémdeterquesubmeter
+suasAppspraaprova çãoemmuitoscasos—iOSsendonotoriamenteocasomais
+implicante.
+Paraousuário,eleprecisaentrarnalojaemseudispositivo,buscarsuaApp,
+clicareminstalar,esperarainstala çãoedepoisabrirsuaApp.Eissoquandoapla-
+16
+
+## Página 25
+
+CasadoCódigo Capítulo3. AppouWeb?Comparativodepossibilidades
+taforma(comooAndroid)nãoexigequeousuáriopré-aproveumalistacrípticade
+permissões.
+AWebétotalmentedescomplicada. Abraolinknonavegadorepronto. E,se
+quiser,ousuárioaindapodeadicionarumfavoritoemsuatelainicialpravoltar
+depoisnosite. Permissõespracoisasmaisavan çadassãopedidaspelonavegador
+conformeonecessário(comogeolocaliza ção).
+Quandoháatualização,umaAppprecisaserinstaladanovamentepelaloja(seja
+automaticamenteoumanualmente). Emmuitoscasos,issoenvolvebaixaraApp
+todadenovo,oquepodesergrande(oAndroidconseguebaixarsóasdiferen ças).
+NaWeb,nãoprecisamosfazernada.Ousuáriosempreacessaaversãomaisrecente
+quandonavega.
+Aindasobreotamanhodainstala ção:umaAppprecisabaixartudodurantea
+instalação,todocódigoearquivosdetodasasfuncionalidades. UmapáginaWeb
+podecarregarsóoqueénecessáriopratelaatual. Seousuárionuncausaruma
+telaavan çada,elanemécarregadanobrowser,masseriabaixadajuntocomaApp,
+gastandobanda.E,porfalaremgastodebanda,nãohácoisapiordoqueestarna
+rua,no3G,eprecisarinstalarumaApp.AWebcostumaserbemmaislevepraesse
+tipodeusorápidoecasual.
+Opontoprincipaléque aWebétotalmentedescentralizada .Vocênãoficana
+mãodofabricantequefazexigênciasprasuaaplica çãoseraprovada,proíbecertos
+usoslegítimos,cobraumaporcentagemcaranavendaecontrolaarbitrariamentea
+exposiçãodasuaAppnabuscadaloja.NaWeb,vocêdivulgaseulinkemqualquer
+canal,semdependerdeninguém.
+Háquemdigaqueapresen çanalojaaumentaaexposi çãodasuaApp,jáqueos
+usuáriosbuscamcoisasporlá.Éverdade,masusuáriostambémbuscamnoGoogle.
+Eháestudosquemostramqueaslojasdeaplicativosestãotãocheiashojequea
+chancedousuáriocairnasuaAppébempequena. Mas,claro,dependedaAppe
+dotipodebuscadousuário. Umservi çofamosoquetenhamarcafortenãotem
+problemasparaserencontrado(buscarGmailnalojasemprevaitrazeraAppdo
+Gmail).Masnãohámuitoespa çopara descobertadenovasapps.Ousuárionãovai
+digitar‘notícias’nabusca,detantaporcariaquevaiaparecer;e,mesmoquebusque,
+suaAppzinhanãovaiaparecernotopo.
+AsAppsdemaissucessofazemsucessoforadaslojas,esãolinkadasemartigose
+blogsfamosos.Aspessoasbaixamporqueconhecemejáouviramfalar.Raramente
+baixamporqueesbarraramnelanalojasemnuncaterouvidofalar.Então,pensando
+bem,sevocêfossepraWebaoinvésdeApp,darianamesma.
+17
+
+## Página 26
+
+CasadoCódigo
+Outropontoasepensaréousocasual.UmaAppexigeumcompromissomaior
+dousuário,umainstala ção.Emuitagentenãoprecisaenemestádispostaairtão
+longe.Muitosusuáriossóqueremumacertainforma çãonumdadomomento,algo
+facilmenteencontrávelnaWeb.UmaAppéparausoregular,parausuáriosfiéis.E,
+mesmoassim,estudosmostramqueamaioriadasAppsqueaspessoasinstalamsão
+abertasbempoucasvezes,quandosão.
+Monetização
+Umadiferen çabrutalnessapartededistribui çãoondeasAppsaindaganham
+delongeénaquestãoda monetização. Aslojasjásãoplataformasdepagamento
+integradaseousuárionãotemtrabalhoalgumparacomprarAppseassinaturas.A
+Webnãotemessetipodefacilidade.
+Há os serviçosdepagamentocomoPayPal,masnadatãofácil.Claroqueháa
+contrapartidadaporcentagemaltíssimacobradapelaslojas,coisaque,naWeb,você
+poderiaescolherentrediversosservi çosdepagamentoouatécobrardiretamente.
+Muitasempresasquetêmnomemaisfortecome çaramadesafiaressemodelode
+lojaeretiraramsuasAppsdaslojasefocaramnaWebcompagamentodiretopraeles
+—ocasomaisnotóriofoidojornalamericano Financial Times(http://gigaom.com/
+2011/09/22/financial-times-finds-life-outside-the-app-store-pretty-good-so-far/).
+Mas,tirandoessaquestãodamonetiza ção,oprocessodedistribui çãoeinstala-
+çãoémuitomaiscomplicadocomAppsquenaWeb.
+Multiplataforma
+OgrandeapelodaWebéserindependentedeplataforma. Agenteencontra
+navegadorWebemtudoqueéaparelhohojeemdia,nãoimportandotipo,marca,
+sistemaoperacional.DesenvolverseguindoospadrõesWebgaranteoacessoatodos
+osusuáriosdomundo,semdiscrimina ção.
+Claroqueissonãoquerdizerquenãoexistamsuasdificuldades.Asincompa-
+tibilidadesentrenavegadorestêmdiminuídobastantenosúltimosanos,masainda
+sãoumproblema.Éprecisotestarbastanteeescapardosbugs.Maséumtrabalho
+muitomenoscomplicadoquefazerAppsparaplataformasespecíficas.
+Omaiscomum,aliás,équeodesenvolvimentodeAppsfoquenasplataformas
+queestãoemalta—nomundomobile,issosignificaiOSeAndroid.Sobargumento
+dequenãovaleapenaeconomicamentesuportarplataformasmenores,muitagente
+deixadeladooszilhõesdeoutrasplataformas—nomundomóvel,temosWindows
+18
+
+## Página 27
+
+CasadoCódigo Capítulo3. AppouWeb?Comparativodepossibilidades
+Phone,Blackberry,Symbian,Bada,Tizen,FirefoxOS,sópracitarasmaisouvidas.
+Nãoéàtoa,aliás,queamaiorpartedessessistemasnãotãofamososusatecnologias
+Web(HTML,CSSeJS)comobaseprodesenvolvimentodeApps. Elasestariam
+perdidasseexigissemumareescritatotaldaApp.
+Aliás,essecenáriodeseusarHTML,CSSeJavaScriptparaescreverAppsécada
+vezmaiscomum.Aideiaéjustoresolveroproblemadaportabilidade—omesmo
+códigorodarianoAndroid,iOS,WindowsPhoneetc,usandosistemasdeempaco-
+tamentocomoPhoneGap. Vamosdiscutirmelhoressecenáriodaquiapouco,no
+tópico4,masnãoseengane:AppsHTML5compartilhamamaiorpartedosproble-
+masdasAppsdemodogeralenãosãoWeb,apesardeusaremamesmalinguagem.
+Épossível,portanto,terummínimodeportabilidadedecódigoaoescrever
+Apps,masvocêaindavaiterquepublicaremlojasdiferenteseindividualmente.
+Ealgumahoravocêvaidesistirdepublicarnumalojamenosconhecidaprafocar
+nasmaiores(jápensouempublicarnalojadoBadaalgumavez?).Eassimvocêvai
+excluirumaparceladomercadoediscriminaressesusuários.Éporissoquefalamos
+queaWebémaisdemocrática,abertaeacessível.
+Experiênciadousuário
+HádiferençasfundamentaisentreAppseWebsobaóticadaexperiênciado
+usuárioedeusabilidade. E,naminhaopinião,esseacabasendoofatormaisde-
+terminantenahoradeescolherqualestratégiaseguir.
+Argumentoscomunsqueaspessoaslevantam,comoperformanceeacessoa
+hardware,pramimsãoirrelevantesnamaioriadoscenários.Poucoscasosexigem
+performancealtíssimaouacessoatudoqueéhardwaredoaparelho.Amaioriados
+projetosémaissimplesqueissoefuncionariabemtantonaWebquantoemApp.
+Masadiferen çanaexperiênciadousuárioéalgosemprepresente.
+AWebtemváriasvantagensdeusabilidadeemrela çãoaApps.Ousuáriopode
+selecionarotextofacilmente,podedarzoomàvontade(maissobreissonotópico 12),
+podecriarfavoritoseatalhosparapáginasespecíficas,podeclicaremlinksenavegar
+àvontadenonavegador. Appscostumamsermaislimitadasnessespontos—não
+possofavoritarumatela,compartilharlinkscomaspessoas,darzoomlivremente.
+Mas,mesmocomtudoisso,aquestãoprincipaléquea experiênciadeusode
+umaAppédiferentedadeumsite .Comousuário,vocêsabequandoestáusando
+umaAppounavegandonumsite.Ambospodemteromesmoconteúdoeproveras
+mesmasfuncionalidades,masaexperiênciadeusoaindaassimédiferente.
+Éimportanteconhecerbemoescopodoprojetoeasexpectativasdoseugrupo
+19
+
+## Página 28
+
+CasadoCódigo
+deusuários. Àsvezes,pormaisqueWebfa çamaissentido,umaAppvaitrazera
+experiênciafinalmaisapropriadanaquelecaso.Ounão,muitasvezesasrestri ções
+dasAppscomrela çãoàWebsãofatoresmaisdeterminantes.
+Oimportanteéanalisarbemcasoacasoetomarboasdecisões.Nãoadoteuma
+Appsóporcausademodinha.EnãoadoteaWebsóporqueéocaminhomaiscurto
+efácil.
+20
+
+## Página 29
+
+Capítulo4
+HTML5édiferentedeHTML5:o
+casodaspackagedapps
+VocêusaHTML,CSSeJavaScriptpraescreversuaspáginasWeb,seussites.Durante
+anos,todafrasecom‘HTML’tinha‘Web’nomeio.HTML(eseusamigosCSSeJS)
+éalínguadaWeb. Mas,nessarevolu çãomobile,écomumouvir‘HTML’(emais
+especificamente‘HTML5’)nahoradedescreverApps.
+AAppdoLinkedInnoiOSéfeitaemHTML5. OFacebooktinhaumaApp
+HTML5efalouquenãogostava—porisso,migroupranativo. AMicrosoftfala
+pravocêescreverAppsproWindows8emHTML5. OFirefoxOSéumsistema
+operacionalmóvelinteiroconstruídoemHTML5.
+IssoquerdizerqueWindows8,FirefoxOSeosoutroscasosrodamnaWeb?
+Não.
+OqueéWeb
+Pareceridículoescreversobre o que é Webparaopúblicodesselivro.Masnão,
+
+## Página 30
+
+CasadoCódigo
+aconfusãoégrandecomessamodinhade‘HTML5’.Precisamosdefinirbem,justo
+praentenderoque não é Web.
+WebnãoésóusarHTML5,CSSeJavaScript—atéporquepodemosfazersi-
+tesemoutraslinguagens,comoFlash,emborasejacadavezmenoscomum. Web
+éasomadeumaredeemcimadeHTTPcomacapacidadedesecriarlinksentre
+páginas,emumformatopadronizado,oHTML.WebéestarconectadonaInternet
+ecarregarsuaspáginasdeumservidoremqualquerlugardomundo.E,seguindo
+links,navegarpratodososcantos.
+Quefiqueclaro:HTML5ésóa linguagemusadanaWeb.Nãoé aW e b .
+Reaproveitamentodelinguagens
+ComaWebexplodindoempopularidade,omundoseviuinfestadodeprogra-
+madoresHTML,CSSeJavaScript.MasnemsódeWebéfeitaaprograma ção.Por
+isso,existemdiversaslinguagensfocadosemservidores,programasDesktop,apare-
+lhosembarcadosetc.
+Atéquecaiuafichademuitagente:sejáaprendemosaslinguagensHTML,CSS
+eJSporcausadaWeb,seráquenãoseriamelhorusaressasmesmaslinguagensem
+outrassitua çõeseevitarterqueaprendernovas?Excelenteideia,apesardaconfusão
+queissocriou.
+Sealguémfalaqueéum programador JavaScript,vocênãopodesimplesmente
+inferirqueelemanjatudodejQuery. Podeserqueelenemprogrameo front-end,
+masfoqueemprogramasnoservidorusandoNode.JS.Épreciso,então,diferenciar
+bemosusosquesãofeitosdessaslinguagenshojeemdia.
+HTML,CSSeJavaScriptemtodolugar
+OJavaScriptéusadocomumentehojeemduassitua ções:
+• EmcompanhiadoHTML,CSS,renderizandonumnavegadorouequivalente;
+• Noservidor,comolinguagemdeprograma çãodeusogeralemplataformas
+comoNode.jsouRhino.
+SeguindoocaminhoondeusamosJavaScriptjuntocom HTMLeCSS ,queéo
+quenosinteressanestelivro,temosmaisduasdivisõesondepodemosusaressetrio
+delinguagens:
+22
+
+## Página 31
+
+CasadoCódigo Capítulo4. HTML5édiferentedeHTML5:ocasodaspackagedapps
+• NaW e b,rodandononavegadordoclienteapósumacessonoservidor.Pode-
+mosfalardeum S i t ecomumouuma W e b A p pmaiscomplicadinha;
+• EmAppsempacotadas( packaged apps),sejaem mobileou desktop.
+Resumindo,graficamente:
+PackagedApps
+AgrandenovidadedoburburinhoquesefazemtornodeHTML5hojeemdia
+sãoessas packaged apps.VocêprogramaaaplicaçãoemHTML,CSSeJavaScriptmas
+emarquivoslocaisnasuamáquina,semsubirparaumservidor.Aívocêempacota
+tudoissonumaAppquedepoisseráexecutadanoaparelhocomoumaaplica ção
+normal.
+Porbaixodospanos,aplataformadeexecu çãovaiusarumaespéciedebrowser
+praleressesarquivosemontaratela.Éoqueopessoalchamade W e b V i e w,uma
+formadeembutirsóomecanismodeexecu çãodobrowsersemaparafernáliatoda
+donavegadorcompleto—barradeendere ços,configura çõesdousuário,favoritos
+etc.É,basicamente,sóum renderizadordeHTML.
+Essas packaged appsestãoemtodolugarhojeemdia.O PhoneGapéumaferra-
+mentadeempacotamentoquegeraAppsparaváriasplataformasapartirdeumcó-
+digoHTMLcomum(elesuportaiOS,Android,Blackberry,WindowsPhone,Bada,
+SymbianeWebOS).Parecesimples,masnãoé.Éprecisogerarumbinárioparacada
+plataformaquevocêtiverinteressee,depois,publicarnalojaespecíficadecadauma.
+23
+
+## Página 32
+
+CasadoCódigo
+Outrasplataformasjáestãosendomontadascomaideiade packaged appsembu-
+tidadiretamente.OFirefoxOSéumexemplodisso.VocêescrevetudoemHTML,
+criaumarquivodeconfigura çãosimplesegeraumZIPprontoprainstalar.Windows
+Phone8,TizeneBlackberry10sãooutrosexemplosdesuportediretoa packaged apps
+em HTML.
+NoDesktop,essaideiajáexisteháanostambém. Asextensõesqueinstala-
+mosnosnavegadorescomoFirefoxeChromesãoescritasemHTMLeempacotadas
+comoextensão(edepoispublicadasnasrespectivaslojas).OChrometemtambémas
+Chrome Appsquesão,denovo,aplica çõesHTMLempacotadasedistribuídasna Ch-
+rome Web Store.OnovoWindows8fezumestardalha çocomoprimeirograndesis-
+temaoperacionalDesktopasuportardesenvolvimentodeAppsnativasemHTML,
+CSSeJavaScript.Masmuitosoutrosseguemessaideia—comooChromeOSeo
+GnomenoLinux.
+Nomundomobile,outrotermocomumdeseouvirparaessasAppsHTML5
+empacotadaséHybrid Apps(a p l i c ações híbridas). E,claro,porserumHTMLro-
+dandonumaespéciedebrowser,vocêtambémpodecarregarpáginasexternasdo
+seuservidordentrodaApp.NemtodocódigoHTMLprecisaestarempacotadona
+Apporiginal.
+HTML5édiferentedeHTML5
+ÉimportantediferenciaroqueéusarHTML5(eCSSeJS)naWebdoqueé
+usarHTML5praescrever packaged apps.AsApps,mesmoescritasemHTML,têm
+todasascaracterísticas(elimita ções)dequalquerApp,comodiscutimosantes. O
+fatodeseusarHTMLpraescrevê-lassóaliviaofatodeserumalinguagemcomum
+eodesenvolvedornãoprecisaraprenderumalinguagemespecíficadaplataforma—
+Objective-CnoiOS,JavanoAndroid,C #noWindowsPhoneetc.
+UsarHTML5comobaseparaAppstambémtrazumcertoníveldeportabilidade
+efacilidadeparasuportarmúltiplasplataformas.Mascuidadoqueissoengana.Ao
+escreverumaAppemHTML5proWindowsPhone,porexemplo,vocêvaiusaras
+linguagenscomunsmas muitasAPIsespecíficas daMicrosoft.Mesmacoisasevocê
+forcriarumaAppproFirefoxOSouproPhoneGap.Alinguagemécomumemuitas
+APIsmaissimplessãoasmesmas,mascoisasmaiscomplicadassãoespecíficasde
+plataforma.Eisso,claro,limitaaportabilidade.
+JáquandofalamosdeWeb,falamosdeuma especificaçãocomum guiadapelo
+W3Cepelosnavegadores.Falamosde padronizaçãodeAPIselinguagens.Issosim
+éportabilidadetotal. Mas,claro,sabemosqueapesardamegaevolu ção,oHTML
+24
+
+## Página 33
+
+CasadoCódigo Capítulo4. HTML5édiferentedeHTML5:ocasodaspackagedapps
+5nãotraztodososrecursosdasplataformasnativas. PorissoqueexistemasAPIs
+específicasdecadafabricante,mesmoquandosuaAppéescritaemHTML,CSSe
+JS.
+OHTML5estáevoluindoemuitasdasinova çõesproprietáriasdasplataformas
+específicasacabamsendoespecificadasesetornandopadrão.Éumprocessomais
+lento,masqueevoluiaWebporigualegarantesuaindependênciaecompatibili-
+dade.
+25
+
+## Página 35
+
+Capítulo5
+DesignResponsivoporumaWeb
+única
+AcomunidadededesenvolvedoresWebcompartilhoudurantemuitotempoumgi-
+gantescodelíriocoletivo. Umailusão absolutamentefalsamasqueseimpregnou
+detalformaquetodomundoachavaqueeraverdade. Eumesmoparticipeidessa
+alucinaçãocoletiva durantemuitosanos.
+Estoufalandoda ilusãodequeaWebtemtamanhofixo .
+FalarhojequeaWebéumamídiaflexíveleadaptávelsoatrivial.Mas,durante
+anos,ocomumnaWeberamaspáginasdetamanhosfixos.Discutíamosqualerao
+melhortamanhoprafazeraspáginas.Seria960pxdelargura?980px?Lembroaté
+hojedamudan çanossitesquandoaresolu çãomaiscomumdosmonitoresdeixou
+deser800pxepassouaser1024px.
+Mas,sempretivemosmonitoresde800pxdelargura,assimcomo1024px.Hoje,
+asresolu çõesde1280pxe1366pxsãoasmaiscomuns.Masmuitagenteusaresolu ções
+maiores,com1600pxou1920px. Nossossitesfixosnuncalevaramissoemconta.
+
+## Página 36
+
+CasadoCódigo
+Programávamospraresoluçãomaiscomumeesquecíamosoresto.Nossosdesigns
+eram p i x el p e r f e c t—copiadospixelapixeldodesenhooriginaldoPhotoshop.
+Issoéridículo.IssonãoéaWebportável,acessíveleuniversalquegostaríamos.
+AWebéflexível
+Designresponsivonadamaiséque(re)lembrarque aWebéumamídiaflexível
+eadaptável.OvergonhosoépensarqueaWebsemprefoiassim,nósquecolocamos
+asrestri çõesemnossaspáginas.
+Muitagentefaladissohátantotempo:oseminalartigo ADaoofWebDesign ,de
+JohnAllsopp,publicadoem2000no A List Apart(http://alistapart.com/article/dao),
+éleituraobrigatória.Noiníciodomilênio,elejáfalava:
+“O controle que os designers conhecem na mídia impressa, e constantemente de-
+sejam na web, é simplesmente em função da limita ção da página impressa. Devemos
+a b r açar o fato de que a Web não tem as mesmas restrições, e projetar para essa flexibi-
+lidade. ”
+Ouseja,amídiaimpressaqueélimitada,aWebnão.Tãoóbvio.
+Essemesmoartigoaindafalava:
+“ F aça páginas que são acessíveis, independentemente de navegador, plataforma ou
+tela que seu leitor escolha ou tenha que usar para acessar suas páginas. Isso significa
+páginas que são legíveis independentemente da resolução ou tamanho da tela, ou do
+n ú m e r o d e c o r e s .”
+Équaseimpossívelimaginarqueelenãoestavafalandodasnovaspáginasres-
+ponsivasqueabremtantonocelularquantonoDesktop.Não,eleescreveuissoem
+2000,clamandoquefocássemosemflexibilidadenasnossaspáginas,poisaWebée
+semprefoiassim.
+Demorouumadécadapracairaficha.Mas,antestardedoquenunca.
+DesignResponsivo
+Vocêcertamentejáviudiversossitesresponsivosporaí.Sãoaquelaspáginasque
+seadaptamatodotipodedispositivo.Vocêabreamesmapáginanocelular,notablet
+enoDesktop,eelaseadaptapramelhoraraexperiênciadousuário.Vamosexplorar
+depoistodososaspectostécnicosdessassolu çõesaquinolivro,masfoquemosagora
+nosaspectosestratégicos.
+O termoWeb Design Responsivo surgiu num artigo divisor de águas publi-
+cadoem2010por Ethan Marcotteno A List Apart (http://alistapart.com/article/
+28
+
+## Página 37
+
+CasadoCódigo Capítulo5. DesignResponsivoporumaWebúnica
+responsive-web-design)—nãoporacaso,afrasedeaberturaéumacita çãodoartigo
+AD a oo fW e bD e s i g nquevimosantes.
+Pouco tempo depois, o próprio Ethan publicou um livro aprofundando
+as ideias — tenho um review sobre ele no meu blog:http://sergiolopes.org/
+review-responsive-design-ethan-marcotte/
+Aideiaprapalavra‘responsivo’veiodaarquitetura,naqualsefaladetécnicas
+paraconstru çõesemateriaisdeadaptaremaoambienteeàspessoasqueinteragem
+comele.AíoEthanfala:
+“ Ao invés de criar designs desconectados para cada um do crescente número de dis-
+positivos web, nós podemos tratá-los como faces da mesma experiência. Podemos criar
+para uma experiência de visualização ideal, mas embutir tecnologias padronizadas
+nos nossos designs para fazê-los não apenas mais flexíveis, mas mais adaptados para
+a mídia que os renderiza. ”
+Achaveprodesignresponsivoéfazerum designflexíveleadaptável,quese
+ajusteàscaracterísticasdonavegador,dodispositivoedocontextodousuário.
+Ospilarestécnicosdassolu çõesresponsivassãoo layoutfluído (tópico8),o
+usode mediaqueries (tópico9)ede imagensflexíveis (tópico19). Vamoslidar
+detalhadamentecomcadaumdessespontosnostópicosseguintesdolivro.
+Oconteúdoéoqueimporta
+Háquemdigaqueéimpraticávelofereceromesmositeparatodomundoporque,
+quandonavegamosemtelaspequenas, queremos conteúdo mais focado e páginas mais
+simples e diretas.Éabsolutamenteverdadequeusuáriosmobiletêmmenospaciência
+parapáginasgrandesecarregadas,masissonãoinviabilizaumdesignresponsivo.
+Achaveéa priorizaçãodeconteúdo.Éprecisorepensartodooconteúdopara
+descobriroquerealmenteimporta,eremovertodooexcesso.Umapáginamobile
+nãodeveserapenasumdesignmenor,masuma completa reestruturação de con-
+teúdo.PorissoquesóadaptarodesigndeumsiteDesktopjáexistentedificilmente
+funciona.
+E,sevocêjágastouumbomtempo cortando coisas secundáriase priorizando o
+importante,porqueofereceressaversãomaissimplesefuncionalapenasparausuá-
+riosmobile?PorquetemosmaniadepensarqueusuáriosDesktopdevemreceber
+páginascheiasdeinforma çõesinúteis?
+Responsivedesign éentregaramesmainforma ção—útilepriorizada—para
+todomundo!
+29
+
+## Página 38
+
+CasadoCódigo
+Hámuitaconfusãoentreo meio de acessoeo contexto de acesso.Muitagenteacre-
+ditaque,sóporqueousuárioestánosmartphone,significaqueeleestánaruacom
+pressa.Ouque,sóporqueousuárioestánumbrowserDesktop,eleestásentadinho
+namesadelecomtodotempoepaciênciadomundo.Usa-seissoparajustificardife-
+rençasbrutaisentreaversãoDesktopeaversãomobiledeumsite.UsuárioDesktop
+supostamentequermaisconteúdoemaisop ções;enquantousuáriosmobilesupos-
+tamentequerempáginasmaissimplesefocadasapenasematividadeschave.
+Nadadissoéverdade.
+UmusuárioDesktoppodeestarnumnotebooknomeiodarua,usando3Gecom
+pressa.Eumusuáriodesmartphonepodeestarsentadinhonosofádecasausando
+seuWi-Fi. Ouvice-versa. Nãodáprasaber. Fatoéque ocontextodeacessodo
+usuárionãotemnadaavercomodispositivoqueeleestáusando .Nãodevemos
+julgarousuárioporseuaparelho.
+Naprática,comovocênuncavaisaberorealcontextodeuso,sempreofere ça
+acessoa todasasinforma çõesefuncionalidadesdoseusiteparatodososusuáriose
+damaneiramaislimpaeclaraopossível.Claroqueaformadeacessomuda,odesign
+muda(vamosfalarmaisdissodepois),mastudodeveseracessívelsempre.Jamais
+corteconteúdoachandoqueousuáriomobilenãovaiquererveraquilo.Otimizar
+paramobilenãosignificadiminuirfuncionalidades,significafocar.
+AWebÚnica
+Criarumsiteresponsivonãoéfácil. Trabalharcomflexibilidadeeadapta çãoé
+bemmaiscomplicadoqueumsitefixoempixels.Asferramentasdedesenhoainda
+nãoestãopreparadaseosdesignersgráficoscostumamterdificuldadesparacriar
+comresponsividadeemmente.
+Ocódigoficamaiscomplexotambém. Hádificuldadesparasetrabalharcom
+imagensevídeosresponsivos. ÉbastantecomplicadoadaptarumsiteDesktopjá
+existenteparaserresponsivo.
+Apesardetudoisso, designsresponsivossãoofuturo .Pelosimplesmotivode
+queaWebéúnicaecriarsitesseparadosparacadacategoriadedispositivosdehoje
+edofuturoéimpossível.
+Euadoroessetermo, OneWeb,queoW3Cdefendequandofalademobile
+(http://www.w3.org/TR/mobile-bp/#OneWeb).ÉaideiapuradequenãoexisteWeb
+MobileeWebDesktop,comofalamosjánoiníciodolivro.Existe aW e b e v á r i a s f o r -
+masdeacessá-la.Pensarassiméaúnicaformadenãoenlouquecernessemundode
+cadavezmaisdispositivosdiferentescomacessoàWeb.
+30
+
+## Página 39
+
+CasadoCódigo Capítulo5. DesignResponsivoporumaWebúnica
+Eodesignresponsivoéaformamaisadequadadeentregaromesmoconteúdo
+pratodomundonessaWebúnica.
+MaseuquerositesdiferentesparaDesktopeMobile!
+Nenhumasolu çãoé bala de prata.Talvezvocêtenhabonsmotivosparanãoen-
+cararaWebcomumsiteúnicopratodomundo.Hárazõesparasepreferirsepararo
+siteDesktopdositemobile.SeusiteDesktoppodesermuitocomplicadopraadap-
+tarpramobile,eumsitenovopodesermaiseficiente—váriosgrandesportaistêm
+seguidoessalinha.
+Issoquerdizerquevocêdeveesquecer design responsivo?Não.
+Aocriarseusitemobile,vocêvaiprecisar,primeiro,definiroqueémobile—o
+quepodenãoserumatarefafácil,comodiscutimosantes.Vocêteráquedecidirsevai
+atacarsósmartphones;setabletsrecebemaversãoDesktopouaversãomobile;onde
+traçaralinhaquedividesmartphonesdetablets;dentremuitasoutrasperguntas.
+Masvamosdizerquevocêfechouemfazerumsitefocadosóemsmartphones.
+Mesmoassim,vocêvaiprecisarfazê-loresponsivo. Sópensandonostamanhos
+deteladossmartphonesmaiscomuns,teríamos320px,360px,380px,480px,533px,
+568px,640pxe,provavelmente,muitosmais. Comofazerumúnicositesuportar
+tudoisso?Usando design responsivo.
+Ouseja,mesmorestringindoaaudiênciaapenasparasmartphones,aquantidade
+dedispositivosaindaégigante,comosmaisdiversostamanhosdetelas. Vocêvai
+precisardeumsiteflexíveleadaptável.
+Mais:essaabordagempodeserbeminteressanteparaofuturo.Vocêpodenão
+tercondi çõesagoraderecriarseusitecompletamenteresponsivoparatodososdis-
+positivos.Então,vocêpodecome çarcriandoumaversãoparasmartphones,nome-
+lhorestilo mobile first. Essanovaversãovaiterqueserresponsiva. Comotempo,
+vocêpodeevoluirseudesignparaincluirtabletstambém.Depois,quemsabe,jánão
+incluiDesktopseTVstambém?Atéumpontoemqueseudesignresponsivoevolui
+parasubstituirseuantigositepuramenteDesktop.
+Euacreditomuitoerecomendoaabordagemdo designresponsivoedaweb
+única.Masmesmoquevocêtenhasitesdiferentes,fa ça-otambémresponsivo.
+31
+
+## Página 41
+
+Capítulo6
+Mobile-first
+ConvencidodotamanhogigantescodomercadomobileedequeaWebéumasó
+pratodomundo,vocêdecideinvestirnodesignresponsivo.Ótimopasso.Horade
+tomarapróximadecisão:porondecome çar?
+Emespecial,nahoradecriarmeusiteouwebapp,come çopensandoprimeiro
+noDesktopouprimeironosdispositivosmóveis? Vouprecisarcobrirtudo,claro,
+masporondecome çar?Eétãoimportanteassimdefinirporondecome çar?
+Mobileédiferente
+Amaiordiferen çaentreumdispositivomóveleumDesktopéoespa çodisponí-
+velparaoconteúdo.Aáreaútildapágina.Claroquesempredápradarscroll,mas
+éfatoquecabemenosinforma çãonocelularquenatelonadocomputador.
+Alémdotamanho,háoutrasdiferen ças,comoocontextodeusododispositivo.
+Umcelularémuitomaisflexívelepodeserusadoemmuitomaissitua çõesqueum
+Desktop:possoestarnarua,nocarro,nafiladobanco,emcasanosofá,deitadona
+cama,assistindoTV,usandoobanheiro.
+
+## Página 42
+
+CasadoCódigo
+Poderíamosfalartambémdatendênciadosdispositivosmóveisterem touch
+screen,oqueéquaseonipresentejá. Mas,comovamosdiscutirnotópico 23,isso
+nãoémaisumdiferencial,jáquenotebooksemonitorescomtouchsãocadavez
+maiscomuns.
+Masfatoéquehádiferen çasclarasnousodeaparelhosmóveisemcompara ção
+aousodoDesktop.Maisainda:mobilenãoésódiferente,parecesertambém mais
+limitado. Telamenor,redelenta,hardwaremaislento,touchmenosprecisoque
+mouse,etc.
+Dispositivosmóveistrazemmaisliberdadedeusomastrazemtambémnovas
+restriçõesquenãopensávamosantigamentenoDesktop.Comolidarcomisso?
+Abraceasrestri ções
+Émuitomaisfácilcome çarseudesigntendoemmenteasrestri çõesdomobile
+edepoisevoluirparaomodoDesktopqueémenoslimitado. Ocontrárioébem
+maistrabalhoso:criarnoDesktopsemrestri çõesetentarlimitardepoisconforme
+foradaptandoparaomobile.
+Emtermospráticos:um designmobile-first nosobrigaafocarmaiseaprio-
+rizarmelhoroconteúdo. Abra çandoasrestri çõesdomobile,acabamoschegando
+emumdesignmaissimplesefuncional,jáquenãohámuitoespa çoparaenrola ção.
+AíquandoevoluímosodesignparaaversãoDesktop,oresultadoétambémuma
+interfacemaisfocadaetodomundoganha.
+Ocaminhoinversoébemmaisdifícil.PeloDesktopserbemmenosrestrito,aca-
+bamosenchendoapáginasdecoisassemproblemas.Quandotentamostransformar
+emmobile,odesigncome çaaparecerexageradoeébemdifícilencaixartudo.
+Criarumdesignmobile-firstéfocarnoprincipal,eissonãoéfácil. Ébem
+maisfácilfazerumainterfacecheiadecoisasqueumainterfacesimplesqueatinjao
+mesmoobjetivo.Bonsdesigns,porém,sãosimplesefuncionais;epensarprimeiro
+nomobileteajudaachegarnisso.
+Ejáquevocêvaiconseguirchegarnumprodutobomefocadonomobile,pode
+usaromesmonaversãoDesktop. Aliás,nãoéporqueoDesktoptemmaisespa ço
+quedevemosentupi-lodecoisas.Telasmaioresnãosignificamumavontadedousuá-
+riodevermaistranqueiras.Interfacessimplesefocadassãomelhoresemtodasas
+situações.
+Masclaroqueissotambémnãosignificadesperdi çar o espaçofantásticodo
+Desktop.Queremosumdesignsimpleseconteúdofocado,mastambémqueremos
+34
+
+## Página 43
+
+CasadoCódigo Capítulo6. Mobile-first
+aproveitaromelhordecadatipodeaparelho.Vamosdiscutiraindaalgumasideias
+nessalinhanotópico 20,sobrecarregamentocondicional.
+Implementaçãomobile-first
+Criadoo design mobile-first,chegamosnapartedecodificartudoisso.Etemos
+quepensarnovamenteporondecome çar.Agoraquevocêjátemodesignfocadoe
+simplesnamão,tantofazcome çarcodificandoaversãoDesktopouaversãomobile.
+Certo?Não,codificar mobile-firsttambémébemmaisfácil.
+Eufizumexperimentocertavez:codifiqueiduasvezesumsiteinteirodozero,
+uma mobile-firsteoutra desktop-first.Ocódigo mobile-firstfoibemmaissimplese
+fácildeentender.
+Oprincípioportrásdissoéo progressive enhancement.Éamesmaideiadeabra-
+çarasrestri ções,masagorafalandodecódigo. Vocêescreveumcódigosimplese
+funcionalcomomaiorsuportepossívelnosnavegadores,evaievoluindo-oparaco-
+brirfuncionalidadesmaisavan çadasdenavegadoresmaismodernos.Aliás,vamos
+falarbastantede progressive enhancementaindanolivro—tópicos 14,17,entreou-
+tros.
+Umaspectointeressantedecome çaracodificarpelomobileé performance.Dis-
+positivosmóveistêmrestri çõesgigantescasdeperformance.Rede3Glentaepouco
+confiável,processadormaislento,menosmemóriaeconsumodebateriasãoalguns
+pontosaseteremmente. Então,sevocêcome çaacodificarpelomobile,grandes
+chancesdefocarbastanteemperformancepraconseguirultrapassartodosessesobs-
+táculosdosaparelhos.
+AíquandocheganaversãoDesktop,vocêtemumsiteultrarápido! Focarnas
+limitaçõesdeperformancedosdispositivosmóveisgeraumimensobenefíciopara
+ousuárioDesktop,queganhaumsitemuitootimizado.
+Aliás,jálimuitosartigosquecriticamo“absurdo”desitesresponsivosterem
+mesmotamanhoemesmosrequeststantonomobilequantonoDesktop. Aapa-
+rentemá-práticaéquevocêprecisateralgomaislevenosmartphonequenoDesk-
+top. Eunãovejodessamaneira. Étudorelativo:seminhaversãomobileérápida
+eenxuta,porquenãopossoofereceromesmoparaaversãoDesktop? Querdizer,
+nãoháproblemaemsinostamanhosdomobileeDesktopseremiguaisdesdeque
+essetamanhosejapequenoeotimizadopensandoprimeironomobile.Oproblema
+é,naverdade,teraversãoDesktoppesadaetomá-lacomobasenonomobile,só
+apertandoodesign.
+Mobile-firstgaranteboaperformancepratodomundo.
+35
+
+## Página 44
+
+CasadoCódigo
+Capacidadesdiferentes
+Éimportantetambémpensarqueum design mobile-firstnãoénecessariamente
+sósobrerestri ções.DispositivosmóveistêmmuitascapacidadesqueDesktopsclás-
+sicosnãotêm.
+Porseremaparelhosmóveis,hátodaumaáreadepossibilidadesemlocaliza ção:
+oferecerconteúdoslocalizados,epermitiraousuáriotirarproveitodofatodeestar
+emcertolugar.
+Aparelhosmóveistambémsãousadosemcontextosdiferentes.Elessãousados
+nasmesmassitua çõesqueDesktop(emcasa,noescritório),mastambémemoutras
+situaçõesqueocomputadordificilmentechegava:nafiladobanco,deitadonacama,
+norestaurante,dentrodeumalojaetc.
+Todasessasnovascapacidadesepossibilidadessãoimpulsoparainova ção.Co-
+meçarpelomobilepodedespertarnovasideiasqueoDesktopnãotraria.Eaívocê
+provavelmentevaiprecisarlidarcomessasdiferen çastambématravésdealgocomo
+f e at u re d e t e c t,queveremosnotópico 17.
+Outrosusosdotermo
+Falamos demobile-firstemdoiscontextos:nodesigndaaplica çãoenaimple-
+mentaçãodocódigoemsi. Masalgumaspessoasusamaindaotermoemoutros
+contextos.
+Jávigentefalandodeuma cultura mobile-firstou depessoas mobile-first. Isso
+geralmentequerressaltarofatodequeumaparcelacadavezmaiordapopula ção
+usaseudispositivomóvelcomoprincipalmeiodeacessoàWebeàsuavidadigital.
+Háatéumgrupograndede mobile-only,pessoasquenemusamDesktopesótêm
+smartphonee/outablet. Aliás,éjustoporcausadessepúblicocadavezmaiorde
+usuáriosmajoritariamentemobilequenãodevemoscortarconteúdonaversãomo-
+biledonossosite(comodiscutimosnotópico 5),senãoessaspessoasjamaisteriam
+possibilidadeverasfuncionalidadescortadas.
+Outraocorrênciadotermoéquandofalamdeuma estratégia mobile-first.Aqui
+aideiaéfalardaestratégiacomercialdeumnegócio,seufococomoempresa. O
+Instagram,porexemplo,étidocomoumaempresa mobile-first. Nasceramcomo
+umaaplica çãoiOSparatirarecompartilharfotos.Depois,veioaversãoAndroide,
+bemporúltimo,umsiteWebbemsimplessópraverasfotos.Éumaempresaque
+nasceucomfocoemmobile. Claroquenemtodaempresasegueessecaminho—
+aliás,amaiorianãonasceunomobileeébemmaisamplaqueisso.
+36
+
+## Página 45
+
+CasadoCódigo Capítulo6. Mobile-first
+Eotermoemsi— mobile-first—nasceuemumpostem2009peloespecialista
+mobileLukeWroblewski(http://www.lukew.com/ff/entry.asp?933)noqualelefalava
+maisdaideiadedesignefoco.Depois,elemesmolan çouumlivrocomessetítulo
+ondeabordoumelhoressasideiascommuitosexemplospráticosdeusabilidadee
+design. Éumlivromuitobomeinteressante—vocêpodevermeureviewaqui:
+http://sergiolopes.org/review-livro-mobile-first-luke-wroblewski/
+37
+
+## Página 47
+
+Capítulo7
+Mercado,Browsers,suporteetestes
+Escrevinaintrodu çãodolivroquenãopretendofalardenúmerosespecíficosdo
+mercadomobile,jáqueelesficariamdesatualizadosrapidamente.Oqueinteressa,
+claro,éo seu mercado,da s u a a p l i c ação.
+TodoprojetoWebprecisadefinirumapolíticadecompatibilidadedosnavega-
+dores.PormaisquefalemosdaWebúnicaeuniversal,sabemosquehánavegadores
+detodaqualidadeespalhadosporaí.E,namaioriadoscenários,nãoéviávelfinan-
+ceiramentetentaralcan çarosuporteatodos.Éprecisodeixaralgunsdelado.
+Mascomo traçaressalinha?Comodefinirosnavegadoresquerecebemsuporte
+oficial?
+Vocêprecisaverosdadosdoseupúblico,analisarasestatísticasdositeemques-
+tão. Paraisso,vocêvaiusaralgumaferramentadecoletadedadoscomoo Google
+A n a l y t i c s. Observeatentamenteasinforma çõesreaisdo seucenáriopratomaras
+melhoresdecisõesparaoseupúblico.
+Sevocêestiveriniciandoumprojetonovo,recomendoolharasestatísticasda
+regiãoemquestãono Stat Counter(http://gs.statcounter.com/)edefinirumgrupo
+
+## Página 48
+
+CasadoCódigo
+inicialdenavegadoresparasuportar.Aícoloqueoprojetoomaisrápidopossívelno
+arparajácome çaracoletardadosreaiseajustarsuapolíticadecompatibilidadede
+acordo.
+Comoincluirouexcluirumbrowserespecífico
+Vocêvaiolharparaseusnúmerosevaiacharusuáriosdetodotipodenavegador.
+Comodecidirqualsuportarequalnão?
+Umaestratégiaécolocarumlimitenumérico.Navegadorescommenosde1%de
+usonãoserãosuportadosoficialmente.Ou,seforumsitedeusomaisgeral,coloque
+umnúmeromaisbaixo,como0,5%.Maséprecisoterumcerto feelingaqui.
+Analiseohistóricodeuso —enãosódadospontuais—etenteconcluirbaseado
+natrajetóriadaquelenavegadorespecífico.Porexemplo:vocêolhaqueoInternet
+Explorer10tem1%devisitantesnoseusite. Devosuportá-lo? Claroquesim,a
+trajetóriadoIE10édeascensão. Eleaindatempoucaado çãoporsernovo,mas
+estácrescendoacadadia.AhistóriadoIE6,claro,seriaoutra:ésóverqueelevem
+diminuindocadavezmaise,obviamente,nãovaicrescer.
+Essetipodeanáliseémaisimportanteaindaquandoforlevaremcontanave-
+gadoresmóveis.OpercentualnoBrasilaindaébaixocomrela çãoaosnavegadores
+Desktop.Massabemosqueéumatrajetóriadeascensão.Vocêvaiquerersuportar
+navegadoresmobilenamaioriadosnovossites.
+Masvocênuncavaiconseguirsuportartodososnavegadores,sobretudonomo-
+bile,ondeonúmerodeplataformasenavegadoresdiferenteséimenso.Escolhaba-
+seadonoseupúblico,notrabalhoqueteriasuportandoaquelebrowserespecífico,e
+noretornoesperadodele.
+Aboanotíciaéqueosaparelhosmodernostêmbrowserscadavezmaisevo-
+luídos,entãonãoétãotrabalhosoassimsuportá-lostodos. Masvocêpodeacabar
+tendoquedecidirexcluirplataformasmaisantigascomoSymbian,S40,BlackBerry,
+Badaeoutrossistemasproprietários.
+Muitagenteaindausacelularesmaisbásicos( feature phones),geralmentecom
+algumnavegadornativoouoOperaMini.Costumaserumgrupograndedepessoas,
+masotrabalhoemsuportá-loséimensoevocêtalveztenhaquedecidirexcluí-los.
+EupessoalmenteficobastantetristequandoprecisodecidirexcluiroOperaMinide
+algumprojeto.Éumbrowser m u i t ousado,mas,nosprojetosqueparticipei,suportá-
+lodemandariaumesfor çoabsurdoeinjustificável,infelizmente.
+Éimportanteapenaslembraralgo:nãosuportaretestaroficialmenteumcerto
+browsernãosignificaexcluiraquelegrupocompletamente. Sevocêprogramardi-
+40
+
+## Página 49
+
+CasadoCódigo Capítulo7. Mercado,Browsers,suporteetestes
+reito,usandoasmelhorespráticasdo progressive enhancement,épossívelquesua
+páginasejaminimamenteusávelnessesnavegadoresmaisvelhos.
+Comotestar?
+TestarprojetosWebéumapartepoucodivertidadoprojeto,masessencial.Em-
+boraasdiferen çasentreosnavegadoresestejamdiminuindobastanteaolongodos
+anos,vocêprecisatestaremcadaumdeles.Vaiencontrarbugs,problemasdeperfor-
+manceetambémobservaraexperiênciadousuárionaquelebrowseroudispositivo
+específico.
+VocêjádeveestarcraqueemtestesdesitesDesktop.Ésóinstalarváriosnavega-
+doresemversõesdiferentesnasuamáquinaetestar.Masecomdispositivosmóveis?
+V o c êp re c i s aterváriosaparelhosparatestes.
+Desenvolverparamobileéalgorelativamentecaro,poisvocêprecisamontarseu
+laboratóriodetestesecomprarváriosdispositivos.Oujuntarcomoutrosdesenvol-
+vedoreseamigosetrocaraparelhosparatestes.Outrainiciativacomumláfora(mas
+aindafracanoBrasil)sãoos device labs comunitários,comváriosaparelhosdoados
+portodomundoparausoportodososassociados( http://opendevicelab.com/).
+UmaestratégiaqueeuusoécompraraparelhosusadosnoMercadoLivreeaté
+algunscompequenosdefeitos. JácompreiumiPodTouchpromeulabcomtela
+rachadamasquefuncionavabem(depoisacabeitrocandoatelaporumade $15
+achadanoeBay).
+Vocêvaiprecisarescolheraparelhosquerepresentemomelhorpossívelseupú-
+blicoeoquevocêvaiprecisarsuportar.Issodependebastantedecadacenário.Mas,
+demaneirageral,escolhaaparelhosdetiposdiferentes,plataformasdiferentes,ver-
+sõesdiferentes,deváriostamanhosdetelaediversosfabricantes.Umapreocupa ção
+queachoimportanteéemteraparelhosdeváriasresolu çõesdiferentesecomvárias
+densidadesdepixels( p i x el rat i o).
+Noiníciode2013,conformeescrevoolivro,meulaboratóriodetestespessoal
+tem:
+• SamsungGalaxySIIde4,3”comAndroid4.0oficialSamsungepixelratio1.5;
+• SamsungGalaxyNoteIIde5,5”comAndroid4.1daSamsungepixelratio2;
+• TabletAndroid7”comAndroid4.2epixelratio1(éumKindleFirehackeado);
+• HTCGoogleNexusOnede3,7”comAndroid2.3epixelratio1.5;
+41
+
+## Página 50
+
+CasadoCódigo
+• SamsungGalaxy5de2,8”comAndroid2.2oficialSamsungepixelratio0.75;
+• iPodTouch4de3,5”comtelaretinaeiOS6;
+• iPad2de9,7”comiOS6.1;
+• NokiaXpressMusiccomSymbianS60bemvelho.
+Essalistaéminha,pessoal,combasenosmeusprojetos,nasminhaslimita ções
+enecessidades. Nãocoloqueipravocêcopiar,masparaterumaideiadecomoeu
+mevirei.E,mesmoassim,aindasintofaltadeterumWindowsPhone(tenhoplanos
+paracomprá-loembreve),umcelularcomtecladofísicoetalvezumiPadMinie
+outrotabletAndroid.
+Instalandoosbrowsers
+NoAndroid,vocêvaiprovavelmenteinstalarváriosbrowsersparatestes. O
+browserpadrãodoAndroideoChromeMobilesãoosmaisusados.Masháalgumas
+pessoasusandoFirefoxMobileouOperaMobile.OFirefoxpodeserimportanteseo
+F i r e f o x O Srealmentedecolar,jáqueseriaomesmobrowserdessaversãodoAndroid
+(podemoseconomizarnacompradeumaparelho!).
+Figura7.1:ListadosbrowsersinstaladosnomeucelularAndroid,incluindoosbeta.
+NoiOS,ocenárioémaissimplesjáquesóoMobileSafaridaAppleépermitido.
+Atéexistemoutrosbrowsers,comooChrome,maseleénaverdadeomotorderen-
+42
+
+## Página 51
+
+CasadoCódigo Capítulo7. Mercado,Browsers,suporteetestes
+derizaçãodoSafaricomcaradeChrome. AApplenãopermiterenderizadoresde
+outrosbrowsers—porisso,nãotemosChromedeverdadeouumFirefoxouOpera.
+Háalgunsproxybrowsers(querenderizamnoservidor),comooOperaMinieo
+UC,masvocêprecisaantesversevairealmentesuportá-los.
+NoDesktop,vocêvaiterqueinstalaralgumasversõesdoChrome,Firefoxe
+Opera. OSafariéimportante,massóestádisponívelparaMac. EoInternetEx-
+plorer,claro,sónoWindows. Então,naprática,vocêsemprevaiprecisardeumas
+máquinasvirtuaisprarodarnavegadoresdeoutrasplataformas(ouusevárioscom-
+putadores).
+NocasodoInternetExplorer,aboanotíciaéqueaMicrosoftoferecegratuita-
+menteparadesenvolvedoresWebmáquinasvirtuaisdetestes. Elestêmmáquinas
+virtuaisprontaspraserodarnoWindows,MacouLinux,executandoWindowsXP,
+Vista,Windows7eWindows8,comtodasasversõesdoIEdesdeo6.Ésóbaixare
+rodar(http://www.modern.ie/virtualization-tools).
+Emuladoresparamobile
+Comovocênuncavaitercondi çõesdecomprartodososaparelhosdomercado,
+ousodeemuladorespodeserinteressante.
+Háemuladoresexcelentes,comoodoiOS,comosquaisvocêpodesimulariPho-
+neseiPadsdetodosostamanhos,rodandoiOSdesdeo4.xatéomaisrecente. O
+pontonegativoéquevocêprecisadeumMacpraisso. Masosemuladoresemsi
+sãomuitobonserápidosdeligar.VocêpodetestartodotipodesuportedoMobile
+Safari.Únicalimita çãoénãoconseguirtestarasintera çõestoucheaexperiênciareal
+dousuáriocomoaparelho.Porisso,ébomterumoutrodispositivorealcomiOS
+também,esóusarosemuladorespratestarosbrowsersdeversõesdiferentes.
+ParaAndroid,háemuladoresgratuitosqueoGoogledisponibiliza.Dáprarodar
+emqualquersistemaoperacional,masnãoéacoisamaisfácildeinstalar.Elessão
+maispesadosedemoradospararodar.Comoeutenho5aparelhosAndroidnomeu
+lab,nãocostumousarmuitoosemuladoresAndroidpratestarpáginasWeb. Mas
+elessãoumaop çãocasovocêprecisetestarversõesdiferentesdosaparelhosquevocê
+tiver.
+OWindowsPhonetambémtememuladoresquevocêpodeinstalar.Elesrodam
+bememWindowsnasmáquinasmaisnovasdaIntel.DáprarodarnoMacvirtuali-
+zando,masficambempesadoseexigemumamáquinacompelomenosumCorei5
+porrestri çõesnasinstru çõesdevirtualiza çãodoprocessador.
+JáoFirefoxOSé,naverdade,umsistematodobaseadonoFirefox.Então,ébem
+43
+
+## Página 52
+
+CasadoCódigo
+fácildetestar.VocêinstalaoFirefoxnormalnoDesktopedepoisoemuladordoOS
+emcimadele.Elerodarápidoesemproblemas,comavantagemdeestardentrodo
+browseretepermitirusarFirebugeinspectordiretamente.
+Háemuladoresparaoutrasplataformastambém,quevocêpodepesquisarme-
+lhorconformeanecessidade.
+Minhadicageraléusaremuladorescomoumsuporteparasuaestratégiadede-
+senvolvimento,paranãoprecisarrodarsemprenoaparelho.Eucostumoirdesen-
+volvendonoDesktop,usandoemuladores,esórodonosaparelhosquandooprojeto
+estivermaisestável.Mas,lembre,éimportantesemprerodaremaparelhosreaispra
+vocêpegaraexperiênciarealdousuário,sobretudocomrela çãoàperformance,à
+estabilidadeeàintera ção.
+Debugembrowsersmobile
+Amaiordificuldadedesedesenvolveremmobileédebugaraspáginasrodando
+nosaparelhos. NoDesktop,bastainstalarumaextensãocomo Firebugou usar o
+próprio Inspectordonavegador(comoo Chrome Developer Tools). Nosbrowsers
+mobile,ébemmaiscomplicadoporquegeralmentevocêquerabrironavegadorno
+aparelhomasdebugá-lonoDesktop(nãofazmuitosentidoabrirumdebuggerna
+telinhadoaparelho).
+AmaisfácildetodaséoiOSapartirdaversão6sevocêtiverumMac. Basta
+habilitaraop çãodedebugnoMobileSafari,conectarocaboUSBnocomputadore
+irnomenu DevelopnoSafaridoMac.Lá,vocêconsegueabriruminspetorassociado
+aonavegadordoaparelho(efuncionaatécomoemuladorlocal).
+44
+
+## Página 53
+
+CasadoCódigo Capítulo7. Mercado,Browsers,suporteetestes
+Figura7.2:DebugdomeublogrodandonoemuladordoiPhone.
+Outrosbrowsersexigemumaconfigura çãomaiscomplicada.Nãovoudetalhar
+tudoaqui,jáqueissomudacomfrequênciaconformeosnavegadoresvãomelho-
+rando.Unslinksdereferênciaparadocumenta çõesdeoutrosbrowsers:
+• Firefox Mobile: https://hacks.mozilla.org/2012/08/
+remote-debugging-on-firefox-for-android/
+• Chrome Mobile:https://developers.google.com/chrome-developer-tools/
+docs/remote-debugging
+• OperaMobile:http://www.opera.com/dragonfly/documentation/remote/
+Amaiorlimita çãodedebugénonavegadorpadrãodoAndroid,queaindanão
+oferecenenhummecanismo.Mashásolu çõesespertaspararesolverisso.O Weinre
+(http://bit.ly/apache-weinre)éumprojetodaApachequepermitequepluguemos
+umdebuggerremotoemqualquerpáginarodandonobrowsermobile(suportaAn-
+droid,iOSeoutrosWebKit).Oprocessodeinstala çãoeconfigura çãonãoédosmais
+simples,eositedeleéumpoucoassustador,masaferramentaéfantástica.Vocêroda
+45
+
+## Página 54
+
+CasadoCódigo
+umservidornoseuDesktop,plugaodebuggernobrowserdoaparelhoeabreoWeb
+InspectornoDesktopnormalmente.
+Parafacilitartudoisso,aAdobelan çou oAdobeEdgeInspect (http://html.
+adobe.com/edge/inspect/)quenadamaiséqueo W e i n r efacilitado.Vocêinstalauma
+extensãonoChromenoDesktopeumaAppnocelularepronto.Elesincronizaas
+páginasentreosaparelhosepermiteodebugremoto.Porém,éumservi çopago—
+mastemumaversãogratuitaparatestes.
+Oimportanteésempretestarnosaparelhosdeverdade. Easferramentasde
+debugfacilitambastanteodesenvolvimento.
+46
+
+## Página 55
+
+P a r t e I I
+ProgramandoaWebmoderna
+
+
+## Página 57
+
+Capítulo8
+FlexibilidadenaWebcomlayouts
+fluídos
+Agrandeestreladeumwebdesignresponsivoéo layoutfluído. Issoquerdizer
+nãousarmedidasfixascomopixels(oupontos,centímetros,milímetrosetc)pra
+programarodesign.NãodámaispracopiarasmedidasnoPhotoshopdaimagem
+estáticaqueodesignercrioucomolayoutdosite. Layoutfluídoéusar medidas
+flexíveiseétãovelhoquantooHTMLemsi.
+Medidasflexíveis
+Asduasmedidasflexíveismaisusadassãoasporcentagenseo em. Asporcen-
+tagenssãousadaspraespecificarmedidasdetamanhocomrela çãoaotamanhodo
+elementopai.
+body {
+/* a página ocupa a largura da tela toda */
+width: 100%;
+
+## Página 58
+
+CasadoCódigo
+}
+article {
+/* o article ocupa 3/4 da página */
+width: 75%;
+/* e tem uma margem interna de 10% do tamanho do pai */
+padding: 10%;
+}
+Tambémpodemosusarporcentagensno font-size,significandoumtamanho
+defonterelativoaotamanhodafontedoelementopai.O emtemessemesmosigni-
+ficadoparafontes—umparágrafocom font-sizede 200%ou 2emdánamesma,
+vaiserodobrodotamanhodefontedoelementopai.
+html {
+/* tem um font-size implícito que equivale
+a 16px na maioria dos navegadores */
+}
+p {
+/* parágrafos com tamanho base de 16px * 1.125 = 18px */
+font-size: 1.125em;
+}
+h1 {
+/* título principal com o dobro da fonte base */
+font-size: 2em;
+}
+h2 {
+/* título secundário é 50% maior que o valor base */
+font-size: 150%; /* equivalente a 1.5em */
+}
+Oemtemavantagemdepoderserusadoemqualquerpropriedademassempre
+significarumarela çãocomotamanhodafonte.Issoébemútilquandoamedidade
+algumelementotemrela çãocomtexto,umamedidatipográfica.
+Sequiserfazerumespa çamentoentreparágrafos,porexemplo,você,provavel-
+mente,vaiquereralgorelacionadoaotamanhodafonte.Então,um p { margin: 0
+1em; }fazmaissentidoqueum p { margin: 0 5%; }—comem,oespa çamento
+dotextomudaproporcionalmenteaotamanhodafonte.
+p {
+font-size: 1.125em;
+50
+
+## Página 59
+
+CasadoCódigo Capítulo8. FlexibilidadenaWebcomlayoutsfluídos
+/* margin será 18px, já que mudamos o tamanho do em para 1.125em */
+margin:01 e m;
+}
+Flexibilidadenosfilhos
+Agrandevantagemdasmedidasflexíveiséqueelasafetamoselementosfilhos.
+Issoajudabastantenaacessibilidade:ousuáriopodeaumentarafontenonavegador
+delepralermelhoretodoolayoutbaseadoem eméafetado.Porexemplo,comfontes:
+<html>
+<body>
+<article>
+<h1>A Web mobile</h1>
+<p>Não existe Web mobile. Existe A Web.</p>
+</article>
+</body>
+</html>
+Vimosque,namaioriadosnavegadores,afontebasemede 16pxeéherdada
+peloselementosdapágina.Ouseja, 1emvaiser 16pxe2emvaiser 32px.Maspodemos
+colocaroutrosvalores:
+article {
+font-size: 1.25em;
+}
+h1 {
+font-size: 2em;
+}
+p {
+font-size: 0.9em;
+}
+Qualéotamanhodafontedecadaelemento?
+• Ohtmleo bodyvãoteros 16pxbase;
+• Oarticleterá16px * 1.25 = 20pxeesses 20pxsetornamabaseparatodos
+osfilhosde article;
+• Assim,oh1tem20px * 2 = 40px;e
+51
+
+## Página 60
+
+CasadoCódigo
+• Opvaiter 20px * 0.9 = 18px.
+Umpoderosorecursoparaaumentaroudiminuirodesignproporcionalmenteé
+mudaro font-sizedoelementopai—porexemplo,mudandoo articleeafetando
+oh1eo p.
+Novamedida:rem
+Oemébemflexívelmas,setivermuitosníveisdeelementos,todosmexendono
+font-size,édifícilcontrolarovalorfinaldo em.Equalquermudan çanumelemento
+lánomeioafetaseusfilhos.
+Existeumaoutramedida,a rem,quetambéméflexívelcomoo emmasnãoé
+afetadapelahierarquiadeelementospai-filho.O remvemde r o o t e mesignificaum
+emproporcionalapenasaoelementoraiz(atag <html>). Naprática,issosignifica
+que2remsempreserãorelativosaotamanhodafontebasedodocumento(os16px
+iniciais),enãointeressaondeoelementoestánapágina.
+Sepegássemosomesmocódigoanterioremudássemos emprarem,oresultado
+seria:
+• Ohtmleo bodyvãoteros16pxbase;
+• Oarticleterá16px * 1.25 = 20px;
+• Oh1tem16px * 2 = 32px;e
+• Opvaiter 16px * 0.9 = 14px.
+Oremaindaéflexível,masvocêprecisamudaro font-sizedoelemento html
+praafetarosvaloresdosfilhos.Éútilemalgumassitua çõesondeo emparececompli-
+cardemais.Osuportenosnavegadoresébastantebomhojeeaúnicagrandeexce ção
+éoIE8eanteriores( http://caniuse.com/rem).
+Existemoutrasunidadesdemedidasflexíveisquenãociteiainda.Emmedidas
+textuais,existem,alémdo emedo rem,a chea ex.Elassãomuitoespecíficasecom
+poucosuporteentãonãonosinteressamuitoagora.
+Jáumamedidanovaquemtemganhobastantedestaquesãoas viewportunits,
+com vwe vh. Ébemsimples: 1vhéequivalentea1%dalarguradajaneladonave-
+gador.Comela,vocêpode,porexemplo,fazerumatipografiaqueescalaproporci-
+onalmenteaotamanhodobrowser,excelentepradesignresponsivo.Umexemplo:
+52
+
+## Página 61
+
+CasadoCódigo Capítulo8. FlexibilidadenaWebcomlayoutsfluídos
+h1 { font-size: 3vw; }. Osuporteaindaépequenonosnavegadoresmastem
+crescidorapidamente(http://caniuse.com/viewport-units).Fiquedeolhoparausar
+numfuturobempróximo.
+Importantesãoaspropor ções
+Masvocêprovavelmentejáconheciaasmedidasflexíveiseporcentagense em.O
+difíciléusarasmedidasflexíveisdemaneiraeficazesemficarlouco. Pelomenos
+eutivebastantedificuldadenoinício,principalmentedepoisdeanosacostumadoa
+medidasfixaseacopiarostamanhosdiretodoPhotoshop.
+Osegredodeumlayoutcommedidasflexíveisépensarnapropor çãoentreos
+elementos.Étreinaroolhopraenxergarasrela çõesdeespa çoentreoselementosda
+páginaaoinvésdostamanhosfixosdolayout.Analiseessedesigneobservease ção
+comas4notícias:
+OprimeiropassoseriaresistirenãoabriroPhotoshopparamedirotamanhode
+cadabloco.Vocêtemqueolharparaessedesenhoeenxergarumpaineldenotícias
+divididoem4peda ços.Nãoimportaseodesigndecadanotíciatem200pxou300px.
+EmCSS,estamosfalandodealgoassim:
+53
+
+## Página 62
+
+CasadoCódigo
+.noticia-secundaria {
+width: 25%;
+float: left;
+}
+Estabelecemosqueasnotíciaslistadasnaquelepaineldebaixoocuparãoum
+quartodaáreadisponível. Nãointeressaotamanhodatelaoudajaneladonave-
+gador:apropor çãoéestabelecidanaporcentagemeotamanhofinalérecalculado
+pelonavegadorautomaticamente.
+Figura8.1:Exemplosdessegridflexívelsimplespravocêtestar: http://sergiolopes.
+org/m0
+Esseexemploébemsimples. Odifícilétreinaracabe çaapensar sempreem
+porcentagensepropor ções,aindamaissevocêvemdeanosdewebdesignempixels,
+comoeuvim.
+Nasfonteséamesmacoisa. Vocêprecisaolharparaodesigneenxergarque
+otítuloprincipalé50%maiorqueotítulosecundárioeestabeleceressarela çãono
+código. Ouseja,umanotíciaterátamanho 1emeaoutra, 1.5em. Sealterarmosa
+fontebasedapágina,todasasmedidasem emmudam junto,proporcionalmente.
+DicadeCSS:box-sizing
+Respondarápido:seeutiverduas sectioncomtexto,oCSSaseguirvaifazer
+umlayoutem2colunasdelarguraigual?
+section {
+float: left;
+padding: 5%;
+width: 50%;
+}
+54
+
+## Página 63
+
+CasadoCódigo Capítulo8. FlexibilidadenaWebcomlayoutsfluídos
+Arespostaénão.Cada sectionvaiacabarcom60%dalarguradapáginaenão
+vãocaberumadoladodaoutra. Asegunda sectionvaiescorregarprabaixoda
+primeiraenãovamosconseguirodesignemcolunas.Porquê?Simples:o padding
+nãoéconsideradonadefini çãodo width.
+Issonaverdadeéoquechamamosde boxmodel. Écomoaspropriedadesde
+tamanhodeumelementoserelacionampradeterminarotamanhofinaldobloco.E
+otruqueaquiéperceberqueo widthnãodeterminaalarguradoelementotodo,mas
+apenasdo conteúdodele.Otamanhofinaldoelementoéasomadaspropriedades
+width,paddingeborder-width—eaindapodemosterumamargemexternacom
+margin.
+Então,paraocuparmetadedatela,oCSSdasnossassectionsdeveriaser:
+section {
+float: left;
+padding: 5%;
+width: 40%;
+}
+Nãoseivocê,maseuachoesse box modeldaespecifica çãobastanteconfuso.É
+bemmaisfácilpensarnotamanhodoelementoconsiderandoseutamanhototal,e
+nãoexcluir paddingeborder.Bom,maisgenteachaissoconfuso,apontodeexistir
+umapropriedadenoCSSquetrocaaformacomoo box modelécalculado.
+Apropriedade box-sizingpodereceberovalor border-box,significandoque
+ovalordapropriedade widthjáconsiderao paddingeo border-width. Parepra
+pensaruminstanteevaivercomoissoébemmaisnatural.Ocódigoanteriorque
+queríamosdividiremduascolunascompaddingficabemmaisclaro:
+section {
+box-sizing: border-box;
+float: left;
+padding: 5%;
+width: 50%;
+}
+Euachoo box-sizing: border-boxextremamenteútilemtodotipodesitua ção
+esempreouso.Masemdesignresponsivocommedidasflexíveiseleépraticamente
+obrigatório,detantoquefacilitaascontasedeixaosnúmerosmaisclaros.
+Umcenárioquepassofrequentementeéodeusarmedidasdiferentesem widthe
+padding.Ébemcomumquealarguradoelementosejadefinidacomoumaporcen-
+55
+
+## Página 64
+
+CasadoCódigo
+tagemdoelementopai(comoos50%quecolocamosnoexemplo).Maso padding
+podeterumarela çãomaiorcomotextoefazermaissentidoserespecificadoem em.
+Comobox-sizingébemfácilfazerisso:
+section {
+box-sizing: border-box;
+float: left;
+padding: 1em;
+width: 50%;
+}
+Semo box-sizing,ocódigoacimanãoseriapossível. Nãodápracolocarum
+widthemporcentagemeum paddingemoutramedidausandooboxmodelpadrão.
+Pensesobreisso.
+Osuportenosnavegadoreséexcelente—atéoIE8suporta.Algunsnavegadores
+precisamdeprefixos.Euusoessetruqueemtodososmeusprojetos,sempreassim:
+* {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+(maisaqui: http://sergiolopes.org/css-box-sizing-border-box/)
+Restringindoolayoutfluído
+Fazerumdesigntotalmentefluídoéoúnicojeitodeatacarosmúltiplostama-
+nhosdeteladosváriosdispositivosdiferentesdehoje.Mas,muitasvezes,deixara
+páginatodaocupar100%donavegadorpodenãoatingirresultadostãointeressantes,
+principalmentenosextremos,emtelasmuitograndesoupequenas.
+56
+
+## Página 65
+
+CasadoCódigo Capítulo8. FlexibilidadenaWebcomlayoutsfluídos
+Imagineodesigndas4notíciasquefizemosantesemummonitorgigantecom
+4000pxderesolu ção.Vaifuncionar,vaificartudoem4colunas,mascomumdesign
+bizarroemegaespa çado.Ébemcomumquequeiramosumlayoutfluídoeflexível
+mascomcertoslimitesemcasosespecíficos.
+Apropriedade max-widthdoCSSébemútilnessescasos.Podemosaplicá-lano
+bodyprarestringirotamanhodanossapáginaa,nomáximo,umcertotamanho:
+body {
+max-width: 2000px;
+margin-left: auto;
+margin-right: auto;
+width: 100%;
+}
+Nocasodeumbrowsergigante,nossodesignfixaem2000pxeficacentralizado
+natela.Claroqueoideal,pensandoemflexibilidadetotal,serianãoteressarestri ção
+edeixartudofluir.Masoidealtambémserianossodesigndeadaptareficarbonito
+tambémnessasresoluçõesgigantes.Enemsempreéocaso.
+Nemsemprevaleapenaprogramarodesignpratantasresolu çõesdiferentese
+precisamosfocar.Sevocêfizerolayouttotalmenteflexívelefluídoaté2000px,vai
+atingir99%domercadoatual.Eastelasmegagigantesganhamumsitefuncional,
+limitadoa2000px.Ébompratodomundo.
+T e n h a omax-width(eo min-width)namangaquandoprecisarcolocarcertas
+restriçõesnolayout.Evite,claro,abusardisso.Nãovácolocarum max-width:800px
+sabendoqueosDesktopsdehojesãobemmaioresqueisso.Escolhaumvalorque
+façasentidonoseuprojeto.
+Omaisimportanteéqueesse max-widthéumaregrinhaamaisapenascomuma
+restriçãofinalnodesign.Todoorestovocêvaifazerfluídoeemporcentagens.Ou
+seja,seumdiaprecisaratingirmaisresolu çõesouquiserirprocaminhodo100%
+fluído,bastaremoveroutrocarseu max-width.
+Aliás,hojeeucostumodesenvolverusandomedidasflexíveisatéossitesde t a -
+manho fixo. Àsvezes,oprojetoouclientequerumtamanhofixoem 960px,por
+exemplo. NemporissosaiousandopixelsnoCSStodo. Podemosfazertudoem
+porcentagense em,esócolocarum body { width: 960px; }nofinal.
+Nodiaemqueoclientedecidirpelofluído,ésótiraressarestri çãodo body.
+Alémdisso,porcentagenspodemserbemmaislegíveisquepixels—ébemmais
+clarodividiressapáginade960pxem5colunasusandoum width: 20%doque
+olharpra width: 192pxeenxergaras5colunas.
+57
+
+## Página 67
+
+Capítulo9
+Mediaqueries:asmelhores
+companheirasdeumlayoutfluído
+Naapresenta çãodo design responsivo,opaidatécnica,EthanMarcotte,falavade3
+componentes:layoutfluído,mediaqueriesemídiasflexíveis. Muitaaten çãosedá
+paraasmediaqueries,masocentraléo layoutfluído,porissodediqueiotópico
+anteriorinteiroaisso.
+Mas,claro,odesignfluídonãoresolvetodososproblemas. Aíqueas media
+queriesentram.Elassãoessenciaisparaumbomdesignresponsivo.
+Aslimitaçõesdolayoutfluído
+Umapáginaconstruídacommedidasflexíveisétotalmentefluídaejáestá90%
+nocaminhodeumdesignadaptávelatodotipodetela.Masédifícilfazertudoficar
+bonitoeajustadoatodotipoderesolu çãosócomporcentagense em.
+Pegueodesigndotópicoanterior,quetem4notíciasdivididascom width:25%.
+Ositevaifuncionarnocelular,masficabemestranhodadoopequenotamanhoda
+
+## Página 68
+
+CasadoCódigo
+tela:
+Repareatéqueotítulodapáginaficoubom,nemprecisadeajuste:sóousode
+medidasflexíveisfoisuficiente.Masasnotíciasficaramapertadasesobrepostas.O
+idealseria,emtelaspequenas,mostrarumanotíciaemcimadaoutra,com100%da
+largura.
+Mediaqueries
+Ogolpedemestreveiocomas mediaqueriesdoCSS3 .Comelas,adicionamos
+designcondicional quesóseráaplicadoemdeterminadasitua ção.Issopermitere-
+adaptarodesigndapáginadeacordocomcaracterísticasdonavegador.Noexemplo
+dasnotícias,podemosescolhercolocá-locom100%delarguranastelaspequenase
+deixá-loflutuandocom25%dotamanhonastelasgrandes:
+.noticia {
+float: left;
+width: 25%;
+}
+60
+
+## Página 69
+
+CasadoCódigo Capítulo9. Mediaqueries:asmelhorescompanheirasdeumlayoutfluído
+@media (max-width: 400px) {
+.noticia {
+float: none;
+width: 100%;
+}
+}
+Figura9.1:URLdoexemplo: http://sergiolopes.org/m1
+Asintaxedobloco @mediarecebeumacondi çãoe,dentrodele,asregrasdeCSS
+61
+
+## Página 70
+
+CasadoCódigo
+quesóserãoaplicadascasoacondi çãosejaválida. Noexemplo,o (max-width:
+400px)indicaquesóvamosaplicaroCSSemquestãoquandoajaneladonave-
+gadortiver,nomáximo,400px.Vocêpodetestarredimensionandoonavegadorno
+Desktopouabrindonocelular(quecostumatertelacomlargurade320ou360px).
+Mediaqueriessãoopontocentraldacapacidadedeadapta çãodosdesignsres-
+ponsivos.Sãoessenciaisemprojetosqueenvolvemdispositivosmóveismasganha-
+ramseuespa çoatéemsolu çõespuramenteDesktop.Sãoumadasprincipaisferra-
+mentasdodesenvolvimentoWebmoderno.
+Breakpoints
+Mas,claro,éinviávelcriaruma media quer yparacadatamanhodetelaexistente
+nomundo,porissoaimportânciadolayoutfluído. Usandomedidasfluídas,seu
+designseadaptanaturalmenteaváriasresolu çõese,sóquandonecessário,asmedia
+queriesentram,pontualmente,paraajustarodesignemelhoraraexperiênciado
+usuário.
+Essepontoemquedecidimoscolocarumamediaqueryéchamadode break-
+point.Éopontodequebradonossolayoutfluídoondeumareestrutura çãomaioré
+necessária.
+Nonossoexemplo,podíamosaindacolocarmaisumamediaquerycomoutro
+breakpointintermediário.Játemosolayoutem4colunasnastelasgrandeseem1co-
+lunanastelaspequenas.Podemosadicionarumdesignem2colunasnumtamanho
+detelaintermediário:
+@media (max-width: 600px) {
+.noticia {
+width: 50%;
+}
+}
+62
+
+## Página 71
+
+CasadoCódigo Capítulo9. Mediaqueries:asmelhorescompanheirasdeumlayoutfluído
+Figura9.2:URLdoexemplo: http://sergiolopes.org/m2
+Podemoscolocarváriasmediaqueries,comcondi çõesdiferentes,nomeiodo
+nossoCSS.Aordem,porém,éimportante,jáquearegraquevemporúltimoso-
+brescreveaanterior.
+Alémdemax-width,podemosusara min-widthnasmediaqueries. Essassão,
+semdúvida,asmediaqueriesmaisusadaseasquevocêmaisvaivernaprática.Há
+algumasoutras,porém,quepodemserinteressantespontualmente.
+Outrasmediaquerieseporquevocênãovaiusá-las
+Você pode também colocar uma media query com valor exato ao invés de
+max/min,usandoalgocomo (width: 320px),masissoébeminútilnaprática.Só
+vaipegartelascom tamanho exatode320px,restringindoafluidezdodesign.
+Existeamediaquery device-width(easversõescommax/min),querepresenta
+o tamanho da tela do aparelho.Issoédiferentedeusaro widthnormal,querepre-
+sentao tamanho da janela do navegador.Namaioriadoscelulares,essesvaloressão
+63
+
+## Página 72
+
+CasadoCódigo
+equivalentesjáqueonavegadorésempreemtelacheia. Masexistemnavegadores
+mobilequeaceitamserredimensionados,assimcomonoDesktop.Namaioriados
+casos,vocênãoestáinteressadonotamanhodatela,massimnotamanhodonave-
+gador.
+Paratodososcasosqueusamos width(commax,min,device),tambémépossí-
+velusar height.Essamediaquerypodeserútilemalgunscasos,mas99%dasvezes
+vocêestámaisinteressadonalarguraenãonaalturadonavegador. Issoporquea
+Webéumamídiaquefluiverticalmenteeocomprimentodapáginanãointeressa
+tanto.
+Alémdecontrolartamanhos,épossívelusarmediaqueriesquerepresentem
+capacidades e características do navegador. A mais útil é aorientation que
+pega a orientação do aparelho — podemos usar(orientation: portrait) ou
+(orientation: landscape). Vocêpodeusá-lasparaotimizarodesigndeacordo
+comaformaqueodispositivoésegurado.
+Háoutrasmediaqueriesaindamaisespecíficas,comusolimitado,epoucosu-
+portenosnavegadores. Nãovamosdiscutirmuitoaqui,masvocêpodeconsultar:
+https://developer.mozilla.org/docs/CSS/Media_queries
+Naesmagadoramaioriadoscasos,vocêvaiusarapenas max-widthemin-width.
+Operadoresnasmediaqueries
+Podemosusarapalavra andparafazerum Elógico.Noexemploaseguir,amedia
+querysóseráavaliadaseambasascondi çõesforemverdadeirasaomesmotempo:
+@media (max-width: 600px) and (orientation: portrait) {
+}
+Fazerum OUlógicoéequivalenteasepararváriasmediaqueriesporvírgulas,
+comonoCSSnormal.Nopróximoexemplo,omesmoCSSseráaplicadocasoalguma
+dasduascondi çõessejaverdadeira:
+@media (min-width: 300px), (min-height: 300px) {
+}
+Épossíveltambémnegarumamediaqueryusandoapalavrachave notnoinício
+dela.
+64
+
+## Página 73
+
+CasadoCódigo Capítulo9. Mediaqueries:asmelhorescompanheirasdeumlayoutfluído
+Ahistóriadosmediatypes
+DesdemuitotempooCSStemsuporteparasedefinirregrasquesóvalemem
+certocontexto,bemantesdoCSS3edasmediaqueries.Os mediatypes permitem
+queseuseestilosdiferentesemsitua çõesdiferentesesempreforammuitousados
+paradistinguirarenderiza çãonateladaimpressão:
+@media screen {
+/* CSS para telas */
+}
+@media print {
+/* CSS para impressão */
+}
+Todososnavegadoresmodernossuportamessemediatype printqueéaplicado
+apenasquandovamosimprimirumapágina(útilparaesconderomenudenavega-
+çãoouaumentarafontedotexto,porexemplo).
+Algunscelularesantigossuportavamtambémotipo handheldparaestilosespe-
+cíficosparasitesmobile.OssmartphonesmodernoscomoiPhoneeAndroid,porém,
+ignoramomediatype handheldpoissãocapazesderenderizarsitescompletosenão
+apenasasversõessimplesfeitasparaoscelularesantigos.
+ComoentãoescreverCSSespecíficoparamobilepensandoemsmartphonese
+tabletsquenãoseencaixamnoantigomediatypehandheld? Éaíqueentraram
+asmediaqueriesdoCSS3,commuitomaisrecursoseflexibilidade. Épossívelaté
+misturartudoefazercoisascomo:
+@media screen and (min-width: 400px) {
+}
+Ocódigoacimafuncionaperfeitamentenosnavegadorescomsuporteamedia
+queries,mastemumefeitoindesejadonosnavegadoresantigos. Muitosdelesnão
+entendemasmediaqueriesdoCSS3masentendemosantigosmediatypes(comoo
+screenusadonoexemplo). Naprática,elesacabamavaliandoessecódigocomose
+fossesóum @media screen,ignorandoasegundapartequenãoentendem.
+Issoéruim,claro,poisamediaqueryseráavaliadaerradamentenessesnavega-
+dores.Pracontornaroproblema,asmediaqueriesdoCSS3suportamumapalavra-
+chavenovaquenãofazabsolutamentenada: only.Podemosescrever:
+65
+
+## Página 74
+
+CasadoCódigo
+@media only screen and (min-width: 400px) {
+}
+Essamediaqueryécompletamenteequivalenteàanterior.Aúnicadiferen çaé
+queapalavra onlynãoéreconhecidapelosnavegadoresantigose,portanto,elesnão
+vãoreconheceressamediaquerycomoverdadeira. Éumagambiarrapraresolver
+essesproblemasdeincompatibilidade.
+Muitagenteusaessasmediaqueriescom onlysemnementenderoporquê.Eu
+nãousoassim. Namaioriadavezes,nãoqueroqueminhasmediaqueriessejam
+aplicadassomenteatelas( screen),masatodotipodemídia.Queroapenasconfi-
+gurarumcertotamanho,nãoimportandoseétela,TVouimpressão.Recomendo
+usarapenas:
+@media (min-width: 400px) {
+}
+Essamediaqueryémaissimples,maisfácildeler,nãotemproblemasdeser
+executadaemnavegadoresantigosesuportatodotipodemediatype. Namaior
+partedoscenários,nãoénecessáriocolocaro only screen.
+Conclusão
+Asmediaqueriessãoessenciaispraconstru çãodepáginasresponsivas.Apesar
+dolayoutfluídofazerboapartedotrabalho,asmediaquerieséquesãoresponsáveis
+pelacapacidadedeadapta çãodoslayouts.Éessencialsabê-lasusarbem.
+Vamosvoltarafalardemediaqueriesemoutrostópicos( 13,14)pradiscutiralgu-
+masboaspráticaseveremmaisdetalhescomoelasajudamnossodesignresponsivo.
+Vamosdiscutirtambémcomomediaqueriessãointeressantesatéparaacessibilidade
+desitesDesktop(tópico 16).
+Masantesprecisamosresolverumaquestão. Setestarasmediaqueriescomo
+vimosaqui,elasvãofuncionarperfeitamentenoDesktopevocêpodevisualizá-las
+redimensionandoajaneladonavegador.Mas,aorodarnosmartphone,vaiparecer
+quenãoestãosendoaplicadas. Équefaltadiscutirmosumoutropontoessencial
+parapáginasmobile,oviewport,assuntodopróximotópico( 10).
+66
+
+## Página 75
+
+Capítulo10
+Tudoquevocêqueriasabersobre
+viewport
+Entendercomooselementosquevocêcrianasuapáginavãoserdesenhadosnatela
+éessencial.Muitacoisaacontecedentrodonavegadoreumadelas,importantíssima,
+éaformacomoasmedidassãocalculadaseexibidasprousuário.Fazalgumtempo
+quesimplesmentecolocarum width:100pxnumelementonãovainecessariamente
+fazê-loocupar100pixelsnatela.
+Umpixelnãomedeumpixel.
+Pormaisestranhoquepare çaagora,otamanhodeumpixeldependedeuma
+sériedefatores. Eosnavegadoresdosdispositivosmóveistrouxeramaindamais
+questõesaseremconsideradas.Telaspequenas,altaresolu ção,retina,zoom,view-
+ports.Vamosentendertudoisso.
+UmpixelnumnavegadornormalnoDesktop
+Onormalévocêcriarumapágina,darostamanhosdoselementoseelesserem
+
+## Página 76
+
+CasadoCódigo
+desenhadosnatelaocupandoexatamenteessetamanho. Coloqueumlogotipode
+300pxdelarguraeeleocupará300pxdatelafísicadocomputador.Issoénormal.Se
+colocaralgumelementomedidoemporcentagem,eletemseutamanhocalculado
+empixelsproporcionalmenteaotamanhodajaneladonavegador.
+TudoissofuncionaoknumcenárionormalnoDesktop. Vocêpodeatédes-
+cobrirotamanhodateladocomputadorusando,emJavaScript, screen.widthe
+screen.height—vaidevolver,digamos,1280e768.Aliás,essamedidaé,99%das
+vezes,bastanteinútilpradesenvolvedoresWeb. Estamosmaisinteressadosnota-
+manhodonavegadorquenotamanhodatela,afinalonavegadorpodenãoestar
+maximizado.
+Vocêpodepegarotamanhodisponívelnonavegadorcom window.innerWidth
+ou ainda comwindow.outerWidthsequiserconsiderarajanelatoda(incluindo
+barradeferramentas,barradeendere çosetc).
+Figura10.1:TamanhodatelaedoviewportdonavegadornoDesktop.
+Oviewport
+Oespa çodisponívelparaapáginaserrenderizadanonavegadoréoquechama-
+mosdeviewport.Eledependedotamanhodajaneladonavegadoredesconsideraas
+68
+
+## Página 77
+
+CasadoCódigo Capítulo10. Tudoquevocêqueriasabersobreviewport
+barrasdeferramenta,barraderolagem,navega çãoetc.Éaqueleespa çoembranco
+ondeapáginaabree,comovimos,podemosmedi-locom window.innerWidthe
+window.innerHeight.
+Numnavegadorhipotéticoemtelacheiaquenãotenhanenhumabarradefer-
+ramentasesómostreoconteúdodapágina,éclaroqueotamanhodoviewport
+(window.innerWidth)éigualaotamanhodatela( screen.width).Certo?Não,de-
+pende.
+Ozoomdepágina
+Todonavegadormodernopermitequeousuáriodêzoomnapágina.Éumre-
+cursoessencialparaacessibilidade—nemsempreousuáriotemvisãoperfeita,e
+nemsempreodesenvolvedordeixouascoisascomtamanhosgrandeselegíveis.Es-
+tamosfalandoaquidaquelezoomdosnavegadoresDesktop(esque çamobilepor
+enquanto),quegeralmentevocêacessausando Ctrl +/ Ctrl -(ouusando C m dno
+Mac).
+Pense:sevocêderzoomde200%napágina,oquevocêesperaqueaconte çacom
+aquelelogotipoqueocupava300pxnatela?Claroquevocêesperaqueelefiquecom
+odobrodotamanhoesejadesenhadoocupando600pxdasuatela.Issoqueozoom
+depáginafaz,aumentatudodetamanho.
+Maseocódigodasuapágina,mudaquandoousuáriodazoom?Obviamente,
+não. Vocêcontinuaescrevendoqueaimagemtem width:300pxmasonavegador
+sabeque,agora,devedesenhá-laocupando600px,jáqueozoomfoide200%.Ou
+seja,umpixelnãoémaisumpixel. Vocêescreve 300pxmaseleédesenhadocom
+600px.Confuso?
+Aquestãoaquiéqueestamosfalandode pixels diferentes.Chamamosde pixel
+físico(ou device pixel)aquelemenorpontonasuatelaquepodereceberumacor.E
+chamamosdeCSSpixelaquelamedidaquevocêescrevenoseucódigousandoo px.
+Eelessãodiferentes!
+Naverdade,namaioriadoscasos,um p i x el f í s i c oéigualaum CSS pixel. Mas,
+quandoousuáriodázoom,ascoisasmudam.Umzoomde200%faz 300 CSS pixels
+seremrenderizadoscomo 600 pixels físicos.Aregraéque númerodepixelsfísicos
+=númerodeCSSpixels×zoom .
+Oviewportmudacomzoom
+Aodarzoom,ascoisasficammaioresecabemenosinforma çãonatela.Atela
+69
+
+## Página 78
+
+CasadoCódigo
+continuadomesmotamanho,masoespa çodisponívelprasuapáginaficamenor—
+oviewportdiminui.
+Issoporqueotamanhodatela( screen.width)émedidoem p i x el s f í s i c o s.Mas
+otamanhodoviewport( window.innerWidth)émedidoem CSS pixels,quemudam
+conformeozoomaumenta.
+Outramedidaimportanteéotamanhodoconteúdodapáginaemsi,detudo
+queestádentrodoelemento <html>.Oviewportéaáreavisívelmasoconteúdoé
+geralmentebemmaiorqueisso,porissodamosscroll.Vocêpodemedirotamanho
+dasuapágina,emCSSpixels,com document.documentElement.offsetWidth.
+Depois, façaotestenessapáginaabrindonoDesktopedandozoom: http:
+//sergiolopes.org/m3
+Astelasdosdispositivosmóveis
+Ossmartphonesmodernospós-iPhonenasceramcomumdilema:têmumatela
+relativamentepequenamasumnavegadorincrívelcapazderenderizartodotipode
+página,tantoasotimizadasparadispositivosmóveisquantoasfeitaspraDesktop.
+Agora,qualéamágicaparaumapáginapensadapraumDesktopde1024pxcaber
+natelinhapequenade320pxdeumiPhone?Apáginaé redimensionadaeaparece
+menornocelular:
+70
+
+## Página 79
+
+CasadoCódigo Capítulo10. Tudoquevocêqueriasabersobreviewport
+AimagemanteriorédomeublogpessoalemsuaversãoDesktopabrindonum
+iPhone.EleabreigualzinhoumnavegadorDesktop,todoajeitado.Mas,claramente,
+elenãoobedecemeuCSS,senãominhafoto,quefoideclaradacomo width:280px
+iaaparecerocupandoquasetodaapequenatelade 320pxdoiPhone.
+Denovoaquiaideiadoviewport,pixelsfísicoseCSSpixels. UmiPhonetem
+320pixelsfísicosdelarguramasassumeumviewportde980CSSpixels. Releia
+essaúltimafraseeestejacertodeentendertudoqueeladiz.
+Dopontodevistadocódigodanossapágina,enxergamos980px.Porisso,minha
+fotode280pxocupamaisoumenos28%datela,comonoscreenshotquevimos
+antes.OqueonavegadormóvelfazéparecidocomaideiadozoomdoDesktop.Ele
+usaumaescaladiferenteproCSSpixelemrela çãoaopixelfísico.Elevaidesenhar
+320pxnatela,masodesenvolvedorenxergaos980px.Todooredimensionamentoé
+feitopelonavegador.
+71
+
+## Página 80
+
+CasadoCódigo
+Zoommobileeosdoisviewports
+ClaroqueositeDesktopabertonocelularficabemdifícildeusar.Eleabrepe-
+quenininhomasousuáriodepoisfazogestodepin ça( p i n c h)prafazerumzoome
+veropeda çodatelaqueinteressa.
+Repare,porém,queessegestodezoomquefazemosnosmartphoneédiferente
+daquelezoomquefazemosnoDesktop.Essesmodosdezoomsãotãodiferentesque
+damosnomesdiferentespraeles.Oquefazemosnocelularchamamosde redimen-
+sionarpágina(page scale)eodoDesktopé zoomdepágina(page zoom).
+O page scalenocelularsódimensionaopeda çovisíveldapágina,elenãoaltera
+odesigndapágina.Ositecontinuarenderizadoigualzinhoeogestodepin çasófaz
+agente o b s e r v a rumpeda çoespecífico. Édiferentedo page zoomnoDesktop,que
+aumentaotamanhodoselementoserenderizanovamenteatela.
+Emoutraspalavras,o pagezoomalteraotamanhodoviewport enquantoo
+pagescalealteraoquantovemosdoviewport,maselecontinuaigual .Apágina
+continuacom980pxnocelularenquantofazemosogestodepin ça,sóqueenxerga-
+mosumpeda çomenordela.
+Porisso,falamosque,emdispositivosmóveis,existem doisviewports. Háo
+viewportquerepresentaaáreadisponívelparanossapágina. Esseviewport,que
+vamospassarachamaragorade layoutviewport,mede980pxfixosnoiPhone.
+Ooutroéovisualviewport queéotantoqueestamosvendoatualmentenatela.
+Seabrirapáginasemdarzoom,o visual viewportédotamanhodo layout viewport
+—podemosverapáginatoda,comonaFiguraanterior. Mas,quandofazemoso
+gestode page scale,diminuímoso visual viewport paramostrarsóumpeda çodo
+layout viewport:
+72
+
+## Página 81
+
+CasadoCódigo Capítulo10. Tudoquevocêqueriasabersobreviewport
+Figura10.2:MeublognoiPhonedandoumpagescalenumpeda çodapágina. O
+layoutviewportéomesmomassóumaparteestávisívelnovisualviewport.
+Podemosmedirolayoutviewportcomdocument.documentElement.clientWidth
+eovisualviewport comwindow.innerWidth.
+Essesconceitossãobemcomplicados.Entendercompletamentearela çãoentre
+osviewportsdiferentesnãoéalgofácil,maséessencial.Rodeotesteaseguiremum
+dispositivomóvelmodernocomumnavegadoratualparaverasdiferentesmedidas.
+Façaosgestosdezoom,navegue,gireoaparelhoeobservecomoosviewportsse
+relacionam:
+73
+
+## Página 82
+
+CasadoCódigo
+Figura10.3:URLdoexemplo: http://sergiolopes.org/m3
+Geralmente,nãoestamosinteressadosnotamanhodo visual viewport.Lembre
+queasmedidasdapáginasãosemprerelativasao layout viewport.
+Ajustandoolayoutviewport
+OlayoutviewportpadrãonoiPhonemede980pxdelargura,poisassumeque
+seusitefoipensadoparaDesktop. OnavegadordoAndroidpensaparecidoeusa
+umviewportpadrãode800px.JáoOperaMobileusa850pxeoInternetExplorer
+noWindowsPhone,974px.
+MasabrirumsiteDesktopnocelularéumaexperiênciapoucoagradável.Fre-
+quentemente,vamosquerercriarumapáginaotimizadaparamobile,quenãode-
+mandetantozoomejámostreoconteúdoemtamanhoeformatointeressantespara
+umatelatãopequena.
+Comofazer? Obviamente,nãopodemosdeixarapáginacomlayoutfixoem,
+porexemplo,960px.Podemostentarporcentagensecolocarum width:100noele-
+mentoprincipal,pensandoemseadaptaradiversostamanhosdetela.Masissonão
+vairesolver:o layout viewportégrande(980pxnoiPhone)eos100%noCSSvão
+significartudoisso.OsiteémostradocomosefossedeDesktop,comzoommínimo
+econteúdopraticamenteilegível.
+Quetalcolocar width:320px,otamanhorealdodispositivo?
+7 4
+
+## Página 83
+
+CasadoCódigo Capítulo10. Tudoquevocêqueriasabersobreviewport
+O layout viewportcontinuaem980pxmasoconteúdofica,apertado,em320px.
+Ousuárioprecisadarzoomparavisualizare,pior,apáginaficaquebradaecomum
+imensoespa çoembranco.
+Oqueprecisamoséumaformade redimensionarolayoutviewport paraque
+elesejamaisadequadoàtelapequenadomobile.AAppleintroduziuuma metatag
+viewportnoiPhoneque,depois,foiadotadaempraticamentetodasasplataformas
+móveis-Android,Opera,WindowsPhoneetc.
+<meta name="viewport" content="width=320">
+Issoindicaaonavegadorqueo layout viewportdeveser320px.Agora,colocar
+width:100%vaisignificar320px,deixandoavisualiza çãomaisconfortável.
+75
+
+## Página 84
+
+CasadoCódigo
+Refaçaostestesdemedi çãodoviewportagoraqueajustamosametatag:
+Figura10.4:URLdoexemplo: http://sergiolopes.org/m4
+Viewportflexívelcomdevice-width
+Deixar‘320’fixonanossatagdeviewportpodenãoserumaboaideia.Hádi-
+versosaparelhosdiferentesnomercado,cadaumcomumtamanhoespecífico.Por
+76
+
+## Página 85
+
+CasadoCódigo Capítulo10. Tudoquevocêqueriasabersobreviewport
+exemplo:umGalaxyS3tem360pxdelargura,umiPadtem768px,umNexus4tem
+384px,umGalaxyNotetem400px,umKindleFiretem600pxeassimpordiante.
+Épossíveldeixara metatagviewportcomtamanhoflexível ,baseadonotama-
+nhodoaparelho.Bastausarmos:
+<meta name="viewport" content="width=device-width">
+Issoassumiráovalorespecíficopracadaaparelho,queéovalormaisadequado
+paraseutamanho,conformedeterminadopelofabricante.
+Ametatagviewportpodereceberalgunsoutrosparâmetros.Omaiscomume
+recomendadoparaamaioriadossitesmobileé:
+<meta name="viewport" content="width=device-width, initial-scale=1">
+Oparâmetro initial-scale=1indicaparaonavegadorqueapáginadeveabrir
+notamanhoespecificado(vocêpoderiadizerprapáginaabrirjácomumzoomini-
+cial).Esseparâmetronãoparecemuitoútil,maseleéimportantenoiOS.Semele,
+oMobileSafariconsideraalarguradapáginasempreigualaotamanhonomodo
+retrato,mesmocomoaparelhoviradoempaisagem.Ouseja,numiPhone,apágina
+teria320pxtantoemretratoquantopaisagem. Coloqueo initial-scale=1eisso
+nãoacontece,otamanhocertoéusadoemambasasorienta ções.
+Agora,configurandooviewportcom device-width,umCSSpixelédotamanho
+deumpixelfísico.Bem,pelomenosnastelascomuns.Astelasdealtaresolu çãoe
+retinamudamumpoucotudoisso.Éopróximotópico( 11).
+ViewportemCSS
+Apartemaisirônicadetodaessadiscussãosobreviewportéqueusarameta
+tagnãoémaneiraoficialdesefazer.AmetatagviewportfoiinventadapelaApple
+ecopiadaportodomundo. Acabouvirandoumpadrãodemercado. Mas,ofici-
+almente,háoutraespecifica çãoquelidadissonoW3C,a CSS Device Adaptation
+(http://dev.w3.org/csswg/css-device-adapt/),aindaemrascunhoenquantoescrevo
+olivro.
+Aprincipaldiferen çaéqueessaspecjogaaresponsabilidadeparaocaracerto,o
+CSS,emvezdeumatagHTML.Éanovaregra @viewportquevocêpodeusarassim:
+@viewport {
+width: device-width;
+}
+77
+
+## Página 86
+
+CasadoCódigo
+Lembrabastanteametatagetemparâmetrosparecidos(consulteaspecpra
+maisdetalhes).Umavantagembeminteressanteépoderusarváriasconfigura ções
+deviewportaomesmotempo,definidascommediaqueries.Asintaxeésimplesmas
+dáumnónacabe çamisturartudoisso.Reflitasobreoqueocódigoaseguirvaifazer:
+@media (max-width: 400px) {
+@viewport {
+width: 320px;
+}
+}
+Paratelasaté400pxdelargura,oviewportéfixadoem320px.Issoquerdizerque
+ositeérenderizadoa320CSSpixelsedepoisredimensionadopraencaixarnareso-
+luçãorealdatela(quetemmenosde400px).Éumjeitodefazerolayoutencaixar
+natelasemfazerumlayoutfluídodeverdade—obrowserredimensionasozinho
+nossolayoutfixoem320pxpraencaixarnatela. Dariaentãoprafazer3designs
+(smartphone,tablet,desktop)fixos,comviewportsdiferentesedeixarobrowserre-
+dimensionarbaseadonotamanhodatela.
+Tudoissoseráfuturo,poisosuportenosnavegadoresébembaixoenquanto
+escrevoolivro. OIE10éoprimeiroausaressaregra(aindacomprefixo)num
+modonovodoWindows8chamado Snap Mode (http://timkadlec.com/2012/10/
+ie10-snap-mode-and-responsive-design/).
+78
+
+## Página 87
+
+Capítulo11
+Asagados3pixelseastelasdealta
+resoluçãoeretina
+Notópicoanteriorsobreviewport( 10)falamosdadiferen çaentre p i x el s f í s i c o se CSS
+p i x el s.Poisbem,omundoeradessejeitoatécome çaremasurgirosprimeirosAn-
+droidscomtelasdealtaresolu çãoeiPhonesretina.Temos3pixelsdiferentesagora.
+OsiPhonesantigosvinhamcom320pxdelargura.ApartirdoiPhone4,opri-
+meirocomtelaretina,elespassaramavircomodobroderesolu ção.Ouseja,640px
+delargura.Masotamanhofísicodoaparelhoéomesmo.Oqueaconteceentão?
+Comoficamnossaspáginasmobileentãoqueassumiamumaresolu çãobemme-
+nor? ComresoluçãotãoaltaquantoumDesktop,oscelularesmaismodernosvão
+renderizaraspáginasbempequenas,comoumsiteDesktop? Felizmente,nossas
+páginascontinuamfuncionandoporqueessesdispositivosdealtaresolu çãoconti-
+nuamreportandoum device-widthde320px,pramanteracompatibilidade.
+Aideiadereportarum device-widthdiferentedotamanhodepixelsfísicos
+surgiunoAndroidedepoisfoicopiadapeloiOSeoutrasplataformas.Dessaforma,
+
+## Página 88
+
+CasadoCódigo
+épossívelevoluiraresolu çãodatelacomdensidadesdepixelsmaioressemafetar
+aformacomoousuáriousanossoSitemobile,quecontinuaotimizadoparatelas
+pequenas.
+Devemosencararo device-widthcomootamanhoquedarámelhorusabilidade
+paraousuário.
+Mastudoissocausamuitaconfusão.Aliás,jálimuitamatériaemsitesconcei-
+tuadoscomoGizmodoouSmashingMagazinefazendoconfusõesgigantescascom
+essesconceitos.Porisso,vamosentendermelhor.
+ResoluçõeseDPIs
+Duasmedidassãoimportantesnumatela:o tamanhofísicodatelaemcentíme-
+tros—oupolegadas,comoémaiscomum—esuaresoluçãoempixels .Dadivisão
+dessesdoisnúmeros,temoso DPI—*dotsperinch*—quedizquantospixelsexis-
+temporpolegadadetela.
+Conseguimossaberaresolu çãoempixelsdatelaemJavaScriptcomasproprie-
+dadesscreen.widthescreen.height.Mas,comJavaScript, nãoépossívelsabero
+tamanhofísicodatelaenemseuDPI .
+OcuriosoéqueoCSStemalgumasunidadesparatamanhofísico—vocêpode
+criarumdivcom width:1cmou 1in. Masissonãofazoquerealmentequeremos,
+queseriaumelementode1centímetroou1polegada fís ica.Osnavegadoresemgeral
+concordaramemum dpibasede96 etodasascontassãorelativasaessenúmero.
+Então,sefizerumdivde1polegada,naverdadevocêlevaumde96px,nãointeres-
+sandootamanhofísicorealdatelaouseudpiverdadeiro.
+Pixelratio,CSSpixelsetelasretina
+TelaretinaéotermoqueaAppleusaprafalardetelasdealtaresolu ção.Sãotelas
+comtantospixelsqueelesacabamsendopequenosfisicamente,tornandodifícilo
+olhoidentificarumindividualmente.Comisso,oconteúdomostradoficariamuito
+pequenonatela,entãoagrandenovidadeéque umpixeldeconteúdoérenderizado
+commaisdeumpixelfísico .*Ãhn?*
+Aideiaésimples:sevocêdesenharumalinhade1pxnatela(comCSSoumesmo
+umaappnativa),elaserárenderizadacomoumalinhade2pxfísicos.Issomelhora,
+emuito,adefini çãodoselementosnatela.Existe,então,uma razão de multiplicação
+entrepixelslógicosepixelsfísicos.Essarazãoéo devicepixelratio ,acessívelemJS
+pelapropriedade devicePixelRatioenasmediaqueriesCSSdealtaresolu ção.
+80
+
+## Página 89
+
+CasadoCódigo Capítulo11. Asagados3pixelseastelasdealtaresolu çãoeretina
+NomundoApple,astelasretinatêm,hoje,sempre device pixel ratioiguala2,
+oquefacilitaascontas.NoAndroid,essasmesmastelassãochamadasde xhdpi—
+comonumGalaxyS3ounumNexus4.Mas,noAndroid,temosmaispossibilidades:
+• xhdpi(extrahighdpi)-pixelratio2 -ex.GalaxyS3,GalaxyNote2,Nexus4.
+• hdpi(highdpi)-pixelratio1.5-ex.GalaxyS2,MotorolaAtrix,NexusOne.
+• tvdpi-pixelratio1.33-Nexus7.
+• mdpi(mediumdpi)-pixelratio1 -telasnormais,comunsemsmartphones
+simples.
+• ldpi(lowdpi)-pixelratio0.75 -aparelhoslow-endcomooGalaxy5.
+• dpialtíssimo(aindasemnome)-pixelratio3 -aparelhosFullHDcomtela
+1920x1080comooHTCOneeoGalaxyS4.
+(Curioso notar o ldpi com pixel ratio menor que 1. Nesse caso, o conteúdo é dese-
+nhado com menos pixels na tela. Uma linha de 4px no CSS vai ser desenhada com 3
+pixels físicos. Esse downscale deixa a renderização visualmente pior, claro.)
+DIP,oterceiropixel
+Notópicoanterior( 10),falamosde CSSpixel,querepresentaasmedidasdos
+elementosdapágina,ede pixelsfísicos,quesãoospequenospontosdatela.
+Quandoatelatem device pixel ratiodiferentede1,temosumterceiroconceito,
+chamadodeDIP—device independent pixel,conhecidotambémcomo UI pixel.Esse
+éopixellógico.
+FalamosqueateladoiPhonemede320pxemDIP,apesardemedir640pxfísicos.
+Isso porque odevice pixel ratiodoiPhoneretinaé2.
+Quandousamosoviewportcom width=device-width,1CSSpixelmede1DIP.
+MaslembrequepodemosabrirumsiteDesktopnonossoiPhoneeaí,nessecaso,
+apáginamede980CSSpixels,320DIPse640pixelsfísicos.Éessencialque,nesse
+ponto,essaúltimafrasefa çasentidonasuacabe ça.Trêspixelsdiferentes,pracon-
+fundirtodomundo!
+E,claro,arela çãoentreDIPepixelsfísicosé: númerodeDIPs×devicePixel-
+Ratio=númerodedevicepixels .Jáarela çãoentreCSSpixeleDIPtemavercom
+oviewportqueestamosusando.Como,namaioriadossitesotimizadospramobile,
+vamosusar device-width,então: umCSSpixel=umDIP .
+81
+
+## Página 90
+
+CasadoCódigo
+OqueimportaéotamanhoemDIP
+TodososiPhonesmostram320pxdeconteúdo,nãoimportandoseéretina(com
+640pxfísicos)ounão. Precisaserassim,poisospixelsfísicossãomuitopequenos
+natelaretina. Seriapéssimoprousuáriomostrar640pxdeconteúdo,tudoficaria
+muitopequeno.
+Nofim,prausabilidade, contamaisotamanhodatelaemDIPqueotamanho
+físico.
+Nãoquerdizerclaro,queterumatelacomaltaresolu çãoecomalto*pixelratio*
+sejaruim.EmboraoconteúdofiqueigualdetamanhonosdoistiposdeiPhone,ele
+ficamaisbemdefinido noretina,claro.Textosegráficosficamótimos.Conteúdos
+grandesecom zoom outficammaisdefinidos—comoumafotograndeouumvídeo
+HDoumesmoumsiteDesktopvistonocelular.
+Devíamosfalarde‘DPIdeconteúdo’
+Aconfusãomaiornissoéqueasespecifica çõesdosaparelhosematériasnossites
+detecnologiacostumamfalarapenasdaresolu çãofísicadoaparelhoenãodeview-
+portsepixelratios.Claro,essesconceitosconfundemmuitagente,principalmente
+ousuáriofinal.Masacontradi çãoéque oviewportéjustamenteonúmeromais
+útilprousuário,muitomaisquesaberaresolu çãofísica.
+NumartigoquelirecentementenoGizmodo,haviaumacompara çãoentreo
+iPadMinieoNexus7. Oargumentoeraqueatelade1024x768doiPadMiniera
+piorqueadeumNexus7de1280x800poistinha menor área útil disponível para o
+usuário.Errado!Emboracomresolu çãofísicamaisalta,oNexus7temum device
+pixel ratio 1.33%eviewportmenor(966x603pxcontra1024x768pxdoiPadMini).
+Umusuárioquequeiravermaisconteúdonatela,vaipreferiroiPadMini.
+Quandolemoscomparativossobreaparelhos,écomumveraspessoascitando
+DPIsfísicos.Porexemplo:
+• iPhonenão-retinatem163dpicomlargurade 320px
+• iPhoneretinatem326dpicomlargurade 640px
+• GalaxyStem233dpicomlargurade 480px
+• GalaxyYtemsó133dpicomlargurade 240px
+Sóvendoessespoucosexemplos,aideiaéquetemostelascomresolu çõesbem
+diferenteseDPIsdiversos.
+82
+
+## Página 91
+
+CasadoCódigo Capítulo11. Asagados3pixelseastelasdealtaresolu çãoeretina
+MasissonãoéverdadeselevarmosemcontaaárearealproconteúdoemDIP.
+Porisso,achoquedeveriaexistirumamétricade dpideconteúdo,quemostraa
+densidadedatelacombasenaquantidadedeconteúdoqueelamostra,em device
+independent pixels.
+Olhandonovamentepralistadeaparelhosvemosquetodostêmamesmalargura
+deviewporteavaria çãonadensidadedeDIPébemmenor:
+• iPhonenão-retinatem163dpideconteúdocomviewportde 320DIPdelar-
+gura
+• iPhoneretinatem163dpideconteúdo comviewportde 320DIPdelargura
+• GalaxyStem155dpideconteúdocomviewportde 320DIPdelargura
+• GalaxyYtem177dpideconteúdo comviewportde 320DIPdelargura
+Prousuáriofinal,essamedidade dpi de conteúdoémaisimportantequeo dpi
+fís ico.
+PorqueumiPadminitemomesmoviewportqueumiPadnormal?
+Olan çamentodoiPadminitrouxemuitadiscussãosobresuausabilidade. O
+JakobNielsen,papadausabilidade,declarouqueatelaépequenademaisecompro-
+blemasdeUX( http://www.useit.com/alertbox/specifications-vs-ux.html). Outros
+reviewschegaramnamesmaconclusão,eaténomescomoLukeWroblewskieBrad
+Frostentraramnessadiscussão.
+OproblemadoiPadMiniéqueeletemamesmaresolu çãode1024x768do
+iPadnormalmasemumatela27%menorfisicamente .Pior,seudevicepixelratio
+é1,oquefazcomqueoviewportfinalsejatambémde1024x768.Naprática,todas
+ascoisasdoiPadabrem27%menoresemtamanho,tornandoosbotõesmaisdifíceis
+deapertar,ostextosmenorespralereetc.
+MuitagenteseperguntaemcomoaApplechegounotamanhode7.9polegadas
+doiPadMini.Essenúmeronãoéaleatório.Com7.9, oiPadminitemomesmodpi
+deconteúdodosiPhones .Ouseja,vairenderizartudodomesmotamanhofísico
+queumiPhonefaz.Vejaascontas:
+• iPhonenão-retina(320x480)tem162.98dpideconteúdo numatelade3.5”
+compixelratio1
+83
+
+## Página 92
+
+CasadoCódigo
+• iPhoneretina(640x960)tem162.98dpideconteúdo numatelade3.5”com
+pixelratio2
+• iPadmini(1024x768)tem162.02dpideconteúdonumatelade7.9”compixel
+ratio1
+• iPad4retina(2048x1536)tem132dpideconteúdonumatelade9.7”compixel
+ratio2
+Olhandoessalista,percebemosqueoestranhoéoiPadnormal,comumdpi
+bemmaisbaixo.AscoisasficammaioresfisicamentenoiPadnormal,oqueébomjá
+queumtabletgrandecostumaserusadoaumadistânciamaiordousuário(apoiado
+namesa,nocoloetc).
+Naprática,oqueaAppleestádizendoéqueo iPadminifoifeitoparaserusado
+namesmadistânciaquevocêusaoiPhone ,enãocomovocêusaoiPadnormal.
+Quantospixelsminhateladeveriater?
+Aquestãoaquiéde usabilidade. Pixelspequenosdemaistornamaleiturado
+usuáriomaisdifícil,queégrandecríticadosanalistasaoiPadmini. Vocêprecisa
+usaroaparelhomaispertodorosto,oquepodenãosermuitonatural.
+OW3Ctemumamedidaoficialpradeterminarotamanhodeumpixelde
+conteúdonatela,oqueeleschamade pixeldereferência(http://www.w3.org/TR/
+css3-values/#reference-pixel).Eleémedidoemângulos,claro.Umpixelnumcelu-
+larqueusamospertodoolhotemcomprimentomenorqueumpixelnumatelevisão
+quevemosametrosdedistância.Paraanalisarseumpixelestádo“tamanhocerto”,
+éprecisosabera distânciadousuárioemrela çãoàtela .
+OtamanhodopixeldereferênciadoW3Céde 0.0213 graus.Deixandoamate-
+máticaumpoucodelado,issoquerdizerque:
+• UmiPhonefoiprojetadoparaservistoaumadistânciade 41.9cmdoolho;
+• OiPadnormalémelhorvistoaumadistânciade 51.7cm;
+• JáoiPadMiniépraserusadocomoumiPhone,a 42.1cmdedistância.
+(se quiser saber melhor sobre a matemática por trás disso tudo, recomendo:http:
+//www.kybervision.com/Blog/files/AppleRetinaDisplay.html)
+84
+
+## Página 93
+
+CasadoCódigo Capítulo11. Asagados3pixelseastelasdealtaresolu çãoeretina
+Figura11.1:MedidadopixeldereferênciadoW3C(imagemoficialW3C)
+CelularesAndroidsãoosquetrazemamaiorvaria çãonosDPIs.Muitostrazem
+telasgrandesfisicamentemascom dpis de conteúdodosmaisvariados.
+• UmGalaxyS3 tem360x640deviewportnumatelade4.8”.Émelhorusadoa
+44.6cmdedistância;
+• JáumGalaxyNote2 temumatelade5.5”comamesmaresolu çãofísicae
+mesmoviewport—360x640—doS3.Ouseja,éumaparelhopensadopara
+serusadoaumadistânciamaior,de 51.17cm,comoumiPad,apoiadonamesa
+porexemplo.
+E, claro, toda essa usabilidade depende de usuário para usuário.Depende
+decomovocêpretendeusaraparelhoedaqualidadedasuavisão. Otama-
+nhodo pixel de referênciaécalculadopensandonaresolu çãomédiadoolhohu-
+mano.Eexistetodaumamatemáticainteressantíssimasobreaóticadoolhohumano
+prasecalcularisso( http://blogs.discovermagazine.com/badastronomy/2010/06/10/
+resolving-the-iphone-resolution/).
+Porexemplo:a30cmdedistância,apercep çãomáximadonossoolhoé,emmé-
+dia,de286dpi.Qualquercoisaacimadisso,eamaioriadaspessoasnãoconseguirá
+distinguirospixelsindividualmente.Porisso,atelade326dpidoiPhoneretinaébas-
+tantedefinidapragente.Masoolhohumanoconsegueatingirresolu çãomáximade
+477dpiemquemtemvisãoperfeita;nessecaso,umcelularFullHDde469dpicomo
+oHTCOnepodesermelhor.
+85
+
+## Página 94
+
+CasadoCódigo
+Conclusão
+Comodesenvolvedor,paratrabalharcomtelasretina,vocêestarásemprepres-
+tandoaten çãoao devicePixelRatioeaotamanhodatelaemDIP.Otamanhofísico
+datelanãoimportamuito. Claro,tudoissovaiafetarcomovocêcriasuasmedia
+querieseimagens.Vamosvermediaqueriesdealtaresolu çãonotópico 15ecomo
+prepararimagensparatelasretinanotópico 19.
+Comousuário,vocêdeveescolherseuaparelhobaseadonotamanhodatelaem
+DIPeaformaquepretendeusá-lo.Prefiraaparelhoscom device pixel ratioaltopois
+tudoficamaisdefinido. Mas,principalmente,escolhaumaparelhoquetenhaum
+tamanhoemDIPquesejaconfortávelaoseuolhoeàdistânciaquevocêquerusá-lo.
+E,seprecisar,vocêtambémpodedarzoomenquantonavegapraverascoisas
+melhores.Éoassuntodopróximotópico 12.
+86
+
+## Página 95
+
+Capítulo12
+Nãoremovaozoomdosseus
+usuários
+Vimosnotópicosobre viewport(10)aimportânciadametatagparaadaptara
+páginacorretamentenosdispositivosmóveis. Analisamososparâmetros widthe
+initial-scale,masháoutros. Osdemaisparâmetroscontrolamogestodere-
+dimensionarapágina( page scale). Comeles,vocêconseguebloquearozoomdo
+usuáriodealgumasformas:
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<meta name="viewport"
+content="width=device-width, minimum-scale=1, maximum-scale=1">
+Mas,naesmagadoramaioriadoscasos,vocênãodeveriafazerisso. Exce ções
+talvezsejamwebappscomumaideiadecanvasfullscreenondeosgestossãotratados
+pelaaplica ção(mapasejogostalvez).Emsiteswebnormais? Jamais.
+
+## Página 96
+
+CasadoCódigo
+Astelaspequenasdossmartphonesensinaramalgosimplesparaosusuários:se
+algoestiverpequeno,apenaspinceosdedos( p i n c h)e dêzoom!Éumgestobásico
+dedispositivostoucheconhecidoportodomundo.Mas,mesmoassim,muitossites
+bloqueiamozoomnaspáginas. Não façaisso.
+Háummitoquecirculaporaídequelimitarozoomfazcomquenossapágina
+fiquemaisparecidacomuma A p p.Primeiro:sitenãoéApp,entãonãotenteparecer
+uma.Segundo:sealgumasAppstêmessa limitaçãodenãodeixardarzoom,porque
+copiaressa deficiênciaprasuapágina?
+Controlenamãodousuário
+Desabilitarozoomdaspáginasétãoirritante,mastãoirritante,queosbrowsers
+mobilemodernosestãodeixandoessecontrolenamãodousuário! Obrowserdo
+Android4eoChromeMobile ,porexemplo,têmessaop çãonasconfigura ções:
+Figura12.1:Configura çõesdezoomdoAndroid4edoChromeMobile
+88
+
+## Página 97
+
+CasadoCódigo Capítulo12. Nãoremovaozoomdosseususuários
+OMobileSafaridoiOS,infelizmente,aindanãotemumaop çãodessas.Também
+nãoconseguiacharnoOperaenoFirefoxumaop çãosemelhante.Umagambiarra
+útilprausuáriosdessasplataformaséusarum bookmarkletquereescrevaatag
+viewportdossitesprahabilitarozoomsempre( https://gist.github.com/sergiolopes/
+5231024).
+OfamosobugdozoomnoiOS
+Euachoqueograndeculpadodaprolifera çãodepáginascomzoomdesabilitado
+éumfamosobugnoiOSatéaversão5.xquefazcomqueapáginadêumzoom
+quandovocêgiraoaparelhoemmodopaisagem.Ébemirritante.Vocêestávendo
+apáginaemmodoretratoe,quandogiraoaparelho,aSafaridáumzoominevocê
+nãoconsegueverapáginatoda—eprecisafazerumgestodezoomout.
+Sedesabilitarmosozoom,obugnãoacontece.Maséumjeitocovardederesolver
+oproblema.O iOS6resolveessebugdoMobileSafari,entãoissoécoisadopassado.
+MasmesmoqueobugdoiOSsejaumproblemapravocêeseususuárioscom
+iOSvelho,penseemalgumaop ção:
+•Não façanada. Sim,umaop çãoédeixarobugacontecer. Lembrequeum
+usuáriodeiOSestáacostumadoaisso,afinaltodosossitesdomundosãoafe-
+tados!EamaioriadosusuárioscomiOS6+estáok.
+• Seincomodarmuitoevocêquisertirarozoomdousuárioporcausadobug,
+pelomenosfa çaisso apenasnoiOS enãolimitetodososoutrosdispositivos
+domundoquefuncionamdireito. Lembreque,principalmentenoBrasil,o
+AndroidémuitomaisusadoqueoiOS.
+• HáhacksemJavaScript que solucionam o problema em 99% dos cená-
+rios.Vejaumcomparativodehacksqueresolvemobug: https://github.com/
+sergiolopes/ios-zoom-bug-fix#other-solutions
+Conclusão
+Demodogeral,desabilitarapossibilidadedousuáriodimensionarapáginaaseu
+gostoépéssimausabilidade.Nemtodousuáriotemvisãoperfeitaeogestode page
+scaleéumadasferramentasessenciaisdeacessibilidade.Vamosdiscutirmaissobre
+acessibilidaderelacionadaaooutrotipodezoom,o page zoom,emoutrotópico( 16).
+89
+
+## Página 99
+
+Capítulo13
+Usesempremediaqueriesbaseadas
+noconteúdodasuapágina
+Aoescrevermediasqueries,vocêprecisaescolheralgum valorpracolocarlá.Éoque
+chamamosdosbreakpoints,ospontosondeseulayoutvaiserajustadoporcausade
+umaresolu çãodiferente. Eescreverbonsbreakpoints éessencialparaumdesign
+responsivodequalidade.
+Oquemaisaparecedeperguntadequemestácome çandocomdesignresponsivo
+é:quais os valores padrões de se colocar nas media queries ? Elogosurgeumalista
+parecidacomessa:
+@media only screen and (min-width: 480px) { ... }
+@media only screen and (min-width: 600px) { ... }
+@media only screen and (min-width: 768px) { ... }
+@media only screen and (min-width: 992px) { ... }
+@media only screen and (min-width: 1382px) { ... }
+Péssimaprática!Essalistaeucopieidofamosoprojeto 320andupmasvocêacha
+
+## Página 100
+
+CasadoCódigo
+outrasparecidas,comessevaloressupostamente“comuns”.480pxéporcausade
+umiPhoneemlandscape, 600pxécomumemtabletsde7”, 768pxpegaumiPad
+emportrait, 992pxéumDesktopde1024menosasbarrasderolageme 1382pxpra
+Desktopsgrandes.
+Opessoalchamaessapráticade device-drivenbreakpoints,poissãovalores
+geradosapartirdetamanhosdedispositivos.
+Nãousedevice-drivenbreakpoints
+Primeiroproblema:essalistapensaemmeiadúziadetiposdedispositivos.Mas
+eos 360pxdeumGalaxyS4?Ouos 533pxdoGalaxySIIemlandscape?OuoiPhone
+5com 568pxemlandscape? Qualquerlistademediaqueriespadrãoé muitopo-
+brequandopensamosnasitua çãoatual—e,aindamais,futura—dosdiferentes
+dispositivos.
+Segundoproblema:quemdisseque seu designrealmenteprecisadetodosesses
+breakpoints?Oupior,queelenãovaificarruimentreasparadasde 480pxe 600px?
+Usaressesvaloresdemediaqueries nãogarantequeseudesignfuncionaráem
+todososdispositivos ,masapenasnosdispositivos“padrões”,sejaláoqueforisso.
+Usecontent-drivenbreakpoints
+AsmediaqueriesaseguireutireidoCSSdomeublogpessoal:
+@media (min-width: 592px) { ... }
+@media (min-width: 656px) { ... }
+@media (min-width: 752px) { ... }
+@media (min-width: 1088px) { ... }
+@media (min-width: 1312px) { ... }
+Daúltimavezquechequei,nãoconseguiencontrarnenhumdispositivocom
+656pxou 7 5 2 p xdelargura.Deondesaíramentãoessesvalores?Dodesigndomeu
+blog.
+Aideiaésimples:fizmeudesignresponsivocommedidasflexíveiseprapeque-
+nosdispositivosprimeiro— mobile first.Aífuitestandoasdiversasresolu çõespra
+verondeodesignnãoficavatãobomecoloqueiumbreakpointlá.
+Éoqueopessoalchamade content-drivenbreakpoints. Ouseja,acharsuas
+mediaqueriesapartirdoseuconteúdoedoseudesign.Ficabemmaisfácilgarantir
+quesuapáginafuncioneemtodososdispositivos .
+92
+
+## Página 101
+
+CasadoCódigo Capítulo13. Usesempremediaqueriesbaseadasnoconteúdodasuapágina
+Comoacharmeusbreakpoints?
+• Abrasuapáginaoriginalnonavegador;
+• Váredimensionandoajaneladevagar atéodesignparecerruim—sefez
+mobile-first,abrapequenoeváaumentandoajanela;senão,abragrandeevá
+diminuindoajanela;
+• Quandoacharumpontoemqueodesignquebra,copieotamanhodajanela
+ecrieumamediaquerycomessevalorlánoseuCSS;
+• Recarregueapágina,vejaseasmudançasmelhoraramodesign,econtinue
+redimensionandopraacharo próximobreakpoint.
+Algumasferramentasquepodemteajudarnisso:
+• Oresponsive mode do Firefox (https://developer.mozilla.org/docs/Tools/
+Responsive_Design_View);
+•FitWeird(http://davatron5000.github.com/fitWeird/), um excelente book-
+markletquetedáotamanhodatela,inclusiveem em;
+• Meuresponsiveplay (http://sergiolopes.org/responsive-video-play/).
+Tweakpoints
+Essespontosemquenossodesignquebraecolocamosumamediaquerysãoco-
+mumentechamadosde breakpointsnomundodawebmobile.E,sevocêobservar
+tantooexemplodomeublogquantoodasresolu çõesdeaparelhoscomuns,vainotar
+queexistem 5 media queries.Essacoincidêncianãofoidepropósito,masacabamos-
+trandoumaoutraquestão:comoécomumverprojetoscompoucasmediaqueries,
+meiadúziadebreakpointsemgeral.
+Nãoprecisavaserassim. Aliás,opróprionomede breakpointdáaimpressão
+dequedevemoscriarumamediaqueryapenasquandoolayout q u e b r a,quandoele
+mudaradicalmente.Écomumsuportarumaversãodonossodesignnumacoluna
+só,talvezumaoutraversãocom2colunaseoutracom3colunas. Essasgrandes
+quebrasexigembastantecódigoCSSpraalterarolayoutsignificativamente.
+Mas,muitasvezes,agentesóprecisadeumpequenoajustenodesign. Au-
+mentarlevementeafontedeumtítuloapartirdecertoponto. Outrocarafonte
+93
+
+## Página 102
+
+CasadoCódigo
+nomenuparaboldemtelasmaiores. Situa çõescomoessapodemacontecerem
+qualquerpontodonossodesign,nãonecessariamentenos breakpointsmaiores. E
+nãohánadadeerradoemcriarmediaqueriesmaissimples,compequenosajus-
+tes,emdiversospontosintermediários.OJeremyKeithchamaissode tweakpoints
+(http://adactio.com/journal/6044/),eéumbomnome.
+DaúltimavezqueconteinocódigofontedositedaCaelum,porexemplo,haviam
+33 valores diferentes em media queries.Todasbaseadasnoconteúdomasváriasapenas
+compequenosajusteseumaúnicalinhadeCSSdentro, tweakpoints.
+94
+
+## Página 103
+
+Capítulo14
+Mediaqueriesmobilefirstou
+desktopfirst?
+Imagineoseguintecenário:vocêtemumtextoeumafotoqueflutuaàdireita,como
+textopassandoaoredor.Nadademais,algobastantecomum.Masemtelaspeque-
+nas,odesignfica estranho.Aimagemocupaquasetodaalarguradatelaeotexto
+fluibizarramenteaoredor.
+
+## Página 104
+
+CasadoCódigo
+Figura14.1:Textoflutuandoaoredordaimagemnumatelagrande.
+Figura14.2:Textoflutuandobizarramenteseatelaformenor.
+Ébemfácilmelhorarisso. Seriamelhornãofluiraimagememtelasmenores.
+Quemvairesolverisso? Media queries,claro.Seaimagemtiverumaclasse foto,por
+exemplo,bastafazer float:rightemumasitua çãoe float:noneemoutra.
+Mas,separarmosprapensarbem,háduasformasderesolveressaquestão. A
+primeiraéfazeraimagemflutuare,depois,comumamediaqueryqueselecione
+telaspequenas,tiraro float:
+/* a foto flutua a direita sempre */
+.foto {
+float: right;
+}
+96
+
+## Página 105
+
+CasadoCódigo Capítulo14. Mediaqueriesmobilefirstoudesktopfirst?
+/* mas em telas com no máximo 550px, melhor não flutuar */
+@media (max-width: 550px) {
+.foto {
+float: none;
+}
+}
+Aoutraformaéinverterasmediaqueries,etrabalharcom min-width:
+/* a foto não flutua, então não preciso
+de CSS já que float:none é o padrão */
+/* ... */
+/* em telas maiores, quero que flutue */
+@media (min-width: 551px) {
+.foto {
+float: right;
+}
+}
+Osdoiscódigosfazemexatamenteamesmacoisa.Masvocêdeveterreparado
+queosegundoémaissimplesecurto,jáqueevitasobrescreverumapropriedadeno
+CSS.
+Aliás,sobrescreverregrasnoCSSéalgoperigoso,eviteisso . Vocêescrevea
+mesmapropriedadeduasvezes,repetindocódigo.Ou,piorainda,sobrescreveuma
+propriedadesemaproveitaropadrãodobrowser—comoum float:noneouum
+width:auto. ÉsinaldequevocêaplicouoCSSanterioremmaiselementosque
+gostariae,agora,precisasobrescrever.Indicaquevocêescolheuerradoseuseletor
+eoidealseriainvertê-lopraaplicarovalormaisespecíficosónoselementosque
+realmenteprecisamdisso.
+EssadicadeevitarsobrescreverregrasvalepratodoCSS.Maseuvejomuita
+genteseperdendonelasjustoquandofazemasmediaqueries.Émuitofácilcairno
+primeirocódigoquemostreiantes,justificandoqueasobrescritaéporquemudamos
+olayoutemtelaspequenas.
+OprimeirocódigoéumexemplodecódigoCSS desktop-firstenquantoose-
+gundousaumaabordagem mobile-first.
+97
+
+## Página 106
+
+CasadoCódigo
+Mediaqueriesmobilefirst
+Jáfalamosde mobile firstantesnotópico 6.Masaideiaaquiépensaremcomo
+issoafetaaconstru çãodasnossasmediaqueriesnocódigoCSS.
+U s a n d omedia queries mobile firstvocêcriaseucódigoinicialfocadonodesign
+pramenorestelas,desmartphones.Odesigndessaversãodeveserumpoucomais
+simplesquedasversõesmaiores,entãoseucódigodevesermaisconciso.Depois,vá
+criandomediaqueriesparairtransformandoeincrementandoseudesignparatelas
+maiores.Nessatécnica,vocêusaváriasmediaqueries min-width,semprepensando
+nastelasmaiores.
+EssametodologiasimplificabastanteseucódigoCSS .Naabordagemcon-
+trária,desktop-first, agenteacabaescrevendoummontedemediaqueriescom
+max-widthquesobrescrevemasregrasanteriores.Issoporqueodesignbaseémais
+complexo,pensadonoDesktop,edevesersimplificadoparatelasmenores.
+Nãosuportarmediaquerieséaprimeiramediaquery
+Essaexcelentefraseébastanteencontradanacomunidademobile. Resumeo
+melhordoespírito mobile-firste progressive enhancement.
+Seoseudispositivonãosuportamediaqueries,issoéumforteindicativopra
+vocêdascapacidadesmaislimitadasdomesmo. Nessecenário,sevocêcriouseu
+CSS mobile-first,vocêgarantequeaexperiênciapadrãonesseaparelhoseráamobile
+maissimplesdetodas.EsseéseuCSSpadrão,foradasmediaqueries.Setivéssemos
+feitoocódigo desktop-first,odesignaplicadonafaltadesuporteamediaqueries
+seriaodesktop,nãoumaboaexperiência.
+Nessesentido,vocêpodeencararaexistênciadesuporteamediaqueriescomo
+umamelhoria, progressive enhancement. Aexperiênciapadrãoéaceitável,master
+mediaqueriesfaráodesignserumpoucomaisbemadaptadodependendodoapa-
+relho.
+Browsersantigosepolyfills
+Mas,claro,àsvezesvocêqueraplicarasmediaqueriesemnavegadoresimpor-
+tantesmasqueaindanãoassuportam.OexemploclássicosãoasversõesdoInternet
+Explorerantesda9eversõesbemantigasdoFirefox.Ousodessesnavegadoreshoje
+ébembaixo,principalmentenoBrasil.Mas,dependendodoseuprojeto,podeser
+importanteterumsuporteaessasversões.Pensandonisso,épossívelusaralgumas
+estratégias.
+98
+
+## Página 107
+
+CasadoCódigo Capítulo14. Mediaqueriesmobilefirstoudesktopfirst?
+Aprimeiraé nãofazernada . Sevocêfezseudesignmobilefirsteflexível,a
+experiênciadenavegaçãonumnavegadorsemmediaquerieséaceitável.Podenão
+serodesignpadrãoquevocêpensouparaDesktop,maséaceitáveleusável.Lembre,
+encareaexistênciademediaqueriescomouma melhoria,nãocomouma exigência.
+Nãofazernadaéumaboasolu çãosevocêtempoucosvisitantesdessesnavegadores
+velhosenãoquergastarmuitotempoedinheiroimplementandoumasolu çãopra
+tãopoucagente.
+OutraabordageméterumsegundoCSSqueaplicatodasasregrasdeCSSsem
+mediaqueriesecarregá-lossomentenosIEsvelhosdoDesktopcomcomentários
+condicionais.OidealseriageraressesegundoCSSautomaticamenteusandoalgum
+pré-processadoroualgumscriptseu.E,paraosnavegadoresnormaiseoIEmobile,
+vocêincluioCSSnormalescritodeforma mobile-first:
+<!--[if (gt IE 8) | (IEMobile)]><!-->
+<link rel="stylesheet" href="estilo-normal.css">
+<!--<![endif]-->
+<!--[if (lt IE 9) & (!IEMobile)]>
+<link rel="stylesheet" href="estilo-ie.css">
+<![endif]-->
+Avantagemdessasolu çãoésuasimplicidadeeperformance,umavezquecada
+navegadorrecebeoCSSadequadoàssuascapacidades.Opontonegativoéquesó
+serveparaIEsvelhos,enãoparaoutrosnavegadoresvelhos—oFirefox3nãosuporta
+mediaqueries,porexemplo.
+Aterceiraabordagemparasuportarmediaqueriesnessesnavegadoresvelhosé
+fazê-losentenderasmediaqueries.UsarumpolyfillemJavaScriptquelêseucódigo
+CSSeinterpretaasregrasdasmediaqueries,aplicandoasqueforemapropriadas.
+Assolu çõesmaisfamosassãoo Respond.js(https://github.com/scottjehl/Respond)
+eoCSS3-MediaQueries.js(https://code.google.com/p/css3-mediaqueries-js/).Esse
+últimoéomaiscompleto,suportandodiversasmediasqueriesemtodotipodena-
+vegadorvelho.
+Já oRespond.jsémaissimplesesósuporta min-widthemax-width,oquetam-
+bémfazelesermaisleveerápido,idealparalidarcomnavegadoresvelhos.Como
+usamossóessasmediaqueriesnamaiorpartedoscasos,podesermaisinteressante.
+Parausá-lo,apenasreferencieoscriptnapágina.
+99
+
+## Página 109
+
+Capítulo15
+Asmediaqueriespararesolu ções
+diferenteseretina
+Muitasvezes,vocêvaiquerercarregarimagenseestilosdiferentesemtelasdereso-
+luçãodiferentesouretina.Paraisso,vocêprecisade mediaqueriesderesolu ção.
+Nessetópico,discutoaformacorretadeseatacartelasdealtaresolu çãocomCSS,
+asdiferen çasdosnavegadores,quevaloresusarealgumasboaspráticas.Oresumo
+dotópicoéquevocêdeveusaruma mediaqueryparecidacomessa :
+@media (-webkit-min-device-pixel-ratio: 1.5),
+(min-resolution: 144dpi) {
+}
+Sim,euseiquevocêprovavelmentejáviuouusouumaversãobemmaiordessa
+mediaquery,cheiadeprefixosdenavegadoresevaloresestranhos.Comoessa:
+@media (min--moz-device-pixel-ratio: 1.5),
+(-o-min-device-pixel-ratio: 3/2),
+
+## Página 110
+
+CasadoCódigo
+(-webkit-min-device-pixel-ratio: 1.5),
+(min-device-pixel-ratio: 1.5),
+(min-resolution: 144dpi),
+(min-resolution: 1.5dppx) {
+}
+Poisbem,nãousemaisessaversãolongaecomplicada.O corretoparaosbrow-
+sersdehojeedofuturo éaprimeiraquemostrei.Vejamosoqueelafaz.
+Porqueessamediaquerypratelasretina?
+Muito tempo atrás, quando surgiram as primeiras telas comp i x el rat i odi-
+ferente de 1, o pessoal do WebKit criou uma media query pra isso, a famosa
+-webkit-device-pixel-ratio(esuasversõescom mine max). Algunsbrowsers
+chegaramaexperimentarisso,surgindoatéafamosaaberra çãodaMozillacom
+min--moz-device-pixel-ratio(não,nãoháumerrodedigita çãonessasintaxebi-
+zarracomdoistra ços).
+Mas aí veio a especificação oficial e revisaram essa media query, criando
+umaequivalentecomumnomemaissimples: resolution. Vocêpodeescrever
+min-resolutione max-resolutioneelaaceitaváriasmedidas,sendo dpiedppx
+asmaisimportantes.
+Cuidado,porém,comosvaloresdasmedidas.Vocêjáleuotópicosobreresolu-
+çõeseDPI( 11)entãolembraqueos browsersfixamaresolu çãológicaem96dpi ,
+independentedaresolu çãofísica.Então,quandoescrevi 144dpinamediaquerylá
+emcima,oqueestavadizendoéquequeria1.5xoDPIpadrãode96,pegandoentão
+telascom device pixel ratio 1.5,comováriosaparelhosAndroid.
+AmedidadppxénovanoCSSesignificaomesmoqueo device pixel ratio.Então,
+poderíamosescrever1.5dppxeseriaequivalentea 144dpi.
+Qualvalorusar?Realmenteprecisodeimagensdiferentespracadare-
+solução?
+Osvaloresqueencontramosnomercadohojesão:
+•0.75dppx(=72dpi)-Androidlow-end,tipoGalaxy5;
+•1dppx(=96dpi)-Notebooks,desktopsevárioscelularesetablets;
+•1.33dppx(=127dpi)-Nexus7;
+102
+
+## Página 111
+
+CasadoCódigo Capítulo15. Asmediaqueriespararesolu çõesdiferenteseretina
+•1.5dppx(=144dpi)-VáriosAndroids,comoAtrixouS2;
+•2dppx(=192dpi)-TelasretinadaApple,celularesetabletsmaismodernos
+comoS3;
+•3dppx(=288dpi)-Celularesultramodernos,comoHTCOneeSamsungGa-
+laxyS4.
+Vocêpodeescreverumamediaquery resolutionparacadaumdessesvalores,
+servindoimagensadaptadasparacadaresolu ção. Podeatéserumaideiasevocê
+forgerartudoissoautomaticamente(imagensemediaqueries),mas,namão,fica
+inviável.
+Oquevejomuitocomumdesefazeré servirumaimagememaltaresolu ção
+paraqualquertelaacimade1dppx .VocêpodefazeralgocomoopessoaldoWord-
+Pressqueescolheu 120dpi(=1.25dppx)comovalorinicialpraservirimagensretina.
+MasvejaserealmentevaleapenaservirimagensdiferentessóporcausadoDPI.
+Issovaificarbastantecomplicadonospróximosanos. Parasuportarbemtodotipo
+detela,prefirausartexto,fontes,SVGeCSS. Parafotos,háoutrastécnicas.Vamos
+discutiramelhorformadeatacarimagensresponsivasnotópico 19.
+Eosbrowsers?
+Todososbrowsersmodernos suportamamediaquery resolution,excetoos
+baseadosnoWebKit. Existemaindaalgunsoutrosproblemas,principalmenteem
+dispositivosmóveis.Algunstestesfeitosnoiníciode2013:
+•FirefoxeOperanoDesktopjásuportam resolution.
+• NoWebKit, já existe suporte desde Outubro/2012 mas isso ainda
+não chegou no browsers finais. Por isso, usamos ainda a antiga
+-webkit-device-pixel-ratio, pensando no Chrome, Safari, Android
+eiOS.
+•OperaMobile suporta resolutionnativamentenoAndroid. Únicodefeito
+équeelereportapixelratio1nomeuGalaxy5depixelratio0.75. Masnos
+celularescom1.5e2,tudofuncionaperfeito.
+•FirefoxnoAndroid sóaceitaavelha -moz-device-pixel-ratio,maselede-
+volvesemprepixelratio 1enãosuportatelasretinaainda. Issoéumbuge,
+103
+
+## Página 112
+
+CasadoCódigo
+quandoforconsertado,faráa resolutionfuncionar,comonoFirefox18pra
+MacquejásuportaoMacBookRetina.
+•OperaMini reporta sempre pixel ratio1, tanto no Android quando no
+iOS,mesmoemtelasretina. Oproblemaéqueelesuportaamediaquery
+resolution cheia de bugs: se usard p pxele aceita qualquer valor, e o
+min-resolutionachaqueopixelratioé2.Conclusão:osuporteneleaindaé
+bembugado,masacrescentar -o-device-pixel-rationãovaimelhorarisso.
+•InternetExplorer suporta resolutiondesdeaversão9enuncasuportou
+device-pixel-ratio.
+• Outrosbrowsersquetestei:Dolphin Android Betae UC Browser.Emambos,
+funciona-webkit-device-pixel-ratiomaselessemprereportam 1,mesmo
+emtelasretina.
+A conclusão de tudo isso é que precisamos ainda da
+-webkit-device-pixel-ratio mas já podemos usar aresolution para os
+outrosbrowsers,semprefixos.Oidealtambéméusaraunidade dpienãodppx,já
+queosuportenosbrowsersaindaéprecário.
+Sólembrequeessamedida dpiusadanamediaqueryérelativaapolegadasde
+CSS,quesãopadronizadosem96px.IssonãoéoDPIfísicodoaparelho.Jávimuita
+genteseconfundircomisso.UmiPhoneRetina,porexemplo,vaireportarsempre
+192dpi(2xodpibasede96)enuncaseudpireal,dospixelsfísicos(queseria330).
+Amediaqueryfinal
+Taaíentãoamediaqueryfinalprasuportarmostelasdealtaresolu çãohojeeno
+futuro,semproblemas:
+@media (-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 120dpi) {
+}
+104
+
+## Página 113
+
+Capítulo16
+Mediaqueriestambémajudamna
+acessibilidade
+Semprequealguémfalaemmediasqueries,aprimeiracoisaquevemàcabe çaé de-
+sign responsivoe mobile.Maselasajudamtambémemoutrocenário: acessibilidade.
+Aliás,ésemprebomlembrarque acessibilidadenãoésósobreusuárioscegos
+(http://a11yproject.com/posts/myth-accessibility-is-blind-people/). Háváriascate-
+gorias,incluindoosqueenxergammascom dificuldadedelertextopequeno .Pode
+serumadoen ça,podeserumapessoamaisidosa,ouatéumusuário“comum”des-
+confortávelcomumtextopequeno.
+Paraisso,osnavegadorestêmacapacidadede zoomnaspáginas. Eumesmo,
+apesardenãoternenhumproblemanavista,usodireto:gostodelertextoscompelo
+menos18pxdetamanho,entãodouzoomemtodasaspáginasmenoresqueisso.
+E,sópraficarclaro,estamosfalandoagorado page zoom,queaumentatudona
+página,usadogeralmentenoDesktop;nãoestoufalandodogestode page scale,co-
+mumnocelular,quenãoafetaarenderiza çãodapágina,sóavisualiza çãodousuário
+
+## Página 114
+
+CasadoCódigo
+(vejaotópico 12).
+Masdarzoomnapáginatemumproblema:sevocêaumentarmuito,o design
+dositepodequebrar ,principalmentemedidasflexíveiscomoporcentagense em,tão
+comunsemdesignresponsivo.
+Figura16.1:Umzoomde2xdeixaoartigodoblogbemestranho.Otextoficagrande
+masapertado,eafotoficagrandedemaissemnecessidade.
+Apartemaiscuriosaéqueoinimigodesselayoutestranhoéjustoolayoutflexí-
+vel.Setivessefeitoo layouttodofixoempixels ,ozoomiriaaumentá-loproporcio-
+nalmenteenadaquebraria.Oruimsóéqueousuárioteriaquedarscrollhorizontal
+praverositetodo.
+Mediaqueriesajudamnozoom
+Masagrandesacadaéqueas mediaqueriessãoaplicadasquandoousuário
+dázoom.
+Umzoomde200%,naprática,faz1pxnoCSSserrenderizadocomo2pxna
+tela. Nofim,sevocêestiveremumnotebookde1280pxdetela,apáginapassaria
+arenderizarcomum viewportde640px. (aliás, há muita semelhança disso com o
+106
+
+## Página 115
+
+CasadoCódigo Capítulo16. Mediaqueriestambémajudamnaacessibilidade
+tópico sobre resoluções e telas retina 11)
+Avantagemdoviewportmudardetamanhodeacordocomozooméqueas
+mediaqueries demin-widthemax-widthsãoaplicadasdeacordocomoviewport.
+Aliás,maisumbommotivopranãousarmosasmediaqueries min-device-widthe
+max-device-width,quesãorelativasaotamanhodatelaenãoaoviewport.
+Assuasmediaqueriescriadasoriginalmenteparacelularesetabletscome çama
+seraplicadasparaousuáriocomzoom.Seulayoutpassaase adaptarcorretamente
+semproblemaalgum.
+Figura16.2:MediaqueriesajustamolayoutnoDesktopcomzoomde2xcomose
+estivessenumtabletpequeno.Odesignficagrandemasbemmaisharmônicoepro-
+porcional.
+Todososnavegadoressuportamessetipoderecurso:Firefox,Chrome,Android,
+Opera,InternetExplorereSafari.SóháumbugnoWebKit( https://bugs.webkit.org/
+show_bug.cgi?id=41063)—Chrome,Safari,Android—quefazamediaqueryser
+aplicadaapenasseousuárioderzoomedepoisum refreshnapágina;emtodosos
+outros,amediaqueryéaplicadaimediatamentedeacordocomozoom.
+Então,sevocêporacasonãogostadedesignresponsivoeaindafazsiteDesktop
+emobileseparado,táaíummotivoprausarmediaqueriesmesmoassim:garantir
+107
+
+## Página 116
+
+CasadoCódigo
+acessodepessoascomvisãoreduzida.Mediaqueries,nofundo,nãotemavercom
+mobilemascom design adaptativo.Ezooméumtipodeadapta ção.
+Usemediaqueriescom‘em’porcausadoWebKit
+Aliás,falandoemWebKit,háoutraquestãoimportante. Quandoozoomau-
+menta,ocálculodospixelsnãoafetaasmediaqueries.Issoquerdizerque,sevocê
+usou (max-width: 960px)noCSS,oWebKitnãoiráconsiderarmetadedesseva-
+lorquandoozoomestiverem200%.Eledeveriafazerisso—comotodoosoutros
+browsersfazem—,jáqueamediaqueryésobreo tamanhodoviewportenãoo
+tamanhodajanela .
+MasoWebKitconseguereaplicarasmediaqueriesnozoomcorretamentesim,
+apenasprecisamosdeclará-lascomem:
+@media (max-width: 44em) { ... } /* equivalente a 704px */
+@media (max-width: 37em) { ... } /* equivalente a 592px */
+Acontaésimples:ésóusarcomobaseo font-sizeem16pxevocêchegano
+valorem em.OsbrowsersWebKitconsideramqueo font-sizebasemudaconforme
+ozoom,oquefazsuamediaqueryseraplicada(depoisdeumrefresh,porcausado
+bugquefaleiantes).
+Enãoseengane:issoéum bugdoSafari/Chrome/Androidecia .Usarmedia
+queriesem emnãodeveriasernecessárioparaganharmosacessibilidadenozoom.
+AtéoIEfuncionadireito! Mas,comoChromesetornandoonavegadormaisusado
+nomundoeoWebKitdominandocompletamenteomundomobile,ébom fazer
+sempresuasmediaqueriesem empraevitarproblemas.Pelomenosatécorrigirem
+essebug.
+Mediaqueriesderesolu çãoaplicadasnozoom
+Umadesvantagempraquemusaozoomdobrowseréqueas imagenscostumam
+ficarpixeladas.Elaficamenosdefinida,oquedeixaapáginafeiaeatécomimagens
+pioresprodeficientevisualentender.
+Masvocêlembraquetemosmediaqueriesparalidarcomresolu çõesdiferentes
+(tópico15)?Elasforampensadasparaseremaplicadasemaparelhoscompixelratio
+diferentes(comocelularesRetina),mastambém servemparaacessibilidade .
+Após um longo debate no W3C ( http://w3-org.9356.n7.nabble.com/
+Behavior-of-device-pixel-ratio-under-zoom-td6589.html), todos os navegado-
+108
+
+## Página 117
+
+CasadoCódigo Capítulo16. Mediaqueriestambémajudamnaacessibilidade
+resconcordaramque alterarozoomdonavegadoralteraodevicePixelRatio e,
+portanto,alteraaformacomoasmediaqueries resolutionsãoavaliadas.
+Emoutraspalavras:sevocêserveumaimagemdealtaresolu ção(2x)paratelas
+retina,porexemplo,elaseráusadaquandoousuárioder200%dezoomnapágina.
+Excelente.
+Enquantoescrevoesselivro,apenasoFirefoximplementouissocorretamente.
+Maséquestãodetempoatéosoutrosnavegadoresimplementarem.
+UmanotasobreafaltadeacessibilidadedoiOS
+OSafariMobilenoiOSnãopermitemudarozoompadrãodonavegadoreter
+umapáginaajustávelcomomostreinessepost.Aúnicaop çãodousuárioéusaro
+gestodepagescale comdoisdedosnonavegador( pinch to zoom)eficararrastando
+ateladeumladoprooutropraconseguirverapáginatoda.
+E,claro,issoseodesenvolvedordositenãodesabilitouozoom. Nessecaso,a
+soluçãoprousuárioéusarorecursode zoomnativodosistema ,queenvolveuma
+sériedegestosestranhosedifíceiscom2e3dedos.
+Outranota,sobrezoomvsaumentarafonte
+Nessetópico,falodo zoomdosnavegadoresmodernos ,queaumentaapágina
+toda—texto,imagens,CSSetc.Nosnavegadoresantigos,comoIE6ouIE7,issonão
+existiaeeracomumousuário aumentarotamanhodafonte .Erabemmaissimples:
+sóo font-sizebasemudavaeapáginasóaumentariasevocêusasse emnasmedidas
+CSS.
+Aliás,esseeraumargumentoforteafavorde emnaépoca,mashojeemdiaos
+browsersdãozoominclusiveemmedidascom pxfixos.
+109
+
+## Página 119
+
+ParteIII
+AWebadaptativa
+
+
+## Página 121
+
+Capítulo17
+Progressiveenhancementefeature
+detection
+Quandofalamosde mobile first,nofundo,oquefalamosédecriarumabasesólida
+decódigoportáveleincrementarcomrecursosavan çadosparaosnavegadoresmais
+capazes. Issoéprogressive enhancement—amelhoriaprogressivadapágina. Esse
+éumdospilaresdobomwebdesignmoderno,fundamentalemqualquerprojeto
+front-endmesmoquenãoenvolvamobile.
+O progressive enhancementéumconceitosimples,atéfácildeexplicar.Aplicá-
+lonapráticaébemmaiscomplicado.Éprecisoumamudan çadepensamentoede
+estratégia.Éprecisoumexcelenteplanejamentoemuitocuidadonaexecu ção.Masé
+oúnicocaminhoparaummundocheiodebrowsersedispositivosdiferentes,alguns
+maisavan çadosoutrosmaissimples.
+Comeceidentificandoasfuncionalidadesessenciaisdaaplica ção.Programepen-
+sandoqueessasfun çõessãoessenciaisemtodasasplataformasqueoprojetotemque
+suportar.Fa çaessecora çãodaaplica çãoomaissimpleseportávelopossível.
+
+## Página 122
+
+CasadoCódigo
+Depois,identifiqueasfuncionalidadesamaisquevãoincrementaroprojeto.To-
+dosaquelesdetalhesefacilidadesextrasquevocêvaiacrescentarpradeixaraaplica-
+çãointeressante.Aqui,vocêpodeusarosrecursosavan çadosdosnavegadoresmais
+modernos,osqueatéaindatêmsuportebembaixo.Semproblemas:lembrequea
+basedasuaaplica çãoésólidaeportável.Essesrecursossãoincrementos. Progressive
+enhancement.
+Umexemplo:vocêvaifazerumservi çodeuploaddefotos.Abaseésupersim-
+ples:umformuláriocomum <input type="file">.Só.Issofuncionaemtodosos
+lugares.Mas,claro,vocêquerrecursosmaismodernoselegais.
+Podeofereceruploaddemúltiplosarquivosaomesmotempo,masquesófunci-
+onanoIEdepoisdo10.Ecolocarumrecursodearrastaresoltararquivospraupload
+automático—quenãofuncionanoIE9ouFirefox3.Podecolocarumpreviewda
+imagemsendoenviadanapáginacom canvas.Ouaindaapossibilidadedemarcar
+olocaldafotocomgeolocaliza ção.Eadicionarumabarradeprogressodeupload
+bonita,usandosombrasebordasredondasdoCSS3.Eassimpordiante.
+VejacomosemprehámelhoriaspossíveisusandoAPIsmaisnovasdenavega-
+doresnovos.FileAPI.Draganddrop.Canvas.Geolocation.EfeitosCSS3.Emuito
+mais.Masabaseéumsimplesformdeupload,quefuncionaaténosbrowsersde15
+anosatrás.
+Detecçãodecaracterísticas
+Umtruqueimportanteparaumapáginausar progressive enhancementadequa-
+damenteésóusarosrecursosnovoseavan çadosnosnavegadorescomsuportepara
+eles.Sefizeronossoexemplodeuploaddefotostodoincrementadoesairrodando
+noIE6,ummontedeerrosapareceriaporcontadeAPIsnãosuportadas.
+Éprecisoumcuidadoamais.Detectarqualnavegadorsuportaqualfunciona-
+lidadeesóadicionarorecursonosquesãocompatíveis.Fazemosoqueéchamado
+defeaturedetection,algocomo detecção de característicasdosnavegadores.
+Onomeébonitomasaideiaébemsimples:testarseonavegadordousuário
+suportaalgumrecursoespecíficoereagirdeacordo. Podeserumsimples ifno
+JavaScripttestandoosuporteaalgumaAPI.Porexemplo:sequisermosoferecero
+recursodeobteralocaliza çãodousuárionanossaaplica çãodefotos,podemostestar
+osuportea Geolocation APIemJavaScriptfacilmente:
+// testamos se o objeto geolocation existe
+if ("geolocation" in navigator) {
+114
+
+## Página 123
+
+CasadoCódigo Capítulo17. Progressiveenhancementefeaturedetection
+// navegador compatível! usando o recurso:
+navigator.geolocation.getCurrentPosition(function(posicao) {
+// ....
+});
+}
+U mifnãomuitocomplicadoe,pronto,temosumapáginacompatívelcomtodo
+tipodenavegadornomelhorestilo progressive enhancement.
+Epodemos,claro,colocarum elsenessecódigo.Executaralgonosnavegadores
+quenãosuportema Geolocation API.Nãoéestritamentenecessáriojáqueaapli-
+caçãocontinuafuncionalsemesserecurso,dadanossabasesólidaeportável.Mas,
+àsvezes,vocêqueroferecerumaexperiênciaalternativaparaessesnavegadoresme-
+noscapacitados. Porexemplo:deixarousuáriodigitaracidadedelenamãocaso
+ageolocaliza çãonãoestejadisponível.Essetipodeestratégiapodeserchamadade
+graceful degradation:usamosumrecursomodernonosbrowsersbacanasmasapá-
+ginadegradaagradavelmenteparaosnavegadoresantigos,semquebraroulimitar
+muitoaexperiênciadousuário.
+Modernizr
+Omestreda feature detectionéoprojetoModernizr.Nemtodafuncionalidade
+édetectadatãofacilmentequantonosso ifsimplesdoexemplodegeolocaliza ção.
+Váriasdetecçõessãobemmaiscomplicadasedemandamcertoesfor ço. O papel do
+Modernizréjácuidardissoevocêsósepreocupaemescreverum ifsimples.
+UmexemploésequisermostestarsuporteaalgumrecursovisualdoCSS3,como
+bordasredondas.Precisamos,viaJavaScript,criarumelementonovo,aplicarapro-
+priedade border-radiusedepoisverificaroresultadonapágina. Eissopracada
+prefixopossível.Sãoalgumaslinhasdecódigotrabalhoso.Com Modernizr?
+if (Modernizr.borderradius) {
+// temos suporte a bordas redondas!
+}
+Muitosimples.Emaisainda:cadarecursosuportadopelo Modernizrpodeser
+detectadotambémporCSSalémdeJavaScript.Oframeworkcolocaumaclasseno
+elementoraiz <html>indicandosuporteounãoacertorecurso.Comisso,vocêpode
+fazercertosestiloscondicionais:
+115
+
+## Página 124
+
+CasadoCódigo
+.no-borderradius .menu {
+border: 1px solid white;
+}
+.geolocation .campo-cidade {
+display: none;
+}
+Aclasse no-borderradiusécolocadaquandonãohásuporteabordasredondas,
+senãoteríamosaclasse borderradius.Issopraqualquerfuncionalidadedetectável,
+comogeolocationeno-geolocation.
+Éumrecursosimplesmaspoderosoparaajudarnaadapta çãodocódigoda
+página,tantoCSSquantoJavaScript. Ehámuitosrecursossuportadospelo M o -
+dernizr, queestásemprecrescendo. VocêpodedetectarcertosefeitosdeCSS3,
+animações e transições; APIs como geolocalização, canvas, offline ou drag and
+drop;inputtypesdoHTML5;recursosdeáudioevídeo;suporteaimagensSVG;
+emais. Dápraveralistamaisatualderecursosdo Modernizrnadocumenta ção:
+http://modernizr.com/docs/
+Parausar,ésóbaixaroarquivoJSdoModernizreincluirnapágina. Épossí-
+velgerarumarquivoespecíficoparaseuprojeto,apenascomasdetec çõesquevocê
+precisarnaquelasitua ção,paraotimizarotamanho.
+Polyfills
+VáriosdosrecursosmodernosdoHTML5/CSS3jáeramusadoshámuitotempo
+pelosdesenvolvedoresnamão.MuitasbibliotecasJavaScriptimplementavamrecur-
+sosque,hoje,usamosnativamentenosnavegadores.Avantagem,claro,éorecurso
+maisnovoserumaespecifica çãoportávelejáestarintegradoaonavegador,deixando
+apáginamaisleve.
+Hoje,essasbibliotecasJavaScriptquesimulamrecursosdoHTML5podemter
+outrautilidade:cobriroburacoemnavegadoresvelhosqueaindanãosuportamos
+recursosnovos.Essetipodebibliotecaéchamadade polyfill.
+U m b o mpolyfillécompletamentetransparenteparaodesenvolvedor.Vocêusa
+orecursocomosefossenativononavegador,damaneiraoficialdoHTML5.Eesse
+polyfillvaisimularocomportamentodosnavegadoresmodernoscasoousuáriouse
+umsemsuporte.
+Porexemplo:onovoatributo placeholderdoHTML5,quepermitecolocarum
+textodeexemplodentrodeinputsetextareas,parafacilitarprousuáriopreenchero
+116
+
+## Página 125
+
+CasadoCódigo Capítulo17. Progressiveenhancementefeaturedetection
+campo:
+<input name="telefone" placeholder="(xx) xxxx-xxxx">
+Issofuncionaemtodososnavegadoresmodernos. Nosantigos,seráignorado
+—oquepodenãoserumproblema,seesse placeholderforapenasumrecursoadici-
+onalenãoessencial.Mastalvezvocêqueiraimitaressecomportamentodo placehol-
+dernosnavegadoresvelhoscomoInternetExploreratéversão9.Háváriospolyfills
+comooPlaceholder.js(http://jamesallardice.github.com/Placeholders.js/).Ésóbai-
+xaroarquivo .jseapontarnapágina.
+Masseriaruimbaixaressepolyfillemtodososnavegadores,atéporqueamaioria
+jásuportaorecursonativamente.Oidealseriaotimizarissoesóbaixaropolyfillcaso
+onavegadoremquestãonãosuporteorecurso.Ébemfácildefazercom Modernizr
+quejásuportadetec çãoecarregamentocondicionaldepolyfills:
+Modernizr.load({
+test: Modernizr.input.placeholder,
+nope: '/polyfills/placeholder.js'
+});
+Esse código executa um teste pra ver o suporte a certa funcionalidade
+(Modernizr.input.placeholder)ecarregaumarquivoJavaScriptcasonãotenha
+suporte(nope).Seriapossívelcarregaroutroarquivonocasopositivousandoopa-
+râmetroyep.
+ExistemmuitospolyfillsparaváriosrecursosdoHTML5edoCSS3.Opessoal
+do Modernizrmantémumalistanowikidoprojetocomváriaspossibilidades: https:
+//github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills
+Ofuturodadetec çãonosnavegadores
+O Modernizreessaideiadedetectarsuporteafuncionalidadesdonavegador
+sãotãoimportantesqueoCSSincorporouessatécnica. Aindahápoucosuporte
+nosnavegadores,masumanovaespecifica ção—CSS Conditional Rules—trazesse
+recursonativamenteparaaWeb.
+117
+
+## Página 126
+
+CasadoCódigo
+Existeumanovaregra @supportscomsintaxemuitoparecidacomasmedia
+queries,masparatestarseonavegadorsuportacertorecursodoCSS.Porexemplo,
+praverseasbordasredondassãosuportadas,poderemosfazersó:
+@supports (border-radius: 1em) {
+// regras CSS caso haja bordas redondas
+}
+OnavegadorsóvaiavaliaroCSSdentrodoblococasoaregratestadasejasu-
+portada.Parasabermais: https://developer.mozilla.org/docs/CSS/@supports
+Mobileedesignadaptativo
+Oquetodoessepaposobre Modernizrfaznumlivrosobre W e b M o b i l e?Eufalei
+naintrodu çãoqueotítulodolivroémeiolimitado. Precisamoséencararo W e b
+Design modernocomoumtodo;apenas,agora,incluindoumasériedenovosdispo-
+sitivosnamesa.Eaquestãotodaéquemaisdispositivostrazemmaisnavegadores
+diferentes,maiscontextosdiferentesemaisvaria çõesentreoscasosdeusodasua
+página.
+Quandofalamosdo web design responsivonosentidoclássicodequandootermo
+surgiuéfácilacabarfocandodemaisnostamanhosdastelas. Mediaqueries,grids
+flexíveis,imagensresponsivas. Tudoissolembramuitoofoconostamanhosdife-
+rentesdetelas.Mashámuitasoutrasdiferen çasentreosaparelhoseosnavegadores.
+Hojefala-semuitode designadaptativo,umconceitomaisamplodoquesó
+deixarapáginaresponsiva. Éfalarsobresuapáginaeseucódigoseadaptarema
+diferentessitua ções,levandoemcontatamanhodetela,mastambémcapacidades
+dosnavegadores,característicasdohardwaredoaparelhoeatéocontextodeusodo
+visitante.Vamosnosaprofundarmaisnissonotópico 20.
+Detectarasfuncionalidadesdecadabrowsercomovimosaquinosajudaaim-
+plementaro design adaptativoetemtudoavercomdesignresponsivoesuportea
+váriosdispositivosenavegadores.Vocêpodedetectarsuporteaeventos touchevá-
+riasoutrascaracterísticascomunsdecelularesetablets.
+Foi-seotempoemquepensávamosemcriarumapáginacomfuncionalidades
+bemdefinidaseamaiorpreocupa çãoeraseobrowserXiarodarounãoapágina.
+Hoje,nowebdesignmoderno,aspalavraschavesão adaptaçãoeflexibilidade.A
+mesmapáginaexecutardeformadiferentedependendodobrowser,eseadaptara
+novascondi ções.Ébemmaisdesafiador,claro.
+118
+
+## Página 127
+
+Capítulo18
+RESS—Designresponsivoscom
+componentesnoladodoservidor
+Otipodedetec çãodefuncionalidadesquevimosnotópicoanterior( 17)éexecutado
+diretodonavegadordousuário. Tanto Modernizrquantoofuturo @supportssão
+client-side.
+Agrandevantagemdessetipodedetec çãoéterbastanteprecisãonosresultados.
+Apesardenãosereminfalíveis,asdetec çõessãofeitasobservandodiretamenteona-
+vegadoremqueestamosexecutandoapágina.Épossívelcaptarmuitasinforma ções
+edetectarmuitacoisadiferente.
+Masdetec ções client-sidetêmsuasdeficiências.Porrodaremnonavegador,gas-
+tamrecursosdamáquinadousuárioesobrecarregamumpoucomaisapágina.Mais
+ainda:seucódigovaitomardecisõescombasenasdetec çõesdiretonobrowser,en-
+quantoapáginaexecuta.Issoquerdizerquevocêpodeacabarcarregandocódigos
+quenemsãoexecutadossevocêdescobrirqueonavegadoremquestãonãosuporta
+aquelafuncionalidade.
+
+## Página 128
+
+CasadoCódigo
+Ouainda,porserclient-side,adetec çãopodeatéidentificarsuporteacertafun-
+cionalidade,maspodesertardedemaisparausá-la. Umexemploclássicoécom
+formatosdeimagens. VocêquerusarumlogotipoemSVGmascomumaversão
+PNGparaosbrowsersvelhos. Nahoradeescreveratag,vocêprovavelmentevai
+escrever<img src="logo.png">quetemmaissuporte.AídetectaosuporteaSVG
+com Modernizretroca,viaJavaScript,o srcdaimagempara logo.svg.Issofunci-
+ona,masonavegadorvaiacabarbaixandoasduasversões(PNGeSVG),gastando
+recursos.
+Nessecenário,detectarosuporteaSVGno client-sideétardedemais.Aimagem
+PNGjáfoibaxadaetrocarporSVGviaJavaScriptvaicausarmaisproblemas.Oideal
+eraqueoHTMLdapáginajáreferenciasseoformatoadequadopracadabrowser,
+detectandoosuportediretonoservidor.
+RESS
+Otermo RESSquerdizer ResponsiveDesign+Server-Sidecomponents ,ou
+Design Responsivo + componentes do lado do servidor.FoicunhadoporLukeWro-
+blewski,umdesenvolvedormobilededestaque,emumpostfamoso( http://www.
+lukew.com/ff/entry.asp?1392).
+Aideiaémisturartudoquevimosatéagorade detecçãoe adaptaçãodaspáginas
+comlógicaexecutadatambémnoservidor.Emvezderodartodalógicanonavega-
+dor( client-side),podemosexecutarcertasotimiza çõesedetec çõesantes,diretono
+servidor( server-side)ejáenviarumHTMLmaisapropriadoparacadanavegador.
+Essaideia,claro,dependedevocêterumservidoreconhecimentosdeprogra-
+mação server-side.Seestiverfazendoumprojetopuramentefront-endou packaged
+a p p scomHTML5,nãovairesolvermuito.Masamaioriadaswebappstemumlado
+noservidor,rodandoemalgumalinguagemcomoPHP,Java,.Net,Ruby,Python,
+ASPetc.Nessecaso,RESSpodeserbemútil.
+Vejaocasodemandarotipodeimagemcorretopracadanavegador.Vouusar
+PHPparadarumexemplodecódigoRESS,maspoderiaserqualquerlinguagemde
+servidor,claro.
+<div class="logo">
+<?php if ($suporta_svg) { ?>
+<img src="logo.svg">
+<?php } else { ?>
+<img src="logo.png">
+120
+
+## Página 129
+
+CasadoCódigo Capítulo18. RESS—Designresponsivoscomcomponentesnoladodoservidor
+<?php } ?>
+</div>
+EssecódigomisturaumpoucodePHPnoHTMLprafazerum ifsimples.Testo
+seavariável $suporta_svgéverdadeiraeaíenvioatagimgcarregandoSVG;se
+não,vaiaversãoemPNG.Aideiaéquecadabrowserrecebaumatagimgsimplese
+apropriadaparaasfuncionalidadesquesuporta.Nãoprecisaremosrodardetec ção
+com ModernizrnemnenhumtruquedeJavaScript.
+Claroqueaquestãotodaé:comodeterminarnoservidorqueonavegadorsu-
+portaounãoSVG?Ou,maisamplo,comodetectarnoservidorqualquercaracterís-
+ticaquetemosinteresseemtestar?
+Bancosdedadosdedispositivos
+Asúnicasinformaçõesqueoservidortemacessodiretosãooscabe çalhosHTTP,
+oqueincluio User-Agent.Eleéumcabe çalhoquevemnasrequisi çõeseidentificao
+navegador,suaversão,sistemaoperacionalealgumasoutraspoucascaracterísticas.
+Sevocênuncaviuo User-Agent,podeverodoseunavegadoracessando,emJavaS-
+cript, navigator.userAgent. OmeuChromequeestouusandoenquantoescrevo
+esselivroseidentificacomo:
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.35
+(KHTML, like Gecko) Chrome/27.0.1448.0 Safari/537.35
+Éumtextoconfuso,masumacoisaécerta:aínãoestáfalandoquaistiposde
+formatosdeimagenssãosuportados,enemascentenasdeoutrascaracterísticasque
+gostaríamosdetestar.Maséoquetemosàmãoparaidentificarumbrowsere,depois,
+tentarsuporsuascapacidades.
+Oqueaspessoasfazemécriar gigantescosbancosdedadosdeUser-Agents .
+Cadabrowserétestadoparatodotipodefuncionalidadeimportanteeassociadoa
+seu User-Agent.Aíquandochegaumarequisi çãonoservidor,vocêpegao User-Agent
+eprocuranessebancodedadosascaracterísticasdonavegador.
+Existemsolu çõescomerciaiscombancosdedadosimensosquecatalogampra-
+ticamentetodotipodedispositivodomundo.Asmaisfamosassão WURFL(http://
+www.scientiamobile.com),DeviceAtlas(https://deviceatlas.com)e51degrees(http:
+//51degrees.mobi).Sãoprodutospagosquesãooferecidosgeralmenteemdoissabo-
+res.Umaversãoquevocêinstalanoseuservidor,eoutraversão cloudnaqualvocê
+chamaumaAPIebuscanoservidorcentraldeles.Avantagemdasolu çãocentralé
+121
+
+## Página 130
+
+CasadoCódigo
+afacilidadedeusoenãoteranecessidadedeatualizarobancodedadostodahora;
+adesvantageméserumpoucomaislento.
+O WURFLeraumprojetoopensourceaté2012,comobancodedadospublica-
+menteacessível(http://wurfl.sf.net).Maselespararamdeatualizaroprojetoepas-
+saramaofereceraversãocomercial.Comoovalordeumbancodedadosdedispo-
+sitivosestájustamenteemmantê-losempreatualizado,essaversãoopensourcenão
+émuitoútil,apesardeaindaestardisponível.Existeumforkdaúltimaversãolivre
+doWURFL,chamada OpenDDR(https://github.com/OpenDDRdotORG)quetenta
+manterobancodedadosatualizado.
+Umexemplocom WURFLemPHPparadetectarsuporteaSVG,comoquería-
+mos:
+// cria o objeto de detecção
+$client = new WurflCloud_Client_Client(...);
+$client->detectDevice();
+// descobre se suporta SVG
+$suporta_svg = $client->getDeviceCapability('svgt_1_1');
+// ... envia a <img> no formato certo ...
+Masépossíveldetectarmuitomaiscoisas. Porexemplo,otimizarolayoutda
+páginaparatouchscreens:
+if ($client->getDeviceCapability('pointing_method') == 'touchscreen') {
+// ... otimiza para telas touch ...
+}
+Épossívelpegarmuitomaisdados,comotamanhofísicodoaparelho,resolu ção
+datela,suporteacertosrecursosdoHTML5emais.Umalistadascapacidadesde-
+tectáveispeloWURLpodeserencontradanositedeles: http://www.scientiamobile.
+com/wurflCapability/.Osoutrosconcorrentestêmfuncionalidadessimilares.
+Umaalternativaétentardetectarapenasotipodedispositivoenãocadapossível
+característica.Muitossitesdetectamnavegadoresmobileefazemumredirectpara
+umsitemobileespecífico. Oumesmosevocênãoforfazeroredirect,podefazer
+algumtipodecustomiza çãoaosabersóotipodobrowser. Umasolu çãoéo http:
+//detectmobilebrowsers.comquetemumaexpressãoregulargigantescaemvárias
+linguagensdeprograma çãoquesódizseéumsmartphoneounão.
+122
+
+## Página 131
+
+CasadoCódigo Capítulo18. RESS—Designresponsivoscomcomponentesnoladodoservidor
+Misturandodetecçãoclient-sidecomserver-side
+Sistemasdedetec çãobaseadosno User-Agenttêmalgunsproblemastambém.
+Vocêprecisasempredeixá-loatualizado,oqueétrabalhoso. Novosdispositivos
+podemdemorarparaaparecernocatálogo.Alémdisso,váriosnavegadoresnãose
+identificamunicamentevia User-Agent.Porexemplo,meunavegadorpessoalfavo-
+ritonoAndroidéo DolphinmasseidentificacomoonavegadorpadrãodoAndroid,
+apesardeserbemmaisavan çadoqueele.OOperatambéméfamosoporpermitir
+facilmenteousode User-Agentfalso. OiPadMinieoiPadnormaltêmomesmo
+User-Agent,entãonãoépossívelafirmarotamanhofísicodoaparelhocomcerteza.
+U s a n d o oUser-Agententãotemosoproblemadeidentificarerradamenteodis-
+positivo.
+Mas,mesmoquandoacertamos,podemexistirbugsnosbancosdedados.Tes-
+tandoessasferramentasenquantoescrevoolivro,2delasindicaramquemeucelular
+(GalaxySII)nãosuportaimagensSVG.TesteitantooChrome,quantooDolphine
+onavegadorpadrãodoAndroid4.1—todoselessuportamsimSVGapesardees-
+taremmarcadosnegativamentenosbancosdedados.Umadetec ção client-sidecom
+Modernizrnãoteriaerradonessecenário.
+Háentãoquemdefendaumamisturadedetec ção client-sidecom server-side.
+V o c ê r o d a oModernizrnaprimeiravisitadousuáriodetectandotudoqueinteresse
+client-side.Aísalvaessasinforma çõesnoservidorepodeusá-lasdepoisno server-
+sideeparanãoprecisardetectartudodenovoemumanovavisita.Sequiser,aindaé
+possívelgravaressasinforma çõesnumbancodedadosassociadoao User-Agentdo
+navegadoreusaresseresultadopré-computadocomnavegadoresdeoutrosusuários
+quesejamiguais(apesarque,comovimosantes,navegadoresdiferentespodemusar
+omesmo User-Agent).
+Umaferramentagratuitaquefazessetipodedetec çãomisturando c l i e n te server
+éaDetector(http://detector.dmolsen.com/).Quersaberseonavegadortemsuporte
+ageolocaliza ção?
+include("detector.php");
+if ($ua->geolocation) {
+// ... tem geolocation API! ...
+}
+Implementarumasolu çãoassimnamãotambémnãoémuitocomplicado.Você
+rodao Modernizreguardaosresultadosnumcookiequedepoisserálidopeloser-
+vidor.VamossuporquequeremosdetectarsuporteaSVGeageolocaliza ção:
+123
+
+## Página 132
+
+CasadoCódigo
+var suporte = '';
+if (Modernizr.svg) {
+suporte += 'svg,'
+}
+if (Modernizr.geolocation) {
+suporte += 'geolocation,'
+}
+document.cookie = 'modernizr=' + suporte;
+O código anterior cria um cookie chamadomodernizr cujo valor é uma
+sequênciadetermosindicandosuporteacertafuncionalidade(noexemplo, svge
+geolocation).
+Noservidor,podemospegarovalordocookieechecarsuporteaalgumdospon-
+tosdetectados.VoltandoaonossoexemplodeenviarumaimagemSVGsehouver
+suporte:
+$capacidades = explode(",", $_COOKIE['modernizr']);
+if (in_array("svg", $capacidades)) {
+// ... envia imagem SVG! ...
+}
+EssecódigoPHPpegaovalordocookie modernizrequebraemumarraycom
+todasascapacidadesdetectadasnoJavaScript.Aísóverificamosseexistesuportea
+svgantesdemandaraimagemnesseformato.Bemsimples.Edápraestenderpra
+muitasoutrascoisas,comomandarotamanhodatela,seéretinaounãoemuito
+mais.
+Háalgumaslimitaçõesnessaabordagem,porém.ComoprecisamosrodaroJa-
+vaScriptprimeiroparadetectarascapacidadesdonavegador,oservidornãotem
+essasinforma çõesnoprimeirorequest.Asabordagenspossíveissãoenviarumaver-
+sãopadrãonoprimeirorequest,oufor çarumreloadnapáginaparaorequestser
+refeito.
+Lembreaindaquenãoconseguimosdetectaralgumascoisas client-side,emes-
+pecialascaracterísticasfísicasdoaparelho—tamanho,DPI,tipodehardwareetc.
+Comoessetipodeinforma çãoéfacilmenteencontradanosbancosdedadosdedis-
+positivosquevimosantes,vocêtambémpodeoptarporumaabordagemmista.
+Muitacoisa,porém,aindaéindetectávelatéhoje.Numprojetorecente,euqueria
+identificarosuporteaURLsparadispararliga çõestelefônicas( tel:).Nãoháainda
+124
+
+## Página 133
+
+CasadoCódigo Capítulo18. RESS—Designresponsivoscomcomponentesnoladodoservidor
+comodetectarsuportenemem client-sidenemem server-side.
+OquefazercomRESS
+Comovimos,sãoportantováriasasmaneirasdesedetectarnoservidorqualé
+oaparelhoequaisascapacidadesdonavegador.Masoquefazerdeútilcomessas
+informações?
+Oprimeirotipodeotimiza çãopossíveléajustaroscomponentesdapágina.Vi-
+moscomoenviarumaimagemSVGparanavegadorescompatíveisePNGparaos
+demais.PoderíamosfazeramesmacoisaparaimagensWEBP—umformatonovo
+bemmaisotimizadoqueJPEG,masaindacompoucosuporte.
+OutrapossibilidadeseriaincluirosarquivosdeJavaScriptdasbibliotecasepoly-
+fillsnecessáriosapenasparaaquelenavegadorespecífico. Oumandarimagensem
+altadefini çãoparatelasretina. OuaindaenviarumCSSsemmediaqueriespara
+navegadoresantigosquenãosuportem,comooIE8.
+Alémdisso,podemosalterarodesigndapágina.Emboraasmediaqueriesfa-
+çamboapartedotrabalhodereorganizarodesignparadiferentestamanhosdetela,
+háváriaslimitações.PormaiscriativoquesejamosnoCSS,atéhojeaordemosele-
+mentosnoHTMLtemumforteimpactonodesignfinaldapágina.Nãoésimples,
+porexemplo,colocarseu <header>nofimdoarquivoHTMLefazê-loaparecerno
+toponodesignapenascomCSS.
+ComRESS,podemosalteraraordemdoselementosnoHTML( source order)
+comoformaisconveniente.Umapossibilidadeécolocaromenunofimdapágina
+emtelaspequenasmobile,ecolocá-lonotoponoDesktopetelasgrandes.Emuitos
+outrosrearranjosnoHTMLquedepoisfacilitamaimplementa çãododesignres-
+ponsivonoCSS.
+Maisumaideia:colocarumwidgetdoGoogleMapsnoDesktopmastrocarpor
+umlinksimplesnomobile. Issofazapáginaficarmaisleveeaindaintegracoma
+aplicaçãonativademapas.
+SãomuitasaspossibilidadescomRESS.Masreparequeosusosmaiscomuns
+sãoparaajustespontuais. Abasedapáginaéamesmaparatododispositivoesó
+ajustamosdetalhescombasenascaracterísticasdecadausuário.Nãosãomudan ças
+radicaiscomofazerdoissitestotalmentediferentes.
+UmdetalheimportantesobreRESS:cuidadocomcachesemproxyseinterme-
+diários.SevocêestáservindonamesmaURLconteúdosdiferentesdependendodo
+visitante,precisaindicarissonosheaderssenãoépossívelquealguémfa çacache
+125
+
+## Página 134
+
+CasadoCódigo
+daversãoDesktopesirvaparaumsmartphoneessaversãoerradacacheada(evice-
+versa).Ojeitocorretoéadicionarnocabe çalhoVarynarespostadoservidor.Sefor
+usarumbancodedadosbaseadoem User-Agent,use Vary: User-Agent;seforusar
+umasolu çãobaseadaemcookies,use Vary: Cookie.
+ComoagirseoRESSfalhar
+RESSébeminteressantemasmuitacoisapodedarerrado.Vimosqueobanco
+dedadospodeerrarnadetec ção,onavegadorpodeseidentificarerroneamente,a
+basepodeestardesatualizadaetc.Oquefazerseascoisasderemerrado?
+Oidealémanterasaltera çõesdoRESSconfinadasapequenosajustesedetalhes
+etentargarantirqueaexperiênciadousuárionofinalsejaaceitávelenãocompleta-
+menteerrada.
+Pegueoexemploqueciteiantesdecolocarumlinkparaomapanativoaoinvés
+dowidgetdoGoogleMaps. TantonoiOSquantonoAndroid,umlinkpara http:
+//maps.google.comvaiabriraaplica çãonativa,porissotrocamosowidgetporesse
+link. Maseseadetec çãoerrareacabarmosenviandoaversãocomlinkparauma
+plataformasemGoogleMapsnativo?Elenãovaiverowidget,masolinkfunciona
+normalmente,abrindoositemobiledoGoogleMaps.Umaexperiênciaaceitável.
+NooutrocenáriodeenviaroSVGparanavegadorescompatíveis.Seadetec ção
+falhareacharquemeunavegadornãosuportaSVG(comoaconteceunomeucelu-
+lar),mandamosoPNGeestátudobem,éaceitável. Masesefalharaocontrário?
+AcharquetemSVGmasnãotem?Nessecaso,onavegadorvaimostrarumerronas
+imagenseositeficainutilizável.Péssimo.Maspodemosmelhorar:alémderodara
+detecçãonoservidor,fa çaumJavaScriptquedetecteerrosnonavegadorecarregue
+oPNGporcima.Seriabemsimples:
+<img src="logo.svg" onerror="this.src='logo.png';">
+Sedererro,ousuáriovaitergastado2requests,masaexperiênciafinaléacei-
+tável,ositecontinuausável. Lembre:ésóumaestratégiaparaocenáriodoRESS
+falharnadetec ção.
+EaqueleexemplodetrocarmosomenudelugarnoHTMLnomobileenoDesk-
+top.Fa çaositeserusávelemtodasascombina ções.SeeuacabarmandandooHTML
+nolugarerradoporfalhanadetec ção,fa çaoCSSmostrardemaneirausávelemam-
+boslugares,tantonoDesktopquantonomobile.
+Éaideiade programardefensivamente,prevendoquecoisaspodemdarerrado.
+126
+
+## Página 135
+
+CasadoCódigo Capítulo18. RESS—Designresponsivoscomcomponentesnoladodoservidor
+Aindamaisnessecenáriodedetec çãocombaseem User-Agentquepodefalharcom
+certafrequência.Seo servererrar,fa çacomqueo c l i e n tconsigaserecuperar.
+127
+
+## Página 137
+
+Capítulo19
+Ocomplicadocenáriodasimagens
+responsivas
+Umapartebemcomplicadadeumbomdesignresponsivoéresolvercomolidar
+comasimagens.Elascostumamserfeitasdeumnúmerofixodepixelsesãograndes
+vilãsdeumdesignfluído.Podemos,porém,colocarseutamanhoemporcentagens
+(width:100oumax-width:100)eaimagemiráfluirjuntocomodesign.
+Oproblemaéquecolocarporcentagensfaráaimagemaumentaroudiminuirde
+acordocomotamanhodatela.Eimagineumaimagemde300pxsendoesticadaa
+100%deumatelade1280px.Ficabemruim.Porisso,emmuitoscenários,precisa-
+moslidarcomimagensdiferenteseotimizadaspracadacenário.
+Aspessoasfalamde imagens responsivasparadescreveroproblemadeservir
+imagensdiferentesparacenáriosdiferentes.Masquecenáriosseriamesses?Alguns:
+• NãoservirimagensgigantesdaversãoDesktopparaaversãomobilepequena;
+• Imagensbemdefinidasemtelasretinadealtaresolução;
+
+## Página 138
+
+CasadoCódigo
+• QualidadenasimagensquandodamoszoomtantonoDesktopquantonoce-
+lular;
+• PermitirimagenstotalmentediferentesnoDesktopenomobile. Umcasoé
+quevocêpodepreferirumrecortediferentequandoaimagemforpequenano
+celular,prafocarnoelementoprincipal.Pessoalchamaissode direção de arte
+(art direction).
+Sãovárioscenáriosondeaimagemdeveresponderaocontexto,ouseja,deve
+seadaptar. Easboasevelhasimagensdeantigamentenãofazemnenhumdesses
+truques.
+Seanalisarbemoscenáriosquedescreviantes,chegamosnaverdadeem3obje-
+tivosprincipais:
+• economizarbytesenviandoaimagemdotamanhocertopracadatela;
+• obterqualidadevisualnarenderizaçãodaimagemdeacordocomaresolu ção;
+• usarimagensdeconteúdosdiferentesparaadaptarànecessidadesdedesign.
+Vamosfocarprimeironosdoisprimeirosobjetivosedepoisfalarumpoucodo
+terceiro.
+Nãouseimagens,prefiraCSS
+Éóbvio:senãoquersecomplicarcomimagensresponsivas,aprimeirasolu çãoé
+evitarusarimagens!Nãoestoufalandodefazerumdesignmaissimplessemimagem
+nenhuma(apesardepreferirdesignsmaiscleans),masderecriaraspectosvisuaisdo
+designcomoutrastécnicassemserimagens.
+Emespecial,usarefeitosCSS3.Antigamente,eracomumcriarimagensquando
+precisávamosdebordasredondas,sombras,gradienteseváriosoutrosefeitosque,
+hoje,sãofacilmenterecriáveisviacódigoCSS3.AgrandevantagemdepreferirCSSa
+imagenspraessesefeitoséqueoCSSérenderizadononavegadordocliente,ajustado
+paratamanhodatelaeresolu çãoautomaticamente.
+EscreverCSS3tambémfacilitamanuten çõesfuturas—mudaracordeumgra-
+dienteésóeditarocódigo,nãoprecisairnoPhotoshop,editar,exportarimagem
+novaetc. UsarcódigoCSStambémdeixaodownloadmaisleve—ésóumapro-
+priedadetextoquedescreveoefeito,emvezdeumrequestparaumanovaimagem
+potencialmentegrande.
+130
+
+## Página 139
+
+CasadoCódigo Capítulo19. Ocomplicadocenáriodasimagensresponsivas
+Umpontonegativoasepesaréaperformancenarenderiza çãodessesefeitos.
+Comoéonavegadorquemdesenhaoefeito,háumgastonamáquinadocliente.
+Osnavegadoresestãocadadiamaisrápidoseoshardwares,melhores;mas,mesmo
+assim,sevocêabusarcolocandováriosgradientesesombrasgigantesnamesmapá-
+gina,vaisentirumimpactonavelocidadedarenderiza ção. AdicaéusaroCSSe
+observarseseuusoestásendobenéficoounão.
+Textoétexto
+Outraformadeevitarimagenséusandotexto.Textoérenderizadomuitobem
+nosnavegadoresetambémseadaptamuitobematelasdealtaresolu ção.Alémdisso,
+otextoéfluídonoHTMLepodeserreconfiguradoàvontadeviaCSSparadiferentes
+cenários.VocêpodefacilmenteusarCSSemediaqueriesparaajustarotextoeseu
+designparadiferentestamanhosdetelaselayoutsresponsivosdistintos.
+Umapráticamuitoruimmasmuitocomumantigamenteeracolocartextodentro
+deimagenseexportartudojuntonoPhotoshop.Hámuitasdesvantagensnessaabor-
+dagem. Darmanutençãoébemtrabalhoso,oGooglenãoindexaessetexto(SEO)
+eeleficaborradoemtelasretina. Alémdisso,otextoficafixonaposi çãodelena
+imagemenãopodeseradaptadocommediaqueriesemumdesignfluído.
+Hoje, comexcelentesuportenosnavegadoresparafontescustomizadascom
+@font-face,orecomendadoésemprecolocartextocomotextonoHTML,jamais
+comoHTML.Ficamaisleve,melhorrenderizadoetedáflexibilidadeparamanipu-
+laçãonoCSS.
+Icon fonts
+Aideiaderesgatarousodetextopuroefontescustomizadasestátãoforteque
+jáseespalhouatéparaícones. Umapráticacombastanteado çãoultimamenteéo
+usodefontesdeícones,as icon fonts.Comopodemoscarregarfontescustomizadas,
+podemosgerarumafontecheiadeíconesaoinvésdecaractereseusá-losnodesign.
+Hámuitasfontesnomercadocompostasapenasdeíconesdosmaisdiversos.
+Hátambémferramentasquepermitemquevocêtransformeseusprópriosícones
+emfontes.Umaferramentaqueeugostobastanteéa IcoMoon(http://icomoon.io/
+app),umservi çoonlinequegerafontesdeíconescustomizadaspravocê.Vocêpode
+escolherosíconesquedesejadentrodoimensocatálogodeleseatéimportarseus
+própriosícones. Nofinal,elegeraosarquivosdefontesotimizadossócomícones
+quevocêescolheueaindatedáoCSSdeexemploparausarnapágina.
+131
+
+## Página 140
+
+CasadoCódigo
+Figura19.1:AlgunspoucosíconesdoIcoMoon,dentreascentenasdisponíveis.
+Usaríconescomofontestemmuitasvantagens:
+• Asfontessãorenderizadasmuitosbemnastelasdealtaresolu çãoenãoficam
+borradas;
+• Umarquivosódefontepodeconterváriosíconesjuntos,otimizandoosre-
+quests;équasecomocriarumaspritedeimagens;
+• VocêpodecustomizaralgunsaspectosviaCSS,comocor,tamanho,bordase
+sombrasusandoumúnicoícone.
+Adesvantagemmaiordasfontesdeíconesésuasimplicidade.Osdesenhospre-
+cisamserumvetordeumúnicopath,umaúnicacor.Nãoépossíveladicionardese-
+nhoscomplexos,comcamadasetc.Vocêpodeusarmaisdeumíconepracadaparte
+dodesenhoedepoiscomporaimagemfinalusandováriosíconesaomesmotempo,
+masissojáéumpoucomaistrabalhoso.
+Outraquestãoqueéimportantenotaréadiferen çaderenderiza çãodasfon-
+tesentresistemasoperacionaiseentrenavegadores.Osdesignersmaisatentosvão
+perceberdiferen çasnaformacomocadaumfazseu antialiasingeatédeposiciona-
+mento.Seforusariconfonts,estejapreparadoparaaceitarpequenasdiferen çasde
+renderização.
+AvoltadoSVG
+Agrandevantagemdeseusarasfontesparatextoeíconesnaverdadeéofatode
+seremformatosvetoriaisaoinvésdosformatosclássicosdaWebbaseadosempixels
+132
+
+## Página 141
+
+CasadoCódigo Capítulo19. Ocomplicadocenáriodasimagensresponsivas
+comoPNGouJPEG.Umíconevetorialégravadocomocoordenadasdepontose
+formasgeométricasaoinvésdeumpixelsindividuais,porissopodeserrenderizado
+emváriostamanhossemproblemasdeficarborrado.
+OaugedasimagensvetoriaisnaWebéoformato SVG.Nascidonoúltimomi-
+lênio,viveumeioesquecidoporváriosanos.Mas,hoje,éestrelanovamentenaWeb
+porpermitirimagensindependentesderesolu ção.PodemosusarSVGparaícones,
+logosedesenhosbemcompletos.Todososprogramasgráficosvetoriais(Illustrator,
+Corel,Inkscape)exportamSVGparausonaWeb.
+AmaioriadosnavegadoresjásuportaSVGháumbomtempo—asmaiores
+exceçõessãoIE8eanteriores,eAndroid2.x( http://caniuse.com/#search=SVG).Mas
+lembrequevocêpodefacilmentedetectarsuportenonavegadoreoferecerumPNG
+paraosnavegadoresmaisantigos.
+O SVGéumformatotextobaseadoemXML.Vocêpodeabriroarquivoeeditá-
+lo,masgeralmentevocêvaipreferirdesenharnumprogramagráfico.Parausá-lona
+página,háalgumasopções.Amaiscomuméusardiretonatagimg:
+<img src="logo.svg" alt="Logotipo">
+Usandoatagimg,nãoconseguimosfazerumfallbackdeformadefácilparana-
+vegadoressemsuporte.Ojeitocomumédetectarsuportecom Modernizretrocaro
+srcparaapontarparaoPNGcasonãotenhasuporte,masissovaicausarodownload
+deambososarquivosnessesnavegadores.Outrasolu çãoéRESS,comodiscutimos
+nocapítulo18.
+Tambémépossívelusarcomobackground-imagenoCSS,oquetornabemfácil
+implementaromecanismodefallbackpraPNG.O Modernizrcolocarumaclasse svg
+ouno-svgparaindicarosuporteaesseformato.Entãopodemosfazeralgocomo:
+.fundo {
+background-image: url(fundo.png);
+}
+.svg .fundo {
+background-image: url(fundo.svg);
+}
+Nocódigoanterior,indicamosoarquivoSVGcasohajasuporte,senão,oPNGé
+carregado.Avantageméasimplicidadedasolu çãoeofatodonavegadornãobaixar
+osdoisarquivosemnenhumacircunstância.
+OutrapossibilidadeacrescentadanoHTML5éadeusarSVGdiretonomeiono
+HTML,jáqueambossãoformatosbaseadosemtagsecompatíveis.Algoassim:
+133
+
+## Página 142
+
+CasadoCódigo
+<html>
+<body>
+<h1>Minha página!</h1>
+<p>A imagem abaixo é um triângulo em SVG.</p>
+<svg>
+<polygon points="0,100 0,0 100,0 "/>
+</svg>
+</body>
+</html>
+Ocódigoanteriorébemsimplesemostraumtriângulodesenhadocomatag
+<polygon>doSVG.Reparecomousamosoelemento <svg>nomeiodoHTML.Isso
+épermitidoeajudaaeconomizarumrequest. Alémdisso,usandodessamaneira,
+vocêpodeusarJavaScriptparamanipularoselementos,animá-losetc.Podetambém
+usarCSSparamanipularascaraterísticasdodesenho.
+SVGéumaferramentabempoderosaparaevitarlidarcomainflexibilidadedas
+imagenscomunsemPNGouJPEG.Paradesenhossemmuitacomplexidadeéco-
+mumatéqueotamanhodoarquivoSVGfiquemenorqueumaversãoidênticaem
+PNG.CuidadoapenascomdesenhosSVGmuitocomplexos,jáquetudoérenderi-
+zadononavegador.Desenhoscomplexosgeramarquivosdetamanhobemgrandee
+demandambastantedonavegadorpararenderizar.
+UmaúltimadicasobreSVGéexportá-lousandoseuprogramadedesenhomas
+depoisotimizá-locomumaferramentaapropriadaquevairemovercoisasdesneces-
+sáriasdocódigo. Duasferramentasfamosas: svgo(https://github.com/svg/svgo)e
+scour(http://www.codedread.com/scour/). Porfim,nãoesque çaqueoSVGéum
+formatotextoe,portanto,podeterseutamanhodedownloadbastantereduzidoao
+usarGZIPnoservidor.
+Imagensdiferentescommediaqueries
+NemtodasasimagenssãodesenhosvetoriaisquevocêpodetrocarporSVGou
+iconfonts. Temostambémasfotografias,geralmentesalvasemJPEG.Ealgumas
+vezesvamosacabarpreferindoPNGaoinvésdeSVGtambém. Aquestãoé: em
+várioscenáriosaindateremosquelidarcomimagensemformatosclássicos(PNGe
+JPEG)equeremosumcertoníveldeadapta ções.
+Oprimeirocenárioaseconsideraréodeenviarasimagensnostamanhosmais
+apropriadosparacadatamanhodetela.Imagineumsiteondequeiramosumaima-
+134
+
+## Página 143
+
+CasadoCódigo Capítulo19. Ocomplicadocenáriodasimagensresponsivas
+gemgrandonaqueocupealarguratodadatela. CriamosumJPGde960pxpara
+Desktopmasparecedesperdícioenviaressemesmoarquivoparaumcelulardesó
+320pxdelargura.Queremosarquivosdiferentesparacadacontexto.
+Com media queries é bem fácil resolver isso se estivermos lidando com
+background-image:
+.banner {
+background-image: url(banner-mobile.jpg);
+}
+@media (min-width: 400px) {
+.banner {
+background-image: url(banner-medio.jpg);
+}
+}
+@media (min-width: 700px) {
+.banner {
+background-image: url(banner-grande.jpg);
+}
+}
+Vocêvaiterqueescolherquantasversõesdecadaimagemvaidisponibilizare
+paraquaistamanhosdetela.Dátrabalhomasnãohámuitojeito.Éissoouservira
+mesmaimagempratodomundo.
+Masopiorcasoéquandolidamoscomatag <img>. Nãoconseguimoshojeo
+mesmotipodeflexibilidadedoCSScommediaqueries.Umasolu çãoserianãousar
+astags <img>etrocartudoparaimagensviaCSS,masissopodenãosermuitose-
+mântico.
+Existemalgumassolu çõesemJavaScriptquetrocamo srcdaimagemcombase
+emcertacondi ção.Oproblemadetodasolu çãoJavaScriptésermaislentoqueuma
+soluçãopuramenteHTMLoucomCSS.Osnavegadoresdehojetêmdiversasotimi-
+zaçõesparalidarcomimagenscomuns(noHTMLounoCSS)equandoseguramos
+ocarregamentoparaserdisparadopeloJS,atrapalhamosváriasdessasotimiza ções.
+Issosemcontarsolu çõesJSmaisingênuasquetrocamo srcmasacabamdisparando
+odownloaddeambasasversõesdaimagem,oqueépiorainda.
+Jáexistemsolu çõesparaimagensresponsivasnaespecifica çãodoHTML5. A
+maissimpleséumnovoatributo srcsetnatag <img>quepermitelistarmaisde
+135
+
+## Página 144
+
+CasadoCódigo
+umarquivoaomesmotempoedeixaronavegadorescolheromaisapropriadona-
+quelasitua ção.Cadaarquivopodeserlistadocomcaracterísticascomotamanhodo
+viewportoudensidadedepixels.Vejaumexemplo:
+<img srcset="mobile.jpg 400w, medio.jpg 700px, grande.jpg">
+Nocódigoacima, 400windicaqueaimagem mobile.jpgdevesercarregadano
+casodoviewportsernomáximo400pixels—éumaversãosimplificadadame-
+diaquery max-width. Reparecomopodemoslistarváriosarquivosedescreveras
+condiçõesemquecadaumadevesercarregada.
+Há também uma versão equivalente dosrcset no CSS através da função
+image-set()quepodeserusadanosbackgrounds:
+.banner {
+background: image-set(url(mobile.jpg) 400w, url(grande.jpg));
+}
+Enquantoescrevoesselivro,osuportenosnavegadoresaindaémuitobaixo,in-
+felizmente.Alémdassolu çõesdo image-setesrcset,háumaoutraespecifica ção
+criandoumnovoelemento <picture>comsuportetotalamediaqueriesebaseado
+noformatoatualdastags <video>e<audio>.Elapermitiráalgoassim:
+<picture>
+<source src="mobile.jpg">
+<source src="grande.jpg" media="(min-width: 700px)">
+<img src="fallback.jpg">
+</picture>
+Porserumamediaquerycomum,épossíveltodotipodecustomiza ção.Masé
+umasintaxemaisverbosaemaistrabalhosa. Aindahámuitadiscussãosobreessa
+novatag,seelarealmentevaiviraroficialounão.
+Porenquanto,háumpolyfillemJavaScriptdoScottJehlchamado Picturefill
+(https://github.com/scottjehl/picturefill). Eleusaumasintaxebaseadanaespecifi-
+caçãomasusandodivsjáqueosnovoselementosnãoexistemainda.Ocódigofica
+maisoumenos:
+<div data-picture>
+<div data-src="mobile.jpg"></div>
+<div data-src="grande.jpg" data-media="(min-width: 700px)"></div>
+<noscript><img src="fallback.jpg"></noscript>
+</div>
+136
+
+## Página 145
+
+CasadoCódigo Capítulo19. Ocomplicadocenáriodasimagensresponsivas
+Éumasolu çãomaisverbosaaindaepoluída,alémdeserbaseadaemJavaScript
+oquedeixatudomaislento.EupessoalmentetenhousadoaestratégiadoCSScom
+mediaqueries,semnadadeJavaScript.Éumasolu çãomaislimpaesimplesparaos
+navegadoresdehoje.Masfiqueligadonasevolu çõesaoredordasmaneirasoficiais
+dofuturo( srcseteimage-set()).
+Etodasessassolu çõesparaservirimagensdiferentesparatamanhosdetelasdis-
+tintostambémresolvemaquestãoda direção de arte. Éaquelecenárioondeque-
+remosservirimagensdiferentesdependendodotamanhodatela,geralmentefoto-
+grafiasrecortadascomênfasesespecíficasemcadatamanho.Aideiaéqueumafoto
+pequenanocelularpodeexigirumacertacena,diferentedafotograndenoDesktop.
+Figura19.2:Umafotoemtamanhopequenocomumrecortediferente.
+Estratégiasparatelasretina
+Suportarimagensparatelasretinaéumcasoparticular.Aquestãoéqueimagens
+comunsficambemfeiasemtelascom p i x el rat i omaiorque1.Lembrequeumatela
+retina,porexemplo,tem p i x el rat i o2x.Logo,umaimagemde100pxpor100pxvai
+ocupar200pxpor200pxnospixelsfísicos. Onavegadoraumenta1pxdaimagem
+praocuparaáreade4pxfísicos,deixandoaimagembemborrada.
+OproblemaficamaisacentuadoaindaempáginascomvárioselementosCSS
+etexto. Issoporque,comovimos,texto,CSS,iconfontseSVGsãorenderizados
+lindamenteemtelasretina. AíasantigasimagensPNGeJPGficambemfeiasem
+comparação,poracabaremescalandoospixels.
+Asolu çãomaisóbvianósjádiscutimos:prefirarecursosvetoriaiseeviteimagens
+comoPNGouJPG.Imagensvetoriais,fonteseCSSsãorenderizadosdeacordocom
+137
+
+## Página 146
+
+CasadoCódigo
+adensidadedepixelsdatela,entãoseadaptamautomaticamenteaaparelhosretina
+ounãoretina.
+MassevocêprecisarusarJPGouPNG,umaestratégiaéservirimagensdife-
+rentesdependendodo p i x el rat i o. UsandomediaqueriesnoCSSparaimagensde
+background,faremos:
+.painel {
+background: url(fundo-100-por-100.jpg);
+}
+@media (-webkit-min-device-pixel-ratio: 1.5),
+(min-resolution: 144dpi) {
+.painel {
+background: url(fundo-200-por-200.jpg);
+background-size: 100px 100px;
+}
+}
+Estamosusandoasmediaqueriesderesolu çãocomodiscutimosnotópico 15.
+Alémdisso,reparenapropriedade background-size. Elaéimportantíssima,pois
+dizparaonavegadorrenderizaraimagemcommetadedotamanhodela,jáque
+estamosservindoumacomodobrodaresolu ção.Semela,aimagemficariagigante
+natela,com200px.
+Alémdisso,assintaxesdosfuturos srcseteimage-settambémsuportamcon-
+figuraçõesdedensidadesdepixels:
+<img srcset="painel-100.jpg, painel-200.jpg 2x" width="100" height="100">
+Compressiveimages
+As soluçõesanteriorespressupõemquequeremosimagensdiferentesparacada
+densidadedepixels.Podeparecerestranho,masmuitagenteestádefendendoaideia
+deservirumaimagemsópratodomundo—retinaenãoretina.
+Primeiro,tenhaemmentequetelasretinasãoofuturo.Nãoignore-asagorapois
+embreveelasserãoaregraenãoaexce ção.Noscelularesetabletsissojáaconteceu.
+Osnotebooksedesktopsjácome çaram.Entãoqueremosquenossositedehojeesteja
+preparadopararetinasempre.
+138
+
+## Página 147
+
+CasadoCódigo Capítulo19. Ocomplicadocenáriodasimagensresponsivas
+Aquestãoasepensaré:eseservirmos apenasasversõesretinadasimagens ?
+Podeparecermeioloucura. Vamosgastarrecursosàtoa. Maspodenãoserbem
+assim.
+NocasodosJPEGs,umaestratégiaquetemsidobemaceitaéa compressive
+images.ÉgerarumaimagemJPEGgrande,retina,comodobrodaresolu ção,mas
+comqualidadebembaixa.Nahoradeexportaraimagemnoseueditorfavorito,po-
+demosescolheraqualidade—umnúmerode1a100.Aideiaégerarnossaimagem
+retinacom qualidade30 porexemplo,umnúmerobembaixo. Aíincluímosessa
+imagemnapáginadeclarandoametadedotamanho,comovimosantes.
+Parasurpresademuitos,essaimagemficacomqualidadevisualmuitoboatanto
+emtelascomunscomoemtelasretina.Eotamanhodoarquivoécomparávelauma
+imagem1xcomqualidadeboa.Qualotruque?
+Numatelanormal,nãoretina,aimagem2xdequalidadebaixavaiserexibida
+commetadedotamanhoe,paraisso,onavegadorvairedimensioná-la.Nessepro-
+cesso,ofatodaimagemterodobrodepixelsvaiajudaraobterumaimagemmuito
+bemdefinida,equivalenteaumaimagem1xdequalidadealta.
+Jánumatelaretina,todosospixelsdaimagem2xserãoexibidos,semredimensi-
+onamento.Masatelatemumadensidadetãoaltaqueospixelssãomuitopequenos
+aolhonu.OresultadoéquenemnotamosaqualidademenordoJPEG.Eaimagem
+ficabemmaisnítidaqueumaimagem1xtendoseuspixelsesticados.
+Parecedifícilacreditarmasissofoiconstatadoporváriosdesignerseprogra-
+madoresexperientes.Fa çaotestenasuamáquinaacessandoolinkaseguir.Tente
+identificarqualéaimagemcomqualidadebaixaequaléacomqualidadealta.Me-
+lhoraindaseconseguirabriremumatelacomumeemumatelaretinaecomparar
+osresultadosdasuaobserva ção.
+Figura19.3:URLdodemo: http://sergiolopes.org/m5
+139
+
+## Página 148
+
+CasadoCódigo
+RetinaePNG
+ResolvemosastelasretinacomrecursosvetoriaiseJPEGs2xcombaixaquali-
+dade. MaseosPNGs? Elesnãosãoarquivoscomqualidadecontrolávelcomoo
+JPEG,entãonãoépossíveladotarumaestratégiasemelhante.Comofazer?
+Primeiro,tenteevitarPNGs.Geralmenteelessãousadosparagráficos,desenhos,
+íconeselogos.EtudoissoconseguimosfazercomSVGeiconfonts,quejásuportam
+retinaautomaticamente.
+MassevocêrealmenteforusarumPNG,vaiprecisarescolhersevaicriarduas
+versões(umaretinaeumanão)ousevaiusarumaversãoúnica2x. Parausarar-
+quivosdiferentes,vimosjáoscódigosHTMLeCSSquevocêpodeusarparaservir
+cadaimagemnasitua çãocerta.
+Eupessoalmentetenhopreferidoaestratégiadeservirumaimagemúnicaem2x
+já.ProcurousaromáximodeSVGquantoposso.E,quandonãodá,crioaimagem
+retinaapenas.Tentootimizá-laaomáximo,atéconvertendoemPNG8,queémenor.
+Masevitocriarmúltiplasversõesdamesmaimagem.Masclaroquecadacasoéum
+casoetalvez,noseucenário,sejamelhorduplicarasimagens.
+Soluçõesserver-side
+Muitodotrabalhodeservirimagensdiferentesporcausadeformatos,tamanhos
+detelaoudensidadedepixels,podeseraliviadocomsolu çõesRESS(tópico 18)e
+técnicasnoservidor.
+Aoinvésdeexportaraimagememváriostamanhosdiferentes,vocêpodeter
+apenasaimagemgrandonaemaltadefini çãoedeixaroservidorredimensionarpara
+vocêcombasenascaracterísticasdoaparelho.Nãovoumostrarcódigodissoexata-
+mentepoisvariamuitoentreaslinguagensdeprograma ção,masnãodeveserdifícil.
+VocêescolheumasoluçãoRESSparacomunicaraoservidorotamanhodatela
+eadensidadedepixelseaíredimensionaaimagemdinamicamentecombasenessas
+informações.Umasolu çãoassimfacilitabastanteotrabalhododesignerquenãovai
+precisarcriarcadaarquivonamão,mastemasdesvantagensdoRESSquediscutimos
+notópico 18.
+Algumasempresasoferecemservi çosderedimensionamentodeimagensna
+nuvemparavocênãoprecisarimplementaressalógicanoseuservidor. ASen-
+chatemo Io Src(http://www.sencha.com/products/io)eaindaháo ReSrc(http:
+//www.resrc.it/).VocêtemapenasqueincluiraURLdelesemsuapáginaeasima-
+genssãoprocessadasnoservidordelesautomaticamente.
+140
+
+## Página 149
+
+CasadoCódigo Capítulo19. Ocomplicadocenáriodasimagensresponsivas
+Umaferramentaserver-sideopensourcebeminteressanteéa Thumbor(https:
+//github.com/globocom/thumbor),desenvolvidapelopessoaldaGlobo.com.Você
+poderodarseupróprioservidorquelidacomessasimagens,comooSenchaIoSrc.
+Ograndediferencialéqueháatéumaop çãopara,aogerarumaimagemparatelas
+menores,dardestaqueparaapartemaisimportantedafoto,recortando-aemvezde
+sódiminuirotamanho.Elestêmumalgoritmobemespertodedetec çãodeimagens
+quecalculaopontoprincipaldaimagemautomaticamente.
+Conclusão
+ImagensresponsivassãoumtemacabeludohojenaWeb.Aomesmotempoqueé
+simplescolocarporcentagensetorná-lasfluídas,temosoproblemadeservirimagens
+diferentesemcontextosdiferentes.Amaneiramaisfácilegarantidadefazerissohoje
+écomCSSemediaqueries.Maspraisso,vocêprecisausar background-image.
+Paramuitoscenários,vocênãoprecisadeumaimagemPNGouJPGmais.Pre-
+firausarrecursosvetoriaiscomotexto,iconfontseSVG.Elembredosnovosefeitos
+CSS3queajudamaeconomizarummontedeimagens.
+Aopensaremtelasretina,vejatambémseérealmentenecessáriodisponibilizar
+todasasimagenstambémemversão2x.Ologoprincipaldaempresavocêvaiquerer
+servirsemprecomamelhorresolu ção.Masmuitasvezesvocênãoprecisadissoea
+imagem1xé boa o suficiente.Emespecialquandofalamosdefotografias.Épreciso
+testaretomardecisõesconscientesparaqueoesfor çodêmaisresultados.
+141
+
+## Página 151
+
+Capítulo20
+Designadaptativoecarregamento
+condicional
+UsuáriosnocelularounotabletqueremveromesmoconteúdodoDesktop.Jádis-
+cutimosissonostópicosdedesignresponsivo(5)emobile-first(6)
+Maspossibilitaroacessoaomesmoconteúdonãoquerdizerdisponibilizá-loda
+mesmamaneira.Hádiferençafundamentaisdedesigneinteraçãodousuáriocom
+umcelularpequenoetoucheumDesktopgrandecommouse.Ecomtablets,televi-
+sões, notebooksetc.Cadacontextodeusopodeexigirumaapresentaçãoparticular,
+masoconteúdosempredeveestartodolá.
+Quandoatelaégrande,porexemplo,écomumdisponibilizarummenugrande
+ecompleto,comváriasopções queseabremaopassaromouse. Masummenu
+nesseformatonocelularéinviáveldetão grandeedetantasopções. Talvezvocê
+precisedeummenumaisfocado,menor,commenosopções. Mas,cuidado,isso
+nãosignificaretiraropções dousuário.V o c êpodeoptarpormenucomsubnível,ou
+umsegundomenucomasopções queforamremovidasdaparteprincipal,oulinkar
+
+## Página 152
+
+CasadoCódigo
+paraasopções secundáriasnomeiodapáginamesmoemoutraárea.Dequalquer
+forma,todasasopções devemestardisponíveisparatodomundo.
+Oquevariamoséamaneiracomoessasinformações são apresentadas. Fala-
+mosqueodesignfoiadaptadoparamelhoraraexperiênciadousuário,masjamais
+vamosremoverinformações ouopções.
+Maisexemplosdeadaptação
+Jápassamosporvárioscenáriosdeadaptaçãoaquinolivro.Falamosagorade
+ajustaromenudeacordocomatela—possivelmente,comummenudiferentee
+maisfocadonomobile.
+Quandofalamosdemapasunstópicosatrás,vimosocenáriodemostrarapenas
+umlinkparaoGoogleMapsnoscelularesetablets,mascolocarumwidgetcompleto
+noDesktop.Essecasoéatéumtipodeadaptaçãomaisagressiva,jáquetrocamos
+umaseçãointeiradapágina(omapaembutido)porumlink(queabreaappnativa
+demapas).Oimportanteépensarqualéoconteúdoqueestásendoexibidoparao
+usuárioenãoaforma.E,nessecaso,opilardoconteúdoéafuncionalidadedever
+umendereçonomapa.SeserámostradoviaJavaScriptnumwidget(Desktop)ou
+naappnativacomumlinksimples,nãointeressa,édiferençadeapresentação. O
+importanteéousuáriosempreconseguirverotalendereçonomapa,daformaque
+for.
+Outrocasoasediscutiréde q u a n t oconteúdocolocaremcadapágina.Existe
+umatendêncianaspáginasDesktopapresentarembastanteconteúdoquevocêvai
+acessandodandoscroll.Depoisqueacomunidadedeusabilidadequebrouomito
+dequepáginaslongassãoruins,omaiscomuméverpáginascadavezmaislongas
+comcadavezmaisinformações.
+Mas,claro,informações organizadasepriorizadas.Apáginalongaéeficazpo-
+rémdeveapresentaroconteúdocomumahierarquiadeimportânciaquefaçasen-
+tido.Assim,oconteúdoprincipaldeveestaraparentelogodecara(above the fold)
+semfazerscroll,eoscrollvaiabrindoinformações secundárias(below the fold).
+Nocelularoprincípioéomesmo.Aindamaispelastelasserempequenas,oscroll
+éumaferramentaessencialparavermaisconteúdoeosusuáriosestãoacostumados
+aisso.Nãoháproblemaemfazerpáginaslongasnomobile,desdequeoconteúdo
+sejabempensadoepriorizado.
+Oproblemaestáempegaraqueleconteúdoquejáéconsideradolongoparauma
+páginaDesktopecolocá-loemumaúnicapáginamobile.Aáreaémenornocelular
+144
+
+## Página 153
+
+CasadoCódigo Capítulo20. Designadaptativoecarregamentocondicional
+e,pormaisqueapertemosodesign,apáginaacabaficando3xmaislongaquea
+Desktopquejáeragrande.
+Ocontráriotambéméverdade:sevocêpratica mobile-first,desenhaumapágina
+bacanaparacelularcomtodoconteúdoorganizado,scrollsendousadoparavermais
+coisas,eumtamanhofinalnapáginarazoável,semsermuitolonga.Masaívocêvai
+evoluirparaodesignDesktopeaquelapáginalonganocelularacabaficandocurta
+demaisnaversãoDesktop,desperdiçandooespaçoadicional.
+Jávimuitagentecriticandodesignsdepáginasresponsivasqueparecemvazios
+demaisnaversão Desktop. Isso,emgeral,éreflexodeumaestratégiaquepriori-
+zouomobileeacabouusandoamesmahierarquiadeconteúdosnoDesktop,não
+aproveitandoaáreamaior.Masnãoprecisaserassim.
+Conteúdoemváriaspáginas
+Passeiporumcenárioparecidoquandoparticipeidodesigndapáginadecursos
+daCaelum.CadacursodaCaelumtemumapáginaquemostraasinformações do
+curso.ÉumapáginalongajánoDesktopeodesafioeradesenvolverumainterface
+bacanatambémparaosusuáriosmobile.
+Oprimeiropassofoiidentificarquaisconteúdosapáginamostrava,echegamos
+emalgoassim:
+•Nomedocursoechamadaprincipal;
+•Descriçãodocursoeobjetivos;
+•Informações depreço,cargahorária,pré-requisitos;
+•Depoimentosdeváriosalunosquefizeramocurso;
+•Calendáriocomdatasdaspróximasturmasdaquelecurso;
+•Formuláriodecontatocompletoparaobtermaisinformações;
+•Ementadetalhadadocursoemtópicos;
+•EumwidgetdoFacebookpradarlike.
+Émuitainformação.ApáginaDesktopébastantelonga,comquase5000pixels
+decomprimento,exigindováriosscrollsprasevertudo.Imaginejogarissonumatela
+decelularcomumterçodalargura:dariam15000pixelsdecomprimento!Inviável.
+145
+
+## Página 154
+
+CasadoCódigo
+Opróximopassofoiidentificaroqueeraoconteúdoprincipaleoqueeracon-
+teúdocomplementar.Doiselementosforamconsideradosimportantesmassecun-
+dários:formuláriodecontatonaprópriapáginaeaementadetalhadadocurso(que
+ébemgrande).
+Aestratégiafoientão separaressesconteúdosemoutraspáginasetirá-lasda
+principal.Foicriadaumaparaoformuláriodecontatoeoutraparaaementadeta-
+lhadadocurso.Naprincipal,essasseções podiamsersubstituídasporlinkssimples
+levandoaessesconteúdosadicionais. Nofim,apáginadocursoficoubemmais
+simpleseenxuta,essencialparamobile.
+Aestratégiadequebraroconteúdoemváriassubpáginasébeminteressantepara
+usuáriosmobile.Páginasmaisfocadassãomaislevesemaisfáceisdelernumatela
+pequena.E,aomesmotempo,nenhumconteúdoéremovidoetudoéacessívelao
+clicaremmaislinks.
+Mas,paraaversãoDesktop,nãoserianecessárioquebraremsubpáginas.Pior,
+seextrairmosoconteúdoparasubpáginas,apáginaprincipalvaificarbemmenore
+podenãoaproveitartodoopotencialdeáreadoDesktop.Aestratégiapodesermos-
+trardoisdesignsdistintos:nomobile,páginamenoresquebradasemsubpáginas;no
+Desktop,páginaslongascommaisconteúdo,semnecessidadedesubpáginas.
+Carregamentocondicional
+U m aformadeimplementarissoécomA j a xseguindoumpadrãoqueaspessoas
+chamamdecarregamentocondicional(conditional loading).Aideiaésimples:o
+HTMLoriginaldapáginaéescrito mobile-firste,casoousuárioestejanoDesktop,
+carregamososconteúdossecundários.
+Ouseja,apáginaéescritacomoconteúdoprincipaleapenascomlinkspara
+osconteúdossecundários.Essaéaexperiênciapadrãonossitesmobile.Aísede-
+tectamosqueousuárioaabriunumnavegadorgrandenoDesktop,carregamosvia
+A j a xoconteúdosecundárioqueéinseridoneladinamicamente.Oefeitofinaléuma
+páginasimplesnomobileeumamaisdensanoDesktopdemaneiratransparente.
+146
+
+## Página 155
+
+CasadoCódigo Capítulo20. Designadaptativoecarregamentocondicional
+Figura20.1:ApáginadecursosdaCaelumnoDesktopébemgrande.Aqui,destaque
+protrechoquemostraumformuláriodecontatocompleto.
+147
+
+## Página 156
+
+CasadoCódigo
+Figura20.2:ApáginadecursosdaCaelumnumiPhone,comdestaqueprapartede
+contatosimplificadacomumachamadaeumbotãoapenas.
+Implementandoocarregamentocondicional
+OúnicotruqueimportanteéqueocódigoJavaScriptquevaidispararasrequi-
+sições A j a xprecisaidentificarseestamosnoDesktopounão,esóentãodispararo
+request.Háváriasformasdiferentes,comosimplesmentepegarovalordotamanho
+doviewport(comovimosnotópico10)efazerumif.
+Ouusarmediaqueriesparaisso,jáqueprovavelmenteéoqueestamosusandojá
+paraasoutrasadaptações delayout.Avantagemépoderusarqualquermediaquery
+existentedeformafácil,enãosódelarguradetela.Sóprecisamosdeumamaneirade
+executaramediaqueryemJavaScriptpara,então,dispararoAjax.EexisteumaAPI
+oficialpraisso,comométodomatchMediaquefuncionanamaioriadosnavegadores
+(eaindatemumpolyfillbemsimplesparaosdemais:https://github.com/paulirish/
+matchMedia.js/).
+148
+
+## Página 157
+
+CasadoCódigo Capítulo20. Designadaptativoecarregamentocondicional
+Ocódigoébemsimples:verificamoamediaqueryeaídisparamosoA j a x(usei
+jQueryparaoexemplo):
+if (matchMedia('(min-width: 800px)')) {
+$('#ementa').load('/ementa-curso.html');
+}
+OmétodomatchMediadevolvetrueseamediaqueryemquestãobater.Sequiser
+fazeralgodinâmico,podemosadicionaressaverificação noseventosde resizee
+orientationchangedonavegadorefazerumcontrolemaisfinodainterface.
+NoAjax,ocódigoapenaschamaapáginasecundáriaeinsereoHTMLdeladi-
+retonoelemento#ementa,bemsimples.U mdetalhesóéquevocêvaiprecisarexpor
+oHTMLdoconteúdosecundárioemalgumaURL(chameideementa-curso.html
+noexemplo).ÉpossívelusaroHTMLdaprópriapáginasecundárianaementano
+Ajax,masaívocêvaiprecisarsepreocuparemextrairsóopedaçocomoconteúdo
+realmente,jáqueapáginacompletaprovavelmentevaivircomheader,menu,rodapé
+etc.Aliás,comjQueryébemfácilfazerisso.Seoconteúdoestiver,porexemplo,num
+divinternocomid#conteudo,podemospedirprométodoloadcarregarsóaquele
+pedaçoedesconsiderarorestodapágina:
+$('#ementa').load('/ementa-curso.html #conteudo');
+Essassoluções sãopuramente client-side,masdáprausarRESS(tópico18)pra
+otimizarumpoucomais. Senoservidorvocêjátivercondições desaberqualéo
+tipodenavegador,éumaboaideiajámandaroHTMLfinalincluídoeeconomizar
+umrequestAjax.Ébemsimplesimplementarumalógicadessasnoservidorepode
+serumaotimizaçãointeressante.
+Esecarregarerrado?
+ComodiscutimosnotópicodeRESS(18),semprequetrabalhamoscomdetecção
+donavegadorexisteumamargemparaquedêerrado.Mesmonasoluçãopuramente
+client-sidecomJavaScript,váriascoisaspodemdarerrado:oJavaScriptpodeestar
+desabilitado;ocódigopodedarumaexceptionenãoexecutar;orequestA j a xpode
+falhar;adetecçãodotipodenavegadorpodeerraretc.
+Maisimportantequetentarblindarocódigocontraerroséencararocarrega-
+mentocondicionalcomo progressiveenhancementeprogramardefensivamente.Isso
+querdizerqueaexperiênciadousuáriodeveserboaemtodososcenários.
+149
+
+## Página 158
+
+CasadoCódigo
+Ofatodeusarmosumlinksimplesparaumapáginasecundáriajánosprotege
+docenárioondeoJavaScriptnão executaporalgummotivo. OusuárioDesktop
+vaipoderclicarnolinkeveroconteúdoadicional,assimcomoousuáriomobile.
+U mdetalheimportanteéqueessapáginasecundárianãopodeterlayoutsómobile
+masdeveserresponsivaeestarpreparadaparareceberusuáriosDesktoptambém,
+mesmoquesóparaocasodoA j a xdarproblema.
+OcenárioinversoseriacarregaroconteúdoamaisdoDesktopmesmonatela
+mobileporcausadealgumerronadetecção. A p e s a rdeapáginaacabarficando
+grandedemais,pelomenosnãodeixequebrado.Façaodesignresponsivofuncionar
+nessecenáriotambém,mesmoquesejamaisraro.
+OutrocasoéodeumusuárioDesktopabrirosite,receberaversãocompleta
+edepoisredimensionarajanelapraficarpequena.V o c êpodeusarJavaScriptpara
+“descarregar”oconteúdoadicionalemostrarodesignmaismobile;oudeixarocon-
+teúdoadicionallámesmo,umavezquejáfoicarregado,esóadaptarresponsiva-
+menteseulayout.
+Perceba,oprincípiodeseaplicarbem progressive enhancementéseprecaverem
+todososcenáriospossíveiseproverumaexperiênciausávelmesmoquandoascoisas
+nãosaemexatamentecomoprevemos.
+Buscaselinks
+U m aquestãoimportanteécomolidarcommecanismosdebusca(SEO).Como
+oHTMLédaversãomaissimplesecomlinksparapáginassecundárias,éissoque
+oGooglevaiindexar. Dopontodevistadaindexação não háproblemas,jáque
+todoconteúdoserádisponibilizadoparaabuscadequalquerforma.Masvocêpode
+tambémoptarporumasoluçãoRESS,sepreferir,eindicaroHTMLcomconteúdo
+completoproGoogleindexarumapáginasó. Épossívelatédistinguirosrobôs do
+Googlenormalemobile,edarHTMLsdiferentespracadaum.Sócuidadopara,de
+umaformaoudeoutra,todooconteúdosersempreacessívelparaoGoogle,senão
+seusitepodeserpenalizado.
+Aquestãomaioréoqueacontecequandoumusuáriofazumabuscaeclicanum
+linkdosresultados. EseoGoogleindexouaspáginassecundáriaspensadaspara
+mobileeousuáriobuscaeclicanoDesktop?
+Essemesmocenárioaconteceseousuáriousamaisdeumdispositivoparana-
+vegar.Porexemplo:começaaverositenocelular,mandaumlinkdeumapágina
+secundáriaeabredepoisnoDesktop.
+Éimportante,portanto,comofalamosantes,queambasasexperiênciassejam
+150
+
+## Página 159
+
+CasadoCódigo Capítulo20. Designadaptativoecarregamentocondicional
+semprecompatíveistantocommobilequantocomDesktop.Éomesmocasodepro-
+gramaçãodefensivadeantes.T a n t oapáginasimples,quantoassecundárias,quanto
+aversãocompletadevemserresponsivaseadaptáveisparaosdois.
+Performance
+U m apreocupaçãoimportanteécomrelaçãoàperformancedassoluções decar-
+regamentocondicional.SeforpralinhadoRESS,nãoháproblemas,masaversão
+emJavaScript(queémaiscomum)temalgumasimplicações.
+Dopontodevistadomobile,ocarregamentocondicionaléumaexcelenteoti-
+mizaçãodeperformance.Issoporqueousuárionãovaireceberapáginacompleta
+emaispesada,oqueémuitobompensandoemredes3Glentaseaparelhosmais
+limitados.MasháumcertosacrifíciodaversãoDesktop.
+Pelomenosàprimeiravista,saltaaosolhosofatodeaversão Desktopexigir
+maisrequestseAjax,oquepodedeixarapáginamaiscarregada. Otempodere-
+lógioparacarregamentototaldapáginavaisermaiorcomcerteza,masissonão
+necessariamenteéruimparaaexperiênciadousuário.Acabamosusandocarrega-
+mentocondicionalparaconteúdossecundáriosque,emboapartedoscasos,estálá
+embaixodapáginaenemévisívelinicialmenteparaousuário.
+Issoquerdizerqueseaquelepedaçoládebaixodemorarumpoucomaispra
+carregarissopodenão serumproblematão grave. Ousuárionão vaiveraquilo
+logodecara(não recomendocarregamentocondicionalparaconteúdoacimado
+fold).Entãoaexperiênciadousuário,quecontamaisqueonúmerodesegundosno
+cronômetro,nãodeveserprejudicada.
+Maisqueissoaté.Comumaimplementaçãomaisesperta,ocarregamentocon-
+dicionalpodeinclusivemelhoraraperformancepercebidapelousuário,apesardos
+requestsadicionais.Issoporque,seapáginainicialémaissimples,onavegadorren-
+derizaaquiloprimeiroejámostraparaousuário;oconteúdoadicionalquenemé
+visíveldeinício,sóvaisercarregadoumpoucodepois.Ouseja,naprática,aparte
+inicialdapáginaqueémaisimportanteacabaatécarregandomaisrapidamente.
+Indomaislonge,podemossegurarasrequisições dosconteúdossecundáriosaté
+seremrealmentenecessários.Seestamosfalandodeumconteúdoláembaixona
+página,vocêpodeoptarporsegurarseudownloadatéousuáriofazerscroll.Éuma
+espéciedelazyload,quemuitagentejáusaparaimagens,porexemplo.Fazendo
+essecarregamentoatrasado,aperformancefinalsentidapelousuárioémuitoboa.
+151
+
+## Página 161
+
+P a r t eIV
+Gestoseentradadedados
+
+
+## Página 163
+
+Capítulo21
+GestosnaW e b
+Quaisgestosusar
+Astelas multitouchmaisavançadaschegamadetectaraté10pontosnatelaaomesmo
+tempo.Ecadadedopodeserusadoparatocarouarrastar,criando,naprática,deze-
+nasdepossíveisgestos.SevocêéumusuárioavançadodoiPad,porexemplo,está
+acostumadocomogestodearrastar4dedospratrocardeA p p ,ouencolher5dedos
+prafecharumaA p p .Alémclaro,doseventosclássicosdetoque,duplotoque,zoom
+etc.
+Mas,naprática,oquenós,desenvolvedoresW e b ,podemosusardegestos?
+OsgestosmaiscomunsnaW e bsãoosmaissimples,executadoscomumdedo
+sóou,nomáximo,dois.Muitosaparelhosmaissimplesnãotêmtelamultitouchesó
+suportam1dedo—váriosAndroids low-endsãoassim.Alémdisso,adetecçãodos
+gestosviaJavaScriptéalgorelativamentecomplicado,oquedificultaaimplementa-
+çãodegestosmaiscomplexos.
+OsgestosmaiscomunsparausonaW e bsão:
+
+## Página 164
+
+CasadoCódigo
+•T a p(batidarápida):Éocliquedotouch.U mtoquezinhodelevepraabrirum
+link,acionarumbotão,etc.
+•DoubleT a p(duasbatidasrápidas,comoumduploclique):Háváriosusos
+particularesemsiteseA p p sespecíficos.Demodogeral,tambéméusadopara
+zoom.
+•HoldouLongT a p(tapdemorado):T o c a rnatelaesegurar.Costumaacionar
+ummenudecontextodaquelaação,comoumcliquedadireitanomouse.
+•Swipe(arrastarprolado):Muitousadoparanavegaçãodetelas,defotos,em
+carrosséis,etc. Omaiscomuméarrastarparaadireitaeesquerda,embora
+sejapossívelfazerswipesverticaistambém.
+•Scale&Pinch(movimentodepinça,abrindooufechando):Éoclássicomo-
+vimentodezoom,usadoparaaumentarodiminuirfotos,páginasW e betc.
+•Drag(arrastarelemento):Arrastarumelementonateladeumpontoaoutro.
+156
+
+## Página 165
+
+CasadoCódigo Capítulo21.GestosnaW e b
+Éprecisolembrar,porém,quenossaspáginasW e bnãosão A p p snativas,mas
+vivemdentrodeuma,onavegador. Eonavegadoremsijáreservaumasériede
+gestosparausopróprio.O sw ipeverticaljáéusadoparascroll;o p i n c hjáéusado
+parazoom;o holdexibeummenucontextualquepermiteabrirlinksemnovasabas
+ouvisualizarumaimagemisoladamente.
+Figura21.1:ResultadodeumholdemcimadeumlinknoChromedoAndroideno
+SafaridoiOS
+V o c êconsegue,sequiser,sobrescreveressesgestosdonavegadorviaJavaScript.
+Masissoraramenteéumaboaideia.Ousuárioestáacostumadoaosgestospadrões
+daplataformadeleedonavegadordele;seriapéssimocomprometeressafamiliari-
+dade. Algumasexceções são aceitáveisemcenáriosbemparticulares,comojogos
+ouA p p scomoGoogleMaps(queusagestosdeswipe,dragepinchpranavegarno
+mapa).
+Naprática,emsitesmobile,vocêencontramuitousodetapeswipehorizontal
+apenas.
+157
+
+## Página 166
+
+CasadoCódigo
+Descobrindogestos
+U s a rgestossótemumgrandeproblemadeusabilidade:comoousuáriosabe
+q u a lgesto estádisponível?Algunssãobemóbviosefazempartedobásicodetodo
+usuáriodetouchscreens—como t a pe scroll.Outrosestãovirandopadrãoecada
+vezmaisgentesabecomousá-los—comoum sw ipelateralparapassaritens,muitas
+vezesdenotadopelapresençadospontinhos:
+Figura21.2:Pontinhoscomumenteusadospraindicarumcontrolecomswipe
+Masházilhões degestosmaiscomplicados,menosóbvios,queficamescondidos
+nasaplicações poraí.Porexemplo,seráquetodomundosabequeum sw ipecom 4
+dedosmudadeaplicaçãonoiOS?Certamentenão,éumgestoescondido.JoshClark,
+umfamosoautornaáreademobile,escreveu:gestossãoosatalhosdetecladodas
+telastouch.Éumaexcelenteanalogia.
+Osgestossãoatalhosparavocêinteragirdeformamaissimplesenaturalcom
+seudispositivo. Masvocêprecisasaberessesatalhos. Gestos,comoosatalhosde
+teclado,sãoinvisíveis.Nãosãoações óbviascomoacionarumbotão.Issotrazduas
+implicações importantesnahoradecriarmosnossossiteseaplicativos.
+Primeiroéquevocênão podeesconderações importantesportrásdegestos
+invisíveis.Nãofaça,porexemploseusitesemmenunenhumparaterumainter-
+faceclean,ecomumgestodetrêsdedospraacioná-lo.PensandoaindaemW e b
+multi-dispositivos,sabemosquemuitosaparelhosnemvãoconseguirexecutarges-
+toscomplicadosporlimitaçãodehardware.Entãofaçatudoacessíveldaformamais
+simplespossível,com t a p sembotões emenusexplícitos.U s egestoscomoalgoa
+mais,umatalho,aomelhorestilo progressive enhancement.
+Mesmonoexemplodo sw ipelateralparapassaritensnumcarrossel:oidealé
+não contarapenascomospontinhosparaindicarapresençademaisitens,enão
+contarcomousuáriofazendo sw ipeprapassá-los.Exibaexplicitamentecontroles
+de p róx i m oe anterior,bemvisíveis,eacessíveiscomumsimples t a p:
+158
+
+## Página 167
+
+CasadoCódigo Capítulo21.GestosnaW e b
+Àsvezes,porém,aexperiênciacentraldasuainterfaceébaseadaemgestos.Por
+exemplo,usaro pinch-to-zoomparaaumentarumafotoouummapa.Nessecaso,é
+importanteensinarousuário.Mostrarpraele,naprimeiravez,quaisgestosestão
+disponíveisepraqueelesservem. Cuidadopraissonão ficarchato. Émelhorir
+mostrandoosgestosaospoucos,conformeelevaiusandoaaplicaçãonaprática,no
+melhorestilo gamification.
+EssainterfacequeensinagestosmalucosprousuáriofuncionabememA p p s
+instaladas,masdeveserevitadanaW e b .AW e bemgeralémaissimplesemaisvol-
+tadaparaconsultarápidadeinformações. Nãoqueroterqueaprenderumainterface
+nova,gestosnovos,pracadasitequevisito.Omelhoréainterfacefamiliaresimples.
+159
+
+## Página 169
+
+Capítulo22
+Implementandogestoscom
+JavaScript
+TrabalharcomeventosparagestosemJavaScriptnãoétrivial.Existemváriasformas
+desefazerisso.
+Emprimeirolugar,todososnavegadorescomsuporteatouchsuportamoseven-
+tos“clássicos”daW e b :click, mousedown, mousemove, onkeydownetc.Isso,claro,é
+pramantercompatibilidadecomtodosossitescriadospraDesktop.Entãovocêcon-
+segueimplementarum t a pusandoumeventoonclickclássico.
+Masesseseventosclássicossãolimitadosquandopensamosnaspossibilidades
+dotouch.Comoseventosdemouse,porexemplo,sóconseguimosemularumtoque
+único,enão osmúltiplospontosdo multitouch. Pensandonisso,existemeventos
+específicosdetouch.Os3eventosprincipaissão touchstart,touchmoveetouchend
+—outros,maisespecíficos,incluemtouchcancel,touchenter,touchleave.
+
+## Página 170
+
+CasadoCódigo
+touchstartetouchend
+Imagineimplementarumcontrolebásicoquemudadeestado ON/OFFcon-
+formeclicado.Visualmenteéalgoassim:
+Paramudardeumestadoparaooutro,apenasadicionamosumaclasseactive
+aoelementoviaJavaScript,comumafunçãoparecidacomessa:
+function troca(e) {
+e.currentTarget.classList.toggle('active');
+}
+Paradispararessafunção,podemosusaroseventos.Podemosusaroclickque
+funcionaemqualquernavegador,inclusiveostouch. Oupodemostestaralgum
+eventoespecíficodetouch,quepegaexatamenteoinstanteemqueodedotocaa
+tela(touchstart)ouoinstanteexatoemqueodedodeixaatela(touchend):
+document.getElementById('switch').onclick = troca;
+// ou
+document.getElementById('switch').ontouchstart = troca;
+// ou
+document.getElementById('switch').ontouchend = troca;
+Figura22.1:URLdoexemplo:http://sergiolopes.org/m6
+Hávantagensedesvantagensemcadaabordagem:
+162
+
+## Página 171
+
+CasadoCódigo Capítulo22.ImplementandogestoscomJavaScript
+•click:Funcionaemtodososnavegadores,mobileedesktop.Nosdispositivos
+touch,costumasermaislento(emtornode300ms)pradisparar. Quando
+tocamosatela,onavegadoresperapraverquetipodeeventovamosfazer
+(podeserumscroll,umdoubletap,umlongtap).
+•touchstart:Sófuncionaemnavegadorestouchedisparaimediatamenteapós
+otoque,sendomaisrápidoqueoclick.Sesabemosqueaqueleelementonosso
+nãovaiaceitaroutroseventos,podemosconsiderarqueotouchstartéodis-
+parodeumtap.Masédifícilgarantirisso.U mcasoéquandoousuáriotoca
+atelaprafazerscroll;otouchstartvaidispararassimqueodedopassarem
+cimadoelemento,mesmonãosendoessaaaçãodesejada.
+•touchend:Parecidocomo touchstart,sóquedisparanoinstantequetira-
+mosodedodatela.
+Sequisermosusaroseventostouchprapegaraaçãode t a p,provavelmentepre-
+cisaremossermaisespertosdoqueusarapenaso touchstart/touchendsozinhos.
+Pradetectarmoso t a psemafetarasoutrasações de scrollou pinch-to-zoom,vamos
+terqueregistrarotouchstarteotouchendetentarverificarseessesdoiseventos
+representamumtap.
+U m aformadefazerissoécalculandoadiferençadetempoentreotouchstart
+eotouchend.Registramosumtimestampemcadaeventoevemosseadiferençaé
+pequena(nomáximo,150msporexemplo).T o c a retirarodedodatelarapidamente
+éumforteindicativoum t a p:
+var start; // vai guardar o tempo de início do toque
+document.getElementById('switch').ontouchstart = function(e){
+start = new Date().getTime();
+};
+document.getElementById('switch').ontouchend = function(e){
+var agora = new Date().getTime();
+// se start foi há menos de 100ms, dispara ação
+if (agora <= startTimestamp + 150) {
+troca(e);
+}
+};
+163
+
+## Página 172
+
+CasadoCódigo
+Figura22.2:URLdoexemplo:http://sergiolopes.org/m7
+Sequisermossuportaraomesmotempooonclickporcausadosdesktops,não
+podemossimplesmenteadicionaresseevento.Lembrequeoclicktambémédispa-
+radonosaparelhos touch,então,naprática,acabariadisparandonossalógicaduas
+vezes.Aliás,quandoousuáriodáumtoquenatelanumnavegadortouch,sãodis-
+paradososseguinteseventos,emordem:
+•touchstart
+•touchmove
+•touchend
+•mouseover
+•mousemove
+•mousedown
+•mouseup
+•click
+Énecessárioalgumtipodecontrolepraevitarquemaisdeumeventodispare—
+porexemplodispararoclickmesmoapóstratarmosotapcomoseventosdetouch.
+U m aformapossívelécolocarevent.preventDefault()notouchend,oqueim-
+pedeapropagação doeventoeodisparodo click. Masissoimpedetambémos
+eventosdetouchnativosdonavegadoresóonossoeventovaiexecutar.Issoquer
+dizerqueousuárioficaráimpedidodedarzoomouscrollnapáginaseestiverto-
+candooelementocompreventDefault.Dariaumtrabalhocontornaressasituação,
+entãooutraformaésimplesmenteremoveroeventodeclicksetivertouch:
+164
+
+## Página 173
+
+CasadoCódigo Capítulo22.ImplementandogestoscomJavaScript
+if ('ontouchstart' in window) {
+document.getElementById('switch').onclick = null;
+}
+touchmove
+Asinterações realmenteinteressantesnumatelatouchvãoalémdotouchstart
+edo touchend. Agrandeestrelaéoevento touchmove,queédisparadodiversas
+vezesduranteomovimentododedonatela.Isso,somadoàcapacidadedeobteras
+coordenadasdotoque,econseguimosimplementareventoscomplexoscomo sw ipe,
+Trabalharcomtouchmoveésimples:
+elemento.ontouchmove = function(e) {
+}
+E,nãotínhamosvistoainda,mastodosesses touch eventsquerecebemoscomo
+argumento,nosdãoacessoaospontosdetoquenatela.Éumarray,jápensandoem
+multitoques.Emcadapontodetoque,podemosobterdadoscomoascoordenadas
+dotoque.
+U mcódigosimplesparamostrarnoconsoleascoordenadasdotoqueprincipal
+duranteomovimentododedo:
+elemento.ontouchmove = function(e) {
+var toque = e.changedTouches[0];
+console.log('X: ' + toque.clientX);
+console.log('Y: ' + toque.clientY);
+}
+Agoraéusaraimaginaçãoeusaressesvalorespraalgoútil.Porexemplo,criar
+umsliderdeimagensnoqualvocêpodenavegararrastandoosdedosparaoslados
+(d r a g).
+165
+
+## Página 174
+
+CasadoCódigo
+Figura22.3:Exemplodesliderquevamosimplementarcomtouch.
+Paracriaroefeitodescrolldentrodoslider,criamosumumdivinterno(quevou
+chamarde container)comlargurabemgrandeparacabertodosositensquequere-
+mos.Posicionamosesse containerdentrodo sliderlogonaesquerda,mostrandosó
+ositensquecouberem.No slider,um overflow:hiddenfazositenssobressalentes
+ficaremescondidos.
+<div class="slider">
+<div class="slider-container">
+<!-- vários itens aqui. imagens, links, o que quisermos -->
+<img src="item1.jpg">
+<img src="item2.jpg">
+<img src="item3.jpg">
+<!-- ... -->
+</div>
+</div>
+Figura22.4:Ilustraçãodecomoocontainerépequenoealgunselementosficampra
+fora.
+OCSSparaposicionarofuncionamentodoslideré:
+166
+
+## Página 175
+
+CasadoCódigo Capítulo22.ImplementandogestoscomJavaScript
+.slider {
+/* tamanho visível do slider */
+height: 100px;
+width: 300px
+/* esconde itens que não couberem */
+overflow: hidden;
+}
+.slider-container {
+/* mesma altura do slider */
+height: 100px;
+/* largura grande, pra caber todos itens */
+width: 1000px;
+}
+OJavaScriptquevamosfazerébasicamentedeslocaro.slider-containerpra
+esquerdaepradireitaconformearrastamosodedo.Praisso,vamosusaroevento
+touchmovee CSS3 Transformsprafazerodeslocamentoemsi.Algoassim:
+var slider = document.querySelector('.slider');
+var container = slider.querySelector('.slider-container');
+slider.ontouchmove = function(e){
+container.style.transform = 'translateX(' + deslocamento + 'px)';
+}
+A ideia parece simples, mas a chaveéconseguir calcular o quantoquere-
+mosdeslocaracada movimento. Podemosobteracoordenadadotoquecom
+e.changedTouches[0].clientXmassóissonãoésuficiente.Afuncionalidadedo
+slideré,naverdade,deslocarositensdeacordocomo q u a n t oarrastamos o dedo.
+Precisamosobteracoordenadainicialdotoqueviaeventotouchstartecalcular
+adiferençacomaposiçãododedonomomentodotouchmove:
+var origem = 0;
+// calcula o ponto inicial de toque
+slider.ontouchstart = function(e){
+origem = e.changedTouches[0].clientX;
+}
+167
+
+## Página 176
+
+CasadoCódigo
+slider.ontouchmove = function(e){
+// calcula o quanto o dedo moveu com relação a origem do 1o toque
+var deslocamento = e.changedTouches[0].clientX - origem;
+container.style.transform = 'translateX(' + deslocamento + 'px)';
+}
+U moutrodetalhequeprecisadecuidadoéiracumulandoosváriosdeslocamen-
+tos.Ousuáriopodefazerum sw ipeinicialedepoisfazermais swipesprairvendo
+maisitens.Paraisso,precisamosacumularo totaljádeslocado.Ocálculodoto-
+talemsideveserfeitoquandooeventodetoqueacabar,ouseja,notouchend.Eo
+códigofinalficaassim:
+var origem = 0;
+var total = 0;
+slider.ontouchstart = function(e){
+origem = e.changedTouches[0].clientX;
+}
+slider.ontouchmove = function(e){
+var deslocamento = e.changedTouches[0].clientX - origem;
+var posicao = deslocamento + total;
+container.style.transform = 'translateX(' + posicao + 'px)';
+}
+slider.ontouchend = function(e) {
+total += e.changedTouches[0].clientX - origem;
+}
+168
+
+## Página 177
+
+CasadoCódigo Capítulo22.ImplementandogestoscomJavaScript
+Figura22.5:URLdoexemplo:http://sergiolopes.org/m8
+Note,porém,quenossaimplementaçãoébemsimpleseingênua.Hámilhares
+depossíveismelhorias.Nãocolocamoslimitesnacoordenadadedeslocamento,por
+exemplo;oidealserialimitardeacordocomotamanhodo slider.Quandootoque
+acaba,omovimentopodiaacabarsuavementeaoinvésdamaneiraabruptaqueestá
+agora(igualoscrollcom momentumdoiOS).Esecomeçarmosatestarnosdispo-
+sitivos,vamosencontrarmuitosbugsediferenças—oAndroid,porexemplo,exige
+ume.preventDefault()noseventosdetouchpratudofuncionardireito.
+Alémdisso,nãonospreocupamosemcompatibilidadecomDesktopenavega-
+doressemeventostouch.Sequeremosumsiteresponsivocompatívelcomtodotipo
+denavegador,precisamostratartambémeventosdemouseouofereceroutraforma
+denavegaçãocomobotões prapassaraspáginasdoslider.
+Libstouch
+TrabalharcomeventostouchéJavaScriptédifícil.Definitivamentemuitodifícil.
+Euquiscolocaraquinolivroumaintroduçãoao touch eventsdadosuaimportância.
+Masfazercoisasusáveisesembugscomelaséalgobastantepenoso.
+Todososexemplosquemostreiaquisãobastanteingênuos.Naprática,vocêvai
+encontrarmuitasinconsistênciasentrenavegadoreseplataformasdiferentes. Não
+169
+
+## Página 178
+
+CasadoCódigo
+bastatambémsótrataroseventos touchedeixarosusuáriosdemousenamão. E
+implementarosfallbackscomoseventostradicionais(click,mousemoveetc)nãoé
+trivial,jáqueelestambémsãodisparadosnosnavegadorestouch.
+Éprecisopensaraindaemcomonãointerferirnoseventospadrõesdonavegador
+—emespecial,ozoomeoscroll(eosexemplosdessecapítulotêminfinitosconflitos
+comesseseventos,quenãotratamos).
+Esevocêachouamatemáticaportrásdonosso sw ipealgofácildeseperder,
+experimenteimplementarumeventomultitoque.Fazerumsimplesgestoderotaci-
+onarcom2dedosenvolvemaistrigonometriadoqueagentegostaria.
+Naprática?Ninguémtrataeventosdetouchnaunha.
+Existemzilharesdeframeworksdeeventostouchqueabstraemtodaessacom-
+plexidadedematemática,bugsdosnavegadores,fallbacksproDesktopeetc.Reco-
+mendo fortementequevocêusealgumadessasopções.
+OZepto.js,porexemplo,éumabibliotecacomsintaxedojQueryquereimple-
+mentaboapartedasuaAPIpensandoemdispositivosmóveis. Alémdisso,acres-
+centasuporteaeventosdetouchcomo t a p, longTape sw ipe. U s a roZeptoébem
+fácil.U msw ipeficaassim:
+$('#slider').swipe(function(){
+// um swipe aconteceu, desloca o slider
+});
+OZeptoéumframeworkcompleto,prasubstituirojQueryinteironosdispo-
+sitivosmóveis. Masvocêpodequererapenasumframeworkparacuidardosseus
+eventostouch,seminterferirnoresto.OexcelenteHammer.jsfazexatamenteisso
+emapenas2KBdeJS.Implementarumgestode holdcomHammerficaassim:
+var hammer = Hammer(document.getElementById('slider'));
+hammer.onhold = function() {
+}
+Hásuporteparatodososgestosquevimos—t a p, double t a p, p i n c h, hold, d r a g,
+sw ipe, rotate.OmelhoréqueelejáfazfallbackspraDesktopsautomaticamente(por
+exemplo,disparandoum clickquandovocêusaroeventode t a p). Enquantoes-
+crevoesselivro,aversão2.0estácomeçandoaserdesenvolvidaeprometemaisfa-
+cilidadesemelhorcompatibilidade.
+Porfim,mesmoquevocênãováfazergestoscomplicadosnasuapágina,talvez
+sejabomusarumframeworkparacliques.Lembrequeoseventosdeclickdisparam
+170
+
+## Página 179
+
+CasadoCódigo Capítulo22.ImplementandogestoscomJavaScript
+emdispositivostouch,mascomumatrasoconsideráveldeuns300ms.Issoporque
+onavegadorprecisaesperarumpoucoapósotoqueinicialpradecidirqueoevento
+éumclickmesmoenãooutracoisa(cliqueduplo,hold,scrolletc).
+Esseatrasode300msdeixaapáginasensivelmentemaislentaprousuário.O
+segredoétrabalharentãocomoseventosdetouchparatentarsimularoscliquesmais
+rapidamente.Fizemosumtestesimplesnoiníciodocapítulo,masnossasoluçãoé
+muitoingênuaparausoprático.Sevocêquiserumframeworktransparentepara
+disparodecliquesrápidosemtouchscreen,recomendooFastClickda FTLabs. É
+sóinstalarepronto:vocêcontinuausandooeventodeclickmasagoraeleémais
+rápidoeinteligente.
+Futuro,Poi nterEventsAPIeopiniões
+Prafinalizarotópico,precisamosdiscutirrapidamenteoquenosesperanessa
+partedeeventostouchnonavegador.
+OseventosquevimosaquiforaminventadospelaA p p l enolançamentodo
+iPhone,enãosãoumpadrão.Váriosbrowserscopiaramomesmomodelodeeventos
+(Android,Chrome,Firefox,Blackberry)eoW3Catéchegouaextrairumaespecifi-
+caçãoparapadronizartudoisso.Masnãoháconsensogeral,emespecialnoInternet
+Explorer.
+AMicrosoftnuncagostoudesseseventosdetouchdaA p p l e .Ecombonsar-
+gumentos. Ograndeproblemadesecriarumeventode touchéqueelenão está
+preparadoparaofuturo—assimcomoacriaçãodoseventosde mousenopassado
+nosdeixaramnessaposiçãodehoje.PraMicrosoft,éhoradeparardecriareventos
+tão específicoseabstrairtudoissoemumaAPIquefuncionecomtouch,mouse,
+canetaequalqueroutracoisadofuturo.
+JuntocomaMozilla,propuseramumanovaAPI,chamadadePointerEvents
+API,queabstraitodotipodeinteraçãobaseadaemapontaralgumelemento—seja
+tocandoatela,movendoomouse,etc.Enquantoescrevoesselivro,correumabriga
+boanosbastidoressobrequalAPIdeveprevalecer,esóoInternetExplorerimple-
+mentaa Ponter Events API(enãosuportaos T o u c hEventsdaApple).
+Eu,pessoalmente,prefiroaabordagempropostapelaMicrosoftegostariadevê-
+lasendoadotadaportodososnavegadores.
+Naverdade,minhaopiniãoédequeprecisamosdeaindamaisumpassonos
+navegadores: eventosdetouchdemaisaltonível,queimplementemosgestosjá
+prontos(comoosframeworksZeptoeHammer). Assimcomotemosumevento
+prontopraduploclique(ondblclick)enão precisamosficarcalculandoissona
+171
+
+## Página 180
+
+CasadoCódigo
+mão,parece-merazoávelesperarqueumdiaexistameventosprontospadronizados
+paragestos.Pelomenososmaiscomuns—t a p, hold, sw ipe, p i n c h.Masissoparece
+estarreservadoparaumfuturo bemdistante,infelizmente.
+Eventosde gestosnoi OS
+O iOS tem suporte a alguns eventos adicionais, gesturestart,
+gesturemoveegestureend.Elespermitemidentificarosgestosde p i n c h
+e r o t ação.SãoproprietáriosesósuportadosnoiOS.
+172
+
+## Página 181
+
+Capítulo23
+DesafiosdeUXeminterfacestouch
+Pramim,agranderevoluçãodessanossaeradesmartphonesetabletspós-iPhone
+foiatouchscreen.Jáexistiamtelasassimantes,masa popularizaçãodelaséoque
+fezadiferença.Quasetudotemumatelatouchhoje.Etudovaiterumatelatouch
+nofuturo.
+AgrandediferençaqueveiocomoiPhone—edepoistodomundocopiou—
+talveztenhasidoaprecisãoetecnologiainovadorasusadasnatela.Outalveztenha
+sidoaconstruçãodeumainterfacequeusao touchpraaproximarousuáriodocon-
+teúdoedaação. Fezcomqueainteraçãocomoaparelhosejamaisnatural,quase
+tãorealquantointeragircomumobjetofísico.
+Masissoémuitodiferentedecomointeragíamoscomnossoscomputadorese
+aparelhosantes.Mouses,teclas.
+Existemmuitasdiferençasfundamentaisnaformacomointeragimoscomuma
+interfacetouchecomointeragimoscomumainterfaceviamouseeteclado.Éób-
+vioisso,vocêpercebequandousaseucomputadorequandousaseusmartphone.
+Emtouch,oscontrolesprecisamsergrandespravocêtocarcomseudedogordoe
+
+## Página 182
+
+CasadoCódigo
+impreciso(maissobreissoaseguir).
+Comtouch,seudedo,suamão,seucorpo,sãousadosparainteragir diretamente
+comoconteúdonatela.Éissoquecriaasensaçãodeinteraçãomaisnatural,pois
+ébemdiferentedeusarumequipamentoexternocomomouseouteclado.Masin-
+teragircomodedocriaumasituaçãocuriosa:aomanipularumelemento,agente
+tampasuavisualização.Amãoficanafrente,diferentedequandousamosmousee
+suaminúsculasetanatela.Issotudotemimplicações gigantescasprainterfacescom
+usuário.
+Porexemplo,umagaleriadeimagensondevocêtocanaminiaturapravermaior:
+secolocarasminiaturasemcima,nãoépossívelenxergaroqueaconteceaotocá-la,
+poisamãotampaatela:
+Figura23.1:SitedoV i m e oabertonoiPad.T e mumsliderpraescolhervídeonotopo.
+Amãotampaatelaquandovamosacioná-loenãovemosovídeoabrindonomeio
+dapágina.
+Emuitosoutroscasos.Éporissoqueeventosde hover,alémdenãofuncionarem
+direitoemmobile,nãosãoúteis.Mesmoquefuncionassem,o hoveremgeraléfeito
+174
+
+## Página 183
+
+CasadoCódigo Capítulo23.DesafiosdeUXeminterfacestouch
+paraalteraralgumapropriedadevisualdoelementoquandopassamosomouseem
+cimadele.Passandoodedo,nãoconseguimosenxergaroqueaconteceembaixo.
+Outradiferençaéaformacomoseguramosoaparelhotoucheinteragimoscom
+ele. U msmartphone,pequeno,costumaserseguradocomumamãosóemmodo
+retrato.Nessecenário,écomumusarodedãoparainteragircomumamãosó,queé
+umdedomaior,menosprecisoemaiscurto.Ouentãopodemosseguraroaparelho
+nomodopaisagem,ondeécomumusarasduasmãoseinteragircomosdoisdedões.
+Tudoissomudaradicalmenteafacilidadeounãodousuáriotocarcertospontosda
+tela:
+Figura23.2:Esquemadehotzonesparatouchemsmartphones.
+Façaotestevocêmesmo.Pegueseusmartphone,segure-odediversasformas,
+vejaondeseusdedosalcançamcomfacilidade.Éumaformadeinteraçãoquetraz
+preocupações quenuncatínhamospensadonoDesktop.Opiorlugarpravocêco-
+locarumbotãoimportantedasuaaplicaçãoéocantoesquerdosuperior,difícilde
+alcançar,sevocêfordestro.Aliás,éporissoqueabarradeendereçosnoIEdoWi n-
+dowsPhoneficaembaixodatela:
+175
+
+## Página 184
+
+CasadoCódigo
+Omaiscomplicadodetudoissoéqueessespadrões deinteração mudamde
+aparelhopraaparelho.U s a n d oumtablet,porexemplo,asáreasdetoquemaisfáceis
+deacertarsão outras. U s a n d oumnotebookcomtouchouumtabletapoiadona
+mesa,tudomudadenovo:
+Figura23.3:ImagemdaMicrosoftmostrandoospontosdeinteração commelhor
+usabilidadeparatouchnosnotebookshíbridoscomWindows8.
+Maséprecisopensarnessascoisas.Existeummotivopratodososjogosdecom-
+putadordomundousaremasteclas A, S, D e Wnotecladopramoveropersonagem:
+estãootimizadaspramãoesquerdaepróximasosuficientepraapertarmoscomfaci-
+lidade(imaginesefossemasteclas G, P ,X e M).Notouchémesmacoisa.Precisamos
+otimizarnossasinterfacesparafacilitarainteração.Issoenvolveosaspectosquecitei
+rapidamentenessaseçãoediversosoutrosquvocêpodeleremlivrosespecializados
+176
+
+## Página 185
+
+CasadoCódigo Capítulo23.DesafiosdeUXeminterfacestouch
+em interfaces touch.
+Oimportanteéquetrabalharcom touch screensérepensarainteraçãoeaexpe-
+riênciadousuário.MuitodoquefazíamosnoDesktopnãoservemais.
+Detectandotouch
+Essadiferençabrutalnainteraçãoentre toucheinterfacesDesktoptradicionais
+criadesafiosmonumentaisparaquemquertrabalharcomdesignresponsivo.Como
+atenderrequisitosdeinteraçãotãodiferentesnamesmapágina,commesmocódigo?
+Aprimeirareaçãoétentar adaptarodesigndeacordocomotipododispositivo.
+Jáadaptamosadiferentestamanhosdetelacomasmediaqueriesclássicasdewidth
+e height,bastariadetectarapresençadeumatela toucheadaptaraissotambém,
+certo?Infelizmente,não.Essadetecçãonaoétãofácil.
+Abibliotecauniversaldedetecçãodecapacidadesnosdispositivos,aModernizr,
+atétemumaformatentarresolverisso.ElacolocaumaclassenoseuCSScomovalor
+touchou no-touch,aíbastaescreveroCSSadaptandoodesignemcimadisso.O
+problemaéqueessadetecçãoéextremamentefalha.
+Nãoépossíveldeterminarcomprecisãoapresençadeumainterfacetouch.O
+queo Modernizrfazéidentificarapresençados eventos de touch em JS,masisso
+nãoéequivalenteaterumatelatouch.Váriosaparelhostouchnãosuportamesses
+eventos(comoosWindowsPhone)eváriosbrowserssuportamesseseventosmesmo
+não tendoumatelatouch(assimcomooinverso,deaparelhostouchsuportarem
+eventosde mouse,porexemplo). Éumadetecção falhaenão arecomendo—o
+própriopessoaldo Modernizrtemdiscussões imensassobreoassunto.
+Existem,porém,outrasduaspossibilidadesdedetecção.U m aédetectarnoser-
+vidorusandoalgumbancodedadosdedispositivoscomoWURFL—umaaborda-
+gemquediscutomelhornotópico18sobreRESS.Oproblemaéobancodedados
+ficardesatualizadoenãoidentificaradequadamenteosdispositivos.Ahistórianos
+mostroudiversasvezesnopassadoquesoluções baseadasemdetecçãode user-agent
+sãomenosconfiáveis.
+Aoutraabordagempossível,naverdade,aindanão émuitopopularnaprá-
+tica.Éumnovovalorpossívelparaasmediaqueriesqueentrounorascunhodaes-
+pecificaçãodaversão4dasmediaqueries(http://dev.w3.org/csswg/mediaqueries4/
+#pointer)masnenhumbrowserimplementaaindaenquantoescrevoesselivro.A
+sintaxepodemudarnofuturo,masanovamediaquerysechamapointerepode
+receberosvalores finee coarse,indicandosuporteàinterfacenaqualpodemos
+177
+
+## Página 186
+
+CasadoCódigo
+apontarcomprecisão(comocommouseoucaneta)ousemprecisão(comoodedo,
+oudetectordemovimentostipokinect):
+@media (pointer: fine) {
+/* ponteiro é preciso, podemos usar botões menores */
+}
+@media (pointer: coarse) {
+/* ponteiro não é preciso, melhor aumentar os botões! */
+}
+Pareceasoluçãoideal,certo?Alémdofatodeissoaindaestarnumfuturomeio
+distante,nãoéumasoluçãoàprovadefalhas.OsnovosnotebookscomWindows8
+misturaramtudoissodenovo.Sãochamadosdehíbridosportrazeremuma touch
+screeneumtecladocomtrackpad(mouse).Eousuáriopodeusaraomesmotempo
+oponteirodomouseeseudedo,semdistinção. Nessecaso,aespecificação reco-
+mendaqueonavegadorseapresentetendocomobaseomaissimples—ouseja,
+serápointer:coarse,mesmotendomousealémdotouch.
+Podeparecerumcasoparticular,masnãoé.OWindowséosistemamaisusado
+nomundoeosnovosaparelhoscomWindows8são híbridos.Issojáseriasufici-
+ente,maseuachoqueessaseráatendênciaparaofuturo—aliás,oChromebook
+doGoogletambéméumhíbrido.Híbridoscomoessestambémserãocomunsem
+outrasplataformas,simplesmenteporqueo touchmudouomundoesetornaráoni-
+presente.Aomesmotempo,aindanãoestamosprontospraabandonaromouseeo
+tecladodevez,dadoqueaprodutividadeeprecisãodelesémaiorquenasinterações
+comtoque.
+T o u c hfirst
+Tudobem,oúltimoparágrafoacimafoiumpoucodefuturologiadaminha
+parte. Éminhaopiniãosobreosnovosaparelhose,obviamente,possoestarbem
+errado.Maspensesónohojeentãoeesqueçameuchuteprofuturo.
+T a n t oRESSquantoModernizrsãoimprecisospradiferenciaratelatouch
+deumiPaddeumnotebookcomum.Esótamanhodetelanãoésuficientepara
+diferenciar,jáquemuitostabletstêmresoluçãoidênticaàdenotebooks.E,jáhoje,
+existemhíbridosnomercadocomooWindows8quetornamimpossíveldiferenciar
+umainterfacetouchdeuma“comum”.
+Portanto, essa discussão sobre detectar touch screens éirrelevante. Aomesmo
+tempo,ébrutaladiferençadeinteraçãodastelas touchemcomparaçãoaomouse
+eteclado.Oquefazerentão?Touch-first.
+178
+
+## Página 187
+
+CasadoCódigo Capítulo23.DesafiosdeUXeminterfacestouch
+U m aboainterfaceconstruídacomasrestrições do touchécompletamenteusá-
+velnumDesktopcommouseeteclado.Ocontrárioéquenãoéverdade.Asolu-
+ção,portanto,ésemprecriarinterfacesotimizadaspratouch,eelasestarãooknos
+Desktops.
+Issosignificacriarbotõesgrandeseespaçadosprafacilitarotoque.Preocupar-se
+comamãotampandoatelaquandofazemososgestos.Lembrardasáreasmaisfáceis
+detoquedeacordocomcomoseguramososdispositivos.Penseemtudoissoesua
+interfaceseráótimatantopara touch screensquantoparaDesktopstradicionais.E
+seousuárioestiveremumhíbrido,poderáusarusaromouseouodedoaomesmo
+tempo,semdificuldades.
+V o c êvaiouvirfalarbastantedessametodologia touch-firstnacomunidadedede-
+senvolvedoresdoWindows8.AMicrosoftfalaquefoiaabordagemusadanacriação
+dosistema,erecomendaessaposturaparaseusdesenvolvedores.Maso touch-first
+faztodoosentidonaW e b ,ondetemosmaisdiversidadeaindaeéimpossíveldeter-
+minarclassesdedispositivos(osquetemtoucheosquenãotem).
+Entãosevamosimplementartendotouchcomobase,ébomlidarcomalgumas
+diferençasfundamentais.
+T o u c htargets
+U m apreocupaçãoimportanteaousartouchscreens,écomotamanhodasáreas
+deinteração.Issoquerdizerqueseusbotões, links,menus,abasetc,precisamser
+grandesosuficienteparaousuáriointeragirconfortavelmente.Isso,claro,porque
+dedossãomaioresemaisimprecisosqueummouse.
+Masqualéotamanhomínimorecomendadopelosespecialistasemusabilidade?
+SevocêlernadocumentaçãodaA p p l e(http://bit.ly/apple-touch),vaiveruma
+recomendação de,nomínimo,44pxpor44pxdetamanho. Muitagentecitaesse
+valorcomoregradeouro. Maséimportantecontextualizarenão tomá-locomo
+verdadeabsoluta.
+Quandofalamosemtamanhodaáreadetoque,temosquepensarnodedo.Ou
+seja,não fazsentidodiscutirissoem p i x el s. Oconfortoparaseusarodedodeve
+servistoemalguma medida métrica. Paraisso,ébomlembrardotópico11sobre
+resoluções detela,DPIseetc.
+Fazendoascontas,quandoaA p p l efalaem44pxnumiPhone,elanaverdadeestá
+recomendandoumtamanhomínimode6.8mm.Outrosfabricantesconcordamem
+valoressemelhantes. Adocumentação daMicrosoftsobreoWindowsPhonere-
+comendaumtamanhomínimode7mm. ANokiafalaem7mmparausocomo
+179
+
+## Página 188
+
+CasadoCódigo
+dedoindicadore8mmparausocomdedão. AMozillafalaemalgumvaloren-
+tre5.9mme9mm,sendoo7mmumaboamédia(https://wiki.mozilla.org/Gaia/
+Design/FlexibleUI).
+AdocumentaçãodaMicrosoft(http://bit.ly/ms-touch)éamaiscompletanesse
+quesito,mostrandoresultadosdeumestudoquerelacionatamanhodos touch targets
+etaxadeerrosdousuário.Segundoeles,otamanhomédiododedoindicadoréde
+11mm,sendo8mmnosbebêsechegandoaté19mmemjogadoresdebasquete.Com
+isso,ovalorrecomendadoparanossos touch targetsseriade9mmcujataxadeerro
+médiaésó0.5%:
+Figura23.4:Fonte:Microsoft,documentaçãodoWindows8.
+Ocomplicadodissotudoécomo,nofim,traduzirparaospixelsquevamosusar
+noCSS.Os44pxrecomendadosnoiPhone,porexemplo,criariamumbotãodeape-
+nas 5.8mmnoGalaxy5,umcelularAndroidbastantecomumnoBrasil.JánumiPad,
+essesmesmos44pxdariamumbotãode 8.4mm.Oproblemasãoasdiferentesden-
+sidadesdepixelsnastelasdosaparelhoseédifícilchegaremumvalor.
+Comonãoconseguimosdetectaradensidadedepixelsdoaparelho,precisamos
+deumvalorquefuncionemaisoumenosbemparatodotipodeaparelho.Adocu-
+mentaçãodaMicrosoft,aoconverterosvaloresem m mpara p i x el s,falanumtama-
+nhoconfortávelde50px,umvalorqueeuparticularmentegosto.Issodaria 9.6mm
+numiPad, 8.3mmnumGalaxyS3, 7 .8mmnumiPhone,e 6.7mmnoGalaxy5. As
+diferençassãonotáveisentreosaparelhos,maspodemosassumirqueusuárioscom-
+pramaparelhosquemaisseadaptamaoseuuso—époucoprovávelvocêencontrar
+umjogadordebasqueteusandoominúsculoGalaxy5.
+Outropontoaseconsideraréoespaçamentoentreosbotões,ouáreasdeto-
+queeinteração emgeral. Não adiantafazeroslinksgrandes,porexemplo,mas
+180
+
+## Página 189
+
+CasadoCódigo Capítulo23.DesafiosdeUXeminterfacestouch
+posicioná-lostãopróximosqueéfácilerrareacionaroerrado.Novamenteseguindo
+asrecomendaçõesdaMicrosoft,oidealseriaumespaçamentode2mmentreos touch
+targets.Issopodeseraproximadoem10px.
+Porfim,ébomlembrarquetodosessesvaloressãorecomendações. Sãofortes
+dicas,baseadasemestudosreaisquemuitosdenósnemtemoscomofazer,entãoé
+bomouviressesconselhos.Mas,claro,vocêpodeabrirexceções conscientes.Porém,
+ébomteremmentealgunscuidadosadicionais,comousartamanhosmaioresem
+ações destrutivas,nasquaisumerrodousuárioseriacustoso(apagarumafotodele,
+porexemplo).Ouainda,seforusarbotõespequenos,tentarcompensaraumentando
+significativamenteoespaçamentoentreeles.
+Hover
+Hoveréumcasopolêmico.ElessãomuitocomunsnoDesktopmascostumam
+serumdesastrenotouchscreen.OquemaisexistenossitesDesktopsãomenusque
+abremquandopassamosomouseemcima—nohover.Ouaindaoutrasinterfaces
+quemostrameescondamconteúdos(umtooltip,porexemplo)baseadonohover.
+Tudoissoébemproblemáticoemtelastouch,masébomentenderoporquê.O
+maisóbvioéquenãoexistecursoremtelastouchentãonãoexisteoeventodese
+passaralgoemcimadapágina—ouvocêenfiaodedoládevezecontacomoum
+toque,ouvocênãoestáinteragindocomatela.
+Bem,maisoumenos.Mesmoissonãoéverdadeabsoluta.Precisamoslembrar
+doshíbridosquetêmmouseetouch;elestêmsuporteahovernormalmente.Mas
+mesmonossmartphonesetablets“puramente”touchtambémhácasosparticulares.
+OSamsungGalaxyNote,porexemplo,temumacaneta(S-Pen)paraousuárioin-
+teragirnatelaalémdotouch.E,incrivelmente,essacanetatemtecnologiaparaser
+detectadasemtocaratelae,portanto,dispara hovernormalmente.Háaindanovos
+smartphonesdaSonyedaSamsungqueusamessaideiaparadetectaraproximidade
+dodedodatelaedispararo hover.
+Maisainda:apseudo-classe:hoverdoCSSésuportadaempraticamentetodos
+osnavegadoresmóveis!
+OiOS,porexemplo,aplicaessapseudo-classequandopercebequeositepre-
+cisadelapramostrarconteúdo.OSafariéespertoevêsevocêusa displayou
+visibilityládentroedisparao:hoverquandoousuáriodáoprimeirotap.Eles
+claramenteestão tentandoresolverosproblemasdeacessibilidadedosmilhões de
+sitesporaíqueusamhoverpraesconderemostrarconteúdo,comomenus. Mas
+essaabordagemtemproblemastambém.Seforalgoclicável,oeventodecliquenão
+181
+
+## Página 190
+
+CasadoCódigo
+disparanoprimeirotoque.Oprimeirotapéusadopraligarohovereéprecisofazer
+umsegundotappradispararoeventomesmo(http://www.nczonline.net/blog/2012/
+07/05/ios-has-a-hover-problem/).
+JáoInternetExplorersuportao:hovermassóenquantoousuárioestivercomo
+dedonatelaemcimadoelemento.Assimqueeletirarodedoo:hoversai,parecido
+comomousenoDesktop. Masamaioriadosoutrosnavegadoresmóveisdeixao
+:hoverativadoapósoprimeirotoqueesóotiraquandoousuáriotocaemoutro
+lugar.
+Comrelação aJavaScript,hátambémmuitasinconsistênciasnodisparodos
+eventosdemouse(comoomousemove).
+Demaneirageral,arecomendaçãoénãodependerdehoverparafuncionali-
+dadesimportantes. V o c êpodeusarohoverprafazeralgumagradinhoadicional
+paraousuáriodemouse,maselenãodeveserobrigatório.U mmenupodeserim-
+plementadocomcliqueeoferecerohovercomo progressive enhancementparaos
+navegadorescomsuporte.Massempregarantaquetodassuaspáginasfuncionem
+integralmentesem hover.
+182
+
+## Página 191
+
+Capítulo24
+U s eosnovosinputtypessemânticos
+doHTML5
+Háquemdigaqueosdispositivosmóveissãoaparelhosparaconsumodeinforma-
+ções.Éverdade,sãoexcelentesdispositivospranavegarnaW e b ,lernotícias,checar
+unsemails,ouvirmúsica,verfilmeseassimpordiante.MasaW e bdehojeémuito
+maissobrecolaboração:postarnasredessociais,responderemails,comentarnos
+siteseblog,editarumartigonaWikipedia.Equeremosfazertudoissonocelularou
+notablet.
+Éverdadequedigitarumemaillongonatelinhadocelularnãoéumatarefafácil.
+Masseenganaodesenvolvedorqueachaqueousuárionãovaitentarfazerisso.Os
+dispositivosmóveissão constantementeusadosnaproduçãodeconteúdo,apesar
+dassuaslimitações deusabilidade.
+Éumagrandecontradição. MasganhaquemconseguirfazerseusiteouA p p
+maisusável,apesardadificuldadenatural.
+Pensarbememcomoseususuáriosvãointeragircomoscamposeformulários
+
+## Página 192
+
+CasadoCódigo
+dasuaaplicaçãoéessencial.Eháalgunstruquesprafacilitartudoisso.
+Novosinputtypes
+V o c êjácrioumuitosformuláriosHTMLnavida. Jáescreveuvários<input
+type="text">. Durantemuitotempo,eraissoquetínhamosdeopção paracriar
+camposdeentradadetexto. Nomáximo,vocêfaziaum <textarea>pracampos
+maiores.
+Claro,oHTMLtinhaoutrostipos,como password, radioou checkbox,mas
+todospracomponentesbemespecíficos.Queriaumcampopradigitartexto,sejaele
+onomedeusuário,seuemailouadatadenascimento?Era<input type="text">
+semdúvida.
+Nãomais. OHTML5trouxemuitosnovos i n p u ttypes,como search, email,
+teleoutros.Eoqueacontecequandovocêusaessealgumdessestiposnaprática?
+V e j aumscreenshotnoChrome:
+Figura24.1:URLdoexemplo:http://sergiolopes.org/m9
+Absolutamentenada.Querdizer,pelomenos,nãovisualmente.Elescontinuam
+sendocamposdetextonormais.Maselesganharamumnovosignificado.Eaparte
+interessantedissoéqueestáacargodonavegadorinterpretaressenovosignificado
+e,eventualmente,proveralgumafuncionalidadeamaisporcausadisso.
+OsDesktopseNotebookstêmaquelestecladoschatos,comteclasfísicasapara-
+fusadasprasemprenomesmolugar.Jáasnovasfantásticastelas touchnãotêmessa
+184
+
+## Página 193
+
+CasadoCódigo Capítulo24. Us eosnovosinputtypessemânticosdoHTML5
+limitação!U mtecladovirtualédesenhadonatelaparaousuáriointeragir.Eaparte
+divertidaéqueelenãoéimutávelcomoostecladosfísicossemgraça.Eosistema
+realmentemudaacaradotecladodeacordocomocontextodeuso. Ecomoele
+sabeocontextodeuso?Interpretandoo significado especialquedemosaosnossos
+inputs.
+V e j aamesmapáginadeantes,agoranumiPhone,comfoconocampo<input
+type="text">enocampo<input type="email">:
+Figura24.2:InputtexteinputemailnoiPhone.
+ReparenotecladodoiPhone.Diferençasutilmasessencialparaboausabili-
+dade.Sócolocaratecla@láembaixojáajudamuitoousuárioadigitarseuemail.E
+cadanavegadorecadasistematêmaliberdadedeinterpretarostipossemânticosdo
+HTML5daformaquemaisseencaixar.
+NoAndroid,porexemplo,ousuáriopodeinstalartecladoscustomizados.U m
+deles,queeugostomuito,o S w i ft XK e yvaialémquandoencontraumcapodotipo
+email:elemostranãosóo@,comocompletadomínioscomunsdosusuáriosterem:
+185
+
+## Página 194
+
+CasadoCódigo
+Figura24.3:InputemailnoAndroidcomtecladoSwiftXKey.
+EnumDesktopemquenãoháessetruquedotecladovirtual?Ocampoéren-
+derizadocomoumcampotextonormalmente.Masnadaimpedequeonavegador
+melhoreaexperiênciadousuáriodeoutrasmaneirasnofuturo—porexemplo,pro-
+vendoumautocompletardaagendadeendereçosdousuáriocasosejaumcampo
+email.
+Issosemcitarqueumasemânticamaisdefinida,comoadessesnovosinput
+types,ajudaemoutraspartestambém.orecursodegerenciarusuáriosesenhasno
+navegadorpodeficarmaisespertoagoraqueelesabeexatamentequeaquelecampo
+éemail.Outramelhoriaéqueonavegadorpodeajudaravalidarocampodeacordo
+comregrasespecíficasatreladasàqueletipo.Aliás,nosnavegadoresquesuportam
+a Validation APIdoHTML5,éexatamenteissoqueacontecequandovocêfazum
+campodotipoemail.
+Sãováriososbenefíciosdeseusarosnovosinputtypes,masvamosnosatrelar
+àsfacilidadesdeusabilidadeparausuáriosemtelastouch.
+186
+
+## Página 195
+
+CasadoCódigo Capítulo24. Us eosnovosinputtypessemânticosdoHTML5
+Ehámuitosoutrostiposalémdoemail.Otipourlajudaadigitarumendereço
+naW e bejácontacomumaajudinhanoteclado:
+Figura24.4:TecladonoiOSparaURL,sembarradeespaços,ecomteclasamais.
+Digitar um telefone, então, fica infinitamente mais fácilcom um <input
+type="tel">. Otecladosetransformacompletamente,prafacilitaradigitaçãode
+númeroseseparadores:
+187
+
+## Página 196
+
+CasadoCódigo
+Figura24.5:InputtelnoiPhone.
+Camposparadatasehorários
+Outrocomponenteimportanteéodedatas.Duranteanos,acostumamo-nosa
+usarcomponentesJavaScriptparacriarumcalendáriocustomizadononavegador
+eevitarqueousuáriodigitasseadatanamão. Masissonãofuncionaemtelas
+touch.Querdizer,ocomponenteatéabreeéfuncional,massuausabilidadeotorna
+absolutamenteimprestável.Játentouabrirumcalendáriode30diastodosladoalado
+eselecionarumdatacomodedãonumatela touch?Impossível.
+Asplataformasmóveisresolveramesseproblemacomcalendáriosnativosmais
+usáveis.Écomumumainterfacesemelhanteaumcilindroqueousuáriogirapra
+escolheradatafacilmente:
+188
+
+## Página 197
+
+CasadoCódigo Capítulo24. Us eosnovosinputtypessemânticosdoHTML5
+Figura24.6:InputdatenoiPhone.
+ImaginerecriaressaexperiêncianonossoantigocalendárioemJavaScript.Enão
+ésó:noDesktop,vocêprovavelmentevaiquererocalendáriotradicionaljáqueusar
+essaversãocilíndricaseriaumsaconummouse. Queremosamelhorexperiência
+deusabilidadepossível,deacordocomcadaplataforma.Comoresolver?HTML5,
+claro.
+U m<input type="date">faztudoisso.Naverdade,fazpoucacoisa:sódizpro
+navegadorquequeremosentrarcomumadata.Eonavegadorseadaptadamelhor
+formapossível,levandoemcontaaplataforma,tipodedispositivoeconsistência
+visual.V e j aomesmocampodatenoFirefoxMobileenoChromeDesktop:
+189
+
+## Página 198
+
+CasadoCódigo
+Figura24.7:FirefoxMobile
+Figura24.8:ChromeDesktop
+190
+
+## Página 199
+
+CasadoCódigo Capítulo24. Us eosnovosinputtypessemânticosdoHTML5
+Diferençasgritantes,oqueéótimo.Talvezvocêtenhaquegastarumtempoex-
+plicandoparaoseudesigner,ouconvencendoasimesmo,queabelezadaW e béjusto
+não controlar os aspectos visuaisdessecomponente.Ausabilidadedocomponente
+nativodonavegadordousuárioémelhorqueadequalquercalendáriocustomizado
+emJavaScript,pormaisbonitoqueseja.Issoporqueocomponentenativoécontex-
+tualefamiliar.Pormaisbonitoqueseudesigneracheaquelesupercalendáriorosa
+choquequeeledesenhou,essanãoéaexperiênciamaisfamiliarprousuário.
+Eessacustomizaçãonãoésóadaptarovisualàplataformadousuário.Ona-
+vegadorpodetambémadaptarradicalmenteainterfacecombasenalocalizaçãoe
+línguadousuário.Calendáriosedatassãobemcomplicadosdemostraremvárias
+línguas;cada localeusaumformatodiferente,umanotaçãodiferente.Oinput date
+donavegadorcuidadissotudo.
+Figura24.9:iOSconfiguradoemportuguêseeminglês.
+Outrosinputsrelacionadosadatasehorários,alémdodate:month,week,time,
+datetimeedatetime-local—esseúltimo,representandoummomentosemestar
+atreladoatimezones.V o c êpodetestartodoselesnoseuaparelhoeverasinterfaces
+napáginaaseguir:
+191
+
+## Página 200
+
+CasadoCódigo
+Figura24.10:http://sergiolopes.org/m10
+Figura24.11:InputdatetimenoiPhone.
+U múltimopontoimportanteéqueaespecificaçãogaranteconsistêncianare-
+presentaçãodadatainternamente,independentementedo localeedaplataformado
+usuário.Porbaixodospanos,asdatassãorepresentadassempreemISO-8601.
+Issoquerdizerqueumcalendárioparaumdispositivoamericanovai exibir
+paraousuárioadatacomomm/dd/yy,enquanto,emportuguês,seráexibidocomo
+dd/mm/yyyy.Masovalorquevocêrecebenoservidorouquandomanipularocampo
+192
+
+## Página 201
+
+CasadoCódigo Capítulo24. Us eosnovosinputtypessemânticosdoHTML5
+comJS,serásempreyyyy-mm-dd.Essanormalizaçãofacilitamuitoavidadodesen-
+volvedor,aomesmotempoquegarantemáximausabilidadenaexibiçãodosdados
+paraousuário.
+Osuporteatodasessasfuncionalidadestemcrescidorapidamente,masainda
+nãoétotal.Incrivelmente,osnavegadoresmóveisapresentamsuportemelhor,talvez
+pelaurgênciadesemelhorarausabilidadenoscelularesetabletsantesmesmodos
+Desktops.MuitacoisajáfuncionanoMobileSafaridoiOS,masnãonoSafarido
+Desktop,porexemplo;mesmacoisacomoChrome.
+Paramelhoraraquestãodasincompatibilidades,vocêtalvezqueirausaralguma
+bibliotecaJavaScriptamaisparamostrarocalendáriocasoonavegadornãosuporte
+osinputtypesnovosdoHTML5.Maslembre-sedefazerissocomofallback;prefira
+sempreoscomponentesnativos,sedisponíveis.
+Númeroseexpressõesregulares
+Parafazeraentradadenúmeros,comoumaquantidade,temosalgunstruques.
+Existeo <input type="number">quemudaotecladoparaaversãonuméricanos
+dispositivostouch:
+193
+
+## Página 202
+
+CasadoCódigo
+Figura24.12:InputnumbernoAndroid(FirefoxMobilenoSamsungGalaxySII)e
+noiPhone.
+NoDesktop,écomumaparecerumainterfacecomsetasparaaumentaredimi-
+nuironúmero.Épossíveltambémusarosatributosmaxeminparacontrolarovalor,
+estepsindicandoquantodeveserincrementadoquandoousuárioclicarnaseta:
+194
+
+## Página 203
+
+CasadoCódigo Capítulo24. Us eosnovosinputtypessemânticosdoHTML5
+Figura 24.13: Input number no Chrome Desktop. URL do exemplo: http://
+sergiolopes.org/m11
+Sereparar,porém,notecladodoiOS,veráqueelemostraaversão numérica,
+masqueapresentasímbolosepontuação também.Existeumtruqueadicionalno
+iOSqueéusaroatributopattern="[0-9]*"eissovaidispararumtecladofocado
+nosnúmeros,parecidocomousadonoinputdetelefone:
+195
+
+## Página 204
+
+CasadoCódigo
+Figura24.14:InputcompatternnumériconoiOS.
+Esse atributo pattern permite que especifiquemos uma expressão regular
+(usandoasintaxedoJavaScript). Elefoipensadomaisprapartedevalidarofor-
+matodeumcertocampo(éfácilcriarumcampoparaCEP,porexemplo,usando
+pattern="[0-9]{5}-[0-9]{3}”).
+Mas,alémdavalidação,onavegadorpodeusaropatternparaajustarsuainter-
+faceeoteclado. OcasomaisnotórioéotecladonumériconoiOSquevimos. E,
+prafalaraverdade,nuncavioutrocenáriojáimplementadonaprática.Ocasodo
+CEP,porexemplo,vaidispararotecladonormal(nemonumérico).Masédese
+esperarqueosnavegadoresfiquemmaisespertosnofuturoeconsigamatémostrar
+umtecladobaseadoapenasnaexpressãoregular.
+Paramelhorexperiênciadousuário,portanto,recomendoousodeum<input
+type="number"pattern="[0-9]*">paranúmeros.
+Sevocêquisertrabalharcomvaloresdecimais,ésóajustaroparâmetrostep
+paraovalor 0.01-opadrão é1. Nessecaso,porém,temosqueabrirmão do
+pattern="[0-9]*",senãoousuárionoiOSnãovaiconseguirdigitarpontosevír-
+gulas.Orecomendadopassaaserentão <input type="number"step="0.01">.
+196
+
+## Página 205
+
+CasadoCódigo Capítulo24. Us eosnovosinputtypessemânticosdoHTML5
+Eaquitambémodispositivopodemostrarainterfaceusandoseparadoresde
+decimalemilharbaseadosnalínguadousuário.Mas,internamente,étudonorma-
+lizadoparapontoscomoseparadordecimalevírgulasparaseparadoresdemilhar.
+Maiscomponentes
+OutrosnovosinputtypesdoHTML5incluemorangeeocolor.
+Figura24.15:InputrangeeinputcolornoChromedoMac.URLdoexemplo:http:
+//sergiolopes.org/m12
+O rangepermiteaentradadeumdadonuméricocomrestrição de maxe min
+eumainterfacemenosprecisa,porémmaissimplesefácildeusar.Osdispositivos
+móveisjácomeçaramasuportarisso,comalgumasdiferenças. NoiOS,ousuário
+podearrastarodedoparaselecionarovalor.NoAndroid,eleclicaemalgumponto
+nabarra.
+Porfim,oinputcolormostraumainterfaceparaseleçãodecores,masseusu-
+porteébemmaisraroaindanosnavegadores.
+AtributosiOS
+OiOStemunstruquesadicionaisquenãofazempartedaespecificaçãomasque
+são úteisenão fazemmalaosnavegadoresquenão suportam. Éumaespéciede
+progressive enhancement.
+197
+
+## Página 206
+
+CasadoCódigo
+NoiOS,vocêpodecontrolarseumcampovaiserautocorrigidoounão pelo
+sistema.T a m b é mépossívelcontrolaramaneiracomootecladoinsereletrasmaiús-
+culasnoiníciodocampoounão.
+<input name="username" autocorrect="none" autocapitalize="on">
+Porpadrão,oiOScorrigeecapitalizatodososcampostexto,oquepodenãoser
+interessanteemmuitoscasos. U mcampo usernameou email,porexemplo,pode
+ficarmelhorcomessasopções desligadas.
+198
+
+## Página 207
+
+Capítulo25
+Revisitandoosantigoscomponentes
+deformulários
+NãoéporqueoHTML5trouxeummontedenovidadesnosnossosinputsquenão
+temosquerepensaralgunstruquesdoscomponentes“antigos”.
+Password
+O<input type="password">éumvelhoconhecido,mascarandosenhaseou-
+trosdadossigilososcomasteriscosoualgodotipo.Digitarsenhasemtecladosvir-
+tuaisemtouchscreenémeiotrabalhoso,entãoosdispositivostentammelhorar.
+Comoachancedevocêerrardigitandonaquelatelinhaéalta,écomumodis-
+positivoexibiroúltimocaracteredasenhaporalgunssegundosapósserdigitado,
+antesdetrocarpeloasterisco.Issojáfacilitaumpouco.
+
+## Página 208
+
+CasadoCódigo
+Masdigitarsenhascontinuasendobastanteruimnatelapequenaenoteclado
+imprecisodeumsmartphone.Porisso,valeapenarepensaressescampos.
+Háquemdiga—euinclusive—quedevíamosusarsimplesinputtextemvezde
+password.Mostrarasenhaparaousuáriosempre,assimeleconsegueverseuserrose
+corrigi-los.Nãoprecisoexplicarparaaaudiênciadesselivro,claro,queissonãotem
+absolutamentenenhumaimplicaçãoemsegurança. Osasteriscossó“protegem”
+dequemespiavocêdigitando(oudeumvírusquecapturasuatela);massealguém
+quiserroubarsuasenha,bastaolharvocêdigitandoaoinvésdeolharpratela(ouusar
+umkeylogger). Segurançadesenhasécriptografia,SSL,sótrafegá-laviaHTTPS,
+usarautenticaçãoem2fasescomtokensetc.Eissoindependeseasenhaévisívelna
+telaouusaasteriscos.
+Emboranós,deumaaudiênciamaistécnica,compreendamosasimplicações de
+segurança,ousuáriofinalpodenãosertãoinformado.Osasteriscostêmafunçãode
+darumacertasegurançapsicológicaparaousuáriocomum—oque,obviamente,
+jáestáerrado,poiséuma f a l s asegurança.Masousuáriopodeficardesconfiadose
+seusitedeixarsenhasvisíveisnatela.
+U m arecomendaçãoéincluirumcheckboxquepermitaaousuáriotrocaroses-
+tadosdevisíveleinvisível.Praimplementar,bastaumJavaScriptsimplesquetrocao
+typeentretextepassword.Prousuário,dáumasegurançaamais.Evocêpodein-
+crementarissocomfraseseducativasqueexplicamqueexibirasenhanãoéinseguro
+equeeledeveobservarocadeadonabarradeendereços.
+200
+
+## Página 209
+
+CasadoCódigo Capítulo25.Revisitandoosantigoscomponentesdeformulários
+Figura25.1:Camposenhacomcheckboxpradeixarvisívelouinvisível.Naimagem,
+osdoisestadospossíveis.URLdoexemplo:http://sergiolopes.org/m13
+U mmeiotermointeressanteéoencontradonositemobiledoFacebook.Para
+não chocarlogodecaraemostrarasenhadireto,oFacebookesperavocêerrara
+senhaumavez,enasegundatentativatedáaopçãodeexibirasenha.
+201
+
+## Página 210
+
+CasadoCódigo
+Figura25.2:InterfacedositedoFacebookmobilequandoerroasenhaumavez.
+Outramelhoriadeusabilidadequevocêganhaaoexibirassenhas,éeconomizar
+umcamponoformuláriodecadastro.V o c ênãoprecisamaisdocampode‘confirmar
+senha’,jáqueafunçãodeleésógarantirquesuanovasenhaérealmenteaquevocê
+quer.Agoraquevocêvêasenhanatela,nãoprecisamaisdaconfirmação.
+Selectnativo
+U mcomponentetradicionalquemereceumpequenocomentárioéo<select>.
+Conhecidocomo dropdownou comboboxnomundoDesktoptradicional,eleganha
+umanovacaranomundomobile.
+OiOSmostrao<select>comumainterfaceotimizadapratouch,usandoum
+cilindroparaousuárioescolheraopção.OAndroidmostraumaespéciedepopup
+tambémotimizadapratouch.
+202
+
+## Página 211
+
+CasadoCódigo Capítulo25.Revisitandoosantigoscomponentesdeformulários
+Figura25.3:SelectnoiPhone.URLdoexemplo:http://sergiolopes.org/m14
+Oselectdeixadeteracaradecombobox,oqueéexcelente.Denovo,amelhor
+interface,adaptadaporcadanavegadorparacadasituaçãoeplataforma.Isso,claro,
+sevocêusaro<select>simplesenormaldoHTML.
+Infelizmente,émuitocomumencontrarbibliotecasdecomponentequesobres-
+crevemoscomboboxcominterfacescustomizadas.Maisbonitas,commaisfunções
+emaisusáveisnoDesktop.Maspodemserruinsdeusabilidadenomobile.Porisso,
+prefiraoselectnativosemprequeder.
+File
+FazeruploaddearquivosviaHTMLnãoéalgotrivialnosaparelhosmobile.Co-
+mumnoDesktop,ainterfacedeclicaresimplesmenteescolherumarquivonãoestá
+presenteemváriosdispositivos. Muitasplataformas,comooiOS,sequertêmum
+sistemadearquivosparaousuárionavegar.NoiOS,osarquivosexistemdentrode
+seusprogramasevocêosgerenciaporlá—fotos,vídeos,etc.NoAndroid,atéexiste
+umsistemadearquivos,maselenãoéexpostomuitoclaramenteparaousuário.
+203
+
+## Página 212
+
+CasadoCódigo
+Quandovocêusaum<input type="file">,écomumonavegadormóvelofe-
+receropções paraousuáriotirarumafoto,gravarumvídeo,navegarnagaleriade
+fotosexistenteoualgodotipo:
+Figura25.4:iOSoferecetirarumafotoougravarumvídeosnoscamposdeupload
+dearquivos.
+Figura25.5:http://sergiolopes.org/m15
+AinterfaceanteriorfoiadicionadanoiOS6,eapenaspermiteenviodefotose
+204
+
+## Página 213
+
+CasadoCódigo Capítulo25.Revisitandoosantigoscomponentesdeformulários
+vídeos(atéaversão5.xdoiOS,nãoexistiauploaddearquivosdenenhumaforma).
+NoAndroid,aindaépossívelenviaroutrosarquivosdesdequeousuáriotenhains-
+taladoalgumaplicativoquedisponibilizeisso,comoDropboxouumnavegadorde
+arquivos.
+Emgeral,portanto,oenviodearquivosemdispositivosmóveisgiraemtornode
+fotosevídeos.NoHTML5,épossívelatéespecificarquetipodearquivovocêquer
+comoparâmetro
+<input type="file" accept="image/*">
+<input type="file" accept="video/*">
+<input type="file" accept="audio/*">
+OiOSsuportaasopções deimagemevideo,masnãodegravaçãodeáudio.O
+Androidsuportauploadhábastantetempo,massóentendeo acceptapartirda
+versão4.
+Alémdisso,háumaextensãoaoHTML5,chamadade HTML M e d i aCapture
+quepermiteindicarquequeremosumarquivonovo,capturadopelacâmeraoumi-
+crofonedousuárionaquelemomento.Éumaespéciedeatalhodiretopracapturada
+mídia.Bastaadicionaroatributocapture:
+<input type="file" accept="image/*" capture>
+Enquantoescrevoesselivro,nãoconseguiacharnenhumnavegadorsuportando
+essafuncionalidadeainda—testeiatéiOS6.1,Android4.2,enavegadoresmobile
+alternativoscomoOpera,FirefoxeChrome.
+OqueexisteésuportesomentenoAndroiddeumaimplementaçãodaversão
+antigadessaespecificação.Nasintaxevelha,amesmacoisaeraescritaassim:
+<input type="file" accept="image/*;capture=camera">
+Oquerecomendoénão dependeraindadacapturadodispositivoeusaro
+acceptsimplesquevimosantes.Eleéoquetrásmaissuportenasplataformas.Se
+quiser,jádeixeoatributocapturetambém,maspensandonofuturo.Eunãousaria
+aversãoantigaqueoAndroidsuporta,porqueumdiatodomundovaiprasintaxe
+nova.
+E,comtudoisso,fiqueatentoàsversões novasdasplataformaseàsnovidades.
+Tudomudabemrápido.
+205
+
+## Página 215
+
+Capítulo26
+Usabilidadedeformuláriosmobile
+Alémdepensarnostiposdecamposdoseuformulário,háalgumasoutrascoisas
+quevocêpodefazerpramelhorarbastanteausabilidadedeles,pensandomaisainda
+nosusuáriosmobile.
+Menoscampos
+U mformuláriocommenoscamposémaisfácildeusar.Óbvio. Maspensenas
+implicações dissopraseusiteousuaA p p .Realmentevocêprecisadaquelemontede
+campos?
+Quandofalamosdapráticademostrarasenhaaoinvésdosasteriscos,comentei
+que,comisso,vocênão precisadocampode‘confirmarsenha’noformuláriode
+cadastro.U mcampoamenos.Seráquenãoconseguimospensaremoutroscenários
+ondeoscampospodemserreduzidos?
+Háquemesteja,porexemplo,pensandoemunificaroscamposdepagamento
+decartãodecréditoemumsó—númerodocartão,datadevencimentoecódigode
+verificação(http://zdfs.github.com/toscani/paymentInfo/).
+
+## Página 216
+
+CasadoCódigo
+T o d otruquepradiminuiraquantidadedecamposéválida.Prefiracamposde
+escolha:checkbox,radio,select,emvezdecamposdetexto.
+V e j asevocêrealmenteprecisadetodosaquelesdadosnaquelemomento.T a l -
+vezvocêpossarepensarseuformuláriodecompraprapedirsomenteinformações
+essenciasnocelular,emandarumemailprousuáriopreenchercampossecundários
+depois,emcasa,comcalma.
+Sejacriativo.Tudovalepradiminuiroatritodousuáriocomsuaaplicação. E
+lembrequeinputdedadoséumadascoisasmaistraumáticas.
+Geolocationpraendereço
+Porváriasrazõesvocêpodeacabarprecisandopedirprousuáriooendereçodele,
+oualgoatémaissimplescomopaísoucidade.Edigitarminhacidadeparececadavez
+maisimbecilquandosabemosqueéfácilobteressainformaçãoautomaticamente,
+aindamaisemdispositivosmóveiscomGPS.
+ComHTML5,émuitofácilobterascoordenadasdoGPSdousuáriousandoa
+GeolocationAPIcomumcódigoJavaScriptridiculamentefácil:
+navigator.geolocation.getCurrentPosition(function(p){
+var lat = p.coords.latitude;
+var lon = p.coords.longitude;
+// descobre a cidade a partir das coordenadas
+});
+Claro,nemtodobrowseroudispositivosuportaisso. Masvocêpodeoferecer
+comoumalgoamais, progressive enhancement.U mdetalheéqueousuárioprecisa
+autorizaraexecuçãodessaAPInoseusite,porquestões deprivacidade.Aprimeira
+vezquevocêrodarisso,eleperguntaalgoassim:
+208
+
+## Página 217
+
+CasadoCódigo Capítulo26. Usabilidadedeformuláriosmobile
+Figura26.1:SafarinoiOSpedindopermissãoprausargeolocationnosite.
+Aliás,não éumaboaideiaexecutarumcódigodegeolocalização automatica-
+mentenapágina.Émuitointrusivoprousuário.Omelhorédeixareledisparar
+algumaação conscientedequeissopediráalocalização dele. V o c êpodeexplicar
+issonapáginaeusaríconescomosquaiselejáestáacostumadoejáassociacom
+geolocalização
+Depossedalatitudeelongitudedousuário,vocêvaiprecisardealgumserviço
+pratransformarissonumendereçoreal.V á r i a sAPIsdemapasdisponibilizamisso,
+comooGoogleMaps.U mgratuitoebemfácildeusaréoOpenStreetMaps.V o c ê
+passaascoordenadaseeledevolveumJSONPbemsimples:
+// jsonp openstreetmap
+var script = document.createElement('script');
+script.src = "http://nominatim.openstreetmap.org/reverse?format=json"
++ "&json_callback=pegaCidade&lat="+ lat +"&lon=" + lon;
+document.head.appendChild(script)
+// função que extrai o dado da cidade e seta o input com o valor
+209
+
+## Página 218
+
+CasadoCódigo
+function pegaCidade(data) {
+$('input[name=cidade]').val(data.address.city);
+}
+Hámuitasoutrasopções noOpenStreetMaps,assimcomonaprópriaGeoloca-
+tionAPI.Pesquiseevejaoquepodeseaplicaravocê.Meuintuitoaquiémostrar
+possibilidadesparasimplificarseusformuláriosemelhoraraexperiênciadousuário.
+Aliás,outraopção,casovocênãoprecisedoendereçoexato(cidadeoupaísbas-
+tam),éanalisaroendereçoIPdousuárioededuzirdaí.Existemserviçoscomgigan-
+tescastabelasdeIPqueconseguemtedizeralocalizaçãoaproximadadousuário.O
+melhoréqueissonãoexigenenhumapermissãoamaisdousuário,entãoéumatrito
+amenos.ElessãomenosprecisosqueGPS,maspodemservircomovalorpadrão
+noscampos-ousuáriopodeeditarcasoochutevenhaerrado.
+OutrospequenostruquesdeJS
+Assimcomoaideiadeusargeolocalizaçãoprapreencherformulários,vocêpode
+ajudarseususuárioscomcriatividadeeváriosoutrospequenostruques.
+Assumaquedigitarnocelularéruimevaidarerrado. Preparesuaaplicação
+pararesponderaerros. U m abibliotecaJSgenialéaMailcheck.jsdopessoalda
+Kicksend(https://github.com/Kicksend/mailcheck).Elaoferecesugestões decorre-
+çãoparacamposdeemailcomerroscomuns-porexemplo,trocargnailporgmail.
+Simplesmasgenial.
+Figura26.2:ExemplodeusodoMailcheck.jsnoformuláriodecontatodoSiteda
+Caelum.
+Outropequenodetalhequeajudaquandoascoisasdãoerrado:salvarosdados
+queousuáriovaidigitandomesmoantesdeeleenviaroformulário.V o c êpode
+salvarlocalmenteusandoolocalStorageerecuperaressesdadosdepoiscasoalgo
+aconteçacomonavegadordousuário:apáginapodetravar,ouousuáriodescuidado
+podedarreloadsemperceber!
+210
+
+## Página 219
+
+CasadoCódigo Capítulo26. Usabilidadedeformuláriosmobile
+Outraboapedidasãotextareasquecrescemautomaticamente.Aquelatelape-
+quenadocelulartornadifícilagentecolocarumcampodetextareaqueagradea
+todomundo.Odesignerquercolocarumpequenopranãoocuparmuitoespaçona
+telaecausarscroll,masousuáriomaisanimadopodequererdigitarumtextogi-
+gantelá.ComumdeencontraremA p p smóveis,ostextareasquecrescemconforme
+otextodentrodelesaumentatambémpodeserimplementadoemJavaScriptcom
+facilidade.Façaisso!
+Prefiralabelsnotopo
+Existemestudosdeusabilidadequemostramqueémelhorcolocaroslabelsno
+topodocampoemvezdedolado.Oprincípiobásicoéqueousuáriomoveoolho
+decimaprabaixolinearmente,aoinvésdefazerumzigzag:
+Figura26.3: Movimentodosolhosaopreencherformulário.(imagem: http://
+uxmovement.com)
+DápracitaroutrosmotivosquetornamoslabelsnotopomelhorespraW e b
+toda. Émaisfácil,porexemplo,usarlabelscomtamanhosdiferentessemdeixar
+olayoutdesalinhado. Ouaindatraduziroslabelsparaoutralínguasemcorrero
+riscodequebrarolayout.Emaisrazões que,pormenoresquepareçam,fazemsim
+adiferençanausabilidade.
+211
+
+## Página 220
+
+CasadoCódigo
+Masemmobile?Éessencialcolocaroslabelsnotopo.
+Usuáriosmobile,comaquelatelinhaminúsculadeseussmartphones,estãoacos-
+tumadosadarzoompravermelhorapágina(e,emalgumassituações, onavegador
+dázoomsozinhoseocampoforpequeno!).Seseuslabelsficamnaesquerda,eles
+ficamescondidosquandoousuáriodázoomnocampo:
+Figura26.4: Oexemplotemumcampocomlabelaesquerda. Deiumzoomna
+páginaereparecomoolabelficacortado.URLdodemo:http://sergiolopes.org/m16
+Omelhoréposicioná-losnotopo,ondeémaisfácildever,mesmocomzoom.
+Placeholdersnãosãolabels
+Falandoemlabels,muitosdesignersficamincomodadoscomolabelnotopo
+ocuparumalinhasópraele.Issofazoformcrescerverticalmente.Setivermuitos
+campos,oscrollseráinevitável.
+Foiassimquesurgiuumatendênciaestranhanomundomóvel: adecolocar
+olabel dentrodocampo. PioraindaquandoissoficoufácildemaiscomHTML5
+usandooatributoplaceholdernoinput:
+212
+
+## Página 221
+
+CasadoCódigo Capítulo26. Usabilidadedeformuláriosmobile
+<input type="text" placeholder="Seu nome">
+Ocomportamentodeum placeholderémostraramensagemdentrodocampo
+atéousuáriodarfocooucomeçaradigitaralgo.Aíotextodousuáriotomaolugar
+dotextodo placeholder.
+Essaabordagemtemmuitosproblemas.Opiordeles,deusabilidade,équenão
+temosmaisacessoaotextodolabeldepoisquecomeçamosapreencherocampo.
+Issoépéssimo.Seoformtemmuitoscampos(enemprecisamsertantosassim),o
+usuárioesqueceparaqueserviacadacampo.U musuáriodesatento(eéoquemais
+temosemmobile)podeesquecerafunçãodocampoenquantoestánomeiodele.
+Háoutrosproblemastambém,emespecialdeacessibilidade.Oplaceholderé
+umvalordeexemploparaocampoenão temasemânticadeumlabelparaum
+leitordetelas.Ébemruim.A t édápracontornarcolocandoo<label>noHTMLe
+escondendocomCSS,ouimplementandoafunçãodolabelinternoviaJavaScriptao
+invésdeusaroatributoplaceholder.Masaindatemosoproblemadeusabilidade.
+Sevocêforparaumaabordagemdecolocarolabelinterno,pelomenosminimize
+osproblemas.Nãouseissoemformulárioslongos—usarnaqueleformdelogincom
+só2campospodeserperdoável,masnãonumformuláriode5campos.Evejasevocê
+não consegueadicionaralgumlembretevisualdoqueéaquelecampo,comoum
+pequenoíconenaesquerda.Issojáajudabastanteausabilidadedoseuformulário.
+Tamanhoadequadoparaoscamposdetexto
+OSafarinoiOScostumarenderizar,porpadrão,umcampodetextocomfonte
+11px.Afontebasedodocumento(1em)é16px,masosinputsporalgummotivosão
+menores.
+Sóháumproblema:seocampodetextoficapequeno,oSafaridáumzoomnele
+quandoousuárioderfoco.Issoprapessoapodervermelhoroqueestádigitando.
+Masessezooméumproblemadeusabilidade. Éumzoomautomáticoquenão é
+disparadointencionalmenteparaousuário.
+Oidealégarantirqueseuscampostenhamfontedetamanholegível(usabili-
+dade!)desdeoinício,assimoiOSnãoprecisadarzoom.Ésódarumfont-sizede
+16pxoumaisepronto.E,nessaalturadocampeonato,nemprecisodizerqueaoutra
+solução(desabilitarozoomnobrowser)nãodeveserfeitanunca.
+213
+
+## Página 223
+
+P a r t eV
+Conclusão
+Éisso.MeuobjetivoaquieramostraraimportânciadaW e bmobile.Quisrefor-
+çaropotencialdaW e bcomoplataformaúnicaedemocrática;opapelfundamental
+dodesignresponsivoeestratégiascomo mobile-first;aimportânciadeumdesign
+adaptadoàsnecessidadesdousuário;eumfoconaexperiênciafinalenausabili-
+dade.
+AgentepodiacontinuarfalandodeW e beMobileemmaisalgumascentenas
+depáginaseaindaficariacoisadefora. Esperoqueaseleçãodetemasdesselivro
+tenhaatendidoaoquevocêprecisava. Sevocêachaquealgumtemaimportante
+ficoufaltando,nãodeixedemecontar—quemsabenãosaiamoutroslivrosdessas
+ideias.
+Obrigadopelacompanhia.

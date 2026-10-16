@@ -1,0 +1,8749 @@
+---json
+{
+  "id": "introdu__o____arquitetura_e_design_de_software_uma_vis_o_sobre_a_plataforma_java",
+  "title": "INTRODUÇÃO À  ARQUITETURA E DESIGN DE SOFTWARE UMA VISÃO SOBRE A PLATAFORMA JAVA",
+  "categoria": "03-linguagens",
+  "subcategoria": "java",
+  "resumo": "**Arquivo Original:** `INTRODUÇÃO À  ARQUITETURA E DESIGN DE SOFTWARE UMA VISÃO SOBRE A PLATAFORMA JAVA.pdf` **Data Conversão:** 1643798097.0",
+  "gatilhos": [
+    "arquitetura",
+    "design",
+    "introdu",
+    "java",
+    "linguagens",
+    "plataforma",
+    "sobre",
+    "software"
+  ],
+  "perguntas_tipo": [
+    "Como utilizar INTRODUÇÃO À  ARQUITETURA E DESIGN DE SOFTWARE UMA VISÃO SOBRE A PLATAFORMA JAVA?",
+    "Quais as boas praticas de java?"
+  ],
+  "nao_cobre": [],
+  "target_agent": [
+    "general-assistant"
+  ],
+  "source": {
+    "origin": "AllMight Knowledge Base",
+    "original_format": "markdown"
+  },
+  "atualizado_em": "2026-10-15",
+  "verificado_em": "2026-10-15",
+  "dono": "stack-java",
+  "prioridade": 2
+}
+---
+
+# INTRODUÇÃO À  ARQUITETURA E DESIGN DE SOFTWARE UMA VISÃO SOBRE A PLATAFORMA JAVA
+
+> **Arquivo Original:** `INTRODUÇÃO À  ARQUITETURA E DESIGN DE SOFTWARE UMA VISÃO SOBRE A PLATAFORMA JAVA.pdf`
+> **Data Conversão:** 1643798097.0
+
+---
+
+
+## Página 2
+
+© Casa do Código
+Todos os direitos reservados e protegidos pela Lei nº9.610, de 10/02/1998.
+Nenhuma parte deste livro poderá ser reproduzida, nem transmitida, sem auto-
+rização prévia por escrito da editora, sejam quais forem os meios: fotográficos,
+eletrônicos mecânicos, gravação ou quaisquer outros.
+Casa do Código
+Livros para o programador
+Rua Vergueiro, 3185 - 8º andar
+04101-300 – Vila Mariana – São Paulo – SP – Brasil
+
+## Página 5
+
+CasadoCódigo
+“ A n o s s a a v ó C é r e s ”
+–PauloSilveiraeGuilhermeSilveira
+“Aminhaesposa,meuspaisemeuirmão”
+–SérgioLopes
+“ A m e u s p a i s e e s p o s a ”
+–GuilhermeMoreira
+“Ameusamadospais”
+–NicoSteppat
+“Aminhaamadaesposaefamília”
+–Fabio Kung
+i
+
+## Página 7
+
+CasadoCódigo
+Agradecimentos
+DepoisdedoisanosministrandoocursodeArquiteturaeDesignnaCaelum,além
+decincoanoscomumblogdemaisdeduzentosartigostécnicos,pareciafácilescre-
+versobreumassuntoquefazpartedonossodiaadia.
+Terrívelengano.
+Emvezdosseismesesprevistos,passaram-sedoisanos.Doisanostrabalhando
+deformaatornaracessívelpráticasetrade-offsqueaparecemcomfrequênciana
+plataforma.Sãoproblemasqueosdesenvolvedorespassamaenfrentarrapidamente
+aoganharmaisexperiênciaefamiliaridadecomJava.
+JuntaresseconhecimentonãoseriapossívelsemaexistênciadoGUJ.com.br,
+criadoem2002,noqualosusuáriosjátrocarammaisdeummilhãodemensagens.
+Nós,autores,participamosativamentedofórum,oqualnãoatingiriaessamagnitude
+semaajudadoRafaelSteil.
+Tambémnãoseriapossívelorganizaressasideiassemacolabora çãodediversos
+amigosqueasrevisaramediscutiramostemasconosco: LucasCavalcanti,David
+Paniz,CeciliaFernandes,AlbertoSouza,BrunodeOliveira,FábioPimentel,Vinicius
+RobertoeAdalbertoZanata.
+Agradecemosaosqueparticiparameparticipamdaelabora çãodocursoFJ-91
+naCaelum:AdrianodeAlmeida,AndersonLeite,JoséDonizettieDouglasCampos.
+Umaespecialmen çãoaoMaurícioAniche,que,alémderealizarumaminuciosa
+revisão,nosincentivouatodomomentoamelhorarotextoeacortaroquenãofosse
+essencialparaolivro.
+iii
+
+## Página 9
+
+CasadoCódigo
+S o b r eo sa u t o r e s
+Paulo SilveiraébacharelemestreemciênciadacomputaçãopelaUSPecofundador
+daCaelum.PossuiexperiênciacomdesenvolvimentowebnaAlemanha,passando
+peloIBOPEepordoisanoscomoinstrutordaSunMicrosystems.Éumdosfunda-
+doresdoGUJ.com.br,editortécnicodarevistaMundoJecriadordoVRaptor.
+Guilherme SilveiraélídertécnicoecofundadordaCaelum.TrabalhoucomJava
+eTibconaAlemanha,comitterdoXStreamecriadordoRestfulie.Concentraseus
+estudosemservi çosREST.Programadorexperiente,participoudasfinaismundiais
+deprogramaçãonoJapãoenoCanadádoICPCpelotimedaUSPeéarquitetoJava
+certificado(SCEA5).
+S é r g i oL o p e sécoordenadornaunidadeSãoPaulodaCaelum.Programadesde
+2000edesenvolveemJavadesde2003. ÉarquitetoJavacertificado(SCEA5),mo-
+deradordoGUJeparticipanteativodacomunidadeatravésdepalestras,projetos,
+cursoseartigos.
+Guilherme MoreiraéinstrutoreconsultorpelaCaelum,ondefocaseutrabalho
+principalmentecomJavadesde2005,comprojetosinternosetambémdiretamente
+nosclientes.FormadoemProcessamentodeDadospelaFATEC-SPearquitetoJava
+certificado(SCEA5),escreveartigosparaarevistaMundoJ,alémdeserresponsável
+pelaunidadedeBrasíliadaCaelum.
+N i c o S t e p p a téengenheirodecomputaçãoaplicadapelaFachhochschuleBran-
+denburg.Éinstrutor,consultoredesenvolvedorháseteanoscomJavanoBrasilena
+Alemanha.AtuanaunidadeRiodeJaneirodaCaelumeéarquitetoJavacertificado
+(SCEA5).
+F a b i o K u n géengenheirodacomputaçãopelaEscolaPolitécnicadaUSP.Passou
+porweb,Java,Ruby,experiêncianaAlemanha,instrutornaCaelum,responsávelna
+LocawebporCloudComputingenoHerokuemSãoFrancisco. ÉarquitetoJava
+certificado(SCEA5).
+v
+
+## Página 11
+
+CasadoCódigo
+Prefácio
+PorJimWebber.
+O Arquiteto
+Quandopensosobreotermo“arquiteto”,ésemprecomsentimentosconfusos,
+comosuspeitoquesejaocasoparamuitosdenósquetrabalhamcomdesenvolvi-
+mentodesoftwareatualmente.Duranteminhacarreira,ouvidiversasopiniõesdife-
+rentesparaessetermo,mas,paramim,oqueéprincipalparaserumbomarquiteto
+possobuscardosmeusprimeirosdiascomodesenvolvedorprofissional(outentando
+serumprofissional).
+Meuprimeiroempregopareciaserintimidador-apósdiversosanosdepesquisa
+acadêmicadentrodeumdepartamentodeciênciadecomputa çãoemumauniver-
+sidade,entreiemumaempresaquehaviacompradorecentementeumastartupde
+middlewareJavagerenciadaporumgrupodeamigos. Essesamigostrabalhavam
+noramodemiddlewarepordécadase“hackeavam”emJavaatémesmoantesdeele
+teressenome. Sairdazonadeconfortodacomputa çãodealtodesempenho,com
+tecnologiasasquaiseuestavaacostumado,epularparaumdomínionovodepro-
+cessamentodetransa çõesdistribuídascomfocoemCORBAeJ2EEerarealmente
+intimidador.Apesardeterumsensorazoáveldeteoriadesistemasdistribuídos,eu
+jamaishaviaescritoCORBAouJ2EEcomousuário,muitomenoscomodesenvol-
+vedordemiddleware.Foramtemposcomplicados.
+Nolaboratórioondecomeceiatrabalhar,meuscolegasostentavamnomesde
+cargosbaseadosemsuascapacidades(e,suspeito,longevidade!).Possuíamosenge-
+nheiros,engenheirossenioresearquitetos,todososquaistrabalhavamarduamente
+emdesenvolverumexcelentemiddlewaredetransa ção, workflowemensageria.
+Comoumengenheirosênior,eueraumpoucomenosverdedoqueosapenasen-
+genheiros,masambosrecebíamosordensdosarquitetos-umportime-queeram
+oráculos.Osarquitetosquelideravamnossotimeconheciamocódigodetrásparaa
+vii
+
+## Página 12
+
+CasadoCódigo
+frente,mastambémconheciamseuscampos.Erasemprepossívelconfiarqueseriam
+capazesdeexplicarmodelosdetransa çãodistribuídacomplexosemostrarcomodi-
+versospadrõeseabstra çõesdocódigoossuportavam. Elestambémconheciamas
+armadilhaseconseguiamdetectarcedoescolhasdedesigneimplementa çãoruins,
+umavezqueeramcapazesdeveràfrente,oupelomenosvermaislongedoqueeu
+conseguia.
+Nãoachoquedissealgumdiaparaessesarquitetos-talvezporcausadomeu
+orgulhojuvenil-oquãoimportanteelesforamemdelinearmeupensamentoecom-
+portamento.Entretanto,sempreaspirei(ealgumasvezessucedi)sercomoeles,co-
+nheceratecnologiaprofundamente,entenderocontextonoqualelaestásendoem-
+pregada,guiareserguiadopeloscolegasdemeutime.Essafoiumaaspira çãoque
+leveiparameupróximoempregoemumaempresaglobalmuitoconhecidaeadmi-
+radanoramodeconsultoriadeTI.
+Aoentraremminhanovaempresa,decidiquejáhaviavistobastantesoftwaree
+erabomosuficienteemescrevercódigo,eentãomedeclareiumarquiteto.Aoen-
+contraralgunsdemeusnovoscolegaspelaprimeiravez,fuicalorosamenterecebido
+eperguntadosobrequalseriameupapel.Respondiqueeueraumarquiteto;algoque
+penseiquedariaumsentidodecompetêncianonívelmicrodapilhadetecnologias,
+enonívelmacroaoredordaconstru çãodesistemas.Fiqueiatônitoaodescobrirque
+fuirepreendidoporessarespostaefiqueimeperguntandooqueacabaradeaconte-
+cer,afinal,eunãohaviaentradoparatrabalharcomessaspessoasdevidoareputa ção
+queelespossuíamnodesenvolvimentodesoftwareeAgile?
+Nãodemoroumuitoparaqueeuentendesseocontexto.Meuscolegastrabalha-
+vamcomconsultoriaháalgunsanoseconhecerammuitos“arquitetosexperientes”.
+Masessesnãoeramomesmotipodepessoaqueeuadmiravaemmeuprimeiro
+trabalho;eramarquitetosperigosamenteultrapassados,compoucahabilidadeem
+entregarsoftware,eumtalentosemfimparacausarconfusãoecriarpolíticascor-
+porativas. Eeu,aparentemente,tinhameapresentadocomoumdesses. Nãoeraa
+melhormaneiradecausarumaboaimpressãoaosmeusnovoscolegas.
+Aindaassim,duranteos6anosenos10paísesemquetrabalhei,medescrevi
+comoarquiteto.Euestavaemumamissãoderecuperarovalordessetítulo,ecomo
+passardotempoobtivealgumsucesso.Come çamosapensaremumarquitetonão
+sócomoo“melhorprogramador”ouum“pesomorto”,massimcomoumpapelque
+consideraosdetalhesdenívelmacroemumtimequeentregasoftware-comoa
+integraçãocomoutrossistemasfuncionará,comofalhaserecupera çõesserãotraba-
+lhadas,comoavazãoserámedidaegarantida.
+viii
+
+## Página 13
+
+CasadoCódigo
+Nosmelhoresprojetosemquetrabalhei,opapeldoarquitetoeracomplementar
+aodosstakeholders.Enquantoopessoaldenegóciospriorizaaentregadefuncio-
+nalidades,arquitetospriorizamosrequisitosnãofuncionaiseajudamaordenara
+entregaderequerimentosfuncionaisqueminimizamemantêmcaracterísticasnão
+funcionais.Nosmelhoresprojetosquetrabalhei,eunãoeraomelhorprogramador
+daequipe,nemnamaiorpartedasvezestinhaomaiorconhecimentodaslingua-
+gens,ferramentaseframeworkscomparadocomoutrosdedicadosprogramadores.
+Apósumtempoengolindooorgulho,comeceiaverasvantagensinerentesdisso.
+Comoarquiteto,aindasoualguémquetambémentendebastantedecódigo,em
+umnívelnoqualconsigoescrevercódigocomoutrosprogramadores(possivelmente
+melhoresdoqueeu)elerseucódigoetestes. Acreditoqueissosejafundamental
+paraaarquitetura. Semahabilidadedeseenvolvercomocódigo,arquitetosnão
+têmcomodeterminarcomosuaarquiteturafoiadotadaporumasolu ção,nemcomo
+elestêmumamaneiradiretadepegarfeedbackdesuaarquiteturaparamelhorá-la.
+Semhabilidadesdesoftware,umarquitetoficarefémdostimesdedesenvolvimento,
+oqueéumoverhead,nãoumbenefício.
+Sentadoaquiemminhamesa,emLondres,escrevendoesseprefácio,éclaroque
+ano çãodoconceitodearquitetocontinuacinzenta. Atémesmohoje,arquitetos
+estãofrequentementenotopodatorredemarfim,descrevendovisõesgrandiosase
+impraticáveisatravésdeslidesediagramasUMLquenãoajudamparatropasnas
+trincheirasobedeceremcomoescravos(comoseelesfossem!).Masnãoprecisaser
+assim. Aquelesdenósquesepreocupamcomamelhoriacontínuadoramoese
+preocupamemescrevercódigocadavezmelhorcomosefeitoscolateraispositivos
+queissopoderesultaremnossasociedadeecomunidadetêmodeverdetomaro
+termo“arquiteto”ereapropriar-sedele.
+Estelivroéumpassonessadire ção. Eletrataarquitetoscomoprofissionaisdo
+desenvolvimentodesoftwareeéfundamentalqueelesentendamasferramentasco-
+munsdoramodedesenvolvimentodesoftware. Estelivroprovêinsightsnasfer-
+ramentascomuns,padrõesdedesenvolvimentoepráticasdedesignquearquitetos
+contemporâneostrabalhandoemaplica çõescorporativaspossuem.Eletratadeuma
+gamadedisciplinasdedesenvolvimentodesdecódigorobusto,designdeaplica ção,
+dadoseintegra ção,quesãoosprincipaiselementosdamaiorpartedossistemascor-
+porativos.Elenãoapenasfocaemimportantesdetalhesdalinguagemedosprinci-
+paisframeworks,mastambémnonívelmacro,dandoumapercep çãomaiscompleta
+-percepçãoestaqueumarquitetopraticanteprecisaquandoajudaaguiarumtime
+paraosucesso.
+ix
+
+## Página 14
+
+CasadoCódigo
+Àmedidaquedesenvolvedoresprocuramsetornararquitetos,olivromostraque
+ofocoestreitonaúltimalinguagemouframeworkdamodaénecessário,masnãosu-
+ficiente.Àmedidaquearquitetosbuscamreabilita ção,estelivrodeixaóbvioquenão
+hásucessosemreaprenderas(habilmentedemonstradas)ferramentasdeconstru-
+çãodesoftware.Enquantonenhumlivropodetorná-loumarquitetodanoitepara
+odia,esteprovêaomenosummodelodotipodearquitetoqueeutantoadmirava,
+eesperoquesualeituraoinspireasetornaressetipodearquitetotambém.
+JimWebberéformadoemcomputa çãoepossuidoutoradopelaUniversityofNew-
+castle.Trabalhouporbastantetempona ThoughtWorks,ondeficouconhecidopeloseu
+manifestoGuerrillaSOA.Hoje,éChiefScientistnaNeoTechnology,empresaportrás
+dobancodedadosorientadoagrafosNeo4j
+x
+
+## Página 15
+
+CasadoCódigo
+Introdução
+Implementação, design ou arquitetura?
+Desenharsistemaséumatarefadifícil. E,aindafazercomquesejamescaláveise
+performáticos,mantendoumaaltaqualidadeinternaeexterna,éumdesafio.
+No artigo “Aimportânciadeserfechado ”,CraigLarmandizque“vocêdeveen-
+frentarsuasbatalhasdedesign,sejamelasnonívelmacroarquiteturalounohumilde
+campodasinstâncias ”[109]. Essasbatalhasdevemsercontradecisõesqueatrapa-
+lhamocrescimentoeafuturamodifica çãodasuaaplica ção,diminuindoocustode
+manutençãoalongoprazo.
+Masédifícildefinircomprecisãooquesãoinstânciasounívelmacroarquite-
+tural,aslinhasqueseparamarquitetura,designeimplementa çãosãomuitotênues.
+MartinFowlerfalaomesmonoâmbitodepatternslogonasegundapáginadeseu
+livro"PatternsofEnterpriseApplicationArchitecture :“Algunsdospadrõesnestelivro
+podemserchamadosarquiteturais,jáquerepresentamdecisõesimportantessobrees-
+saspartes;outrossãomaissobredesigneoajudamaimplementaressaarquitetura.
+Não façonenhumaforte tentativa de separar esses dois, uma vez que aquilo que é
+arquitetural ou não é subjetivo” . [68]Fowlerquestionainclusiveousodotermo
+arquitetocomopapel.[ 70]AuniversidadedeCarnegieMellonpossuidiversasde-
+finiçõesetambémabordaagrandedificuldadequeédefiniradiferen çaexataentre
+implementação,designearquitetura.[ 51],[1]
+Neste livro,em vez de encontrar respostas e solu ções encaixotadas, apresen-
+taremos perguntas e discussões relacionadasaalgunsdosprincipaistópicosrecor-
+rentesemaplica çõesescritasparaaplataformaJava,afimdealimentaroespírito
+críticododesenvolvedor. Eledevesercapazdeenxergarambas,asvantagenseas
+desvantagens;todoo trade-offpresenteemsuasdecisões.
+Dominarumaplataforma,seusprincipaisframeworkseseufuncionamentoin-
+ternoéessencialparaqueosresponsáveispelodesenvolvimentodeumaaplica ção
+conheçamnãosóasvantagens,mastambémasdesvantagensdesuasdecisões. O
+desenvolvedorqueacreditanãoexistiroudesconheceoladonegativoparadetermi-
+xi
+
+## Página 16
+
+CasadoCódigo
+nadaabordagemsofreráasconsequênciasdemanutençãoquandoasmesmassurgi-
+remdentrodaaplica ção.
+Comopassardotempo,aimplementa çãoouodesignouaarquiteturadeixaráde
+atenderàsnecessidadesdosclientes.Nesseinstante,énecessárioevoluiresseaspecto
+defasado,paraquevolteasersuficientementeadequadoparaaquelarealidadedo
+sistema.
+ComoJoelSpolskyafirma,“pessoasdetodoomundoestãoconstantementecri-
+andoaplicaçõesWebusando.NET,JavaePHP.Nenhumadelasestáfalhandoporcausa
+daescolhadatecnologia ” . [191]Maselevaialém,aodizerque“todosessesambientes
+sãograndesecomplexos,e você realmente precisa de, no mínimo, uma pessoa com
+enorme experiência de desenvolvimento na plataforma escolhida,porque,casocon-
+trário,vocêtomarádecisõeserradaseacabarácomumcódigomuitoconfusoquepre-
+cisaserreestruturado”.Joeldeixaexplícitaanecessidadedeprofundoconhecimento
+técnicodaplataformaescolhida.
+Fowleraindacomplementaque,diferentementedaengenhariacivil,ondehá
+umadivisãoclaradehabilidadesentrequemfazodesignequemfazaconstru ção,
+comsoftwareédiferente.[ 71]Qualquerdesenvolvedorquevenhaalidarcomdeci-
+sõesdealtonívelnecessitadeumforteconhecimentotécnico.Estelivrofoielabo-
+radocomessavisão:osucessodaarquiteturadeumsistemaestáfortementeligado
+comodesigneaimplementa ção.
+Levandoemconsidera çãoessavisão,estelivrodestina-seàquelequeaspirapor
+umpapeldearquiteto? Quemseriaoarquiteto? Opapeldoarquitetoéampla-
+mentediscutidoe,nanossavisão,oarquitetoprecisaconhecerprofundamentea
+plataforma,alémdeserumexcelenteeexperientedesenvolvedor.
+NaspalavrasdeMartinFowler,“otermoarquiteturaenvolveano çãodosprin-
+cipaiselementosdosistema, as peças que são difíceis de mudar.Umafunda çãona
+qualorestoprecisaserconstruído ” .
+[71]Podemosiralémedizerqueessafunda çãoqueconstituiaarquitetura,que
+envolveosprincipaiselementosdosistema,podesimserevolutivaesofrermodifi-
+caçõescomotempo,desdequeseudesigneimplementa çãopermitam,quebrando
+umpoucoaideiadequeotrioarquitetura-design-implementa çãoformeummodelo
+estritamentepiramidal.Estelivroabordarámuitasquestõesdedesigneimplemen-
+taçãocomointuitodedemonstraressapossibilidadeevolutiva.
+Aimagemdeumarquitetodistantedodiaadiadodesenvolvimentodaequipe,
+semprofundoconhecimentotécnicoedeimplementa çãosobreaferramenta,que
+apenastomaasgrandesdecisõesedespachaordensediagramas,hámuitotempo
+xii
+
+## Página 17
+
+CasadoCódigo
+estádefasada.Maisdoquequererseroisoladoarquitetoqueapenasdespachaor-
+dens,cadavezmaisenxergamosqueocaminhoéserolíderincentivadordatomada
+dedecisão,alémdeumexímiodesenvolvedor. [ 190]Parafraseandomaisumavez
+MartinFowler,“(...)oarquitetodevesercomoumguia(...)queéumexperienteeca-
+pacitadomembrodaequipequeensinaaosoutrossevirarmelhor,eaindaassimestá
+sempreláparaaspartesmaiscomplicadas ” . [70]ELarmantambémnãoperdoao
+arquitetoquenãovêcódigo:“umarquitetoquenãoestáapardaevolu çãodocódigo
+doproduto,nãoestáconectadocomarealidade ”,chegandoaconsiderarqueocódigo
+éoverdadeirodesignouarquiteturadosoftware.[ 111]
+Éimpossível“mudar”umaarquiteturaouumdesigndiretamente,umavezque
+ambossãointerpreta çõesdoúnicobemexistente:aimplementa ção.Atravésdamu-
+dançanaimplementa ção,adquire-seascaracterísticasarquiteturaisoudedesignde-
+sejadas. Arquitetura e design são interpreta ções, visões, leituras críticas de uma
+implementação(Figura1).
+Figura1:Arquiteturaedesignsãointerpreta ções,leiturascríticasdeumaimplemen-
+tação.
+Designéumaformadeinterpretaraimplementa ção,analisandoecompreen-
+dendoasintera çõesentredeterminadaspartesdosistema,comopossíveisimpactos
+queumamudan çaemumpontocausaemoutrocomponentequeoacessadiretaou
+indiretamente. Existemdiversasinterfacesdecomunica çãoentrediversoscompo-
+nentes:oApachesecomunicacomoJettyatravésdo mod_jk;umaaplica çãoWeb
+xiii
+
+## Página 18
+
+CasadoCódigo
+secomunicacomoJettyatravésdaServletAPI;jádentrododomíniodaaplica ção,
+outrasinterfacesconectampartesdeumaimplementa ção,comouma List,um
+Calendar,um DAOouuma Connection. Todaselassãoanalisadasnoaspecto
+dedesign(Figura 2).
+Figura2: Nopontodevistadodesign,importamcaracterísticasdasinterfacesde
+comunicaçãoentrepartesdosistema,seuscomponentes,emtodososníveisdeabs-
+tração:desdeentreclassesatédoissoftwaresdistintos.
+Implementaçãonãosignificasomenteocódigoescritopelosdesenvolvedoresda
+equipeatual,mastambémoconjuntodeescolhasdeferramentas,versõesquefa-
+zempartedosambientesdedesenvolvimento,homologa çãoeprodu ção,linguagem
+utilizada,legibilidadedocódigo,entreoutras.Todasessasescolhasmodelamaim-
+plementaçãodeumsistema,assimcomosuaqualidade(Figura 3).
+Arquiteturaéaindaumaoutramaneiradeveraimplementa ção,analisandoe
+compreendendocomoumamudan çaemdeterminadopontodosistemaafetaosis-
+temainteiro,edetodasasmaneiraspossíveis.Porexemplo,casoumpontoqualquer
+daaplicaçãopasseateracessoremotoaoinvésdeapenaslocal,issopodeafetaruma
+outrapontadaaplica ção,deixando-amaislenta.Essetipodeanálisenãocostuma
+serfeitaquandosepensanodesign,jáqueodesigntemumapreocupa çãomaislocal.
+Aessavisãomaisglobaldosistema,édadoonomedearquitetura(Figura 4).
+xiv
+
+## Página 19
+
+CasadoCódigo
+Figura3:Nopontodevistadaimplementa ção,analisa-seocódigo,asescolhasde
+versão,linguagemutilizada,legibilidadedocódigoetc.
+Figura4:Nopontodevistaarquitetural,analisa-secomoescolhasdeimplementa-
+çãoinfluenciamosistemainteiro-nãocomoumtodo,nãocomoumsó,maspor
+completo.
+Comopassardotempo,comodesignearquiteturasãodiferentesmaneirasdein-
+terpretaraimplementação,éatravésdeumamudançanaimplementaçãoqueobtém-
+seasmudan çasdesejadasnavisãodedesignounavisãodearquitetura(Figura 5).
+x v
+
+## Página 20
+
+CasadoCódigo
+Figura5: Umavezquesomenteimplementa çõessãoconcretas,todotipodemu-
+dançaimplicaemconheceraimplementa çãoe,alterá-lacausapossíveismudan ças
+nosaspectosarquiteturaisededesign.
+Umaboaimplementa ção,designouarquiteturaéaquelaquepermitemodifica-
+çõescausandosomenteumimpactoconsideradojustoaoutraspartesdosistema,e,
+aomesmotempo,diminuindoasocorrênciasdetaissitua ções,minimizandoocusto
+dedesenvolvimentoemanuten ção.
+Éessavisãodearquiteturaedesignquetentamosobternestelivro.Aplataforma
+Javaévistacomprofundidadeesuaspeculiaridades,desdeocampodasinstâncias,
+interfacesedaJVM,atéonívelmacroarquiteturaldelayers,tierseframeworks.A
+implementaçãoterápapelfundamentalaqui,esuaimportânciaéreal çadamesmo
+emdiscussõesarquiteturaisdealtonível.
+Colhemosnossaexperiênciaaolongodenoveanosdediscussõesnosfóruns
+doGUJ.com.br,cincoministrandoocursodeArquiteturaeDesignJavanaCaelum,
+alémdediversosprojetos,consultoriaseexperiênciastrocadascomosclientesepar-
+ceiros. Conhecer profundamente as ferramentas é o primeiro passo para poder
+fazer as perguntas corretas ao enfrentar o cenário de uma nova aplicação.
+x v i
+
+## Página 21
+
+CasadoCódigo Sumário
+Sumário
+1 A plataforma Java 1
+1.1 Javacomoplataforma,alémdalinguagem ................ 1
+1.2 Especificaçõesajudamouatrapalham? .................. 7
+1.3 Usealinguagemcertaparacadaproblema ................ 1 1
+2 Java Virtual Machine 15
+2.1 Princípiosdegarbagecollection ...................... 1 5
+2.2 Nãodependadogerenciamentodememória .............. 2 3
+2.3 JITCompiler:compila çãoemtempodeexecu ção ........... 2 7
+2.4 Carregamentodeclasseseclassloaderhell ................ 3 1
+3 T ópicos de Orienta ção a Objetos 4 1
+3.1 Programevoltadoàinterface,nãoàimplementa ção .......... 4 1
+3.2 Componhacomportamentos ........................4 7
+3.3 Eviteheran ça,favoreçacomposição .................... 5 0
+3.4 Favoreçaimutabilidadeesimplicidade .................. 5 5
+3.5 Cuidadocomomodeloanêmico ..................... 6 2
+3.6 ConsidereDomain-DrivenDesign ....................6 6
+4 Separa ção de responsabilidades 7 5
+4.1 Obtenhabaixoacoplamentoealtacoesão ................ 7 5
+4.2 Gerenciesuasdependênciasatravésdeinje ção ............. 7 8
+4.3 ConsidereusarumframeworkdeInje çãodeDependências ...... 8 7
+4.4 Fábricaseomitodobaixoacoplamento .................9 4
+4.5 Proxiesdinâmicasegera çãodebytecodes ................1 0 4
+x v i i
+
+## Página 22
+
+Sumário CasadoCódigo
+5 T estes e automa ção 111
+5.1 Testesdesistemaeaceita ção ........................1 1 2
+5.2 Testedeunidade,TDDedesigndecódigo ................1 1 5
+5.3 Testandoaintegra çãoentresistemas ...................1 2 6
+5.4 Feedbackatravésdeintegra çãocontínua .................1 3 0
+6 Decisões arquiteturais 139
+6.1 Dividindoemcamadas:tierselayers ...................1 4 0
+6.2 DesenvolvimentoWebMVC:ActionsouComponentes? .......1 4 7
+6.3 Dominesuaferramentademapeamentoobjetorelacional .......1 5 5
+6.4 Distribuiçãodeobjetos ...........................1 6 8
+6.5 Comunicaçãoassíncrona ..........................1 7 8
+6.6 ArquiteturacontemporâneaeoCloud ..................1 8 2
+7 Integra ção de sistemas na Web e REST 193
+7.1 Princípiosdeintegra çãodesistemasnaWeb ...............1 9 4
+7.2 Padronizações,contratosrígidoseSOAP .................1 9 8
+7.3 Evitequebrarcompatibilidadeemseusservi ços.............2 0 3
+7.4 PrincípiosdoSOA ..............................2 0 6
+7.5 REST:arquiteturadistribuídabaseadaemhipermídia .........2 1 2
+Bibliografia 2 4 6
+Versão:16.2.5
+xviii
+
+## Página 23
+
+Capítulo1
+AplataformaJava
+Diversas plataformas de desenvolvimento possuem grande penetração no mer-
+cado.AplataformaJavaatingiualideran çadevidoaalgumascaracterísticasrelacio-
+nadasaoseuprocessodeevolu çãoeespecifica ção,juntocomaparticipa çãofortee
+ativadacomunidade.ConhecerbemoecossistemaJavarevelaseuspontosfortese
+tambémasdesvantagenselimita çõesquepodemosenfrentaraoadotá-la.
+1.1 J av a como plataforma , além da linguagem
+ÉfundamentalconhecercomqueobjetivosaplataformaJavafoiprojetada,afim
+deentendercomprofundidadeosmotivosquealevaramaserfortementeadotada
+noladodoservidor. JavaéumaplataformadedesenvolvimentocriadapelaSun,
+queteveseulan çamentopúblicoem1995.Elavinhasendodesenvolvidadesde1991
+comonome Oak,lideradaporJamesGosling. OmercadoinicialdoprojetoOak
+compunha-sededispositivoseletrônicos,comoos set-topbox.[39]
+Desdeasuaconcep ção,aideiadeumaplataformadedesenvolvimentoeexe-
+cuçãosempreestevepresente. OJavaidealizadoeraumasolu çãoquefacilitavao
+
+## Página 24
+
+1.1. Javacomoplataforma,alémdalinguagem CasadoCódigo
+desenvolvimentodeaplicativosportáveis,utilizando,paraisso,umalinguagemde
+programaçãosimplificada,segura,orientadaaobjetos,comumaextensaAPIeum
+ambientedeexecu çãoportável.Paraobteraportabilidade,adotou-seaideiadeuma
+máquina virtualqueexecutaumcódigodemáquinapróprio.Essamáquinavirtual
+simplesmentetraduziriaasinstru çõesparaumaplataformaespecífica,ganhandoin-
+dependênciadeplataforma.
+Logoapósseulan çamento,oJavafezumenormesucessocomseus A p p l e t s,pe-
+quenasaplicaçõesembutidasempáginasWebexecutadasnonavegadordocliente.
+Nessaépoca,propagou-seoconhecidoslogan“Writeonce,runanywhere ” . C o m a
+ajudadamáquinavirtual,qualquernavegadorrodariaamesmaaplica çãosemne-
+cessidadedealtera ções.Eraumpassoimportanteparaadicionarmaisrecursosao
+navegador,aindatãolimitado.
+Atualmente,oJavaestápresenteemváriosramosdatecnologia,eéumadas
+plataformasmaisimportantesdomundo.OmercadodeAppletsacabounãosetor-
+nandoumgrandedestaque,eoJavafirmousuaposi çãonomercadocorporativo
+(JavaEE)comsolu çõesrobustasparaWebeaplica çõesdistribuídas.
+OJavaétambémumadasprincipaisplataformasdedesenvolvimentoparadis-
+positivosmóveis(JavaME),commilhõesdecelulares,palms, set-topboxeseaténos
+aparelhosde blu-ray. HátambémocasodoGoogleAndroidqueusaalinguagem
+Java,maséumcasoàparte,jáquesuamáquinavirtualnãoutilizaobytecodeJava.
+No Desktop, houve avanços:em2005,nosEstadosUnidos,oSwingfoiotoolkit
+gráficomaisusadoemnovasaplica ções.[141]OJavaFX,quenasceumuitotempo
+depoisdosseusconcorrentesAdobeFlexeMicrosoftSilverlight,estásendorefor-
+muladoparaaproveitarmelhoralinguagemJavaemarcarpresen çanas Rich Inter-
+netApplications (RIA).Mesmoassim,esteaindaéomenormercadodoJava;sua
+portabilidadenãotemvencidoafacilidadededesenvolvimentodeaplicativosem
+linguagensfocadasemumaúnicaplataforma.
+ÉimportantenotarqueoJavanasceucomointuitodeserumaplataformamuito
+utilizadaemdispositivosmóveis,eganhoufor çaatravésdosApplets,masogrande
+mercadoquetornouaplataformabemdisseminadafoiocorporativo,no server-side.
+Dadasuaportabilidadeeseguran ça,aplataformafoiaescolhafeitaporgrandesban-
+coseempresasqueprecisavamtermaiorfacilidadedemudan ça.Estafacilidadeevita
+ovendorlock-in,permitindoquenãosefiquedependentedeumúnicofabricante,
+umúnicosistemaoperacionalouumúnicobancodedados.ComaplataformaJava,
+essasempresasadquiriramumgraumaiordessaliberdade.
+MasoqueéexatamenteoJava? Mais que uma linguagem de programa ção,
+2
+
+## Página 25
+
+CasadoCódigo Capítulo1. AplataformaJava
+Java é uma completa plataforma de desenvolvimento e execução.Estaplataforma
+écompostadetrêspilares:amáquinavirtualJava(JVM),umgrandeconjuntode
+APIsealinguagemJava.
+OconceitodemáquinavirtualnãoéexclusividadedoJava.As HardwareVirtual
+Machines,comoVMWare,ParallelsouVirtualBox,tambémmuitofamosas,sãousa-
+daspararodarváriossistemasoperacionaisaomesmotempo,utilizandoorecurso
+devirtualiza çãoqueabstraiohardwaredamáquina. JáaJVM, J a v a V i r t u a l M a -
+chine(MáquinaVirtualJava),éumaApplicationVirtualMachine,queabstrainãosó
+acamadadehardwarecomoacomunica çãocomoSistemaOperacional.
+UmaaplicaçãotradicionalemC,porexemplo,éescritaemumalinguagemque
+abstraiasopera çõesdehardwareeécompiladaparalinguagemdemáquina.Nesse
+processodecompila ção,égeradoumexecutávelcominstru çõesdemáquinaespe-
+cíficasparaosistemaoperacionaleohardwareemquestão.
+UmexecutávelCnãoéportável;nãopodemosexecutá-lonoWindowsenoLi-
+nuxsemrecompila ção.Masoproblemadeportabilidadenãoserestringeaoexecu-
+tável,jáquemuitasdasAPIssãotambémespecíficasdosistemaoperacional.Assim,
+nãobastarecompilarparaoutraplataforma,éprecisoreescreverboapartedocódigo
+(Figura1.1).
+Figura1.1:ProgramaemCsendoexecutadoemdoissistemasoperacionaisdiferen-
+tes.
+Aousaroconceitodemáquinavirtual,oJavaeliminaoproblemadaportabili-
+dadedocódigoexecutável.Emvezdegerarumexecutávelespecífico,como“ Linux
+PPC”ou“Windowsi386”,ocompiladorJavageraumexecutávelparaumamáquina
+genérica,virtual,nãofísica,aJVM.
+3
+
+## Página 26
+
+1.1. Javacomoplataforma,alémdalinguagem CasadoCódigo
+JVMéumamáquinacompletaquerodaemcimadareal.Elapossuisuaspróprias
+instruçõesdemáquina( assembly)esuasAPIs. Seupapeléexecutarasinstru ções
+demáquinagenéricasnoSistemaOperacionalenohardwareespecíficosoboqual
+estiverrodando(Figura 1.2).
+Figura1.2:ProgramaemJavasendoexecutadoemdoissistemasoperacionaisdife-
+rentes.
+Nofimdascontas,oproblemadaportabilidadecontinuaexistindo,masoJava
+puxaessaresponsabilidadeparaaprópriaJVM,emvezdedeixá-laacargodode-
+senvolvedor.ÉprecisoinstalarumaJVMespecíficaparaosistemaoperacionaleo
+hardwarequesevaiusar. Mas,feitoisso,odesenvolvimentodoaplicativoétotal-
+menteportável.
+Éimportanteperceberque,porcausadesteconceitodaJVM,ousuáriofinal,
+quedesejaapenasrodaroprograma(nãodesenvolvê-lo),nãopodesimplesmente
+executá-lo.TantoosdesenvolvedoresquantoosusuáriosprecisamdaJVM.Masos
+primeiros,alémdaJVM,precisamdocompiladoredeoutrasferramentas.
+Porestarazão,oJavapossuiduasdistribui çõesdiferentes:o JDK(Java Develop-
+ment Kit),queéfocadonodesenvolvedoretraz,alémdaVM,compiladoreoutras
+ferramentasúteis;eo JRE(Java Runtime Environment),quetrazapenasoneces-
+sárioparaseexecutarumaplicativoJava(aVMeasAPIs),voltadoaousuáriofinal.
+UmpontofundamentalarespeitodaJVMéqueelaéumaespecifica ção,dife-
+4
+
+## Página 27
+
+CasadoCódigo Capítulo1. AplataformaJava
+rentedemuitosoutrosprodutoselinguagens.QuandovocêcompravaoMicrosoft
+VisualBasic6.0,sóhaviaumaop ção:odaMicrosoft.
+AJVM,assimcomoalinguagem,possuiespecifica çõesmuitobemdefinidase
+abertas: aJavaVirtualMachineSpecification [113]ea JavaLanguageSpecification.
+[85]Emoutraspalavras,pode-setomaraliberdadedeescreverumcompiladore
+umamáquinavirtualparaoJava.Eéistooqueacontece:nãoexisteapenasaJVM
+HotSpotdaSun/Oracle,mastambémaJ9daIBM,aJRockitdaOracle/BEA,aApple
+JVM,entreoutras.Ficamosindependentesatédefabricante,oqueémuitoimpor-
+tanteparagrandesempresasquejásofrerammuitocomafaltadealternativaspara
+tecnologiasadotadasantigamente.
+EssavariedadedeJVMstambémdácompetitividadeaomercado.Cadaumadas
+empresasfabricantestentamelhorarsuaimplementa ção,sejaaperfei çoandooJIT
+compiler,fazendo tweaksoumudandoogerenciamentodememória.Istotambém
+traztranquilidadeparaasempresasqueusamatecnologia.Sealgumdiaopre çoda
+suafornecedoraestivermuitoalto,ouelanãoatingirmaisseusrequisitosmínimos
+deperformance,épossíveltrocardeimplementa ção.Temosagarantiadequeisso
+funcionará,poisumaJVM,paraganharestenome,temdepassarporumabateria
+detestesdaSun,garantindocompatibilidadecomasespecifica ções.
+AplataformaMicrosoft.NETtambéméumaespecifica çãoe,porestemotivo,o
+grupoMonopodeimplementarumaversãoparaoLinux.
+Os bytecodes Java
+AJVMé,então,oponto-chaveparaaportabilidadeeaperformancedaplata-
+formaJava. Comovimos,elaexecutainstru çõesgenéricascompiladasapartirdo
+nossocódigo,traduzindo& #173;-asparaasinstru çõesespecíficasdosistemaopera-
+cionaledohardwareutilizados.
+Essasinstru çõesdemáquinavirtualsãoos bytecodes. Sãoequivalentesaos
+mnemônicos(comandos)doassembly,comadiferen çadequeseualvoéumamá-
+quinavirtual. Onome bytecodevemdofatodequecada opcode(instrução)tem
+otamanhodeumbytee,portanto,aJVMtemcapacidadederodaraté256byte-
+codesdiferentes(emboraoJava7possuaapenas205). Istofazdelaumamáquina
+teoricamentesimplesdeseimplementarederodaratéemdispositivoscompouca
+capacidade.
+Podemos,inclusive,visualizaressesbytecodes. OdownloaddoJDKtrazuma
+ferramenta,o javap,capazdemostrardemaneiramaislegívelobytecodecontido
+emumarquivo. classcompilado.Obytecodeserámostradoatravésdosnomesdas
+5
+
+## Página 28
+
+1.1. Javacomoplataforma,alémdalinguagem CasadoCódigo
+instruções,enãodebytespuros.
+OcódigoaseguirilustraumexemplodeclasseJava:
+public class Ano {
+private final int valor;
+public Ano(int valor) {
+this.valor = valor;
+}
+public int getValor() {
+return valor;
+}
+}
+Eaexecu çãodalinhadocomando javap -c Ano exibeoconjuntodeinstru-
+çõesqueformamaclasse Ano:
+public class Ano extends java.lang.Object{
+public Ano(int);
+Code:
+0: aload_0
+1: invokespecial #10; //Method java/lang/Object.”<init>”:()V
+4: aload_0
+5: iload_1
+6: putfield #13; //Field valor:I
+9: return
+public int getValor();
+Code:
+0: aload_0
+1: getfield #13; //Field valor:I
+4: ireturn
+}
+EmboraalinguagemJavatenhaumpapelessencialnaplataforma,tê-lacomo
+umaexecutoradebytecodes,enãoexatamentedecódigoJava,abrepossibilidades
+interessantes.AplataformaJavatemidocadavezmaisnadire çãodeserumambiente
+deexecuçãomultilinguagem,tantoatravésda ScriptingAPI quantoporlinguagens
+quecompilamdiretoparaobytecode.Éumaideiapresente,porexemplo,no.NET
+desdeoinício,comsua CommonLanguageRuntime(CLR)executandodiversaslin-
+guagensdiferentes.
+6
+
+## Página 29
+
+CasadoCódigo Capítulo1. AplataformaJava
+AlinguagemScalamostraestafor çadobytecodeparaaplataformaJava.Paraa
+JVM,oqueinteressasãoosbytecodes,enãoapartirdequallinguagemelesforam
+gerados.EmScala,teríamososeguintecódigofonte,quepossuiamesmafunciona-
+lidadequeocódigoJavamostradoanteriormente:
+class Ano(val valor:Int)
+AocompilarmosaclasseScalaanteriorcomocompilador scalac,osbyteco-
+desgeradosserãomuitopróximosdosvistosnaclasseJava.Épossívelobservarisso
+rodandoocomando javapnovamente.Aúnicagrandemudan çaéqueogetterem
+Scalachama-seapenas valor()enão getValor()comoemJava.Veremosmais
+sobreoutraslinguagensrodandoemcimadaJVMnestecapítulo.Alémdisso,mui-
+tosframeworkseservidoresdeaplica çãogerambytecodedinamicamentedurantea
+execuçãodaaplica ção.
+AJVMé,portanto,umpoderosoexecutordebytecodes,enãointeressadeonde
+elesvêm,independentementedeondeestiverrodando.Éporestemotivoquemuitos
+afirmamquealinguagemJavanãoéocomponentemaisimportantedaplataforma,
+mas,sim,aJVMeobytecode.
+1.2 E specificações ajudam ou atrapalham?
+APlataformaJavaébastantelembradaporsuascaracterísticasdeabertura,porta-
+bilidadeeatéliberdade.Háoaspectotécnico,comindependênciadeplataformae
+portabilidadedesistemaoperacionaldesdeoiníciodaplataforma. Hátambéma
+comunidadecomseusgruposdeusuáriosportodoomundo,sempreapoiadosein-
+centivadospelaSun/Oracle.Háaindaomundoopensource,queabra çouoJavacom
+diversosprojetoscruciaisparaoecossistemadaplataforma,muitosdelespresentes
+nodiaadiadamaioriadosdesenvolvedores.EháoJCPesuasespecifica ções.
+Em1998,trêsanosapósonascimentodoJavadentrodaSun,foicriadoo Java
+CommunityProcess(JCP),comoumórgãoindependentedaprópriaSun,cujoob-
+jetivoeraguiarospassosdoJavademaneiramaisabertaeindependente. Hoje,a
+OracledetémosdireitosdamarcaJava,masasdecisõessobreosrumosdaplata-
+formanãoestãoapenasemsuasmãos.QuemguiaosrumosdoJavaéoJCP,com
+suascentenasdeempresasedesenvolvedoresparticipantes,queajudamaespecifi-
+carasnovastecnologiaseadecidirnovoscaminhos.Háum ComitêExecutivoeleito
+acadatrêsanosquecomandaoórgão.Grandesempresas,comoGoogle,IBM,HP,
+RedHat,Nokia,alémdaOracle,fazempartedele,inclusiveorganiza çõeslivres,como
+aSouJava.
+7
+
+## Página 30
+
+1.2. Especificaçõesajudamouatrapalham? CasadoCódigo
+Cadanovafuncionalidadeoumudan çaquesequeirarealizarnaplataformaé
+propostaaoJCPnoformato JSR,uma JavaSpecificationRequest.Sãodocumentos
+querelatamessaspropostas,paraquepossamservotadaspelosmembrosdoJCP.De-
+poisdeaceitaumaJSR,éformadoum Expert Groupparaespecificá-laemdetalhes
+edepoisimplementá-la.TodosospassosficamsobachanceladoComitêExecutivo,
+enãounicamentedaOracle.AsJSRsrecebemnúmerosdeidentifica çãoeacabam
+ficandoreconhecidasporestes.AJSR318,porexemplo,especificouoEJB3.1;aJSR
+316paraoJavaEE6;eaJSR336paraoJavaSE7.
+MasasJSRdefinemapenas especificações deprodutosrelacionadosaoJava,e
+nãoimplementa ções.Atéháumaimplementa çãodereferênciafeitapeloJCP,mas,
+nofundo,opapeldoórgãoécriargrandesdocumentosquedefinemcomotudo
+devefuncionar.Oqueusamosnapráticaéumaimplementa çãocompatívelcoma
+especificaçãooficial.QuandobaixamosoJDKdaSun/Oracle,oquevemnãoéoJava
+SE,mas,sim,umaimplementa çãofeitapelaempresaseguindoaespecifica ção.Mas
+nãosomosobrigadosausaraHotSpot,implementa çãodaSun/Oracle. Podemos
+usaroutras,comoaJ9daIBM,aJRockitdaBEA/Oracle,ouoHarmonydaApache,
+e,ainda,JVMsmaisespecíficasparacertossaboresdoUnix,dispositivosmóveise
+hardwaresmaisparticulares.
+Porestemodelodeaberturadeespecifica ções,oJavagaranteatodosumgrau
+deindependênciadofabricante. Épossívelusarprodutosdediversosediferentes
+fabricantes(IBM,Oracle,JBoss)etrocá-loscomcertafacilidadenahoraqueforne-
+cessário.Asdiferençasentreosprodutosdediferentesfabricantesestãonosuporte
+oferecido,documentação,facilidadesextrasdegerenciamento,otimiza ções,eatéex-
+tensõesproprietárias.Sobreesteúltimopontovaleumaressalva:praticamentetodo
+fabricanteestendeaespecifica çãooficialcomAPIsproprietárias,sejacomoobjetivo
+detaparlacunasnaespecifica ção,sejaparateralgumdestaqueamaisemrela çãoa
+seusconcorrentes.Nãoháproblemaalgumnisso,maséprecisoterconsciênciade
+que,aousarumrecursoproprietário,épossívelperderportabilidadeeindependên-
+ciadofabricante.
+Hámuitascríticas,contudo,aoJCPeaoprocessodeespecifica çãodoJavano
+geral.Fala-sedademoradasnovasespecifica çõesequeoJCPadotaapenasaspectos
+maisbásicosdastecnologias,paraagradaratodos,travandoassimainova ção.Mas,
+afinal,especificaçõesajudamouatrapalham?
+Quandoumatecnologiaseestabelececomoumadasprincipaisemsuaárea,sua
+evoluçãotorna-seinvariavelmentemaislenta.Novasideiasquesurgemnomercado
+tentamatacarospontosnegativosqueatecnologiapadrãopossui,eoprocessonatu-
+8
+
+## Página 31
+
+CasadoCódigo Capítulo1. AplataformaJava
+raléqueumadessassetorneonovopadrãodentrodealgumtempo.Ummotivopara
+atecnologiapadrãonãoadotaressasinova çõeséseusucessosedeveraosresulta-
+dosjáobtidosanteriormentenomercado.Masproblemasesolu çõessãotemporais,
+dependemdarealidadenomomentoemquesãoestudados.
+AlinguagemJavaviveumasitua çãosimilar.Desenvolvidapararesolverdetermi-
+nadosproblemas,asbarreirasqueapresentasãomuitasvezessuperadaspelamistura
+comoutraslinguagensdentrodaplataformaJava.Umdosgrandesconflitosdalin-
+guagemégarantircompatibilidadecomversõesanteriores.Éumfatorimportante
+paradarseguran çaaosusuáriosegarantirlargaado ção,e,aomesmotempo,um
+freionaquantidadeaceitadeinova çãoeevolu ção.
+Naplataforma.NETháumhistóricodemenorrigidezemrela çãoàcompatibi-
+lidade. AlinguagemC#evoluiumaisrapidamente,removendodecisõeshojecon-
+sideradasruinseincorporandooutrasconsideradasinteressantes,comolambdase
+ExtensionMethods.[36]Aomesmotempo,aquebradecompatibilidadecausades-
+contentamentodediversosclientes.Desenvolvedoresprecisamdenovostreinamen-
+tos,oVisualStudioéalteradoediversasbibliotecasdeixamdefuncionar.Porisso,a
+partirdo.NET2.0nãohouvemaisquebrasdecompatibilidade,apenasnovasbibli-
+otecasefuncionalidades.
+NocasodaplataformaJava,oJCPutilizaseucomitêparadefinirosrumosdas
+especificações.Éumaabordagemconhecidacomo DesignbyCommittee,visandoco-
+locarasespecifica çõesnasmãosdemaisdeumaempresa.Aomesmotempo,diver-
+sasinovaçõesaconteceramecontinuamasurgir,emprodutosproprietárioseopen
+sourceque,comopassardotempoeaado çãopelomercado,acabamsendopadro-
+nizadosatravésdoJCP.Sendoassim,especifica çõessãocomumentecriadas,oupara
+gerarinovações,ouparapadronizaraquiloqueomercadoinovoueadotoucomo
+boastecnologias.
+Porém,oprocessointroduzidopelocomitêimplicamaiorlentidãonainova ção.
+Seháquebradecompatibilidade,dificilmenteamudan çaseráadotada.Umafunci-
+onalidadepodesertecnicamenteexcelenteparadeterminadosusuários,mas,sefor
+contraosinteressesdeumdosmembrosdocomitê,poderáserdeixadadefora.Se
+nãoháconsenso,nãoentra,ou,pior,estende-seadiscussãopormuitotempo.
+Eventualmente,extensõesàespecifica çãoficampopulares,comoa CriteriaAPI
+doHibernate,quenãofezpartedaprimeiraversãodaJPA(JSR-220).Casoasoutras
+implementaçõesdaespecifica çãoprecisemdemuitoesfor çoparasuportarumanova
+funcionalidade,osmembrosdaespecifica çãopodemcriarbarreiraseafuncionali-
+dadepodeatémesmonãoentrarparaaJSR,ouentrarcomdiversasmudan çasque
+9
+
+## Página 32
+
+1.2. Especificaçõesajudamouatrapalham? CasadoCódigo
+nãonecessariamentefazemsentidodopontodevistatecnológico.Oprocessoburo-
+cráticoeotempogastopelosdesenvolvedoresadaptandoaimplementa çãopodem
+defasarasespecifica ções(Figura 1.3).
+Figura1.3:Comoainova çãonomundoopensourceestárelacionadaàsespecifica-
+ções.
+Masexistemdiversosmotivosquetornamasespecifica çõesatraentes. Amais
+frequentementecitadaéaop çãodemudaraimplementa ção,minimizandooefeito
+devendorlock-in. Porém,naprática,érarotrocarmosaimplementa çãodeuma
+especificação,anãosertalvezconsiderandodiferentesambientes,comoirdodesen-
+volvimentoparaaprodu ção.
+Apesardetalvantagem,muitasvezesumaimplementa çãoespecíficaacabapor
+dominaromercado,comonocasodoHibernate. Éraroencontrarsitua çõesem
+queequipestrocaramoHibernateporoutraimplementa çãodeJPA,masécomum
+outrasimplementaçõesseremtrocadaspeloHibernate.Nessesentido,seoprojeto
+jáusaHibernate,aespecifica çãopodemaislimitarqueengradeceroprojeto.Além
+disso,otimizaçõescostumamserfeitasparaimplementa çõesespecíficas.
+Aoadotarumaespecifica ção,oprogramadoreoarquitetodevemlevaremcon-
+sideraçãoasperdas,devidoàabstra ção,eosganhosdeumpadrão,quefacilitea
+entradadenovosdesenvolvedoresedesacoplaosucessodeumprojetodeumúnico
+vendor.
+Umagrandevantagemdasespecifica çõeséacertezadequeconhecê-lapermi-
+tiráaodesenvolvedortrabalharemprojetosquetenhamdiferentesimplementa ções.
+Claroquehaverádiferençasaseremaprendidas,masteraespecifica çãodiminuibas-
+tanteesseaprendizado.
+Outropontomuitasvezescitadoéqueasespecifica çõestrazemcertasgarantias
+defuturoecontinuidadeparaaquelatecnologia,deixandooprojetolivreatédede-
+10
+
+## Página 33
+
+CasadoCódigo Capítulo1. AplataformaJava
+terminadofabricantecasoeleparedesuportarseuprodutooumudesuapolítica
+comercial. Istonãosignificaqueprojetosopensourceetecnologiasproprietárias
+nãotenhamessasgarantias,masadotarumaespecifica çãopodetrazeraindamais
+garantiasdefuturoquandoissoformuitonecessário.Porém,hácasostambémde
+especificaçõespraticamenteabandonadas,comoaJDO,queémuitopoucousadae
+jásuperadapelaJPA.
+Comoqualquerescolha,desenvolvervoltadoàespecifica çãoouusartecnolo-
+giasproprietáriaséumadecisãoasertomadaapartirdasvantagensedesvantagens
+decadaabordagem.AplataformaJava,diferentedemuitasoutras,temessapossi-
+bilidadedeescolhadisponívelemsuasdiversasramifica ções. Quandoforpreciso
+umaespecificaçãodealgumatecnologia,provavelmenteaplataformaJavateráalgo
+disponível. E,quandoforconvenientealiberdadeeinova çãodastecnologiaspro-
+prietárias,certamentetambémencontraremosalgo.
+1.3 U se a linguagem certa para cada problema
+ComopassardotempoeoamadurecimentodaplataformaJava,percebeu-seque
+alinguagemajudavaemmuitospontos,mastambémimpediaumdesenvolvimento
+maisaceleradoempartesespecíficas.
+Osprimeirosindíciosdanecessidadedeoutrasfuncionalidadesnalinguagem
+Javasãoantigos. Algumasdelasforamsupridascomadissemina çãodetécnicas,
+comoproxiesdinâmicos,emvezdosstubspré-compiladosencontradosemRMIe
+EJB1.xe2.x.Ou,ainda,asanota çõesJavaparadiminuirasconfigura çõesXML,antes
+comunsemframeworkscomooXDocleteoSpring.
+Outras necessidades foram resolvidas com a manipulação de bytecodes em
+tempodeexecu çãocomaexplosãonaado çãodebibliotecascomessefim,como
+ASMouJavassist.HáaindalinguagenscomoGroovyeoutrasforamdesenvolvidas
+parafacilitaracria çãodecódigomaisadequadoàtipagemdinâmica.
+Comisso,outraslinguagens,atéentãoconsideradassecundáriaspelomercado,
+começaramatomarfor çaporpossuíremmaneirasdiferenciadasderesolverosmes-
+mosproblemas,mostrando-semaisprodutivasemdeterminadassitua ções.
+ParaaplicaçõesWebemJava,porexemplo,écomumaado çãodeoutraslingua-
+gens.Grandepartedotempo,utiliza-seCSSparadefinirestilos,HTMLparapáginas,
+JavaScriptparacódigoqueserárodadonocliente,SQLparabancosdedados,XMLs
+deconfiguraçãoe expressionlanguage(EL)nosJSPs.Mas,sejáusamosalinguagem
+certaparaatarefacerta,porquenãoaproveitarestapráticaemtodaaaplica ção?
+11
+
+## Página 34
+
+1.3. Usealinguagemcertaparacadaproblema CasadoCódigo
+Porquenãoacrescentarmaisumalinguagemseestaresolveromesmoproblemade
+maneiramaissimpleseelegante?
+Aplataforma.NETjáfoicriadatendocomoumdeseusobjetivosuportardi-
+versaslinguagens.ASunpercebeuposteriormentequenãoapenasalinguagemJava
+poderiaseaproveitardasvantagensdaplataforma:oexcelentecompiladorJIT,algu-
+masdasmelhoresimplementa çõesdeGarbageCollectorexistentes,aportabilidade
+eaquantidadedebibliotecasjáconsolidadasnomercadoeprontasparaserusadas.
+Hoje,aJVMécapazdeinterpretarecompilarcódigoescritoemdiversaslingua-
+gens. ComoRhino,códigoJavaScriptpodeserexecutadodentrodaJVM.Assim
+comocódigoRubypodeserexecutadocomJRuby,PythoncomJythonePHPcom
+Quercus.ExistemlinguagenscriadasespecificamentepararodarsobreaJVM,como
+Groovy,Beanshell,ScalaeClojure. OalemãoRobertTolksdorfmantémumalista
+damaioriadaslinguagenssuportadaspelaJVMemseusite,[ 204]ondeépossível
+encontraratémesmoimplementaçõesdalinguagemBasic.
+Muitosperguntamqualseriaautilidadedeexecutar,porexemplo,códigoJa-
+vaScriptnaJVM.Arespostaestánascaracterísticasdalinguagem,afinal,aplata-
+formaseráamesma.Apesardetodoopreconceitoqueexistesobreela,JavaScript
+vemsetornandoumalinguagemdeprimeiralinha,queéadotadaemoutrospon-
+tosdenossaaplica ção,enãoapenasnocontatofinalcomocliente. Oartigo“ A
+re-introductiontoJavaScript”mostracomoalinguagemvaialémdostutoriaissim-
+plesqueencontramosnaInternet.[ 215]Eaado çãodeplataformasservidoras,como
+oNode.js,mostramcomoJavaScripttambémpodeserumalinguagemdeusogeral.
+UmexemplosimplesdeusodeJavaScriptéparaevitaraduplica çãodecódigo;
+sejáexisteumavalida çãodeCPFdoclientefeitaviaJavaScript,podemosreutilizar
+essepedaçodecódigonoservidor,garantindoofuncionamentodosistemamesmo
+nocasodeJavaScriptestardesabilitadonocliente.Ocódigocontinuasendoexecu-
+tadodentrodaJVMcomtodasasotimiza çõesligadasàcompila çãosobdemandado
+mesmo.NãoéàtoaqueasnovasversõesdoHibernateValidatorpermitemquesua
+validaçãoserverside sejaemJavaScript.
+Écomumencontraraplica çõesJavarodandoRubyduranteoprocessodebuild,
+atravésdeferramentascomoRakeeCucumber,para,porexemplo,efetuarostestes
+end-to-endatravésdeumbrowser. ORailsrodandosobaJRubyécadavezmais
+adotado.
+OGrails,umframeworkbaseadonosconceitosdoRails,maslevadoàplata-
+formaJavaatravésdalinguagemGroovy,tambéméadotadoparaacria çãodepro-
+jetosWebemgeral. Essalinguagemtambémpodeserutilizadajuntamentecom
+12
+
+## Página 35
+
+CasadoCódigo Capítulo1. AplataformaJava
+BeanshellouRubyparaconfigurarframeworkscomooSpring,quejánãoestámais
+sólimitadoaXML.
+Emarquiteturasmodernas,écomumencontraraplica çõesWebdesenvolvidas
+sobaplataformaJava,porexemplo,noclouddoGoogleAppEngine,escritasemJava
+eemRuby,interagindoatravésdeJRubyetestadaviaRubyeJSpec.Odesenvolvedor
+precisadominarcadavezmaislinguagensparatirarproveitodetodaselas. Háo
+contrapontonamanutenibilidadedocódigo:maislinguagensexigemmaistrabalho,
+eénecessáriomedirmuitobemesse trade-off.
+AtendêncianamescladelinguagensétãofortequeaSuncriouoprojeto MLVM
+(MultiLanguageVirtualMachine),tambémconhecidocomo DaVinciMachine. O
+projetobuscaviabilizarumconjuntodeespecifica çõesparamelhoraraexecu çãode
+códigoescritoemoutraslinguagens,especialmenteaslinguagensdinâmicas.Existe
+umainiciativaparecidanaplataforma.NET,o Dynamic Language Runtime–D L R.
+Umdosprincipaisavan çostrazidospeloprojeto DaVinciMachine éumnovo
+bytecodechamado invokedynamic,umadasprincipaismudan çasnoJavaSE7.
+O invokedynamicpermitequemétodosnãodefinidosemtempodecompila ção
+possamseracessadosatravésdecódigoJavapuro,facilitandoamisturacomoutras
+linguagensquetrouxeramobjetoscomcaracterísticasdinâmicasparadentroda V i r -
+tualMachine,comooJRuby.Éummomentoimportantenadire çãodoJavacomo
+plataformamultilinguagem.Éaprimeiravezqueumnovobytecodeéadicionadoà
+plataformaparanãoserusadopelalinguagemJavaemsi,masporoutraslinguagens.
+Aindaseguindoessecaminhodalinguagemcorretanoinstanteadequado,sur-
+giuumfortemovimentoquebuscaobomusodelinguagensapropriadasaodomínio
+aseratacado,as DomainSpecificLanguages.Existemdiversostipos,característicase
+maneirasdecriá-las,semprecomointuitodetrazerparaocódigoumalegibilidade
+quesejamaisnatural.
+Linguagens funcionais
+Em2009,SteveVinoskichamouaaten çãoparaaretomadadapopularidadedo
+usodelinguagensfuncionaisnaWeb,[ 207]causadaprincipalmentepelafacilidade
+desetrabalharcomconcorrênciaeexpressividade.
+Operaçõescomuns,comotirarumamédiadepre çodeuma List<Produto>,
+vãoconsumiralgumaslinhasdecódigoemJava,mesmocomoauxíliodebiblio-
+tecasexternasquepossuam Predicates. Comofuncional,comoemScala,um
+simples media(produtos)(_.preco)fazessetrabalho,epodeserreaproveitado
+paracalcularamédiadetempogastodeuma List<Processos>,dadoquetemos
+13
+
+## Página 36
+
+1.3. Usealinguagemcertaparacadaproblema CasadoCódigo
+inúmerasprimitivasfuncionais,comoo foldLeft(conhecidocomo accumulate
+ou reduceemoutraslinguagens):
+def media[T](itens:List[T])(valorador: T => Double) =
+itens.foldLeft(0.0)(_ + valorador(_)) / itens.size
+QuandoJavaquebrouabarreiradequemáquinasvirtuaisseriamnecessaria-
+mentelentas,ajudouadesconstruirtambémomitosimilaralinguagensfuncionais,
+queexistememversõesinterpretadasquantocompiladas.
+Poroutrolado,comadesacelera çãodoaumentodapotênciadeumprocessador,
+omercadovoltou-separaoladodoscomputadoresmulti-coreelinguagensfuncio-
+naismaispuras,fortementeembasadasnaimutabilidade,quepodemsebeneficiar
+detaisprocessadoresdemaneiramaissimpleseeficiente,semusomanualdelocks
+edelimitaçõesderegiõescríticas.Afacilidadetrazidapelasclosures,apartirdoJava
+SE8,[186]étambémumdiferencialaserconsiderado,diminuindodrasticamenteo
+númerodeclassesanônimas,tornandoocódigomaislegívelemenosverboso.
+Comisso,padrõesquesãomaissimplesdeimplementaremlinguagensfuncio-
+naispodemsermaiscomplicadosemoutrosparadigmas,evice-versa.
+Podemosescolheramelhorlinguagemparacadatarefa,reaproveitandotodaa
+bibliotecajáexistenteemJava,ecomunicandoentreelasdemaneiratransparente.
+14
+
+## Página 37
+
+Capítulo2
+JavaVirtualMachine
+ComaJVMnocentrodaPlataformaJava,conhecerseufuncionamentointernoé
+essencialparaqualqueraplica çãoJava.Muitasvezes,deixamosdeladoajustesim-
+portantesdeGarbageCollector,nãoentendemosasimplica çõesdoJITnonosso
+designouenfrentamosproblemaspráticoscomClassLoaders.
+DentreosdiversostópicosassociadosàJVM,destacamosalgunsquejulgamos
+vitaisparatododesenvolvedorJava.
+2.1 P rincípios de garbage collection
+Durantemuitotempo,umadasmaioresdificuldadesnahoradeprogramarerao
+gerenciamentodememória.Osdesenvolvedoreseramresponsáveispelasuaaloca-
+çãoelibera çãomanualmente,oquelevavaamuitoserrose memoryleaks.Hoje,em
+todasasplataformasmodernas,Javainclusive,temosgerenciamentodememória
+automáticoatravésdealgoritmosdecoletadelixo.
+O Garbage Collector (GC)éumdosprincipaiscomponentesdaJVMeres-
+ponsávelpelaliberaçãodamemóriaquenãoestejamaissendoutilizada.Quandoa
+
+## Página 38
+
+2.1. Princípiosdegarbagecollection CasadoCódigo
+aplicaçãoliberatodasasreferênciasparaalgumobjeto,estepassaaserconsiderado
+lixoepodesercoletadopeloGCaqualquermomento. Masnãoconseguimosde-
+terminaromomentoexatoemqueessacoletaocorrerá;istodependetotalmentedo
+algoritmodogarbagecollector.Emgeral,oGCnãofarácoletasparacadaobjetoli-
+berado;eledeixaráolixoacumularumpoucoparafazercoletasmaiores,demaneira
+aotimizarotempogasto.Essaabordagem,muitasvezes,ébemmaiseficiente,além
+deevitarafragmenta çãodamemória,quepoderiaaparecernocasodeumprograma
+quealoqueelibereamemóriademaneiraingênua.[ 39]
+Mas,comoérealizadaessacoletaexatamente?Vimosqueelanãoéfeitalogoque
+umobjetoficadisponível,mas,sim,detemposemtempos,tentandomaximizaraefi-
+ciência.Emgeral,aprimeiraideiaqueapareceaosepensaremGCéqueeleficavar-
+rendoamemóriaperiodicamenteeliberaaquelesobjetosqueestãosemreferência.
+EstaéabasedeumconhecidoalgoritmodeGCchamado Marck-And-Sweep,[159]
+constituídodeduasfases:naprimeira,oGCpercorreamemóriaemarca( mark)to-
+dososobjetosacessíveispelasthreadsatuais;nasegunda,varre( sweep)novamente
+amemória,coletandoosobjetosquenãoforammarcadosnafaseanterior.
+Essealgoritmoenvelheceu,damesmaformaqueoingênuo referencecounting.
+Estudosextensivoscomváriasaplica çõeseseuscomportamentosemtempodeexe-
+cuçãoajudaramaformarpremissasessenciaisparaalgoritmosmodernosdeGC.A
+maisimportantedelaséa hipótese das geraçõ e s.[206]
+Segundoestahipótese,geralmente95%dosobjetoscriadosduranteaexecu ção
+doprogramatêmvidaextremamentecurta,istoé,sãorapidamentedescartados.É
+oqueartigosacadêmicoschamamdealtoíndicede mortalidadeinfantil entreos
+objetos.Ahipótesedasgera çõesaindadizqueosobjetossobreviventescostumam
+tervidalonga. Combasenessasobserva ções,chegou-seaoquehojeéconhecido
+comooalgoritmo generational copying,usadocomobasenamaioriadasmáquinas
+virtuais.[137][160]
+Ésimplesobservaressepadrãogeracionalemmuitosprogramasescritosem
+Java,quandoobjetossãocriadosdentrodeummétodo. Assimqueométodoter-
+mina,algunsobjetosqueforamcriadosláficamsemreferênciasesetornamelegí-
+veisàcoletadelixo,istoé,elessobreviveramapenasduranteaexecu çãodométodo
+etiveramvidacurta.
+Mesmométodoscurtosesimples,como toString,acabamgerandoobjetos
+intermediáriosquerapidamentenãoserãomaisreferenciados:
+public String toString() {
+return “[ contatos: “+ listaDeContatos + “]”;
+16
+
+## Página 39
+
+CasadoCódigo Capítulo2. JavaVirtualMachine
+}
+Aqui,duranteaconcatena çãodastrêspartesda String,um StringBuilder
+seráutilizado,eomesmovaiocorrerparaainvoca çãoimplícitado toString
+da coleção listaDeContatos, que gera uma String a partir de outro
+StringBuilder. Todosessesobjetospodemserrapidamentedescartados,etal-
+vezopróprioretornodométodoseráreferenciadoapenasporumbreveinstante.
+Nogenerationalcopying,amemóriaédivididaemgera ções,quegeralmentesão
+duasyounggeneration eoldgeneration (Figura2.1). Ageraçãonovaétipicamente
+menorqueavelha;aJVMHotSpot,porexemplo,estáprogramadaparaocupar,
+porpadrão,atéumter çodoespa çototal. Todonovoobjetoéalocadonestaparte
+e,quandoelaseencher,oGCrealizaráseutrabalhoembuscadesobreviventes.O
+truqueestájustamentenofatodequeoGC,nestecaso,varreapenasagera çãojovem,
+queébempequena,semterdeparalisaraJVM( stop-the-world)pormuitotempo.
+Osobjetosquesobrevivemàcoletasão,então,copiadosparaagera çãoseguinte,
+etodooespa çodagera çãonovaéconsideradodisponívelnovamente.Esseprocesso
+decópiadeobjetossobreviventeséquedánomeaoalgoritmo.
+Figura2.1:Divisãodasgera çõesnoheap.
+Pode-sepensarqueo generationalcopying nãoétãobom,pois,alémdeliberar
+objetosdamemória,gastatempocopiandoossobreviventes.Masseugrandetrunfo
+équeeleagenosobjetossobreviventes,enãonosdescartados,comofariaumal-
+goritmotradicional.Nodescarte,osobjetosnãosãoverdadeiramenteapagadosda
+memória;oGCapenasmarcaamemóriacomodisponível.Segundoahipótesedas
+gerações,portanto,o generationalcopyingrealizarácópiaemapenas5%dosobjetos,
+osquetêmvidamaislonga.E,emboraumacópiasejarelativamentecustosa,copiar
+apenasospoucossobreviventesémaisrápidoqueliberar,umporum,osdiversos
+objetosmortos.
+Novosobjetossãoalocadosnayounge,assimqueelaestiverlotada,éefetuado
+ochamado minor collect.Énestepassoqueosobjetossobreviventessãocopiados
+paraaold,etodooespa çodayoungtorna-sedisponívelnovamenteparaaloca-
+17
+
+## Página 40
+
+2.1. Princípiosdegarbagecollection CasadoCódigo
+ção. Commenorfrequência,sãoexecutadosos major collects,quetambémcole-
+tamnagera çãooldusandoo mark-and-sweep.Major collectssãotambémchamados
+FullGC,ecostumamdemorarbemmais,jáquevarremtodaamemória,chegando
+atravaraaplica çãonosalgoritmosmaistradicionais(nãoparalelos).
+Épossívelfazerumaobserva çãosucintadocomportamentodoGCmesmosem
+umprofiler,bastandousaraop ção -verbose:gcaoiniciaraJVM.Ologdeexecu-
+çãodoGCmostraafrequênciadaschamadasaos minoremajorcollects,bemcomo
+aeficiênciadecadachamada(quantodememóriafoiliberado)eotempogasto.É
+importanteobservaressesvaloresparaperceberseoprogramanãoestágastando
+muitotemponosGCs,ouseascoletasestãosendoineficientes.Umgargalopossível
+deserencontradoéagera çãoyoungmuitopequena,fazendocomquemuitosobje-
+tossejamcopiadosparaaoldpara,logoemseguida,seremcoletadosemuma major
+collect,prejudicandobastanteaperformancegeraldoGCeaeficiênciados minor
+collects.
+UmmitomuitocomuméodequeestressamosoGCsecriarmosmuitosobjetos.
+Naverdade,comoosalgoritmosestãoadaptadossegundoahipótesedasgera ções,
+omelhorsãomuitospequenosobjetosquelogosetornamdesnecessários,doque
+poucosquedemoramparasairdamemória.Emalgunscasos,atéotamanhodoob-
+jetopodeinfluenciar;naJRockit,porexemplo,objetosgrandessãoalocadosdireto
+na::oldgeneration:;,logonãoparticipamdacópiageracional.
+Amelhortécnicaqueumdesenvolvedorpodeutilizaréencaixarademandade
+memóriadasuaaplica çãonahipótesedasgera çõesenasboaspráticasdeorienta ção
+aobjetos,criandoobjetospequenoseencapsuladosdeacordocomsuanecessidade.
+Seocustodecria çãodoobjetonãoforgrande,segurarsuasreferênciasoufazer
+cachesacabasendopior.Obviamente,issoexcluicasosemqueocustodecria çãoé
+grande,comoumla çodeconcatena çãode Stringatravésdooperador +;nesse
+caso,émelhorusar StringBuildersou StringBuffers.
+Umefeitocolateralinteressantedoalgoritmodecópiadeobjetoséa compacta-
+çãodamemória.AlgoritmosingênuosdeGCcostumamcausargrandefragmenta-
+cão,porqueapenasremovemosobjetosnãomaisusados,eossobreviventesacabam
+espalhadosecercadosdeáreasvazias. O generationalcopying copiaosobjetosso-
+breviventesparaoutragera çãodeformaagrupada,eamemóriadagera çãoanterior
+éliberadaemumgrandeeúnicobloco,semfragmenta ção.Foraisso,outrasestra-
+tégiasdecompactaçãodememóriaaindapodemserusadaspelaJVM,inclusivena
+oldgeneration. Éimportantenotarqueissosóépossívelporcausadomodelode
+memóriadoJava,queabstraitotalmentedoprogramaaformacomoosponteiros
+18
+
+## Página 41
+
+CasadoCódigo Capítulo2. JavaVirtualMachine
+eendereçosdememóriasãousados.Épossívelmudarobjetosdelugaraqualquer
+momento,eaVMprecisaapenasatualizarseusponteirosinternos,oqueseriamuito
+difícilderealizaremumambientecomacessodiretoaponteirosdememória.
+Explorando o gerenciamento de memória nas JVMs
+AáreatotalusadaparaarmazenarosobjetosnaJVMéchamadaheap.Ota-
+manhodoheapdememóriadamáquinavirtualécontroladopelasop ções -Xmse
+-Xmx.Aprimeiraespecificaotamanhoinicialdoheap,easegunda,otamanho
+máximo.Inicialmente,aJVMalocanosistemaoperacionalaquantidadeXmsde
+memóriadeumavez,eessamemórianuncaédevolvidaparaosistema.Aaloca çãode
+memóriaparaosobjetosJavaéresolvidadentrodaprópriaJVM,enãonosistema
+operacional.Conformemaismemóriaénecessária,aJVMalocaemgrandesblo-
+cosatéomáximodoXmx(seprecisardemaisqueisso,um OutOfMemoryError
+élan-çado).ÉmuitocomumrodaramáquinavirtualcomvaloresiguaisdeXmse
+Xmx,fazendocomqueaVMaloquememórianosistemaoperacionalapenasno
+início,deixandodedependerdocomportamentoespecíficodoSO.
+Conheceressaseoutrasop çõesdogarbagecollectordasuaJVMpodeimpactar
+bastantenaperformancedeumaaplica ção.Considereocódigoaseguir:
+for (int i = 0; i < 100; i++) {
+List<Object> lista = new ArrayList<Object>();
+for (int j = 0; j < 300000; j++) {
+lista.add(new Object());
+}
+}
+RodandoumprogramacomessecódigonomainnaJVM6HotSpot,usando
+o -clientpadrãocom64mdeXmseXmx,aohabilitaro -verbose:gcobte-
+mosumasaídacomoesta:
+[GC 25066K->24710K(62848K), 0.0850880 secs]
+[GC 28201K(62848K), 0.0079745 secs]
+[GC 39883K->31344K(62848K), 0.0949824 secs]
+[GC 46580K->37787K(62848K), 0.0950039 secs]
+[Full GC 53044K->9816K(62848K), 0.1182727 secs]
+...
+Osvaloresmostradosemcadalinhacorrespondema:memóriaemusoantesda
+coleta,memóriadepois,totaldememóriadaJVMeotempogastonacoleta.Asaída
+19
+
+## Página 42
+
+2.1. Princípiosdegarbagecollection CasadoCódigo
+realébemmaior,maspraticamenterepeteosmesmospadrões.Épossívelperceber
+queos minorGCsãomuitopoucoeficientes,liberampoucamemória,aocontrário
+dosFullGC queparecemliberarmuita. Issoindicafortementequeestamosindo
+contraahipótesedasgera ções.Osobjetosnãoestãosendoliberadosenquantoainda
+jovens,nemsendocopiadosparaagera çãovelha,deonde,depoisdeumtempo,
+serãoliberados.Nestenossocaso,oalgoritmodeGCbaseadoemcópiadeobjetosé
+umimensogargalodeperformance.
+Propositadamente,ocódigodetestesegurareferênciasporumtempoquees-
+tressaoGC.Emumaaplica çãoreal,oidealseriaalterarocódigoparaqueseadapte
+melhoràhipótesedasgera ções.Mas,quandoocomportamentodasuaaplica çãoé
+diferentedohabitual,bastaalteraralgumasconfigura çõesdogarbagecollectorpara
+obteralgumganho.
+Emnossamáquinadetestes,semalterarotamanhototaldoheap,aoaumentaro
+dayounggenerationusandoaop ção -XX:NewRatio=1(opadrãoé2naHotSpot),
+temosumganhodemaisde50%naperformancegeraldaaplica ção. Essaopção
+mudaapropor çãoentreostamanhosda younggenerationeda old.Porpadrão,2/3
+serãoolde1/3seráyoung;aomudarovalorpara1,teremos1/2paracadaárea.Claro
+queesseganhodependemuitodoprogramaedaversãodaJVM,mas,aoolharagora
+paraasaídadoprograma,épossívelobservarcomoumapequenamudan çaimpacta
+bastantenaeficiênciadoGC:
+[GC 49587K->25594K(61440K), 0.0199301 secs]
+[GC 43663K->26292K(61440K), 0.0685206 secs]
+[GC 47193K->23213K(61440K), 0.0212459 secs]
+[GC 39296K->21963K(61440K), 0.0606901 secs]
+[GC 45913K->21963K(61440K), 0.0215563 secs]
+...
+Nosnovostestes,o FullGC nemchegaaserexecutado,porqueospróprios mi-
+norgc sãosuficientesparadarcontadosobjetos.E,comooalgoritmodeGCéba-
+seadoemcópias,poucosobjetossãocopiadosparaa oldgeneration,influenciando
+bastantenaperformancedoprograma. Saiba adequar sua aplicação à hipótese das
+gerações, seja adequando seu código, seja conhecendo as melhores configuraçõ e s
+de execução da sua JVM.
+PensandoemcomousufruirdessascaracterísticasdoGC,oqueémelhorpara
+umaaplica ção: usarobjetosgrandes,cachesgigantesdeobjetoseabusardeatri-
+butosestáticos;ouescreverdiversospequenosobjetoscriadoseliberadosatodo
+momento? SegurarobjetosnamemóriaestressademaisoGCbaseadoemcópias
+20
+
+## Página 43
+
+CasadoCódigo Capítulo2. JavaVirtualMachine
+deobjetos.AboapráticadeOrienta çãoaObjetosjádizquedevemoscriarpeque-
+nosobjetosencapsulados,semmuitosdadosestáticos,originandoinstânciassem
+nospreocuparmoscomcacheseoutrasalegadasotimiza ções. Seseguirmosaboa
+prática,oGCtambémfuncionarámelhor.AJVM,deummodogeral,foiescritae
+adaptadaaolongodesuavidaparasuportarodesenvolvedornasboaspráticas.
+OutropontoparticulardaJVMHotSpotdaOracle/Sun(esuasderivadas)éa
+chamadapermanentgeneration,ou PermGen(Figura2.2).Éumespa çodememó-
+riacontadoforadoheap(alémdoXms/Xmxportanto),ondesãoalocadosobjetos
+internosdaVMeobjetosClass,Method,alémdo pool de strings. Aocontrário
+doqueonomepareceindicar,esseespa çodememóriatambémécoletado(du-
+ranteosFullGC),mascostumatrazergrandesdoresdecabe ça,comoosconhecidos
+OutOfMemoryError,acusandoofimdo PermGenspace. Aprimeiradificuldade
+aquiéque,pornãofazerpartedoXms/Xmx,o PermGenconfundeodesenvolve-
+dor,quenãoentendecomooprogramapodeconsumirmaismemóriadoqueade-
+finidano -Xmx. ParaespecificarotamanhodoPermGen,usa-seoutraop ção,a
+-XX:MaxPermSize.
+Figura2.2:DivisãodamemórianaJVMdaSun.
+Masosproblemascomestourodo PermGensãodifíceisdediagnosticar,justa-
+menteporquenãosetratadeobjetosdaaplica ção.Namaioriadoscasos,estáligadoa
+umaquantidadeexageradadeclassesquesãocarregadasnamemória,estourandoo
+tamanhodoPermGen.Umexemploconhecido,queaconteciaantigamente,erausar
+oEclipsecommuitosplugins(sabidamenteoWTP)nasconfigura çõespadrõesda
+JVM.PorcausadaarquiteturadepluginsbemorganizadaeencapsuladadoEclipse,
+muitasclasseseramcarregadaseamemóriaacabava.
+Umoutroproblemabemmaiscorriqueirosãoosestourosdo PermGenaose
+fazermuitos hotdeploys nosservidoresdeaplica ção. Porváriosmotivospossíveis
+(comoveremosduranteotópicodeClassLoaders),oservidornãoconsegueliberar
+21
+
+## Página 44
+
+2.1. Princípiosdegarbagecollection CasadoCódigo
+asclassesdocontextoaodestruí-lo.Umanovaversãodaaplica çãoéentãocarregada,
+masasclassesantigascontinuamnamemória.Éapenasumaquestãodetempopara
+essevazamentodememóriaestouraroespa çodo PermGen.
+Algoritmos de coleta de lixo
+AplicaçõesdegrandeportepodemsofrercomoGC.Éfundamentalconhecer
+algumasdasprincipaisop çõesquesuaJVMpossibilita.NocasodaHotSpot,aJVM
+maisutilizada,diversosalgoritmosdiferentesestãodisponíveisparauso.[ 135][129]
+Porpadrão,éusadoo Serial Collector,queébastanterápido,masusaapenasuma
+thread.Emmáquinascomumoudoisprocessadores,elecostumaserumaboaes-
+colha.Masemservidoresmaiscomplexos,comváriosprocessadores,podedesper-
+diçarrecursos. Istoporqueeleéumalgoritmo stop-the-world,oquesignificaque
+todoprocessamentodaaplica çãodeveserinterrompidoenquantooGCtrabalha,
+paraevitarmodifica çõesnamemóriaduranteacoleta.Mas,porserserial,implica
+que,seumamáquinativermuitosprocessadores,apenasumpoderáserusadopelo
+GC,enquantotodososdemaisficamociosos,poisnãopodemexecutarnenhuma
+outratarefaenquantooGCroda.Istoéumdesperdícioderecursos,eumgargalo
+emmáquinascomváriosprocessadores.
+É possível então, na HotSpot, habilitar diversos outros algoritmos de
+GC e até usar combinações deles. O Parallel Collector (habilitado com
+-XX:+UseParallelGC)conseguerodar minor collectsemparalelo.Eletambémé
+stop-the-world,masaproveitaosváriosprocessadores,podendoexecutaroGC.Note
+que,porcausadisso,oalgoritmoparaleloacabademorandoumtempototalmaior
+queoserial,emrazãodocustodesincronizaroacessoàmemóriasendocoletada(
+synchronized,semáforos,mutexes,....).Mas,comoestamosfalandodemáquinas
+commuitosprocessadores,oqueacabaacontecendoéqueessetempoédivididoen-
+treosváriosprocessadores,eoefeitoéqueseusamelhorohardwareesediminuio
+tempodeparadaparacoleta.[ 135]Épossívelaindahabilitarumcoletorparalelopara
+ageraçãooldeosmajorcollects,usando -XX:+UseParallelOldGC.
+Quandoorequisitoprincipalédiminuirotempoderesposta,ouseja,diminuir
+otempoqueaaplica çãoficaparadaesperandooGC,omelhorpodeserusaro C o n -
+current Mark-and-sweep(CMS),tambémchamadode lowpausecollector (ativado
+com -XX:+UseConcMarkSweepGC).Essealgoritmoagenagera ção oldeconse-
+guefazeramaiorpartedaanálisedamemóriasempararomundo.Eletemapenas
+umpequenopeda çostop-the-world,oqueacabatornandootempoderespostabem
+menor.Masopre çoquesepagaéqueoalgoritmogastamaisprocessamentototal,e
+22
+
+## Página 45
+
+CasadoCódigo Capítulo2. JavaVirtualMachine
+temcustosmaioresdecontroledeconcorrência.Podeserumaboaideiaemmáqui-
+nascommuitosprocessadoresecombastantememóriaasercoletada.[ 135]Aousar
+oCMS,agera çãoyoungécoletadacomumalgoritmoparalelochamadoParNewe
+épossívelatédesabilitá-loeusaroSerial.
+A última novidade em relação a algoritmos GC é oG1, desenvolvido pela
+Sun.[134]Éumalgoritmoconcorrentequetentatrazerumpoucomaisdeprevisibi-
+lidadeparaoGC,umadasgrandescríticasdequempreferegerenciamentomanual
+dememória.Apesardeserconsideradoumalgoritmogeracional,elenãoseparao
+heapemduasgera ções,esimemmuitaspequenasregiões. Dinamicamente,oG1
+escolhealgumasregiõesparasercoletadas(oqueacabadandoosentidológicoda-
+quelasregiõesserema younggen). Ointeressanteéqueépossívelespecificarpara
+oG1tempomáximoasergastoemGCemumdeterminadointervalodetempo.O
+G1,então,tentaescolherumnúmeroderegiõesparacadacoletaque,baseadoem
+execuçõesanteriores,eleachaqueatingirãoametasolicitada.Comisso,espera-se
+terumalgoritmodeGCmaiseficienteemaisprevisível,comparadasmaiscurtase
+constantes.
+EssesalgoritmosmudammuitodeumaJVMparaoutra. Osquatrojácita-
+dossãodasúltimasversõesdaJVM6edaJVM7daOracle/Sun. Outrasmáqui-
+nasvirtuaispossuemoutrosalgoritmos. AJRockit,porexemplo,permitedesabi-
+litaroalgoritmogeracionaleusarumbaseadono mark-and-sweepcomaop ção
+-Xgc:singlecon(háoutrostambémparecidoscomosalgoritmosparallelecon-
+currentdoHotSpot).[ 43]AAzulSystems,conhecidaporsuaJVMfocadaemalta
+performance,possuiemseusprodutos,desdeofimde2010,umGCsempausas.[ 196]
+Amemóriapodeserumgargaloparasuaaplica ção;portanto,conhecerbemseu
+funcionamentoeseusalgoritmospodeserpe ça-chaveparaosucessodeumprojeto.
+2.2 N ão dependa do gerenciamento de memória
+Comovimos,o GarbageCollectoréumdosserviçosmaisimportantesdaJVMeexige
+poucoesforçoparausá-lo.Conhece-lo,alémdeseusalgoritmos,ajudanomomento
+deescrevercódigosmelhoresenãotersurpresas.Masháaindaoutrasquestõesre-
+lacionadasaocomportamentodoGC.
+Umdosprincipaispontosésuanaturezaimprevisível. Porserumservi çoda
+JVMquerodasimultaneamenteàsuaaplica ção,nãoconseguimoscontrolarexpli-
+citamenteseucomportamento.Diferentedogerenciamentomanual,noqualtanto
+aaloca çãoquantoalibera çãodememóriasãochamadasexplicitamentepelode-
+23
+
+## Página 46
+
+2.2. Nãodependadogerenciamentodememória CasadoCódigo
+senvolvedor,emJavaeemoutraslinguagensbaseadasnaexistênciadeumGC,não
+definimosospontosdecoleta.Apenasliberamosasreferênciasparaosobjetose,em
+algummomento,acoletaseráefetuada.
+Anãoexigênciadanecessidadedeexplicitaressacoletaéopontopositivodo
+GC,poistiraessapreocupa çãododesenvolvedor,masétambémsuamaiorcrítica,
+pelasuaimprevisibilidade.Elepodeficarmuitotemposemrodarnocasodeexistir
+muitamemóriadisponívele,derepente,gastarmuitotempoemumaúnicaexecu-
+ção,potencialmenteparalisandoorestantedaaplica ção.Sãoessasparalisa çõesque
+osalgoritmos ConcurrenteG1tentamminimizar.
+Algunsdesenvolvedorestentamescrevercódigoparaqueopróprioprograma
+controlealgunsaspectosrelacionadosaoGCe,deummodogeral,issonãoéuma
+boaideia.
+Umaprimeiramápráticabastantecomuméainvoca çãoao System.gc()na
+esperançademinimizaraimprevisibilidadedoGCeaumentarsuafrequênciade
+execuções. Essaabordagemapresentadiversosproblemas. Emprimeirolugar,o
+métodonãogaranteaexecu çãodoGC,comodefinidoemseuJavaDoc:
+InvocarométodoGCsugerequeaMáquinaVirtualJavafa çaumesfor çoparare-
+ciclarobjetosnãoutilizadosafimdeliberaramemóriaqueelesocupamatualmente
+pararápidareutilização.Quandoocontrolevoltadachamadadométodo,aMáquina
+VirtualJavafezomáximoesfor çopararecuperarespa çodetodososobjetosdescarta-
+dos.[42]
+Ouseja,ainvoca çãodométodoéumasugestãoparaaexecu çãodoGC,que
+podeseratendidaounão.Emoutraspalavras,ainvoca çãoao System.gc()não
+garanteresultadoalgum. Porexemplo,aJVMdaOracle/Sun,porpadrão,sempre
+segueasugestão,etodainvoca çãoaestemétodoexecutaum FullGC.Namaioria
+dasvezes,essaobediênciaéaindapior,umavezqueo FullGC,quenãodeveria
+serexecutadocommuitafrequência,varretodooheap,demorandoparacompletar.
+Alémdisso,aquantidadedememórialiberadaserápequenanocasodeinvoca ções
+muitopróximas.
+Um caso encontrado com frequência aparece quando um processo dentro
+de um laço consome muita memória, e os desenvolvedores decidem invocar
+System.gc()dentrodoloop,acarretandoumaenormeperdadeperformance:
+public void processa(List<Cliente> clientes, List<Evento> eventos) {
+for(Cliente cliente : clientes) {
+for(Evento evento : eventos) {
+cliente.analisa(evento);
+24
+
+## Página 47
+
+CasadoCódigo Capítulo2. JavaVirtualMachine
+System.gc();
+}
+}
+}
+Podemostentarfixarumintervalodeinvoca çõesdoGC,comoacadacincomi-
+nutosouaotérminodaexecu çãodecadamétodo.MaséquasecertoqueaVMseria
+capazdeescolhermomentosmaisapropriadosparaexecu çãodoGCdoquenós.Isso
+porque,aocontráriodaVM,oprogramanãotemavisãogeraldamemóriadurante
+todootempodeexecu çãoe,porisso,éincapazdecalcularexatamenteoimpactoda
+coleta.
+Porfim,mesmoqueinsistamosemfazeratalinvoca çãoexplícita,éimportante
+saberque,emruntime,épossíveldesabilitaraexecu çãoarbitráriadoGC,oque
+seráumproblemasenãocontrolamostudodoambientedeprodu ção.NaHotSpot,
+porexemplo,aop ção XX:+DisableExplicitGC,passadaparaaJVMnalinhade
+comando,desabilitaaschamadasaSystem.gc(),ignorando-asporcompleto.Aliás,
+esteéocomportamentopadrãodemuitasoutrasJVMs.
+O método finalize de Object
+Nãopodemoscontrolaromomentodacoletadosobjetos,masépossívelserdele
+notificadonessemomento.Uminstanteantesderemovercadaobjetodamemória,o
+GarbageCollectorinvocaseumétodofinalize,notificando-odacoleta.Estemétodo
+édefinidonaclasse Object,epodemosreescrevê-loemnossasclassescomcódigo
+próprioaserexecutadoantesdeosobjetosseremcoletados.
+public class DAO {
+private Conexao conexao;
+// métodos do DAO
+@Override
+public void finalize() {
+super.finalize();
+this.conexao.fecha();
+}
+}
+Namaioriadasvezes,porém,usarestemétodocausamaisdoresdecabe çado
+queresolveproblemas. Ométodopodeserexecutadomuitotempodepoisqueo
+25
+
+## Página 48
+
+2.2. Nãodependadogerenciamentodememória CasadoCódigo
+objetosetornouinacessível,ouatémesmonãoserchamadonunca. Imagineum
+programaquerodacommuitamemória,quasenãoausaeexecutarapidamente;o
+GCpodenãoterjamaisaoportunidadedeserexecutado.
+Mesmoquandoforexecutado,seucomportamentoécomplicado.Ese,durante
+afinalização,recuperarmosumareferênciadoobjetoemoutrolugar? OGCnão
+ocoletae,napróximavezqueoobjetoestiverdisponível,ofinalizenãoseráexe-
+cutadonovamente. Ouaindasenossaimplementa çãodestemétododeixarvazar
+umaexceção,elaseráengolidaeafinaliza çãodoobjetointerrompida. Seestiver-
+mostrabalhandocomheran ça,precisamosgarantirainvoca çãodofinalizedamãe.
+Alémdisso,asfinaliza çõessãoexecutadassequencialmenteporumathreadespecí-
+fica,quepossuiumafiladeobjetosfinalizáveisemordemnãodeterminada,oque
+fazcomqueumapossíveldemoranafinaliza çãodeumobjetoatraseadealgumou-
+troimportante. Todosessesproblemasseacumulamedificultamaescritadeum
+métodofinalizeadequado.
+Demodogeral,evitedependerdefinaliza ções,aindamaisseforumcódigoim-
+portanteequenecessitadagarantiadeexecu ção.Nãouseofinalizecomoúnicome-
+canismodelibera çãoderecursosimportantes,como,porexemplo,fecharconexões
+ouarquivos.Semprequeseuobjetoexigiralgumprocessodefinaliza ção,exponha
+ummétodocloseoudisposeparaosdesenvolvedoreschamarem-noexplicitamente,
+garantindoaexecuçãodessecódigoimportante.Comorecursode try-with-resources
+doJava7,então,éaindamaisfácilgarantirqueodesenvolvedorchameocloseno
+momentocerto.[45]
+Umusopossívelparaofinalizeécomosegundomecanismodefinaliza ção,in-
+vocandoométodoprincipalcasoousuárioseesque çadefazê-lo.Éumaseguran ça
+amais,masnãoumagarantiadeexecu ção-nessecaso,ousuárioestavaerrado,pois
+ocorretoseriaterchamadoocloseexplicitamente.
+public class Leitor {
+private final InputStream input;
+public Leitor(InputStream input) {
+this.input = input;
+}
+// métodos
+public void finalize() {
+close();
+}
+public void close() {
+try {
+26
+
+## Página 49
+
+CasadoCódigo Capítulo2. JavaVirtualMachine
+input.close();
+} catch(IOException ex) {
+// logar ou algo diferente
+}
+}
+}
+Nosraroscasosemqueprecisarmostrabalharcomfinaliza ções, oJavadis-
+ponibilizaumoutromecanismomaisrobustoqueo finalize.[161]Nopacote
+java.lang.ref,[40] estão as classes de referências fracas (WeakReference,
+SoftReferencee PhantomReference)e RefereceQueue. Comelas,ode-
+senvolvedorconseguecontrolarsuaprópriafiladecoletaeprocessardojeitoque
+desejarasfinaliza çõesdeseusobjetos.Outrousodereferênciasfracasépermitira
+implementaçãodecachesdeobjetosquenuncaestouramamemória.Pornãoserem
+referênciasnormaisJava(fortes),elasnãoimpedemacoletadoobjeto,simplificando
+aimplementaçãodestetipodecache.Osdetalhesdereferênciasfracasestãoforado
+escopodesselivro,masrecomendamosseuusoquandofornecessáriodetectarfina-
+lizaçõesdeobjetos.
+De um modo geral, não interferir no GC ou depender de seu comportamento
+é uma boa prática.Programadoresmaisacostumadosaumcontrolefinodogerenci-
+amentodememóriapodemsesentirdesconfortáveisemdeixartudonamãodaVM.
+Masagrandevantagemdogerenciamentoautomáticodememóriaéjustamentenão
+maisnospreocuparmoscomdetalhesdoGCeterumaimplementa çãoeficienteà
+nossadisposição.
+2.3 JIT C ompiler: compilação em tempo de execução
+QuandooJavafoilan çado,aJVMeraordensdemagnitudemaislentaquehoje,
+interpretandoseucódigoquequalquerprogramanativoemC.Hoje,oJavaébastante
+rápido,masaindacarregaesteestigmaoriginadonopassado.
+AsprimeirasJVMseramsimplesmenteinterpretadoresdebytecodes.Liamar-
+quivos.classetraduziamcadabytecodenasequênciadeexecu çãoparaasinstru ções
+demáquinaequivalentes.ApartirdoJava1.1,aSunincluiuseuprimeiro JIT Com-
+p i l e r,adquiridodaSymantec,e,noJava1.2,incluiuoHotSpot.Aevolu çãodessas
+duastecnologiasaolongodasversõesdoJavaéoquefazaJVMserequiparávela
+aplicaçõesnativasemCeC++.
+OsgrandesganhosdeperformancedoJavadevem-seàotimiza çãoadaptativa,
+istoé,acapacidadedefazerotimiza çõesdeacordocomousodoprogramaeas
+27
+
+## Página 50
+
+2.3. JITCompiler:compilaçãoemtempodeexecu ção CasadoCódigo
+condiçõesdomomento. TantoJavaquantoCpossuemumaetapadecompila ção
+estática,quegeraumarquivobinárioaserexecutado,e,duranteessacompila ção,
+váriasotimizaçõessãorealizadas.Adiferen çaéqueobinárionativoCgeradoéexe-
+cutadodiretamentenamáquina,eobinárioJavaéaindaexecutadoatravésdaJVM,
+ondeoutrasotimiza çõesacontecem.NocasodoC,todaotimiza çãopossíveléfeita
+estaticamentepelocompilador,enquantoqueoJavaconsegueexecutarumasegunda
+etapadeotimiza çõesdentrodaVMnomomentodacompila çãodosbytecodespara
+códigonativo,nachamadacompila çãodinâmica.ÉistooquefazoJavaexecutartão
+rapidamente.
+Duranteaexecu çãodoprograma,aJVMaanalisaedetectaospontosmaisim-
+portanteseexecutadosdaaplica ção.Essesmétodossãoentãocompiladosdinami-
+camentepeloJITparacódigonativootimizado,etodaexecu çãosubsequenteéfeita
+comele,atingindoperformancecomparávelaC.AsVMsmaismodernasconseguem
+atérecompilardeterminadométodocomotimiza çãomaisagressivacasopercebam
+queaperformancemelhorará. Elastambémpercebemquedeterminadocódigojá
+nãoémaisimportante,edescartamsuascompila ções,ouquedeterminadaheurís-
+ticaaplicadanãofoiboa,eaplicamumnovotipodeotimiza ção.
+AevoluçãoconstantedaJVMedoJITfazcomqueoJavasejacadavezmais
+rápido. Mesmoumprogramaantigomelhorasignificativamentesuaperformance
+seousuáriosimplesmenteatualizaraversãodaJVM.Emumprogramanativotra-
+dicional,paraousuárioterumganhodeperformance,porexemplo,porcausade
+umaversãonovadocompiladorC,eleteráqueesperardofabricanteumaversão
+novarecompilada. Maisdoqueisso,muitosprogramascomerciaisemCexigem
+ummínimodeportabilidade,como,porexemplo,rodardesdeoWindowsXPaté
+oWindows7,ousuportarqualquerprocessadorInteleAMD.Paratanto,frequen-
+tementeacompila çãodoprogramaCéfeitausandorecursoscomunsatodasas
+plataformasvisadas. Ouseja,umdenominadorcomumemrela çãoaotimiza ções,
+instruçõesdemáquinaechamadasdosistema.JáoJava,pornãofazeracompila ção
+paracódigonativoapenasestaticamente,consegueusarestratégiasfocadasnosis-
+temaoperacionalenohardwareusadosnomomentodesuaexecu ção,chegandoa
+invocarinstruçõesespecíficasdoprocessadoremuso.
+Otimizações para clientes e servidores
+Diferentesaplicaçõestêmdiferentesnecessidadesdeperformanceeresponsivi-
+dade.Pensandonisso,aJVMofereceperfisdiferentesqueadaptamofuncionamento
+doJITeoutrascaracterísticasdaJVM.
+28
+
+## Página 51
+
+CasadoCódigo Capítulo2. JavaVirtualMachine
+Aplicações voltadas ao usuário final, geralmente clientes Desktop, têm uma
+grandedemandaporinicializa çãorápida,emboranãoprecisemtantodeperfor-
+mance;emgeral,ogargalonessasaplica çõeséoinputdousuário.Sehabilitarmos
+aopção -clientnaJVM,elaperdemenostemponostartupparaousuáriovero
+resultadomaisrapidamente,masaocustodeterumJITfazendootimiza çõesme-
+nosagressivasalongoprazo.Umdosfocosdestaconfigura çãoé,porexemplo,não
+consumirmuitamemória,atédeixandodefazercertasotimiza çõesnoJITqueaca-
+bariamaumentandoousodememória,como inlinedemétodos.
+Já a opção -serverprevêcenáriosnosquaisotempoinicialnãoéumgrande
+problema,masexisteumapreocupa çãomaiorcomaperformancealongoprazo.
+Ostartupdemoramaisalgumtempo,eoJITrodaemumadesuasversõesmais
+agressivasparaodesempenhodaaplica ção.[38]Ousodememóriaémaisintenso,
+masaperformancedeexecu çãoémaioralongoprazo. AVMserverabusa,por
+exemplo,derecursoscomo inlinedemétodos,emqueocódigocompiladopeloJIT
+jájuntanamemóriaocódigodosmétodosenvolvidosparaevitar jumpsaomáximo.
+NasversõesmaisrecentesdaHotSpot,casonãopassemosaop çãoexplicita-
+mente,aprópriamáquinavirtualescolheentreclienteserver,tamanhodoheap,
+algoritmodeGCeoutrospontoscombasenotipodehardwarenoqualosoftware
+estásendoexecutado–esterecursoéchamadodeVMergonomics.[37]Háaindaop-
+çõesexperimentais,comoa -XX:+AgressiveOptsquehabilitamaisotimiza ções.
+Se desenhássemos um gráfico que mostrasse a relação entre performance e
+tempoparaasVMsservereclient,eaindaumprogramaC,teríamosalgocomo
+aFigura 2.3,aseguir:
+Figura2.3:Ilustra çãodaperformancedeumaaplica çãoaolongodotempo.
+FácildesernotadoàprimeiravistaéoprocessodostartupdemoradoemJava.A
+29
+
+## Página 52
+
+2.3. JITCompiler:compilaçãoemtempodeexecu ção CasadoCódigo
+inicializaçãodaJVMtemmelhoradobastanteacadaversão,masaindaéumgargalo
+importanteemaplica çõescurtasouquetenhamumanecessidadedeiníciorápido.
+EssademorasedeveàquantidadedeclassesqueaJVMprecisacarregarnocome ço,
+etambémaotempoparaesquentaroJIT.NaHotSpot,porexemplo,oprograma
+começaexecutandotudoemmodointerpretadoe,sódepoisdeidentificarospontos
+quentes,équeoJITéacionadoparadeterminadométodo.Enquantoisso,naJVM
+server,porpadrão,oJITfazaotimiza çãoapósdezmilinvoca ções.JánaJRockit,há
+umprimeiroJITcompilerquerodadesdeoiníciorealizandopoucasotimiza çõese,
+conformeospontosquentessurgem,umsegundoJITmaisagressivorecompilaos
+métodosescolhidos.
+DadoestemonitoramentoqueaJVMfazparadecidiromomentocertodeoti-
+mizarseucódigopeloJIT,ficaapergunta:oqueémelhor,escreverpequenosmé-
+todosreaproveitáveisentresicommuitasinvoca ções,oumétodosgigantesquesão
+invocadosumaspoucasvezes? Quebrarnossocódigoempequenosmétodos,que
+concentramumaúnicaresponsabilidade,éamelhorprática.E,porquestõesdeper-
+formance,paraoJIT,quantomaisreaproveitáveisforemseusmétodos,maisinvoca-
+çõesserãofeitasemaisfocadasserãoasotimiza ções. *Programe baseado em boas
+práticas, e deixe o JIT cuidar da execução otimizada.
+Outropontoasenotaréaperformanceconstantenaaplica çãoC.Noinício,ela
+éextremamentemaisrápida,mastodaotimiza çãopossívelemumprogramaCfoi
+realizadaemcompila ção.Umaaplica çãoemJavapodetersuaperformancevariável
+aolongodaexecu ção,deacordocomaatividadedoJIT.Emumaaplica çãoquenão
+exijatantoI/Oethreads,aJVMémaduraosuficienteparaserequiparávelcomC
+namaioriadassitua ções.
+ÉpossívelvisualizarocomportamentodoJITusandoalgumasop çõesavan çadas
+daJVM.NaHotSpot,aop ção -XX:+PrintCompilationhabilitaummodoonde
+todométodocompiladopeloJITéimpressonoconsole.Aotestaremaplica çõesbem
+simples,compoucasinvoca ções,épossívelnotarqueoJITraramenteéacionado.
+Emoutrascommaisinvoca çõesdemétodos(umbomtesteéusaralgumalgoritmo
+recursivo),nota-sequeosmétodosmaisquentessãocompiladospeloJIT.
+Mascomosaberosmétodosaseremcompilados? NaHotSpot,aousaraVM
+client,opadrãoéaguardar1.500invoca çõesdeummétodoatécompilá-lo.JánaVM
+server,sãoaguardadas10.000invoca çõesantesdacompila ção.É,aliás,oquenosso
+gráficoanteriorindicava,queaVMserverdemoraumpoucomaisparaesquentar,
+mastemumaperformancemelhoralongoprazo.
+NaHotSpot,épossívelcontrolaronúmerodeinvoca çõesaseremaguardadasan-
+30
+
+## Página 53
+
+CasadoCódigo Capítulo2. JavaVirtualMachine
+tesdascompila çõesusandoaop ção -XX:CompileThreshold=<NUM>passando
+onúmerodesejado.Muitaspessoasperguntam-seporqueoJITnãocompilatodos
+osmétodos,rodandotudodeformanativaeotimizada.Éfáciltestarestecaso,pas-
+sando1naop çãoanterior,elogovocênotaráumaperdadeperformanceemmuitas
+aplicaçõespequenasoucompoucalógicarepetida.Nestecaso,ocustodecompila-
+çãoeotimiza çãoémuitoalto.Emoutros,principalmenteemaplica çõesmaislongas,
+épossívelatéteralgumganho,maslogopercebe-sequeosnúmeroscalculadospor
+padrãopelaJVMacabamsendovaloresbemrazoáveisparaamaioriadasaplica ções.
+Outrotesteinteressanteéusaraop ção -Xint,quedesabilitacompletamenteoJITe
+fazaVMrodarapenasemmodointerpretado.Emaplica çõesumpoucomaislongas,
+logosepercebeumaimensaperdadeperformance.
+Demodogeral,oquesepercebeéquenãoterumJITéumapéssimaideia,
+quasetãoruimquantocompilartodososmétodosexistentes.Naprática,omelhor
+acabasendoocomportamentopadrãodoJITdecompilarapenasospontosquentes.
+Nossaaplicação,porém,deve,sim,estarpreparadaparausufruiromelhordoJIT.
+Emgeral,issosignificaasboaspráticasdedesigncomváriospequenosmétodos
+sendoreaproveitadosportodoocódigo.
+Podesernecessáriomonitoraraexecu çãodeumaaplica ção,comoquandoháa
+necessidadedeencontrargargalosespecíficosdeperformanceevazamentosdeme-
+mória. AOracledisponibilizadiversasferramentasparafacilitaro profiling,como
+jmap,jstatejconsole.[ 34]PluginsparaIDEstambémexistememabundância,como
+oTPTPdoEclipse.Dentreasferramentaspagas,destacam-seoTestKiteoJProfi-
+ler.Todoselespermitemaumdesenvolvedorextrairinforma çõesdeumaaplica ção
+rodandonaplataformaJavaparaentendermelhorcomoelaestáfuncionandoem
+produção,atémesmoaquelasescritasemoutraslinguagens,masinterpretadasna
+VM.
+2.4 C arregamento de classes e classloader hell
+Éfrequentediversasaplica çõesWebseremimplantadasemummesmoServletCon-
+tainer,emumamesmamáquinavirtual,etambémquemuitasdelasutilizembibli-
+otecaseframeworksemcomum. Imagineduasaplica çõesqueutilizamamesma
+versãodoHibernate:ondedevemoscolocarosJARs?
+Muitossugeriramcolocá-losemalgumdiretóriocommon/libdoServletContai-
+ner;outrosdisseramparajogardiretamentenavariáveldeambiente CLASSPATH.
+Esseseramconselhosfrequentes,emespecialquandoerararotermaisdeumaapli-
+31
+
+## Página 54
+
+2.4. Carregamentodeclasseseclassloaderhell CasadoCódigo
+caçãoJavaimplantadaemummesmoservidor.Paraentenderosgravesproblemas
+quepodemsurgirnestasitua ção,éprecisoprimeirocompreendercomoéofuncio-
+namentodocarregadordeclassesdaJVM.
+ClassloaderéoobjetoresponsávelpelocarregamentodeclassesJavaparaame-
+móriaapartirdeumarraydebytesquecontémseusbytecodes.[ 114]Érepresentado
+pelaclasseabstrata java.lang.ClassLoader,eexistemdiversasimplementa-
+çõesconcretas,comoa java.net.URLClassLoader,responsávelporcarregar
+classesbuscandoemdeterminadasURLs.
+Classloaderssãoumponto-chavedaplataformaJava.Comeles,podemoscarre-
+gardiferentesclassescomexatamenteomesmonomeemantê-lasdeformadistinta,
+emdiferentesespa çosdenomes( namespaces).Bastaqueusemosclassloadersdife-
+rentes.UmaclasseéunicamenteidentificadadentrodaJVMporseunomecompleto
+(incluindoonomedopacote,ochamado fullyqualifiedname)maisoclassloaderque
+acarregou.
+Édestaformaqueservidoresdeaplica çãoconseguemmanterseparadasversões
+diferentesdeumamesmabiblioteca;podemosteroHibernate3.6emumaaplica ção
+WebeoHibernate3.3emoutra.Paraisso,doisclassloadersdiferentessãonecessários
+paracarregarasclassesdasduasdiferentesaplica ções.Comoumclassloadercarrega
+umaclasseumaúnicavez,senestecasofosseutilizadoomesmoclassloader,haveria
+conflitodeclassescomomesmonome(porexemplo,a org.hibernate.Session
+dasduasversõesdeHibernatediferentes),prevalecendoapenasaprimeiraquefosse
+encontrada.
+Porém,omecanismodecarregamentodeclassesnãoétãosimples.Porumame-
+didadeseguran ça,osclassloaderssãocriadoseconsultadosdemaneirahierárquica
+(Figura[ref-labelclassloaders2-4).
+32
+
+## Página 55
+
+CasadoCódigo Capítulo2. JavaVirtualMachine
+Figura2.4:Hierarquiadeclassloaders.
+AfiguramostraostrêsclassloadersqueaJVMsempreutilizaráporpadrão.An-
+tesdeumclassloaderiniciarumcarregamento,eleperguntaaoseupai( parentclas-
+sloader)senãoconseguecarregar(oujácarregou)aclasseemquestão.Seo parent
+classloaderconseguir,eleseráresponsávelporessecarregamento. Essefunciona-
+mentohierárquicoéoquegaranteseguran çaàplataformaJava.Éassimqueclasses
+importantes,comoasdo java.lang,serãosemprelidaspelo bootstrapclassloader,
+casocontrário,poderíamos,porexemplo,adicionarumaclasse java.net.Socket
+ànossaaplica çãoe,quandoestafosseimplantadanoservidor,todasasoutrasclas-
+sesdessaaplica çãoquefizessemusodaSocketestariamusandoagoraumprovável
+cavalodetroia.
+Logo,évitalumcertoconhecimentodessesclassloadersfundamentais.
+•Bootstrap classloader:Carregaclassesdort.jar,eéoúnicoque
+• realmentenãotemparentalgum;éopaidetodososoutros,evitandoque
+qualquerclassloader,tentemodificarasclassesdort.jar(pacote java.lang,
+porexemplo).
+•Extension classloaderCarregaclassesdeJARsdentrododiretóriona
+• propriedade java.ext.dirs, que, por padrão, tem o valor
+$JAVA_HOME/lib/ext. Na JVM da Sun, é representado pela classe
+interna sun.misc.Launcher$ExtClassLoader. Tem como pai o
+Bootstrapclassloader.
+•Application classloader ou System classloader:Carregatudodefinidono
+33
+
+## Página 56
+
+2.4. Carregamentodeclasseseclassloaderhell CasadoCódigo
+•CLASSPATH,tantodavariáveldeambiente, quantodalinhadecomando
+(passado como argumento por-cp). Representado pela classe interna
+sun.misc.Launcher$AppClassLoader,temcomopaio Extensionclas-
+sloader.
+OBootstrapclassloaderéoquecarregatodasasclassesdabibliotecapadrão
+(rt.jarinclusive). Depoisdele,aaplica çãopodeusaroutrosclassloaders,jáquea
+maioriadasclassesestáforadesseJAR.
+Asaplicaçõespodemcriarnovosclassloaderseincrementaressahierarquia(Fi-
+gura2.5).Oscontainerscostumamcriarmuitosoutrosclassloadersalémdospadrões
+damáquinavirtual.Emgeral,criamum Container classloader,responsávelpelos
+JARsdocontaineredeumacertapasta,comouma common/lib.Alémdeste,ocon-
+tainerprecisadeumclassloaderespecíficoparacadaaplica ção(contexto)implan-
+tada.Esse WebApplicationclassloaderéresponsávelpelocarregamentodasclasses
+do WEB-INF/classesedo WEB-INF/libemaplicaçõesWeb,porexemplo.
+Conhecendoessahierarquia,podemosperceberoproblemaquandodesenvolve-
+doresdesavisadosjogamJARsemdiretórioscompartilhadosportodasasaplica ções
+deumdeterminadoservidor,comoocasododiretório common/libdoApache
+Tomcatemversõesmuitoantigas,ouutilizandoavariáveldeambiente CLASSPATH.
+Considerandoquetemosduasaplica ções,APP-novaeAPP-antiga,queusam
+amesmaversãodoHibernate3.3,elasfuncionarãonormalmentemesmocomos
+jarsdoHibernatereferenciadosnavariável CLASSPATH.NomomentoqueaAPP-
+novaprecisarutilizaraversão3.6,comoproceder? Jogaraversãomaisnovano
+WEB-INF/libdaAPP-novanãoresolveoproblema,poisahierarquiadeclassloa-
+dersfariacomquea org.hibernate.SessionetodasasoutrasclassesdoHi-
+bernatesejamcarregadasdosjarsdefinidosna CLASSPATH,possivelmentegerando
+errosinesperadosemtempodeexecu ção(Figura 2.5).
+34
+
+## Página 57
+
+CasadoCódigo Capítulo2. JavaVirtualMachine
+Figura2.5:Hierarquiausualdeclassloadersnocontainer.
+Esseproblemaémuitomaisgravedoqueaparenta;otipodeerroquepodesur-
+girédedifícilinterpreta ção.Omenordosproblemasseriaterocomportamentoda
+versãoantigadoHibernate.MaisgraveéquandohámétodosnovosnoJARmaisre-
+cente;ainterfaceSessiondoHibernateantigoseriacarregada,equandosuaaplica ção
+APP-novainvocarummétodoquesóexistenaversãonova, NoSuchMethodError
+serálançado!Issocausaumaenormedordecabe ça,poisodesenvolvedorficacon-
+fusoaoverqueocódigocompilouperfeitamente,masduranteaexecu çãoaJVM
+indicaqueaquelemétodonãoexiste.
+NoSuchMethodErroréum forte indicador de que o código foi compilado
+esperando uma versão diferente de uma biblioteca que a encontrada em tempo de
+execução,provavelmenteporcausadeosjarsestaremespalhadosecompartilhados.
+Ocomportamentodaaplica çãopodesermaiserrático;imaginequeaaplica ção
+APP-novautilizadiretamenteumaclassedoHibernatequesóexistenaversãomais
+nova,comoa TypeResolver. Oclassloaderqueverificaavariável CLASSPATH
+nãoaencontrará,eentãoelaserácorretamentecarregadado WEB-INF/libpelo
+classloaderespecíficodocontexto.Porém,a TypeResolverdoHibernate3.6refe-
+renciaoutrasclassesbásicasdoHibernate,eestasserãocarregadasdaversãoantiga,
+oHibernateencontradona CLASSPATH,fazendocomqueoHibernatesejacarre-
+gadopartedeumaversão,partedeoutra,resultandoemefeitoscolateraisinespera-
+35
+
+## Página 58
+
+2.4. Carregamentodeclasseseclassloaderhell CasadoCódigo
+dosedesastrosos.EssaconfusãoésimilaraoDLLHell,frequentementechamadode
+Classloader hellnaplataformaJava.
+Emalgumasconfiguraçõesdeclassloadersdiferentes,quecarregamclassesdedi-
+retóriosemcomum,podeaparecerum ClassCastExceptioncuriosoededifícil
+discernimento.SeumareferênciaaumobjetodotipoProdutoforpassadacomoar-
+gumentoparaummétodoquerecebeumobjetotambémdestetipo,masestaclasse
+tiversidocarregadaporumclassloaderdiferente,aexce çãoserálançada.Odesen-
+volvedorficaráconfusoaoveruma ClassCastExceptionemumainvoca çãode
+métodoemquenemmesmoháumcasting.Issoaconteceporque,comovimos,em
+tempodeexecu çãoaidentidadedeumaclassenãoéapenasseu fullyqualifiedname,
+mastambémoclassloaderqueacarregou. Assim,umaclassecommesmonome,
+mascarregadaporclassloadersdiferentes,éoutra.Istoéchamadode runtime iden-
+tityemuitoimportanteparapermitirquecontainerstenhammaisdeumaversão
+damesmaclassenamemória(comooexemplodas Sessionsdediferentesversões
+doHibernate).[48]
+Muitoscontainers,incentivadospelaprópriaespecifica çãodeServlets,aplicam
+ummodelodeclassloadersinvertidosparaminimizarosproblemas. Aoinvésde
+deixaroWebAppclassloaderfilhodoContainerclassloader,eleéfeitofilhodireto
+doBootstrapclassloadermascomumareferênciasimplesparaoContainerclasslo-
+ader.Aarquiteturatradicionaldificultaqueumaaplica çãosobrescrevaalgumcom-
+ponentedoContainerclassloader,masessemodeloinvertido(padrãonoTomcat,
+porexemplo)permiteessecenário. Aordemderesolu çãodasclassespassaaser:
+primeirooBootstrap,depoisasclassesdaaplica çãoedepoisascompartilhadasdo
+Container.
+Criando seu ClassLoader
+Podemosinstanciara URLClassLoaderparacarregarclassesapartirdeum
+conjuntodadodeURLs.Considerequeaclasse DAOestádentrododiretóriobin:
+URL[] bin = {new URL("file:bin/")};
+ClassLoader loader = new URLClassLoader(bin, null);
+Class<?> clazz = loader.loadClass("br.com.arquiteturajava.DAO");
+Repare que passamos null como segundo argumento do construtor de
+URLClassLoader. Istoindicaqueseuparentclassloaderseráobootstrapdireta-
+mente.
+36
+
+## Página 59
+
+CasadoCódigo Capítulo2. JavaVirtualMachine
+Setambémcarregarmosaclasseatravésdo Class.forNameecompararmosa
+referênciadasduasclasses:
+URL[] bin = {new URL("file:bin/")};
+ClassLoader loader = new URLClassLoader(bin, null);
+Class<?> clazz = loader.loadClass("br.com.arquiteturajava.DAO");
+Class<?> outraClazz = Class.forName("br.com.arquiteturajava.DAO");
+System.out.println(clazz.getClassLoader());
+System.out.println(outraClazz.getClassLoader());
+System.out.println(clazz == outraClazz);
+O Class.forName()carregaaclasseusandooclassloaderquefoiresponsável
+pelaclassedocódigoexecutado;nocaso,oApplicationclassloaderseestivermosno
+métodomain.EoresultadocomaJVMdaOracle/Suné:
+java.net.URLClassLoader@19821f
+sun.misc.Launcher$AppClassLoader@11b86e7
+false
+Executandoestemesmocódigoparaumaclassedabibliotecapadrão, diga-
+mos, java.net.Socketou java.lang.String,teremosumresultadodife-
+rente.Elasserãocarregadasemambososcasospelo bootstrapclassloader(represen-
+tadopelo null),poisnãohácomoevitarqueesseclassloadersejaconsultadoem
+razãodaquestãodeseguran çajádiscutida.
+Aoremovero nulldoconstrutor,o URLClassLoaderterácomoparento
+classloaderquecarregouocódigosendoexecutado(o Applicationclassloader),fa-
+zendocomqueocarregamentodaclassesejadelegadoparaeste,antesdesertentado
+pelonosso URLClassLoader.Casoodiretóriobinestejanoclasspath,o Applica-
+tionclassloaderconseguecarregaraclasseDAOeonossorecém-criadoclassloader
+nãoseráoresponsávelpelocarregamento:
+URL[] bin = {new URL("file:bin/")};
+ClassLoader loader = new URLClassLoader(bin);
+Destavez,oresultadoé:
+sun.misc.Launcher$AppClassLoader@11b86e7
+sun.misc.Launcher$AppClassLoader@11b86e7
+true
+37
+
+## Página 60
+
+2.4. Carregamentodeclasseseclassloaderhell CasadoCódigo
+Oparentclassloaderserásempreconsultadoantesdeoclassloaderdehierar-
+quia“maisbaixa”tentarcarregarumadeterminadaclasse.Lembre-sedequeesteéo
+motivopeloqualjogarosJARsnavariáveldeambiente CLASSPATHpodeacabares-
+condendoversõesdiferentesdamesmaclassequeestejamaoalcancedeclassloaders
+mais“baixos”nahierarquia.
+Endorsed JARs
+Essefuncionamentohierárquicocausaproblemastambémcomabibliotecapa-
+drão;acadaversãonovadoJava,algumasAPIs,antesexternaseopcionais,sãoin-
+corporadas. Estefoiocaso,porexemplo,dasAPISdeparseamentodeXMLdo
+Apache(XerceseXalan). Casoelasfossemincluídasdentrodabibliotecapadrão,
+qualqueroutroprojetoquenecessitassedelasemumaversãodiferente(tantomais
+atualquantomaisantiga)teriasempreaversãodort.jar
+Para contornar o problema, a Sun colocou as classes que seriam do pacote
+org.apacheparadentrode com.sun.org.apache.[136]Semdúvidaumamaneira
+deselegante,masqueevitouoproblemadeversionamento.
+Esteproblematornou-seaindamaisfrequente.NoJava6,aAPIdemapeamento
+deXML,aJAXB2.0,entrouparaabibliotecapadrão. Quemnecessitausaraver-
+são1.0,ouaindaumafuturaversão3.0,teráproblemas;aversão2.0sempreterá
+prioridadenocarregamento.OJBoss4.2necessitadaAPIdoJAXB1.0parasuaim-
+plementaçãodeWebServices,esofreentãocomessainclusãodoJava6.[ 180]Aliás,
+oJBosspossuiumalongaeinteressantehistóriademanipula çãodosclassloaders,
+sendooprimeiroEJBcontaineraoferecer hotdeployment,eparaistotevedecon-
+tornarumasériederestri çõeseatémesmobugsdaJVM.[ 24]
+QuandoointerpretadordeJavascriptRhinoentroujuntocomaScriptingAPI
+noJava6naJVMdaSun,passamosateromesmoproblemaquandoénecessário
+utilizarsuasversõesdiferentes.[ 112]
+Nessesdoiscasos,paracontornaroproblema,utilizamosorecursodeendorsed
+JARs.Atravésdalinhadecomando( -Djava.endorsed.dirs=),vocêespecifica
+diretóriosquedevemterprioridadenaprocuradeclassesantesqueodiretórioext
+doJavaSEsejaconsultado.Éumaformadeoadministradordosistemadizerque
+confiaem(endossa)determinadosJARs. Algunsservidoresdeaplica çãopossuem
+umdiretórioespecialondevocêpodejogarosJARsaseremendossados.Valeno-
+tarocuidadoquedevesertomadoaoconfiaremumJAR,colocando-onotopoda
+hierarquiadosclassloaders.
+38
+
+## Página 61
+
+CasadoCódigo Capítulo2. JavaVirtualMachine
+OutOfMemoryError no redeploy de aplicaçõ e s
+Vimos que algumas JVMs armazenam as classes carregadas na memó-
+ria no espaço chamado PermGen. É comum aparecerem problemas com
+OutOfMemoryError,acusandoqueesteespa çoseesgotou,dadoumnúmeromuito
+grandedeclassescarregadas.Emparticular,issoocorrefacilmentedepoisdealguns
+hotdeploysemumcontainer.
+Todaclassecarregadatemumareferênciaparaoseuclassloader,assimcomo
+todoclassloaderreferenciatodasasclassescarregadasporele.Issoparaquepossade-
+volversempreamesmaclassenocasodeoutrainvoca çãosubsequenteparaomesmo
+fullqualifiedname ,agindocomoumafactoryquecacheiasuasinstancia ções.Esse
+relacionamentobidirecionalentre Classe ClassLoaderfazcomqueosobje-
+tos Classsósejamcoletadospelogarbagecollectorjuntocomoclassloaderinteiro
+etodasasoutrasclassesassociadas. Logo,aúnicamaneiradeumobjeto Class
+sercoletadoésetodasasreferênciasparatodasasclassesdoseuclassloaderforem
+liberadastambém.
+Aorealizarohotdeploydeumaaplica ção,oprópriocontainerliberaasrefe-
+rênciasdasclassesantigas,possibilitandoacoletadoclassloaderdocontexto. Isso
+deveriasersuficienteparaqueocontextofosseinteiramenteliberadodamemória,
+mas,naprática,outroclassloaderacimadaqueledaWebApplicationsegurareferên-
+ciasparaclassesdaaplica ção.Eháváriasbibliotecasqueassimsecomportam,como
+opróprioDriverManagerdoJDBC( JavaDatabaseConnectivity).Esteguardarefe-
+rênciasparaasclassesdosdriversregistrados,maselassãocarregadaspelobootstrap,
+eodriver,emgeral,estádentrodaaplica ção,no WEB-INF/lib.Ocarregamento
+deumúnicodriverJDBCécapazdesegurarnamemóriaocontextointeirodeuma
+aplicaçãoquenãoémaisnecessária.
+Existemváriosoutrosexemplosdebibliotecaseclassesquecausammemoryle-
+aksparecidos[5][194].NocasodoJDBC,asolu çãoéfazerum contextlistener que
+invocaométodo deregisterDriverno DriverManager,mashásituaçõesnão
+tãosimplesdesecontornar,queenvolvemversõesespecíficasdebibliotecascomseus
+própriostiposdeleaksdereferênciasaclassesquejánãosãomaisutilizadas. Na
+prática,équaseimpossívelumaaplicaçãoJavaconseguirevitaressesleaksdeclass-
+loaders,porissoemalgummomentosurgemos OutOfMemoryErrorfrequentes
+noshotdeploys,sendomaisummotivoparaevitá-losemprodu ção.
+39
+
+## Página 63
+
+Capítulo3
+TópicosdeOrienta çãoaObjetos
+Umbomdesigndesoftwarevisaaumaarquiteturaflexívelquepermitafuturasal-
+terações,faciliteaprodu çãodecódigoorganizadoelegível,maximizandoseurea-
+proveitamento. Todooparadigmadaorienta çãoaobjetos,seusprincípioseboas
+práticasprocuramtrazeressesbenefíciosparaodesign.
+Aopensarnosistemacomoumtodo,outrasquestõesdemaisaltonívelsurgem,
+emespecialaquelasquetratamdaformacomoosobjetosserelacionamesuaorga-
+nizaçãodentroeentresistemas.Aorelacionardoisobjetosdistintos,deve-selevar
+emcontaasboaspráticasqueserãodiscutidasnessecapítulo,comoadiminui çãodo
+acoplamentoentreobjetos.
+3.1 P rograme voltado à interface , não à implemen -
+tação
+Aotrabalharcomcole ções,escolheraimplementa çãocertaparacadacasoéuma
+tarefadifícil. Cadaumadelas,como ArrayList, LinkedListou HashSet,é
+
+## Página 64
+
+3.1. Programevoltadoàinterface,nãoàimplementa ção CasadoCódigo
+melhorpararesolverdeterminascategoriasdeproblemas.Podesermuitoarriscado
+escrevertodoocódigodaaplica çãodependentedeumadecisãoantecipada.Apesar
+disso,grandepartedosdesenvolvedoresoptaporsempreutilizar ArrayListdesde
+oiníciosemcritérioalgum.
+Considereum DAOdefuncionáriosquepodelistaronomedetodosquetraba-
+lhamemdeterminadoturno,devolvendoum ArrayListcomosnomes:
+public class FuncionarioDao {
+public ArrayList<String> buscaPorTurno(Turno turno) { ... }
+}
+Eumcódigoqueprecisasabersedeterminadofuncionárioestevepresente,efe-
+tuandoumabuscasimplesnalistadevolvida:
+FuncionarioDao dao = new FuncionarioDao();
+ArrayList<String> nomes = dao.buscaPorTurno(Turno.NOITE);
+boolean presente = nomes.contains("Anton Tcheckov");
+Masabuscacom containsemum ArrayListé,emtermoscomputacionais,
+bastantecustosa.Poderíamosutilizaroutrasalternativasdecole ção,trocandoore-
+tornode ArrayListpara HashSet,porexemplo,poissuaopera ção containsé
+muitomaiseficientecomputacionalmente,usandointernamenteumatabeladeespa-
+lhamento(hashtable).Parapoucosfuncionários,adiferen çaéimperceptível,porém,
+àmedidaquealistaaumenta,adiferen çadedesempenhoentreum ArrayListe
+um HashSetsetornamaisclara,eatémesmoumgargalodeperformance.
+Oproblemaemrealizarumamudan çacomoesta,deimplementa ção,équetodo
+códigoqueusavaoretornodométodocomo ArrayListquebra,mesmoquesó
+usássemosmétodosquetambémexistemdefinidosem HashSet.Seriaprecisoal-
+terartodososlugaresquedependemdealgumaformadessemétodo.Alémdetra-
+balhoso,tarefasdotipo search/replacesãoumfortesinaldecódigoruim.
+Háesseacoplamentosintáticocomaassinaturadométodo,queconseguimos
+resolverolhandooserrosdocompilador.Massemprehátambéminforma çõesse-
+mânticasimplícitasnautiliza çãodessemétodo,equenãosãoexpostosatravésda
+assinatura.Umexemplodeacoplamentosemânticoestáemdependerdainforma-
+çãodequeuma Listpermitedadosduplicados,enquantoum Setgaranteuni-
+cidadedoselementos.Comoproblemasnoacoplamentosintáticosãoencontrados
+emtempodecompila ção,ossemânticossomenteosãoemexecu ção,daíummotivo
+daimportânciadetestesquegarantamocomportamentoesperado.
+42
+
+## Página 65
+
+CasadoCódigo Capítulo3. TópicosdeOrientaçãoaObjetos
+O grande erro do métodobuscaPorTurno daclasse FuncionarioDao
+foi atrelar todos os usuários do método a uma implementação específica de
+Collection. Destaforma,alteraraimplementa çãotorna-sesempremuitomais
+custoso,caracterizandoo alto acoplamentoquetantoseprocuraevitar.
+Paraminimizaresseproblema,épossívelusarumtipoderetornodemétodo
+maisgenérico,quecontemplediversasimplementa çõespossíveis,fazendocomque
+osusuáriosdométodonãodependamemnadadeumaimplementa çãoespecífica.
+Ainterface Collectionéumaboacandidata:
+public class FuncionarioDao {
+public Collection<String> buscaPorTurno(Turno turno) { ... }
+}
+Comométododestaforma,podemostrocaraimplementa çãoretornadasemre-
+ceiodequebrarnenhumcódigoqueestejainvocando buscaPorTurno,jáquenin-
+guémdependedeumaimplementa çãoespecífica.Usar interfacesJavaéumgrande
+benefícionestescasos,poisajudaagarantirquenenhumcódigodependadeuma
+implementaçãoespecífica,poisinterfacesnãocarregamnenhumdetalhedeimple-
+mentação.
+Reparequeépossíveloptaraindaporoutrasinterfaces,como List(maisespe-
+cífica)e Iterable(menosespecífica).Aescolhadainterfaceidealvaidependerdo
+quevocêquerpermitirqueocódigoinvocadorpossautilizarerealizarnareferência
+retornada. Quantomenosespecífica,menoroacoplamentoemaispossibilidades
+dediferentesimplementa ções. Emcontrapartida,ocódigoclientetemumagama
+menordemétodosquepodemserinvocados.
+Algosimilartambémocorreparareceberargumentos. Considereummétodo
+quegravadiversosfuncionáriosemlotenonosso DAO:
+public class FuncionarioDao {
+public void gravaEmLote(ArrayList<Funcionario> funcionarios) { ... }
+}
+Receberprecisamente ArrayListcomoargumentotempoucautilidade;ra-
+ramentenecessitamosqueumacole çãosejatãoespecíficaassim.Receberaquium
+Listprovavelmentebasteparaonossométodo,epermitequeocódigoinvocador
+passeoutrascole çõescomoargumento. Podemosiralémereceber Collection
+ou,ainda, Iterable,casonossanecessidadesejaapenaspercorreroselementos.A
+escolhade Iterable,nestecaso,permitiriaomaiordesacoplamentopossível,mas
+43
+
+## Página 66
+
+3.1. Programevoltadoàinterface,nãoàimplementa ção CasadoCódigo
+limitariaousodentrodométodo;nãoseriapossível,porexemplo,acessaraquanti-
+dadedeelementosqueessacole çãopossui,nemoselementosdemaneiraaleatória
+atravésdeumíndice. Devemosprocurarumbalan çoentreodesacoplamentoea
+necessidadedonossocódigo.Estaéaideiado PrincípiodeSegrega çãodeInterfaces
+: clientes não devem ser for çados a depender de interfaces que não usam.[122]
+Odesenvolvedordeveteremmentequeacoplarumaclasse,quepossuimenos
+chancesdealtera çõesemsuaestrutura,comoutramenos estávelpodeserperigoso.
+[125]Considereainterface List,quepossuimuitasrazõesparanãomudar,afinal,
+elaéimplementadaporváriasoutrasclasses;sesofressealtera ções,todasasclasses
+queaimplementamteriamqueseralteradastambém.Consideramos,então,queela
+éaltamenteestável,oquesignificaqueelararamenteobrigaráumamudan çanas
+classesqueautilizam(Figura 3.1).
+Figura3.1:Interfacessãomaisestáveisporgarantiremmenoresmudan çascomque-
+bradecompatibilidade.
+Umaimplementaçãodelista, MeuProprioArrayList,feitapelodesenvolve-
+doréprovavelmentemais instávelqueainterface List,jáqueasfor çasqueaim-
+44
+
+## Página 67
+
+CasadoCódigo Capítulo3. TópicosdeOrientaçãoaObjetos
+pedemdemudarsãofracas(nãoháoutrasclassesutilizandoessaimplementa ção).
+Ouseja,umaclasseacopladaaessaimplementa çãodelistaeventualmentepodeser
+obrigadaamudarporcausadealgumaaltera çãoem MeuProprioArrayList.
+Osframeworksebibliotecasconsagradossempretiramproveitodousodeinter-
+faces,desacoplando-seomáximopossíveldeimplementa ções. Tantoa Session
+doHibernatequantoa EntityManagerdaJPAdevolvem Listnosmétodos
+queenvolvemlistasderesultados.Aoanalisarafundoasimplementa çõesatuaisde
+Sessione EntityManagerdoHibernate,elasnãoretornamnem ArrayList,
+nem LinkedList,nemnenhumacole çãodo java.util,e,sim,implementa ções
+delistaspersistentesdepacotesdopróprioHibernate.
+Istoépossível,novamente,pelodesacoplamentoprovidopelousodasinterfaces.
+Alémdisso,oretornodasconsultascomJPAeHibernatesão List,paradeixar
+claroaousuárioqueaordeméimportante.Manteraordemdeinser çãoepermitir
+acessoaleatóriosãocaracterísticasdocontratode Listesãoimportantesparao
+resultadodeconsultas,poispodemdefinirumaordena ção( order by),umaótima
+justificativaparaoptarporumainterfacemaisespecífica,enãousar Iterableou
+Collection.
+Nas principais APIs do Java, é fundamental programar voltado à interface.
+Ao usar java.io,evitamosaomáximonosreferenciara FileInputStream,
+SocketInputStream,entreoutras.Ocódigoaseguiraceitaapenasarquivoscomo
+streams:
+public class ImportadoraDeDados {
+public void carrega(FileInputStream stream) { ... }
+}
+Destaforma, nãoépossívelpassarqualquertipode InputStream paraa
+ImportadoraDeDados.Adotarestalimita çãodependedocódigodentrodomé-
+todo carrega.Aoutilizaralgummétodoespecíficode FileInputStreamque
+nãoestejadefinidoem InputStream,nãoháoquefazerparadesacoplarocó-
+digo. Casocontrário, essemétodopoderia, edeveria, receberumareferênciaa
+InputStream,ficandomaisflexívelepodendoreceberosmaisdiferentestiposde
+streams,comoargumento,queprovavelmentenãoforampreviamenteimaginados.
+Utilize sempre o tipo menos específico possível.
+Repareque,muitasvezes,classesabstratastrabalhamcomointerfaces,nosen-
+tidoconceitualdeorienta çãoaobjetos.[ 206]Classesabstrataspossuemavantagem
+desepoderadicionar-lhesumnovométodonãoabstrato,semquebrarocódigojá
+45
+
+## Página 68
+
+3.1. Programevoltadoàinterface,nãoàimplementa ção CasadoCódigo
+existente.Jácomousode interfaces(aqui,pensandonapalavra-chavedoJava),aadi-
+çãodequalquermétodoacarretaráaquebradasclassesqueaimplementam.Como
+interfacesnuncadefinemnenhumaimplementa ção,avantageméqueocódigoestá
+sempredesacopladodequalqueroutroqueasutilize.Issomudacomospolêmicos
+extensionmethods doJava8,permitindoescreverumaimplementa çãopadrãonas
+interfaces,possibilitandosuasevolu ções,aomesmotempoqueminimizaaquebra
+decompatibilidade.
+Os métodos load(InputStream), da classe Properties, e
+fromXML(InputStream), do XStream, são ótimos exemplos de código que
+nãodependemdeimplementa ção. Podemreceberarquivosdosmaisdiferentes
+streams:rede( SocketInputStream),uploadHTTP( ServletInputStream),
+arquivos( FileInputStream),dedentrodeJARs( JarInputStream)earrays
+debytegenéricos( ByteArrayInputStream).
+AJavaDatabaseConnectivity (JDBC)éoutraAPIfirmementefundadanouso
+deinterfaces.Opacote java.sqlpossuipouquíssimasclassesconcretas.Sempre
+queencontramosumcódigotrabalhandocomconexõesdebancodedados,vemos
+referênciasàinterface Connection,enuncadiretamentea MySQLConnection,
+OracleConnection, PostGreSQLConnection,ouqualqueroutraimplementa-
+çãodeumdriverespecífico,apesardeestapossibilidadeexistir.
+Referindo-sesemprea Connection,deixamosaescolhadaimplementa ção
+centralizadaemumoupoucoslocais.Destaforma,ficamuitofáciltrocaraimple-
+mentaçãosemmodificartodoorestantedocódigo.Issoocorregra çasaodesacopla-
+mentoprovidopelousodeinterfaces.
+NocasodoJDBC,essaescolhaporumaimplementa çãoestácentralizadana
+classeconcreta DriverManager,queaquiagecomoumafactory.Eladecidepor
+instanciarumaimplementa çãoespecíficade Connectiondeacordocomospa-
+râmetrospassadoscomoargumentosaométodo getConnectioneconformeos
+possíveisdriverspreviamentecarregados.
+Connection connection =
+DriverManager.getConnection("jdbc:mysql://192.168.0.33/banco");
+Podeserfácilenxergarasvantagensdousodasinterfaces,masébemmaisdifícil
+começarautilizá-lasextensivamentenoseuprópriodomínio.Ousoexageradode
+reflectionparainvocarmétodosdependendodealgumascondi çõespodesermuitas
+vezessubstituídoporinterfaces.Assim,adecisãodequalmétodoinvocarédeixada
+paraainvoca çãovirtualdemétodoqueopolimorfismopromove,diminuindobas-
+46
+
+## Página 69
+
+CasadoCódigo Capítulo3. TópicosdeOrientaçãoaObjetos
+tanteacomplexidadeeaumentandoamanutenibilidade,alémdealgumganhode
+performance.[17]
+Istoéaindamaisgritantecomousodainstru ção switch,oumesmoemum
+excessivonúmerode ifsencadeados;essaabordagempodeacoplartotalmenteseu
+modelo,tornandonecessáriasmudançasfrequentesneletodavezqueumanovaen-
+tidadeforadicionadaaodomínio.[ 66]
+Programe voltado à interface, não à implementaçãoéoutrodospríncipiosde
+orientaçãoaobjetosdolivro DesignPatterns ([206][79]),abordadopormeiode
+outrosexemplosnoseminal DependencyInversionPrinciple,deBobMartin.[ 121]
+3.2 C omponha comportamentos
+Umcódigocompoucaspossibilidadesdefluxoslógicos( branchesdeexecução),ou
+seja,poucoscaminhosdeexecu ção,émaisfácildeentenderemanter.Oexemploa
+seguirmostraumprocessodepagamento:
+public void processa(Pagamento aPagar) {
+if (aPagar.isServico() && aPagar.getValor() > 300) {
+impostos.retem(aPagar.getValor() * TAXA_A_RETER);
+} else if(aPagar.isProduto()) {
+estoque.diminui(aPagar.getItem());
+}
+conta.executa(aPagar);
+if (aPagar.desejaReceberConfirmacao()) {
+emails.enviaConfirmacao(aPagar);
+}
+}
+Apesardesimples,existemseispossibilidadesdiferentesdeexecu çãodométodo,
+alémdeelemisturardiversoscomportamentosquenãopossuemrela ção,istoé,res-
+ponsabilidadesdiferentesparaumaúnicaclasse:impostos,estoques,transferências
+ee-mails.
+Talcomportamentopodesercompostopordiversaspartesmenorese, para
+tanto,refatoraçõespequenaspodemserexecutadas.Amaissimplesseriaaextra ção
+dequatrométodos,umasolu çãoquesimplificaocódigoatual,masnãoaumentasua
+coesão.
+47
+
+## Página 70
+
+3.2. Componhacomportamentos CasadoCódigo
+Épossívelaumentaracoesãodaclasseextraindotaismétodosemquatroclas-
+sesdistintas,como RetemImposto, ProcessaEstoque, Transferenciae
+Confirmacao. Porfim,ascondi çõespodemsertratadasatravésdeumacadeia
+deresponsabilidade(chainofresponsibility)ounotifica ções( observers),usandouma
+interfacecomumatodosessesprocessosquedevemserexecutados.Estedesign,que
+favoreceacomposi çãoemvezdeumgrandemétodo,isolapreocupa çõesdistintas
+parapartesseparadasdocódigo.
+Umainterface Processosimplesécapazdemodelarosdiferentestiposdepro-
+cessosquepodemseraplicadosaum Pagamento,comoa RetemImposto:
+public interface Processo {
+void lidaCom(Pagamento pagamento);
+}
+public class RetemImposto implements Processo {
+private static final double TAXA_A_RETER = 0.10;
+public void lidaCom(Pagamento aPagar) {
+if (aPagar.isServico() && aPagar.getValor() > 300) {
+impostos.retem(aPagar.getValor() * TAXA_A_RETER);
+}
+}
+}
+Outras implementações possíveis de passos do processo seriam as classes
+ProcessaEstoque, Transferenciae Confirmacao.Acadeiaderesponsabi-
+lidadepodeserrepresentadaporumaoutraclasse Processos,queaplicadiferentes
+processosaummesmopagamentodemaneiraencadeada:
+public class Processos {
+private final List<Processo> processos;
+public Processo(List<Processo> processos) {
+this.processos = processos;
+}
+public void processa(Pagamento aPagar) {
+for (Processo passo : processos) {
+48
+
+## Página 71
+
+CasadoCódigo Capítulo3. TópicosdeOrientaçãoaObjetos
+passo.lidaCom(aPagar);
+}
+}
+}
+Pode-seevoluiraindamaisoexemploacima;quandoaexecu çãodecadapasso
+deumcomportamentoécondicionaledeacordocomasmaisvariadasregras,é
+comumadicionarummétodoextradeverifica ção,queindicaseoprocessamento
+deveounãoserfeitonaquelecaso:
+public interface Processo {
+void lidaCom(Pagamento pagamento);
+boolean deveProcessar(Pagamento pagamento);
+}
+public class RetemImposto implements Processo {
+private static final double TAXA_A_RETER = 0.10;
+public void lidaCom(Pagamento aPagar) {
+impostos.retem(aPagar.getValor() * TAXA_A_RETER);
+}
+public boolean deveProcessar(Pagamento aPagar) {
+return aPagar.isServico() && aPagar.getValor() > 300;
+}
+}
+Padrõesdedesignparecidoscomoanteriorsãoencontradosnosconversoresde
+diversosframeworks,renderizaçãodetelas,execu çãodeprocessoscomplexos,filtros
+daservletAPIetc.(Figura 3.2).
+49
+
+## Página 72
+
+3.3. Eviteherança,favoreçacomposição CasadoCódigo
+Figura3.2:Compondocomportamentoatravésdediferentescomponentesdeuma
+aplicação.Àmedidaquefoinecessário,ocódigoerarefatorado.
+Apósaquebradeumcomportamentoemdiversaspartes,énecessáriojuntar
+essescomportamentosnovamente.Composi ção(composition)éestauniãoatravés
+dautilizaçãodealgumapráticadedesign,comonocasovistoanteriormente,noqual
+opolimorfismopermitetrabalhardemaneirauniformecompartesqueexecutam
+tarefasdistintas.
+Ummétodoqueapresenteumcorpocomumnúmerorazoávelde branches
+(como ifse switches),ouquenãopermitaacompreensãoimediatadeseucom-
+portamento,podeserrefatoradoparafacilitarsuamanuten ção.
+3.3 E vite herança , favoreça composição
+Ousoounãodeheran çaéumantigodebatequeapareceinúmerasvezesnaliteratura,
+antesmesmodaexistênciadoJava,([79],[205])eemrecentesartigoscomlinguagens
+maismodernas. [206],[17],[91]Algunscríticoschegamaafirmarqueelanunca
+deveriaserutilizada.[ 192]
+Omaiorproblemacomaheran çaéqueacoplamosaimplementa çãodaclasse
+mãemuitoprecocemente,criandoanecessidadedeaclassefilhaconhecermuito
+50
+
+## Página 73
+
+CasadoCódigo Capítulo3. TópicosdeOrientaçãoaObjetos
+bemocódigointernodaclassemãe,oqueévistocomoumaquebradeencapsula-
+mento.
+Podemos enxergar este problema em um exemplo encontrado no pacote
+java.util,com Propertiese Hashtable. Aclasse Propertiesherdade
+Hashtablee,portanto,instânciasde Propertiespossuemdisponíveismétodos
+de Hashtable. Mas,muitasvezes,essesmétodosnãofazemsentido,comono
+casoda Propertiesquelidaapenascom Strings. Aquebraaparecequando
+temos uma instância deProperties e invocamos o métodoput(Object,
+Object), emvezde setProperty(String, String), podendopassarum
+Objectqualquercomoargumento. Nessecaso,aoinvocarposteriormenteomé-
+todo getProperty(String),recebemosuminesperado null. Nãohácomo
+evitarquealguéminvoqueométodoquetrabalhacom Object,anãoserdocu-
+mentandoarespeito,comoocorreno javadocdessaclasse.Terdegarantircon-
+diçõesapenasatravésdo javadocéumcontratomuitofraco,emespecialdizendo
+quetalmétodonãodeveserinvocadocomdeterminadostiposdeobjetos,algoque,
+emJava,poderiaserfeitoatravésdatipagemestática.
+public class TesteProperties {
+public static void main(String[] args) {
+Properties properties = new Properties();
+// não deveria ser possível invocar:
+properties.put("data_de_inicio" , Calendar.getInstance());
+Processador p = new Processador();
+p.processa(properties);
+}
+}
+public class Processador {
+public void processa(Properties properties) {
+String valor = properties.getProperty("data_de_inicio");
+// o Calendar estará na String?
+}
+}
+Arelaçãoé-umdaherançanemsempreétãofácildeseraplicadaaobjetos.Ape-
+sardeumquadradoserumretângulo,umcarroserumveículoeumdicionáriode
+propriedadesserumatabeladeespalhamento,nãonecessariamenteumobjetodo
+tipodicionáriodeveserencaradocomoumobjetodetabeladeespalhamentocaso
+51
+
+## Página 74
+
+3.3. Eviteherança,favoreçacomposição CasadoCódigo
+istonãorespeiteo princípiodesubstitui çãodeLiskov . [123][91]Poresteprincípio,
+deveriaserpossívelreceberum Propertiescomoum Mapsemnenhumpro-
+blema,masvimosqueissonãoocorrenocódigodescritoantes. Aindanopacote
+java.util,temosaclasse Stackqueestende Vector,expondométodosdesta
+quenãosãocaracterísticasdeumapilha.
+Masamotivaçãoinicialdoscriadoresde Propertieséextremamenteválida:o
+reaproveitamentodecódigojáescritonaclasse Hashtable.Herançaécomumente
+citadaemcenáriosdereúsodecódigo,masnãoéaúnicasolu ção.Usarcomposi ção
+permitereaproveitamentodecódigosemoefeitoindesejadodaquebradeencap-
+sulamento.Paraqueaclasse Propertiesreaproveitasseosrecursosjáexistentes
+em Hashtablecomcomposiçãobastariaumatributo Hashtableprivado,eo
+método setPropertydelegariaainvoca çãoparao hashtable.put.Dessama-
+neira,expomosapenasosmétodosquedesejamos,sempossibilitarquefosseinvo-
+cadoo hashtable.putdiretamente,nemque Propertiespudesseserpassada
+comoargumentoparaalguémqueesperauma Hashtable.Melhorainda,como
+surgimentodaAPIdeCollections,comonoJava1.2,aimplementa çãopoderiaser
+facilmentetrocadaporalgum Mapsemcausarproblemasaosusuáriosdaclasse.
+Ousoabusivodeheran çaocorreemdiversosframeworkseAPIs.OStruts1é
+umexemplodesteusoedeseusdiversosproblemasrelacionados;somosinstruídos
+aestender Actione,aomesmotempo,atomarmuitocuidadocomseuciclode
+vida,principalmenteaosobrescreveralgunsmétodos-chavedessaclasse. Emlin-
+guagenscomsuportea mixin,comoRuby,oacoplamentocomasclassespodegerar
+complicaçõesaindamaiores,quesóserãopercebidasemtempodeexecu ção.[176]
+Oproblemadaheran çaaparece,mesmoquemaissutilmente,nousodeclasses
+abstratasparaaplicarpatterns,comoo templatemethod.Podemosrepararemalguns
+tropeçosdaimplementaçãobasede Servlet, GenericServlet,começandopelo
+método init(ServletConfig):
+public abstract class GenericServlet
+implements Servlet, ServletConfig, Serializable {
+// ...
+public void init(ServletConfig config) throws ServletException {
+this.config = config;
+this.init();
+}
+}
+52
+
+## Página 75
+
+CasadoCódigo Capítulo3. TópicosdeOrientaçãoaObjetos
+Ao criar nossa própria servlet na Web, somos obrigados a herdar de
+HttpServlet, que, por sua vez, herda deGenericServlet. Se quisermos
+reescreverométodo init(ServletConfig) emnossaclasse, devemossem-
+prenoslembrardeinvocaro super.init(ServletConfig),casocontrárioa
+ServletConfignãoseráguardadacomoatributona HttpServlet,fazendoo
+respectivogetterretornar null,quebrandomuitoscódigos,comoaseguir:
+public class LogServlet extends HttpServlet {
+public void init(ServletConfig cfg) throws ServletException {
+log("Inicializando a servlet");
+}
+public void doGet(HttpServletRequest req, HttpServletResponse res) {
+// vai lançar NullPointerException
+getServletConfig().getInitParameter("...");
+}
+}
+Ousodeheran çaparacriarumafilhade HttpServletgeranecessidadede
+sabercomoométodo init(ServletConfig)foiimplementadonaclassemãe,o
+queconsisteemumaquebradeencapsulamento.
+Na mudançadeAPIdaServlet2.0paraa2.1,houveainser çãodeummétodopara
+tentarevitaresteproblema,quesetornararecorrenteentreosdesenvolvedores. O
+novométodo init(),semparâmetros,deveserreescrito;eleéinvocadopelopró-
+prio init(ServletConfig)após oServletConfigserguardadoemumatri-
+buto.Dentrodeum init()reescritopodemosobteracessoao ServletConfig
+atravésdogetterdaclassemãe,queagoraestarácorretamenteatribuído. Mesmo
+assim,emrazãodatomadadedecisãooriginalnaAPIdeservlet,odesenvolvedor
+aindadeveconhecercomoessesmétodosfuncionamnaclassemãe,poissóassim
+saberádetodososcuidadosquesãonecessários.
+Masnemtudoénegativo. Todoessedesigndeservletstemcomoobjetivo
+principaltrazeropolimorfismoeumainterfacedeusouniformeparaasservlets
+seremchamadaspelocontainer. Contudo,emJava,épossívelusar interface
+parapolimorfismo,semospontosnegativosdaheran çacomoquebradeencap-
+sulamentoealtoacoplamento. AAPIdeservletspoderiaterusadoumdesign
+baseadoeminterfacescomum strategypattern porexemplo,evitandoaheran ça.
+Umasugestãoseriaumainterface InvocationProcessorcommétodoscomo
+init(ServletConfig)e process:
+53
+
+## Página 76
+
+3.3. Eviteherança,favoreçacomposição CasadoCódigo
+public interface InvocationProcessor {
+void init(ServletConfig config);
+void process(HttpServletRequest req, HttpServletResponse res);
+boolean shouldProcess(HttpServletRequest request);
+void destroy();
+}
+Poderíamoscriarváriasimplementações,cadaumacapazdelidarcomasrequi-
+siçõesqueacharconveniente,como,porexemplo,paraométodo GET:
+public class GetProcessor implements InvocationProcessor {
+public void init(ServletConfig config) { }
+public boolean shouldProcess(HttpServletRequest request) {
+return "GET".equals(request.getMethod());
+}
+public void process(HttpServletRequest req, HttpServletResponse res) {
+// código de processamento aqui
+}
+public void destroy(ServletConfig config) { }
+}
+Aosubstituiraheran çaporinterface,continuamoscomobenefíciodopolimor-
+fismo.Masheran çaaindatrazoutrograndebenefício,oreaproveitamentodecódigo,
+algoqueinterfacespurasnãofazem. Podemos então usar interfaces com composi-
+ção, obtendo substitutos para todos os benefícios de herança sem correr o risco de
+cair na armadilha da quebra de encapsulamento e alto acoplamento.Repareque,
+destaforma,oacoplamentoébemmenor,nenhumadasclassesprecisaconhecero
+funcionamentointernodasoutras.
+Porém,sefornecessárioousodeheran ça,algunscuidadossãoimportantespara
+minimizarapossívelquebradeencapsulamento.JoshuaBloch,no EffectiveJava,fala
+deDesignforInheritance,([17])comdiversaspráticascomoevitarinvoca çõesentre
+métodospúblicos,paraqueasobrescritadeumnãomudeocomportamentode
+outro.
+Aomesmotempoquedesejamosevitarheran ça,temosinteresseempermitir
+mudançanonossocomportamentosemanecessidadedealteraroucopiarocódigo
+original.Mantendopontosdeextensão,permitimosqueclassesqueimplementam
+umadeterminadainterfacesejamcapazesdemodificarocomportamentodeoutras
+54
+
+## Página 77
+
+CasadoCódigo Capítulo3. TópicosdeOrientaçãoaObjetos
+classes. Atravésdeinterfacesecomposi ção,podemoscriardesdeumnovodriver
+JDBCparaumdeterminadobancodedados,ouflexibilizartrabalhossimples,como
+ordernarlistascom Comparatorsimplementandodiferentescritériosdecompa-
+ração.Esteprincípio,demantersuasclassesabertasparaextensãosemanecessidade
+dealteraçãonocódigooriginal,échamado OpenClosedPrinciple.[124]
+Evite herança, favoreça composiçãoéumdedoisprincípiosfundamentaisde
+designdolivro DesignPatterns,comfrequênciareferenciadonaliteratura. [ 79],
+[206]
+3.4 F avoreça imutabilidade e simplicidade
+Doisclientescomamesmadatadepagamentonãopodemcompartilharinstâncias
+de Calendar,pois,seumdelesalterarovencimento,essamudan çaresultariaem
+umefeitocolateralprovavelmenteindesejado:ooutrotambémsofreaaltera ção.A
+classe Calendarpermitemudançanoestadodesuasinstânciase,portanto,diz-se
+queaclasseémutável,comooexemploaseguirdemonstra:
+Calendar data = new GregorianCalendar(2004, 2, 13);
+cliente.setVencimento(data);
+Calendar doisDiasDepois = cliente.getVencimento();
+doisDiasDepois.add(Calendar.DAY_OF_MONTH, 2);
+outroCliente.setVencimento(doisDiasDepois);
+// efeito colateral:
+System.out.println(cliente.getVencimento());
+Aclasse Stringtemcomportamentodiferente.Quandocome çamosaprogra-
+marcomJava,passamosporumcódigosemelhanteaoquesegue:
+String s = "java";
+s.toUpperCase();
+System.out.println(s);
+Estecódigo,queaparececomfrequêncianasprovasdecertifica ção,imprimirá
+javaemletrasminúsculas. Issoporqueaclasse Stringéditaimutável. Todo
+métodoinvocadoemuma String,queparecemodificá-la,sempredevolveuma
+novainstânciacomaaltera çãorequisitada,masnuncaalteraainstânciaoriginal.
+55
+
+## Página 78
+
+3.4. Favoreçaimutabilidadeesimplicidade CasadoCódigo
+Aotornarumaclasseimutável,umaamplagamadeproblemascomunsdesaparece.
+[82],[17]
+Simplicidade e previsibilidade
+Objetosimutáveissãomuitomaissimplesdemanipularqueosmutáveis,tendo
+umcomportamentobemprevisível:
+String s = "arquitetura";
+removeCaracteres(s);
+System.out.println(s);
+Nãoimportaoqueométodo removeCaracteres(s)faça,asaídaapresen-
+taráarquitetura.Objetosimutáveisnãosofremefeitoscolaterais,poistêmcompor-
+tamentoprevisívelemrela çãoaoseuestado.Comparecomumcódigosemelhante,
+maspassandoumareferênciaaumobjetomutável;nocaso,um Calendar:
+Calendar c = Calendar.getInstance();
+verificaFeriado(c);
+System.out.println(c.get(Calendar.YEAR));
+Pormaisexplícitoquesejaonomedométodo,nãoépossívelafirmar,apenascom
+estetrechodecódigo,qualéasaídanoconsole,poisométodo verificaFeriado
+podealteraralgumdadodestainstânciade Calendar. Osprópriosengenhei-
+ros da Sun admitiram alguns erros de design das APIs antigas, como a classe
+java.util.Calendarsermutável.[16]Porisso,muitasvezesrecorremosàsAPIs
+deterceiros,comoa Joda Time,nasquaisencontramosentidadesdedatas,horários
+eintervalosimutáveis.
+Quandooobjetoémutável,paraevitarquealguémomodifique,temosqueto-
+maralgumaprecau ção. Umasolução,frequentementeusadacomcole çõesatravés
+do Collections.unmodifiableList(List)eseussimilares,éinterfacearo
+objetoeembrulhá-lodetalformaqueosmétodosexpostosnãopossibilitemmodifi-
+cação.Emvezdepassarareferênciaoriginaladiante,passamosessanovareferência,
+cujainstâncialan çaexceçõesemqualquertentativademodifica ção.
+Outrasoluçãoparaobjetosmutáveisécriar cópias defensivasdoobjeto.Emvez
+dedevolveroobjetooriginalquesedesejapreservar,criamosumacópia,porexem-
+plo,atravésdométodo clone,edevolvemosestacópia. Ousuário,destaforma,
+nãotemcomoalteraroobjetooriginal,masrecebeumacópiaparausopróprio,que,
+sealterar,afetaráapenasasimesmo.
+56
+
+## Página 79
+
+CasadoCódigo Capítulo3. TópicosdeOrientaçãoaObjetos
+Objetosimutáveissãomaissimplesdeselidar. Depoisdesuacria ção,sempre
+saberemosseuvalorenãoprecisamostomarcuidadosadicionaisparapreservá-lo.
+Objetosmutáveis,emcontrapartida,comfrequêncianecessitamdeumcuidadoadi-
+cional,cujoobjetivoéevitaraltera çõesinesperadas.
+Otimizações de memória
+Podemostirarproveitodaimutabilidadedeoutrasformas.[ 82]Comocadaob-
+jetorepresentaapenasumestado,vocênãoprecisamaisdoqueumainstânciapara
+cadaestado.AprópriaAPIdalinguagemJavausaaimutabilidadecomoumavan-
+tagemparafazercacheereaproveitamentodeinstâncias.
+Éocasodo poolde StringsdaJVM,quefazcomque Stringsdemesmocon-
+teúdopossamserrepresentadasporumaúnicainstânciacompartilhada.Omesmo
+aconteceemboapartedasimplementa çõesdasclasseswrappercomo Integer.
+Ao invocarInteger.valueOf(int),areferênciaa Integerdevolvidapodeser
+frutodeumcacheinternodeobjetoscomnúmerosmaisfrequentementesolicitados.
+[41]
+Essetipodeotimiza çãosóépossívelcomobjetosimutáveis.Ésegurocomparti-
+lharinstânciasde Stringsou Integerscomdiferentespartesdoprograma,sem
+oriscodequeumaaltera çãonoobjetotragaefeitoscolateraisindesejadosemoutras
+partesdosistema.
+Ehámaispossibilidadesaindaparaotimiza çõesgra çasàimutabilidade.Aclasse
+Stringaindaseaproveitadessacaracterísticaparacompartilharseuarrayde char
+internoentre Stringsdiferentes. Seolharmosseucódigofonte,veremosque
+elapossuitrêsatributosprincipais:um char[] value edoisinteiros, counte
+offset;[133]estesinteirosservemparaindicaroinícioeofimda Stringdentro
+doarrayde char
+Seu método substring(int,int) leva em conta a imutabilidade das
+Stringseosdoisinteirosquecontrolaminícioefimparareaproveitaroarrayde
+char.Quandopedimosumadeterminada substring,emvezdeoJavacriarumnovo
+arrayde charcomopeda çoemquestão,eledevolveumnovoobjeto String,que
+internamentecompartilhaareferênciaparaomesmoarrayde charquea String
+original,etemapenasosseusdoisíndicesajustados. Ouseja,criarumasubstring
+emJavaémuitoleve,sendoapenasumaquestãodeajustardoisnúmerosinteiros
+(Figura3.3).
+57
+
+## Página 80
+
+3.4. Favoreçaimutabilidadeesimplicidade CasadoCódigo
+Figura3.3:CompartilhandoomesmoarrayentreduasStringsdistintas.
+Essaotimizaçãoéumaimplementaçãoumpoucomaissimplesdodesignpattern
+flyweight,emquesepropõereaproveitarobjetoscomobjetivodediminuirousoda
+memória.[ 17]Oprópriopoolde Stringspodeserconsideradoum flyweight.E
+poderíamosirmaislongecomo flyweight,implementandoaconcatena çãodeStrings
+apontandoparadiversasoutrasStringsinternamenteaoinvésdecopiarosdados
+paraseupróprioarraydechar.Nestecaso,aAPIdoJavapreferenãochegaraeste
+ponto,pois,apesardeumganhodememória,haveriao trade-offdoaumentode
+processamento.
+Éválidotambémressaltaroperigodecertasotimiza çõesemalgunscasos. Na
+otimizaçãodosubstring,porexemplo,uma Stringpequenapodeacabarsegu-
+randoreferênciaparaumarrayde charsmuitograndeseelafoioriginadaapartir
+deuma Stringlonga.Issoimpediriaqueoarraymaiorfossecoletado,mesmose
+nãopossuirmosreferênciasparaa Stringoriginal.
+Hátambémumexcessodememóriaconsumidatemporariamente.Comimuta-
+bilidade,cadainvoca çãodemétodocriaumanovacópiadoobjetoapenascomal-
+gumaalteraçãoe,seistoestiverdentrodeumla ço,diversascópiastemporáriasserão
+utilizadas,masapenasoresultadofinaléguardado.Aqui,ousodopattern builder
+podeajudar,comoéocasodaclassemutável StringBuilder(ousuaversãoth-
+readsafe StringBuffer)comseumétodo appendemvezde String.concat
+(ouooperadorsobrecarregado +)emumla ço.
+58
+
+## Página 81
+
+CasadoCódigo Capítulo3. TópicosdeOrientaçãoaObjetos
+Acesso por várias threads
+Definirregiõescríticascom synchronizedéaindaumasolu çãorepetida-
+menteencontradaaomanipularmemóriacompartilhada. Destaforma,evitamos
+queduasescritasconcorrentesseentrelacemequeleiturassejamcapazesdeacessar
+dadosinconsistentesouintermediários.
+Atarefadifícilédefinirtodasasregiõescríticasequaissãomutuamenteexclu-
+sivas;definirumaregiãomuitograndegeraperdadevazão( throughtput),enquanto
+umadetamanhoinsuficienteimplicaráosmesmosproblemasdenãotê-las.
+Emvezderecorreraosrecursosdaslinguagens,pensemosnessesobjetosde
+formadiferente,evitandoesseestadointermediário,nãopermitindoamudan çade
+valores.Avantageméa thread-safety,pois,comonãoexistemestadosintermediá-
+rios,nãohácomoacessarnemmodificardadosemmomentosdeinconsistência.
+Oestadoinconsistenteficaescondidonalógicadeconstru ção,eonovoestadosó
+estarádisponívelquandoterminardeserconstruído,paraentãotersuareferência
+compartilhadapormaisdeumathread.
+Aslinguagensfuncionaismaispuras,como ErlangeHaskell,estãosendoutiliza-
+dasemambientesdegrandeconcorrência,dadasuacaracterísticadetrabalharquase
+queapenascomvaloresimutáveis.Perde-seoconceitode variávelcomooconhece-
+mos,jáqueosvaloresnãomudam;nascememorremcomomesmoestado.Você
+éobrigadoaprogramarapenasdemaneiraimutável,oqueéumaenormemudan ça
+deparadigma. MuitasdessaslinguagenspodemrodarsobreaJVM,comoScala,
+que,apesardesuportarmutabilidade,temfortesraízesemprograma çãofuncionale
+recomendaousodeimutabilidade.
+Imutabilidade e encadeamento de invocações de métodos
+Umavezqueasclassessãoimutáveis,osmétodosnãopossuemefeitoscolaterais
+e,portanto,devemdevolverumareferênciaaumnovoobjeto(Figura 3.4).Logo,é
+naturalencadearinvoca çõesdemétodos( methodchaining),viabilizandoacria ção
+decódigomaislegível:
+Data vencimento = new Data();
+Calendar proximaParcela = vencimento.adicionaMes(1)
+.proximoDiaUtil()
+.toCalendar();
+59
+
+## Página 82
+
+3.4. Favoreçaimutabilidadeesimplicidade CasadoCódigo
+Figura3.4:Cadainvoca çãodemétodoquecriaumasitua çãonova,criaumestado
+novo,devolveareferênciaparaumobjetonovo.
+OmesmoacontececomoutrasclassesimutáveisdoJava,como BigDecimal,
+BigIntegere String:
+String valor = "arquiteturajava.com.br";
+String resultado = valor.toUpperCase().trim().substring(6);
+Methodchaining éumapráticasimplesquepermiteacria çãodeinterfacesflu-
+entes(fluentinterfaces)([72])que,juntocomoutrospadrõeseaplicadaadomínios
+específicos,permiteacria çãode DSLs.
+Criando uma classe imutável
+Para que uma classe seja imutável, ela precisa atender a algumas
+características:[17]
+• Nenhummétodopodemodificarseuestado.
+• Eladeveserfinal,paraevitarquefilhaspermitammutabilidade.
+• Osatributosdevemserprivados.
+• Osatributosdevemserfinal.
+• Caso sua classetenha composiçõescomobjetosmutáveis, elesdevemter
+acessoexclusivopelasuaclasse,devolvendocópiasdefensivasquandoneces-
+sário.
+60
+
+## Página 83
+
+CasadoCódigo Capítulo3. TópicosdeOrientaçãoaObjetos
+Umaclasseimutávelficariacomo:
+public final class Ano {
+private final int ano;
+public Ano(int ano) {
+this.ano = ano;
+}
+public int getAno() {
+return this.ano;
+}
+}
+Estecódigoseriamaiscomplicadosenossaclasseimutávelfossecompostade
+objetosmutáveis.Umaclasse Periodoimutável,implementadacom Calendars,
+precisarátrabalharcomcópiasdefensivasemdoismomentos. Primeiro,quando
+receber algum Calendar como parâmetro e, depois, quando devolver algum
+Calendarquefaçapartedacomposi çãodoobjeto. Senãocopiarmososobjetos,
+épossívelquealgumcódigoexternoàclasse Periodoaltereos Calendarsem
+questão,gerandoinconsistência.
+Noteascópiasdefensivasnoconstrutorenosgettersnoseguintecódigo:
+public final class Periodo {
+private final Calendar inicio;
+private final Calendar fim;
+public Periodo(Calendar inicio, Calendar fim) {
+this.inicio = (Calendar) inicio.clone();
+this.fim = (Calendar) fim.clone();
+}
+public Calendar getInicio() {
+return (Calendar) inicio.clone();
+}
+public Calendar getFim() {
+return (Calendar) fim.clone();
+}
+}
+61
+
+## Página 84
+
+3.5. Cuidadocomomodeloanêmico CasadoCódigo
+Aproveitamosaquiofatode Calendar implementar Cloneable,casocon-
+trárioprecisaríamosfazeracópiamanualmente,criandoumnovoobjetoealterando
+osatributospertinentesumaum.
+Comonossaclasseéimutável,seprecisarmoscalcularalgumainforma çãoque
+exijaqualquermodifica ção,clonamosoobjeto.Éocasodeummétodoqueadieo
+períodoemumasemana,ouseja,somesetediasaofimdoperíodo:
+public Periodo adiaUmaSemana() {
+Calendar novoFim = (Calendar) this.fim.clone();
+novoFim.add(Calendar.DAY_OF_MONTH, 7);
+return new Periodo(inicio, novoFim);
+}
+E, com uma pequena modificação, podemos implementar o design pattern
+flyweightemnossaclasse,compartilhandoainstânciado Calendardeiníciodo,
+períodoentreoobjetooriginaleonovo,comumasemanaadiada.Paratanto,pre-
+cisaríamosdeumoutroconstrutorprivadoparaserchamadono adiaUmaSemana
+quenãofizesseo clone.
+Utilizarclassesimutáveistrazumtrabalhoamaisjuntocomosdiversosbenefí-
+ciosdescritos. Você deve considerar fortemente criar sua classe como imutável.
+3.5 C uidado com o modelo anêmico
+Umdosconceitosfundamentaisdaorienta çãoaobjetoséodequevocênãodeve
+exporseusdetalhesdeimplementa ção. Encapsulandoaimplementação,podemos
+trocá-lacomfacilidade,jáquenãoexisteoutrocódigodependendodessesdetalhes,
+eousuáriosópodeacessarseuobjetoatravésdocontratodefinidopelasuainterface
+pública.[21]
+Costumeiramente,aprendemosqueoprimeiropassonessadire çãoédeclarar
+todosseusatributoscomo private:
+public class Conta {
+private double limite;
+private double saldo;
+}
+Paraacessaressesatributos,umdesenvolvedorqueaindaestejaaprendendovai
+rapidamentecairemalgumtutorial,quesugereacria çãode gettersesetterspara
+podertrabalharcomessesatributos:
+62
+
+## Página 85
+
+CasadoCódigo Capítulo3. TópicosdeOrientaçãoaObjetos
+public class Conta {
+private double limite;
+private double saldo;
+public double getSaldo() {
+return saldo;
+}
+public void setSaldo(double saldo) {
+this.saldo = saldo;
+}
+public double getLimite() {
+return limite;
+}
+public void setLimite(double limite) {
+this.limite = limite;
+}
+}
+Essaclassecontémalgunsmétodosqueacabamporferirasideiasdoencapsula-
+mento.Ométodo setSaldoéumbomexemplodisso,jáquedificilmenteosaldo
+emumaentidade Contaserásimplesmente“substituído”poroutro. Paraalterar
+osaldodeumaconta,énecessárioalgumaopera çãoquefa çamaissentidoparao
+domínio,comosaquesoudepósitos.
+Nunca crie um getter ou setter sem uma necessidade real ;lembre-sedeque
+precisamosqueessanecessidadesejaclaraparacriarqualquermétodoquecoloca-
+mosemumaclasse. Particularmente,os gettersesetterssãocampeõesquandofa-
+lamosemmétodosqueacabamnuncasendoinvocadose,alémdisso,grandeparte
+dosutilizadospoderiasersubstituídapormétodosdenegócio.[ 100]
+EssapráticafoiincentivadanosprimórdiosdoAWT,paraoqualerarecomen-
+dadocriar gettersesettersparasereminvocadosnopreenchimentodecadacampo
+visualdasuainterfacegráficacomousuário,cunhandootermo JavaBean.OsEJBs
+tambémcontribuíramparaestaprática,comoserávistoadiante.
+Criandoclassesdestaforma,istoé,adicionando gettersesetterssemsercriteri-
+oso,códigoscomo conta.setSaldo(conta.getSaldo() + 100) estarãoes-
+palhadosportodaaaplica ção.Seforpreciso,porexemplo,queumataxasejadebi-
+tadatodavezqueumdepósitoérealizado,seránecessáriopercorrertodoocódigo
+63
+
+## Página 86
+
+3.5. Cuidadocomomodeloanêmico CasadoCódigo
+emodificaressasdiversasinvoca ções.Um search/replaceocorreriaaqui;péssimosi-
+nal. Podemostentarcontornarissoepensaremcriarumaclasseresponsávelpor
+estalógica:
+public class Banco {
+public void deposita(Conta conta, double valor) {
+conta.setSaldo(conta.getSaldo() + valor);
+}
+public void saca(Conta conta, double valor) {
+if (conta.getSaldo() >= valor) {
+conta.setSaldo(conta.getSaldo() - valor);
+} else {
+throw new SaldoInsuficienteException();
+}
+}
+}
+Essetipodeclassetemumacaracterísticabemprocedural,fortementesinalizada
+pelaausênciadeatributoseexcessodousodemétodoscomofun ções( deposita
+e sacapoderiamserestáticos).Alémdisso,pode-sedizerqueestaclassetemuma
+intimidadeinapropriadacomaclasse Conta,poisconhecedemaissuaimplemen-
+taçãointerna.Reparequeométodo sacaverificaprimeiroseosaldoémaiorque
+ovalorasersacado,para,então,retirarodinheiro.Essetipodelógicadeveriaestar
+dentrodaprópriaclasse Conta.
+Oprincípiodo T e l l , D o n ’ t A s kpregaexatamenteisso:vocêdevedizeraosobjetos
+oquefazer(comosacardinheiro),evitandoperguntaremexcessooestadoaoobjeto,
+como getSaldo,e,apartirdesseestado,tomarumadecisão.[ 172]
+Essetipodeclasseécomumenteencontradaeéclassificadacomoopattern Bu-
+sinessObject porconcentraralógicadenegócios.Jáaclasse Conta,porterapenas
+osdados,recebiaonome ValueObject(hoje,estepatterntemoutrosignificado).Da
+formacomoestá,temosseparadosnossosdadosnaclasse Contaealógicadene-
+gócionaclasse Banco,rompendooprincípiobásicodemantercomportamentoe
+estadorelacionadosemumaúnicaclasse.
+Éoquechamamosde modelo anêmico(anemicdomainmodel ),[77],noqual
+nossaclasse Contaparecenãoterresponsabilidadealgumanosistema,nenhuma
+açãorelacionada. Énecessárioumaclasseexterna, Banco,paradaralgumaa ção
+paranossa Conta,tratando-aquasecomoumfantoche. [ 29]Comisso,aclasse
+64
+
+## Página 87
+
+CasadoCódigo Capítulo3. TópicosdeOrientaçãoaObjetos
+Bancoconhecedetalhesdaimplementa çãodaclasse Contae,seestamudar, Banco
+muitoprovavelmentemudarájunto.
+Podemosuniralógicadenegócioaosdadosdeumamaneirasimples,inserindo
+métodosnaclasse Contaeremovendoosqueapenasacessamemodificamdireta-
+menteseusatributos:
+public class Conta {
+private double saldo;
+private double limite;
+public Conta(double limite) {
+this.limite = limite;
+}
+public void deposita(double valor) {
+this.saldo += valor;
+}
+public void saca(double valor) {
+if (this.saldo + this.limite >= valor) {
+this.saldo -= valor;
+} else {
+throw new SaldoInsuficienteException();
+}
+}
+public double getSaldo() {
+return this.saldo;
+}
+}
+Aquimantivemoso getSaldo,poisfazpartedodomínio.Tambémadiciona-
+mosalgumasmanipula çõesaométodo saca,epoderíamosdebitaralgumimposto
+emcimadequalquermovimenta çãofinanceiranométodo deposita. Enriqueça
+suas classes com métodos de negócio, para que não se tornem apenas estruturas
+de dados.Paraisso,cuidadoaocolocar gettersesettersindiscriminadamente.Deve-
+mosencapsularosdadosematributosdeobjetose,ainda,lembrarqueaorienta çãoa
+objetospregaatrocademensagens(invoca çãodemétodos)demaneiraaconcentrar
+asresponsabilidadesaquempertenceosdados.OpróprioAlanKay,quecunhouo
+termo“programaçãoorientadaaobjetos”,ressaltaque“otermofoiumamáescolha,
+65
+
+## Página 88
+
+3.6. ConsidereDomain-DrivenDesign CasadoCódigo
+poisdiminuiaênfasedaideiamaisimportante,atrocademensagens ” . [35]
+ÉpossívelseguiramesmalinhaparaentidadesdoJPA/Hibernate,verificando
+arealnecessidadedosgettersesetters.Porexemplo,anecessidadedeummétodo
+setIdparaachaveprimáriatorna-sediscutívelnomomentoemqueumframework
+utilizareflectionoumanipula çãodebytecodeparaleratributosprivados.
+Algumasvezes,os gettersesetterssão,sim,necessários,ealgunspatternsaté
+mesmoprecisamdeumasepara çãodelógicadenegóciosdosrespectivosdados.
+[73]Práticascomoo TestDrivenDevelopment podemajudaranãocriarmétodos
+semnecessidade.
+Porém,frequentemente,entidadessemlógicadenegócio,comcomportamentos
+codificadosisoladamentenos businessobjects,caracterizamummodelodedomínio
+anêmico. Émuitofácilterminarcolocandoalógicadenegócio,quepoderiaestar
+ememnossasentidades,diretamenteemActionsdoStruts, ActionListeners
+doSwinge managedbeans doJSF,transformando-osem transactionscripts. Este
+modeloacabaficandocomumforteapeloproceduralevaidiretamentenacontra-
+mãodasboaspráticasdeorienta çãoaobjetosedo Domain-DrivenDesign.[21],[57]
+3.6 C onsidere Domain -Driven Design
+Todosoftwareédesenvolvidocomumpropósitoconcreto,pararesolverproblemas
+reaisqueacontecemcompessoasreais. Todososconceitosaoredordo problema
+aserresolvidosãooquedenominamosdomínio. Oobjetivodetodaaplica çãoé
+resolverasquestõesdeumdeterminadodomínio.
+Domain-DrivenDesign(DDD)significaguiaroprocessodedesigndasuaaplica-
+çãopelodomínio.Pareceóbvio,masmuitossoftwaresnãosãoprojetadosdeacordo
+comodomínioemqueatuam.Podemosperceberessarealidadeanalisandoocódigo
+dediversossistemasatuais,nosquaisasentidadesnãocondizemcomarealidadedos
+usuáriosesãodedifícilentendimento.[ 57],[77]
+SegundooDDD,éimpossívelresolveroproblemanodomíniodoclientesem
+entendê-loprofundamente.Éclaroqueodesenvolvedornãoquersetornarumcom-
+pletoespecialistanaáreadocliente,masdevecompreendê-laosuficienteparade-
+senvolverguiadopelodomínio.
+Paraistoacontecer,oponto-chaveéa conversa.Conversaconstanteeprofunda
+entreosespecialistasdedomínioeosdesenvolvedores. Aquelesqueconhecemo
+domínioemdetalhesdevemtransmitirconhecimentoaosdesenvolvedores.Juntos,
+chegarãoatermosevocábulosemcomum,uma línguacomum,quetodosutilizem.
+66
+
+## Página 89
+
+CasadoCódigo Capítulo3. TópicosdeOrientaçãoaObjetos
+Éachamada L í n g u aU b í q u a(UbiquitousLanguage).
+Estalínguaébaseadanostermosdodomínio,nãototalmenteaprofundadaneste,
+masosuficienteparadescreverosproblemasdemaneirasucintaecompleta.
+Duranteaconversaconstante,cria-seum modelo do domínio(ouDomainMo-
+del). Éumaabstraçãodoproblemareal,queenvolveosaspectosdodomínioque
+devemserexpressadosnosistema,desenvolvidaemparceriapelosespecialistasdo
+domínioedesenvolvedores. Éestemodeloqueosdesenvolvedoresimplementam
+emcódigo,quedeveocorrerliteralmente,itemporitem,comofoiacordadoporto-
+dos.Istopossibilitaodesenvolvimentodeumcódigomaisclaro,e,principalmente,
+queutilizametáforasprópriasdodomínioemquestão.
+Seuprogramadeveexpressarariquezado domainmodel. Qualquermudança
+nomodelodeveserrefletidanocódigo. Casoomodelosetorneinviávelparase
+implementartecnicamente,eledevesermudadoparasetornarimplementável.
+Esseprocessonãoocorreantesdoiníciodoprojeto,maséumtrabalhocons-
+tante,quedeveserrevisitadoatodoinstante.PraticandoDDD,écomumencontrar
+situaçõesemqueoespecialistaeosdesenvolvedoresaprendemmaissobreodomí-
+nioerefatoramocódigoesuasentidadesàmedidaqueoprojetoédesenvolvidoe,
+porisso,práticasde TestDrivenDesign erefatoraçãosãocomplementaresaDDD.
+NoDDD,seucódigosempreseráaexpressãodomodelo,que,porsuavez,é
+guiadopelodomínio.
+AprincipalliteraturasobreDomain-DrivenDesignéolivrohomônimode
+EricEvans.<spanclass="char-style-override-4”>26Nele,oautorapresentaoqueé
+oDDD,alínguaubíquaeparteparaum catálogodedesignpatterns.Esses patterns
+citadosporEvanssãoferramentasquefacilitamaimplementa çãodo DomainModel
+nosoftware.Elessãoexcessivamentereferenciadosemartigos,masnãosãooponto
+principaldoDDD.
+Emmuitasdiscussõesemtornodoassunto,comfrequênciaencontram-sere-
+ceitasmágicasque,aparentemente,podemseraplicadasemqualquerprojeto.Este
+éumdosmaioreserrosquesepodecometer.Nãoexistereceitapronta,etampouco
+apenasumaúnicamaneiradeescreversuasclasses.SedesejausarDDD,lembre-se
+doprincipal: odomínio. VocêpodecriarumModelriquíssimoeumdesignele-
+gante;mas,seelenãoforumaexpressãofieldo Domain,senãoforapartirdalíngua
+comum,vocênãoestáusandoDDDeomodelosofrerácomasuadiferen çacomo
+domínio.
+67
+
+## Página 90
+
+3.6. ConsidereDomain-DrivenDesign CasadoCódigo
+As quatro camadas do DDD
+Evanspropõeemseulivroadivisãodaaplica çãoemquatrocamadas( layers),
+parafavoreceroisolamentododomínio,oencapsulamento,aflexibilidadeefacilitar
+oDDD(Figura 3.5).
+Ainterfaceeaintera çãocomousuário(Swing,HTML,etc.)sãoa UI Layer.A
+Application Layeréqueauxiliaodomínioaserexecutado,entregandoetraduzindo
+asinformaçõesdequeodomínioprecisa.OprincipalpontodoDDDéomodelodo
+domínioesuaslógicasdenegócio,queformamo Domain Layer.Porfim,a Infras-
+tructure Layercontémserviçosdeinfraestruturanecessáriosaofuncionamentodas
+outraslayers,persistência,segurança,enviodee-mail,entreoutros(Figura 3.5).
+Naimplementaçãoda DomainLayer,surgemnecessidadesmaisortogonaisou
+serviçosmaiscomplicadosquefogemdodomínioemquestão,comopersistênciae
+comunicaçãoSMTPparaenviodee-mails.Épapelda InfrastructureLayerservira
+DomainLayereàsoutrascamadascomessasfacilidades.
+Figura3.5:AsquatrocamadasdoDDD.
+68
+
+## Página 91
+
+CasadoCódigo Capítulo3. TópicosdeOrientaçãoaObjetos
+AUILayer,comumentechamada view,éresponsávelpelainterfaceentreousuá-
+rioeseusistema.Éelaqueinteragecomousuário,recebendosuasa çõeseexibindo
+umarepresentaçãodomodelo. ApplicationLayeréumacamadafinaquefazaponte
+entreainterfaceeomodelododomínio. Éelaquecoordenaeestimulaomodelo
+deformaaatenderàrequisi çãodaUI.Namaioriadossistemas,éumacamadabem
+simples,emuitasvezesinexistente;sevocêusaumbomframeworkcontrolador,é
+bemcapazqueelejáconsigafazeressaponteentreUIemodeloautomaticamente.
+ODDDétodosobrea DomainLayer.ÉnelequeestáaquestãodaUbiquitous
+Languageedodomainmodel.EnessamesmacamadaentramospatternsqueEvans
+cita,osquaissãofrequentementediscutidosnacomunidade.
+HámuitospatternsapresentadosporEvans: algunsnovos,outrosde model-
+drivendesigneatéalgunsdoGoFrevisitados.Umdosmaissimpleséo V alue Object,
+quemodelaumobjetogeralmenteimutávelondeoquerealmenteinteressaéseuva-
+lor.Sãoobjetoscomo java.util.Calendarou java.awt.Color,emquenão
+háidentidade,edoisobjetoscommesmovalorsãoiguaisperanteosistema(umlu-
+garquetenhaumobjeto Calendarcomadatadehoje,podesertrocadoporum
+outroobjeto Calendarcomamesmadata).
+Há ainda o patternEntity(Entidade),quetratadeobjetoscomidentidadeúnica,
+eciclodevidaquequeremoscontrolar. Emumalojavirtual,porexemplo,um
+Produtopodeseruma entity. Doisprodutoscommesmonomesãocoisasdife-
+rentes,enãopodemsertrocados(háidentidadeemcadaobjeto,nãoéapenaso
+valorqueconta).Ociclodevidatambémébemdefinido.Oobjetoécriadoemum
+certomomentodecadastro,suarepresenta çãopodeserpersistidaerestauradade
+umbancodedados,eeleéjogadoforaquandoforremovido.
+Sobreociclodevidadas entities,Evanspropõeaindaumasériedepatterns.
+DesdeaversãoDDDpara Factory,aplicadaàcamadadedomínio,atéofamosoe
+mal-entendidoRepository.Esteéumpadrãointeressanteparadiscutirvárioscon-
+ceitosdoDDDeenxergarseusprincipaispontosemrela çãoàmodelagemdodomí-
+nio.
+Repositórios
+Muitosdomíniosprecisampersistirdados.O Domainexpert (oespecialistado
+domínio)podenãosaberoqueéumbancodedadosnemosignificadode persis-
+tência,massabequequer cadastrarosclientesdesuaempresaparadepois procurar
+nessecadastro.Oclientedizparaodesenvolvedor(aconversa)queprecisa contro-
+larseuestoquedeprodutosparadepois buscarquaisprodutosestãoembaixa. O
+69
+
+## Página 92
+
+3.6. ConsidereDomain-DrivenDesign CasadoCódigo
+usuáriotem,intuitivamente,oconceitodepersistênciaeacessodasinforma ções.
+Jáodesenvolvedor,conhecetudodebancosdedados,integridaderelacional,
+Hibernate,relacionamentos,SQL,normaliza çãoequalqueroutrodetalhetécnico
+envolvido.Nadadissoépertinenteaodomíniodocliente,emborasejamtodoscon-
+ceitosfundamentaisparaseimplementarano çãodepersistênciaqueousuáriotem
+nacabeça.Éaíqueentrao Repository.
+SegundoEvans,repositórioéumnomequeaparecenalínguaubíquapararepre-
+sentaraqueleconceitorudimentardepersistênciaqueexistenacabe çadocliente.É
+norepositórioquecadastramosasinforma ções.Énelequevamos,depois,procurar
+objetosjácadastrados.Pormeiodele,controlamososobjetosebuscamosinforma-
+çõessobreeles.
+AimplementaçãoemsidorepositórionãoéfocodoDDD.Odesenvolvedor
+provavelmentecriaráumDAOcomJPAouJDBC,ouumaimplementa çãodiretade
+umainterface,masissofogedoescopododomainmodel. EscreverSQLecódigo
+demanipulaçãodebancodedadosnãofazparteda DomainLayer,amenosque
+seudomíniosejabancosdedados.Tudoissofazpartedacamadadeinfraestrutura,
+lugarondeseuDAOdeveestar. Acamadadedomaindeveapenaspensaremum
+repositóriodeobjetosnoqualasopera çõesdepersistênciaacontecem.
+OsdesenvolvedoresconhecemopadrãoDAOcomoumaformadeencapsular
+asparticularidadesdoacessoabancodedados(ouaalgumabasededados)eisolar
+essacomplexidadedorestantedoprograma. Agora,oDDDpropõeorepositório,
+querepresentaolugarondenossosobjetossãocolocadosparaquedepoispossa-
+mosrecuperá-los.E,infelizmente,muitosconcluemqueRepositórioeDAOsãoo
+mesmo.Nãosão,emborasejafatoqueissotudogeramuitaconfusão.
+Repositórioéumconceitodo DomainLayer,quetemdefazerpartedo Modelo.
+Noteadiferen ça:DAOsurgedoproblemadeencapsularfuncionalidadesespecíficas
+deinfraestrutura;oRepositório,danecessidadedoclientedeguardareobterobjetos
+dodomínio.
+Onomedorepositórionãodeveseralgointernoaocódigo,masdevefazerparte
+dalínguaubíqua;deveaparecernasconversasenoDomainModel. Deveserum
+conceitoqueoespecialistadedomíniotambémentendae,porqueestáno Model,é
+queelevaiparaocódigo.Nãoháproblemaemtrazerpalavreadotécnicoparaa Ubi-
+quitousLanguage,desdequetodosentendamosignificado,mantendooprincípio
+dalínguaubíqua.
+OpadrãoDAOnãofazpartedalínguaubíqua,masdacamadadeinfraestrutura.
+Existeumarela çãoentreRepositórioseDAOs,poisgeralmenteasbuscassãofeitas
+70
+
+## Página 93
+
+CasadoCódigo Capítulo3. TópicosdeOrientaçãoaObjetos
+nobancodedados,ecostumaserboapráticaterumDAOparatanto,masoDDD
+mesmonãodiznadasobreoassunto,jáqueistoestáforadodomínio.
+SegundooDDD,háváriasimplementaçõespossíveis,todasboas,desdequevocê
+sigaosconceitosdiscutidos.UmaencontradacomfrequênciaérepresentaroRepo-
+sitórionacamadadodomínioatravésdeumainterfaceJavaimplementadadireto
+nacamadadeinfraestrutura.Emcasosmaiscomplexos,orepositóriopodeseruma
+classeconcretaquedelegachamadasparamaisdeumDAOnainfraestrutura.Mas
+istonãoéregra.Desenvolvapensandonodomínio,etemosDDD.Poderíamoster:
+public interface ClientesRepository {
+List<Cliente> getPorNome(String nome);
+List<Boleto> getPorCliente(Cliente cliente);
+}
+Seriamuitomaisconvenienteterainterfaceeseusmétodoscomnomesmais
+orientadosadomínio,[ 31]como Clientesparaainterface,ouainda:
+public interface TodosClientes {
+List<Cliente> comNome(String nome);
+}
+public interface TodosBoletos {
+List<Boleto> doCliente(Cliente cliente);
+}
+Onome TodosClientesajudanoentendimentodoqueéumrepositório;tec-
+nicamente,eletentasimularumacole çãoemmemória,masnaverdadeépersistente.
+Estacaracterísticaajudaoclienteaentenderoqueorepositóriofazduranteuma
+conversacomosdesenvolvedores.Algunsdetalhesdequedevemosnoslembrarao
+usarosrepositóriossãoevitartermétodoscomnomestécnicoseagruparasfunci-
+onalidadesportipo;seummétodoretornaumalistadeboletos,eleprovavelmente
+pertenceaorepositóriodeboletos.
+Domain-Specific Language
+Aproveitandoadiscussãosobremodeloedomínio,percebemosque,aocriarum
+códigobaseadonomodelo,eleficadelimitadopeloselementosqueforemabordados
+noescopododomínio,e,consequentemente,nalínguaubíqua.
+Essasclasseseosmétodosdaaplica çãoserãoespecíficosparaumdeterminado
+problema; nestecaso, então, acabamoscriandoumabibliotecaespecíficaparao
+71
+
+## Página 94
+
+3.6. ConsidereDomain-DrivenDesign CasadoCódigo
+domíniodaaplica ção,epodemosconsiderarqueestabibliotecaéuma DSL,ou
+Domain-SpecificLanguage.
+Seconsiderarmosquetudooquefoicriadousaumalinguagemhospedeira,por
+exemploJavaouRuby,estamosfalandode DSLsinternas.
+OcódigoaseguirmostraumexemploemJavadeDSLinterna:
+cliente.fazReserva(paraQuarto(numeroDoQuarto)).
+de(dataDeInicio).ate(dataDeSaida);
+Podemosencararessetrechodecódigocomoumanovalinguagem.Masperceba
+queeleaindarespeitaasregrasdesintaxedoJava,sualinguagemhospedeira. É
+códigoJavaválido. Ousodeumalinguagemhospedeiraéoquecaracterizauma
+DSLinterna.
+EssasDSLsbeneficiam-sedefuncionalidadesquesualinguagempossui. Para
+projetarecriaruma DSLinterna,podemosusartécnicasdeprograma çãoquealin-
+guagemhospedeirapermite,comooencadeamentodemétodos( MethodChaining)
+donossoexemplo.
+Issotornaaconstru çãode DSLsinternasmuitomaissimples.Diversasvezes,es-
+sasDSLssurgemnaturalmenteaorefatorarocódigoparaqueexpressecadavezmais
+odomínioealínguaubíqua.Encadeamentodemétodos, varargs,staticimports,ge-
+nerics,polimorfismo,classesanônimaseproxiesdinâmicossãoalgumasdasfunci-
+onalidadesaplicadasnaconstru çãode DSLsinternasemJava.As DSLssãocriadas
+emcimadeummodeloquerepresentaodomínio,ummodelosemântico (semantic
+model).[62]
+ReparenosexemplosaseguirumaDSLdeumrepositório,quepermiteacom-
+posiçãodeumatarefaapartirdepartesmenores:
+List<Quarto> vagas = quartos.vagosNoPeriodo(proximaSemanaUtil())
+.dosTipos(Tipos.PADRAO, Tipos.LUXO)
+.lista();
+List<Cliente> hospedes = clientes.queSeHospedaram(data)
+.nos(quartos.doTipo(Tipos.PADRAO))
+.lista();
+Alémdisso,nadanosimpedede,emvezdeusarumaDSLhospedadaemuma
+GPL(GeneralPurposeLanguage,ouLinguagemdePropósitoGeral),criarumanova
+sintaxeelinguagempararesolveroproblema.ChamamosessaslinguagensdeDSL
+externa.Exemplo:
+72
+
+## Página 95
+
+CasadoCódigo Capítulo3. TópicosdeOrientaçãoaObjetos
+cliente faz reserva do quarto 215 de 12/02/1990 ate
+20/02/1990
+Agrandevantagemdecriaruma DSLexternaéapossibilidadederestringirseu
+vocabulário,dexando-abempróximadalínguaubíqua. ExemplosdeDSLsexter-
+nassãoSQL,CSSeexpressãoregular. [ 62]Outroaspectoimportanteéquea DSL
+externatambémnãoprecisarespeitarasregrasdesintaxedenenhumalinguagem
+hospedeira,oquedáumaenormeflexibilidadeaoprojetá-la.
+Poroutrolado,adesvantagemde DSLsexternaséaimplementa çãodeinter-
+pretadores,parserse/oucompiladores. Jáquecriamosumanovasintaxe,émuito
+trabalhosoconceberuminterpretador,parseroucompiladordozero. Parsergenera-
+tors,tambémconhecidoscomocompiladoresdecompiladores( compilercompilers),
+ajudambastante.Mesmoassim,aindanãoéumatarefafácil.
+Háalgunsanos,tinha-seaideiadequeacria çãodeDSLsserviriaparaque,atra-
+vésdelas,pessoasquenãosãoprogramadoresconseguissemescreversuaspróprias
+rotinas. Mas,apósalgumtempodediscussãosobreoassunto,essaideiaperdeu
+forçae,atualmente,pensa-sequeasDSLsdevamserescritasporprogramadores,
+mascontinuemfáceisdelerporpessoasquenãoprogramam,comoéocasodos
+businessexperts.[ 7 4]
+Aotrabalharcom DSLs,considereousodeframeworksqueauxiliemnasuacri-
+ação. UmdosframeworksJavamaisusadosparacriar DSLsexternaséoANTLR,
+umparsergeneratorusadoemimportantesprojetos,comonainterpreta çãode HQL
+(HibernateQueryLanguage).EmRuby,háoGherkin,usadopeloCucumbernain-
+terpretaçãodesuasespecifica çõesexecutáveis.OHamcrest,usadonoJMock,ajuda
+bastantenacria çãode DSLsinternasemJava,alémdepermitiracria çãodecompo-
+nentesreutilizáveisentreDSLsdistintas.
+DSLspodemserescritascomênfaseemqualquerdomínio,trazendoparaode-
+senvolvimentodosoftwareacapacidadedeexprimirumcomportamento,através
+dalinguagemmaispróximadarealidadedoproblemaaserresolvido,etentandore-
+moveraomáximooruídosintáticodabiblioteca,linguagemoupadrõesutilizados
+parasuportá-la.Amaiorpartedocódigopassaaserescritacomovocabuláriodo
+domínio,enãomaiscomodaferramenta.
+73
+
+## Página 97
+
+Capítulo4
+Separaçãoderesponsabilidades
+Aopensarnodesigndeumaaplica ção,ofoconãodeveserapenasnarela çãoentre
+doisobjetos,mastambémentregruposdeobjetosquetrabalhamemconjuntopara
+umadeterminadafinalidade. Aodesenharpequenasclassesque,juntas,realizam
+umatarefamaior,oprogramadorganhaemsimplicidadeemodularidade.
+Émaissimplesmanterumsistemacompostoporclassesquecontêmapenasuma
+responsabilidadebemdefinida,jáqueaaltera çãodeumcomportamentoéfeitoem
+umaúnicaclassedosistema. Poresseeoutrosmotivos,oprogramadordevebus-
+carclassescombaixoacoplamentoealtacoesão,evitandopadrõesconhecidosque
+levamadesignsrígidosedealtocustodemanuten ção.
+4.1 O btenha baixo acoplamento e alta coesão
+Pararealizaraltera çõescomfacilidadeemumsistema,queremosquemudan çasem
+umapartedelenãoimpliquemmaismudan çasemoutras.Anecessidadedeatuali-
+zaçõesemdiversospontosdocódigonomomentoderealizaralgumaaltera çãode
+
+## Página 98
+
+4.1. Obtenhabaixoacoplamentoealtacoesão CasadoCódigo
+funcionalidadepodeindicarqueessespontosestãoligados(ouacoplados)dema-
+neiraindesejada. Acoplamentoéoquantodoiselementosestãoamarradosentresi
+equantoasaltera çõesnocomportamentodeumafetamodeoutro.
+Pode-sefalardoacoplamentoentreduasclasses,oudoquantodoismódulos
+daaplicaçãoestãoamarrados,ou,ainda,avaliaroquantodoisframeworksdistintos
+sãoafetadosumpelooutro.Nãosequer,porexemplo,alterarumaclasse Usuario
+porquehouvemudan çasnaregrada ControleDeAcesso,outerdealterarDAOs
+porcausademudan çasnaView,ouaindaserimpedidodeusaralgumframework
+WebporqueadotamosHibernateparapersistência.
+Partesdosistemapodemserchamadasdecomponentes. Classesindividuais,
+conjuntodeclasses,umpacoteouatémesmoumabibliotecacontidaemumarquivo
+JARsãoexemplosdecomponentes. Emtodososcasos,minimizaroacoplamento
+implicatambémfacilitaratrocadosmesmos,alémdeserpe çafundamentalparaa
+manutençãodocódigo,formandoumaarquiteturademaiorqualidade.
+Masbaixoacoplamentoédiferentedenenhumacoplamento.Paraquedoiscom-
+ponentessecomuniquem,semprehaveráumaliga ção.Aobuscarfacilidadedema-
+nutençãoalongoprazo,devemoslutarparaqueessaliga çãosejaamenoremais
+simplespossível.Descobrir,entenderegerenciaressasdependênciaséumadaspar-
+tesmaiscomplicadasdoprocessodedesenvolvimentodesoftware.BobMartindiz
+queosdesignsdeterioramàmedidaquenovosrequisitosfor çammudançasquenão
+foramprevistas,eissofazcomquesejamintroduzidasdependênciasnovasenão
+planejadasentreclassesemódulosdosistema.[ 126]Fowlertemumaopiniãopare-
+cidaedizque,àmedidaqueossistemascrescem,énecessáriaumamaioraten çãoao
+gerenciamentodessasdependências,pois,casocontrário,simplesaltera çõespodem
+serpropagadasparaoutrasclassesoumódulos,prejudicandoassimaevolu çãodo
+software.[69]
+Encapsulamentoebomusodeinterfacessãoessenciaisparadiminuiroacopla-
+mentoentrecomponentes,masháaindaumpontoimportantequandosepensaem
+umnívelmaisalto,olhando-separaosistemacomoumtodo:as responsabilidades
+decadacomponente.Arazãodaexistênciadetodocomponenteéexerceralgumtipo
+defun çãonosistema,assumircertorequisitocomosuaresponsabilidade. Euma
+importanteeboapráticaégarantirqueeletenhatenha alta coesão,oquesignifica
+garantirquesuasresponsabilidadessejamrelacionadasefa çamsentidojuntas,ou
+seja,quenãohajaresponsabilidadesdesconexasdentrodeummesmocomponente.
+Issofacilitaoentendimentoefuturamodifica çãodocomponente,alémdeaumentar
+suaschancesdereutiliza çãojáque,emgeral,poucaspartesdosistemaprecisariam
+76
+
+## Página 99
+
+CasadoCódigo Capítulo4. Separaçãoderesponsabilidades
+deumcomponentecomresponsabilidadesmuitodiversas.
+BobMartindefiniuresponsabilidadecomo“umarazãoparamudan ça” , e m s e u
+artigo“SingleResponsibilityPrinciple ” . [120]Nele,Martindefendeque,alémdeter
+altacoesão,ocomponentedeveterapenasumaúnicaresponsabilidade,“ emmo-
+mentoalgumdeveexistirmaisdeummotivoparaalterarumaclasse ”.Issodiminui
+oacoplamentoentreresponsabilidadesdiferentes,evitandoquemudan çasemuma
+afetemaoutra.Nessemesmoartigo,eleaindacita:“ sevocêconseguepensaremmais
+deummotivodemudan çaparasuaclasse,entãoelatemmaisdeumaresponsabili-
+dade” .
+Umconceitoaindamaisamploedifundidocomoexcelentepráticaarquitetu-
+raléoda S e p a r ação de Responsabilidades,ou SoC,doinglêsSeparationofCon-
+cerns.Paradiminuiroacoplamento,aumentaracoesão,promoveraflexibilidadee
+garantirresponsabilidadesúnicas,éprecisosabersepararessasresponsabilidades.
+Háquemdigaqueotermoapareceupelaprimeiravezem1974,naspalavrasdeEds-
+gerDijkstra,quandoargumentavaque,aodesenvolverumsoftware,muitosaspectos
+diferentesdevemsertratados.[ 47]E,comoelediz:“Nadaseganha–aocontrário!–
+abordandoessesdiversosaspectossimultaneamente.Éoqueeualgumasvezeschamei
+de‘separaçãoderesponsabilidades ”’.E,maisàfrente,explica:“Issonãosignificaigno-
+rarosoutrosaspectos,masestarapenasfazendojusti çaaofatodeque,sobopontode
+vistadeumaspecto,ooutroéirrelevante ” .
+Emumnívelmaispróximoaocódigo,ummétodoqueverificapermissõesdo
+usuáriologadoemontaumrelatório,possuimaisdeumaresponsabilidadediferente
+erequerrefatora ção. Aqui,separarsignificacriardoismétodosdistintos,umpara
+aautorizaçãoeoutroparaaexecu çãodatarefa.Levandoopensamentoaumnível
+superior,casoosmétodosfiquemnamesmaclasse,elacontinuacomdoispapéis
+distintos: autenticaçãoeexecu ção. Oresultadoseriasepararocódigoentreduas
+classes.Ou,maisainda,empacotesousubmódulosdiferentesdaaplica ção.Eaté,se
+forocaso,emframeworksespecializadosemcadatarefa.
+Comosepodever,essetrabalhopodeserfeitoemdiversosníveis,enãosóem
+linguagensorientadasaobjeto.NomundoWeb,arquivosHTMLpreocupam-seem
+descreverconteúdo,arquivosCSSdescrevemaapresenta çãoe,porfim,arquivosJa-
+vaScript,alógicadasuapágina. Épossívelmisturartodoocódigo,mastambém
+podemossepará-loemdiversaspartes,cadaumacomsuaprópriaresponsabilidade.
+Aolongodosanos,SoCfoiganhandodefini çõesmaisrobustasesetornouam-
+plamentedifundido.Emorienta çãoaobjetos,muitosefaladoassuntoparadefinir
+opapeldecadaclassedosistema.Fala-sedeSoCquandoseorganizaascamadasda
+77
+
+## Página 100
+
+4.2. Gerenciesuasdependênciasatravésdeinjeção CasadoCódigo
+aplicação,nasepara çãodo MVC,narela çãocominversãodecontrole,orienta çãoa
+aspectoseemváriasoutrassitua ções.
+Háváriaspráticaseabordagensquefacilitamasepara çãoderesponsabilidades,
+comoveremosnospróximostópicos.
+4.2 G erencie suas dependências através de injeção
+Mesmocomobaixoacoplamentohaverásempreumaliga çãoentreduasclassesque
+precisamtrabalharemconjunto. Normalmente,háumaclassequenecessitados
+serviçosoferecidosporoutra.Qualquermudan çanestaclassequeestásendoaces-
+sadapodeafetarocomportamentodaprimeira. Háaquiumarela çãonaturalde
+dependência.[110]Relaçõescomoessaindicamaindaqueasemânticadoclienteé
+incompletasemofornecedor.[ 69]
+Suponhaumaclassechamada CalculadoraDeSalario,responsávelporcal-
+cularosaláriodeumdeterminadofuncionário. Paraestimarquaisimpostosse-
+rãodescontadosdoempregado,estaclasseprecisada TabelaDeImpostos.Existe
+umarela çãodedependênciaentreessasduasclassese, porisso, dizemosquea
+CalculadoraDeSalario dependeda TabelaDeImpostos.Quandooassunto
+éorganizaçãodeclasseseobjetos,asdependênciasentreasdiversaspartesdosis-
+temasãoumassuntodelicado. Devemosnosesfor çaraomáximoparadiminuiro
+acoplamento.
+Umcasorecorrenteemdiversosprojetoséatentativadeencapsulartodooacesso
+adados(persistência)deumaaplicação,centralizando-oemobjetosespecíficos,apli-
+candoopattern DataAccessObject (DAO).
+public class ProjetoDao {
+public void salva(Projeto projeto) {
+// ...
+}
+public void remove(Projeto projeto) {
+// ...
+}
+public Projeto carrega(Long id) {
+// ...
+}
+}
+78
+
+## Página 101
+
+CasadoCódigo Capítulo4. Separaçãoderesponsabilidades
+PartindodoprincípiodequeessaclasseutilizadiretamenteJDBCparaoacesso
+aobanco,elaprecisadeumaconexão,umareferênciaa java.sql.Connection,
+emtodososseusmétodos. Ousodealgumframeworkparaacessoadadosoude
+mapeamentoobjeto-relacionalnãoresolveriaoproblema,jáqueelaprecisariade
+algoanálogoauma Sessionou EntityManager.
+OproblemaéqueoDAOfoicriadoparaencapsularosdetalhesdeacessoaos
+dados,porém,precisadealgunsrecursos(nestecaso,umaconexão)pararealizar
+seutrabalho.Seriaomesmocasocomum EnviadorDeEmails,quenecessitade
+umaconexãocomoSMTP,porexemplo.
+Umaprimeirapossibilidadeparaobterumareferênciapara Connectionseria
+abrirconexõesdiretamentenosmétodosquenecessitamdelas,deixandoosdetalhes
+porcontadopróprioDAO:
+public class ProjetoDao {
+public void salva(Projeto projeto) throws SQLException {
+String url = "jdbc:mysql://localhost/db";
+String usuario = "root";
+String senha = "password";
+Connection connection =
+DriverManager.getConnection(url, usuario, senha);
+// ::uso da conexão ...::
+connection.close();
+}
+// ::outros métodos do DAO::
+}
+OcódigoanteriorserveparaconectaremumabasedoMySQL.Éinviávelrepeti-
+loemtodososoutroslugaresqueprecisemdeconexão.Alémdisso,aindaexistem
+diversosoutrosdetalhesimportantesaseremconsiderados,comoaexternaliza ção
+dasconfiguraçõeseousodeum pool de conexões paragerenciamentomaisinteli-
+gentedosrecursos.
+Reparequeaclasse ProjetoDao temresponsabilidadesdemais;alémdesaber
+comosalvar,buscarealterarprojetos,aindaéresponsávelporcriarumaconexão
+comabasededados. Elaéumtípicoexemplodeumaclassecombaixacoesão,
+devidoatantasresponsabilidades.
+79
+
+## Página 102
+
+4.2. Gerenciesuasdependênciasatravésdeinjeção CasadoCódigo
+Oprimeiropassoparaamenizaroproblemaécentralizaroprocessodecriar
+conexões. Dessaforma,aclassepodedependerapenasdeumainterfaceeignorar
+completamenteosdetalhesdecria çãodeconexões(seaconexãoénova,seveiode
+umpool,qualdriverestamosusando,etc.).Ousodeuma factorypermiteesconder
+ecentralizartaisdetalhesetrocaressaestratégiamaisadiante,casonecessário.
+public void salva(Projeto projeto) throws SQLException {
+Connection connection = new ConnectionFactory().getConnection();
+// ::uso da conexão:: ...
+connection.close();
+}
+Aobtençãodasconexõesficamaissimples,masaindanãoresolveoproblema.
+Comessecódigo,nãoépossívelsalvardois Projetosutilizandoamesmacone-
+xão,nemexecutardoismétodosdoDAOdentrodeumamesmatransa ção;acada
+novainvocaçãodemétodoumanovaconexãoéadquirida.Essaéumamáprática,
+conhecidacomo SessãoporOpera ção,T r a n s açãoporOpera ção,ouainda Conexão
+porOperação(Session/ConnectionperOperation).
+Seriapossívelagruparasopera çõesqueprecisamdamesmaconexão/transa ção
+dentrodeummesmométododoDAO:
+public void salva(Projeto projeto, Gerente gerente) {
+Connection connection = new ConnectionFactory().getConnection();
+// ...
+connection.close();
+}
+Mas,nestecaso,oDAOacabariacomumagrandequantidadedemétodos,a
+maioriaformadapraticamentepelacombina çãodeoutros. Esteéumclaroexem-
+plodepéssimadivisãoderesponsabilidades,jáqueoDAOtrabalhademais,abre
+conexão,cuidadetransa ção,fechaconexão,alémdatarefaquerealmentelhecabe:
+acessardados.Qualquernovotipodetransa çãodaaplica çãoexigeumnovométodo
+noDAO.
+Dealgumaformaéprecisopermitirqueamesmaconexãosejautilizadaemdi-
+versosmétodosdoDAO,guardando-aemumatributo.Precisamostambémdeum
+localparaabriraconexão:
+80
+
+## Página 103
+
+CasadoCódigo Capítulo4. Separaçãoderesponsabilidades
+public class ProjetoDao {
+private Connection connection;
+public void inicia() {
+this.connection = new ConnectionFactory().getConnection();
+}
+}
+CriarummétodoparainiciaroDAOeabriraconexãoresolveumproblema,
+masgeraoutro.Podemosnosesquecerdeinvocarométodo inicia,fazendocom
+que Connectionseja null.OobjetoDAOnãoéum Bom Cidadão (GoodCiti-
+zenPattern),[145]jáquepodeserinstanciadosemquetodasassuasdependências
+estejamresolvidas.
+Paraqueumobjetosejaumbomcidadão,eledevesempreestaremumestado
+consistente.Paratanto,ousodoconstrutoréessencial,noqualsãopreenchidasto-
+dasasdependênciasnecessáriasparaqueoobjetopossatrabalharadequadamente,
+semasubsequentenecessidadedeinvocar settersououtrosmétodosdeinicializa-
+çãoeconfigura ção.Oprincípioaindavaialém,definindoalgumasboaspráticasna
+manipulaçãodeexce ções, loggingeprogramaçãodefensiva,tornandoessesobjetos
+maissegurosemrela çãoacódigodeterceiros.
+AseguinteversãodoDAOusaoconstrutorpararesolveroproblemaefor çaa
+aquisiçãodaconexãonomomentodesuainstancia ção:
+public class ProjetoDao {
+private final Connection connection;
+public ProjetoDao() {
+this.connection = new ConnectionFactory().getConnection();
+// ::poderia também abrir uma transação::
+}
+public void fecha() {
+// ::poderíamos consolidar a transação::
+this.connection.close();
+}
+}
+Aconexãoéabertanoconstrutor,porém,Javanãotemdestrutores.Mesmoque
+tivesse,ouoprogramadorusasseométodo finalize,nãoseriaumasolu çãoade-
+quada,jáquenãoháagarantiadequandoumobjetoserácoletadopelo Garbage
+81
+
+## Página 104
+
+4.2. Gerenciesuasdependênciasatravésdeinjeção CasadoCódigo
+Collector.Éfundamentaltercontrolesobreondeequandoasconexõessãoabertas
+efechadas,tendoemvistaqueesteéumrecursocaro,talcomodescritoresdear-
+quivos,threads,socketseoutrosqueusamdeI/Oououtraschamadasaosistema
+operacional.
+ComoonossoDAOjádetémaresponsabilidadedecriaraconexão,éseupapel
+fechá-la.Ométodo fechapareceserasolu ção,jáqueagoraépossívelinstanciaro
+DAOeinvocarváriasopera çõesdentrodamesmaconexão/transa ção.Aindaassim,
+estasoluçãopossuialgunsproblemas:
+• Ométodofechaquebraoencapsulamento,jáqueexpõeumdetalheespe-
+cíficodestaimplementaçãodeDAOqueestamosusando;existeumaconexão
+quedeveserfechada.Seaimplementa çãodoDAOfortrocadaporumaque
+persistaemarquivosXML,porexemplo,nãohaveriamaisnecessidadedeter
+ométodo fecha,poisnãoexistiriamaisnenhumaconexãoaserfechada.Ao
+mesmotempo,nãosepodesimplesmenteremoverométodo fecha,jáque
+eleestánainterfacepúblicadosDAOs;issoquebrariatodososseusclientes.É
+nessemomentoquecome çamasurgirasimplementa çõesvaziasdemétodos.
+• Aboapráticadiz:“seabrir,feche”!Destaforma,evita-seespalhararesponsa-
+bilidadedegerenciarorecursoqueestamosmanipulando.Oproblemaéque
+oDAOabreaconexão,masnãosabequandofechá-la,edelegaestatarefaa
+quemoutiliza.Osusuáriosdaclasseficamresponsáveisporinvocarométodo
+fechaesaberondefecharalgoquenemforamelesqueabriram.Aresponsa-
+bilidadedegerenciarconexõesficaassimmuitoespalhadapelosistema;todos
+sãoresponsáveisporsaberqueumaconexãoexiste,quandoéabertaequando
+deveserfechada.
+• Nãoháerrosdecompilaçãopornãoinvocarométodo fecha,portanto,nin-
+guéméobrigadoainvocá-lo.Comoaresponsabilidadeseespalhaportodoo
+sistema,achancedeseesquecerdefecharaconexãoaumentamuito,paranão
+dizerqueéinevitável.Issogeraproblemasdevazamentodeconexões,quenão
+sãofechadasepodemresultarnodesastrosoefeitodobancorejeitandonovas
+conexõesquandojáexistiremmuitasabertas.
+• Fecharaconexãocostumasermaiscomplexoqueumasimplesinvoca çãoao
+métodoclose.Podehavernecessidadedecontrolarasexce çõesouexecutar
+rollbacknocasodeumapossíveltransa çãodeixadaaberta.Sehouverumpool,
+fecharpodesignificardevolveraconexãoparalá.Paranãorepetiressecódigo
+82
+
+## Página 105
+
+CasadoCódigo Capítulo4. Separaçãoderesponsabilidades
+emtodososDAOs,poderíamosencapsulá-lo,talcomofizemoscomacria ção
+na ConnectionFactory.Masaindaprecisamosnoslembrardechamaresse
+novométodoemtodososlugares,espalhandonovamentearesponsabilidade.
+• Parapiorar,nestaabordagemaindanãoépossívelsalvarum Projeto,atu-
+alizarum Usuarioeremoveruma Historiausandoamesmaconexão,
+oudentrodamesmatransa ção.ComocadaDAOpossuisuaprópriaconexão,
+nãohácomocompartilharamesmaentreváriosdeles;oescopodeexistência
+deumaconexãoéinternoaodeumDAO.
+AsoluçãoparatodosessesproblemasétirardoDAOaresponsabilidadedege-
+renciaraberturaefechamentodeconexões.Suaúnicaresponsabilidade( SingleRes-
+ponsibilityPrinciple)[120]serátratardasopera çõesdemanipula çãodobanco,mas
+semapreocupa çãodegerenciarconexões.Aumentamossuacoesãoediminuímos
+seuacoplamentocomoutraspartesdosistema.
+Mas não podemos simplesmente remover todo o código relacionado a
+Connection. ParaexecutarseuscomandosSQL,eleaindaprecisadeumacone-
+xão. Emvez,então,decriarumanovaconexãonoDAO,elepassaareceberuma
+conexãojácriadaporalguém.E,comestaconexão,poderáexecutarsuaresponsabi-
+lidadedemanipularobancodedadossemoutraspreocupa ções.Receberaconexão
+emvezdecriá-laéumexemplodoprincípioda I n j eção de dependências(Depen-
+dencyInjection–DI).Umaformafácildecodificarseriarecebendonoconstrutorda
+classe:
+public class ProjetoDao {
+private final Connection connection;
+public ProjetoDao(Connection connection) {
+this.connection = connection;
+}
+public void adiciona(Projeto p) {
+// ::usa a connection::
+}
+// ::não precisamos de um método fecha()::
+}
+Aodizerqueosobjetosnãovãomaisatrásdesuasdependências,masqueagora
+devemapenasrecebê-lasdealguém,invertemosquemestánocontroledegerenciar
+83
+
+## Página 106
+
+4.2. Gerenciesuasdependênciasatravésdeinjeção CasadoCódigo
+adependência.Emvezdefazerosobjetosirematrásdaquiloqueprecisam,opro-
+gramadorfazcomqueelesrecebamosobjetosjáinicializadosepreparadosparauso.
+Éoquesechamade Inversão de Controle (InversionofControl–IoC).Injeçãode
+dependênciaséumadasformasmaiscomunsdeIoC.[ 119],[89]
+Esteconceitoteveorigemháumbomtempo,nopaperdeRichardSweetem
+1988,[193]queintroduziuo Hollywood Principle:“Don’tcall,uswewillcallyou!”
+(nãonoschame,nósochamaremos!).Oobjetivoé,aoinvésdedecidiromomento
+certodeinvocarcadacomponente,deixar-seserinvocadoquandoadequado. Ao
+invésdedecidiromelhormomentoparainvocarcertocomponente,deixa-seser
+invocadoporalguémquevaijulgaromomentocorreto.EmDI,vemosestaprática
+aodeixardeinvocarocódigodegerenciamentodaconexãoepassaraserinvocado,
+porexemplo,noconstrutor,comtudojáprontoparausoFigura 4.1.
+Figura4.1:Nãonoschame,nósochamaremos:HollywoodPrinciple
+Masainversãopodeaconteceremoutroscenários,quenãonogerenciamento
+dedependências. Umaaplicaçãovisualpodeprecisarsaberquandocertobotãoé
+pressionado.Emvezdeverificaroestadodobotãodetemposemtempos,pode-se
+apenasregistrarumlistenerqueseránotificadoquandooeventoocorrer.Ocódigo
+84
+
+## Página 107
+
+CasadoCódigo Capítulo4. Separaçãoderesponsabilidades
+detratamentodoeventopassaaserinvocadopelobotão,emvezdeinvocarmétodos
+paradescobrirseuestado.Ocontrolefoiinvertido.Outroexemplosãooscontainers
+WebeEJBdoJavaEE,queinvocamnomomentocertoosmétodosdeumaServlet
+ouoscallbacksdeumEJB. DI é uma das formas de implementar IoC, mas não a
+única.
+VoltandoaoexemplodeDI,restaaquestãodequemgerenciaráaconexão.
+AquelequedesejausaroDAO,precisarásepreocuparcomisso. Imagineumsis-
+temaWebcomcentenasdeActionsdiferentes,todasenvolvendoousodealgum
+DAO.Antes,podia-sesimplesmentecriá-losemsepreocuparcomconexão;agora
+passa-seasepreocuparcomaconexão:
+public class AdicionaProjetoAction {
+public void execute() {
+Connection connection;
+connection = new ConnectionFactory().getConnection();
+ProjetoDao dao = new ProjetoDao(connection);
+dao.adiciona(...);
+}
+}
+U s a r aConnectionFactoryaliviaumpoucodoproblema,masnãoéuma
+boasolu ção. A action, além de ter responsabilidades normais ligadas a Web,
+comomanipular requesteresponse,agoratambémestáacopladaa Connection,
+ConnectionFactoryeDAO.Comodiminuiresseacoplamento?
+Injeçãodedependênciasnovamente.Aúnicaresponsabilidadedaactionéadi-
+cionarumprojetonoDAO,e,paraisso,sónecessitadeumDAO,nãoprecisase
+preocuparcomosdetalhesdesuacria çãooudeaberturadeconexão:
+public class AdicionaProjetoAction {
+private final ProjetoDao dao;
+public AdicionaProjetoAction(ProjetoDao dao) {
+this.dao = dao;
+}
+public void execute() {
+this.dao.adiciona(...);
+}
+}
+85
+
+## Página 108
+
+4.2. Gerenciesuasdependênciasatravésdeinjeção CasadoCódigo
+Podeparecerqueestamosapenasempurrandooproblema,jáquealguémterá
+quecriaressaAction.E,agora,instanciá-laexigeaexistênciadeumDAO,que,por
+suavez,exigiráumaconexão.Oproblemapareceaumentar.MasosegredodeDI
+épensaremcadacomponenteisoladamente,deumamaneiraquaseegoístacom
+relaçãoaorestantedosistema. ÉjustamenteoprincípiodeHollywoodnaprática,
+pensandoemcadaclassecomoopontomaisimportantedaaplica çãoeempurrando
+responsabilidadessecundáriasparaoutraclasselidar.
+Mas,claro,alguémteráqueresolveresseemaranhadodedependênciasemal-
+gumahora. Seráalgumcomponentedosistemacujaúnicaresponsabilidadeseja
+exatamentealiga ção( wiring,ouamarrar,injetar)dasdependências. Éocompo-
+nentequeestaránocontroledaaplica ção,paraquetodoorestopossausarDIeIoC.
+Na injeçãodedependências,existeumdependente(oDAO)eumadependência(a
+conexão);equemamarratudoissoéumprovedor( provider).Porseralgotãoimpor-
+tanteebastantecomumemdiversasaplica ções,normalmenteusa-seumframework
+prontocomoprovider.Spring,PicoContainer,GoogleGuiceeoCDIdoJavaEE6
+sãoexemplosdecontainerdeDI,comoveremosnotópicoseguinte.
+Éimportanteressaltar,porém,adiferen çaentreapráticadeInje çãodeDepen-
+dênciaseousodealgumframeworkespecífico.Inverterocontroleedeclararsuas
+dependênciasparaserinjetadasporalguéméconsideradoumaboapráticadede-
+sign,eéatémesmoumdesignpatternbemaceito.[ 151]Devemosprogramarnossas
+classescomDIsemprequepossível.
+Masissonãoimplicaquesejamosobrigadosausaralgumframeworkcomoos
+citadosanteriormente.HáquemdefendaevitarousodeframeworksdeDIequeo
+própriocódigodegerenciamentodasdependênciassejaimplementado,jáqueéalgo
+quecostumaserfácildeserescritopeloprogramador,alémdeficarmaisexplícito
+comoosobjetosserelacionam.[ 118],[163]Éumaopiniãoquegerabastantepolêmica,
+jáqueosframeworksmodernossãosimplesdeusarelivramoprogramadordemais
+umadordecabe ça,pormenorqueelapossaser. Háaindaumadiscussão:se,em
+linguagensmaisflexíveisqueJava,comoScalaouRuby,apróprialinguagemjánão
+trazrecursosequivalentesaosframeworksdeDI.[ 20],[107]
+Independentementedaformadeseimplementar,épraticamenteconsensoqueo
+usodeInje çãodeDependênciaséumapráticadedesignquaseobrigatória.Comas
+vantagensdediminuiroacoplamentoentreoscomponentes,aumentaracoesãodas
+partesdosistemaepromoverumamelhorsepara çãoderesponsabilidades,ousode
+DIéaltamenterecomendado.
+86
+
+## Página 109
+
+CasadoCódigo Capítulo4. Separaçãoderesponsabilidades
+4.3 C onsidere usar um framework de Injeção de De-
+pendências
+Discutimosnotópicoanterioraimportânciadousodainversãodecontroleedain-
+jeçãodedependências.Mesmosendoconsideradaumaboapráticadedesign,ainda
+trazalgunsdesafios,poisgerenciarasdependênciasdetodasasclassesdoprojeto
+nãoétarefafácil. Hámuitascomplicaçõesenvolvidas,comotratardasdependên-
+ciasdedependências,cuidardacria çãoelibera çãodoscomponentesegerenciaro
+momentoemquetudoissodeveserfeito.
+Visandofacilitaressetrabalho,surgiramdiversosframeworksdeinje çãodede-
+pendências.Umdosprincipais,emimportânciaeemuso,éo Spring Framework,
+idealizadoporRodJohnson.PioneiroemDI,oSpringnasceucomsuporteapenas
+àchamadainje çãoviasetter:
+public class AdicionaProjetoAction {
+private ProjetoDao dao;
+public setDao(ProjetoDao dao) {
+this.dao = dao;
+}
+// ...
+}
+Suaconfiguração,durantemuitotempo,suportavaapenasXML,comonotrecho
+aseguir:
+<beans ...>
+<bean id="adicionaAction” class=”br.com.arquiteturajava.AdicionaProjetoAction”>
+<property name="dao”>
+<ref local="projetoDao”/>
+</property>
+</bean>
+</beans>
+Essaantigaabordagemdeusarsettersparainje ção,porém,ébastanteproblemá-
+tica.Seadependência,poralgummotivo,nãoestiverdisponível,aclasseserácriada
+emumestadoinconsistente,nãoseráum GoodCitizen.Invocarosmétodosdene-
+góciopodecausar NullPointerExceptionsindesejadas,jáqueareferêncianão
+terásidopreenchida.Alémdisso,semautiliza çãodeumaferramentadeinje çãode
+87
+
+## Página 110
+
+4.3. ConsidereusarumframeworkdeInje çãodeDependências CasadoCódigo
+dependências,odesenvolvedoréobrigadoalembrardeinvocarossettersapropria-
+dosantesdeefetivamenteusaroobjeto,comoaoescrevertestesdeunidades.
+Comotempo,oSpringpassouasuportarinje çãoviaconstrutores,alémdecon-
+figuraçõescomanota ções,diversasconven çõesesimplifica ções.
+Oframeworkcresceuapontodeintegrartambémdiversosoutrosservi çosefun-
+cionalidades,comoAOP,persistência,controletransacional,MVCe,maisrecente-
+mente,atéusocomoutraslinguagensedentrodaplataformadeclouddaVMWare.
+Ocomponentecentralemtudoissosemprefoiocontainerdeinje çãodedependên-
+cias,queconsagrouoSpring.
+Mas foi oPicoContainer,outrodosprincipaisframeworksdeDI,oprimeiroa
+implementarinjeçãoviaconstrutores.Essetipodeinje çãosolucionaoproblemado
+métodosetteraoexigirqueasdependênciasnecessáriasparaofuncionamentodo
+objetosejampassadasaoinstanciá-lo. Porestemotivoe,porrespeitaroprincípio
+dobomcidadão,ousodeinje çãoporconstrutoréomaisutilizadoatualmente.
+IdealizadoporPaulHammanteAslakHellesoy,oPicoéumframeworkquecar-
+regaaténonomeaideiademinimalismoesimplicidade.SeuúnicofocoéDI,sem
+possuirtodososdesdobramentosqueoSpringeoutrosframeworkspossuem. Ele
+surgiuquestionandooexcessodeconfigura çõesemXMLdoSpringeoutrosfra-
+meworks,etrouxeumaabordagemdeconfigura çãoprogramáticaatravésdapró-
+prialinguagemJava,comasvantagensdeevitarerrosemtempodecompila çãoe
+autocompletardeIDEs.
+// ::exemplo de classe com dependência no construtor::
+public class AdicionaProjetoAction {
+private final ProjetoDao dao;
+public AdicionaProjetoAction(ProjetoDao dao) {
+this.dao = dao;
+}
+public void execute() {
+this.dao.adiciona(...);
+}
+}
+// ::configuração programática em algum outro lugar::
+MutablePicoContainer pico = new DefaultPicoContainer();
+pico.addComponent(ProjetoDao.class);
+pico.addComponent(AdicionaProjetoAction.class);
+88
+
+## Página 111
+
+CasadoCódigo Capítulo4. Separaçãoderesponsabilidades
+Mesmomudandoaforma,aconfigura çãodoPicoaindaseriaexterna,easclas-
+sesdodesenvolvedornãoteriamliga çãofortecomoframework.Éatépossívelmi-
+grardeumcontainerparaooutroapenasportandoaconfigura ção,semmexernas
+classesdaaplica ção.Hoje,oPicoContainersuportatambémconfigura çãoporano-
+tações,inje çãoporsetterseoutrosrecursosmaiscomplexosparagerenciamentodas
+dependências.[157]
+Outraformadeinje ção,alémdossetterseconstrutores,queaparecebastanteno
+EJB3.xmastambémemoutrosframeworks,éainje çãodiretamenteematributos.O
+apelodestaabordageméasimplicidadedocódigodaclasse,quenãoprecisanemde
+setternemdeconstrutor,masnãocostumaseraabordagempreferidaparausodeDI.
+Escreverumtestedeunidadeparaumaclassequerecebeasdependênciasvaiexigiro
+usodereflectionparaconseguirinjetá-la.Paraevitaristo,osframeworksqueoptam
+porestetipodeinje çãocriaramoutrosframeworks,queservemsimplesmentepara
+facilitaraescritadessestestes. Issomostraoquantoodesignficaacopladocoma
+ferramentaespecífica,masestetipodeacoplamentodeveserevitadoaomáximo.
+Comocrescimentodousodeanota çõesemJava,osframeworksdeDIpassa-
+ramaoferecerseuusocomoalternativaparaaconfigura ção. OG o o g l e G u i c efoi
+umdosprimeirosaoferecerconfigura çãodoscomponentesedasinje çõesusando
+anotações.Comaanota ção com.google.inject.Injectfazemosaúnicacon-
+figuraçãonecessária:
+public class AdicionaProjetoAction {
+private final ProjetoDao dao;
+@Inject
+public AdicionaProjetoAction(ProjetoDao dao) {
+this.dao = dao;
+}
+public void execute() {
+this.dao.adiciona(...);
+}
+}
+Ousodeanota çõessimplificouasconfigura ções,mastrouxeàtonaadiscussão
+sobreacoplamentocomoframework.NoSpring,porexemplo,énecessárioanotar
+ospontosdeinje çãocom @AutoWired,ounoGuice,com @Inject–ambasespe-
+cíficasdecadaumdeles.Trocardeframeworknessecenárioébastantetrabalhoso;o
+89
+
+## Página 112
+
+4.3. ConsidereusarumframeworkdeInje çãodeDependências CasadoCódigo
+Pico,porexemplo,atétentaminimizaroproblemasuportandoanota çõesdeoutros
+frameworks,comooGuice,masessenãoéomelhorcenário.
+ApossívelsoluçãosurgiucomumapropostadoGuiceedoSpringparapadroni-
+zaçãodeumconjuntosimplesdeanota ções.AJSR-330especificouumnovopacote
+javax.injectcompoucasanota çõescomunsaseremusadasparaconfiguraras
+classesdousuário,comoa @javax.inject.Injectparausonospontosdein-
+jeçãoespalhadospelocódigo.EssaJSRnãoespecifica,porém,comofuncionaofra-
+mework,suasconfigura çõeseoprocessodeDIemsi,masapenasainterfaceentreo
+códigodaaplica çãoeoframework.Foiumpassoimportantíssimoparadiminuiro
+acoplamentocomframeworksespecíficos.Emboraaindahajaousodeconfigura ção
+nocódigo,sãoanota çõesgenéricas,portáveiseespecificadas.
+MasograndepassoparaaplataformaJava,alémdaJSR-330,foiolan çamentodo
+CDI – Context and Dependency Injection,aJSR-299,juntocomoJavaEE6.En-
+treasváriasfuncionalidadesdessaespecifica ção,muitasinspiradaspeloJBossSeam,
+estáumaferramentacompletadeinje çãodedependênciasparaaplataformaJavaEE.
+Anteriormente,noEJB3,algumaspoucasfuncionalidadesdeinje çãoforamadicio-
+nadas,demaneiramuitolimitada:apenasalgunstiposeramdisponíveiselimitadosà
+injeçãoporsetterouatributo.OCDItrazumaespecifica çãoàalturadosframeworks
+maisconsagrados,integradaàJSR-330edisponívelemtodastackdoJavaEE6.
+OmesmocódigodoexemplodeGoogleGuicefuncionarácomCDI,apenas
+trocandoopacotedaanota çãopara javax.inject. NenhumcódigoJavaéne-
+cessário,eumasimplesanota çãotrazDIparabeansdoJSF,EJBseatéServletse
+outrosframeworks.OutroexemploquemostraasimplicidadedoCDIéinjetarum
+PersistenceContextdaJPAdentrodoDAO,usandofactoriesprodutorasdebe-
+anscomasimplesanota ção @Produces:
+// o DAO com a configuração do ponto de injeção
+public class ProjetoDao {
+private final EntityManager manager;
+@Inject
+public ProjetoDao(EntityManager manager) {
+this.manager = manager;
+}
+// ... restante do DAO ...
+}
+90
+
+## Página 113
+
+CasadoCódigo Capítulo4. Separaçãoderesponsabilidades
+// a classe que produz o bean
+public class JPAUtil {
+public @Produces EntityManager criaEntityManager() {
+// implementação que devolve um novo EntityManager customizado
+}
+}
+Masépossívelatenderacenáriosaindamaiscomplexoscompoucoesfor ço. Ou-
+troexemploseriacriardiferentesEntityManagersparadiferentesDAOs,suportando
+umcasodeusoemquelógicadadiretoriatemacessoaumbancodedadosrestrito.
+Podemosescreverdoismétodosprodutoresediferenciarobeangeradocomum
+Qualifier:
+// uma anotação de negócio para diferenciar os beans
+@Qualifier
+@Retention(RetentionPolicy.RUNTIME)
+public @interface Diretoria { }
+// ::2 produtores, um implicitamente @Default e outro para diretoria::
+public class JPAUtil {
+public @Produces EntityManager criaEntityManager() {
+// ::implementação que devolve um novo EntityManager customizado::
+}
+public @Produces @Diretoria EntityManager criaEMDiretoria() {
+// ::implementação que devolve novo EntityManager com superpoderes::
+}
+}
+// ::DAOs normais continuam recebendo EntityManager normal::
+public class ProjetoDao {
+private final EntityManager manager;
+@Inject
+public ProjetoDao(EntityManager manager) {
+this.manager = manager;
+}
+}
+// a Diretoria recebe o DAO especial
+91
+
+## Página 114
+
+4.3. ConsidereusarumframeworkdeInje çãodeDependências CasadoCódigo
+public class RelatoriosSigilososDao {
+private final EntityManager manager;
+@Inject
+public RelatoriosSigilososDao(@Diretoria EntityManager manager) {
+this.manager = manager;
+}
+}
+Háaindamuitosoutrosrecursosinteressantes,comosuportea decorators,in-
+terceptadoresdemétodos,listenersdeeventos,eatéapossibilidadedeusarversões
+alternativasdosbeans,dependendoseoambienteédedesenvolvimento,testesou
+produção. Váriosdessesrecursosestãopresentestambémemoutrosframeworks
+DI,masoCDItemganhadomuitosadeptosporserumasolu çãooficialeportá-
+vel.E,alémdeserumaespecifica ção,éextremamentefácil,produtivoecomcódigo
+bastantelimpo,muitasvezesmaissimplesatéqueoutrosframeworks.
+Outros recursos de containers DI
+QuandosepensaemDI,imediatamenteselembradecria çãoeinje çãodeob-
+jetos.Realmenteéesteofocoprincipal,masretirardedentrodasclassesarespon-
+sabilidadedecria çãodasdependênciasabrecaminhoparadiversosoutrosrecursos
+interessantes.
+Aprimeiraquestãoasepensarésobrequemseráresponsávelporfinalizaros
+objetos. Muitosdelesnãoprecisamsersomentecriados,mastambémfinalizados,
+comoaochamarométodo closedeuma Connection. Masdequeméesta
+responsabilidadeagora?Quemcriouoobjetocostumaseroresponsávelporsuafi-
+nalização.Antes,nossoDAOabriaa Connectionetinhaquefechá-la.Agora,ele
+apenasrecebeumacriadapelocontainer. Passaaserresponsabilidadedeste,por-
+tanto,lidarcomafinaliza çãoelibera çãodasdependências.
+Todososframeworkscitadosvêmcomrecursosimportantesparaadministraro
+ciclo de vidacompletodosobjetosgerenciados.Nãoapenascriareinjetarasdepen-
+dências,comotambémsabercomofinalizá-las. NoCDI,porexemplo,aanota ção
+@Disposespermiteindicarblocosdecódigoparafinaliza çãodoscomponentes.
+Massurgeumaoutraquestão:qualéomomentocertodefinalizardeterminadoob-
+jeto?E,mesmocomrela çãoàcria ção,quandoinstanciarasdependências?Equantos
+objetoscriar?Devehaverumaúnica Connectionnaaplicaçãotodaaserinjetada
+emtodososDAOs?Oudeveserabertauma Connectioncadavezquealguémpe-
+92
+
+## Página 115
+
+CasadoCódigo Capítulo4. Separaçãoderesponsabilidades
+diruma?Ouuma Connectionparacadausuário,independentementedequantos
+DAOs ele use?
+Quandosefaladeciclodevida,éimportantesaberdeterminaraformadege-
+renciamentodecadaobjeto,quandoecomodevesercriado,equandodeveserdes-
+truído. Estamosfalandoemdefinirum escopoparaaexistênciadecadaobjeto.
+TodososcontainersDImodernossãocontextuaisepermitemaconfigura çãodos
+escopos. EmumaaplicaçãoWeb,emgeral,usamosescoposassociadosacadare-
+quest,àsessãodousuário,ouescopoglobaldaaplica ção.NoXMLdoSpring,por
+exemplo,usamos scope="request"paraconfigurarqueumcertobeandeveser
+criadoacadarequestedestruídonofinaldarequisi ção.Ou,noCDI,podemosusar
+aanotação @SessionScopedparaindicarquecertocomponenteestáassociadoà
+sessãodousuário,eserádestruídoquandoasessãoforinvalidada.
+Háoutrosescopos,comoo prototype,doSpring,quecriamumainstância
+novaacadapontodeinje ção,ouoescopoconversacionaldoJBossSeamedoCDI,
+quepermiteaumobjetoserusadoduranteumasequênciaderequisi çõescomoum
+wizard,umaconversa. Ou,ainda,noJSFqueencontramoso ViewScope,além
+dacapacidadeextremamenteflexíveldoCDIparasedefinirnovosescoposparaa
+aplicação.
+Masosrecursosnãoparamporaí. Comogerenciamentocompletodoci-
+clodevidadosobjetosporpartedoscontainers,estesdisponibilizamaindamais
+eventosquesomentecria çãoedestrui ção.Épossívelconfigurarcallbacks,comoo
+@PostConstructeo @PreDestroy,ou,ainda,interceptarexecu çõesdosméto-
+dosdenegóciodosbeans.
+Alémdisso,porserumobjetocriadopelocontainereinjetadonasclassessem
+elassaberemexatamentecomofoifeitaainstância,muitosframeworksadicionam
+recursosespeciaisaosobjetos. Éfácilcriar decoratorsaoredordoobjetoinjetado.
+Ou,ainda,injetarum proxyparaoobjetoreal,quepodeadicionarrecursoscomo
+aAOPdoSpringedoGuice,ouapoderosainje çãodeobjetosdemenorescopo
+encontradanoCDI.Tudoissosemqueaclassequerecebeadependênciaprecise
+conhecernadaamaissobreoobjetoinjetado,comacoplamentomínimoeexcelente
+extensibilidade.
+Eissoparaficarapenasaoredordoservi çodegerenciamentodedependências.
+Naprática,muitosoutrosservi çossãooferecidosemconjuntocomoframework,
+comonoSpring. Embora,comovimos,DIsejaumaimportantepráticadedesign
+epodemosusá-laatécomgerenciamentomanualdedependências,ousodeum
+frameworkricoparafazerestegerenciamentoautomáticoémuitorecomendado.
+93
+
+## Página 116
+
+4.4. Fábricaseomitodobaixoacoplamento CasadoCódigo
+Comrecursosavan çadosjáprontosedeusocadavezmaissimplificado,usarum
+containerDIéalgoaserfortementeconsiderado.
+4.4 F ábricas e o mito do baixo acoplamento
+Umadastécnicasdeorienta çãoaobjetosquemaisfavorecemobaixoacoplamento
+éopolimorfismo.Podercriarumainterfacecomumparadiversasimplementa ções
+possíveiseescolheraimplementa çãomaisapropriadaparacadasitua çãosãorecur-
+sosbastantepoderosos. Écomoterumsistemagenéricodepagamentosindepen-
+dentedaempresadepagamentos:
+ServicoPagamentos pgto = new PagamentoViaCielo();
+// ::ou:::
+ServicoPagamentos pgto = new PagamentoViaRedecard();
+Aousarumainterfacecomumparaambososservi ços,podemosnosacoplar
+somenteàinterfaceetrocaraimplementa çãosemmaioresesfor ços.Independente
+dequalimplementa çãosejausada,teremosomesmocódigodeuso:
+pgto.setValor(99.90);
+pgto.setCartao("4111 1234 5678 0987");
+pgto.efetuaCobranca();
+Éexcelentepodermostrocardeimplementa çãoapenasmudandoumpequeno
+pedaçodoprograma,ondedamoso new.Maseseesteservi çoforusadoemvários
+lugares?Ou,mesmoquesejaemapenasumlugar,seráresponsabilidadedestesaber
+qualempresadepagamentosdeveserusada? Emumexemplodelojavirtual,po-
+deríamosterumcomponentedosistemaresponsávelporfinalizarascomprasdos
+usuários. Eledevereceberopedido,dispararumaordem,destinadaaoservi çode
+estoqueeentregas,eefetuaropagamento:
+public class FinalizaCompra {
+public void finaliza(Pedido pedido) {
+ServicoPagamentos pgto = new PagamentoViaCielo();
+pgto.setValor(pedido.getTotal());
+pgto.setCartao(pedido.getCliente().getCartao();
+pgto.efetuaCobranca();
+94
+
+## Página 117
+
+CasadoCódigo Capítulo4. Separaçãoderesponsabilidades
+// ... ::outras lógicas::
+}
+}
+Pareceumcódigobastantesimples,masmostraumdosmaiorespontosfracosdo
+new:instanciardiretamenteumobjetogeraumacoplamentocomaimplementa ção
+usada.Pormaisóbvioqueissopossaparecer,hágravesconsequências:
+• AclasseFinalizaComprapassaaestaracopladacomaimplementa çãoes-
+pecífica PagamentoViaCielo.Seestaclassemudar,porexemplo,parare-
+ceberumargumentoespecialcomumcódigodaCielo,elaquebra.
+• Aclasseficacomaresponsabilidadededecidirqualimplementa çãodeveser
+usadaparaoservi çodepagamentos. Éumagranderesponsabilidade,algo
+quetiraofocodaresponsabilidadeprimáriaqueseriaasimplesfinaliza çãoda
+compra.
+• Sehouvermaisdeumaclassenosistemaquepreciseusarumsistemadepa-
+gamentos,todasterãoquetomaradecisãodequalimplementa çãousar.Pode
+haverinconsistênciase,mesmoquenãohaja,aresponsabilidadeestariaespa-
+lhadapordiversoslugares.
+• Acriaçãodoobjetopodeserpotencialmentecomplexa.Talvezsejanecessário
+passarargumentoscomplicados,eatéconstruirobjetosauxiliaresparapassar
+paranossoservi çodepagamentoescolhido.Deixartodaessaresponsabilidade
+namãoda FinalizaCompranãoéumaboaideia.
+Asoluçãoparaencapsulararesponsabilidadedecria çãodoobjetoespecíficoé
+darorigemauma factory.Esseimportanteefamosodesignpattern,aocontráriodo
+simplesconstrutor,permitequesejaencapsuladootiporealdoobjetoinstanciadoe,
+mais,centralizaadecisãodecria çãoparaquemudan çasfuturassejammuitosimples.
+Alémdisso,seacria çãodoobjetoexigirparâmetrosouumainicializa çãocomplexa,
+afactorytornatudomaisfácilencapsulandoacomplexidadedousuário.
+Usarumafactoryémuitofácil:
+public class FinalizaCompra {
+public void finaliza(Pedido pedido) {
+ServicoPagamentos pgto = Pagamentos.criaServicoPagamentos();
+// ... ::restante da lógica::
+}
+}
+95
+
+## Página 118
+
+4.4. Fábricaseomitodobaixoacoplamento CasadoCódigo
+Adiminuiçãodoacoplamentoeoencapsulamentosãovisíveis.Hádiversasop-
+çõesparacriarumafactory:amaissimpleséummétodoestático,comonoexemplo,
+mashávariações,comoumobjetodefábricaoua AbstractFactorycompleta.Mas,
+emtodososcasos,asfábricas,emboramelhoresqueosimples new,aindatrazem
+diversospontosnegativos:
+• Opontomaisdiretoéqueagoraháumacoplamentocomafábricaemsi.Em-
+borasejamenospiorqueacoplaràimplementa çãodocomponente,estamos
+acopladosàfábrica,equalquermudan çanelapodequebrarnossocódigo.O
+métododefábrica,usualmenteestático,éumpontodeacessoglobalaoobjeto,
+eestamosamarrandooprojetotodoaesteponto.
+• Seexistiremvárioslugaresnaaplicaçãoqueprecisamdeumservi çodepa-
+gamentos,todosnecessitarãochamaressafábrica.Estamosespalhandoares-
+ponsabilidadedecria çãodesteobjetoporvárioslugaresdiferentes.
+• Nãoépossívelusarimplementaçõesdiferentesemdiferentespontosdopro-
+grama. Secadamódulodosistemaprecisardeumdiferenteservi çodepa-
+gamento,precisaríamos,dealgumaforma,indicarparaafábricaqualobjeto
+devesercriado.Passarumargumentoàfábrica,indicandoseéCieloouRe-
+decard,costumaserasolu ção,masvoltaoproblemadedeixarparaaclasse
+FinalizaCompraadifícilresponsabilidadedeescolheraimplementa ção.
+• Seráqueométodofinalizaéomelhorlugarparasecriaroservi çode
+pagamentos?Eseprecisarmoscompartilharamesmainstânciacommaisde
+umaclasse?Esearegradenegócioexigirquesópodemoscriarumservi ço
+depagamentosporusuário?Comodecidiromomentocertodecriaroobjeto
+chamandoafábrica? Eseoobjetoexigirumafinaliza ção,comofecharuma
+conexão;dequeméestaresponsabilidade?Éoproblemadedefiniroescopo
+dosobjetos.
+• AclasseFinalizaComprapodeprecisardemaiscomponentesalémdo
+ServicoPagamentos,como ServicoEstoquee ServicoEntrega. A
+soluçãoseriausarfábricasespecíficasparacadacomponente,masissoau-
+mentaaindamaisasresponsabilidadesdanossaclasse,alémde,agora,gerar
+acoplamentocomváriasoutrasclassesdefábrica.
+Algunsdospontosnegativosdafactorysãosanadospelousodeum ServiceLoca-
+torouRegistry.Aideiaédiminuiroproblemadoacoplamentocomdiversasfábricas
+96
+
+## Página 119
+
+CasadoCódigo Capítulo4. Separaçãoderesponsabilidades
+diferentes,edeseconhecerpontosdeacessoglobaldistintosparacadadependência.
+Teríamosumúnicocomponenteglobalnosistema,cujaresponsabilidadeécentra-
+lizaralocaliza çãodetodasasdependênciaspossíveiseproverumpontodeacesso
+únicoesimplesparaquaisquercomponentesqueforemnecessáriosemqualquer
+partedosistema.
+Umadasformasmaiscomunsdesecriarumservicelocatoréproverumúnico
+métodoquerecebecomoargumentoqualcomponentesedesejaobter. Istopode
+serfeitoatravésdeumnomeemString(comoemJNDI,porexemplo),ouatécom
+soluçõesmaiscomplexas,passandoainterfacedesejada:
+public class FinalizaCompra {
+public void finaliza(Pedido pedido) {
+// usando nomes para os componentes
+ServicoPagamentos pgto = Locator.get("servico-pagamentos");
+// usando a interface
+ServicoPagamentos pgto = Locator.get(ServicoPagamentos.class);
+}
+}
+Comoservicelocatorglobal,nãoimportaquantasdependênciasaclassepre-
+cisa,épossívelobtertodasapartirdele. Aindatemosumacoplamentoaoservice
+locator,maséalgobemmaislevequenasfábricas,jáqueseráumúnicopontode
+acessoglobalparatodoosistema.Usandoaversãocomnomesparaoscomponen-
+tes,conseguimosaindaresolveroproblemadeusardiferentesimplementa çõesem
+diferentespartesdosistema,bastandodarnomesdiferen-tesparaasdependências.
+Comalgumesfor çorazoável,épossívelaindaqueoservicelocatorresolvao
+problemadoescopodecria çãodasdependências.Seriapossívelqueeletivesseum
+cacheinternoparaguardardependências,quedevemserinstanciadasumaúnica
+vezemtodaaaplica çãoecompartilhadascomtodos.Comumpoucodemágicae
+possivelmente ThreadLocal,seriapossívelatéquehouvesseumpequenocache
+parapermitircompartilharomesmoobjetodentroapenasdomesmorequest.
+Mas essa soluçãoaindadeixaalgunspontosemaberto.Pormaisquetenhamos
+diminuídooacoplamentocomcoisasexternas,aindatemosoacoplamentocomo
+servicelocator.Piorainda, todasasclassesdosistemaestarãoacopladasaele,equal-
+quermudançasimplespassaaserextremamentetraumáticaparatodoosistema.Há
+aindaoproblemadopontodeacessoglobal.Asclassesprecisamconheceresseponto
+deacessoeaindasaberalocaliza çãoexatadesuasdependências,pormaisencapsu-
+ladoqueissoestejadentrodoservicelocator.
+97
+
+## Página 120
+
+4.4. Fábricaseomitodobaixoacoplamento CasadoCódigo
+Porém,oproblemamaisgraveéque Service Locator não é Inversão de Con-
+trole.Comoaaplica çãoprecisainvocardiretamenteoServiceLocatorparaobtersua
+dependência,aaplicaçãotemocontrole.Inje çãodedependênciasresolveosúltimos
+problemasaoinverterocontroledocódigoderesolu çãodedependência,tirandodas
+classesdaaplica çãoaresponsabilidadederesolversuasprópriasdependências.
+MartinFowlerdiz[ 65]queagrandedecisãoésequeremosestaracopladosao
+ServiceLocatoremtodaaaplica çãoounão. AInversãodeControleremoveesse
+acoplamento,maspodetornarmaisdifícilenxergaroqueaaplica çãofazexatamente,
+eatéseufluxodeexecu ção.Pordefini ção,ficadifícilenxergarquemestánocontrole,
+eistopodeeventualmenteserumproblema.
+Nogeral,asvantagensdainversãodecontrolesuperamseuspontosnegativos,
+porissoseuusoétãorecomendado.ComInje çãodeDependências,nãoháoaco-
+plamentoaumpontodeacessoglobal.Nãohánecessidadedeasclassesconhecerem
+alocalizaçãodesuasdependências.
+UsandoDI,asclassespossuemmenosresponsabilidadesepreocupa ções,jáque
+alguémestaránocontroledogerenciamentodasdependências. Comoainje çãoé
+feitaporalguémexterno,suaconfigura çãoéexternaàclasse,edecidirqualimple-
+mentaçãodeveserinjetadaemquallugarnãoémaissuaresponsabilidade. Além
+disso,comovimos,asferramentasmodernasdeinje çãodedependênciasconseguem
+aindatrazeroutrasvantagens,comocontrolecompletodeciclodevidadasdepen-
+dências,incluindosuasfinalizações,escoposbemdefinidos,entreoutras.
+Singletons, Factories e os containers de DI
+Singletonéumdosdesignpatternscompiorfama. Chegaaserchamadopor
+muitosde antipattern. Em2009,duranteumaentrevistaemcomemora çãoaos15
+anosdolivro DesignPatterns,aoserperguntadosobrequaismudan çasfarianolivro
+emumahipotéticarevisão,ErichGammaafirmouquetirariaSingletondele.Mais,
+oautoraindaafirmouquesingletonsseriamum designsmell.[151]
+Osingleton,àprimeiravista,parecebastantesimpleseinofensivo.Comfrequên-
+cia,háanecessidadedesemodelarnaaplica çãoarestri çãodeinstânciaúnicapara
+certasclasses.Osingletonaparececomoumasolu çãoeleganteparaimpediracria-
+çãoindiscriminadadeinstâncias,controlandooacessoàinstânciaúnicacriadain-
+ternamente.Umnomebastantecomumparaométodoqueexpõeainstânciaúnica
+é getInstance:
+public class Configuracoes {
+private static final Configuracoes INSTANCE = new Configuracoes();
+98
+
+## Página 121
+
+CasadoCódigo Capítulo4. Separaçãoderesponsabilidades
+private Configuracoes(){}
+public static Configuracoes getInstance() {
+return INSTANCE;
+}
+public String get(String chave) {
+// ... ::implementação::
+}
+}
+Esteexemplorepresentaumaclassequeguardaconfigura çõesglobaisparaosis-
+tema. Éimplementadocomumcódigosimples,quecriaainstâncianoatributo
+edisponibilizaumpontodeacessoatravésdométodo getInstance. Háoutras
+possíveisformasdeimplementar,como,porexemplo,acria çãolazydainstância,ou
+aindausandouma enumdoJava5,comoolivro EffectiveJavapropõe.
+Sejaqualforaformaescolhida,aprimeiraperguntaasecolocarédecunho
+bempráticoetécnico: singletonsrealmenteexistem? Averdadeéquearestri ção
+dainstânciaúnicapodeserfacilmenteburladausandoclassloadersdiferentes.Ou,
+ainda,forçandoacria çãodenovasinstânciascomreflection.Emumambienteclus-
+ter,então,aquestãoéquasefilosófica.Comoencararossingletonssehádiferentes
+instânciasdaaplica çãorodandoemdiferentesmáquinas?
+Mas,deixandodeladoasquestõestécnicasdecomoburlarumsingleton,o
+grandeproblemadessepatternédedesign.Asclassesqueforemdependerdosin-
+gletonprecisarãoobterainstânciaúnicaapartirdoseumétodo getInstance,
+umpontodeacessoglobalquegeraumacoplamentodetodososusuárioscoma
+localizaçãodoobjeto:
+public class AdicionaAction {
+public void execute() {
+Configuracoes config = Configuracoes.getInstance();
+String dado = config.get("informacoes");
+// ...
+}
+}
+Decertaforma,ométodo getInstancepodeserencaradocomoumafábrica
+quesempreproduzamesmacoisa,ouumRegistrydeumúnicoobjeto.Háosmes-
+mosproblemasdiscutidosanteriormentedeFactoryedeServiceLocator.Hátalvez
+99
+
+## Página 122
+
+4.4. Fábricaseomitodobaixoacoplamento CasadoCódigo
+atéumacoplamentomaior,poisemgeralousuáriodosingletonacabasabendoque
+aquiloéumsingleton,aindamaispelasemânticaassociadaa getInstance. O
+usuárioacabacarregandooconhecimentodequesetratadeumsingleton,ouseja,
+acopla-secomumdetalheinternodacria çãodeinstânciasdeumaoutraclasse.No
+diaemqueaclasse Configuracoesprecisardeixardeserumsingletonepassara
+terváriasinstâncias,todoorestantedosistemaseráafetado.
+NamesmaentrevistaemquecriticaoSingleton,ErichGammapropõeumnovo
+designpattern quepoderiaserincluídonolivro:aInje çãodeDependências,justa-
+menteasolu çãoparaosproblemascitados.
+public class AdicionaAction {
+private final Configuracoes config;
+public AdicionaAction(Configuracoes config) {
+this.config = config;
+}
+public void execute() {
+String dado = this.config.get("informacoes");
+// ...
+}
+}
+Aactionpassaanãomaissaberquesetratadeumsingleton.Seumdiaestefato
+mudareváriasinstânciaspassaremasernecessárias,aactionnãosofreráqualquer
+alteração. Emais: comoteremosalguémnocontroledasdependênciasecria ção
+dosobjetos,seriapossívelatéqueaclasse Configuracoesnãofossemaiscodi-
+ficadacomoumsingleton. Nãoqueanecessidadedeterumainstânciaúnicanão
+sejaválida,masestapodeseraresponsabilidadedocontainerquegerenciaasde-
+pendências,eaprópriaclasse Configuracoespoderiaterumaresponsabilidade
+amenosaonãoprecisarsepreocuparemcriarecuidardesuainstânciaúnica.Se
+umdiaforemnecessáriasváriasinstâncias,nemaclasse Configuracoessofreria
+modificações,masapenasocomponentequecontrolaasdependênciassaberiadeste
+fato.
+Naverdade,todososcontainersdeDIsuportamqueseconfigurecertocom-
+ponente, umasimplesclasse, comoumsingleton, ouseja, umainstânciaúnica.
+Maséumaconfigura çãointernaaoframework. NoSpring,porexemplo,épos-
+sívelconfigurarquequalquerclassedosistemasejaumbeancominstânciaúnica
+100
+
+## Página 123
+
+CasadoCódigo Capítulo4. Separaçãoderesponsabilidades
+”singleton”/>
+compartilhada.Bastausaroatributo scopenoXML,indicandojustamenteovalor
+singleton:
+<bean id="configuracoes”class=”br.com.arquiteturajava.di.Configuracoes”scope=
+Ou,noPicoContainer,aoadicionarprogramaticamenteumcomponente,pode-
+mosindicarqueainstânciacriadadeveserúnicaecompartilhadaportodos:
+MutablePicoContainer pico = new DefaultPicoContainer();
+pico.as(CACHE).addComponent(Configuracoes.class);
+NoJavaEE6,umadasmaioresadi çõesaoEJBemsuaversão3.1foio Singleton
+Bean.Umasimplesanota ção @SingletoninstruiocontainerqueaqueleEJBdeve
+terumainstânciaúnicacompartilhadaemtodaaaplica ção:
+@Singleton
+public class Configuracoes {
+public String get(String chave) {
+// .. implementação
+}
+}
+GoogleGuice,CDIequalqueroutroframeworkdeDIpossuemrecursospare-
+cidos.Naprática,oqueobservamoséqueo Singleton deixa de ser um design pat-
+tern implementado em código e evolui para apenas uma configura ção dos fra-
+meworks de DI parainstruí-losemcomoseráapolíticadecria çãodeobjetosde
+certaclasse.
+Enãoésóosingletonqueencontrouseuespa çodentrodoscontainersdeDI.
+Factories,decertaforma,tambémevoluíramparafazerpartedocontainer.Assim
+comoamotiva çãodainstânciaúnicadossingletonsaindapodeserválidamesmo
+aousarDI,asmotiva çõesdasfábricastambémcontinuamválidas.Estastêmavan-
+tagemdeencapsularmuitobemacria çãodeobjetoscomplexos,quedemandem
+diversospassos,algoquepoderiacomplicarotrabalhodeumframeworkautomati-
+zado.
+No tópico anterior foi possível observar isso no CDI com sua anotação @
+Produces.Esserecursonadamaiséqueumaformadeindicaraoframeworkque
+determinadocódigoéummétododefábricaparacertotipodedependência,eque
+ocontainerdeveinvocá-loparaobternovosobjetossemprequenecessário:
+101
+
+## Página 124
+
+4.4. Fábricaseomitodobaixoacoplamento CasadoCódigo
+public class JPAUtil {
+public @Produces EntityManager criaEntityManager() {
+// implementação que devolve um novo EntityManager customizado
+}
+}
+Mas repare que uma aplica ção jamais invocaria esse método
+criaEntityManager diretamente. Fazê-lo traria de volta os problemas de
+pontodeacessoglobaldasfábricaseoaltoacoplamento.Essemétodoéumafábrica
+queseráinvocadasomentepelocontainer.NoSpring,temosomesmoefeitousando
+seus FactoryBeanse,noPico,seus ComponentAdapter.
+Noslugaresdaaplica çãoondefornecessárioum EntityManager,bastadecla-
+raradependênciaeocontainercuidarádainvoca çãodafábricainternamente.Éa
+evoluçãodasfábricascomtodasassuasvantagens,masemumcontextodeInje ção
+deDependênciasdebaixoacoplamentoesemacessoglobal.
+O Service Locator que há dentro de cada container DI
+TodocontainerdeDI,internamente,éumgrandeServiceLocator,umimenso
+Registryparanossosobjetos. Épossívelatéencararoframeworkdestaforma. No
+Spring,porexemplo,depoisdeconfiguradososbeansnoXML,épossívelobterre-
+ferênciasparaobjetosdesejadospelonomeconfigurado:
+ApplicationContext container;
+container = new FileSystemXmlApplicationContext("spring.xml");
+AdicionaProjetoAction action;
+action = (AdicionaProjetoAction) container.getBean("adicionaAction");
+action.execute();
+OcódigoanteriormostracomooSpringfacilitaaobten çãodoobjetodaAction
+semsepreocuparseelavaireceberumDAOcomoargumento,ouatéseoDAOtem
+umaconexãocomodependência,que,porsuavez,precisadosdadosdeconexão,
+usuárioesenha. Todasasdependênciassãoresolvidas,bastaindicaronomedo
+beannoXML( adicionaAction)etemosumainstânciaprontaparauso.
+ComoPicoContainernãoseriadiferente.Apósconfigurartodasasdependên-
+ciasprogramaticamente,comovimosnotópicoanterior,seriapossívelobterasre-
+ferênciasdesejadasdiretamentenocontainer.Adiferen çaéquepassamosotipodo
+objetonahoradeobtê-lo:
+102
+
+## Página 125
+
+CasadoCódigo Capítulo4. Separaçãoderesponsabilidades
+PicoContainer container = ....
+AdicionaProjetoAction action;
+action = container.getComponent(AdicionaProjetoAction.class);
+action.execute();
+Guice,CDIeoutrosframeworkstêmcódigosemelhante. Sóháumproblema:
+estamosusandoumgrandeServiceLocator,enãoInje çãodeDependências. Invocar
+diretamente o container de DI na aplica ção não é Inversão de Controle, e é uma
+má prática.
+Pensenaclassequeeventualmenteteriaessecódigodeinvoca çãodiretaaocon-
+tainerparaobteruma AdicionaProjetoAction.Seuobjetivonãoémanipularo
+container,mas,sim,obterumobjetodeactionparainvocarseumétodo execute.
+Sesuaresponsabilidadeéapenasutilizaraaction,poderíamostambémusarInje ção
+deDependênciasnessaclasseefazê-lareceberuma AdicionaProjetoActionno
+construtor,semprecisardereferênciaparaocontainerneminvocá-loexplicitamente
+paraobtersuadependência.
+Masháumaquestãonãoresolvida.InversãodeControlenãosignificafaltade
+controle. Alguémprecisaestarnocontrole. MesmousandoumframeworkdeDI,
+alguémprecisainiciá-lo,daropassodeinicializa çãoechamarexplicitamenteopri-
+meirobean. Éprecisoumcódigoinicial,quenãoseráInversãodeControle,para
+queorestantedaaplica çãoestejacomocontroleinvertido.
+Emumaaplica çãogerenciadaporumcontainerWebouEJB,opróprioservidor
+podefazeressepassoinicialdecriarocontainerdeDI,jáqueeleestánocontrole.
+UmaaplicaçãoCDIquerodeemumcontainerJavaEE6,porexemplo,nuncapre-
+cisaráinvocarqualquercódigodoCDIparainicializarocontainerouinvocaras
+dependênciasexplicitamente.ComCDInoservidor,bastajogarasclassesanotadas
+corretamentequeoCDIfarátodoocontroledaaplica çãoautomaticamente.
+Porém,nemsempreaaplica çãorodaemumambientegerenciadopelocontai-
+nerdoservidor.Umaaplica çãoDesktopnométodo main,porexemplo,teriaque
+inicializaroframeworkdeDImanualmente.Estemétodoéocontroleinicialdetoda
+aplicaçãoDesktop,e,sequeremosusarInversãodeControlenorestantedaaplica-
+ção,seráseupapeldispararocódigomínimonecessárioparacontrolaraaplica ção.
+Podemosdizerqueserianecessárioescreverumcódigode bootstrapdaaplicação
+queiniciaoframeworkecontrolatodoorestantedosistema.Essecódigo,embora
+importanteenecessário,nãoéInversãodeControlee,portanto,deveseromenor
+103
+
+## Página 126
+
+4.5. Proxiesdinâmicasegeraçãodebytecodes CasadoCódigo
+possível,semlógicadenegóciosecomaúnicaresponsabilidadedecontrolaraapli-
+cação.
+Referenciarocontainernomeiodaaplica çãoeinvocarseusbeansdiretamente
+éumapéssimaprática,contráriaatudoqueseviudeInversãodeControleeInje ção
+deDependências.Aúnicasituaçãojustificávelénosraroscasosemqueprecisamos
+escreverumcódigocurtode bootstrapdaaplicação.
+4.5 P roxies dinâmicas e geração de bytecodes
+Osrecursosdeorienta çãoaobjetoseaAPIbásicadereflectionpodemnãosersu-
+ficientesparasepararcódigosdeinfraestruturaededomíniodemaneiracompleta-
+mentetransparente.
+Considereainvoca çãodeummétododeumobjetoqueestejaemoutramáquina
+virtual.Écomumexistirumrepositóriocentraldedados,querealizapesquisaem
+umestoquedelivros,parasaberadisponibilidadedestes.Comoacessaressainfor-
+maçãosemexporobancodedados?
+SenossoservidorestárodandoJava,podehaverumobjetoquerepresentaa
+Livrariaepossuimétodosqueprecisamseracessadosapartirdeumaoutramá-
+quinavirtual. Umaideiapoderiasercriarumaclasse,quecontrolaoacessoaos
+objetosdessaJVMremota,eexecutarosmétodosquedesejarmos:
+ClasseControladoraDoServidor.executa("livraria", “buscaAutor”);
+Nessaabordagem, ficadifícilpassarparâmetros, receberretornosdiferentes,
+alémdenãochecarocorretofuncionamentodachamadaemtempodecompila-
+ção,podendosurgirerrosemtempodeexecu ção.Tambémémuitotrabalhososer
+obrigadoacuidardetantainfraestrutura,desdetrabalharcom Socketspurasaté
+definirprotocolosegerenciarsitua çõesdefalha.
+Seria mais interessante se a aplicação cliente simplesmente tivesse uma re-
+ferência a um objeto local, que pudesse ser utilizado para invocar métodos
+em um objeto que está na aplicação servidora em outra JVM. Algo como
+livraria.buscaAutor("turgueniev").
+Parachegaraumasolu çãoelegantecomoesta,inicialmentehánecessidadede
+umaclasseparapodertrabalharcomoidentificadordoobjetoremoto,onomedo
+métodoaserinvocadoeseusparâmetros.Esse Controladorficaresponsávelpor
+repassaressasinforma çõesàmáquinavirtualremota:
+104
+
+## Página 127
+
+CasadoCódigo Capítulo4. Separaçãoderesponsabilidades
+public class Controlador {
+public <T> T invoca(Long id, String metodo, Object... parametros)
+throws IOException, ClassNotFoundException {
+Socket socket = new Socket("192.168.87.17", 3040);
+try {
+OutputStream saida = socket.getOutputStream();
+InputStream entrada = socket.getInputStream();
+ObjectOutputStream writer = new ObjectOutputStream(saida);
+writer.writeObject(id);
+writer.writeObject(metodo);
+writer.writeObject(parametros);
+ObjectInputStream reader = new ObjectInputStream(entrada);
+return (T) reader.readObject();
+} finally {
+socket.close();
+}
+}
+}
+Dadoqueoclienteconheceoobjetoreferenciadonoservidor,elepodeagora
+executarmétodosatravésdessaclassecontroladora:
+Object resultado = Controlador.invoca(7, "processaNotasAte", hoje);
+Apesardefuncionar,essaabordagemapresentadiversasdesvantagens,alémde
+claramentenãoterumtratamentoadequadoaosrecursoscaros,nemumbomtra-
+tamentodesuasexce ções.Alémdisso,odesenvolvedorsetornaresponsávelporcó-
+digodeinfraestruturaquetrabalhacom Sockets,protocolos,exceptionsemuito
+mais.Apesarde,nessecaso,nãosertãocomplicadomanterumprotocolobemdefi-
+nido,tratarcorretamenteasexceptionsnocasodeoservidorcair,timeoutseoutros
+detalhessãoproblemasdeinfraestruturaquelevambastantetempoparaseresolver
+corretamente.Ocódigoingênuovairapidamentesemostrarinsuficiente.
+Seriamaisinteressanteseaaplica çãoobtivesseacessoaumasimplesreferência,
+quepudesseserutilizadaparainvocarmétodosemumobjetoqueestánaaplica ção
+servidoraemoutraJVM.Deseja-seinvocarummétodoremotamente:
+Double valor = empresa.processaNotasAte(new Date());
+Paraisto,épossívelisolarumanovacamadaquedelegaasinvoca ções,extraindo
+umainterfaceeimplementandoaclasse Controlador. Mesmoassim,todosos
+105
+
+## Página 128
+
+4.5. Proxiesdinâmicasegeraçãodebytecodes CasadoCódigo
+métodosdaimplementaçãode Empresapassamafazerumsimplespapelde proxy,
+delegandoarequisi çãoparaoservidorremoto.
+public interface Empresa {
+Double processaNotasAte(Date data);
+}
+public class EmpresaProxy implements Empresa {
+private final Long id;
+public EmpresaProxy(Long id) {
+this.id = id;
+}
+public Double processaNotasFiscaisAte(Date data) {
+try {
+Controlador ctrl = new Controlador();
+return (Double) ctrl.invoca(id, "processaNotasAte", data);
+} catch(IOException ex) {
+throw new RuntimeException("Erro na invocacao remota", ex);
+} catch(ClassNotFoundException ex) {
+throw new RuntimeException("Erro na invocacao remota", ex);
+}
+}
+}
+UmobjetoquepodeserinvocadodeoutraJVMédotiporemoto.Nestecaso,
+aAPIpermiteacessá-lodemaneiratransparente,semqueodesenvolvedorquefaz
+taisinvocaçõestenhadecodificarmuitodiferentedecomofazcominvoca çõeslo-
+cais.Àsvezes,taltransparênciapodetrazerconsequênciasnegativas,comoquando
+odesenvolvedorexecutamuitaschamadasremotassemperceberFigura 4.2.
+Remotabilidadeéumdosaspectosquepodemaparecernumaaplica çãoedeseja-
+segastaromenortempopossívelcomisso.Essesobjetosquefazemopapeldedele-
+gadoresderequisi çõesparaumobjetoremotosãoconhecidos,nestecontexto,como
+stubsouproxies,atéaquigeradosprogramaticamentepelodesenvolvedor.
+Parafacilitarotrabalhoepermitirqueessascaracterísticassejamaplicadasa
+diversasclassesdistintas,épossívelutilizarproxiesdinâmicasdoJava.Esteéumre-
+cursoquepermitecriar,emtempodeexecu ção,o bytecodedeumaclasseapenasem
+memória,queimplementadeterminadasinterfaces,porém,todainvoca çãoaesses
+objetospassaráporum InvocationHandler.
+106
+
+## Página 129
+
+CasadoCódigo Capítulo4. Separaçãoderesponsabilidades
+Figura4.2:Aplica çãousandoumproxyparaacessaroobjetoremoto
+public class RemoteProxy implements InvocationHandler {
+private final Long id;
+private RemoteProxy(Long id) {
+this.id = id;
+}
+public Object invoke(Object proxy, Method m, Object[] args) {
+try {
+return new Controlador().invoca(id, m.getName(), args);
+} catch(IOException ex) {
+throw new RuntimeException("Erro na invocação remota", ex);
+} catch(ClassNotFoundException ex) {
+throw new RuntimeException("Erro na invocação remota", ex);
+}
+}
+}
+public class Proxies {
+public static <T> T getRemoto(Long id, Class<T> type) {
+return (T) Proxy.newProxyInstance(
+this.getClass().getClassLoader(),
+new Class[] {type},
+new RemoteProxy(id));
+}
+}
+107
+
+## Página 130
+
+4.5. Proxiesdinâmicasegeraçãodebytecodes CasadoCódigo
+Ficasimplesacessarremotamentequalquerumdosnossosobjetos:
+Empresa remoto = Proxies.getRemoto(15L, Empresa.class);
+Double valor = remoto.processaNotasAte(new Date());
+Comooobjetoreferenciadopelavariável remotofoigeradodinamicamente,o
+nomedasuaclasseemtempodeexecu çãoserá Proxy$N.Estaclasseimplementa
+asinterfacespassadascomoargumento,nestecaso, Empresa. Osseusmétodos,
+queestãonumbytecodeapenasemmemória,delegamtodasasinvoca çõesparao
+InvocationHandlerdado. AFigura4.3ilustraoprocessodeinvoca çãoaomé-
+todoremotamenteatravésdeumaproxydinâmica.
+Ainvocação remoto.processaNotasAte(new Date()) sómostraqueé
+remotapelonomequefoidadoparaareferênciaàproxy,deixandoaremotabilidade
+transparente.Ocódigodo Controladoréinvocadointernamentepelaproxy.É
+comumencontrardiversosframeworks,comooRMIeoHibernate,quevãotirar
+proveitodessasproxiesdinâmicas,escondendotodoocódigodifícileexplícitoque
+serianecessáriopararealizartaistarefas.Umpontonegativoéexatamenteessatrans-
+parência,quepodefazercomqueodesenvolvedornãoseatenhaaoexcessodeuso
+derecursoscaros,comoconexõesaobancoeinvoca çõesremotas.
+ProxiescriadasatravésdessaAPInãopodemestenderclasses,massomenteim-
+plementarinterfaces.Existemalternativasparacontornaresselimite,quevãogerar
+bytecodeemtempodeexecu ção,estendendodeterminadaclasseeatémesmoalte-
+randomodificadoresdeacesso,comoo Javassist,cglibouASMFigura4.3.
+Figura4.3:Aplica çãoutilizandooproxydinâmicoparaacessarumobjetoremoto
+Apesardeserumrecursopoderoso,amanipula çãodebytecodedeveserpon-
+108
+
+## Página 131
+
+CasadoCódigo Capítulo4. Separaçãoderesponsabilidades
+derada,assimcomoumdesignatravésdeinterfacesépreferívelaousopesadode
+reflection. Elavaiserfrequentementeaplicadapordiversosframeworks,quetra-
+balhamparaajudarsuainfraestrutura,econheceressacapacidadeajudaaentender
+melhoraferramenta,otimizá-laeenfrentarcommaisfacilidadeasestranhasstack
+tracesquepodemsurgir.OHibernate,porexemplo,vaiutilizarasproxiesdinâmicas
+emanipulaçãodebytecodeparafazerseumecanismodelazyness.
+Aprogramaçãoorientadaaaspectos(AOP),queganhouevidêncianocome ço
+dosanos2000atravésdoAspectJedoAspectWerkz,costumaserimplementada
+atravésdamanipulaçãodebytecode.Hoje,apesardetodaexpectativa,encontra-se
+maisnumnichobemespecífico,utilizadointernamenteaoscontainers.OJBoss,por
+exemplo,temseumicrokernelbaseadoemseupróprioprojetoJBossAOP.OSpring
+tambémofereceumabiblioteca,aSpringAOP,parapoderdefinirseusaspectos.[ 108]
+109
+
+## Página 133
+
+Capítulo5
+Testeseautomação
+Equipesdedesenvolvimentodesoftwarecomumenteevitamaatividadedetestes,
+sejapelajustificativadeumatrasonaentregaoupeloaltocustoderealizá-losde
+formamanual. Anãoexecu çãodestaatividadediminuiaqualidadefinaldosoft-
+ware,que,namaiorpartedasvezes,apresentaráproblemasdurantesuaopera ção,
+queserãodedifícildetec çãoecorre ção.
+Éimpossívelgarantirqueumsoftwarenãopossuafalhas.Odesenvolvedordeve
+asseguraraqualidadedosoftwaree,paraqueissoaconte çademaneirasustentável,
+énecessáriocriareautomatizartestes.
+Existemmuitosníveisdetestes,ecadaumdelesentregaumtipodefeedback
+diferenteparaodesenvolvedor.Otestedesistema,porexemplo,garanteaqualidade
+externa,verificandoseafuncionalidadeestádeacordocomorequisitadopelocli-
+ente.Jáotestedeunidadeajudaodesenvolvedoragarantiraqualidadeinternado
+código,dandofeedbacksobreodesigndosmódulosepermitindoumamanuten ção
+commenorcusto.
+Estecapítulodiscutetécnicas,vantagensedificuldadesdetestesemdiferentes
+
+## Página 134
+
+5.1. Testesdesistemaeaceitação CasadoCódigo
+níveis,bemcomoalternativasparaautomatizá-los.
+5.1 T estes de sistema e aceitação
+Umsoftwarequefuncioneapenasnamáquinadedesenvolvimentonãoagregavalor
+paraocliente.Énecessárioalgumrecursoquegarantaboapartedocorretofunci-
+onamentodocódigoequedêaodesenvolvedorofeedbacksobreasversõesdeseu
+sistemaemumajaneladetempoaceitável.
+Nomercadotradicionaldedesenvolvimento,sãodescritas,emlongosdocumen-
+tos,chamadosmanuaisdeteste,bateriasaseremexecutadasmanualmente.Ostestes
+queindicamseocomportamentodosistemanãomudouecontinuafuncionando
+conformeoesperadosãoostestesqueadicionamvalorparaocliente.
+Oprimeiropassonaquebradessaabordagemtradicionaléaautoma çãodeste
+procedimento,pararemovererroshumanos,diminuindootempodefeedbackde
+cadamudançaefetuadapelosdesenvolvedores.
+Testesqueatravessamosistemainteiro,desdeainterfacecomousuárioatéo
+backenddesuaaplica ção,sãochamados end-to-end.Emaplica çõesWeb,sãoaqueles
+queutilizamferramentascomoo Seleniumparaacessardiretamente,atravésdeum
+navegador,oconteúdodaspáginasdosistema.Comesteresultado,sãoconferidas
+asexpectativasatravésdasasser ções(atravésde asserte verify).Oexemploa
+seguirmostraousodiretodaAPIdo Selenium2:
+@Test
+public void oProdutoFoiAdicionadoAoCarrinho() throws Exception {
+browser.get("http://localhost/produtos/livro_sobre_arquitetura");
+// quando o usuário preenche a quantidade
+WebElement form = browser.findElement(By.id("produto"));
+form.findElement(By.name("produto.quantidade")).sendKeys("2");
+// e clica em adicionar();
+form.submit();
+// então a listagem mostra que o produto foi adicionado
+List<WebElement> linhas = browser.findElements(By.tagName(“tr”));
+WebElement ultima = linhas.get(linhas.size() - 1);
+WebElement produto = ultima.findElements(By.tagName("td")).get(2);
+assertThat(produto.getText(), is("Livro sobre arquitetura"));
+112
+
+## Página 135
+
+CasadoCódigo Capítulo5. Testeseautomação
+WebElement qtd = ultima.findElements(By.tagName("td")).get(3);
+assertThat(qtd.getText(), is("2"));
+}
+Avantagemdestetipodetesteégarantirquenãohaveráumaregressãonasfun-
+cionalidadesjáexistentesdosistema,conferindoaapari çãodebugsnocódigo,que
+jáfuncionavaconformeoesperado.Bastaumanovaexecu çãodessabateriadetestes
+parasabersealgumafuncionalidadepreviamentetestadadeixoudefuncionar.
+Apesardessavantagem,essestestessãolentosepassampelopontomaisfrágil
+deumaaplica çãoWeb,ainterfacecomousuário.Qualquermudan çanelacostuma
+acarretaraquebradediversostestes end-to-enddeumasóvez,mesmoquandoasre-
+grasdenegóciopermanecemcorretas.Aatualiza çãoconstantedessecódigodetestes
+écustosaepodeocorreracadamudan çanainterface.Porestemotivo,éimportante
+encontraronúmeroidealdetestes end-to-endquegarantaocomportamento,enão
+atrapalheamanuten çãoeevolu çãodosistema.
+T e s t e d e s e r v iços Web
+Ao testar serviçosWeb,cujainterfaceéumarepresenta çãoem,porexemplo,
+XMLouJSON,emvezdeutilizaro Seleniumparacarregarumnavegador,utiliza-se
+umaAPI,comoo Restfulieouo HttpApacheCommons:
+public void deveRetornarAsUltimas3Cotacoes() {
+adiciona(new Cotacao("PETR4", 30.3));
+adiciona(new Cotacao("PETR4", 32.1));
+adiciona(new Cotacao("PETR4", 31.3));
+String xmlEsperado =
+"<cotacoes><cotacao>31.3</cotacao><cotacao>32.1</cotacao>" +
+"<cotacao>30.3</cotacao></cotacoes>";
+assertThat(
+Restfulie.at("http://localhost/cotacoes/PETR4").get().getBody(),
+is(equalTo(xmlEsperado)));
+}
+Apesardenãoexistirumnavegadorouinterfacegráficaenvolvido,essestestes
+tambémsãoend-to-end,poisatravessamosistemainteiro.Elesgarantemaqualidade
+externaaocódigo,trabalhandocomservi çosWeb,sejaatravésdeSOAP,POXou
+REST.
+113
+
+## Página 136
+
+5.1. Testesdesistemaeaceitação CasadoCódigo
+T estes de aceitação
+Quandoostestessãoescritosdemaneiraadescreverocomportamentodosis-
+tema,tambémsãoutilizadosparagarantirqueesteúltimoestejadeacordocomos
+requisitoslevantadosjuntoaocliente.[ 143]Essetipodeteste,principalmenteemXP,
+échamadodetestesdeaceita ção(acceptancetests,outestesdeaceite).
+Portanto,nemsempreessestestesdeaceita çãoprecisampassarportodoosis-
+tema,enemtodosprecisamser end-to-end. Comonocasodeadotaro Selenium
+somenteparagarantiraintegra çãoentreainterfacedousuárioeo frontcontroller,
+semvalidaralógicadenegóciosportrás.Porexemplo,emumsistemadecompra
+on-line,umtestevalidaqueainterfacerespondecomooesperado,semgarantirque
+acomprasejarealmenteefetuada.Istoé,asasser çõesnãoverificamoresultadodessa
+operaçãocomológicadenegócio(suasconsequênciasdentrodosistema).Essere-
+sultadodenegóciosjáestácobertoporoutrabateriadetestes,deaceita ção.
+FerramentascomoCucumbereoJBehavesãoótimasparacriartestesdeacei-
+tação,mas,segundoalgunsautores,nãodeveriamserusadasparatestarlógicade
+negóciosatravésdaUI.[128]Umtestedeaceita çãoqueutilizataisferramentas,mas
+semacessarainterface,consisteemgarantirtodososfluxosdecompra,diminuindo
+seucustodemanuten ção.
+Deacordocomalegibilidadedocódigoescrito,otestedeaceita çãopodeatéser
+encaradocomoumaformadedocumenta ção.Oexemploaseguirutilizamétodos
+auxiliares,aumentandoaexpressividadeefacilitandosualeitura:
+@Test
+public void mostraQueOProdutoFoiAdicionadoAUmCarrinhoDeCompras() {
+Carrinho carrinho = aoAcessarOProduto("livro_sobre_java")
+.escolher(2).eAdicionarNoCarrinho();
+Item adicionado = carrinho.getUltimaLinha();
+assertThat(adicionado.getProduto(), is(equalTo("Livro de Java"));
+assertThat(adicionado.getQuantidade(), is(equalTo(2));
+}
+Ostestesdeaceita çãogarantemqueocomportamentoseráomesmoqueoes-
+peradopelocliente,dandoseguran çaparaumapossívelentregadosoftware.
+T estando os limites do sistema
+Requisitosnãofuncionaistambémpodemsergarantidosatravésdetestesauto-
+matizados,comoquandoemumsistemaénecessárioqueotempoderespostapara
+114
+
+## Página 137
+
+CasadoCódigo Capítulo5. Testeseautomação
+determinadasrequisiçõeslevenomáximo4segundos,comumamédiade2segun-
+dos.Testesdeperformancepodemserescritosatravésdeferramentassimples,como
+clientesHTTP,abouJMeter.Aotestarosservidoresdeprodu çãoousimilarescom
+umacargaequivalenteacenáriosconsideradosextremos( testedecarga),épossível
+validaroutrorequisitonãofuncional: aescalabilidade. Levandoemconsidera ção
+asduasvariáveis,temosdadosquepermitemanalisaraperformanceemfun çãodo
+númerodeacessossimultâneos.Aautomatiza çãodessestestesgarantiráofeedback
+rápidosobreaqualidadenessesrequisitosnãofuncionais.
+Testesexecutadospeloserhumano,queadicionamsurpresasnoroteiro,explo-
+randocasosparticulares( cornercases)quenãoforamvislumbradospelosdesenvol-
+vedoressãochamadosdetestesdeexplora çãoeelescontinuamimportantes.Uma
+falhapercebidaporumtestedeexplora çãopodeserrapidamenteautomatizadaatra-
+vésdacriaçãodeumnovotestedeaceita ção.
+5.2 T este de unidade, TDD e design de código
+Todosostestesservemcomogarantiaderegressão,umavezque,qualquermudan ça
+quequebreoscomportamentosesperados,serádescobertaaoexecutá-los.Masnem
+todosostestessãofeitoscomestefim.Testesmenorespodemverificarocompor-
+tamentodepequenaspartesdocódigo,tipicamenteumaclasseouummétodo,cha-
+mados,nestecontexto,deunidade.
+U mtestedeunidade devegarantirqueaexecu çãodaqueletrechomínimode
+códigoestejacorreta.Paraisso,verifica-seoretornodeumainvoca ção,aintera ção
+dotrechocomoutraspartesdosistemaouoestadodoobjeto.Noexemploaseguir,a
+classeVendaéutilizadaparacalcularoimpostoaserpagoemumavenda,enquanto
+seutesteverificademaneiraisoladaseométodo getImpostofuncionaconforme
+oesperado.
+public class Venda {
+private final Produto[] produtos;
+public Venda(Produto... produtos) {
+this.produtos = produtos;
+}
+public double getImposto() {
+double imposto = 0;
+for (Produto produto : produtos) {
+115
+
+## Página 138
+
+5.2. Testedeunidade,TDDedesigndecódigo CasadoCódigo
+imposto += produto.getPreco() * 0.1;
+}
+return imposto;
+}
+}
+public class VendaTest {
+@Test
+public void deveCalcularDezPorcentoSobreOPrecoDosProdutos() {
+Produto livro = new Produto("Arquitetura e Design", 100);
+Produto computador = new Produto("Notebook", 2000);
+double imposto = new Venda(livro, computador).getImposto();
+assertEquals(210.0, imposto, 0.001);
+}
+}
+Verificaroretornodeumainvoca çãopodeserfeitocomumasimplesasser ção,
+masconferiraintera çãoentrecomponentespodeserdifícil,dependendododesign
+dassuasclasses.
+OexemploaseguirmostraumcontroladorWebqueacessaabasededadospara
+agendarumareunião,utilizandoaabordagemtradicionaldecriarprimeiroocódigo
+edepoisoteste:
+public class ClienteController {
+public String agenda(long id, Calendar horario) {
+Cliente cliente = ClienteDao.getInstance().busca(id);
+Reuniao reuniao = new Reuniao(cliente, horario);
+ReuniaoDao.getInstance().cria(reuniao);
+return "sucesso";
+}
+}
+Apesardefuncionalecorreto,ocódigoanteriorapresentaumaltoacoplamento
+comasclasses ReuniaoDaoe ClienteDao.Eletambémpossuibaixacoesãoaose
+preocupartantocomaregradenegóciosquantocomdetalhesdaconversãode long
+para Cliente.Aocriarumtesteisoladoparaeste controller,encontra-sealgumas
+barreiras:
+public class ClienteControllerTest {
+@Test
+public void deveSalvarReuniaoComOsDadosDoCliente() {
+116
+
+## Página 139
+
+CasadoCódigo Capítulo5. Testeseautomação
+Calendar horario = Calendar.getInstance();
+ClienteController cliente = new ClienteController();
+assertEquals("sucesso", cliente.agenda(15, horario));
+}
+}
+Otesteanteriorpodefuncionar,masnãodemaneiraisolada. Ainvoca çãoao
+métodoagendaimplicaachamadaabuscaecria,métodospertencentesaoutras
+classes.Alémdisso,faltaaverifica çãodecomotaismétodosforamexecutadoscor-
+retamente,umavezqueotestesógarantiuoretorno.
+Paratestaressecódigoporcompleto,énecessáriofazerasser çõesemoutraspar-
+tesdocódigo. Issoindicaqueháumpossívelexcessodeacoplamentocomsuas
+dependências.Nãoépossíveltestá-locomoumaunidade.Parasistemaslegadose
+semtestes,ocódigoaseguiréumprimeiropassodeumprocessoaceitável,maso
+próximoseriaodarefatora ção,visandoadiminui çãodoacoplamento.
+public class ClienteControllerTest {
+@Test
+public void deveSalvarReuniaoComOsDadosDoCliente() {
+Calendar horario = Calendar.getInstance();
+ClienteController cliente = new ClienteController();
+assertEquals("sucesso", cliente.agenda(15, horario));
+Cliente cliente = ClienteDao.getInstance().busca(15);
+Reuniao reuniao = ReuniaoDao.getInstance().buscaUltima();
+assertEquals(cliente, reuniao.getCliente());
+}
+}
+Parapossibilitaraescritadotestedemaneiraisolada,oprimeiropassoétornar
+explícitasasdependênciasdeumaclasse,recebendo-asdealgumamaneira,con-
+formeosprincípiosdeinje çãodedependênciasedo GoodCitizen[146]Paraisso,é
+necessárioremoverainvocaçãodiretaaométodo getInstance.
+public class ClienteController {
+private final ClienteDao clientes;
+private final ReuniaoDao reunioes;
+public ClienteController(ClienteDao clientes, ReuniaoDao reunioes){
+this.clientes = clientes;
+117
+
+## Página 140
+
+5.2. Testedeunidade,TDDedesigndecódigo CasadoCódigo
+this.reunioes = reunioes;
+}
+public String agenda(long id, Calendar horario) {
+Reuniao reuniao = new Reuniao(clientes.busca(id), horario);
+reunioes.cria(reuniao);
+return "sucesso";
+}
+}
+Recebendotaisdependências,elaspodemserfacilmentetrocadasduranteaexe-
+cuçãodoteste:
+public class ClienteControllerTest {
+@Test
+public void deveSalvarReuniaoComOsDadosDoCliente() {
+ClienteDao clientes = mock(ClienteDao.class);
+ReuniaoDao reunioes = mock(ReuniaoDao.class);
+Cliente cliente = new Cliente();
+when(clientes.busca(15)).thenReturn(cliente);
+Calendar horario = Calendar.getInstance();
+ClienteController controller =
+new ClienteController(clientes, reunioes);
+assertEquals("sucesso", controller.agenda(15, horario));
+verify(reunioes.cria(new Reuniao(cliente, horario)));
+}
+}
+O teste anterior cria um ClienteController e passa instâncias de
+ClienteDaoede ReuniaoDao. Mas,destavez,osobjetossãooutros;nãosão
+implementaçõesconcretasdaquelasclasses,esimobjetosquesimulamocomporta-
+mentodasmesmas.Estesobjetossãochamados mocks.Assim,éfinalmentepossível
+testarocontroladorsemainterferênciadorestodosistema.
+Essarefatoraçãodiminuiuoacoplamentodaclasse ClienteControllercom
+osDAOs,tirandoaresponsabilidadedegerenciarociclodevidadasdependências.
+Ocontroladoragoranãodependedeumaimplementa çãoconcretadosDAOs,mas
+118
+
+## Página 141
+
+CasadoCódigo Capítulo5. Testeseautomação
+apenasdainterfacepúblicadosmesmos.Oacoplamentoébemmenoremaisexplí-
+cito.
+T a n t oClienteDaoquanto ReuniaoDaopoderiamsertransformadosemin-
+terfaces(extractinterface),maisestáveisqueclassesconcretas,conformevistono
+capítulosobreorienta çãoaobjetos;assim,todocódigoetestesquedependemde-
+lassofreriammenosmudan ças,tornando-osmaisgerenciáveis.Comasinterfaces,
+ocontroladorpermitiriaquequalquerimplementa çãofosseutilizada,removendoo
+acoplamentodiretoàsimplementa çõesdosDAOs.
+Seo design possui alto acoplamento, será praticamente impossível testar seu
+código através de testes de unidade[78].Porestemesmomotivo,métodosestáticos
+eestadoglobaldificultamostestesdeunidade,assimcomotodotipodebuscaexplí-
+citaporumadependênciaaumentaoacoplamento(singletonsoufactoriesatravés
+demétodosestáticosenewindiscriminados).
+Umavantagemdostestesdeunidadesobreoutrostiposéque,alémdegarantir
+queantigosbugsnãoserepitamnofuturo,elesdãofeedbacksobreoacoplamentoe
+acoesãodocódigo.Masrecebertalfeedbackapenasapósescrevermuitaslinhasde
+códigodosistemapodesertarde,pois,nessemomento,arefatora çãoeamelhoria
+dodesignpodemserdifíceiseapresentarumcustomaiscaro.
+Oriscoemtestardepois,istoé,criarprimeiroafuncionalidadeesóentãooteste,
+éserinfluenciadopelovíciodamentedodesenvolvedorapósaescritadocódigo.
+Nesta situação,otesteéescritoparacomprovarqueaquiloquefoidesenvolvidoestá
+deacordocomoqueoprogramadorentendeu.Seafuncionalidadefoiimplemen-
+tadademaneiraerrada,écomumqueotestetambémesteja. Aoinvésdegarantir
+queocódigofuncionaadequadamente,elegarantequeumbugcontinuasendoum
+bug,enquantodáasensa çãodequeestáfuncionando. Éfáciltambémdeixarsem
+testesalgunsdospossíveiscaminhosqueocódigopodeseguir,comonãotestaruma
+condição elseouuma exception.
+Atéesteinstante,acria çãodostestesfoifeitaapósaimplementa çãodeumafun-
+cionalidade.Invertendoaordem,ouseja,escrevendoprimeiroocódigodetestee
+depoisaimplementa ção(test-first),recebe-sefeedbackconstantesobreodesigndo
+sistema,alémdetornarobrigatóriaaexistênciadepelomenosumtesteparacada
+funcionalidade.Destaforma,umdesenvolvedoratentosepoliciaparaimplementar
+somenteaquiloqueseutesteprecisaparapassar.
+Emumalógicadenegóciossimples,queenvolvedoispossíveiscaminhos( ife
+else),essaabordagemobrigaodesenvolvedoraescreverumtesteparacadauma
+dasduassitua ções.
+119
+
+## Página 142
+
+5.2. Testedeunidade,TDDedesigndecódigo CasadoCódigo
+Umaconsequênciadaexistênciadetestesparatodasasfuncionalidadeséaalta
+coberturadocódigo( codecoverage). Elaservecomométricaparaindicarqueas
+partescombaixacoberturaprecisamseranalisadascomcautelaquantoaoseufun-
+cionamento.Masaexistênciadeumtestenãogarantequeelefuncionecorretamente,
+comovistonocasodostestesescritosapósaimplementa ção,ou,ainda,quandoo
+desenvolvedortestaerroneamenteumafuncionalidade. AFigura 5.1mostraparte
+dorelatóriodecoberturadeumprojeto.
+Umtestedescrevecomoocódigoseráutilizado.Quantomaiscomplicadoocó-
+digodeumteste,maisproblemáticoestáodesignadotado.Porexemplo,umteste
+querequerdiversasinicializa çõesdedependênciasindicaumaltoacoplamento,en-
+quantoseeleenvolvemuitasverifica çõesdistintas,hápossíveisproblemasdecoesão.
+Figura5.1:Exemploderelatóriodecoberturadelinhasebranches.
+Éfundamentalqueodesenvolvedordomineboaspráticasdedesignparaque
+sejacapazdeinterpretarofeedbackdeumteste.Antesdeescreveraimplementa ção
+deumafuncionalidade,acria çãodeumtestedáliberdadeparaqueodesenvolvedor
+escrevaoqueacreditaserumbomdesign,semsepreocuparcomosdetalhesde
+implementação.
+Suponhaqueumaaplica çãoWebtenhaanecessidadedefinalizarumavenda
+apartirdeumpedidojáfeitopelousuário,atravésdagrava çãonobancodeum
+pedido,formadoporprodutoepre ço.Alémdisso,énecessáriotambémenviaruma
+mensagemparaoutrosistemaqueseráresponsávelpeloenviodoprodutoparao
+clienteediminuiraquantidadedoprodutonoestoque.
+Criandootesteprimeiroéobtidoumcódigodesejadodeexecu ção:
+public class VendasTest {
+120
+
+## Página 143
+
+CasadoCódigo Capítulo5. Testeseautomação
+@Test
+public void deveFinalizarVendaSalvandoEnviandoEDiminuindoEstoque(){
+VendaDao dao = mock(VendaDao.class);
+Estoque estoque = mock(Estoque.class);
+ClienteHttp httpClient = mock(ClienteHttp.class);
+Endereco destino = new Endereco("Rua Vergueiro 3185, SP");
+Produto livro = new Produto("Arquitetura e Design", 100);
+Produto computador = new Produto("Notebook", 2000);
+Pedido pedido = new Pedido(destino, livro, computador);
+Vendas vendas = new Vendas(dao, estoque, httpClient);
+Venda venda = vendas.vende(pedido);
+// salvar a venda
+verify(dao.salva(venda));
+// diminuir do estoque os produtos da venda
+verify(estoque.diminui(venda.getProdutos()));
+// enviar a venda para outro sistema
+String xml = new XStream().toXml(venda);
+verify(httpClient.post(xml)));
+}
+}
+Nãoháproblemasnaexistênciademaisdeumassertpormétododeteste,desde
+quetodosestejamgarantindoumúnicocomportamento.Entretanto,otesteacima
+indicaqueaabordagemlevariaaumaclasseVendasquepossuidiversasresponsa-
+bilidades;alémdecriaresalvarumaVenda,elatambéméresponsávelpordiminuir
+oestoque,serializá-laeenviá-laparaooutrosistema.
+Ocustoderefatoraraclasse Vendasaindaébaixo,jáqueaclassenãoexiste.
+Umdesenvolvedoratentoperceberiaafalhadedesignaoescreveressenomedomé-
+tododeteste. Tantaspalavrasnonomedeummétodo,aindamaisconcatenadas
+com“es”,indicamquehámuitasresponsabilidades.Refatorá-loatémesmoantesda
+implementaçãoseriaumpassofundamentalparaaumentaracoesãodessaclasse.
+Ocódigodetestecome çaaindicarquehámuitospassosenvolvidosemumpro-
+cessodevenda,equedeveserinteressantequebrarasresponsabilidadesdessaclasse
+Vendasempequenasclassese,depois,juntá-lasnovamente.Aprincipalresponsa-
+bilidadedestaclasseégerarumaVendapropriamentedita.Orestopodesercom-
+postonela,atravésde observers[80],analogamenteàdiscussãosobrecomposi çãono
+capítulosobreOO.
+121
+
+## Página 144
+
+5.2. Testedeunidade,TDDedesigndecódigo CasadoCódigo
+Ométodo vendepassaráaterumaúnicaresponsabilidade,adegeraravenda
+baseadanopedido.Apósessarefatora ção,oseguinteconjuntodetesteséobtido:
+public class VendasTest {
+// método auxiliar para gerar um pedido
+private Pedido umPedido() {
+Endereco destino = new Endereco("Rua Vergueiro 3185, SP");
+Produto livro = new Produto("Arquitetura e Design" , 100);
+Produto computador = new Produto("Notebook" , 2000);
+return new Pedido(destino, livro, computador);
+}
+@Test
+public void deveGerarUmaVenda() {
+Vendas vendas = new Vendas();
+Venda venda = vendas.vende(umPedido());
+assertEquals(2100.0, venda.getTotal(), 0.00001);
+}
+}
+Aimplementaçãodométodo vendeparaotesteanteriorébemsimples:
+public class Vendas {
+public Venda vende(Pedido pedido) {
+return geraVendaAPartirDe(pedido);
+}
+private Venda geraVendaAPartirDe(Pedido pedido) {
+// gera uma venda baseada nas regras de negócio
+}
+}
+Agoraqueavendajáfoigerada,énecessárioadicionaralgunspassosdeumpro-
+cesso.Casotaiscomportamentosfossemimplementadosdentrodestaclasse,oresul-
+tadoseriaabaixacoesão.Portanto,quandoaplicável,quebra-seocomportamento
+emdiversospassos.Aclasse Processofuncionacomoumalistade Passos:
+122
+
+## Página 145
+
+CasadoCódigo Capítulo5. Testeseautomação
+public interface Passo {
+void processa(Venda venda);
+}
+public class Processo implements Iterable<Passo> {
+private final List<Passo> passos;
+public Processo(Passo... passos) {
+this.passos = Arrays.asList(passos);
+}
+public Iterator<Passo> iterator() {
+return passos.iterator();
+}
+}
+Aclasse Vendasnotificaráalistadospróximospassosaseremexecutadoscom
+a Vendarecém-criada.Énecessárioadicionarumtestequegarantatalcomporta-
+mento:
+@Test
+public void devePassarAVendaGeradaPorTodoOProcessoDeVenda() {
+Passo passo1 = mock(Passo.class);
+Passo passo2 = mock(Passo.class);
+Processo processo = new Processo(passo1, passo2);
+Vendas vendas = new Vendas(processo);
+Venda venda = vendas.vende(umPedido());
+verify(passo1.processa(venda));
+verify(passo2.processa(venda));
+}
+Reparenovamentenobaixoacoplamento:aimplementa çãodaclasse Vendas
+nãosabequaisserãoospassosexecutados.
+public class Vendas {
+private final Processo processo;
+public Vendas(Processo processo) {
+123
+
+## Página 146
+
+5.2. Testedeunidade,TDDedesigndecódigo CasadoCódigo
+this.processo = processo;
+}
+public Venda vende(Pedido pedido) {
+Venda venda = geraVendaAPartirDe(pedido);
+for (Passo passo : this.processo) {
+passo.processa(venda);
+}
+return venda;
+}
+private Venda geraVendaAPartirDe(Pedido pedido) {
+// gera uma venda baseada nas regras de negócio
+}
+}
+Acriaçãodospassossegueosdetalhesnecessáriosparacadatrechodelógica,
+sendoquecadaresponsabilidadequeodesenvolvedorjulgarsuficientementedesco-
+nexadasoutrasterásuaprópriaclasse:
+public class SalvaVenda implements Passo {
+private final VendaDao dao;
+public SalvaVenda(VendaDao dao) {
+this.dao = dao;
+}
+public void processa(Venda venda) {
+this.dao.salva(venda);
+}
+}
+public class ReduzEstoque implements Passo { ... }
+public class EnviaVendaParaOutroSistema implements Passo { ... }
+Odesignfinaloferecemaiorcoesãoemenoracoplamento,atravésdaado çãode
+conceitosdeinje çãodedependênciasecomposi çãodecomportamentosatravésde
+124
+
+## Página 147
+
+CasadoCódigo Capítulo5. Testeseautomação
+umacadeiadepassosaseremseguidos. Asolu çãoapresentadaacimaéumadas
+possíveismaneirasderesolveroproblemadebaixacoesão,ecabeaodesenvolvedor
+encontraramaisadequadaaoseuproblema.
+Abordagenscomoestautilizamtambémapráticadepassostãopequenosquanto
+façamsentido,masnãonecessariamenteomenordetodos(omenordetodosécha-
+madobabystep),paraajudarodesenvolvedoranãopularpassos.
+Percebaqueostestesdeunidadeeofeedbackconstantequeelesdãosobreo
+designguiaramoprogramadornodesenhodasclassesacima,diferentedofeedback
+fornecidopelostestes end-to-end.Oprocessodeescrevertestesantesdaimplemen-
+taçãoeusarofeedbackdelesparaguiaroprocessoéconhecidopor Test-DrivenDe-
+velopment(TDD)[15]. Esseimpactonodesignétãograndequemuitosutilizama
+siglaTDDpara Test-DrivenDesign[7](Figura 5.2).
+Odesigndaclasseemergedecomoodesenvolvedordesejautilizá-la.Dependerá
+doconhecimentododesenvolvedoraescolhadospadrõeseboaspráticasaserem
+aplicados. Noexemploanterior,odesignfugiudemodelosanêmico[ 61],adotouo
+usodeumrepositório[ 30]einje çãodedependênciasatravésdoconstrutor.
+TDDéumaferramenta,esozinhanãogaranteresultado,maspermitealcan çá-lo
+quandoemconjuntocomoutraspráticas.Testesajudamnodesignmostrandoba-
+sicamenteosproblemasaoprogramador;umtestecomplicadodemaiséumindício
+depossíveisfalhasdessedesign[ 78][127].Umcódigofácildetestartendeaapresen-
+tarumbomdesign.MichaelFeatherspossuiumaexcelentefrasequeresumeaideia:
+“Existeumagrandesinergiaentretestabilidadeeumbomdesign "[58].
+125
+
+## Página 148
+
+5.3. Testandoaintegraçãoentresistemas CasadoCódigo
+Figura5.2:Oprocessodetest-first,implementa çãoerefatora ção
+Testarocomportamentoéachavedostestes,quedevemsomentevalidaroes-
+perado,enãocomooresultadoesperadoéatingido. Aocriarostestes,executa-se
+umaaçãoegarante-sequeocomportamentodaquelaunidadeoufuncionalidadeem
+questãoéoesperado.
+Aideiadeescreverostestesdeunidadeantesdaimplementa çãoétãointeres-
+santequepodeserestendidaparaostestesdesistema.Atécnica,conhecidacomo
+AcceptanceTest-DrivenDevelopment(ouA T D D),sugerequeoprogramadorcriepri-
+meiroumtestedesistemaantesdecome çaraimplementa ção.Elagarantequetoda
+equipetenhaomesmoentendimentosobreoquedeveserfeito,jáqueostestesde
+aceitaçãosãodefinidosantesmesmodeiniciaraimplementa ção.
+5.3 T estando a integração entre sistemas
+Énecessáriogarantirtambémqueacomunica çãoentrecomponentesinternosda
+aplicaçãoeoutrossistemasfuncione,como,porexemplo,umacamadadeDAOque
+acessaumbancodedados. Enquantoostestes end-to-endtestamumaaplica ção
+inteiraetestesdeunidade,ocomportamentoisolado,osdeintegra ção(integration
+tests)verificamumapartedapilhadeexecu ção.
+DAOscomumenterecebemum EntityManagerousimilaremseuconstrutor,
+eoutilizamparaenviarstatementsparaumbanco.Aocome çarpeloteste,épossível
+utilizarmocksparaverificarseaqueryesperadaépassadaparaomanager,como
+noexemploaseguir;umDAOchamado ClienteDao,quepossuiráummétodo
+126
+
+## Página 149
+
+CasadoCódigo Capítulo5. Testeseautomação
+responsávelporretornaroscincoclientesincluídosmaisrecentementeequeestão
+marcadoscomoimportantes:
+@Test
+public void deveBuscarOsCincoMaisRecentesEImportantes() {
+EntityManager manager = mock(EntityManager.class);
+Query query = mock(Query.class);
+List<Cliente> resultados = new ArrayList<Cliente>();
+String jpql = "select from Cliente where importante=true " +
+"order by dataDeCriacao";
+when(manager.createQuery(jpql)).thenReturn(query);
+when(query.setMaxResults(5)).thenReturn(query);
+when(query.list()).thenReturn(resultados);
+ClienteDao dao = new ClienteDao(manager);
+List<Cliente> clientes = dao.cincoMaisRecentesEImportantes();
+assertThat(clientes, is(equalTo(resultados)));
+}
+Apóscriadooteste,adiciona-seométodonoDAO,masotesteverificaseos
+métodosde EntityManagere Querysãoinvocados;portanto,aimplementa ção
+serábaseadanestainformação,comosexatosparâmetrosesperados.
+public class ClienteDao {
+private final EntityManager manager;
+public ClienteDao(EntityManager manager) {
+this.manager = manager;
+}
+public void adiciona(Cliente cliente) {
+manager.persist(cliente);
+}
+public List<Cliente> cincoMaisRecentesEImportantes() {
+String jpql = "select from Cliente where importante=true "
++ "order by dataDeCriacao asc";
+return manager
+.createQuery(jpql)
+.setMaxResults(5).list();
+}
+127
+
+## Página 150
+
+5.3. Testandoaintegraçãoentresistemas CasadoCódigo
+public List<Cliente> todos() {
+return manager.createQuery("from Cliente").list();
+}
+}
+Aodizerqueométododevebuscarcincoclientesetestarsomenteseuma
+Stringépassadaparaumoutrométodo,opróprionomedotesteindicaaode-
+senvolvedorqueexistealgodeerrado.Nãoestásendotestadoseocódigobuscaos
+clientes,massimseelepassaumparâmetro.
+Quantomaisotesteseassemelhaaocódigocriado,maisasasser çõesvalidam
+aimplementação,emvezdoresultadoesperadodocomportamento. Casoode-
+senvolvedortenhaescritoa Stringdeumamaneirasintaxicamenteválida,mas
+retornandoresultadosincorretos,aimplementa çãocostumaserfeitacomamesma
+String,eotestepassaaserummerovalidadordequeoqueodesenvolvedores-
+creveunaimplementa çãoéomesmoqueesperavadigitar,nãoadicionandovalorà
+bateria.
+Noexemploanterior,odesenvolvedorpensouemcomoseráimplementadoo
+comportamentoenquantoescreviaoteste,antesdaimplementa ção,cometendoum
+erroaoutilizara Stringasc,emvezdedesc. Nestecenário,odesenvolvedoré
+induzidoausarnaimplementa çãoamesma Stringdoteste.Comoelenãosepre-
+ocupouemverificaraordem,massomentea String,esteerrofoipropagadopara
+aimplementação.Aotestarprimeiro,éimportantepensarnocomportamentoespe-
+rado,enãonaimplementa ção,paraevitarsitua çõescomoesta,emquea String
+utilizadanotestenãogaranteocomportamentocorretodafuncionalidade.
+Paraevitartestesinúteisquesomenterefletemaquiloquefoidigitadoemcom-
+ponentesqueenvolvemaintera çãocomoutrossistemas,énecessárioverificarque
+ocomportamentodaunidadesejaoesperado.Ocódigoaseguirdemonstracomo
+verificaressaintegra ção:
+public class ClienteDaoTest {
+private EntityManagerFactory factory;
+private EntityManager manager;
+private ClienteDao clienteDao;
+@Before
+public void setUp() {
+factory = Persistence.createEntityManagerFactory("teste");
+128
+
+## Página 151
+
+CasadoCódigo Capítulo5.Testeseautomação
+manager = factory.createEntityManager();
+clienteDao = new ClienteDao(manager);
+manager.getTransaction().begin();
+}
+@After
+public void tearDown() {
+manager.getTransaction().close();
+manager.close();
+factory.close();
+}
+private cliente clienteImportante() {
+Cliente cliente = new Cliente();
+cliente.setImportante(true);
+return manager.persist(cliente);
+}
+return cliente;
+@Test
+public void deveBuscarOsCincoMaisRecentesEImportantes() {
+List<Cliente> esperados = new ArrayList<Cliente>();
+for (int i = 0; i < 5; i++) {
+esperados.add(clienteImportante());
+}
+// esperamos o mais recente primeiro
+Collections.reverse(esperados);
+List<Cliente> importantes =
+clienteDao.cincoMaisRecentesEImportantes();
+assertThat(importantes, is(equalTo(esperados)));
+}
+}
+Aimplementaçãoda JPAjáfoitestadapeloseufornecedor,masotestefeitoaqui
+nãoéparagarantirofuncionamento,porexemplo,da:;JPAcomoMySQL,massim
+queaquerycriadadentroda Stringfoifeitadetalmaneiraquecorrespondeàlógica
+denegóciosquedesejamosalcançar.Umdospontosfundamentaisdaimportânciade
+taltesteestánofatodequea Stringdaquerypossuibranches::,fluxosdistintos,de
+lógica.Ferramentasdecoberturadecódigonãodetectamessesdetalhes,eentendem
+queaqueryéuma Stringcomooutraqualquer.Porém,elapossuidiversasregras
+129
+
+## Página 152
+
+5.4.Feedbackatravésdeintegraçãocontínua CasadoCódigo
+embutidasquepodemtersidoescritasdemaneiraerrada;portanto,otestepara
+verificarqueaquerynãodevolvenadaalémdoesperadoéfundamental.
+U mtestedeintegraçãobastantediscutidodizrespeitoaométodoadicionades-
+critoanteriormente.Eledelegaumarequisiçãoparaomanagere,àprimeiravista,
+pareceserdesnecessáriotestá-la.Casonãohajaumtestequepassepelaintegração
+comoutrosistemaeodesenvolvedoranotaraclasse Clientedemaneirainválida,
+usandoumtipodecampoquenãoésuportadonobancoescolhido,ostestesretor-
+narãoumafalsasensaçãodequeaconfiguraçãoestáválidaedequeosistemaestá
+consistente,quandonarealidadenãoestá.
+OstestesdeintegraçãodevemtocaraAPIqueacessaossistemasexternos.Estes
+podemserumacópiadosistemadeproduçãoouumaversãomaissimples,comoum
+grandemockouambientedeteste,maséimportantequeelesecomporteexatamente
+comoosistemarealaoqualseráfeitaaintegraçãoquandoemprodução.
+5.4 Feedbackatravés de integração contínua
+Éarriscadorecolher,somentenodiadaentrega,informações sobreumnovobug,
+devidoàmudançaempartedocódigo. Énecessárioqueestainformação apareça
+rapidamenteparaodesenvolvedorresponsável.Entregarfuncionalidadesfrequen-
+tementepermitereceberumfeedbackrápidosobreosucessooufalhadecadamu-
+dançanoprojeto.
+Étambémimportantedescobrirrapidamentequeumafuncionalidadenovanão
+atendeàsnecessidadesdoclientecomoeleimaginavanomomentodesuaconcepção,
+seénecessárioumaalteraçãoouatémesmosuaremoção.
+Acriaçãodeumsoftwareébaseadanaexploraçãodaspossibilidadesdeimple-
+mentação queeleforneceparaocliente,eoúnicomomentoemqueelepodeter
+certezasobreumcaminhoescolhidoéduranteseuuso.Tudoissorequerfeedback
+rápidoecontínuodenossasmudançasnabasedecódigo.
+Quantomaistardioofeedbackrecebidopelosdesenvolvedoresarespeitodeum
+bugoufuncionalidadequenãoatingeoobjetivo,maisdifícillembraroque,comoe
+osmotivospelosquaisfoitomadaumadecisãonodesenvolvimentoqueresultouno
+mesmo.Quantomaistempoosdesenvolvedoresmantiveremsuasalterações nabase
+decódigoemsuaprópriamáquina,semenviá-lasaoservidordecontroledeversão
+(versioncontrolsystem)paraintegrá-lasaocódigodeseuscolegas,maisdevagarserá
+ofeedbackdesuasdecisões. Integrarfrequentementeminimizaotamanhodosmer-
+gesquedevemserfeitos,alémdepermitirreceberfeedbackomaisrápidopossível.
+130
+
+## Página 153
+
+CasadoCódigo Capítulo5.Testeseautomação
+Paraisto,devemosintegrarasalterações, feitassemprequejulgarrazoável–oqueé
+umconceitosubjetivo–,mas,quantomaiscedo,melhor.
+Omercadotemadotadocommitslocaisminimais,queenvolvempassospeque-
+nosdedecisão,comoumarefatoraçãosimpleseintegraçãodocódigocomocontrole
+deversãoassimqueumafuncionalidadeécompletada,ouumbugcorrigido.Pode-
+selevarmaisaoextremo,efetuandoaintegraçãosemprequealgoéalteradoenão
+quebranenhumafuncionalidadepreexistente.Integrarnessafrequência,sempree
+omaisrápidopossível,tentandominimizarainfluênciadejanelaslongasseminte-
+gração,échamadointegraçãocontínua(continuousintegration).
+Éimportantequeamaiorpartepossíveldostestessejaexecutadaacadacommit,
+paraqueainformaçãodoimpactodasalterações nabasedecódigovenharapida-
+mente,permitindoaodesenvolvedoragirdemaneiraadequadaparacorrigirfalhase
+bugsquepossamterseintroduzido.JamesShore,emseulivrosobrediversaspráticas
+deXP[173],cita10minutoscomoumtempobomparatalretornodeinformação.
+Nossaexperiênciaindicaqueessetempovariaentrecadaprojeto,equipeemo-
+mentodoseudesenvolvimento. Quantomaisbaixomelhor,masénecessário,ao
+mesmotempo,escolherumconjuntodetestesquegarantamumfeedbackdequali-
+dadeenãodemoremaisdoqueodesejado.
+Oprocessointeiro,desdeacompilaçãoatéodeploy,podeserquebradoemdi-
+versasfases,descritoemumbuildpipeline(Figura5.3). U mexemplodepipeline
+envolveafaseinicialdecompilaçãoeverificaçãodemétricasdequalidade;depois,a
+execuçãodetestesdeunidade;terminandocomumaterceirafaseautomáticadetes-
+tesend-to-end.Apartirdesteinstante,essepipelinepoderiacontinuarsuaexecução
+atravésdeumcliquequeindicaodeployparahomologaçãoouprodução.
+Figura5.3:Possívelrepresentaçãodeumbuildpipelinecom5etapas.
+131
+
+## Página 154
+
+5.4.Feedbackatravésdeintegraçãocontínua CasadoCódigo
+I n t e g r ação contínua e branches
+U m aalternativaàintegraçãocontínuaéacriaçãodeumbranchparacadafunci-
+onalidadequeestásendodesenvolvida(featurebranches).Durantetodootempoem
+quecadabranchviveseparado,aintegraçãodeixadesercontínua,eofeedbackque
+osdesenvolvedoresrecebemsobresuasalterações nabasedecódigosetornacada
+vezmaislento,alémdosproblemasdemergeinerentesalongosbranches.
+Emoutrasituação,quandoextremamentenecessárioexecutarocommitdeuma
+funcionalidadeparcial,asfuncionalidadespodemsermantidastodasdentrodeum
+únicobranchatravésdetécnicas,comoadeconfigurações queasativamoudesa-
+tivam(featuretoggle),ou,ainda,opções emtempodecompilaçãoqueremovemou
+adicionampartesaosistema[178][179].EvanBottchercitaqueacriaçãodediversos
+branchesparalelosvaicontraapropriedadecoletivadocódigo,umavezqueequipes,
+trabalhandoemisolamento,nãocompartilhamoconhecimentodotrabalhoexecu-
+tado.U m avezqueoprocessodemergeseriamaispenoso,osdesenvolvedorespo-
+demacabarporevitarrealizarrefatorações, resultandoemumdébitotécnicomaior
+emrelaçãoaodesigndaaplicação.[22]
+Aadoçãodeumsistemadecontroledeversão,aintegraçãocontínua,commits
+minimalistas,mergespequenoseIDEscomfuncionalidadesinteligentesderefato-
+raçãosãoferramentasquepermitemaodesenvolvedorefetuarmudançasnabasede
+códigosemmedodepossíveisconsequênciasnegativas,pois,comofeedbackrápido,
+evita-seenviaralgumcódigoquenãofuncioneparaumsistemaemprodução.
+B u i l dautomatizado
+Existemdiversasferramentasdebuildautomatizado,quefacilitamoprocessode
+execuçãodeseustestes,umavezquesigamosoconceitodeintegraçãocontínua.
+oDentreelas,destacam-seoCruise.rb(esuasvariações, comooCruiseControl)
+eJenkins,antigoHudson,comcódigoopensource,enquantooCruiseeoTeamCity
+são exemplosdeprodutospagos. JamesShorecitaque,paraconfiguraroprojeto
+pararodarnamáquinadebuild,devemosautomatizaroprocessodeconfiguração
+atravésdescripts[173].Aprópriamáquinadebuildtambémpodeserconfigurada
+atravésdescripts,facilitandoacriaçãodediversasmáquinasdebuildepossibilitando
+distribuí-lo.
+Quandooprojetocresce,gargalosnotempodeexecuçãodobuildsurgem,po-
+dendopassardeumlimiteaceitável.Épossívelparalelizaraexecuçãodobuild,dis-
+tribuindooprocessoentrediversasmáquinas.Poucosservidoresdebuildsuportam
+132
+
+## Página 155
+
+CasadoCódigo Capítulo5.Testeseautomação
+nativamentedistribuiregerenciarastarefas.Oobjetivodeparalelizarpartesdopro-
+cessoentrediversasmáquinaséfazercomqueofeedbackparaosdesenvolvedores
+sejarecebidomaisrapidamente,mesmoemprojetosgrandes.
+OdesafioaoadotaraspráticasdetestesautomatizadoseoprocessodeTDD
+éencontrarumaescolhadeumconjuntodetiposdetestesdistintosqueajudeno
+processodedesigndoseucódigo,maximizeasgarantiasderegressãoeocorreto
+funcionamento,alémdeminimizarotempodefeedback.
+Entrega contínua
+Paraentregarfuncionalidadesaoclienteénecessáriocolocaroprodutoemum
+sistemadeprodução,umprocessochamado::deploy:;.Épossívelencontraraplica-
+ções ondeeleétotalmentemanual,suscetíveladiversostiposdefalhahumana.As
+abordagensfrequentementeencontradasenvolvemaexistênciadeumúnicorespon-
+sávelpelodeploy,queutilizaumarquivodetextoondeestãodescritosospassosa
+seremexecutados.
+Emcasosmaisgraves,oroteiroéseguidoporalguémquenãotemvínculoal-
+gumcomoprojeto,somenteatarefadesegui-lo,sementenderofuncionamentoda
+aplicação. Issopodeacarretarumgraveaumentodecusto,jáquepossíveisfalhas
+parciaisnoprocessodedeploypodemdeixarosdadosouaaplicaçãoemumestado
+inconsistente.Nessecaso,somenteosdesenvolvedoresseriamcapazesdeentender
+omotivoeasconsequênciasdeseprolongaressasituaçãopormuitotempo,impli-
+candomaioresforçohumanoparacorrigi-los.Essetipodedeploycostumaserfeito
+àssextas-feirasànoite,comumafrequênciabaixíssima,tentandoevitarospicosde
+acessoaossistemaseminimizarpossíveisproblemas,mas,mesmoassim,pordiver-
+sasvezesosdesenvolvedoressãoacionadosparapassarofimdesemanacorrigindo
+umdeployfalho.
+Diminuirointervaloentreentregas,criandoumprocessodeentregacontínua
+(continuousdelivery,ou,ainda,entregafrequente)[101][177]éfundamentalparame-
+lhoraraqualidadedoprodutodesenvolvido.Paraentregarfrequentemente,éneces-
+sárioqueoprocessodedeploynãoimpliquecustosaltos,como,porexemplo,ode
+sereshumanosinterpretaremarquivosquedescrevemoprocessodedeploy.Porse-
+remexecutadoscommaiorfrequência,énecessárioquetomempoucotempode
+execuçãoeexijampoucaounenhumainteraçãohumana,permitindoquequalquer
+umosexecuteeefetuecorreções maiscedonoprocessodedesenvolvimentodosoft-
+ware.
+Paraminimizaroserrosdoprocessodedeploy,astarefas,cujaresponsabilidade
+133
+
+## Página 156
+
+5.4.Feedbackatravésdeintegraçãocontínua CasadoCódigo
+eradeumserhumano,devemseragoraautomatizadas.T o d aexecuçãodelinhade
+código,cópiadearquivo,back-updosdadosemudançasdeschemadobancode
+dados,entreoutros,devemserexecutadosatravésdescripts.
+Sãoinúmerososprojetoscujoprocessoenvolvesomenteacópiadeartefatose
+arquivosdeconfiguraçãodistintosparaoambientedeprodução. E,emtaiscasos,
+automatiza-secomacriação descripts,invocandocomandosdetransferênciade
+arquivoscomoscpousftp,queserão recebidospeloservidorecolocados“noar”.
+Opções emoutraslinguages,comoRuby,são autilização deferramentas,comoo
+capistrano,quepossuemfocoemautomatizaçãodetarefasemsi.Oexemploaseguir
+mostraumscriptque,antesdeexecutarodeploydeumarquivowar,extraiumback-
+updobancodedadosedaversãoatualemproduçãodaaplicação.
+#!/bin/sh
+if [ -f version ]; then
+DUMPVERSION=`cat version`
+else
+DUMPVERSION=0
+fi
+DUMPVERSION=$((DUMPVERSION + 1))
+echo “$DUMPVERSION”> version
+mysqldump -u usuario -p senha sistema > snapshots/dump_$DUMPVERSION
+cp webapps/application.war snapshots/application_$DUMPVERSION
+cp latest_application.war webapps/application.war
+bin/restart.sh
+Processosdedeploymaiscomplexosenvolvem,porexemplo,amigraçãodees-
+truturasdeumbancodedadosrelacional,acriação denovosíndicesdebusca,a
+atualizaçãodedadosagrupadoresparciais,utilizadospararelatóriosdebusinessinte-
+ligence:;,epodemserautomatizadoscomferramentasespecíficasquepermitemacon-
+figuração deumprocessodedeploy(deploypipeline::),comocomscriptsantjunto
+comsuastasksparadeployemservidoresdeaplicação[214],oubuildscompleta-
+mentecontroladospelomaven.
+Ferramentasespecializadaspermitemqueequipesdedesenvolvimentoeopera-
+ções trabalhemmaispróximas,gerenciandoaconfiguraçãodesistemasoperacionais
+esoftwares(configurationmanagement)[101]. Essegerenciamentopodeseralcan-
+çadocomferramentascomoPuppet,ChefeCFEngine,criandoscriptsquedeclaram
+comodeveserfeitaaconfiguraçãodeumconjuntodemáquinas,desdeseusistema
+134
+
+## Página 157
+
+CasadoCódigo Capítulo5.Testeseautomação
+operacional,passandopelosservidoresdeaplicação,loadbalancers,etc.,tentando
+aproximaroprocessodedesenvolvimento,aentregaeaoperaçãodesoftware.[152]
+U m aaplicação W e btípicapodedeclararemsuaconfiguração algumsoftware
+paraloadbalancing.Este,porsuavez,éconfiguradoparaapontarparaasmáquinas
+comservidoresW e b ,comoA p a c h ehttps,JettyouGlassfish.EoservidorW e b ,por
+suavez,apontaparamáquinascombancosdedadosquerodamMySQLououtros.
+T o d aessaconfiguraçãofoifeitapelomesmoscript.
+T o d a sessasreceitasdevemserguardadascomcontroledeversão.Dessaforma,
+aqualquerinstante,umdesenvolvedorpodereplicarqualquerversãohistóricado
+sistemaemumconjuntoseparadodemáquinas.Eainda,restaurandoumbackup
+dobancodedados,podesimularbugsqueaconteceramemversões específicasdo
+sistema.
+Adotandotalprática,épossívelreplicaroambientedeproduçãocomumcusto
+muitobaixo;bastaexecutaroscriptparaquesejacriadoumnovoambientedeho-
+mologação maispróximoaodeprodução, ajudandoaencontrarbugsmaiscedo.
+Ambientesdedesenvolvimentotambémpodemserautomatizadosdamesmama-
+neira,umprocessoqueajudaquandoasequipespossuemaltarotatividadedede-
+senvolvedores.
+Parapermitiraexecucãodeumdeployempoucosminutosatravésdeumúnico
+clique,automatiza-setudooqueforpossível,facilitandoaentregarápidadecor-
+reções efuncionalidadesaceitas.Alcançaramaturidadedeentregacontínuanãoé
+trivial,principalmenteemprojetosqueenvolvemmigraçãodedadosouintegração
+edependênciasentresistemas.Aabordagemdeimplementaçãodetaispráticasdeve
+seramesmadequalqueroutratecnologia;umpassoporvez,adiciona-seumanova
+fasenoprocessodebuildedeployeaguarda-seatéaequipeseadaptaràmudança
+noritmodetrabalhoparaadicionarumnovo.
+V o l t a ratrásemumaentrega,oprocessoderollbackdeumdeploy,tambémé
+automatizado,utilizandopráticassimples,comoback-uperestauração,ou,ainda,
+técnicasdebluegreendeployment[76]parapermitiracoexistênciatemporáriaem
+produçãodediversasversões deumsoftware.OambientedoGoogleA p pEngine,
+porexemplo,permiteatrocadaversãoemproduçãocomapenasumclique,dado
+queambasasversões jáestãoimplantadas.Essesrollbackssãoaindamaiscompli-
+cadosdeseimplementar,enovamenteaequipedevepesarobenefíciodaprática
+contraanecessidade. Aexperiênciaindicaque,aomaturarastécnicasdeentrega
+contínua,opróximopassoéinvestirtempodedesenvolvimentotécniconorollback,
+massóconfiarnelenoinstanteemquefortestadoemoutrasmáquinaseoefeitoal-
+135
+
+## Página 158
+
+5.4.Feedbackatravésdeintegraçãocontínua CasadoCódigo
+cançadoforoesperado.Oscriptaseguiréumexemplosimplesdesuportearollback
+deaplicações W e b ,baseadonoscriptdedeploymostradoanteriormente.
+#!/bin/sh
+ROLLBACK=$1
+if [ -f version ]; then
+DUMPVERSION=`cat version`
+else
+DUMPVERSION=0
+fi
+DUMPVERSION=$((DUMPVERSION + 1))
+echo “$DUMPVERSION”> version
+mysqldump -u usuario -p senha sistema \
+> snapshots/dump_for_rollback_$DUMPVERSION
+cp snapshots/application_$ROLLBACK latest_application.war
+mysql -u usuario -p senha -e “dropdatabase sistema;”
+mysql -u usuario -p senha < snapshots/dump_$DUMPVERSION
+deploy.sh
+T o d aessafacilidadededeploytrazumcustoparaaequipedeinfraestrutura
+eoperações, queprecisaestarpreparadaparaenfrentarproblemasmenores,mas
+possivelmentecommaisfrequência,nocasodaexistênciadeumaquantidadegrande
+dedeploys.Deve-seencontrarumbalançoentreosdois.Comopassardotempo,o
+processodedeployautomatizadocontornamuitosdospossíveiserros,minimizando
+anecessidadedeatuaçãohumanaaoaconteceralgumafalha.
+Emaplicações legadas,écomumverumdébitotécnicomuitograndenopro-
+cessodedeploy,comumentelembradoporsuabaixaqualidadeefinsdesemanas
+perdidos.Aadoçãodessaspráticaséumcaminholongo,queenvolvecustos,e,por-
+tanto,umprocessoquedeveseradotadoaospoucos.
+Porfim,adotarlongosintervalosentrecadaumadasentregasdesoftwareleva
+aoacúmulodefalhasaseremdetectadasposteriormente,alémdeasinterpretações
+erradasdosrequisitosreforçaremumasituaçãocadavezmaisdifícildesercontor-
+nada.
+136
+
+## Página 159
+
+CasadoCódigo Capítulo5.Testeseautomação
+Não entregarsoftwaredemaneiracontínuaéumagrandedesvantagemcom-
+petitiva.T o d ootempoemqueumafuncionalidadenãoestánoaréumganhoàs
+empresasconcorrentesemrelaçãoaoprodutodesenvolvido.AFigura5.4ilustraa
+diferençadecustosentreempresasqueentregamounãosoftwaredemaneiracontí-
+nua:
+Figura5.4:Entregarcedofacilitaoprocessodecorreçãodasfuncionalidadesquenão
+atendemaocliente.
+Diversasboaspráticasabordamoprocessodecriaçãoemanutençãonoambi-
+entedosdesenvolvedores,deixandodeladooúltimotrechoasercaminhadopelo
+softwareafimdeserutilizadopelosclientes:odeployeaconfiguraçãodeoutrosam-
+bientes.Aspráticasenvolvidascomoprocessodeintegraçãocontínua,testescom
+intençãodecapturarerrosprecocemente,feedbackfrequenteeentregacontínuafo-
+camaresoluçãodosproblemasenvolvidosnestaúltimaetapadepré-utilizaçãodo
+software.
+T o d a sessaspráticaspermitemacriaçãodetestesnosquaisduasversões deuma
+partedosistemasãoapresentadasaocliente(chamadasdetestesa/b).Otesteveri-
+ficaoretornodecadavariaçãodosistemaparadoisgruposdistintosdeusuáriose,
+apósdeterminadoperíododetempo,toma-seadecisãodequaldasduasficaráem
+produção,emgeralaqueproduzmaiorretornofinanceiro.
+137
+
+## Página 161
+
+Capítulo6
+Decisões arquiteturais
+Comovimos,arquiteturapodeserdefinidacomoumapossívelinterpretaçãodaim-
+plementação dosistema. Équandoolhamosparaaaplicação paraobservarcomo
+diferentespartesdosistemaafetam-seentresi.Essavisãomaisglobaltraz,porém,
+diversosdesafioseindagaçõesquedemandamdecisões difíceisquepodemsignificar
+osucessoouofracassodoprojeto.
+Quandousarremotabilidadeeaplicações distribuídas?Comoescolheramelhor
+abordagemW e bentreframeworkscomponent-basedeaction-based? Ondeusar–
+eondenãousar–umatecnologiademapeamentoobjetorelacional?Emquemo-
+mentoadotarumarquiteturadecomunicaçãoassíncrona?Equaisassituações onde
+usarcloudcomputingpodeseramelhorideia?
+Esseseoutrosquestionamentossãoimportantes decisões arquiteturaisqueen-
+frentamosdiariamentenosmaisdiversosprojetos.
+
+## Página 162
+
+6.1.Dividindoemcamadas:tierselayers CasadoCódigo
+6.1 Dividindoem camadas : tiers e layers
+Eminglês,duaspalavrassãocomumenteusadasaosefalardedivisãodecamadas:
+tierelayer.Emportuguês,porém,acabamostraduzindoambascomocamada,per-
+dendoaimportantediferençaentreessestermosedificultandoacomunicação.
+Aofalaremlayers,normalmentepensa-seemseparações lógicas,emcomoor-
+ganizarocódigodaaplicaçãodemaneiraadiminuiroacoplamentoefacilitarmu-
+danças. MVC,porexemplo,éumpadrão dedivisão delayersbastanteusado. O
+Domain-DrivenDesignpropõe outradivisão emquatrolayers,comdestaquees-
+pecialparaaDomainLayer. Mashámaisdivisões delayerspropostasporoutros
+autores.[67]Oimportanteépromoveradiminuiçãodoacoplamentoentrediferen-
+tespartesdocódigoeevitarquemudançasemumlugarafetemoutros.
+Jáadivisão emtiersvisaaseparações físicasentrepartesdosistema. Embora
+nocenárioatualdevirtualizaçãoecloudcomputingsejacadavezmaiscomplicado
+definircomexatidãobarreirasfísicas,deummodogeralcaracterizamostiersdife-
+rentescomocomponentesdosistemaquerodamoupoderiamfacilmenterodarem
+máquinasseparadas.OservidorW e béconsideradoumtier,eobancodedados,ou-
+tro,assimcomooclienteremoto,umservidordeaplicação,umcachedistribuídoe
+outrosexemplos.Emgeral,caracterizam-secomotiersdiferentesdoiscomponentes
+daarquiteturaquesecomuniquemremotamenteviarede.
+U s a rlayersemexcessopodegerarcódigo dedifícilmanutenção. E,emre-
+lação a tiersdemais, quandonão háuma real necessidade, pode trazer efeitos
+catastróficos.[90],[158]Otradeofféclaro:adicionartierspodeajudaremdiversos
+aspectos,masaumentaraquantidadedeinvocações remotas,quesãocarasecom-
+plicadas,podeimpactarsignificativamenteaperformanceeaescalabilidade.Fowler
+dizparareduzirmosaomáximoadistribuiçãodeobjetos,[63]eestaéamesmaopi-
+niãodeoutrosautores.[13]
+Arquiteturasdeapenasumtiereramcomunsantigamentenosmainframesque
+centralizavamtodooprocessamento,persistênciaeinterfacedoprograma.Outro
+exemplo,cadavezmaisextintoemaplicações corporativas,sãoosprogramasDesk-
+toppuramentelocais.Certamente,usarapenasumtiertemavantagemdediminuir
+alatênciaemelhoraraperformance,jáquenãoháanecessidadedeefetuarrequisi-
+ções naredeparabuscarinformações.
+Poroutrolado,aescalabilidadeécomprometida,umavezquenãoépossívelque
+umnúmeroarbitráriodeusuárioscompartilheaaplicação.Arquiteturascentraliza-
+dastêmtambémsériosproblemasdedisponibilidade,jáqueháumúnicoponto
+140
+
+## Página 163
+
+CasadoCódigo Capítulo6. Decisões arquiteturais
+simplesdefalha.Poressesmotivos,arquiteturasdedoistierstornaram-semaisco-
+muns.
+Oexemploclássicodestasarquiteturassãoasaplicações Desktopconectadasa
+umbancodedadoscentral,quesetornarambastantecomunsemaplicações Delphi
+eV i s u a lBasic(Figura6.1).
+Figura6.1:Clienteseumservidor.
+Émuitocomum,ainda,otierdeinterfacepossuirbastantecódigorelacionado
+aodomínio.Sãoosfatclients,aliviandooservidordedeterminadastarefasquepo-
+demserexecutadasnocliente.Asdesvantagensprincipaisnessaabordagemsãoo
+processamentomaisintensonoclienteeadificuldadedemanterintegridade,con-
+fiabilidadeesegurança.Pensandonisso,umavariaçãobastantecomumémantera
+lógicadenegócioemstoredproceduresnobancodedados,comoobjetivodedei-
+xaralógicaseguraeencapsulada,alémdeminimizaraperdadeperformancepela
+adição demaisumtier. U s a rstoredproceduretalvezsejaessencialemumaarqui-
+teturadedoistiersporcausadesegurançaeperformance,mastrazosproblemas
+dedependênciadobancodedados,dificuldadedeintegraçãoepoucaseparaçãode
+responsabilidades(Figura6.2).
+Háaindaoproblemadopontosimplesdefalhanobancodedadoscentral.Mas,
+emborasuaquedapossacausarindisponibilidadeemtodososclientes,porserum
+141
+
+## Página 164
+
+6.1.Dividindoemcamadas:tierselayers CasadoCódigo
+fatclient,aindaépossívelofereceralgumafuncionalidadeoff-line. Jáaescalabili-
+dadenessetipodearquiteturaestácondicionadaàcapacidadedobancocentral,
+aindamaisporquemuitasvezesoclientepodemanterumaconexãoconstantemente
+aberta.Emborasejaumasoluçãobarata,essetipodearquiteturatemforteslimita-
+ções deescalabilidadeedisponibilidade.
+Figura6.2:Fatclientacessandoprocedimentosmantidosnobanco.
+U moutroproblemaenfrentadopelasarquiteturasdoistierséadificuldadeem
+mantertodososclientesatualizados,prejudicandoaextensibilidade,amanutenibi-
+lidadeeatéasegurança.Hátecnologiasqueminimizamesseproblema,comooJava
+W e bStart,queforneceumaplataformasimplesparaainstalaçãoemanutençãodas
+versões deumamesmaaplicaçãoJavadesktop.Masasoluçãodefinitivapareceter
+vindocomalargaadoçãodaW e bcomoplataformaparaasaplicações.
+NaarquiteturaW e btradicional,temostrêstiers:oclienteremoto,oservidorW e b
+eobancodedados.Oclienteé,emgeral,umnavegadorW e bqueapenasrenderiza
+ainterface;nãocostumaterprocessamentoelógicadodomínioquenãosejamre-
+lacionadosàvisualização dosdados. Essesthinclientstrazemaimensavantagem
+desempreacessaremaúltimaversãodisponíveldaaplicação,centralizandoaevo-
+luçãodosistemanoservidorW e bebancodedados,trazendomaiorfacilidadede
+142
+
+## Página 165
+
+CasadoCódigo Capítulo6. Decisões arquiteturais
+atualização(Figura6.3).
+Outravantagemdestetipodearquiteturaéasegurançaeconfiabilidade,jáque
+osistemaacabacentralizadonotierW e b ,minimizandoapossibilidadedeclientes
+maliciososprejudicaremseufuncionamento.Masaperformancecostumaserum
+grandeproblema. Adicionarumnovotier,aindamaisW e b ,acabaaumentandoo
+response-time,umareclamaçãoconstantedosusuáriosquevivenciamumamigração
+doDesktopparaW e b .
+Figura6.3:Clientesmagrosatravésdeumnavegadoreumservidor.
+Comoobjetivodemelhoraraperformanceparaousuário,observamosavolta
+dosfatclientsnaformadeinterfacesricasnonavegador,asRichInternetApplications
+(RIA).AprópriaplataformaJavainvestenessetipodeabordagemdesdeoiníciocom
+osAppletse,maisrecentemente,comJavaFX,maspodemoscitartambémFlash,
+Flex,Silverlighteoutroscomcaracterísticassemelhantes.Masessasabordagenssão
+dependentesdetecnologiasexternasaonavegadoreoquemaissevêatualmenteé
+ousodopróprionavegador,paraasinterfacesricas,baseadasfortementeemJavaS-
+cript,A j a xeatéHTML5.Algumastecnologiasvãoalém,comooSocket.IO,utilizam
+WebSocketscomfallbackparaFlash,casooprimeironãoestejadisponívelnaquele
+browser.Ofuturodasaplicações W e béaevoluçãodonavegadorparasuportarin-
+terfacescadavezmaisricas,masmantendoasvantagensdeumaarquiteturadefácil
+143
+
+## Página 166
+
+6.1.Dividindoemcamadas:tierselayers CasadoCódigo
+gerenciamento.
+Aotrabalharcomtrêstiers,deixadefazersentidomantertodooprocessamento
+notierquearmazenaosdados,poisointermediárioseriaapenascomoumaponte.
+Nessaabordagem,asantigasstoredproceduresperdemimportânciaepassamaser
+substituídasporlógicadenegócioexecutadanotierintermediário,obusinesstier.
+Nestecenário,oclientefazasrequisições aoservidorqueexecutaalógicaedelegaa
+manipulaçãodosdadosparaobancodedados(Figura6.4).
+Figura6.4:Clientemagroacessandoprocessosarmazenadosnoservidor.
+Aindaháproblemascomdisponibilidadeeescalabilidadeseapenasumservidor
+W e beumbancodedadosestãoativos.U s a n d oliteralmenteapenastrêstiersédi-
+fícilcontornarestetipodeproblema,porissoécomumadicionaroutroselementos
+comoreplicação emclusters,loadbalancerseoutrostiers. Écostumechamareste
+tipodesolução comoN-tiers,umavariação dostrêstierscommaiscomponentes
+pararesolverproblemasdeescalabilidade,disponibilidadeeoutros.
+Hádiversosexemplosdenovostiersadicionadosàsaplicações, comoservidores
+deaplicaçãoseparadosdoservidorW e b ,cachesdistribuídos,servidoresdemensa-
+geriaetc.Emgeral,háumimpactonaperformancepelaadiçãodenovostiers,mas
+commelhorasignificativaemescalabilidade,porhaverapossibilidadedeseadicio-
+nartantasmáquinasquantasforemnecessárias,edisponibilidade,pornãohaverum
+pontosimplesdefalha(Figura6.5).
+144
+
+## Página 167
+
+CasadoCódigo Capítulo6. Decisões arquiteturais
+Estetipodearquiteturatemtambémseuspontosnegativos,comoacomplexi-
+dadecriadaeadificuldadedegerenciamentoemanutençãodetodaainfraestrutura.
+Háquestões aseremresolvidasnomododereplicaçãodosservidoresseaaplicação
+tiverestado,alémdecuidadosparticularescomobancodedados.Poressesmoti-
+vos,muitosprojetosfogemdacomplexidadedoN-tierssenãoháumrequisitomuito
+fortedeescalabilidadeedisponibilidade.
+Figura6.5:T r ê stierscomdiversasmáquinasatendendoàsrequisições.
+Otimização na comunicação entre tiers
+AMicrosoftdizparaevitaraumentaronúmerodetiers,[13]assimcomoapri-
+meiraleideMartinFowler.[64],[63]Independentementedeemquantostierssua
+aplicação estádividida,énecessáriotomarprecauções. São trêsospontosprinci-
+145
+
+## Página 168
+
+6.1.Dividindoemcamadas:tierselayers CasadoCódigo
+pais.
+Oprimeiroéaquantidadedeinvocações paraooutrotier(númeroderound-
+trips). Seoclientefezumaúnicarequisição, épéssimogerardiversasrequisições
+internasentreostiersdaaplicação. Oidealéqueessenúmeroderoundtripsseja1,
+ounomáximoumaconstantepequena.Algunsframeworkspodemfacilmentegerar
+umaquantidadeproporcionalaonúmerodeentidadesqueestãosendomanipula-
+das,tornando-seumgargaloenormeparaaescalabilidadedeaplicação.
+Osegundoéotamanhodainformação transmitida(payload). Quantomaior
+oJSON,aentidadeserializadaemXML,maisrecursosserão consumidos. Nesse
+instante,sugemosDataTransferObjects(DTO)paraadequaragranularidadedo
+serviço,almejandoumúnicoroundtrip.Oexcessodeheadersemmensagenscurtas
+tambémpodeserumasobrecarga.
+Oterceiroéocache,essencialparapoderatémesmoevitarumarequisiçãopara
+ooutrotier,desonerandomuitoaaplicação(Figura6.6).
+Figura6.6: Evitarcomunicação remota,diminuirosdadostransferidoseefetuar
+cachedasinformações.
+Reparequeessassãopraticamenteasmesmasrecomendações dadasporumad-
+ministradordebancodedados:minimizaraschamadas,tentandopegartodainfor-
+maçãonecessáriaemumaúnicaquery,eaomesmotempobuscarapenasosdados
+necessários.Sepossível,cachearoresultado.Acomunicaçãodotierdeapresenta-
+ção deveterosmesmoscuidados;entreosprincípiosdoGooglePageSpeedpara
+performanceW e bclient-side,estãoocache,minimizaraquantidadedeinvocações
+AJAXecompactarosarquivostrafegadosparaminimizaraquantidadededados
+carregados.[189]
+146
+
+## Página 169
+
+CasadoCódigo Capítulo6. Decisões arquiteturais
+Nospróximostópicos,semprequeumframeworkenvolvertrabalhoemmaisde
+umtier,haverámençãodecomotomaressescuidadosnaprática.
+6.2 Desenvolvimento Web MVC: Actions ou Co m p o-
+nentes?
+OJava1.0surgiunamesmaépocadoestourodaW e b .Mas,comovimos,aprimeira
+abordagemdaplataformaeraousodeAppletsclient-side,emboraJamesGosling
+jápensasseemalgoserver-sidedesde1995.Oprimeiromovimentoemdireção à
+geração depáginasserver-sidefoiolançamentodeServletsem1997,seguidopelo
+JSPem1998.[49]
+OgrandepassodeServletfoicriarummodelobastanteperformáticoparatra-
+balharcomHTTPemJavasemodesenvolvedorprecisarsepreocuparcomdetalhes
+deinfraestruturaoudoprotocolo.Comseuprocessamentoderequisições simul-
+tâneasemThreadsparalelaslevesdocontainer,emvezdeprocessosconcorrentes,
+asServletssemostrarammaisrápidas,escaláveiserobustasqueomodeloCGIda
+época.IstofezoJavaganharconsiderávelimportâncianomercadoW e b .Masoobje-
+tivodeServletsnuncafoicriarpáginasdemaneiradesacopladadopensamentodos
+designers;seufocoerapermitirprogramausandooprotocoloHTTPemJava,com
+grandeperformanceeescalabilidade.JavaServerPagesnasceuentãocomoobjetivo
+detrazerprodutividadeefacilidadesnacriaçãodaspáginas,usandoasprópriasSer-
+vletsporbaixo,paraaproveitarsuasvantagens.Noinício,ousodeJSPeramisturar
+HTMLcomchamadasacomponentesJavaviapequenospedaçosdecódigoJava,os
+hojetemidosscriptlets,desencorajadosagoraporpossibilitarumapéssimamistura
+deresponsabilidades.
+Alémdesertodabasedequalquerframeworkeinfraestruturasimportantesem
+projetosW e b ,Servletssão ideaisemmomentosnosquaisprecisamosmanipular
+muitosdetalhesdoprotocoloHTTPexplicitamente.Páginasdinâmicasgeralmente
+não precisamdisto,porissoousomaisfrequentedeJSPsemconjuntocomfra-
+meworks.
+NolayerdeV i e w ,váriosenginesdetemplating,comoVelocityeFreemarker,sur-
+girampararemoverocódigoJavadosJSP.Maistarde,muitosdosnovosrecursos
+dessesframeworksforamincorporadosaoJSP2.0comusodaexpressionlanguagee
+taglibs,aposentandoosscriptlets.
+AV i e wnão precisasernecessariamenteconstituídaporumtemplateengine
+comoJSPouVelocity. Seoclientedanossaaplicação foroutrosistema,aV i e w
+147
+
+## Página 170
+
+6.2. DesenvolvimentoW e bMVC:ActionsouComponentes? CasadoCódigo
+podeserimplementadaatravésdeumprocessodeserializaçãodeobjetosparaal-
+gumformato,comoadoVRaptoraorenderizarumobjetoemJSON.Nessescasos,
+umaconfiguraçãoprogramáticadaV i e wsubstituiumtemplateengine.Emvezde
+somentepáginasHTML,estetipodesoluçãoécomumaodisponibilizarserviçosou
+recursosviaW e bparaconsumoporoutrossistemas.
+AgrandeevoluçãonodesenvolvimentoW e bveiocomarecomendaçãodouso
+dopadrãoarquiteturalModelV i e wController,oMVC.Osmodelosoriginais,tanto
+deServletsquantodeJSPs,nãofocavamafacilitaçãodaintegraçãocomdesigners,
+aseparaçãoentrelógicadenegóciosecódigoclient-sideouasboaspráticasdeOO
+eencapsulamento.Criava-seumabarreiramuitoforteàmanutençãoeextensão.O
+padrãoMVC,origináriodacomunidadeSmalltalk,[27]passouaseraplicadonode-
+senvolvimentoW e bemJavacomaajudadeváriosoutrospadrões, depoisdocumen-
+tadosnoconhecidolivroCoreJ2EEPatterns.[4]Aseparaçãoentre Model, Viewe C
+ontrollerseriafeita,porexemplo,criandoumacaServletquefinafrentedetodasas
+requisições, analisandoachamadaedelegandoparaoutraclassequerealmentesaiba
+realizaralógicadenegócioemquestão,fazendoopapeldeFrontController.[132]
+Logopercebeu-sequeasimplementações doMVCerammuitopróximas, e
+muitocódigo eraindependentedaaplicação. Surgiramentão osprimeirosfra-
+meworkscomimplementações reaproveitáveisdopadrãoMVC,entreeleso Apache
+Struts,umdoscontroladorespioneirosnaplataformaJava.
+AlémdaseparaçãoMVC,oStrutsaindatrouxeinternacionalização,validação
+eintegraçãocomoutrastecnologiasdemercado.Foirealmenteumimensoavanço
+paraacomunidadeJava.Comotempo,porém,omercadopassouaverdeficiên-
+ciasnoStrutseabuscaralternativas.Entreosproblemasestavamousoexaustivode
+herançadeclassesdoStruts(comoanecessidadedeestender ActionForm),asex-
+cessivasconfigurações emXMLeaspoucasconvenções decódigo,quegeravamum
+forteacoplamentocomoframework.[60]U mdosprimeirosconcorrentesdoStruts
+foioWebWorke,depois,vieramoutros,comoSpringMVC,T a p e s t r y ,VRaptore
+Stripes. Cientesdosprópriosproblemas,osdesenvolvedoresdoStrutspassarama
+investirno Struts 2jáem2005,propondoumajunçãocomoprojetoWebWork2,
+quepossuíaumcódigomuitomaisflexível.[25]
+NomeiodetodaessarevoluçãodoStruts,nasceu,em2004,pelomesmocria-
+dordoStruts1,o JavaServer Faces.FoiaprimeiraespecificaçãoJavaEEparaMVC,
+fortementebaseadaemideiasanterioresdeframeworksbaseadosemcomponen-
+tes,comooASP.NET,plataformaparadesenvolvimentoW e bcriadapelaMicrosoft.
+Nessemesmoano,surgiuoRubyonRails,trazendomuitasideiasrevolucionáriasque
+148
+
+## Página 171
+
+CasadoCódigo Capítulo6. Decisões arquiteturais
+seriamdepoisabsorvidasporváriosframeworks.OatrasodolançamentodoStruts
+2gerouumadivisãograndenomercado,semhaverapresençadeumlíderabsoluto,
+comofoicomsuaprimeiraversão.Dezenasdeframeworksnovosapareciamatodo
+momento,easnovidadesdoentãorecenteJava5estavamaindacomeçandoaser
+adotadas.Nessascondições adversas,omercadoviuumportoseguronanovaespe-
+cificaçãoJSFlançadapeloJCP.Seumodelodecomponenteserabastantediferente
+doqueseutilizavaemJavaatéentãoe,mesmocomsuaprimeiraversãoapresen-
+tandodeficiênciasesemosprometidoseditoresvisuais,oJSFatingiuosucessocom
+aajudadachanceladoJCP.
+MVC
+Mas,independentementedoframeworkoudaabordagempreferida,oMVC,
+usualmentetidocomoumpadrãoarquitetural,acabouconsolidando-secomuna-
+nimidade.Háaindaoutrospadrões emesmovariações doMVC,massemprecom
+oobjetivodefacilitaramanutençãoefavoreceraseparaçãodaslayers.AFigura6.7
+apresentaumapossívelimplementação dopadrão MVCparaumaaplicação W e b ,
+conformesugeridonoJavaBluePrints,[19]eservecomobaseparaagrandeparte
+dassoluções queadotamessepadrão.
+149
+
+## Página 172
+
+6.2. DesenvolvimentoW e bMVC:ActionsouComponentes? CasadoCódigo
+Figura6.7:U m apossívelimplementaçãodeModelV i e wControllerparaaplicações
+W e b .
+OmodeloMVCvemjustamenteparafacilitaraseparação dolayervisualda
+aplicaçãododomínioedonegócio.NadefiniçãoformaldeMVC,[27]aatualização
+daviewéfeitaatravésdeobserversquesão notificadosdoseventosocorridosnos
+modelos,umavisãomuitoligadaàsaplicaçõesdesenvolvidasnaépocaparaDesktop.
+Mas,apesardadefiniçãoformaldessepadrãooudasinterpretações queomercado
+adotoudoMVC,acaracterísticademaiorvaloréadesepararoscomponentesde
+apresentaçãodorestodaaplicação(conhecidocomoSeparatedPresentation).[67]
+U m adasformasdegarantirqueissoaconteçaénãopermitirqueumlayeracesse
+outroquenãosejaseuvizinhodireto.U mexemploqueviolaestaregraéoacesso
+diretoaosDAOspelasV i e w s,sempassarporalgumaAction.Ou,ainda,oacessoa
+umrepositóriopelamesmaviewsempassarpelomodelo.CódigoHTMLmisturado
+comSQLelógicadenegóciosemJavaéespecialmentedifícildemanter,alémdeo
+reúsoserbaixo;mas,infelizmente,esteaindaéumdosgrandesresponsáveispelo
+altocustodemanutençãodecódigolegado.
+U m agrandediscussãoemtornodomodeloéseasActions(ouequivalenteem
+outrosframeworks)pertencemaosmodelosouaoscontroladores;algunsdesenvol-
+vedoresacreditamqueessasclassessãocontroladoresjáque,dealgumaforma,co-
+150
+
+## Página 173
+
+CasadoCódigo Capítulo6. Decisões arquiteturais
+nhecemarequisiçãoeasV i e w s.Osmaispuristas,seguindoadefiniçãodopadrão,
+consideramqueelasfazempartedomodelo.
+Action-based versus Component-based
+AmaiorpartedosframeworksW e bexistentessegue,naturalmente,omodelode
+requisições erespostasdopróprioHTTPetambémdasServlets.Encaixam-seaqui,
+entreoutros,Struts(1e2),SpringMVC,Stripes,VRaptoreframeworksemoutras
+linguagens,comoRubyonRails,Grails,DjangoeASP.NETMVC.Emboratodos
+apresentemdiversasfacilidades,nenhumtemcomoobjetivoesconderomodelode
+requisições erespostasinerentedoprotocoloHTTP,nemsuacaracterísticastateless,
+seumodelodeURIsetantosoutrospontos.Essacategoriadeframeworksécomu-
+mentereferenciadapor Action-basedouRequest-based.Oexemploaseguirmostra
+umaaçãoquecadastraclientes,escritaatravésdoStruts2.
+public class AdicionaClienteAction {
+private Cliente cliente;
+@Action(value=”adiciona”, results = {
+@Result(name = “ok”, location = “/cliente/adicionado.jsp”)
+})
+public String execute() {
+new Clientes().adiciona(cliente);
+return “ok”;
+}
+}
+Emcontrapartida,háoutralinhadeframeworks,lideradapeloJSFeASP.NET,
+quetrazumaabstração maiornodesenvolvimentoW e b ,noqualoobjetivoénão
+observarmaistãodepertoosdetalheseofluxodoHTTP,mas,sim,trabalharcom
+componentesvisuaisdealtoníveleummodelodedesenvolvimentomaispróximo
+deaplicações Desktop.Sãoosframeworks Component-based,nosquaistambém
+podemosencaixarWicket,JBossSeam,GWTealgunsoutros(Figura6.8).
+151
+
+## Página 174
+
+6.2. DesenvolvimentoW e bMVC:ActionsouComponentes? CasadoCódigo
+Figura6.8:Representandoumatelaatravésdecomponentesricos.
+ComasincontáveispossibilidadesdeframeworksW e b ,maisimportanteque
+discutirfuncionalidadespontuaisdecadaumésaberescolherentreaction-basede
+component-based.Osframeworksbaseadosemcomponentes,comooJSF,têmcomo
+objetivotrazercaracterísticasdodesenvolvimentoDesktopparaodesenvolvimento
+W e b .Programa-seorientadoacomponentesricosereaproveitáveis,comummo-
+delodetratamentodeeventosrobustoemanutençãodoestadodastelas(stateful).
+OHTTP,porém,nãoéfeitodecomponentes,masorientadoarequisições(nãoeven-
+tos),eéstateless.Ouseja,umframeworkcomponent-basedcomooJSFprecisacriar
+abstrações complexasemcimadomodelotradicionaldaW e b .
+Algunsdesenvolvedoresnãoestãoacostumadoscomomodeloderequisiçãoe
+respostadaW e b ,mas,sim,apensarnaintegração entreelementosdetela,como
+comobotões oucamposdetexto,controlandooquefazerquandoumdelesdispara
+umevento,comooclique,mudançadeumvalor,eoutros.AorigemdoMVCestá
+ligadaaesseambienteDesktopouconsole,enãoaaplicações W e bbaseadasemre-
+quisições erespostas.[27],[67]Háaindaaplicações W e bcominterfacesmuitocom-
+plexas,nasquaisainteraçãoentreosdiversoscomponenteseseusestadoséoponto
+principal–nãohánecessidadedecontrolefinodoHTMLgerado,porexemplo.Nes-
+sescasos,usarumframeworkcomponent-basedcomoJSFpodefacilitarbastante.
+Mashásituações emqueprecisamoscontrolaroHTMLfinal,como,porexem-
+plo,porcausadeacessibilidade,ouparasuportarnavegadoreseplataformasdife-
+rentes,ou,ainda,comootimizações parabuscas(SEO),eatémesmocontrolefino
+dasrequisições AJAX,códigoJavaScripteHTML.Podehaveraindaanecessidadede
+umamanipulaçãodasURIsutilizadas,tantoparasuportarbookmarkscorretamente
+quantoparaatenderaosmecanismosdebuscas,e,ainda,permitirredirecionamen-
+toseoutroscontroles.Podemospreferirtrabalharorientadosarequisições erespos-
+152
+
+## Página 175
+
+CasadoCódigo Capítulo6. Decisões arquiteturais
+tascomcaracterísticasstatelessparamelhoraproveitaraW e beoutrasferramentas
+quegiramemtornodoHTTP,alémdegarantirescalabilidadeedisponibilidademais
+facilmente.Nessetipodesituação,usarumframeworkaction-basedcostumaseen-
+caixarmelhorcomosolução.[96]
+Porém,éimportanteressaltarqueépossívelusarosdoismodelospararesolver
+praticamentequalquerproblema.Nãoéporqueoptamosusaraction-basedquenão
+podemosusarcomponentesvisuaisricos,como,porexemplo,comJQueryUI,YUI
+ouExtJS.Enãoéporqueoptamosporcomponent-basedquenãopodemosdesen-
+volverstatelessoucontrolarmelhorasURIseterumbomSEO.
+Todososframeworkscostumamsuportar,aseumodo,recursoscomovalida-
+ção,internacionalização,facilidadesparapopularosbeansemuitosoutros.Emge-
+ral,costuma-sedizerqueaplicações W e bcomplexasericasemformulários,quede
+algumaformasejamumagrandeaplicação,sãomaisbemservidasporframeworks
+component-based,enquantositesW e bqueexijamumcontrolemaisfinodoqueestá
+sendoenviadoparaoclientesãoocasoidealdosaction-based.Ambososmodelos
+sãocapazesdeatenderapraticamentetodososcenários,eaescolha,emgeral,sedá
+peloestilodeprogramaçãodaequipe,quepodesermaisorientadoacomponentes
+eeventosouapáginaserequisições. Aliás,umimportantemovimentoafavorda
+ideiadacoexistênciaentreambososmodelosfoiolançamentodoASP.NETMVC
+pelaMicrosoft.Duranteanos,oASP.NETclássicofoisímbolodaeradosframeworks
+component-based,eaprópriaplataforma.NEThojesuportatambémaabordagem
+action-basedcomoASP.NETMVC.
+JavaServer Faces
+Porserumaespecificação,oJSFteveumaaceitaçãonomercadomuitomaisfácil
+erápidaquemuitosframeworksescritosporterceiros.Aideiadetrabalharcomuma
+especificaçãoémuitotentadoraparadiversasempresas,queprecisamdeumpouco
+maisdegarantiadacontinuidadedatecnologia.Masestenãodeveseroúnicoponto
+avaliadoaoescolherumatecnologiaparadeterminadoproblema,muitomenospara
+resolvertodososproblemasdeumaempresa.
+U m adasprimeiraspropagandasdoJSFdiziaqueseriapossívelescreverainter-
+facedousuáriosemapreocupaçãocomondeelaseriadesenhada.Poderiaseremum
+navegadorcomum(HTML),emumdecelular(WML),ouatémesmorenderizá-la
+emFlash,semprecomomesmocódigoeosmesmoscomponentes.Bastariatrocar
+oelementoquerenderizaaresposta–chamadoRender-kit–eteríamosrenderiza-
+ções bemdiferentes.Estacaracterísticafoipoucoutilizada,poisanecessidadedas
+153
+
+## Página 176
+
+6.2. DesenvolvimentoW e bMVC:ActionsouComponentes? CasadoCódigo
+empresaseraapenasdegerartelasHTMLparanavegadorescomuns;naprática,é
+raroverumaaplicaçãoquetroqueorender-kitpadrãodoJSF.
+MasessacaracterísticadenãoescreverapáginaemHTMLpuro,e,sim,usando
+oscomponentesdoJSF,permitequeoframeworkcuidedeaspectosquegeralmente
+causamproblemasparaosdesenvolvedoresW e b ,escondendodiversospontostra-
+balhosos. EstecontroledámuitopoderparaoJSFfazer,porexemplo,obinding
+noscomponentes,permitindoações querealmentefacilitemodesenvolvimentode
+sistemasW e b ,comoovalordeumcamposerautomaticamenteguardadoemum
+atributodeumbeanjáconvertidoparaoformatocorreto.Ouqueocliquedeum
+botãonateladispareummétodoescolhidopelodesenvolvedordiretonobean.Ou,
+ainda,que,aoocorrerumamudançadeumvalor,sejadisparadaumavalidação,
+entreoutrosrecursos.
+OcontrolequeoJSFfazsobreoqueacontecenoscomponentessóépossível
+porqueoframeworkguardaemanipulaumarepresentaçãodecadaelementocomo
+umobjeto,organizandotodoselesnoformatodeumaárvoredecomponentes.Cada
+elementodaárvoreguardaoestadoatualdoscomponentesdatelae,acadaevento
+disparado,éfeitaumarequisiçãoparaoJSF,queseencarregade,logonoinícioda
+requisição,atualizarasinformações nestaárvore.
+Aárvoredecomponentestambémserviuparaamenizaroutroproblemacomum
+paraosnovosdesenvolvedoresW e b :ofatodeoprotocoloHTTPserstateless.Como
+entreumarequisição eoutranão háarmazenamentodeinformações automatica-
+mente,anãoserqueseusesessões explicitamente,oJSFajudoumuitoaoguardar
+informações naárvore,tirandomaisumpesodascostasdodesenvolvedor.Há,por
+exemplo,umpoderosoecomplexociclodevidadoscomponenteserequisições JSF,
+oquedáaodesenvolvedorapossibilidadedeacompanharasdiversasfasesdofluxo
+internodeexecuçãodoJSF,comomanipulaçãodoestadodatela,validação,conver-
+são,binding,invocaçãodalógicadenegócios,etc.
+Alémdetudo,omodeloComponentBasedqueoJSFusapermiteumagrandeex-
+tensibilidade;épossívelcriarnovoscomponentesdeacordocomasuanecessidade.
+Algumasempresasatémesmocriaramcomponentesextremamenteúteisepráticos,
+como,porexemplo,oRichFaces,queadicionaàgamaoficialdecomponentesdoJSF
+funcionalidadescomocomponentesmaisricos,ferramentasdelayout,temas,entre
+outros.
+OJSF2foiumagrandeevoluçãonoframework,amenizandodiversosantigos
+problemaseacrescentandoimportantesnovasfuncionalidades.Hásuportenativoa
+Ajax,Faceletsintegrado,novosescopos,melhorsuporteaGETebookmarks.Além
+154
+
+## Página 177
+
+CasadoCódigo Capítulo6. Decisões arquiteturais
+disso,hádiversasconvençõesquediminuemasconfiguraçõesque,porsuavez,agora
+sãofeitascomanotações simples.Outropontobastanteforteéaintegraçãocomo
+restantedoJavaEE6,emparticularasvalidaçõessimplificadascomBeanValidation,
+injeçãodedependênciascomCDIeatétransformarosmanagedbeansemEJBspara
+ganharosserviçosdocontainer.
+Mesmocomdiversasvantagens,oJSFnão éunanimidadeentreosdesenvol-
+vedores.PelofatodeserComponentBased,aindaexistemalgunsempecilhospara
+sistemasW e b .Entreeles,afaltadecontroledoHTMLéumdosmaissérios.Como
+oHTMLégeradopelopróprioJSF,qualquerotimizaçãooumodificaçãoquequeira-
+mosfazersetornaextremamentecustosaecomplexa;emcasosmaisextremos,pode
+serqueoJSFnãodêsuporteadeterminadafuncionalidade.Odesigneaexperiência
+dousuáriosão,emgeral,adaptadospelaslimitações queoJSFapresenta,emvezde
+umaabordagemmaislivrenodesign,emqueocódigoseráadaptadoparaatingiro
+resultadodesejado.
+JSFsegueummodelomenosfocadonaW e bemaisvoltadoparaaárvorede
+componentes.AW e béapenasoambientedoJSF,masseuobjetivofinalsãooscom-
+ponentes.JSFacabasetornandoumaferramentapoderosaparacriaraplicaçõescom
+interfacesmuitocomplexas,comdiversasfuncionalidades,masquenãonecessitem
+deumcontrolefinodoHTML,JavaScripteCSS,ouumaproximidademaiordas
+característicasdoHTTP.Nessescasos,favoreçaumframeworkActionBased.
+6.3 Domine sua ferramenta de mapeamento objeto
+relacional
+ConsultasSQL,gerenciamentodetransações, cacheseadecisãodequandopersistir
+ebuscardadosdobancosãopreocupações frequentesemgrandepartedosprojetos
+edemandammuitotempoetrabalho.T o d ocódigoutilizadopararesolveressespro-
+blemasraramenteéescritodeformaafacilitarseureúso,eoprogramadoréobrigado
+areescrevergrandepartedeleparaacessarosdadosaoiniciarumnovoprojeto.
+Poresteeoutrosmotivos,soluções quevisamfacilitarotrabalhodoprograma-
+dor,diminuindoanecessidadedousodoJDBCeaescritadecomplicadasconsultas
+SQL,apareceramhábastantetempoeganhamcadavezmaisforça.
+O q u eháde errado com o JDBC?
+JDBCéumadasAPIsmaisantigasdoJava,existentedesdeoJDK1.1ecomcons-
+tantesatualizações. Aversão4.0,disponívelnoJava6,trouxemelhoriassignificativas
+155
+
+## Página 178
+
+6.3. Dominesuaferramentademapeamentoobjetorelacional CasadoCódigo
+eoferecemuitopoderatémesmoabancosdedadosespecíficos.[156]Ocódigopara
+executarumasimplestransaçãocomJDBCpuropodeserescritodemaneirabem
+sucinta.
+public void insere(String email) throws SQLException {
+Connection con = abreConexao();
+con.setAutoCommit(false);
+con.createStatement().execute(
+“INSERTINTO Destinatario (email) VALUES (‘”+ email + “’)”;
+);
+con.commit();
+con.close();
+}
+Podenãoestaróbvio,masestetipodecódigoingênuoéacausadosprincipais
+problemasaoacessarbancosdedadoscomJava:vazamentodememória,transa-
+ções nãofinalizadascorretamente,excessodeconexões abertascomoservidorpela
+ausênciadepool,baixaescalabilidade,vazamentodeconexões eatémesmoSQL
+injection.
+Podemostentarresolveressesproblemascomumcódigomaiscompleto.
+public class DestinatarioDao {
+private final DataSource dataSource = new ComboPooledDataSource();
+public void insere (String email) throws DAOException {
+String sql = “INSERTINTO Destinatario (email) VALUES (?)”;
+Connection con = null;
+PreparedStatement stmt = null;
+try {
+con = this.dataSource.getConnection();
+con.setAutoCommit(false);
+stmt = con.prepareStatement(sql);
+stmt.setString(1, email);
+stmt.execute();
+con.commit();
+} catch (SQLException e) {
+try {
+if (con != null)
+con.rollback();
+throw new DAOException(“Errono insert”, e);
+156
+
+## Página 179
+
+CasadoCódigo Capítulo6. Decisões arquiteturais
+} catch (SQLException e) {
+throw new DAOException(“Errono insert e rollback”, e);
+}
+} finally {
+try {
+if (stmt != null)
+stmt.close();
+} catch (SQLException e) {
+throw new DAOException(“Erroao fechar statement”, e);
+} finally {
+try {
+if (con != null)
+con.close();
+} catch (SQLException e) {
+throw new DAOException(“Erroao fechar con”, e);
+}
+}
+}
+}
+}
+Ocódigomaisrobustoutiliza PreparedStatementparaevitarSQLinjec-
+tionetirarproveitodealgunsbancosquepré-compilamasqueries;tomacuidado
+com try, catch, finallyparanão deixartransações pendenteseconexões
+abertas;usaumpooldeconexões atravésdeum DataSourceparaevitarova-
+zamentodestasenãoutilizarconexões quepossivelmentepossamtersidofechadas
+peloservidor.[183]
+Eestecódigoaindapodetermelhorias. Oesforçoemlançarexceptionscom
+boasmensagensenão deixarvazar SQLExceptionpoderiasermaiorcommais
+blocos try/catchparatrataroserrosseparadamente,comonocasodefalhara
+aberturadaconexão. Éválidorepararqueautilizaçãodeinversãodecontroleaju-
+dariabastanteotrabalhodeevitaressecódigorepetitivo(oboilerplatecode).Mesmo
+tomandotodoestecuidado,háaquiumtrabalhoaindadedesign,jáqueoprogra-
+madordevedecidirondecolocarocódigoSQL,isolando-oemDAOs,arquivosde
+properties,XMLsou,ainda,anotações doJDBC4.0.
+ComaevoluçãodaplataformaJava,surgiramdiversassoluções paraminimizar
+oriscoefacilitaraimplementaçãodospadrões queaparecemnocódigoanterior.
+AprimeiraopçãoseriaabstrairoacessodiretoaoJDBCtomandoasdevidaspre-
+cauções eusandoasmelhorespráticas.Aindaassim,teríamosmuitotrabalhoecó-
+157
+
+## Página 180
+
+6.3. Dominesuaferramentademapeamentoobjetorelacional CasadoCódigo
+digorepetido,e,porisso,ferramentasconhecidascomodatamapperssurgiram.Es-
+sasferramentasliberamoprogramadordaárduatarefadeexecutaraconsultaSQL,
+mapearaslinhasdatabelanasentidadesdoseumodelo,gerenciartransações, etc.
+U mframeworkbastanteutilizadoéo iBatis,consideradoporalgunscomoum
+datamappermenospoderoso,quejáencapsulaasnecessidadescomunsdodesen-
+volvedor,quandoutilizaoJDBC,echegaatéaorganizarasqueriesSQLsemarquivos
+XML.[14]A p e s a rdenãoserumdatamapper,o Spring JDBC templateémaisuma
+alternativadeuso.Essestiposdewrappers,porém,sãopoucousados.U mdosre-
+flexosdestaperdadepopularidadeéqueoiBatisparousuaevolução. U mforkfoi
+criado,o MyBatis,masacomunidadeJavacaminhacadavezmaisparaasferramen-
+tasdemapeamentoobjetorelacional.
+Mapeamento objeto relacional
+Opróximopassoseriautilizarumaferramentaquefacilitasseaindamaisotraba-
+lhododesenvolvedor,fazendocomqueeledeixasseatémesmodeescreverconsultas
+SQL.Essasferramentassãoconhecidascomo O R M(object-relationalmapping).Elas
+sãocapazesdefazeraponteentreoparadigmaentidaderelacionaleoorientadoa
+objetosdeformaaminimizaroabismoentreosconceitosdessasduasabordagens,
+conhecidocomoaimpedânciaobjeto-relacional(objectrelationalimpedancemis-
+match).[6]
+U mexemplosão astabelascompridasqueaparecemcomcertafrequênciano
+mundorelacionale,diferentedeclassescommuitosatributosnaorientaçãoaob-
+jetos,nãosãovistascomtantarepulsa.Ferramentasdemapeamentodevempossi-
+bilitarquemaisdeumaclassesejautilizadapararepresentarumaúnicatabela. O
+contráriotambémpodeacontecer,comoumaclassesermapeadaemmaisdeuma
+tabela.
+Outrocasosãoastabelasassociativassimples.Elassãoaformadefazerorela-
+cionamentomuitosparamuitosentreentidadesnomodelorelacional.Aomapear
+isso,suaferramentadevearrumarumaformaelegantedeesconderessesaglomera-
+dosdeparesdechaves,provavelmentesemcriarumaclasseparataleusandoapenas
+coleções earraysdeobjetos.
+Jáaherançaéumconceitoquenãobatecommodelagemrelacional.Emalguns
+frameworksORM,ousodaherançapodeformarumsériogargalodeacordocom
+aformaderepresentaçãoadotadanobancodedados(asconhecidasestratégiasda
+JPAedoHibernate),dadoquediversastabelasprecisamserconsultadasemalgumas
+queriespolimórficas,emespecialquandoéimpossívelusaralgunsrecursosdoSQL,
+158
+
+## Página 181
+
+CasadoCódigo Capítulo6. Decisões arquiteturais
+comounions.[181]Muitosvãodesaconselharaherança,preferindousarcomposição,
+conformevistonotópicoEviteherança,favoreçacomposição[81],[181](Figura6.9).
+Comaforçaqueasespecificações JavaEEtêm,écomumqueaescolhaporuma
+ferramentaORMacabecaindosobreumadasimplementações daJPA.Dentreelas,
+osprincipaisconcorrentessãooOracleTopLink,aOpenJPA,aBEAKodo,oEclip-
+seLinkeoHibernate,certamenteaopçãomaiscomum.Sejaqualforsuaescolha,há
+algunscuidadosquedevemsertomados.
+Figura6.9:Mapeamentoderelacionamentosmuitosparamuitosemuitosparaum.
+U mcuidado importanteéentendere usar corretamenteos modos eager e
+lazydeseobterobjetosrelacionados. Semprequetemosrelacionamentoscom
+@ManyToOneou @OneToOne,opadrão étrazeroobjetorelacionado(eager);e,
+quandotemos @OneToManyou @ManyToMany,acoleçãodeobjetosrelacionados
+sóérecuperadaquandoforacessada(lazy).Paraboapartedoscasos,ocomporta-
+mentopadrãoésuficiente,maséprecisoidentificarcasosemqueprecisamoscon-
+figurarum FetchTypediferente(porexemplo,quandoumobjetorelacionadoé
+muitopesadoequeremoscomportamentolazyemvezdeeager). Éprecisoestar
+159
+
+## Página 182
+
+6.3. Dominesuaferramentademapeamentoobjetorelacional CasadoCódigo
+atentoaousoindiscrimidadodelazy,quepodegeraroproblemadosn+1selects,
+comoveremos,assimcomoousoindiscriminadodeeagerpodeocasionarcarrega-
+mentodesnecessáriodedadosemexcesso.
+Hátambémapossibilidadedeseajustarofetchtypediretamentenasconsul-
+tas;porexemplo,fazendoumabuscaespecíficacomoeageremqueorelaciona-
+mentoestáconfiguradocomolazy–usandojoinfetchnasHQLeo setFetchMode
+dasCriterias.[155]Algumasimplementações deJPA,comoaOpenJPAeoHiber-
+nate,aindapermitemquecamposbásicossejamlazysemanecessidadedeuma
+pré-compilação,possibilitandoqueumaentidadesejaparcialmentecarregadaeque
+camposchavessejaminicializadossomentequandoesenecessários.
+Outrocuidadoasertomadoénaintegração comorestantedaaplicação. Na
+W e b ,acessamosentidadesdonossomodelonaV i e we,seelaspossuemrelaciona-
+mentoslazy,precisamosqueo EntityManagerqueascarregouestejaabertoatéo
+fimdarenderizaçãodapágina.Casoestejafechado,amaioriadasimplementações
+deJPAnãovaisereconectaraobancodedadoselançaráumaexception( LazyI
+nitializaionException,nocasodoHibernate).
+Paraqueissonãoocorra,devemosmantero EntityManageraberto,sejaatra-
+vésdeumfiltro,deuminterceptadoroualgumoutromecanismo.Esteéoconhecido
+patternOpenEntityManagerinV i e w(derivadodoOpenSessioninV i e w,termocu-
+nhadopeloHibernate)(Figura6.10).
+160
+
+## Página 183
+
+CasadoCódigo Capítulo6. Decisões arquiteturais
+Figura6.10:PadrãoOpenEntityManagerinV i e w .
+Outraformadeescapardosproblemasdeproxieslazyéutilizarumcontai-
+nerdeinjeção dedependências.Frameworks,comoSpringeVRaptor,jápos-
+suemfiltroseinterceptadoresparaessescasos, eatémesmousandoaanotação
+@PersistenceContextdoJavaEEparainjeçãodedependênciaspodemosobter
+omesmoefeito.[184]
+ComoadventodoJavaEE5ealgumasformasdeinjeçãodedependências,di-
+minuiuanecessidadedeumgrandenúmerodepatternsquehaviaparaoJ2EE,mas
+algumaspreocupações aindapersistem.Aprincipaldelasenvolvecomoacessarum
+EntityManager,umaperguntaparaaqualexistemdiversasopções: dentrodeum
+objetoqueagecomoumDAO,emumDomainModelouemumModelFaçade.
+Aindaépossível,ecadavezmaisfácilcomousodainjeçãodevariáveismembro,
+acessá-lodiretamenteatravésdalógicadenegócios.A p e s a rdeesteaindaserumde-
+bateemquemuitasopiniões divergem,agrandemaioriadosdesenvolvedoresopta
+porprotegeroacessoao EntityManageratravésdeumDAO,não permitindo
+quequalquercódigooacesseetambémajudandoareaproveitarmétodosqueen-
+capsulamrotinasdeacessoadadosquesão maisqueapenasaexecução deuma
+161
+
+## Página 184
+
+6.3. Dominesuaferramentademapeamentoobjetorelacional CasadoCódigo
+query.[153],[185]
+Porumaquestãodeajustedegranularidade,paraquenãosejamexpostosmais
+dadosqueonecessário,ouparaagrupardiferentesatributosdeentidadesemum
+únicoresultado,épossívelquehajaanecessidadedoDataTransferObject.[154]Ou-
+trospatternsdoJavaEE5tambémforamcatalogados,masmuitosdelesnãoforam
+largamenteadotadospelacomunidade,oupossuemnomenclaturaeimplementa-
+ções divergentes.[138],[154]
+Connection P o o l
+AquaseonipresençadoHibernate,tantoatravésdousodaJPAquantodireta-
+mente,fazcomqueoconhecimentoprofundodasfuncionalidadesoferecidaspor
+esteframeworkmereçaatençãoespecial.A p e s a rdoesforçodaJPA1.0emunificar
+umagrandepartedefuncionalidadescomunsatodasasferramentasORMemuma
+especificação,muitoficoudefora.AJPA2.0tentadiminuiressasgrandesdiferen-
+çasentreosdiversosfabricantesexistentes,criandonovasanotações eestendendoa
+interface EntityManagercomnovosmétodoserecursos.[46]
+EntreosrecursosimportantesqueexistemnoHibernateeoutrosframeworks,
+porémnão naJPA,podemoscitaralgunsquesão vitaisparaaescalabilidadeea
+performancedaaplicação. Odesconhecimentodessasfuncionalidadespodelevar
+atémesmoumprojetosimplesaofracasso,sejapeloconsumoexcessivodememória,
+sejapelodisparoexageradodequeries.[182]
+U s a rumpooldeconexões,porexemplo,épraticamenteobrigatórioemqual-
+queraplicação queusebancodedados. U mproblemacomumemaplicações que
+abremconexões indiscriminadamenteésobrecarregarobancocomumnúmero
+muitograndedeconexões. Ousodopoolpermitecontrolaromáximodeconexões
+quepodemserabertas.Alémdisso,abrirefecharconexões sãooperações custosas.
+Nãovaleapenaestabelecertodaacomunicaçãocomobanco,abriraconexão,para
+usá-larapidamente,edepoislogofechá-la.U s a ropooleconomizabastantetempo
+aomanterasconexões abertasecompartilhá-las.
+Hádiversospoolsdeconexãonomercadojáimplementadoseprontosparauso,
+desdeosprópriosdatasourcesdosservidoresatébibliotecasseparadascomooC3P0
+eoDBCP.U s a rumpooldeconexões comoHibernateéextremamentefácil,bas-
+tandoumaspoucaslinhasdeconfiguraçãoXML,[93]lembrando-seapenasdeevitar
+opoolpadrãodoframework,quedeveserutilizadoapenasparatestes.
+U mproblema tradicional dos pools estáligado à detecção de conexões
+quebradas, que ainda estão marcadas como disponíveis, causando a famosa
+162
+
+## Página 185
+
+CasadoCódigo Capítulo6. Decisões arquiteturais
+java.net.SocketException: Broken pipeaotentarutilizá-la.Énecessá-
+riochecardealgumaformaseaconexãodeumpoolaindaestáválida,aberta,seja
+atravésdeumaverificação,aorequisitarumaconexão,sejaexecutandoverificações
+periódicas.[183]
+Cache e otimizando a performance
+Outropontoimportanteparaumaboaperformanceeescalabilidadeéevitar
+consultasrepetidasempequenosintervalosdetempo:osistemaresponderápido
+eobancodedadosnãoéacionado.Dentrodeumamesma Session,asentidades
+gerenciadasporelaficamemumcache,odeprimeironível(firstlevelcache),atéque
+essasessãosejafechadaouaentidadeexplicitamenteremovida(atravésdo clear
+ou evict).Esseprimeironíveldecacheexisteparagarantiraintegridadedosdados
+namemóriaenobanco,evitandoquenocontextodeuma Sessionpossaexistir
+maisdeumarepresentação domesmoregistroaomesmotempo. ÉoqueFowler
+chamadeIdentityMapemseuPOEAA.[67]
+PensandoemumcontextoW e b ,ocachedeprimeironívelexisteduranteociclo
+devidadeumarequisição.Épossíveliralém,jáquemuitasentidadessofrempoucas
+alterações epodemterseusdadoscacheadosporumaregiãomaiorqueadelimitada
+porumaúnicarequisição. O cache de segundo nível(secondlevelcache)temeste
+papel.Atravésdesimplesanotações, épossíveltirarproveitoderobustosmecanis-
+mosdecache,comoEhcacheouJBossCache.Épossívelaindaconfigurardetalhes
+comoapolíticadociclodevidadasentidadesnocache(LRU,LFU,FIFO...),seu
+respectivotamanho,ostemposdeexpiração,entreoutros.[212]
+Quandoumadeterminadaentidadeforbuscadaatravésdesuachaveprimária
+eaindanãoestivernocachedeprimeironível,oHibernatepassarápelocachede
+segundonívelparaverificarsuapresença.Casoseutempodeexpiraçãonãotenha
+passado,umacópiadesseobjetocacheadoserádevolvidasemnecessidadedeacesso
+aobancodedados.Seastabelasemquestãosãoapenasacessadasporsuaaplicação,
+épossívelconfigurarocachedetalmaneiraquenuncaexpireenquantonãohouver
+umaatualizaçãonaentidade.Ocódigoaseguirmostraautilizaçãotransparentede
+umcachedesegundodenível,umavezqueasegundabuscanãoatingiráobanco
+dedados:
+EntityManager manager1 = jpa.getEntityManager();
+Conta primeiroRetorno = manager1.find(Conta.class, 15);
+EntityManager manager2 = jpa.getEntityManager();
+163
+
+## Página 186
+
+6.3. Dominesuaferramentademapeamentoobjetorelacional CasadoCódigo
+Conta segundoRetorno = manager2.find(Conta.class, 15);
+System.out.println(“Titularda primeira conta: “+
+primeiroRetorno.getTitular());
+System.out.println(“Titularda segunda conta: “+
+segundoRetorno.getTitular());
+NaFigura6.11épossívelverificarcomoosdadossãoarmazenadoseencontrados
+nocachedeprimeiroesegundoníveis:
+Fazerumcacheeficiente,queevitavazamentodememóriaeproblemasdecon-
+corrênciasemperderescalabilidade,éumatarefadifícil;aoadotarferramentasde
+ORMquesuportamtaisbibliotecas,todaessainfraestruturajáestádisponível.Mas
+todaestratégiadecacheéperigosaporque,paraevitarficarcomdadosobsoletos,é
+precisoumaboapolíticadeinvalidaçãoemcasodeatualizações. OHibernatefaz
+tudoissodeformatransparenteseasatualizações são feitasatravésdele. Mas,se
+nossosobjetostiveremmuitasatualizações emcomparaçãocomonúmerodecon-
+sultas,oefeitopodeseroinversododesejado:oHibernategastarámuitotemponas
+invalidações decacheeaperformanceprovavelmenteseráprejudicada. U s ecache
+apenas em entidades q u enão mudam nunca ou nas q u emudam muito p o u c oem
+relação às consultas.
+164
+
+## Página 187
+
+CasadoCódigo Capítulo6. Decisões arquiteturais
+Figura6.11:Cachedeprimeiroesegundoníveisemação.
+Aadoção decachesfavoreceperformanceeescalabilidadeemtrocademaior
+consumodememória.Cachessãoaindamaiseficazesparaaplicações nasquaisda-
+dosdesatualizados(stale)podemsermostradospordeterminadoperíododetempo
+semprejuízoparaocliente. Porexemplo,umaqueryqueretornaoprodutomais
+vendidonodiapodesercacheadaporalgunsminutosouatéhoras.
+Oquefoiapresentadoatéagoraéochamadocachedeentidades.Masfrequente-
+mentesãoexecutadaspesquisasqueretornamomesmoresultadoatéqueastabelas
+envolvidassoframalterações. OHibernatepodecachearatémesmooresultadode
+queries,atravésdoquerycache.Guardartodooresultadodeumaqueryconsumiria
+muitamemóriaedadosrepetidos,eéporissoqueaferramentavaiapenasarmaze-
+naraschavesprimáriasdasentidadesdevolvidas.Quandoestaforexecutadamais
+umavez,oHibernatepegaráesseconjuntodechavesprimáriaseasbuscará,sem
+anecessidadedeexecutaraquerydenovo.Porisso,éimportantetambémcolocar
+essasentidadesnocachedesegundonível,enãoapenasaquery,paraqueanovaexe-
+cuçãonãoprecisefazernenhumhitnobancodedados,utilizandoapenasosdados
+damemóriaparadevolveroresultado.
+165
+
+## Página 188
+
+6.3. Dominesuaferramentademapeamentoobjetorelacional CasadoCódigo
+Esseresultadodequerycacheadoseráinvalidadoaomenorsinaldemodificação
+nastabelasenvolvidas,poisissopodealteraroqueestaqueryretornaria.Queries
+queenvolvamtabelasmodificadasconstantementenãosãoboascandidatasaoquery
+cache.
+Épossívelqueodesenvolvedornãoqueirainvalidartodoocachedeumaquery
+acadamodificaçãonasrespectivastabelas,poisdiversasvezeséaceitávelqueares-
+postaparaumaquerynãosejaconsistentecomosdadosmaisatuais,ousejasabido
+queaatualizaçãodedeterminadoscamposnãoinfluenciamoresultadodasqueries.
+Essecomportamentodeinvalidaçãodocachedequeriespodesermodificadopara
+umajustemaisfino,atravésdasubstituiçãoda StandardQueryCache,implemen-
+tandodiretamentea QueryCacheouestendendoopadrão,paraquesejatolerante
+aalgunsupdates.[95]
+Emqueriesmuitopesadasefrequentementeacessadas, umaimplementação
+simples,queverificaaexistênciadainformaçãonocacheeentãoexecutaaquery,
+podepossuirgargalos.Se,porexemplo,nointervalode10segundos,200usuários
+acessaremessainformaçãoeaindanãohaviadadosnocache,aqueryseráexecutada
+umavezparacadaumdeles,jáqueoresultadosóécolocadonocacheapósoretorno
+daprimeirarequisição.Esseproblema,quandomuitasrequisições seacumulamem
+cimadeumdado,quepodeounãoestarcacheado,échamadodedogpileeffect.[97]
+Odoublechecklockingeoutrasboaspráticasprevinemsituações comoessas,eéim-
+portanteconhecê-las.[171],[18],[83]Aintegraçãodosframeworkscomasbibliotecas
+decachejáseprevinemdessassituações, porém,aoutilizarabibliotecadecachedi-
+retamente,eemalgunscasosistosefaznecessário,vocêmesmoprecisatomaressas
+medidas.
+Quandoovolumededadosémuitogrande,umamáquinapodeserpoucopara
+guardartodoocache.Épossívelutilizarumclusterparaarmazená-lo,eoHibernate
+játrabalhacomIn fi n i s p a n,CoherenceeMemcachedeformaadiminuiranecessidade
+deconfiguração. Comeles,épossívelfazerofinetuningparaminimizarotráfego
+intracluster,alémdedesabilitarasincronizaçãoimediatadeestadocomobancode
+dados,usandoowrite-behind,umaabordagemassíncronamuitomaisescalável,po-
+rémcommenorconfiabilidade,poispermiteavisualizaçãodedadosdesatualizados
+(staledata).[208],[216]
+Mai sotimizaçõ e se recursos
+Alémdasestratégiasdecache,oHibernateaindadisponibilizaoutrosmecanis-
+mosdeotimização. Aoexecutarumaquery,écomumiterarsobretodasasentida-
+166
+
+## Página 189
+
+CasadoCódigo Capítulo6. Decisões arquiteturais
+desretornadas.Seoresultadodeumaqueryéum List<Livro>,e Livropossui
+comoatributouma List<Autor>queserácarregadademaneiralazy,existeentão
+umpotencialproblema:aofazerolaçoparamostrartodososautoresdesseslivros,
+paracadainvocação livro.getAutores()umanovaqueryseráexecutada,por
+exemplo:
+select * from Autor where livro_id = 1
+select * from Autor where livro_id = 3
+select * from Autor where livro_id = 7
+select * from Autor where livro_id = 12
+select * from Autor where livro_id = 15
+select * from Autor where livro_id = 16
+Esteproblemaéconhecidocomo n+1,pois,aoexecutarumaúnicaquery,tem-se
+comoefeitocolateralaexecuçãodemais n queries,onde néonúmerodeentidades
+resultantedaqueryoriginalequepodeserbemgrande.
+ÉpossívelconfiguraroHibernateparaqueeleinicializeacoleção lazydeau-
+toresdoslivrosdeumamaneiramaisagressiva,semfazercadacarregamentose-
+paramente,massimde5em5,valorquepodeserdefinidoatravésdaanotação
+@BatchSize(size=5),quediminuibastanteasqueriesdeinicialização:
+select * from Autor where livro_id in {1, 3, 7, 12, 15}
+select * from Autor where livro_id in {16}
+Assim,onúmerodequeriesexecutadaséminimizado,unindodiversasqueries
+emumaúnica,diminuindoonúmeroderoundtripsatéobancodedados.
+Paradetectarapresençadoprobleman+1eoutros,nãoéviávelolharotempo
+todoologdequeriesemprodução,poiséfácildeixarescapardiversosgargalos.O
+Hibernatepossuiaclasse Statisticsque,sehabilitada,armazenarádadossobre
+entidades,relacionamentos,queriesecache. Épossívelvercomdetalhesquantas
+vezescadaqueryestásendoexecutada,ostemposmáximos,mínimosemédios;e,
+ainda,quantasvezesocachedesegundoníveléinvalidadoemcomparaçãoaquantas
+vezeseleéusado;ouatéquantastransações foramabertasenão comitadas,entre
+outros.Atravésdestaclasse,émuitomaisfácilidentificargargaloseproblemaspara
+sabermosondecolocarumnovocache,ondeusaro @BatchSize,ondeémelhor
+sereageroulazy,etc.
+Aindafalandoemotimizações, oHibernateémuitasvezescriticadoemsi-
+tuações queenvolvemoprocessamentodemuitosdadosdeumavez. Masexis-
+temmecanismosespecíficosparatrabalharnessescasos.[92]Imaginequesejane-
+167
+
+## Página 190
+
+6.3. Dominesuaferramentademapeamentoobjetorelacional CasadoCódigo
+cessáriofazeroprocessamentodeumimensoarquivoTXTeinserirmilhões de
+linhas no bancode dados de uma vez. A invocação de session.save (ou
+entityManager.persist) váriasvezes, provavelmente,vai resultar em uma
+OutOfMemoryError.
+Anoçãodecontextopersistenteatreladoàsessãofazcomquetodososobjetos
+inseridossejamarmazenadosnocachedeprimeironívelatéqueelasejafechada.E
+inserirmuitosobjetosnessecachenãoéumaboaideia.Soluções possíveisvãodesde
+chamar session.cleardevezemquandoparalimparessecache,atéusardire-
+tamentea StatelessSession,outrotipodesessãoquenãoguardaestado(epor
+issoperdeváriosbenefíciosdoHibernate,masresolveproblemasdemanipulação
+demuitosobjetos).
+Jáquandooproblemafortrazermuitosregistrosdobancoparaamemória,me-
+lhorqueexecutarumasimplesqueryepegarumaimensalistadeobjetosqueprova-
+velmenteestouraráamemória,éestudarestratégiasdecomopegarpoucosobjetos
+porvez.Nessecenário,os ScrollableResultspermitemautilizaçãodocursor
+diretamentenobancodedados,evitandotrazertodososdadosdeumavezparaa
+memória.
+Deve-seconsideraratésevaleapenatrazeroselementosparaamemória.Muitos
+processamentospodemserfeitosdiretamentenobancodedadosatravésdebatchup-
+dates.Porexemplo,reajustarem10%ospreçosdetodososprodutosdeumaloja:em
+vezdetrazertodososprodutosparaamemóriaeatualizarchamandoo setPreco,
+podemosexecutarumúnicoUPDATEdiretamentenobancodedados. OHiber-
+natesuportaessetipodeprocessamentoatravésdeUPDATE,DELETEeINSERT...
+SELECTdiretamentepelaHQL.
+ÉtambémpossívelexecutarqueriesnativaspeloHibernate. Emboraumadas
+grandesfacilidadesdoframeworksejaageraçãodasqueries,existemsituações nas
+quaisqueremosescreveralgumasdelasdiretamente. U mbommotivoéaprovei-
+tarasqueriescomplexas,escritaspeloDBA,comtodososdetalhesdeotimização
+dobanco,emvezdetentartraduzirtudoparaoHQL.Comqueriesnativas,conse-
+guimoschamarrecursosbemespecíficosdobancodedadosqueestamosusando,
+inclusivestoredprocedures,eobterumgrauamaisdeotimizaçãonassituações em
+queperformanceformaisimportantequeportabilidadedebancodedados.
+Háaindadiversasoutrasfuncionalidades,comoaexistênciadomododefetchex-
+tralazy,fazendocomqueumacoleçãonãosejainteiramenteinicializada:queriesdi-
+ferentesserãodisparadasparachamadas,como lista.size(), lista.get(15)
+eatémesmo lista.add (entidade),evitandocarregamentodedadosdesne-
+168
+
+## Página 191
+
+CasadoCódigo Capítulo6. Decisões arquiteturais
+cessários.Ou,ainda,asfuncionalidadesdeauditoriadoHibernate,quepermitem
+manterumhistóricocompletodealterações emcadaentidadedosistema.
+Alémdefuncionalidadespróprias,oHiberantepossuidiversossubprojetosque
+auxiliamtarefascomumenterelacionadasaobancodedados.O Hibernate S e a r c h,
+porexemplo,integrademaneiraeleganteoLucenecomoHibernate,permitindo
+queseuíndicedepequisatextualsejaatualizadodemaneiratransparenteatravésde
+listeners,epossuimecanismosdealtaescalabilidadeparafazeraatualizaçãodestes
+demaneiraassíncrona.Abuscatextualmuitasvezesédeixadadeladopordesco-
+nhecimentodoLuceneedestaintegração, gerandoqueriescomplexasquegeram
+resultadospobres,jáqueoSQLnãopermitebuscascomomesmopoder.
+Nãousaralgumasdessaspoderosasfuncionalidadespodedificultarodesenvol-
+vimentodaaplicação, alémdepossivelmentecriarumenormegargalodeperfor-
+mance.Éimportanteconhecerafundoasfuncionalidadesqueafetamaperformance
+doHibernate,[94]alémdetodososoutrosrecursosparaaumentaraprodutividade
+doprogramador. Novamenteaqui, usar um framework se m um conhecimento
+significativo so b r esuas funcionalidades pode c a u s a rproblemas q u eseriam fa-
+cilmente evitados.
+6.4 Distribuição de objetos
+Distribuirobjetosemdiferentesmáquinaséumapropostacomumparatentarme-
+lhoraraescalabilidadedeumaaplicação. Masasdificuldadesedesvantagensque
+umaarquiteturadistribuídaapresentapodemsermaisprejudiciaisàperformancee
+manutenibilidadedoqueosganhos.
+Essasvantagensedesvantagensdadistribuição dosobjetosdependemdode-
+signadotadopelaimplementação,quepodeinduzirosdesenvolvedoresacometer
+erroscomfacilidade.Historicamente,porescolhasinadequadasnodesigndediver-
+sastecnologiasdeobjetosdistribuídos,criaram-sedesignpatternspararesolveros
+problemasinerentesàremotabilidade,comoosrelacionadosàperdadeescalabili-
+dadeaofazerinvocaçõesremotasemexcessosemnecessidade,ouaotransportarum
+volumealtodedadosentreostiers.
+ComcadaversãonovadoEJB,porexemplo,asinvocações remotasficammais
+transparenteseseaproximamdemaisaumainvocaçãolocal,quandoolhamosape-
+nasocódigo.Odesenvolvedorsemmuitoconhecimentopodeacabarcodificandoe
+gerandoinúmerasrequisições entretiers,causandoperdadeperformanceeescala-
+bilidade,problemascomunsaoempregartaissoluções semodevidocuidado.
+169
+
+## Página 192
+
+6.4. Distribuiçãodeobjetos CasadoCódigo
+MartinFowler,conhecidoporseustrabalhosemtornodeboaspráticasdeOO
+epatternsarquiteturais,formulouaPrimeiraLeideObjetosDistribuídos:“N ã odis-
+tribua se u sobjetos” . [64],[63]
+AocriarinterfacesdegranularidadegrossanosFacades,aocopiarobjetosem
+DTOseemmuitasoutrassituações impostaspelaremotabilidade,sacrificam-seas
+boaspráticasdedesignOO,diminuindoaflexibilidadeeaextensibilidade.Eeste
+preçoéaltodemaisparasepagarnamaioriadoscasos. Demodogeral,Fowler
+pregaquedevemosfavorecerumsistemabemprojetadoeflexívelaumaarquite-
+turadistribuída.Étambémpelomotivodacomplexidadeedocustodeinvocações
+remotasqueaMicrosoftrecomendaousodearquiteturasnãodistribuídasquando
+possível.[13]ProgramarpensandoemFacadescommétodosdegranularidademaior
+émuitodiferentedoqueseestáacostumadoafazercomumaúnicaJVM.
+OsprincipaisargumentosparausodearquiteturasdistribuídascomEJBssão
+escalabilidadeedisponibilidade.U m adivisãomuitocomumparaissoésepararo
+W e bserverdoApplicationserveremdoistiers(Figura6.12).
+Figura6.12:DivisãoentreW e bservereApplicationserveremumaarquiteturaN-
+tiers.
+Masépossívelganharescalabilidadeedisponibilidadesemessaseparação;po-
+demoscriartodaaaplicação edepoisrodá-laemumcluster,ondecadamáquina
+teráumainstânciacompletadaaplicação. Evitandomanteroestadonamáquina,
+170
+
+## Página 193
+
+CasadoCódigo Capítulo6. Decisões arquiteturais
+ficafácilobterredundâncianumclusterassim,semnecessidadedereplicaçãoesin-
+cronizaçãodeinformações entreseusnós.
+Hácasos,claro,emqueexisteanecessidadededistribuirobjetos.Estanãodeve
+seraregra,masaexceção. Programadoresdevemsercríticoseparcimoniososna
+distribuiçãodeobjetos,eFowlerchegaabrincarque“vocêdevevendersuaavópre-
+diletaantesdedistribuirseusobjetos” . [67]Mesmotentandoevitartodasassituações
+dedistribuiçãodeobjetos,muitasvezesvocênãoconseguiráeliminartodas.
+EJBs
+Écomumquediscussões sobreobjetosdistribuídosenvolvendoaplataforma
+JavatoquemnoassuntoEJBs.DesdeseunascimentodentrodaIBM,estatecnologia
+foifortementedivulgadacomopartefundamentaldaarquiteturaJavaEE,equeteria
+papelimportantíssimoemtodotipodeprojetoJava.Muitosprojetospassaramauti-
+lizarEJBsporcausadisso,muitasvezessemrefletirosuficientesobreessaescolha.
+ElogosurgiuogrupodoscríticosferrenhosaosEJBs,questionandoasvantagense
+apontandoasdesvantagensdeadotaratecnologia.
+AntesmesmodosEJBs,comoobjetivodeexporainterfacedeumobjetopara
+acessoremoto,foicriadaaespecificaçãodoRMI,umatecnologiaquesóprovêore-
+cursoderemotabilidade.OsEnterpriseJavaBeansforaminicialmentedesenvolvidos
+pelaIBM,em1997,comoumcontainerdeserviçosemcimadoRMI.Incorporados
+em1998pelaSunàplataformaJava,oEJBtinhacomoobjetivoproverumcontainer
+quedisponibilizasseimplementações dediversosaspectosenecessidadescomunsàs
+aplicações corporativas.
+Entreessesserviços,temospersistência,controletransacional,segurança,men-
+sageria,W e bServices,serviçodenomes,poolingdeobjetosemuitosoutros.Como
+éumaespecificação doJavaEE,tudoissoestáprontoeimplementadonosdiver-
+sosservidoresdeaplicaçãodisponíveisparausoemqualqueraplicaçãoJava.Com
+aevoluçãodaplataforma,essesrecursosficarammaisfáceisdeserutilizadospelas
+aplicações, alémdeaumentaraquantidadederecursospadronizados,diminuindo
+asfuncionalidadesespecíficasdecontainer.Conhecerbemoquecadaumdesses
+serviçostrazéimportanteparatomaradecisãodeadotarounãoomodelodecom-
+ponentesdoEJB.
+OsStatefulSessionBeanssão osquemaisseassemelhamàideiadeumobjeto
+expostopeloRMI,mascomserviçosadicionais.Éumobjetonoservidorqueguarda
+oestadodasessão comocliente. Cadaclientepossuisuaprópriainstância,onde
+podearmazenarseusdadosechamarmétodosremotosdenegócio(Figura6.13).
+171
+
+## Página 194
+
+6.4. Distribuiçãodeobjetos CasadoCódigo
+Figura6.13:StatefulSessionBeanscominstânciasreservadasparacadacliente.
+Paraatingiraltaescalabilidade–umadasvantagensdoEJB–,ocontainerpossui
+ummecanismodepassivaçãoeativaçãodeobjetos.Comoonúmerodeinstâncias
+podesermuitograndeemaplicações commuitosusuáriossimultâneos,ocontainer
+écapazdetemporariamenteserializaralgunsdosobjetosdamemóriaqueestejam
+semusonomomento(passivação).E,tãologoousuárionecessitenovamentedasua
+instância,ocontainervaireativarnamemóriademodotransparente(ativação),sem
+necessidadedecódigoextranenhumporpartedosdesenvolvedoresdaaplicação.
+Essetipodecomportamento,somadoàcapacidadedereplicaçãoeclusterização
+dosservidoresdeaplicação,éoquefazosEJBsseremtãousadosparaatingiralta
+escalabilidadeedisponibilidade.
+JáosStatelessSessionBeanstentamtratardeoutracategoriadeuso,naqualse
+queradistribuiçãodoobjetoeosserviçosdocontainer,masondenãoénecessário
+guardarinformações relativasaumcliente.Éumobjetoqueexpõe métodosdeló-
+gicadenegóciosemnecessidadedeserutilizadosemprepelomesmocliente(Figura
+6.14).
+172
+
+## Página 195
+
+CasadoCódigo Capítulo6. Decisões arquiteturais
+Figura6.14:PooldeinstânciasdoStatelessSessionBeanscompartilhadasportodos
+osclientes.
+MasonomedessetipodeEJBéextremamenteconfuso. Otermostatelesssu-
+gerequeoobjetonãopodeteratributosemanterestado.Maselepodeterestado,
+desdequenãosejavinculadoaalgumclienteespecífico.Dizemosqueelenãopodeé
+manterestadoconversacional,ouseja,todaconversacomoclientedeveserfeitaem
+umaúnicainvocaçãodemétodo;seeleinvocarumsegundométodo,seráumanova
+conversa,epossivelmenteatécomumobjetodiferente.
+Éporestemotivoqueocontainermantémumpoolcomváriasinstânciascom-
+partilhadasentreosdiversosclientes.Osclientesnãosabemqualinstânciaacessarão
+dopoolacadanovainvocação,porissonãodevemmanterestadorelacionadoao
+cliente.ÉmuitocomumusarestetipodeEJBparafazerumpooldeconexões, por
+exemplo,ondecadaobjetomantémumaconexãoabertaemumatributoseu.Para
+ocliente,todososobjetossãoequivalentes,semestadoqueoatreleàquelainstância
+específica.
+Portanto,apalavrastatelesspodeconfundir,assimcomoapalavrasession,que
+173
+
+## Página 196
+
+6.4. Distribuiçãodeobjetos CasadoCódigo
+poderiaindicarqueoobjetoguardasessão (estadoconversacional),justamenteo
+queelenão faz. Osstatelesssessionbeancostumamserusadosapenasparaexpor
+métodosdenegócioindependentesentresi,queexecutamumafuncionalidadee
+devolvemalgumarespostasemesperarnecessariamenteporumapróximainvocação
+domesmocliente.Elepodeatémanteroestadodesuainstância,masnãoumestado
+conversacionalcomocliente.
+OsEntityBeansfechamostiposdeEJBsqueestavamdisponíveisdesdeaspri-
+meirasversões daplataforma.Mas,aocontráriodossessionbeans,apartirdaversão
+3.0,elesdeixaramdeserobjetosremotos,e,daversão3.1emdiante,suaespecifica-
+ção,aJavaPersistenceAPI,éatémesmoumaoutraJSR.Oobjetivodosentitybeans
+eraoferecerumserviçodepersistêncianocontainerEJB.Seriamobjetosgerenciados
+pelocontainer,representandoentidadesdobancodedadossemqueodesenvolve-
+dorprecisassesepreocuparcomtodaapersistência.Éumserviçobastanteútil,mas
+eleseramremotos.
+Imagineumsistemadeumalojavirtualquefaçaumabuscaeretorneumalista
+de Produto.Seprecisarmospercorreressalistade,digamos,100elementos,invo-
+cando getNomee getPrecoemcadaum,aousarmosentitybeans,teríamos200
+invocações remotasdemétodos,queéumgargalogiganteparaaescalabilidadedo
+sistemapeloexcessodecomunicaçãoentretiers.Justamentepararesolverestepro-
+blema,foiqueoCoreJ2EEpatternspassouapregarousodoDataTransferObjecto
+DTO(antigamentechamadodeV a l u eObjectporessecatálogo)(Figura6.15).
+174
+
+## Página 197
+
+CasadoCódigo Capítulo6. Decisões arquiteturais
+Figura6.15:Clientesinvocandométodosremotosemumafrequênciamuitoalta.
+Emvezdedevolverumareferênciaremotadoentitybean,opadrãonosmostra
+queosdadosdevemsercopiadosparaoutrosobjetossimples,nãoremotoseseriali-
+záveis.Destaforma,oclienteconseguiriaosobjetosdesejadosparausolocalmente
+dosdados,semopreçodograndenúmerodeinvocações remotas.Opadrãoacabou
+virandoumremendodaespecificaçãodeEJB;quandoerausadoentitybean,sem-
+preprecisávamosaplicaroDTO.Estapráticaficoutãoforte,queoDTOcomeçoua
+seraplicadoemoutrassituações, muitasvezessemnecessidade;porexemplo,para
+transportardadosentrelayersemvezdetiers.[67],[154]Algunsatémesmoaplicavam
+DTOsnoMVCparatrafegarobjetosentreoModeleaV i e w ,copiandoecolando
+atributoseadicionandocomplexidadesemnecessidade.[28]
+ComoEJB3.0,oproblemadanecessidadeobrigatóriadoDTOpassouaser
+resolvidopelaJavaPersistenceAPI,ondeasentidadesnãosãomaisremotas,esim
+serializáveis;opatternfoiabsorvidopeloframework.Paradiminuiraquantidadede
+requisiçõesaobancodedados,pode-seutilizaraconstrução select new Classe
+daJPA-QL,quepermitesermaisespecíficocomosdadosaseremcarregados,atra-
+vésdousodeV a l u eObjectsdegranularidademaisajustada,que,paraalgunsau-
+175
+
+## Página 198
+
+6.4. Distribuiçãodeobjetos CasadoCódigo
+tores,vãoagircomoumDTOnestecaso.[154]Hátambémsituações novasparase
+lidar,comopotenciaisproblemascomrelacionamentoslazynãoinicializadosantes
+daserialização.Eaindaoutrosantigospatterns,alémdoDTO,quetambémperdem
+espaço,comoservicelocatorparabuscardependências,substituídoporinjeçãode
+dependênciaseCDI.
+OutrotipodeEJB,queentrounaversão2.0,são osMessage-drivenBeans,que
+permitemoprocessamentodemensagensassíncronascomJMS.Édiferentedosde-
+maisEJBspornãopossuirinterfaceremota,poiséapenasumcomponentedentro
+doservidor,usufruindodainfraestruturadeserviçosdocontainerepossibilitando
+maiorescalabilidade. V a m o stratardemensageriaeJMSnopróximotópicodeste
+capítulo.
+OúltimotipodeEJBacrescentadoàplataformafoio Singleton B e a n,novona
+versão3.1.Éumobjetoglobalcomestadocompartilhadoportodaaaplicação,ga-
+rantindoaunicidademesmoemambienteclusterizado.Éútilparaexpordadose
+comportamentosquesejamnecessáriosemváriospontosdaaplicaçãodemaneira
+seguraemrelaçãoàconcorrênciaecomtodoosuportedocontainer.
+Remoto ou local?
+QuandoosEJBssurgiram,comovimos,foramapresentadoscomoumaevolução
+doRMI.Eraumatecnologiaparafacilitarousodeobjetosdistribuídoseiralém,
+manipulandotambémseuciclodevida,segurança,persistênciaeoutrosserviçosde
+infraestrutura.
+U m aimportanteevoluçãonaversão2.0foiosuporteainterfaceslocais.Apartir
+destaversão,umEJBpoderiater,alémdainterfaceremota,umalocalquepermiti-
+riaqueoobjetofosseusadoeficientementeporoutrosobjetosnamesmaJVMenão
+fosseexpostoremotamente.Asinterfaceslocaisforamessenciaisparaseimplemen-
+taralgunsdosconhecidospatternsdoJavaEEemrelaçãoàremotabilidade,comoo
+DTO.Nessecenário,porexemplo,oentitybeanéacessadopelasuainterfacelocalno
+servidor,enuncaédiretamenteexpostoremotamente,evitandoinvocações remotas
+emexcesso(Figura6.16).
+176
+
+## Página 199
+
+CasadoCódigo Capítulo6. Decisões arquiteturais
+Figura6.16:PadrãoDataTransferObject.
+OutropadrãomuitoutilizadoeraoSessionFacade,[139]tambémdoCoreJ2EE
+Patterns.EmumsistemabemconstruídodeacordocomasboaspráticasdeOO,
+encapsulamentoeseparaçãoderesponsabilidades,criamosumasériedepequenos
+objetos,cadaumcomsuaresponsabilidadedistinta,etodoscolaborandoparaexecu-
+taraslógicasdosistema.Masoproblemaéque,emumsistemadistribuídocomoos
+EJBs,exporaoclientemuitosobjetoscompequenosmétodosacabaimplicandouma
+granularidademuitofina.Istoé,paraexecutaralgumaoperação,oclienteacabaria
+efetuandomuitasinvocações remotasparaacessarváriosmétodoseobjetos,cau-
+sandoproblemassériosdeescalabilidade.OSessionFacadepropõe acriaçãodeno-
+vosobjetosremotoscominterfacedegranularidademaisgrossaparaseremexpostos
+remotamenteaocliente,paraqueeleinvoqueapenasesseFacaderemotamente,eo
+Facade,porsuavez,fazainvocaçãoaosdiversosobjetosdenegócioenvolvidosna-
+quelaoperaçãousandosuasinterfaceslocais.Essepatternaindaémuitousadono
+EJB3,apesardeseunomenãosermaiscitadocomamesmafrequência.Éessencial
+emqualquerarquiteturadistribuídapreocupar-secomagranularidadedosserviços
+disponibilizados(Figura6.17).
+177
+
+## Página 200
+
+6.4. Distribuiçãodeobjetos CasadoCódigo
+Figura6.17:U s a n d oFacadesparadiminuiragranularidadeemchamadasremotas.
+ÉbastanteinteressanteacompanharahistóriadosEJBscomrelaçãoàdistribui-
+çãodeobjetos.Lembrandoque,originalmente,eraumatecnologiaestritamentedis-
+tribuída,mesmoqueainvocação ocorresseemumamesmamáquinavirtual. Na
+versão2,asinterfaceslocaisforamincluídasparaajudaraimplementarospatterns
+queresolvemosproblemasdeescalabilidade,evitandooexcessodeinvocações re-
+motas.NessaépocadoEJB2équecríticosdaplataforma,comoopróprioMartin
+FowlereRodJohnson,passaramapensaremalternativascomoPOJOs,containers
+leveseoSpring,poisemmuitoscasosaremotabilidadeeadistribuiçãodeobjetos
+nãoeramnecessárias.
+OsEJBsforammuitoutilizadoscomoumaalternativamaisfácilaoCORBA,em
+especialparaocasomaissimplesdepossibilitaroacessodediferentesclientes,na
+qualasaplicações W e b ,mobileeDesktopacessemafuncionalidadeemcomum.As
+novasversões doEJBnão focaramestaabordagem,dandomaisênfaseaosoutros
+aspectosdeinfraestrutura.Hoje,umaopçãofrequentementeadotadaéexporessas
+funcionalidadescomoserviçosW e b ,comoserávistonoCapítulo7 .
+OJCPcapturoucadavezmaisastendênciasdosmercados,aprimorando-asden-
+trodasJSRs;tantoqueoEJB3.0foiumagrandeevoluçãonaplataforma,trazendo
+simplicidadeeprodutividadenuncaantesvistasnoJavaEE,boapartefrutodessas
+críticasanteriormenteapresentadas.Aversão3.1trouxeaindaumapequenamodi-
+ficaçãodeimensaimportânciaparatodaessadiscussão:parausarEJBslocalmente,
+178
+
+## Página 201
+
+CasadoCódigo Capítulo6. Decisões arquiteturais
+nãoprecisamosmaisnemdeinterfaceslocais. Bastaumaanotaçãoeobeanpode
+serusadoemqualquerlugardaaplicação,usufruindodosserviçosdocontainerEJB,
+semacomplexidadehistóricadaplataforma.E,comosnovosrecursosdeinversão
+decontroleeinjeçãodedependênciasdoCDInoJavaEE6,usaressesbeanslocal-
+mentecomtodososserviçosémuitosimples.
+Oprimeiroaadvogarafavordeumcontainerlevedeserviçosparaobjetoslocais
+foioSpring,sempremuitocríticodosEJBs.ComoJavaEE6,finalmenteaplata-
+formaganhaumapadronizaçãoparaumcontainerlevedeobjetoslocaiscomEJB
+3.1eCDI,resolvendomuitasdasantigascríticas.OSpring,poroutrolado,acabou
+acrescentandoremotabilidade,W e bServiceseoutrosrecursosàsuaplataforma.Por
+caminhosedireções diferentes,JavaEEeSpringseaproximarammuitoemsuasúlti-
+masversões. HáquemdigaqueEJBshojesãomaisprodutivoscomsuasanotações, e
+háquemprefiraosrecursosamaisdoSpring,comoAOPeintegraçãocompequenas
+outrasbibliotecas.
+Masfatoéque,sevocêbuscaumcontainerlevedeobjetoscomserviçosreapro-
+veitáveiseumaexcelenteimplementaçãodeIoCeDI,hojeépossívelescolherentre
+JavaEE6eSpring.EJBdeixoudesersinônimoderemotabilidade.
+6.5 Comunicação assíncrona
+Existemoutrasmaneirasdedistribuircomportamentoentrediversaspartesdeum
+sistemabuscandoescalabilidadeemaiorperformance.Emumaabordagem assín-
+cronadecomunicaçãoentresistemas,atrocademensagenséfeitadetalmaneira
+queosistemaqueenviaamensagemnãoprecisaesperaroprocessamentodares-
+posta,ficandolivreparacontinuarsuarotina,diferentedetecnologiasdeintegração
+comRPC.Éumainvocaçãonãoblocante.
+Acaracterísticaassíncrona,aprincipaldosmiddlewaresorientadosamensagem
+(MOM),éumaótimaopçãoparasistemasquenecessitemexecutarrapidamenteal-
+gumtipoderotinaaoserdisparadoumevento.Porexemplo,aomudaropreçode
+umprodutoquandoumapromoçãoélançada,nãoéprecisoesperartodosospreços
+seremalterados;ousuáriopodecontinuarutilizandoosistemanormalmente.Situa-
+ções emquenãohánecessidadederespostadeumcomportamentoaserexecutado
+sãopassíveisdeimplementaçãoviamensageriaassíncrona.
+Aideiadetrocarmensagensentresistemasremotosnão étão recenteassim.
+Desdeosanos1960,aIBMjápossuíao“IBM77 4 0communicationcontrolsystem” ,
+quetrabalhavacomofluxodemensagensentresistemasremotos.[103]Masafigura
+179
+
+## Página 202
+
+6.5. Comunicaçãoassíncrona CasadoCódigo
+realdoMOMapenassetornoupopularnasdécadasde1980e1990,porcausados
+produtoscomoTIBCORendevouseIBMMQSeries,quejáforneciamimplementa-
+ções completasdeMOM.
+Porém,nãohaviaumapadronização quecuidassedatrocademensagens. Os
+fabricantesdeviamdarsuporteatodotipodemétodoebibliotecasdeenvioere-
+cebimentodemensagensexistentes. Foinestecenárioquesurgiuaespecificação
+JMS.Comopraticamentetodososservidoresdemensageriapossuíaminterfacesde
+comunicaçãoparecidas,assimcomoosbancosdedados,foipossívelcriarumapa-
+dronização dabibliotecadecomunicação comosservidoresdegerenciamentode
+mensagem.
+JMS–JavaMessageService,emconjuntocomdiversasoutrasespecificações e
+frameworks,foiumdosresponsáveispelaaceitaçãodoJavacomoplataformadede-
+senvolvimentocorporativo.JMScarregaconsigoasgrandesvantagensdeumMid-
+dlewareOrientadoaMensagem:garantiadeentrega,controledaentrega,serassín-
+cronoeescalável,tudoissonaformadeumaespecificação,comsuporteàintegração
+nativacomaplataformaJavaEE.
+A p ó solançamentodoJMS,muitosfabricantesdeMOMimplementaramaes-
+pecificação,facilitandootrabalhodasempresasnotrabalhocommensageria.Sendo
+umaespecificação,nãoimportaaimplementação,omododeenviarerecebermen-
+sageméomesmo. ASunfoiapenasalíderdaespecificação; quemmaispartici-
+poudacriaçãodoJMSforamosprópriosfabricantes,porquenecessitavamdeuma
+padronização.[164]
+AestruturaplanejadanoJMSusaofatodeatrocademensagemserassíncrona
+paragarantiraentregadamensagem,usandoomodelostore-and-forward.Quando
+umamensageméenviadaaoMOM,primeiroelepersisteessamensagem,depoisa
+repassaparaseudestino.Mesmoqueodestinonãoestejarespondendo,amensa-
+gemjáestáguardada.Então,quandoelevoltararesponder,oMOMrealizaaentrega.
+Essemecanismoéótimoparatrabalharcomserviçosquepodemnãoestardisponí-
+veis100%dotempo.Essaconfiançatambémpodeserconfigurada;emalgunscasos
+podenãosercrucialentregartodasasmensagens,ealgumasfalhasdeentregasão
+aceitáveisemtrocadeumaescalabilidademuitomaior.
+Comoexisteumbroker(intermediário)demensagens,ossistemasacabamnão
+secomunicandodiretamente;quemenviaamensagemnãoprecisasabernadasobre
+quemarecebe.Estedesacoplamentoémuitousadoparaligarsistemasquenãose
+conheciampreviamente;elesapenasprecisampassaraconhecerobrokerdemensa-
+gem,enãoumaooutro,oferecendomodularizaçãoeflexibilidadeparaossistemas.
+180
+
+## Página 203
+
+CasadoCódigo Capítulo6. Decisões arquiteturais
+Essasduascaracterísticassão extremamenteimportantesparagarantiroreúsode
+componentes.
+Ofatodeasmensagensseremassíncronaseosistemastore-and-forwardfazem
+comqueasmensagenssejamprocessadasapenasnamedidadopossível,eaquelas
+queaindanão foramprocessadasficamguardadasesperandoumaoportunidade.
+Mesmoquehajaumaumentodovolumedasmensagens,osenviadoresnãosofrem
+nenhumimpedimentoparamandaroutrasmensagens,equemasrecebenãoperde
+nenhumadelasgraçasaobroker.Aindaqueocomponentequerecebaasmensagens
+não asestejaprocessandoemumtempoaceitável,odesacoplamentoentrequem
+enviaequemrecebepermiteacrescentarmaisprocessadoresdemensagem,ouaté
+mesmotrocarobrokerporummaisperformático.[165]
+Modelos de Entrega
+JMSdisponibilizadoismodelosdeentregamaiscomuns,opoint-to-pointeo
+publish-subscriber.Opublish-subscriber,representadopelainterface TopicdoJMS,
+usaomodeloum-para-muitosparaenviarasmensagens.Cadapublicaçãodeuma
+novamensagemfarácomqueoMOMconfiratodososqueestãoregistradospara
+receberestetipodemensagem,ecadaumrecebeumacópia,àmedidaqueobroker
+acharconveniente. Essemodeloérecomendadoparamensagensquepossamser
+processadasporzero,umouváriosrecebedores.Casonãohajaninguémregistrado
+noMOMparareceberamensagem,elaseráperdida.[166]
+Pequenasmudançaspodemserfeitasnessemodelo,obtendo-seresultadosbem
+diferentes.Elepodetrabalharcomgarantiadeentregaaoconfigurarumsubscriber
+comoumdurablesubscriber;nestecaso,oservidorreteráamensagematéodura-
+blesubscribervoltararesponder.Outraconfiguração muitoutilizadaéofiltrode
+mensagens,noqualépossívelconfiguraroassuntodamensagemecadasubscriber
+aplicarumfiltro.
+Jáopoint-to-pointusaomodeloum-para-umparaenviarasmensagens,eére-
+presentadopelainterface QueuedoJMS.Nestemodelo,oprodutorenviaeoMOM
+entregaparaapenasumconsumidor.Eletambémpodeserusadoparabalanceara
+cargadeprocessamento;quandoumamensagemchegaaoMOM,eleescolheapenas
+umconsumidorparaprocessaramensagem,mesmoquetenhamosmaisconsumi-
+doresresgitrados.[167]
+AespecificaçãoJMSapenasdefineainterfacedecomunicaçãoentreosclientes
+eoservidorJMS,porém,oformatointernodamensagempodeserescolhidolivre-
+mentepelasaplicações. Utilizarumformatotextotemprevalecido,mesmoquetodos
+181
+
+## Página 204
+
+6.5. Comunicaçãoassíncrona CasadoCódigo
+osparticipantessejamJava,poisevita-seutilizarobjetosserializadoscomoconteúdo
+dasmensagens.MensagensXMLtambémsãoencontradas,apesardeformatosori-
+entadosacolunaseremmaisabundantese,deacordocomalgumasrestrições no
+volumededados,atémesmopreferíveis.
+Aideiadetrocaassíncronanãoexcluianecessidadederesposta,hácasoemque
+elaapenasnão precisaserimediata. Porisso,aespecificação JMSpossuirecursos
+paraconfigurarparaondearespostadamensagemdeveserenviada.Essaopçãoé
+muitoutilizada:emvezdeoconsumidorresponderdiretamenteparaoprodutorda
+mensagem,eleencaminhaarepostaparaoutrafila,criandoumfluxodeoperações.
+U mexemploseriaosistemadedisparosdee-mailsemmassa,noqual,emum
+casocomum,alistacontémmilharesdedestinatários.Searequisiçãoforesperaro
+fimdoenvioparaprosseguir,elaficarábloqueadapormuitotempo.Realizaresta
+tarefademaneiraassíncrona,encaixa-seperfeitamente,emespecialsenãohouvera
+necessidadedesaberquandoasmensagensforamconsumidaseseose-mailsforam
+devidamenteenviados.
+Asvantagensestão diretamenteligadasàrestrição; oprodutorestálivrepara
+operardamaneiraqueacharconvenienteapósoenvio,não precisandoaguardar
+umarespostaparaprosseguir.Porumlado,temosoacoplamentomenorentrequem
+sãoosconsumidoresequemsãoosprodutores,umavezqueasmensagensnãosão
+endereçadasparamáquinasespecíficas,masaclasseeoconteúdodamensagemsão
+fatoresdeumacoplamentoentreasduaspartes.
+Casoosconsumidoresassumamumpadrãofixodemensagemdadaumaclasse
+específica,qualquermudançanoformatodessamensagemporumprodutor(mesmo
+aadiçãodeumainformaçãonova)quebraráosconsumidores.Issomostraoaltoaco-
+plamentodevidoaoformatodamensagem.Seaimplementaçãodosconsumidores
+ignorainformações desconhecidas,adições namensagemnãoquebramconsumido-
+resdesatualizados;éaabordagemMust-Ignore.
+Asmensagensassíncronasnão aparecemapenasnobusinesstier. OA j a xtira
+proveitodoassincronismoparadarumausabilidademelhoràinterfaceW e b ,eaté
+mesmoabordagensassíncronasexistempararealizarqueriesnobancodedados,
+comointerfacesanálogasaoJDBC,tendocallbacksparareceberoresultadoquando
+necessário.
+182
+
+## Página 205
+
+CasadoCódigo Capítulo6. Decisões arquiteturais
+6.6 Arquitetura contemporânea e o Cl o u d
+Boapartedossistemasatuaisusaalgumavariação daarquiteturaN-tiers,quevi-
+mosnotópico6.1.Aclássicaarquiteturacliente-servidor2-tiersapresentavadiver-
+sosproblemas,entreelesadificuldadenaescalabilidadeeumadisponibilidaderuim
+porcausadadependênciaaoservidorcentral.AevoluçãoparaarquiteturasW e bem
+3-tierssolucionoudiversasquestões, comogerenciabilidade,extensibilidadeema-
+nutenibilidade.Massistemasem3-tiersaindatêmbastantedificuldadecomescala-
+bilidadeedisponibilidade.
+AevoluçãoparaarquiteturasdeN-tierspermite,assim,clusterização,loadbalan-
+cers,modularizaçãoemsistemas,etc.Oprincipalobjetivodestetipodearquitetura
+éatacarosproblemasdeescalabilidadeedisponibilidadecomsuasdiversaspráti-
+casetecnologias.EJBs,porexemplo,podemtercaracterísticasnegativasemcertos
+cenários,comoumimpactoemperformance,maséinegávelquemelhoramescala-
+bilidadeedisponibilidadequandobemutilizados.Ou,ainda,ousodemensageria
+eJMS,umatécnicacomobjetivosfortesemmelhoraraescalabilidadeedisponibili-
+dadedesistemasintegrados.Muitasvezes,preferimosescalabilidadehorizontal,em
+vezdevertical,apenaspelamelhoradedisponibilidadeeescalabilidadepraticamente
+infinita.
+Disponibilidadecostumaserumrequisitoimportanteparaamaioriadossis-
+temas,atéospequenos. Escalabilidadeéalgomaisexigidoporsistemasmaiores,
+masmesmopequenasaplicações estãosujeitasapicosmomentâneosdeacessooua
+umcrescimentoimprevisíveldeusuários.Porém,emboraimportantesevastamente
+discutidos,escalabilidadeedisponibilidadecostumamsergrandesdificuldadespara
+osarquitetos.Mesmocomasdiversasferramentasdisponíveiseservidorescadavez
+melhores,éprecisosepreocuparemcomomontaroclusterW e bdeJettys.Ou,ainda,
+dequeformaativarareplicaçãodobancodedados.Ecomoescolherospontosda
+aplicaçãoquenecessitamdecachesdistribuídos?Qualdevesersuainfraestrutura
+físicaparaqueelaescaleosuficienteequaisascaracterísticasdohardwareescolhido
+(dimensioning)?
+Sãomuitasdecisões eumaarquiteturabastantecomplexa.Eapiorparte,talvez,
+éficarnadúvidaseaaplicação vairealmenteaguentar.Seoconcorrentequebrar
+ehouverumamigração emmassadeclientesparaaempresa,osistemaescalana
+velocidadenecessária?Sehouverumproblemacomodatacenter,aaplicação es-
+tarádisponívelemoutrainstalação? Sefornecessárioumgrandevolumedeaces-
+sosmomentâneos,consigoatenderànecessidadepontualsemdesperdíciodepois?
+Seacontecerumgrandedesastrenatural,tenhoreplicaçãoemoutracidade?Outro
+183
+
+## Página 206
+
+6.6. ArquiteturacontemporâneaeoCloud CasadoCódigo
+continente?
+Resolveressasquestões épossíveleexistemdiversastécnicasparaplanejaraca-
+pacidadenecessária,mastodasbastantetrabalhosas,carasecomumapossibilidade
+deerroemcasosnãoprevistos.Oarquitetoacaba,então,deixandodeladoproble-
+masquejulgademenorriscoparaosistemaemquestão.Esefossepossível,porém,
+teraltadisponibilidadeeescalabilidadecombaixocusto,semcomplexidadeecom
+menosplanejamento?
+Em 2007, o jornal americano The New Y o r kT i m e senfrentou um desses
+problemas.[86]OnovosistemaTimeMachinepermitiriaaosleitoresoacessoao
+acervohistóricodojornal,umtotaldemaisde11milhões deartigosemedições
+publicadasaolongode150anos.T o d oessematerialéarmazenadoemterabytesde
+imagensTIFFdealtadefinição,comcadaimagemrepresentandopequenospedaços
+deumapáginaimpressa.
+OtrabalhoconsistiaemgerarPDFsamigáveisdessaspáginasemumaresolu-
+çãorazoávelparaconsumoviaW e b .Masquantasmáquinasequantotemposeriam
+necessáriosparagerarPDFspara150anosdehistóriadojornal?E,mesmoquese
+chegasseaumnúmero“x”necessário,qualseriaamelhorestratégia:comprardi-
+versasmáquinasparaesseusopontualedesperdiçá-lasaofimdatarefa? Ouusar
+otempoociosodemáquinasjáexistentesparaevitardesperdício,masprolongando
+bastanteotempodeconclusão datarefa? Asolução noNewY o r kT i m e sfoiusar
+Cloud Computing.Maisespecificamente,resolveramoproblemaem24hcom100
+instânciasrodandonaAmazonEC2aocustoirrisóriodealgumaspoucascentenas
+dedólares.
+CloudcomputingéumarevoluçãonomundodeTI,tantoqueéofocodoJavaEE
+7 .Seugrandeatrativoéafacilidadeparaescalartodotipodetarefacombaixocusto
+esempreocupaçãocommanutençãodaprópriainfraestrutura.Háatémesmoquem
+compareessasmudançascomarevoluçãoelétricadocomeçodoséculoXX.[32]Ain-
+vençãodaenergiaelétricatransformouomundonoséculoXIX,masdurantemuito
+tempoesteverestritaaempresaseinstituições quepodiamadquirirseuspróprios
+geradores.ArevoluçãonoséculoXXfoiosurgimentodegrandesusinasgeradoras
+edeumaextensaredededistribuição.Aproduçãoemaltaescaladerrubouospreços
+daenergiaeoserviçodedistribuiçãosimplificouseuuso.Aeletricidadelogosepo-
+pularizouatéparafamíliasdemaisbaixarenda,jáqueoserviçoerabarato,simples
+esemcomplexasinfraestruturaspróprias.E,sendoumserviço,paga-seapenaspelo
+queseusa,tornandofácilocontroledeorçamentoedispensandoaltosinvestimentos
+eminfraestrutura.
+184
+
+## Página 207
+
+CasadoCódigo Capítulo6. Decisões arquiteturais
+Cloud computing éa computação como se rviço. Comoosserviçosdeener-
+giaelétrica,águaencanadaoutelefonia,ocloudencaraosrecursoscomputacionais
+comoserviços.Processamento,armazenamento,tráfegodedadoseoutrospassama
+seroferecidospelosprovedoresdecloudparausosimplesebarato.Emvezdeman-
+teraprópriainfraestruturadeservidores,temosàdisposiçãoserviçosqueoferecem
+recursoscomputacionaisdeacordocomcadanecessidade.Nãoéprecisoumgrande
+investimentoinicial,easpreocupações commanutenção egerenciamentodain-
+fraestruturapraticamentedesaparecem.Épossívelescalarquasequeinfinitamente,
+demaneiraelástica,usandorecursossomentequandofornecessárioeliberando-os
+quandonãoforem.Evita-sedesperdícioaosepagarapenaspeloquerealmentefor
+usado.Nofim,éumagrandeeconomiadecustosedoresdecabeça.
+Diversasgrandesempresasproveemserviçosdecloudcomputing,comoGoo-
+gle,Microsoft,Amazon,SalesForce,RackspaceeLocaweb.Mashádiferençasentre
+osserviçosoferecidos.Algunsprovedores,maisnotadamenteaAmazon,comseu
+EC2,oferecemavirtualizaçãodehardwareondeépossívelrodarmáquinasvirtuais
+completas.Chamadosde IaaS(InfrastructureasaService),essesserviçosoferecem
+grandeflexibilidadeparatodotipodeaplicação,masaindaexigemagerênciadetoda
+acamadadesoftware,assimcomoacomunicaçãoentretodososnós.Istopodeser
+facilitadoeautomatizadoatravésdeferramentas,masestásempresobresponsabili-
+dadedodesenvolvedor.
+Pensandoemmaisfacilidade,diversosprovedoresdisponibilizamplataformas
+completasdedesenvolvimento,abstraindonãosóohardware,comotodoogerencia-
+mentodesistemaoperacional,servidorW e besoftwaresbásicos.Essesserviços,cha-
+mados PaaS(PlatformasaService),sãooferecidos,porexemplo,peloGoogleA p p
+Engine,oVMForce,AmazonBeanStalk,HerokueMicrosoftAzure.Desenvolve-sea
+aplicação,usandoasferramentasdisponibilizadaspeloprovedor,eoúnicotrabalho
+éodeploynanuvem.Nãohápreocupaçãocomogerenciamentodehardwarenem
+dosoftwaredeinfraestrutura,permitindoquesefoqueapenasnaaplicação. Com
+isso,hábastantefacilidadeparadesenvolveresubiraplicações, comescalabilidade
+elástica,altadisponibilidadeepagandoapenaspelosrecursosusados.
+T e roambientetodoprontoéagrandevantagemdoPaaS,maspodesertambém
+suadesvantagem.Muitasvezes,édifícil,ouatéimpossível,terumcontrolefinodas
+configurações esoftwaresusadosnaplataforma.NoA p pEngine,porexemplo,não
+secontrolaonúmerodeinstânciasdaaplicação,éprecisoconfiarnosalgoritmosde
+escalabilidadedaplataforma.Hátambémumasériederestrições emrelaçãoaquais
+APIsJavapodemserutilizadas,alémdelimitações aosistemadearquivos,bancode
+185
+
+## Página 208
+
+6.6. ArquiteturacontemporâneaeoCloud CasadoCódigo
+dadosecomunicaçãoentrenós,podendotornardifícilamigraçãodeumaaplicação
+quenão foiinicialmentedesenhadaparaestetipodecloud. Épapeldoarquiteto
+decidirquandodeterminadaplataformaéapropriadaparaoprojeto.
+EssadesvantagemdoacoplamentocomaplataformaPaaSespecíficatornadifícil
+tambémaportabilidadeparaoutrosprovedoresdecloud.Muitosserviçostentam
+amenizaroproblemausandoespecificações consolidadaseportáveis,masisto,às
+vezes,nãoésuficiente.NoA p pEngine,oDatastore,seubancodedadosnãorelaci-
+onalbaseadonoBigTabledoGoogle,ébemdiferentedeseusarcomparadoaoutros
+bancosdedados.
+Tentandominimizaroacoplamentocomaplataforma,éatéoferecidaumaim-
+plementaçãodaJPAemcimadoDatastorecomcertaslimitações. Naprática,porém,
+asdiferençaselimitações doDatastoreacabamvazandoparaaaplicação,tornando
+quaseimpossívelrodarumaaplicação normaljáprontacomJPAsemfazermui-
+tosajustes.Emboraválida,apreocupaçãocomoacoplamentocomumaplataforma
+específicapodeserbastanteminimizadacomumbomdesignorientadoaobjetos.
+U s a n d otécnicasdeseparaçãoderesponsabilidadesebomencapsulamento,épossí-
+velisolaressepontonegativoeusufruirdetodasasoutrasvantagensdoPaaS.
+Nãoterocontroletotaldainfraestruturatambémpodeserumproblema,mesmo
+noIaaS.Detalhesdatopologiadarede,configuração específicadohardwareeaté
+mesmoageolocalização dosservidorespodemtrazersurpresasparaumaaplica-
+ção.ONetfiixpossuiumdosmaisconhecidoscasosdesucessonamigraçãoparao
+AmazonEC2,[116]porém,diversosproblemascomalatênciadarede,maioremais
+variávelqueaquetinhamanteriormente,forçouumacertodagranularidadedos
+serviçosedoprotocoloparareduzironúmeroderoundtrips.[98]
+HátambémquemchameserviçosW e bprontoscomoGmail,GoogleDocs,
+DropboxouGitHubdecloudcomputing. Essesprodutossão chamadosde SaaS
+(SoftwareasaService),esãomaisorientadosaousuáriofinal.Éaofertadeserviços
+dispensandoinstalações econfigurações, facilitandoparaousuárioepermitindo
+acessodequalquerlugar.Hátambémofertasdeserviçoscomputacionaisnomo-
+delodeSaaS,comooPusher,umaAPIwebparaenviodemensagensdisponibilizada
+comoserviçoparatodotipodeaplicações.
+Aaplicabilidadedecloudcomputingébastanteextensa,emgeralcomobjetivos
+deescalabilidade,disponibilidade,cortedecustosefacilidadedegerenciamento.Na
+Caelum,porexemplo,oGoogleA p pEngineéusadonositeprincipal,nãopormoti-
+vosdeescalabilidade,jáquenãoéumsitecommuitosacessos.Mashápicospontuais
+deacessoemqueovolumedeusuáriosaumentamaisde10vezesdurantealgunsmi-
+186
+
+## Página 209
+
+CasadoCódigo Capítulo6. Decisões arquiteturais
+nutos,quandosãofeitosgrandesanúnciosoulançamentos.Cloudcomputingnos
+permiteescalarelasticamentenessesmomentosparaatenderaosnovosusuáriosde
+maneiratransparenteebarata.Alémdisso,usaroA p pEnginenostrouxemaisdis-
+ponibilidadeeconfiabilidadesecomparadoaousodeumservidorprópriocomo
+antes.Diminuiuoscustoscominfraestruturaesimplificoubastanteoprocessode
+desenvolvimentoedeploy.
+HáaindaoutrosexemplosnaCaelum.U mimportantesistemadaempresapos-
+suiumbuildcomplicadoelongo,dadaacomplexidadedoprojetoeonúmerode
+testes.Durantemuitotempo,convivemoscomasdoresdecabeçadegerenciarum
+servidordeintegraçãocontínualocalmente.
+U m adasquestõesmaisproblemáticaseraolongotempodebuild,queengessava
+oprocessodedesenvolvimento.ComoEC2daAmazon,rodamosostestesempa-
+raleloemdiversasinstânciasdoHu d s o neT e a m c i t y ,agilizandobastanteoprocesso
+deintegraçãocontínua.NocampodeSaaS,usaroGitHubdiminuiudrasticamente
+nossosproblemascominfraestruturaeseuscustosassociados. Hádiversosoutros
+cenárioseexemplosdetodotipodeempresas,semprebuscandofacilidadeparade-
+senvolver,executareescalarasaplicações, alémdecortarcustoseterambientesmais
+robustos,confiáveiseescaláveis.[115]
+Existemcríticasequestionamentosaousodecloudcomputing.Amaiorpre-
+ocupação certamenteérelacionadaàsegurançaeàprivacidade. Muitasempresas
+questionamseseusdadosesuaaplicaçãoestarãoasalvoapartirdomomentoem
+quesuainfraestruturaforterceirizadaedependerdeumprovedordecloud. Há
+duasquestões envolvidas.Aprimeiraécomrelaçãoàsegurançacontraataquesex-
+ternos. Seriaainfraestruturadoprovedormaisseguraqueumasolução própria?
+Difícilsaber,maséfatoquetodososbonsprovedoresdecloudpossuemequipes
+especializadasnogerenciamentodetodaessasinfraestrutura.Alémdisso,esteéo
+coraçãodosnegóciosdoprovedor,eécertosuporqueseuconhecimentonessaárea
+temgrandeschancesdesermaiorquedeempresascujainfraestruturaprópriaseja
+apenasumsuporteparasuaatividadeprincipal.
+Outropontoqueajudaagarantirasegurançacontraataqueséaconstanteatu-
+alizaçãodossoftwaresdainfraestruturausada.Quandotemosmáquinaspróprias,
+énossodeveratualizarquasequediariamentenossosistemaoperacional,servidor
+W e b ,debancodedados,etc.Naprática,éfácilverempresasdeixaremdeladooesta-
+fantetrabalhodeatualizarossoftwaresconstantemente.Novamente,aousarcloud,
+paramosdenospreocuparcomissoedeixamosotrabalhonamãodoprovedor,que
+emgeralpossuipolíticasbastanterígidaseeficazesquantoaatualizações desegu-
+187
+
+## Página 210
+
+6.6. ArquiteturacontemporâneaeoCloud CasadoCódigo
+rança,alémdebackupseredundância.
+Osegundopontodepreocupaçãocomasegurançaécomrelaçãoaoprovedor
+emsi.Podemosestarmaisseguroscontrahackersaousarcloud,masquemgarantirá
+aprivacidadedosdadoscontraacessosdopróprioprovedor? Realmentenão há
+solução, anão serescolherprovedorescomboaspolíticasdeprivacidadeeações
+clarasnessadireção,econfiarnoprovedor.Massempreháapossibilidadetécnica
+deacessolocaldosdados,comoemqualqueroutroserviçoqueusamos,taiscomo
+telefoniaouprovedordeinternet. Éimportantelembrarquetodonegóciodeum
+provedordecloudébaseadonaconfiançadeseususuários,eelescertamentesãoos
+primeirosaperseguiragarantiadeprivacidadedeseusclientes.
+U múnicoepisódiodeviolaçãodeprivacidadeinternamentenoprovedorseria
+capazdequebraraempresa.Mas,claro,hácenáriosemqueosriscosenvolvendo
+certosdadossigilosossãomuitograndes,eocloudcomputingclássiconãoéuma
+solução. Pensandonisso,hásoluções decloudsprivadosquetentamtrazeralguns
+dosbenefíciosdocloudcomputingparainfraestruturasinternasdasempresas.
+Outropontodepreocupação édisponibilidade. Aomigrarparaumprovedor
+decloud,fica-secompletamentedependentedesuadisponibilidade.Ehácasosem-
+blemáticosdeproblemasnessaárea,comoagrandequedadosserviçosdaAmazon
+nodatacenterdacostalesteamericanaemAbrilde2011.Durantehoras(eatédias,
+emalgunscasos),diversossitesficaramforadoar,comoFoursquareeReddit.Jáou-
+tros,comooNetflix,quehaviamsepreocupadocomredundânciaentredatacenters,
+conseguiramsemanternoar.Masesseepisódio,juntocomdiversosoutrosmeno-
+resempraticamentetodososprovedores,levantaaquestãosobreadependênciada
+disponibilidadedoprovedor.
+Ofatoéque100%dedisponibilidadeéutópico,sejaeminfraestruturaprópriaou
+paraumprovedor.Aquestãonãoéterumsistemaquenãocainunca,masumque
+rapidamenteserecuperedequedas.Eaperguntaquesedevefazeré:qualachance
+daminhainfraestruturaprópriacairemcomparação comachancedealgumdos
+provedoresficarindisponível.Dediversasformasdiferentes,parecequeoambiente
+dealgunsdosgrandeserespeitadosprovedoresdecloudtemmaiorchancedeficar
+noarqueumainfraestruturaprópria,salvotalvezrarasexceções deempresascom
+infraestruturasbemavançadas.
+Consideraçõ e ss o b r eescalabilidade
+Jogarumaaplicaçãoqualqueremcloudnãofuncionacomosoluçãomágicapara
+escalabilidade.Ocloudnostrazpreparadosparaescalarelasticamentetodoohard-
+188
+
+## Página 211
+
+CasadoCódigo Capítulo6. Decisões arquiteturais
+ware,e,nocasodePaaS,aplataformadesoftware.Nãohátantapreocupaçãocom
+máquinas,softwarescomplicadosparaescalar,eatémesmoaconfiguraçãodenovos
+nósdeumclusterficabastantefacilitada.Masescalabilidadeéumaquestãoarquite-
+tural,eassoluções paraatacá-lacostumamadicionarcertacomplexidadeaoprojeto.
+Nãosedeveadotarumasoluçãoarrojadadeescalabilidade,amenosqueelasetorne
+necessárianaprática.[106]
+Adificuldadedeseescalarumaaplicação envolveprincipalmenteseuestado,
+seusdados.Comogarantirqueosistemaaguentaovolumedeleiturasnecessário?
+Comoparalelizarescritadedados?Comoreplicarospontosdeacessoadadossem
+perderaconsistência?Comogarantiradisponibilidade?
+Quandosefaladedados,nãoéapenassobrebancoseapersistência.Hátam-
+bémoestadodosservidores,comoseusobjetosinternosouassessõesdousuário.Ao
+criarumcluster,éimportantedecidircomomantê-las.U s a rreplicaçãototalgarante
+quetodasasmáquinasestãopreparadasparatratarrequisições dequalquerusuário,
+equeasinformações nãoserãoperdidasquandoumamáquinacair.Mas,aomesmo
+tempo,implicamumacargamuitomaiorparaosservidores,oquepodeserinviável
+emclustersmuitosgrandes,mesmoqueaatualizaçãoentreelessejafeitademaneira
+assíncrona,onerandoaconsistência.Poroutrolado,existemtambémasstickyses-
+sions,nasquaisomesmousuárioésempredirecionadoaummesmonó.Issotiraa
+cargadareplicação,masdificultaumbalanceamentouniformedasrequisições, além
+denãoevitarperdadedadosnocasodeindisponibilidade.Muitasvezes,asolução
+acabasendoumhíbridodessasduasabordagens,oujogarassessões paraobanco
+dedadosseestejáestivercomsuaescalabilidaderesolvida.Ou,ainda,atéchegarà
+soluçãomaisextremaeterumaaplicaçãostatelessemrelaçãoaousuário,altamente
+escalável,masnemsempreviável.
+Nãoétrivialescolhercomomontarumclusterdemáquinasparaobancodeda-
+dosapropriadamenteparaobterleituraseescritasdeformaaganharescalabilidade
+edisponibilidade,ponderandoaconsistência.Embancosrelacionaisécomumuti-
+lizarumatopologiamaster-slave,naqualumamáquinaprincipalreplicatodoseu
+conteúdoparaumoumaisslaves.Enquantotodaescritaéfeitanomaster,porman-
+terdadosidênticosemmaisdeumlugaraomesmotempo,aleiturapodeserdis-
+tribuídaentretodasasoutrasmáquinas.Issoresolveoproblemademuitasleituras,
+masnãoésoluçãosetivermosumgrandevolumedeescritas,alémdepossuirum
+únicopontodefalhaqueafetaadisponibilidade.Háalgoritmosquesuportamescri-
+tasemdiferentesnós,mashásériascomplicações técnicas,principalmenteligadas
+àconsistência.E,umavezqueédifícilelentoimplementartransações distribuídas,
+189
+
+## Página 212
+
+6.6. ArquiteturacontemporâneaeoCloud CasadoCódigo
+evita-sesuautilizaçãoemsistemasdegrandeescalabilidade[174](Figura6.18).
+Figura6.18:Topologiamaster-slaveembancosdedados.
+À medidaqueosdadosatingemvolumesgigantescos,torna-seinviávelmantê-
+lostodosemumaúnicabase,comoumaúnicatabelaemumbancorelacional.A t u -
+alizações ficamcadavezmaislentaseosíndicescadavezmaisineficazes.Torna-se
+tambémmuitocaroreplicá-loporcompleto.Asolução passaaserparticionaros
+dadosemmaistabelasebancosdedados.Pode-sequebraraslinhasemtabelasdife-
+rentes,algoconhecidocomoparticionamentohorizontal,ousharding.U m adificul-
+dadeécomodecidirospontosdedivisão. DevemosdividirosclientesdeA - Mem
+umatabela,edeN-Zemoutra?Podenãoserumadivisãobalanceada;paraisto,há
+algoritmosparaparticionardemaneiramaisdistribuídacomhashesouids.OT w i t-
+ter,porexemplo,utilizaoutrachavecomumdeparticionamento,adatadeinserção
+deumainformação;dadosantigossãoretornadoscomfrequênciabaixaepodemser
+armazenadosemlistagensdistintas.[106]Achavevaidependerdaaplicação.Outra
+abordagemparaparticionamentoseriaavertical,comtabelascommenoscolunas,
+quepassamaestarmaisespalhadasparadividirosdados(Figura6.19).
+190
+
+## Página 213
+
+CasadoCódigo Capítulo6. Decisões arquiteturais
+Figura6.19:Particionamentohorizontaldedadospeladata.
+Abrirmãodeconceitostradicionaisrelacionadosabancosdedadoséoutraso-
+lução. Emsituações dealtaescalabilidade,desnormalizarosdadospassaaseruma
+opção. Issosignificaduplicardadosemdiferenteslugaresparafacilitarleiturase
+sobrecarregarmenosobancodedados,mesmodificultandoaatualizaçãodosda-
+dosparaaaplicação. Ou,ainda,guardarresultadosdeagregações eagrupamentos,
+emvezdeusarobancoparacalculá-losdinamicamente.Emtodososcasos,háum
+trade-offclaroentreescalabilidadeeumamaiorcomplexidadedomodelodedados
+edocódigodaaplicaçãoparamanipulá-los.
+Asoluçãomaisusadaerecomendadaparaescalabilidadeéousodecachespara
+suportarmaisleituraseevitaroacessoaobancodedados. Usa-seocachedese-
+gundoníveldoHibernate,comovimosnotópico6.3,ecachesdistribuídos,como
+oMemcache,comestafinalidade.Emboranãoresolvamoproblemadeescalares-
+crita,oscachessãoessenciaisparaescalabilidade,tendoemvistaquenamaioriadas
+aplicações hámaisleiturasqueescritas.
+Masusarcachesoureplicaçãosemprelevantaopontodaconsistênciadosdados,
+como,porexemplo,garantirquenãoseleiadadosantigos.Porém,consistênciaéum
+termodifícildesedefinir.Podeserbastanteaceitávelque,depoisdeumaescrita,os
+191
+
+## Página 214
+
+6.6. ArquiteturacontemporâneaeoCloud CasadoCódigo
+dadossóestejamvisíveisparaleiturasdetodosapósalgunssegundos. Emoutras
+aplicações, istoéinadmissível.U mportaldenotíciastalveznãoexijaqueasnotícias
+nahomepageapareçamnoexatoinstantedesuapublicação, masumsistemade
+cotaçõesdabolsadevalorespodenãoterestaflexibilidade.Hásoluçõesdebancosde
+dadosqueflexibilizamagarantiadeconsistênciatradicionalembancosrelacionais.
+Comisso,ganha-sebastantepossibilidadeparaescalar.
+T r ê scaracterísticasdosbancosedasaplicações são importantesparaescolher
+aformadeabordaraescalabilidade: consistência,disponibilidadeoutolerânciaa
+falhaseparticionamentos.OT e o r e m aCAP[26],[197]postulaquesóépossívelter
+duasdessasgarantiassimultaneamente.Cabeaoarquitetoavaliarquaisdelastrarão
+maisvaloràaplicação. T a lconsideraçãoéaindabastantesimplista,afinal,oqueé
+consistênciaparasuaaplicação?Seissosignificanãoverdadosdesatualizadosdepois
+de10segundosdeumamodificação,podeserpossívelatingirostrêsrequisitos.O
+mesmoquestionamentoocorreparaasoutrasduascaracterísticas.
+Muitosequestionahojeemdiasobrequalbancodedadosusar.Anteriormente,
+bancosrelacionaiserampraticamenteobrigatórios,masocrescimentodaW e beda
+necessidadedesoluções maisrobustasdeescalabilidadefizeramcomquenovasop-
+ções surgissem. OmovimentoNoSQLprocuramostraroutrasabordagensaban-
+cosdedadoscomsoluções nãorelacionais,comokey-valuestores,bancosbaseados
+emgrafos,orientadosadocumentos,entreoutros. Soluções decloudcomputing
+sãobaseadasembancosnãorelacionais,comooBigtable,doGoogleA p pEngine,
+eoSimpleDB,daAmazon.Hátambémmuitosdisponíveisparauso,comoA p a c h e
+HBase,MongoDB,A p a c h eCassandra,criadopeloFacebook,ouVoldemort,criado
+peloLinkedIn.
+NoGoogleA p pEngine,porexemplo,háduassoluções depersistênciabasea-
+dasnoBigTable.[213]Seudatastorepadrãoébaseadoemreplicaçãoassíncronamas-
+ter/slaveegaranteconsistência,masnão disponibilidade. Outraopção éoHi g h
+ReplicationDatastore,quegarantedisponibilidade,masenfraqueceasgarantiasde
+consistência,alémdesermaiscustosodeusar.Odesenvolvedorprecisaoptarpela
+soluçãoqueformaisadequadaparaaaplicação.U m adecisãofrequentenahorade
+escolherumbancoNoSQLéabrirmãodaconsistênciaeterumsistemaeventual-
+menteconsistente.Abre-semãodastradicionaisgarantiasdoACIDparaadquiriro
+BASE(BasisAvailable,Softstate,Eventualconsistent).[162]
+192
+
+## Página 215
+
+Capítulo7
+IntegraçãodesistemasnaW e be
+REST
+SistemassemumaAPIexternavivemisoladosemsilosdedados,algocadavezmais
+raro,jáqueanecessidadedeseintegrarcomoutrossistemasécrescente.Porisso,ao
+desenvolverumanovaaplicação,pensa-seemcomoserásuaintegraçãocomoutras
+nofuturo.
+Existemdiversasopções deintegração parasistemasdistribuídos,cadauma
+apresentandoníveisdeacoplamentoecoesão distintos,centralizandooudistri-
+buindoocontrolesobreosprocessosqueocorrem,abordagensfocadasemsistemas
+homogêneosounasquaisosclientesserão aplicações desconhecidasdeterceiros.
+Amaneiraescolhidaparaintegrarossistemashojeimplicaráoscustosdemanu-
+tenção dosoftwareduranteospróximosanos,portanto,talescolhadeveserfeita
+analisando-seostrade-offsdecadasolução.
+Entreasváriaspossibilidades,têmganhadodestaqueasquefacilitamatingirre-
+quisitosnãofuncionaissemumtrabalhoextra,alémdepossibilitarumaevolução
+
+## Página 216
+
+7.1.PrincípiosdeintegraçãodesistemasnaW e b CasadoCódigo
+dosserviçosevitandoaquebradeclientes.ÉnestalinhadepensamentoqueaW e b
+(comHTTPehipermídia)comoplataformaeaabordagemRESTsesobressaem.
+Infraestruturajáexistente,comocachesHTTP,proxies,balanceadoreseferramen-
+tasdemonitorações passamafuncionarcomoummiddlewaremaistransparentee
+simples.
+7 . 1 Princípiosde integração de sistemas n a Web
+Sistemasquenãoapresentampontosdeintegraçãoestãofadadosaumesforçomuito
+grandedemanutenção[175],umavezqueosmercadoscorporativoeW e bcaminham
+paraadivisãoderesponsabilidadesentrepequenossistemas,nacontramãodaan-
+tigaabordagemcentralizadora.Doissistemasquaisquerintegradospodemservistos
+comopartedeumúnicomaior,cadaumescritocomlinguagensepilhasdetecno-
+logiaspossivelmentediferentes[12].Omeiodecomunicaçãoentreeleséumaspecto
+fundamentalnaarquitetura.
+Nopassado,apluralidadenospadrões eprotocolosimplicavaanecessidade
+de implementardiversosrequisitos, comosegurança, autenticação, autorização,
+cache,etc.,quedeviamsersuportadosemgrandepartedeles. Tanenbaumiro-
+nizaqueavantagemdospadrões consistenaexistênciadediversospadrões para
+escolhermos[195],enquantoJohnSowadiz,emsuaLawofStandards(LeidosPa-
+drões), que“todavezqueumaorganização desenvolveumnovosistemacomoum
+padrão paraX,oresultadoprincipaléaamplaadoção deumsistemamaissimples
+comoorealpadrãoparaX"[188].Comotempo,surgiuanecessidadedeusodeum
+protocoloparatransferênciadedadosquejásuportassenaturalmenteessesrequisi-
+tosmencionados.
+Hoje,oprotocolopadrãoparatrocadeinformaçõeséoHTTP.Aporta80ébem-
+vindapelosfirewalls,e,aomesmotempo,existemdiversasferramentas,clientes,
+servidoreseintermediáriosquesuportamoprotocolo.Muitasdessasferramentas
+trazemsoluções, porexemplo,paraproblemasdeperformanceeescalabilidadeno
+usodoHTTP.Alémdisso,épossíveldesenvolversistemasW e bnasmaisdiversas
+linguagensdeprogramação.
+UtilizaroHTTPcomobaseparaacomunicaçãofoiocaminhoencontradopelas
+organizações paraumanovageração depadrões decomunicação. Aevolução do
+usodehipermídiaedaHTTPpermitiuqueestesuperassemuitosoutrosprotocolos
+inventadosparaindústriasespecíficas[168].
+194
+
+## Página 217
+
+CasadoCódigo Capítulo7 .IntegraçãodesistemasnaW e beREST
+Representando os dados e as op er açõ e s
+DesdequeaideiadeintegrarsistemasnaW e bsurgiu,parafacilitaroprocessode
+desenvolvimentoeconsumodosserviços,ofocovoltou-separaautilizaçãodeXML
+puro,conhecidocomoPOX(plainoldXML),paraaexecuçãodechamadasremotas.
+Emmuitoscasos,essesXMLssãotrocadosentreconsumidor(cliente,ouconsu-
+mer)eserviçoatravésderequisições dotipoPOST,utilizandoumaúnicaURIpara
+acesso. Noexemploaseguir,umsistemautilizaaURI /servicosparabuscar
+asinformações deumcliente,adicionandonocorpodarequisiçãoqualaoperação
+exataqueoclientedesejaexecutar:
+POST /servicos HTTP/1.1
+Host: arquiteturajava.com.br
+Content-Type: application/xml
+Content-Length: 91
+<acao>
+<codigo>busca_cliente</codigo>
+<parametros>
+<id>15</id>
+</parametros>
+</acao>
+OexemploaseguirmostraumXMLderetorno,descrevendoumcliente:
+<cliente>
+<nome>Guilherme Silveira</nome>
+<empresa>Loja Caelum</empresa>
+</cliente>
+Paraações comresultados,comoacriação deumcliente,oservidorcostuma
+devolveroresultadodaoperaçãodentrodocorpodaresposta,nãoutilizandoores-
+ponsecodedoprotocoloHTTP,masumamensagemprópria:
+HTTP/1.1 200 OK
+Date: Sun, 18 Sep 2011 18:09:00 GMT
+Content-type: application/XML
+<resultado>OK</resultado>
+U mprotocolofoiatémesmocriado,chamadoXML-RPC,padronizandoestaco-
+municação. Naprática,amaiorpartedossistemason-linequeutilizamXMLou
+JSONnãoadotaessaespecificação,utilizandoseupróprioformatoepadrões.
+195
+
+## Página 218
+
+7.1.PrincípiosdeintegraçãodesistemasnaW e b CasadoCódigo
+EssaabordagemenvolveomínimodeutilizaçãodoprotocoloHTTP,somente
+paratunneling[168],masganhamuitonafacilidadedeimplementação.Emalgumas
+variações, utiliza-sequeryparametersparadecidirqualaçãoseráexecutadaouaté
+mesmoparapassartambémosparâmetrosdeumarequisição.
+U mserviçoassimpodeserimplementadocomqualquerframeworkW e beuma
+APIdeserializaçãodeXML,comoXStream,noexemploaseguir,oubinding,como
+oJAX-B.
+@XStreamAlias(“cliente")
+public class Cliente {
+private String nome, empresa;
+public Cliente(String nome, String empresa) {
+this.nome = nome;
+this.empresa = empresa;
+}
+public String getNome() {
+return nome;
+}
+public String getEmpresa() {
+return empresa;
+}
+}
+XStream xstream = new XStream();
+xstream.processAnnotations(Cliente.class);
+Cliente cliente = new Cliente(“GuilhermeSilveira", “LojaCaelum");
+System.out.println(xstream.toXML(cliente));
+OresultadodoexemploacimaéoXML:
+<cliente>
+<nome>Guilherme Silveira</nome>
+<empresa>Loja Caelum</empresa>
+</cliente>
+OsclientesacessamosservidoresatravésdeAPIsHTTP,comoApacheHttpCli-
+ent,enovamenteumaferramentadeserializaçãooubinding:
+196
+
+## Página 219
+
+CasadoCódigo Capítulo7 .IntegraçãodesistemasnaW e beREST
+String uri = "http://arquiteturajava.com.br/loja/cliente/7465";
+HttpClient client = new DefaultHttpClient();
+HttpGet get = new HttpGet(uri);
+HttpResponse response = client.execute(get);
+System.out.println(response.getStatusLine().getStatusCode());
+HttpEntity entity = response.getEntity();
+InputStream input = entity.getContent();
+Cliente cliente = (Cliente) xstream.fromXML(input);
+System.out.println(cliente.getNome());
+HTTP
+AdotandoacaracterísticadoprotocoloHTTPdequetodaURIidentificaalgo,
+algunssistemasutilizamdiversasURIseumúnicométodo,emgeralPOST.Emum
+próximopassodeadoçãodoprotocolo,diversosmétodossãoutilizadosparafaci-
+litaraidentificaçãodatarefasendoexecutada,comoGET,paraobterinformações,
+POST,paracriar,PUT,paraalterar,DELETE,pararemover,etc. Issopermiteque
+osistemacomoumtodosebeneficiedasvantagensdecadamétodoondeomesmo
+foradequado,comoaocachearresultadosdeumaqueryexecutadaatravésdeuma
+requisiçãoGET.
+Comapopularização deoutrosformatosquefazemounão usodeschemas,
+comooJSON,diversosserviçosexpostosnaW e bpassaramavisaràsimplicidade,
+expressividade,ou,ainda,aumentaracompatibilidadeentreversões diferentesdos
+serviços.
+AmescladediversossistemasW e bparaacriaçãodeumnovo(mashups)foifa-
+cilitadaporumanovageraçãodeferramentaseserviçosW e b .Grandepartedelas
+foicriadaemcimadeJSON,distribuindooconteúdodossistemaoriginais. Éco-
+mumencontrarfotosdoFlickr,vídeosdoY o u T u b e ,mapasdoGoogleegruposdo
+Facebooknasmaisdiversasaplicações on-line,tudoissoresultadodessaintegração
+simplesnaW e b ,vindasdasideiasdeXML-RPC.
+Frameworks,comooVRaptor,apresentamconvençõesquefacilitamacriaçãode
+serviçosquegeramresultadosemdiversosformatos,dandoacessoàsinformações
+doprotocoloHTTPqueestedesejar.Outrassoluções, comoaespecificaçãoJAX-RS,
+queveremosadiante,suportam,semconvenções, acriaçãodetaisserviços.
+197
+
+## Página 220
+
+7.2.Padronizações, contratosrígidoseSOAP CasadoCódigo
+7 . 2 Padronizações , contratos rígidos e SOAP
+BaseadoemRPC,oSOAPéumenvelopequeganhouaceitaçãoporpoderutilizar
+apilhadetecnologiasquejáseencontravaonipresentenasplataformasdeprogra-
+mação,comoatransferênciadeconteúdoXMLviaHTTP.V i s a n d oàindependência
+doprotocoloutilizado,asmensagenspoderiamsertransferidastambématravésde
+SMTP,entreoutros,dandoumagrandeliberdadedeescolhaparaoprotocolode
+“baixonível”.Aoabstrairoprotocolo,énecessáriogarantirummínimodepadroni-
+zaçãosobreaoperaçãoaserexecutada,comooformatodamensagem,questões de
+segurançaecache.
+A p e s a rdageneralizaçãodaabordagem,naprática,amaiorpartedossistemas
+utilizaotunnelingviaHTTP(W e bServices). Masosprotocolossão heterogêneos,
+cadaumdelespossuirestrições efuncionalidadesdistintas,como,porexemplo,o
+suportenativoaassincronismonoJMS,ouosuporteaautenticação,cacheecom-
+pressãonoHTTP.
+Paragarantirquecaracterísticasnão comunsatodososprotocolossejamsu-
+portadasdemaneirahomogênea,foinecessáriaacriaçãodeextensões quepadro-
+nizaramcadaumadessascaracterísticas,normalmenteconfiguradasatravésdosca-
+beçalhosdemensagensexistentesnoSOAP[209]. Porexemplo,nocasodeauten-
+ticação,criou-seumaextensãochamadaWS-Security,permitindoqueautilização
+deSOAPfuncionasseindependentementedousodedeterminadoprotocolopara
+tunneling.Hoje,existemdiversasextensões, comoWS-Addressing,WS-Notification
+eoutros[104],frequentementereferenciadasconjuntamentepelasiglaWS-*(Figura
+7 . 1).
+198
+
+## Página 221
+
+CasadoCódigo Capítulo7 .IntegraçãodesistemasnaW e beREST
+Figura7.1:ExemplopossíveldestackparatrocademensagemcomSOAP.
+SOAP na p r á t i c a
+Paraqueumserviçosejaconsumido,oclienteprecisaconhecerasdiversasestru-
+turasutilizadasedisponibilizadaspelosistema,comoosschemasadotados,serviços
+disponíveiseseuspontosdeacesso.Essasdefinições sãofeitasatravésdainterface
+remotadoserviço,descrito,porsuavez,atravésdaespecificaçãodeumWSDL.
+A p e s a rdeaversão1.2,de2003,seraprimeirarecomendadapeloW3C,amaior
+partedasferramentassuportasomenteaversão 1.1,comonocasodoWS-BPEL
+2.0[11].OexemploaseguirmostrapartedeumarquivocompatívelcomWSDL1.1,
+umadasmaneirasdedefinirospossíveisschemasoutipos:
+<wsdl:types>
+<s:schema elementFormDefault="qualified"
+targetNamespace="http://arquiteturajava.com.br/bolsa">
+<s:element name="PegarValorAtual">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1"
+name="simbolo" type="s:string" />
+</s:sequence>
+</s:complexType>
+</s:element>
+199
+
+## Página 222
+
+7.2.Padronizações, contratosrígidoseSOAP CasadoCódigo
+<s:element name="PegarValorAtualResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1"
+name="PegarValorAtualResult" type="s:float" />
+</s:sequence>
+</s:complexType>
+</s:element>
+</s:schema>
+</wsdl:types>
+Adefinição deumaoperação éfeitaseparadamente,juntocomadescrição
+dos tipos esperados como entrada e saída. No exemploa seguir, a operação
+PegaValorAtual recebe uma estrutura PegaValorAtualSoapIn e devolve
+PegaValorAtualSoapOut:
+<wsdl:message name="PegarValorAtualSoapIn">
+<wsdl:part name="parameters" element="tns:PegarValorAtual" />
+</wsdl:message>
+<wsdl:message name="PegarValorAtualSoapOut">
+<wsdl:part name="parameters" element="tns:PegarValorAtualResponse" />
+</wsdl:message>
+<wsdl:portType name="BolsaDeValoresServiceSoap">
+<wsdl:operation name="PegarValorAtual">
+<wsdl:input message="tns:PegarValorAtualSoapIn" />
+<wsdl:output message="tns:PegarValorAtualSoapOut" />
+</wsdl:operation>
+</wsdl:portType>
+A p e s a rdenãosermandatório,oWSDLénormalmenteutilizadocomSOAP,e
+éatagbindingdaWSDLBindingExtensionquedefineesseacoplamento,alémde
+indicarqualoprotocoloutilizadoparatunneling:
+<soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+Porfim,sãodefinidasasURIsaseremacessadas:
+<wsdl:binding name="BolsaDeValoresServiceSoap12"
+type="tns:BolsaDeValoresServiceSoap">
+<soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+<wsdl:operation name="PegarValorAtual">
+<soap12:operation style="document"
+200
+
+## Página 223
+
+CasadoCódigo Capítulo7 .IntegraçãodesistemasnaW e beREST
+/>
+soapAction="http://arquiteturajava.com.br/bolsa/PegarValorAtual" />
+<wsdl:input>
+<soap12:body use="literal" />
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal" />
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="BolsaDeValoresService">
+<wsdl:port name="BolsaDeValoresServiceSoap12"
+binding="tns:BolsaDeValoresServiceSoap12">
+<soap12:address
+location="http://arquiteturajava.com.br/bolsa/BolsaDeValoresService"
+</wsdl:port>
+</wsdl:service>
+Odesenvolvedorpodeutilizarferramentas,comoo wsimportdoJAX-WS,para
+gerarstubsqueabstraemesimplificamoacessoaosserviçosexpostosatravésde
+SOAP.Essesstubscostumamserclassesquedelegaminvocações parabibliotecas
+HTTPacessaremoserviço.Oresultadoéacriaçãodedezenasdeclasses,quema-
+peiamessasdefinições paraestruturasdedadosdalinguagemescolhida,comovalue
+objectseentidades.MudançasnoWSDLimplicamanecessidadedereanáliseepro-
+vávelnovageraçãodestubs.
+@WebService
+public class PagamentoService {
+@WebMethod
+@WebResult(name="pagamentos")
+public List<Pagamento> getPagamentosPorCliente(
+@WebParam(name="cliente") Cliente cliente) {
+List<Pagamento> pagamentos = //lógica
+return pagamentos;
+}
+}
+S o b r ea adoção do SOAP
+AexistênciadetantasextensõesreforçaaideiadequeSOAPdeixoudeladopon-
+201
+
+## Página 224
+
+7.2.Padronizações, contratosrígidoseSOAP CasadoCódigo
+tosqueoprotocoloHTTPjásuportara.Cadaabstraçãointroduzidaatravésdeuma
+extensãoaumentaacomplexidadedosistema,portanto,desenvolvedoresearquite-
+tosdevempesarobenefíciodessasdecisões contraadesvantagemqueelasapresen-
+tam.
+SegundoJamesSnell,quefoiresponsávelporpartedessastecnologiasquando
+naMicrosoft,“SOAPcomeçoucomumcaminhosimplesediretoparafazerRPCcom
+tunnelingviaHTTP,comummeroPOST,mascresceuparasuportarnomesdemé-
+todosemheaders"[187].SegundoStefanTilkov,oWS-*começoucomumpequena
+pilhadepadronizações ecresceuparaumaltonúmerodecomplexasespecificações,
+quedificultamautilização datecnologia[202]. Historicamente,umaevolução so-
+breosmodelosdeintegraçãodesistemasanteriores,oSOAP,apósmaisde10anos
+deexistência,apresentahojealtoscustosetemsemostradodedifícilmanutenção
+devidoàaltacomplexidadeeàabstraçãodoprotocoloutilizado.
+Omercadotemvistocomcadavezmaiscautelaaadoção deSOAPcomoso-
+luçãotécnica,especialmentecomparando-oàpossibilidadedeutilizaraW e bcomo
+plataformadeintegração. OGoogle,porexemplo,abandonouabuscaatravésde
+SOAPem2009[198].StefanTilkovdizque“nomomentoatual,asvantagenstécnicas
+deixaramdevalerapena,somenterecomendamosousodeW e bservicestradicionais
+viaSOAPquandoquestõespolíticasestãoenvolvidas,como,porexemplo,acessoaum
+sistemaSAPquejápossuioserviçodisponibilizado"[200].JamesSnell,enquantotra-
+balhavanaMicrosoft,desenvolvendoWS-*,diss:“nuncatrabalheiemumaaplicação
+queresolvesseumanecessidaderealdenegócioe,agora,trabalhandojuntoadeze-
+nasdemilharesdedesenvolvedoresdaIBM,nuncapasseiporumasituação onde
+WS-*fosseumasoluçãoqueseencaixasse"[105].
+Natentativaderesolverpartedosproblemas,aversão1.2doSOAP[210]seapro-
+ximamaisdoprotocoloHTTP,deixandodeutilizá-losomenteparatunneling,ou
+execuçãodechamadasRPC.T a i smudanças,comoosuporteamétodosquenãoso-
+menteoPOST,facilitaramautilizaçãodelayersintermediários,como,porexemplo,
+cache,atravésdosheadersHTTP.
+Muitasferramentasnãosuportamounãoencorajamosdesenvolvedoresauti-
+lizarosdetalhesdasversões maisnovasdoSOAP,consequentementeperdendoas
+vantagensdautilização doHTTP.OmercadoqueutilizaWS-*aindanão adotou
+taismudanças,limitandoousodoprotocolo.Omapeamentoaoprotocoloaindaé
+muitosuperficial,eaimagemdequeomesmodeveserusadoparaRPCsemantém:
+“UmdosobjetivosdodesigndoSOAPéencapsularefazerchamadasRPCusandoa
+extensibilidadeeflexibilidadedoXML”[210].
+202
+
+## Página 225
+
+CasadoCódigo Capítulo7 .IntegraçãodesistemasnaW e beREST
+7 . 3 Evite quebrar compatibilidadeem seus serviços
+Partedosegredodobaixocustodemanutençãoestáemmanteracoesãoediminuir
+oacoplamentoentrepartesdeumsistema. Aoaplicaresteconceitonaintegração
+entredoissistemas,osmesmosdevemminimizarospontosdeacoplamentopara
+maximizaracapacidadedemudançasemquebradecompatibilidade.Oprocesso
+decriarumanovaversãodeumserviçoéchamadoversionamento(versioning),e
+podeounãomantercompatibilidadecomasanteriores.U m aimplementaçãoque
+obrigaaatualizaçãodeclientestodavezqueumanovaversãodoserviçoélançada
+apresentaaltoníveldeacoplamentoealtocustodemanutenção.
+Quantomaisgenéricososclientes,menoroacoplamentocomumserviçoespe-
+cíficoe,portanto,menoranecessidadedemanutençãodosmesmos,dadaumaatu-
+alizaçãodoservidoracessado.Diversastécnicaspodemseraplicadasemqualquer
+tipodeintegraçãodesistemasevisamminimizaranecessidadedessasatualizações.
+V a l i d ação de estrutura e esquemas
+Aoreceberosdadosdeumoutrosistema,épossívelvalidarsuaestruturapor
+completo,comumcontrolemaisrígidosobreoqueaoutrapontapodefazer.Nessas
+situações extremas,validam-seatémesmoosdadosquenãoserão utilizados,mas
+descartados. U mexemplodetalabordagemsurgeaovalidarumXMLcontraum
+schemacompleto,mesmoutilizandosomenteumapartedoconteúdorecebido.
+Oexemploaseguirmostraumschemaquedefineumaestruturapararepresen-
+tarordensdecompra,incluindoodestinoeumalistadeprodutos:
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="compra">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="cliente" use="required">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="id" type="xs:string"/>
+<xs:element name="nome" type="xs:string"/>
+<xs:element name="dataDeNascimento" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+203
+
+## Página 226
+
+7.3.Evitequebrarcompatibilidadeemseusserviços CasadoCódigo
+<xs:element name="produto" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="id" type="xs:string"/>
+<xs:element name="quantidade" type="xs:positiveInteger"/>
+<xs:element name="preco" type="xs:decimal"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>
+Alémdavalidaçãocompletacontraoesquema,umaferramentadebindingque
+nãoignoracamposdesconhecidosimplicaomesmotipodeacoplamento;qualquer
+mudançanoesquemalevaànecessidadedeatualizaçãodetodaabasedeclientes.
+Nessescasos,umcamponovoadicionadoemumarepresentaçãoXMLquebraa
+compatibilidade,poisquemosconsomenãoesperavaessenovovalor.Oproblema
+surgequandoosclientessãoacopladosaumcontratofixo,umaestruturacompletae
+imutável.Schemassãomaneirasdegarantirumaestrutura,masseusclientesdevem
+minimizaroacoplamento,permitindoaomáximosuaevolução.
+Oexemploaseguirmostraumapossívelevoluçãodoschema,adicionandoum
+camponovo,contendooCPFdoclienteeremovendoadatadenascimento:
+<xs:element name="cliente" use="required">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="id" type="xs:string" />
+<xs:element name="nome" type="xs:string" />
+<xs:element name="cpf" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+U m aaplicaçãotradicionalvalidaráocampodataDeNascimentoindependente-
+menteseesteforounãoutilizado.Asclassesgeradastambémpossuirãoumcampo
+paraa dataDeNascimento.Porisso,oresultadodaremoçãodessecampoéum
+errodevalidação,eaquebradaaplicação. U m avezqueelanãoutilizavaosdados,
+masdeixoudefuncionar,esseacoplamentoaumadefiniçãorígidaédesnecessário.
+204
+
+## Página 227
+
+CasadoCódigo Capítulo7 .IntegraçãodesistemasnaW e beREST
+É importantevalidarsomenteapartedoXMLqueseráutilizada,ignorando
+quaisquermudançasdeestruturanaquiloquenão énecessário.Éprecisoseguir
+àriscaoschemanomomentodegerarosdadosaseremenviados.Seguindoessas
+duasregras,asaplicações clientepossuemasgarantiasnecessárias,mantendoum
+acoplamentomaisflexívelaocontrato.
+OWSDL,porexemplo,nãoobriga,masincentivaavalidaçãocompletaatravés
+deschemas,reforçandoesseacoplamento.
+Paraexecutarvalidações parciaisépossívelutilizarferramentascomooRe-
+laxNG,pelaqualoservidorserácapazdeadicionarouremoverdadossemquebrar
+todososclientesexistentes. Emvezdeumaconsequênciatão negativa,somente
+aquelesclientesqueutilizavamcamposremovidosprecisarãoseratualizados.Estaé
+abasedopadrãoMustIgnore,criadoporDavidOrchardem2003[150],quedescreve
+práticasparafacilitaraevoluçãodeumschemaXML,assuntotambémmencionado
+porIanRobinson,compráticasvoltadasabackwardeforwardcompatibility[55].Es-
+saspráticaspodemserutilizadascomqualquertipodeserviçoqueconsumamen-
+sagensvalidáveisatravésdeumschema.
+Háaindaformatosmaisamigáveisàevoluçãodoschema,comooprotocolbuffers
+( application/x-protobuf),criadopeloGoogle[84].Paranãoquebrarosclien-
+tes,elessãocapazesdefornecervalorespadrãoparacamposqueforamremovidos.
+Oexemploaseguirmostraadefiniçãodeumesquemademensagemdeclientecom
+umcamponomeepais,ondeopaíspadrãoéBrasil.Casoemumanovaversãodo
+sistemaumcamponãosejaenviado,bastaalteraroesquemaparadefinirumvalor
+padrão,podendoassimmanteracompatibilidadecomversões anteriores.
+message Cliente {
+required string nome = 1;
+optional string pais = 2 [default = “brasil"];
+}
+Mantendo diversas versões incompatíveis no ar
+Emalgunsmomentos,énecessárioquebraracompatibilidadecomaversãoan-
+terior,eficadifícilminimizarocustodemanutenção daquelesquejáconsomem
+osserviços. ÉpossívelcriarnovasURIsdeacessoparacadareleasedeversão in-
+compatíveldoserviço.Destamaneira,durante,porexemplo,doisanos,oservidor
+secomprometeamantercompatibilidadenoconjuntodeserviçosexpostos,e,após
+essetempo,estesjáestarãosubstituídoseserãoremovidos,permitindoqueoscli-
+entesfaçamsuasalterações emciclosmaiores.Estaabordagem,apesardealiviaro
+205
+
+## Página 228
+
+7.4.PrincípiosdoSOA CasadoCódigo
+custonamanutençãonosclientes,nãoremoveanecessidadedesuaadaptaçãoacada
+ciclodeversionamento.
+7 . 4 Princípiosd oSOA
+A p ó sanosdediscussão sobreoqueseriaexatamenteumaarquiteturaorientadaa
+serviços(SOA),evindodeumadécadaquandoaadoçãodeSOAPeraconsiderada
+aúnicasoluçãoparaessaarquitetura,em2009foicriadooSOAManifesto[56],um
+conjuntodecaracterísticasimportantesparaessetipodearquiteturabaseadonavi-
+sãodomercadonaquelemomento.SegundooSOAManifesto,épossívelimplemen-
+tarumaarquiteturaemcimadeCORBA,SOAP,DCOM,REST,etc.
+NessalinhadoSOA,agranularidadedosserviçosdevepermitiroreúsopor
+diversosclientes,alémdacriaçãodenovosserviçosatravésdacomposiçãodeou-
+tros. Porexemplo,paracompletarumprocesso(workflow)decompra,serviços
+sãopensadoscomofunções queatingempequenosobjetivosdentrodofluxo,como
+PesquisarProdutos, CriarCompra, AlterarCompra, CancelarCompra,
+AlterarDestino, VerificarCompra.OsW e bServicesdaAmazon,porexem-
+plo,apresentamessetipodegranularidade,comonocasodaProductAdvertising
+API,queforneceacessoàbuscadeprodutosnocatálogointerno. Porpossuírem
+umagranularidademenor,épossívelreutilizaressesserviçosemdiversostiposde
+aplicativos,desdeumsistemaDesktopquemostraorastreamentodesuascompras,
+passandoporpluginsparacalendários,quemostramadataesperadadechegadada
+entrega,atéclientesqueautomatizamcompras,comolivrosparacolecionadoresque
+estãocomopreçoabaixodomercado(Figura7 . 2).
+206
+
+## Página 229
+
+CasadoCódigo Capítulo7 .IntegraçãodesistemasnaW e beREST
+Figura7.2:U mserviçoderastreamentodecomprascompostodautilizaçãodedi-
+versosoutrosserviços,namesmaouemoutrasmáquinas.
+Éimportantequesejapossíveldescobrirdetalhessobreoserviço,alémdeutili-
+zarcontratosformaisqueosdescrevam,como,porexemplo,SOAPatravésdeWSDL
+eschemasxml.Osserviçosabstraemdeseusclientesosdetalhesinternosdesuasim-
+plementações, funcionandocomoainterfacedecomunicação,encapsulandosiste-
+maseprocessospossivelmentepreexistentes.Porfim,serviçosimplementadoscom
+asideiasdeSOAapresentammaisbenefíciosparaaaplicaçãoquandonãomantêm
+nenhumainformação doclienteatualnoservidor,apesardenão serumrequeri-
+mentoparaodesenvolvimentodosistema.
+Componha s e rv iços
+U m avezquecentenasdeserviçosestarãoexpostos,énecessáriocontrolarcomo
+seráfeitaainteração entreeles. Acriação denovossistemaseserviçosbaseados
+naquelespreexistentespodeserfeitaatravésdeumcódigoqueacessaecontrolatodo
+ofluxo(orquestra,orchestration)deumgrandeprocesso(umworkflow).
+AFigura7 . 3exemplificaumpedidodecompra,noqualháumprocessodeor-
+çamentocomdiversosfornecedoresexternos,abuscadomaisbaratoentreeleseo
+pedidoparaliberaçãodeverba.
+207
+
+## Página 230
+
+7.4.PrincípiosdoSOA CasadoCódigo
+Figura7.3:Exemplodeprocessodepedidodecompra.
+Oexemploaseguirmostracomoépossíveldescreverumprocessodepedidode
+compraporumusuáriocujoorçamentoseráfeitocomdiversosfornecedores:
+Pedido pedido = comprador.pede(produtos);
+List<Orcamento> orcamentos = new ArrayList<Orcamento>();
+for (Fornecedor fornecedor : fornecedores) {
+orcamentos.add(fornecedor.getOrcamento(pedido));
+}
+Omenororçamentoéescolhidoeopedidodeaprovação,enviadoparaores-
+ponsável.Quandoessepedidoérespondido,umcallbackéfeitoassincronamente
+parao OrcamentoAnalisado:
+Comparator<Orcamento> comparador = new MaisBaratoComparator();
+Orcamento orcamento = Collections.min(orcamentos, comparador);
+double valor = orcamento.getValor();
+Usuario responsavel = comprador.responsavelPorAprovacaoPara(valor);
+responsavel.pedeAprovacao(orcamento, new OrcamentoAnalisado());
+Esteprimeiropasso,quedescreveofluxodecompra,podeserescritodemaneira
+genérica:
+public class PedidoDeCompra implements Passo {
+208
+
+## Página 231
+
+CasadoCódigo Capítulo7 .IntegraçãodesistemasnaW e beREST
+private final List<Fornecedor> fornecedores;
+public PedidoDeCompra(List<Fornecedor> fornecedores) {
+this.fornecedores = fornecedores;
+}
+public void executa(Map<String, Object> args) {
+Usuario comprador = (Usuario) args.get(“comprador");
+Produtos produtos = (Produtos) args.get(“produtos");
+Pedido pedido = comprador.pede(produtos);
+List<Orcamento> orcamentos = new ArrayList<Orcamento>();
+for (Fornecedor fornecedor : fornecedores) {
+orcamentos.add(fornecedor.getOrcamento(pedido));
+}
+Comparator<Orcamento> comparador = new MaisBaratoComparator();
+Orcamento orcamento = Collections.min(orcamentos, comparador);
+double valor = orcamento.getValor();
+Usuario usuario = comprador.responsavelPorAprovacaoPara(valor);
+usuario.pedeAprovacao(orcamento, new OrcamentoAnalisado());
+}
+}
+A p ó soresponsáveltomarumaação,aprovandoourecusandooorçamento,o
+processocontinua,finalmenteefetuandoopedidodevendaounotificandoseucan-
+celamento.
+public class OrcamentoAnalisado implements Passo {
+private final Emails emails;
+public OrcamentoAnalisado(Emails emails) {
+this.emails = emails;
+}
+public void executa(Map<String, Object> args) {
+Confirmacao resposta = (Confirmacao) args.get(“resposta");
+if (resposta.isPositiva()) {
+209
+
+## Página 232
+
+7.4.PrincípiosdoSOA CasadoCódigo
+resposta.getOrcamento().executa();
+} else {
+emails.notificaRecusa(resposta.getPedido());
+}
+}
+}
+Diversascaracterísticasdofluxodescritoanteriormentesão padrões comuns
+(comoosEnterpriseIntegrationPatterns)[99]queaparecemaodescreverproces-
+sosdeintegraçãodesistemas.Ferramentas,comooA p a c h eCamel,implementam
+APIsbaseadasemmethodchainingouXMLparatrabalharcomessesprocessos.Por
+exemplo,oconteúdodolaçoforpoderiaserexecutadoemparalelo(padrão cha-
+madodeSplitter),easrespostasdevemseraguardadasparaentãoseremcombinadas
+(Agregator).
+Comalgumastécnicasdedesign,oexemploanteriorpodeserencapsuladoem
+umaDSL,reforçandoovocabuláriododomínioutilizado:
+public class PedidoDeCompra {
+private final List<Fornecedor> fornecedores;
+public PedidoDeCompra(List<Fornecedor> fornecedores) {
+this.fornecedores = fornecedores;
+}
+public void compra(Usuario comprador, List<Produto> produtos) {
+Pedido pedido = comprador.pede(produtos);
+Orcamento orcamento = fornecedores.quota(pedido, maisBarato());
+comprador.confirma(orcamento).em(OrcamentoAnalisado.class);
+}
+}
+public interface CallBack<T> {
+void processa(T argumento);
+}
+public class OrcamentoAnalisado implements CallBack<Confirmacao> {
+private final Emails emails;
+210
+
+## Página 233
+
+CasadoCódigo Capítulo7 .IntegraçãodesistemasnaW e beREST
+public OrcamentoAnalisado(Emails emails) {
+this.emails = emails;
+}
+public void processa(Confirmacao resposta) {
+resposta.executaOrcamento(emails);
+}
+}
+Organizarecoordenarasequênciadetrocadeinformaçõesentreserviçosatravés
+deumpontodecódigoúnicoéopapeldeumorquestrador.U m avezquetodosos
+serviçosestão descritos,aengineresponsávelpelatrocademensagens(enterprise
+servicebus,ouESB)coordenatudooqueseráfeitoduranteaexecuçãodeworkflows.
+Emcasodefalha,éresponsabilidadedosistemacentralmitigaroriscoenvol-
+vido,porexemplo,tentandonovamenteapósdeterminadoperíododetempo.Esse
+sistemapodeserencarregadodeexecutarrequisiçõesadiversosserviçosemparalelo
+eaguardararespostaparaentãocontinuarnofluxo,entreoutrastarefas.Fornece-
+doresdeferramentasesoluções SOAapresentamprodutosqueorquestramserviços,
+visandofacilitaracriaçãoemanutençãodeaplicações quecentralizamocontroledo
+processo.
+Paraumsistemaquesejacompostopormaisdeumserviçodistinto,comoa
+reservadehoteleadevoo,cadaumhospedadoemempresaseservidoresdiferentes,
+éimportanteencontrarumasolução quecoordeneoscasosdefalha. Dispararas
+duasrequisições emparaleloaceleraofluxo,masocontroledefalhanareservado
+vooapósaconfirmação dohoteldeveserimplementadodemaneiraacancelaro
+hotel.T r a n s ações distribuídascomoessaspossuemosproblemasdeconsistênciae
+integridadenaturaisdessaarquitetura,eferramentascomoasdeorquestração,junto
+comosdiversospadrões WS-*,podemajudaralidarcomeles,adicionandocerta
+complexidade.
+Serviçospodemsercompostosprogramaticamenteouatravésdeferramentas.
+Nãoéaadoçãodeumprodutodeorquestraçãooudegeraçãodecódigoquetraráo
+sucessoaumaarquiteturaorientadaaserviços,mas,sim,suacompreensãotécnica
+esuaadoçãonomomentoadequado.
+211
+
+## Página 234
+
+7.5.REST:arquiteturadistribuídabaseadaemhipermídia CasadoCódigo
+7 . 5 REST: arquitetura distribuída baseada em hi-
+permídia
+Naabordagemorientadaaserviçostradicional,atendênciaéforçarosdesenvolve-
+doresacriaremmúltiplasoperações, alémdediversostiposdedados.Porexemplo,
+umsistemasimples,comtiposrepresentandoclientes,compras,produtosepaga-
+mentos,possuitambémdiversosserviços,comomostraaFigura7 . 4.
+Cadaumdosserviçospossuisóumendereço,sóumaURIatravésdaqualpode
+seracessado.
+Épossívelalteraressaformadeexposiçãodosistemaaodisponibilizarmaisen-
+dereços,emgeralumaURIparacadaentidade(recurso),mascomumnúmeroli-
+mitadodeoperações. Cadaoperaçãopassaatrabalharcomumrecursoespecífico
+atravésdesuarepresentação,aumentandoacapilaridade.AFigura7 . 5ébaseadaem
+umsimilardeStefanTilkov,quetentadescrevertaisdiferenças[201].
+Figura7.4:Tipos,operações eendereçosemumaabordagemorientadaaServiços.
+Figura7.5:Tipos,operações eendereçosemumaarquiteturaREST.
+Cadaumdessesdadoséconsideradoumrecurso(resource),algointangíveldire-
+tamente,queseráacessadoemanipuladoatravésdesuasrepresentações (representa-
+tion).Porexemplo,umpedidodecompraéumrecurso,quepodeserencontradoem
+umendereço(address),naURIhttp://arquiteturajava.com.br/loja/compras/1535434,
+representadoatravésdeumXML.
+212
+
+## Página 235
+
+CasadoCódigo Capítulo7 .IntegraçãodesistemasnaW e beREST
+Acomunicaçãoestásendofeitaentreclienteseservidoresatravésderepresen-
+tações dessesrecursos,oqueformaabasedeumaarquiteturaorientadaarecursos
+(ResourceOrientedArchitecture–ROA)[199][169].Aadoçãodestaarquiteturajunto
+aoutrascaracterísticas,comousodeumainterfaceuniforme,stateless,navegação
+entreseusrecursoseestadosatravésdecontrolescomoosdehipermídia(HATE-
+OAS)[59],caracterizaumaarquiteturaREST(RepresentationalStateTransfer)[211].
+Sendoassim,RESTpodeseralcançadoatravésde,porexemplo,HTTPerepre-
+sentações comsuporteahipermídia,maspoderiaserutilizadaoutrapilhadetecno-
+logiascomasmesmascaracterísticas.AvantagemdaadoçãodoHTTPjuntamente
+comXMLouJSONestánaonipresençadessastecnologias.Apartirdeagora,assu-
+miremosaimplementaçãodeumaarquiteturadistribuídabaseadaemhipermídia
+emcimadoprotocoloHTTP.
+Ainterfacedecomunicação(uniforminterface)doRESTtambémrequerautili-
+zaçãodemensagensautodescritivas,istoé,qualquerintermediário(comoumproxy)
+écapazdeentenderaintençãodeumamensagemetomarumaaçãodeacordo.
+Ainteração entreumclienteeoservidoratravésdeRESTinicia-seatravésde
+umpontodeentrada(entry-point),umaURIquepermiteacessarorestodosistema.
+Essenovoacessoérealizadoatravésdecontroles,comosimpleslinks:
+<loja>
+<nome>Loja de livros</name>
+<horarioDeFuncionamento>10:00-22:00</horarioDeFuncionamento>
+<link rel="clientes" href="/clientes" />
+<link rel="produtos" href="/produtos/guia_completo" />
+</loja>
+Elescostumamdescreverorelacionamentoentreorecursoacessadoeoutros
+atravésdoatributorel,alémdoendereçopresenteemhref.Resultadosderequisições
+podemsercacheadospelocliente,proxieseatémesmopeloservidor,diminuindo
+consumoderecursos[3].
+T e rumagranularidadepequenacomorespostanãodevesermotivadoporeco-
+nomiadebanda,jáqueumarepresentaçãomaior,contendomaisinformações, tam-
+bémpodesercacheada.U s a n d odiversosheaders[147],épossíveldiminuirdrastica-
+menteonúmeroderequisições e/ouabandaconsumida[75].
+OJAX-RSéaespecificaçãodoJavaparaserviçosW e bREST,epodeserutilizada
+juntamentecomoutrastecnologiasdoJavaEE,comofazerintegração comEJBs.
+U s a n d oJAX-RSépossíveldescreverasoperações decriaremostrarumplanode
+saúde,comonocódigoaseguir:
+213
+
+## Página 236
+
+7.5.REST:arquiteturadistribuídabaseadaemhipermídia CasadoCódigo
+@Path(“/planos")
+public class PlanoDeSaudeResource {
+@GET
+@Path(“/{planoId}")
+@Produces(“application/xml")
+public Plano mostrar(@PathParam(“planoId") String planoId) {
+// busca o plano
+}
+@POST
+@Consumes(“application/xml")
+public void criar(JAXBElement<Plano> plano) {
+// armazena o plano
+}
+}
+Comisso,aoexecutarumGETem /planos/15,avariávelplanoIdpassaa
+terovalor15,eométodomostraréresponsávelpordevolverum Planoqueserá
+serializadoemXMLdeacordocomsuasanotações JAX-B.FazendoumPOSTpara
+/planoseenviandoumXMLnocorpodarequisição,esteserádesserializadopara
+um JAXBElement<Plano>.
+Essaprimeirageração deferramentasfocadasemREST,incluindooJersey,
+abordasomenteosaspectosligadosaoprotocoloHTTP[203],comomencionado
+porLeonardRichardsonemsuaclassificação deserviçosW e b . 5Aversão 2daes-
+pecificaçãoJAX-RSatendeaosquesitosdeAPIclienteesuporteahipermídia[33].
+Frameworks,comoVRaptor,RestfulieeRestlet,suportamnativamenteautilização
+decontroleshipermídiacomoomeiodeinteraçãocomoservidor.
+Clientes e hipermídia
+Noexemplodeclienteseordens,ocódigoaseguirutilizaoRestfulieparaacessar
+oentrypointdaloja:
+Response response = Restfulie.at(“http://arquiteturajava.com.br/loja")
+.accepts(“application/xml").get();
+System.out.println(response.getCode());
+System.out.println(response.getBody());
+ÉpossíveltambémqueabibliotecaadotadaforneçaumaAPIdealtonívelpara
+deserializaçãoeinterpretaçãodoconteúdoexistentedentrodeumarepresentação:
+214
+
+## Página 237
+
+CasadoCódigo Capítulo7 .IntegraçãodesistemasnaW e beREST
+String uri = “http://arquiteturajava.com.br/loja/clientes/15";
+Response response = Restfulie.at(uri).accepts(“application/xml").get();
+Cliente cliente = response.getResource();
+Neste exemplo, o cliente conhece um modelo/padrão de URIs (URI tem-
+plate)[53],queidentificaumconjuntodeURIs. AsURIsadotadaspodemserin-
+formativasparaqueumserhumanoacompreenda[2],masbasear-seempadrões
+comohttp://arquiteturajava.com.br/loja/clientes/$idtornariaosclientesaindamais
+acopladosaoserviço.
+Sendoassim,oclientedeveconhecersomenteaentradadosistema,oseuentry-
+point.Apartirdesteponto,oservidordiráaoclientequaisoutrosrecursospoderá
+acessaratravésde,porexemplo,umlink.U mlinkpossuiumvalorsemântico,um
+significado,quedescreveorelacionamentoentreorecursoatualeaquelequeserá
+atingidoaoacessá-lo.Linkssãoexemplosdecontroleshipermídia[59],umamarca-
+çãoqueconectadoisrecursosdentrodeumarededemaneiranãolinear[144].
+NasabordagenstradicionaisdeserviçosW e b ,requisições retornamXMLou
+JSON,cujoconteúdoécompostosomentepelosdadosacessados.Seguindooscon-
+ceitosdeSOA,umprimeiroserviçoécriadoparaabuscadeclientes,umsegundo
+parapermitirefetuarpagamentos,assimcomoumterceiropararetornaralistade
+serviçoscontratadoseativosdedeterminadocliente.
+Naimplementação tradicionaldeSOAP,serianecessárioqueoclienteconhe-
+cessedeantemão(early-binding)todasasURIsqueacessará,escrevendoasmesmas
+dentrodocódigo,decisões emdesigntime.T o m a n d ocomoexemploapesquisade
+umcliente,oXMLaseguirrepresentaumpossívelretorno:
+<cliente>
+<nome>José Beltrano</nome>
+<empresa>Loja Caelum</empresa>
+</cliente>
+Nestecaso,nãohácomosaberqualURIacessar,nemquaisparâmetrosenviar,
+paraobterospagamentosefetuadoseserviçoscontratadosporessecliente.Opro-
+blemaficaaindamaiscomplicadoaotentardescobrircomoexecutartarefasdees-
+crita,comoefetuarumnovopagamento.
+NaW e bhumana,édiferente.Cadarequisiçãonãoretornaapenasosdados(o
+HTMLemsi)eaestruturautilizada(oesquemadeumHTML),mastambémele-
+mentoscomolinkseformuláriosquepermitemaoclientenavegarpelosistema,pas-
+sandodeumapáginaaoutraparaatingirseuobjetivo.Essasformasdeinteraçãocom
+215
+
+## Página 238
+
+7.5.REST:arquiteturadistribuídabaseadaemhipermídia CasadoCódigo
+oservidorpodemmudaracadarequisição–novoslinks,URIsquemudam,etc.Es-
+saspáginasnãopossuemapenasumarepresentaçãodorecurso,mastambémdados
+paracontrolarofluxodoclientenaaplicação(dadosdecontrole,controldata).
+Arepresentaçãodeumclientequeutilizalinkscomocontrolehipermídiapode
+serfeitaemdiversosformatosderepresentação,comoemHTML:
+<html>
+<body>
+<div class="cliente">
+<span class="nome">Guilherme Silveira</span>,
+<span class="empresa">Loja Caelum</span>
+</div>
+<div class="navegacao">
+<a href="/cliente/7453687/pagamentos">pagamentos</a> |
+<a href="/cliente/7453687/servicos">serviços</a> |
+</div>
+</body>
+</html>
+U mclientegenérico,comoumnavegador,écapazdeapresentaroresultadopara
+ocliente,quetomaráadecisãodequalpassoseguiratravésdoscontrolespresentes.
+Quandoaempresadecidirqueémelhorcontrolarospagamentosatravésdeumou-
+trofornecedor,serásuficientealteraraURI(href)paraaqualoslinksapontam.U m a
+vezqueotipoderelacionamentoentreosdoisrecursoséomesmo,oslinksainda
+representamospagamentoseosserviçosdessecliente,quecontinuamfuncionando.
+Emcasosextremos,atémesmooformatodamensagemtrocadapoderiamudar,um
+problemaresolvidoatravésdemediatypes.
+Aintegração desistemasviahipermídiautilizaessescontrolesparabeneficiar
+projetosquetambémfazemacomunicaçãomáquina-a-máquina[54].Substituindo
+oHTMLporXML,oresultadodabuscaficacomonoexemploaseguir:
+<cliente>
+<nome>Guilherme Silveira</nome>
+<empresa>Loja Caelum</empresa>
+<link rel="pagamentos" href="/cliente/745368/pagamentos" />
+<link rel="pagamentos-form" href="/cliente/745368/pagamentos-form" />
+<link rel="servicos" href="/cliente/745368/servicos" />
+</cliente>
+Paragerarumrecursocomoeste,épossívelutilizarumatemplateenginequal-
+216
+
+## Página 239
+
+CasadoCódigo Capítulo7 .IntegraçãodesistemasnaW e beREST
+queroumaneirasprogramáticasdeconfiguraroscontroleshipermídia,comoase-
+guir,nocasodoRestfulie:
+@Get
+@Path(“/cliente/{cliente.id}")
+public void mostra(Cliente cliente) {
+ConfigurableHypermediaResource recurso;
+recurso = restfulie.enhance(database.busca(cliente));
+recurso.relation(“pagamentos")
+.uses(PagamentosController.class).lista(cliente);
+recurso.relation(“pagamentos-form")
+.uses(PagamentosController.class).form(cliente);
+recurso.relation(“servicos")
+.uses(ServicosController.class).lista(cliente);
+result.use(representation()).from(resource, “cliente").serialize();
+}
+U m asegundarequisiçãoGETpermiteentãorecuperarosdadosdospagamentos
+deumcliente,quetambéméumarepresentaçãodessesrecursos.Notecomoolink
+éacessadoenavegado;oclienteestáacopladoàpresençaeaoseusignificado:
+Cliente cliente = response.getResource();
+response = resource(cliente).getLink(“pagamentos”).follow().get();
+Pagamentos todos = response.getResource();
+NaFigura7 . 6,épossívelvisualizarcomofuncionaoacessoaumarepresentação
+atravésdeumlinkhipermídia,querelacionadoisrecursosdistintosnaW e b .
+Figura7.6:Oclienteseguindoolinkquepossuiosignificadodeseuspagamentos.
+217
+
+## Página 240
+
+7.5.REST:arquiteturadistribuídabaseadaemhipermídia CasadoCódigo
+Casooservidordecidaalteraramáquina,ouatémesmoofornecedorquecon-
+trolaalistagemdepagamentos,bastaqueelemudeolink. Oservidorpassaráa
+indicaraoclienteondeencontrarasinformações, emvezdeirbuscá-la.Ocontrole
+éinvertido.Comooclienteestáacopladoaosignificadodeumlink,enãocoma
+URI,eleseadaptaautomaticamente,conformeoexemploilustradonaFigura7 . 7.
+Figura7.7:Devidoaoacoplamentosemânticocomolink,enãocomaURI,ocliente
+acessaoserviçodecontroledepagamentosqueoservidorutilizar.
+Érecomendadoousodenamespacesnosatributos rel,comoemhttp://loja.
+arquiteturajava.com.br/rel/servicos, paradesambiguarpossíveissituações emque
+umamesmapalavrapossuadoissignificados.RepositórioscomooIANApermitem
+oregistrodosignificadoderelacionamentos,comoéocasodapalavra payment.
+Enquantolinkssãoumaformadecontrolehipermídia,quepermitefácilnave-
+gação,osformuláriosproveemumamaneiradeinteragircomoestadodaaplicação
+paraqueaaplicaçãodoclientedescubraemtempodeexecuçãoquaisdadosedeque
+maneiraelesdevemserenviados[170].U m apossívelimplementaçãodeformulário
+podeserfeitaatravésdautilizaçãodeumaURIespecíficaparaobterumexemplode
+representaçãoaserutilizadonapróximarequisição,comonocódigoaseguir:
+<link rel=”pagamentos-form”href=”/cliente/7453687/pagamentos-form”/>
+Formulárioremeteàidentificaçãodeummodelo(template),queapresentaquais
+dadosedequemaneiraelesdevemserenviadosparaoservidor.NocasodeHTML,
+porexemplo,acomposição dastagsaseguirindicaaoclientequealgocomase-
+mântica donoDoCartaodeveserenviado,comumaajudadedescriçãoparaum
+serhumanocompreendercomo“onomedodonodocartãodecrédito” ,alémdeum
+valordeexemplo“GuilhermeSilveira":
+218
+
+## Página 241
+
+CasadoCódigo Capítulo7 .IntegraçãodesistemasnaW e beREST
+”/>
+<label for=”donoDoCartao”>O nome do dono do cartão</label>
+<input type=”text”name=”donoDoCartao”id=”donoDoCartao”value=”GuilhermeSilveira
+U m aaplicação podeusarumaformadeespecificação dessasmensagenspara
+indicaraoclientecomoumpagamentodeveserenviado.Oexemploaseguirutilizao
+XForms,umaespecificaçãodoW3C.Notecomoapalavraformulárionãoaparece,e
+oconceitodevalores(oucampos)aseremenviadoséalcançadoatravésdeexemplos
+(instance):
+<model xmlns=”http://www.w3.org/2002/xforms”>
+<instance>
+<!-- exemplo de pagamento para o cliente, um formulário -->
+<pagamento>
+<nomeNoCartao>
+Preencha aqui com o nome do dono do cartão
+</nomeNoCartao>
+<numeroDoCartao>4444555566667777</numeroDoCartao>
+<codigo>262</codigo>
+<dataDeExpiracao>10/2080</dataDeExpiracao>
+</pagamento>
+</instance>
+<submission
+resource=”/cliente/7453687/pagamentos”
+method=”post”
+mediatype=”application/xml”/>
+</model>
+Elementosquepermitemanavegação(links)oufornecemexemplosdedados
+aseremenviados(formulários)podemserincluídosoureferenciadosemqualquer
+representação,sejaelaatravésdeHTML,XMLouJSON[8][217].Linkspodemser
+atémesmoinclusosatravésdecabeçalhosHTTP[149],comoemcasosemqueare-
+presentaçãoébinária,comoumaimagem.
+O OpenSearch, por exemplo, criado para implementar buscas na W e b ,
+utiliza modelos de URI, por meio de um controle hipermídia, que en-
+sinam ao cliente qual URI deve ser acessada para uma busca[52], como
+por exemplo o padrão http://arquiteturajava.com.br/loja/produtos/busca?q=
+\protect\T1\textbraceleftsearchTerms\protect\T1\textbraceright&p=\protect\T1\
+textbraceleftstartPage\protect\T1\textbraceright.
+Emvezdecentralizartodoocontroleemumúnicopontodeexecução,usando
+hipermídiaémaisfácildistribuirocomportamentoentreváriaspartes.Destama-
+219
+
+## Página 242
+
+7.5.REST:arquiteturadistribuídabaseadaemhipermídia CasadoCódigo
+neira,realizarumprocessopassaaenvolverdiversosagentesquecoordenamsozi-
+nhosseutrabalho.AdotandoSOAP,issopodeseralcançadocomaespecificaçãodo
+WS-Choreographyeumalinguagemcomum,queajudeadefinircomooscompo-
+nentesdeumserviçocoreografadodevemsecoordenar.
+Operaçõ e s
+AoutilizaroHTTPcomoumaAPI,enãoapenasparatunneling,odesenvolvedor
+limitaaintegraçãoapoucasoperações quepodemserrealizadasemcadarecurso.
+Porexemplo,aotrabalharcomprodutos,écomummapearcadamétodoHTTP
+comumtipodeoperaçãodiferente.POSTePUTpodemserusadosparacriação;
+PATCH[50]ouPUTparaalterar;PUTparasubstituir;GETparaleitura;DELETE
+pararemoção;HEADparaobteroscabeçalhos(metadados)deumrecurso;eOPTI-
+ONSparaentenderquaisoperações sãoaceitasnaqueleinstanteparadeterminado
+recurso.
+Algunsdessesmétodospedemoenviodeumcorpo,comonocasodoPUTe
+POSTparacriaçãodeumnovorecurso,paraondeestedeveserenviadoporcom-
+pleto.NocasodePATCH,ocorpodefineumformatodealteraçõesaseremaplicadas
+emumrecurso(umdiff).A p e s a rdeserespecificadoatravésdeumaRFC,ométodo
+P A T C HéomaisrecenteeaindanãosuportadoporalgumasAPIs.
+M e d i atypes
+Considerandoarepresentaçãoabaixo,agoraépossíveltrabalharcomoslinksde
+umrecurso:
+<cliente>
+<nome>Guilherme Silveira</nome>
+<empresa>Loja Caelum</empresa>
+<link rel=”pagamentos”href=”/cliente/745368/pagamentos”/>
+<link rel=”pagamentos-form”href=”/cliente/745368/pagamentos-form”/>
+<link rel=”servicos”href=”/cliente/745368/servicos”/>
+</cliente>
+Mascomointerpretaresteconteúdoou,atémesmo,saberseatravésdeumatag
+linképossívelexecutarumaoperação? Paraisto,énecessárioindicarosignificado
+dele,dar-lhealgumvalorsemântico.Osignificadodeumarepresentaçãotrocadaen-
+treclienteseservidoresécompreendidapeloseumediatype.Seuobjetivoéexplicar
+comoaestruturaeosignificadodosdadosdevemserinterpretadosecompreen-
+220
+
+## Página 243
+
+CasadoCódigo Capítulo7 .IntegraçãodesistemasnaW e beREST
+didos. Duranteumarequisição,oclienteeoservidornegociamparaescolherum
+mediatype[102]queamboscompreendam(contentnegotiation)(Figura7 . 8).
+Figura7.8:Negociaçãoocorrendoentreclienteeservidor.
+Semconhecerqualomediatypeutilizadonarepresentação,éimpossívelafir-
+marcomexatidãoseeleéumXML( application/xml),umavariaçãodeXML(
+application/atom+xml),oualgumoutroformato.Alémdisso,pelasuadefini-
+ção,umXMLnãopossuilinks,somentetags;portanto,ondeumserhumanointer-
+pretaosignificadodataglinkcomoumcontrolehipermídia,umamáquinadeveria
+interpretarcomoumaoutratagqualquer.
+Paraextrairoformatoeasemânticadamensagem,énecessárioquetodarepre-
+sentaçãovenhaacompanhadadonomedomediatypequefoiutilizado.Oprocesso
+deinterpretaçãodetagssópodeserfeitoapósanalisarocabeçalhoHTTP,queindica
+qualomediatypeutilizado,porexemplo, text/html.
+Comononavegador,asaplicações RESTentendemasintaxeeasemânticadas
+tagsencontradasemumarepresentaçãodeacordocomseumediatype,porexemplo,
+text/html.
+221
+
+## Página 244
+
+7.5.REST:arquiteturadistribuídabaseadaemhipermídia CasadoCódigo
+UtilizandooHTTP,aescolhadequalmediatypeusaréfeitaatravésdope-
+didodocliente,presentenocabeçalhoAccept.Éachamadanegociação. Oexem-
+ploaseguirmostraumarequisição queaceitatanto application/xmlquanto
+application/json:
+GET /cliente/7453687 HTTP/1.1
+Host: arquiteturajava.com.br
+Accept: application/xml, application/json
+Naresposta,ocabeçalho Content-typeindicaomediatypeescolhido:
+HTTP/1.1 200 OK
+Date: Sun, 18 Sep 2011 18:09:00 GMT
+Content-type: application/xml
+<cliente>
+<nome>Guilherme Silveira</nome>
+<empresa>Loja Caelum</empresa>
+<link rel=”pagamentos”href=”/cliente/745368/pagamentos”/>
+<link rel=”pagamentos-form”href=”/cliente/745368/pagamentos-form”/>
+<link rel=”servicos”href=”/cliente/745368/servicos”/>
+</cliente>
+Nemsemprearespostaaoprocessodecontentnegotiationéumsucesso.Oservi-
+dorpodeserincapazdefornecerumarepresentaçãoatravésdosmedia-typesaceitos
+pelocliente. OHTTPpermiteautilização deseusresponsecodesparadescrever
+diversassituações importantesnacomunicação entredoissistemas. Porexemplo,
+quandooservidornão encontraummedia-typeaceitável,eledevedevolverocó-
+digo 406 Not Acceptablejuntoaumarespostaquecontenhareferênciaspara
+aquelesquesãoaceitos.
+Naintegração desistemas,osformatosmaiscomunssão oXMLeoJSON.
+U m avez que URIs dentro do corpo devem ser tratadas como texto, ambos
+não definem semânticade controles hipermídia. Para isto, temos outras op-
+ções, como a criação de um media-type próprio. Por exemplo, uma loja
+de livros cria application/vnd.livro+xml, enquantouma loja de filmes
+vnd/filme+xml. U m aloja inteira pode criar seu próprio media-type como
+vnd/minha_livraria+xml.
+Osufixo */*+xml(como application/vnd.caelum+xml)éprevistopela
+RFC3023[142],permitindoqueodesenvolvedordefinaasregrasdecompreensãodo
+222
+
+## Página 245
+
+CasadoCódigo Capítulo7 .IntegraçãodesistemasnaW e beREST
+conteúdoatravésdoconteúdobase,masainda,assim,indicandoqueusaasintaxe
+deXML.
+Mascadaumadessasextensões viveisoladamente,ficandoimpossívelumare-
+presentaçãoúnicaqueincluainformações encontradasemdoismedia-typesdistin-
+tos.Porexemplo,selivrossãodefinidosatravésdeummedia-type,filmesatravésde
+outro,pessoaserecomendações atravésdeumterceiro,ficaimpossívelacriaçãode
+umaúnicarepresentaçãocomtodasessasinformações. Porisso,sãorecomendadas
+abordagens,quepermitamqualquercombinaçãodeconteúdoeregrasdeprocessa-
+mentodeles.
+Emvezdecriarváriosmedia-typesbaseadosemXML[130],épossíveladotarum
+únicomedia-typemaisgenérico[23].Asregrasdeprocessamentosãodefinidasnesse
+mediatype,permitindoautilizaçãodepequenasdefinições desemânticaeproces-
+samentoreferenciadasdentrodarepresentação,comonocasodosmicroformatos
+(micro-formats)[218],comohCalendarehCard. Elespermitemadefinição deum
+contratofixo,comgarantiasparavalidação ecompatibilidade,alémdesemanter
+parcialmenteflexível,comliberdadeparaevolução,diminuindooacoplamentoem
+relaçãoaumschemafixo.
+MicroformatostambémauxiliamoSEOdealgunsmecanismosdebuscas,como
+peloGoogle[44][131]eY a h o oSearchMonkey. MikeAmundsensugereaadoção
+deXHTMLcomoummedia-typequesuportacontroleshipermídia[9].Ocódigoa
+seguiréumexemplodelocaldescritoutilizandoummicroformatoatravésdomedia-
+type application/xhtml+xml:
+<div class=”locationvcard”>
+<span class=”fnorg”>Caelum</span>
+<div class=”adr”>
+<div class=”street-address”>Rua Vergueiro, 3185, 8o andar</div>
+<div>
+<span class=”locality”>São Paulo</span>
+<span class=”postal-code”>04101300</span>
+</div>
+</div>
+</div>
+TecnologiascomoRDF(ResourceDescriptionFramework)tambémvisamdesa-
+coplaroconsumidordeseusserviços[117].
+Comoacoplamentodoclienteaomedia-type[211],enãomaisaumservidorde-
+terminado, elimina-se a necessidade de especificaçõ e scomo WSDL e W ADL,p e r -
+223
+
+## Página 246
+
+7.5.REST:arquiteturadistribuídabaseadaemhipermídia CasadoCódigo
+mitindo a tomada de decisões em t e m p ode execução, em vez de design time.[87]
+[10]
+Representando conceitos: o n t o l o g i a s
+Écomumencontrarsistemasqueapresentamentidadessimilares,comopessoas,
+amigos,músicas,clientes,produtos,seguros,filmes,etc.Porexemplo,osignificado
+deumcartão decréditoéigualemgrandepartedeaplicações. Mas,seamaneira
+comotaissistemasapresentamourequeremtaisinformações diferirentresi,clientes
+quedesejamutilizá-losterãoummaiorcustodedesenvolvimentoemanutenção.
+Semutilizarumpadrão amplamenteaceitoouconhecidoefuncionandoso-
+mentecomosdetalhesdedeterminadoserviço,osclientesficamrefénsdasdecisões
+tomadaspelosservidores. U mbomexemplodeacoplamentoàestruturaestánas
+APIsderedessociaiscomooT w i t t e r ,LinkedIneFacebook.Todospossuemestrutu-
+rassimplesparaindicar,porexemplo,relacionamentosentreusuários,masumavez
+quecadaumutilizaformatosdistintosdeXMLouJSON,osclientessãoobrigadosa
+escreverumcódigodiferenteparaacessareinteragircomcadaumdosserviços.O
+códigoaseguirmostraumexemploderelacionamentoqueusaaAPIdoT w i t t e r :
+{
+“previous_cursor”:0,
+“ids”:[
+143206500,
+143201760,
+777920
+],
+“previous_cursor_str”:“0”,
+“next_cursor”:0,
+“next_cursor_str”:“0”
+}
+EoJSONaseguiréaformaescolhidapararepresentarrecursosquepossuemo
+mesmosignificado,masdestavezatravésdoFacebook:
+{
+“data”:[
+{
+“name”:“PauloSilveira”,
+“id”:“6012890”
+},
+224
+
+## Página 247
+
+CasadoCódigo Capítulo7 .IntegraçãodesistemasnaW e beREST
+{
+“name”:“SérgioLopes”,
+“id”:“6314230”
+}
+]
+}
+A p e s a rdomesmosignificado(nestecaso,asemânticaderelacionamentoentre
+usuários),anãoutilizaçãodeumconjuntodeconceitospadronizados,oudeuma
+ontologia(ontology)pararelacionamentos,resultaemclientesfrágeisecomcusto
+maiorparacriação.
+MuitosacabamoptandopelacriaçãodeAPIsopensource,comoclientesgené-
+ricosquetratamcadaserviçoatravésdeumparserdistinto,facilitandootrabalho
+dosdesenvolvedoresfinais.T a i sbibliotecasseriamdesnecessáriassearepresentação
+utilizasseumformatobemconhecido(well-known),capazdedarsignificadoadi-
+versostiposderelacionamentos,generalizandoasduasanteriores,comooexemplo
+application/jsonaseguir:
+{
+“person”: {
+“name”: “guilhermecaelum”,
+“relations”: [
+“follows”: “paulo_caelum”,
+“follows”: “sergio_caelum”
+]
+}
+}
+Utilizarpadrões própriosfacilitaodesenvolvimentoacurtoprazo,masimplica
+custosdemanutençãomaisaltosdevidoaoacoplamentodoclientecomumúnico
+servidor.Jáexistemdiversospadrões nomercadoquepodemserutilizados,comoo
+casodofriendofafriend(FOAF)[140],quedescrevepessoaseseusrelacionamentos.
+C o d eo ndemand
+Outrastécnicaspermitemaadaptaçãodoclientedeacordocomasnovasfunci-
+onalidadesqueumserviçodisponibiliza,entregandocódigosobdemanda(codeon
+demand).Destaforma,osclientespodemaprendernovasmaneirasdeinteragircom
+oserviço.AutilizaçãodecódigoJavaScriptnosnavegadores,XMLsdeconfiguração
+deUI,códigocompiladocomoFlashouAppletssãoexemplosdecodeondemand.
+225
+
+## Página 248
+
+7.5.REST:arquiteturadistribuídabaseadaemhipermídia CasadoCódigo
+Diversasquestões desegurançasurgemaoadotarestetipodeabordagem,umavez
+quecódigoseráexecutadonocliente.AFigura7 . 9ilustraumaaplicaçãoparacelular
+quepodeconstruirsuainterfacecomousuárioatravésdeumarepresentação:
+Figura7.9:U s u á r i oacessandocelularcominteraçãodefinidadeacordocomasres-
+postasdoservidor.
+AutilizaçãodeumarepresentaçãocomcódigoJavaScript,acessandoomodelo
+daaplicaçãonocliente,permiteacustomizaçãodocomportamento,comonocaso
+comumdecodeondemandencontradonaW e b ,oJSONP.Noexemploaseguir,a
+mesmaaplicaçãoparacelularpermiteagoramostraracontadedestinoantesdeexe-
+cutaratransferência:
+<exemplo>
+<contaDestino></contaDestino>
+<valor>0</valor>
+<data>13/03/2011</data>
+<script>
+<![CDATA[
+contaDestino.onChange(function() {
+buscaNomeDoDestinatario(contaDestino.val());
+});
+]]>
+</script>
+</exemplo>
+226
+
+## Página 249
+
+CasadoCódigo Capítulo7 .IntegraçãodesistemasnaW e beREST
+A p e s a rdeoconceitodehipermídiaedecodeondemandestaremnabasedeuma
+arquiteturaREST,existemdezenasdesistemasutilizandoHTTPparatunneling,que
+obtiveramgrandesucesso,sejacomXMLouJSON,enãopossuemanecessidadede
+adotarREST.
+Sejaseguindoumcontratorígido,adotandoumavalidaçãoparcialdosschemas,
+acessandopartesdosistemadinamicamenteatravésdehipermídiaouaprendendo
+comcódigosobdemanda,odesenvolvedorpossuiumlequedetecnologiasàsua
+disposiçãoqueresolvemomesmoproblemadeintegração,masque,alongoprazo,
+influenciarãoamanutençãodeseusclientes.
+Estado conversacional
+Paraimplementarumcarrinhodecompras,costuma-seutilizarcookies,e,com
+isso,amesmaURI(comohttp://arquiteturajava.com.br/loja/carrinho)identificadois
+recursosdiferentes,dependendodoclientequeoacessa. Asmensagenstrocadas
+entreclienteeservidornão são maisautodescritivas(selfdescribingmessages). A
+Figura7.10exemplificatalsituação.
+Figura7.10:ServindodoisrecursosdiferentesatravésdeumaúnicaURI.
+Quandooservidortrataduasrequisições paraamesmaURIdemaneiradife-
+rente,dependendodeinformações armazenadasnocliente,intermediáriosperdem
+acapacidadedeentenderoquearequisição significa. Esteestadoconversacional
+227
+
+## Página 250
+
+7.5.REST:arquiteturadistribuídabaseadaemhipermídia CasadoCódigo
+deveserevitadoparamaximizaropotencialdecachesetambémpossibilitaroacesso
+amaisdeumcarrinhodecompras.
+T o d ainformaçãoquedescreveamensagemequenãofazpartedainterfaceuni-
+formeoudomedia-type,échamadadeconhecimentoforadebanda(outofband
+knowledge)[59]. RESTéstatelessnosentidodenãomanterestadodaaplicaçãono
+cliente.U m adasmaneirasdetransformarumaabordagemqueutilizacookiespara
+umaRESTéidentificarocarrinhosemquebrarainterfaceuniforme,como,por
+exemplo,naURIemhttp://arquiteturajava.com.br/loja/carrinho/57389386257. Ou
+seja,cadarecursopassaatersuaprópriaURI.
+ÉparecidocomoqueosservidoresW e bpermitemfazercomovalordeJSESSIO-
+NIDnaURI,masutilizandosessionecookiesapenasparaguardarinformações que
+nãoprecisamserendereçáveisnemafetamoresultadodeumarequisição. Issoim-
+possibilitaosequestrodesessãoquandohácompartilhamentodeURIsentreusuá-
+rios(quepoderiaacontecernousodeJSESSIONID),jáqueosdadosrelativosaum
+únicousuáriopodemcontinuarsendotransmitidosporsessãoecookies.
+U m adificuldadeencontradaemW e bSiteséadenãopodercomprarduaspassa-
+gensaéreasoupagardoisboletosbancáriosemabasdiferentesdeummesmobrow-
+ser,dadoopéssimousodecookiesparaexpressaroestadoatualdeumcliente.Utili-
+zandoumaabordagemmaisamigávelaoendereçamento,ganha-setambémapossi-
+bilidadedeterdoiscarrinhosdecompraparaummesmousuárioou,ainda,compar-
+tilharsuascomprasepagamentoscomoutrosusuários,casosejainteressanteparaa
+aplicação.
+OexemplodaFigura7.11mostraoscarrinhosagoracomURIsdistintas,ondeo
+cachepodeserfeitosemproblemaseousuáriopoderealizarduascomprassimulta-
+neamente,ou,ainda,compartilharsuascomprasepagamentoscomoutrosusuários.
+228
+
+## Página 251
+
+CasadoCódigo Capítulo7 .IntegraçãodesistemasnaW e beREST
+Figura7.11:Recursos podem ser compartilhadosoucacheadosmaisfacilmente
+quandocadaumpossuisuaprópriaURI.
+Utilizandocookiesesessãoparaguardaroidentificadordocarrinho,seriadifícil
+cachearoucompartilharorecurso. Problemaspodemapareceratémesmocomo
+botãodevoltar,deixandooservidorconfusocommaisdeumaaba.
+Quandoaaplicaçãonãoarmazenaestadodoclienteemsessões, épossíveladotar
+umbalanceadordecarga(load-balancer),quenãoprecisajogaroclientesemprepara
+omesmonóservidor(stickysession),neménecessáriotransferirsessões deumlado
+paraoutro(sessionreplication),nemficardependentedeumúnicoservidor. Isso
+minimizaoprocessamentoereduzaquantidadedemensagenstrocadas.
+C o m ousar caches em um s e rv iço W e b
+CachessãointermediáriosimportantesaoutilizaraW e bcomoinfraestruturae
+plataforma.Elesdiminuemaquantidadededadostransferidoseotempoesperado
+deumaresposta. NoHTTP1.1,amaiorpartedasconfigurações decacheéfeita
+atravésdoheader Cache-Control,comonoexemploaseguir,quepermite10
+minutosdecacheemclientesouintermediários:
+HTTP/1.1 200 OK
+Date: Mon, 21 Feb 2011 10:10:00 GMT
+Last-Modified: Sun, 20 Feb 2011 10:10:00 GMT
+Cache-Control: max-age=600,public
+229
+
+## Página 252
+
+7.5.REST:arquiteturadistribuídabaseadaemhipermídia CasadoCódigo
+No HTTP, as requisições condicionais, que usam cabeçalhos como
+If-Not-Modified, permitem a um proxy ou servidor somente entregar
+umanovarespostacaso orecursotenhasidoalterado. Emdiversassituações,
+essescachesajudamadiminuironúmeroderequisições (round-trips)ouabanda
+consumida. Oexemploaseguirmostraarequisição deumclientequepossuiem
+seucacheosdadosdeumrecurso,masdesejaverificarseelenãofoialteradodesde
+umadataespecífica:
+GET /clientes/743756 HTTP/1.1
+Host: arquiteturajava.com.br
+If-Modified-Since: Sun, 20 Feb 2011 10:10:00 GMT
+Arespostadoservidor,casonãotenhasidoalterado,evitaoconsumodesneces-
+sáriodebanda:
+HTTP/1.1 304 Not Modified
+Date: Mon, 21 Feb 2011 10:10:00 GMT
+Last-Modified: Sun, 20 Feb 2011 10:10:00 GMT
+Cache-Control: max-age=3600,must-revalida
+U m apráticacomumconsisteemcolocarumaaplicação(proxyreverso)funcio-
+nandocomocachenamáquinadoservidor.Elepodearmazenartodasasrepresenta-
+ções públicasecacheáveis,evitandooprocessamentocasoelassejamacessadaspor
+diversosclientes. Épossívelbeneficiar-sedecachesdemaneiraseguraemHTTP,
+mesmoquandooclienteprecisaestarautorizado.Maisimportante,oscachesdere-
+quisições HTTPestãoonipresentes.Diferentedecachesespecíficosaoserverside,
+elespodemapareceremnavegadores,APIsclientes,servidores,proxies,etc.(Figura
+7.12).
+230
+
+## Página 253
+
+CasadoCódigo Capítulo7 .IntegraçãodesistemasnaW e beREST
+Figura7.12:CachesHTTPpodemaparecertantoemclientesquantoemservidores
+eintermediários.
+ArespostadeumservidornãovariasomentedeacordocomaURI,mastambém
+comoscabeçalhosdarequisição HTTP.Paranão quebrarcaches,oservidordeve
+indicarquaiscabeçalhosdarequisição influenciaramemseuresultado. Parauma
+requisiçãoqueutilizouocabeçalho Accept: application/xml,oresultadoa
+seguirfariacomqueumaproxyentregasseomesmoXMLparaumarequisiçãocom
+Accept: application/json:
+GET /clientes/743756 HTTP/1.1
+Host: arquiteturajava.com.br
+Accept: application/xml
+HTTP/1.1 200 Ok
+Date: Mon, 21 Feb 2011 10:10:00 GMT
+Last-Modified: Sun, 20 Feb 2011 10:10:00 GMT
+Cache-Control: max-age=3600,must-revalidate
+Content-Type: application/xml
+O mesmo ocorre com outros headers de negociação, como o
+Accept-Encoding, para suportar compressão gzip. O servidor deve utilizar
+231
+
+## Página 254
+
+7.5.REST:arquiteturadistribuídabaseadaemhipermídia CasadoCódigo
+ocabeçalho Varypararesolveroproblema,como Vary: Accept.
+Damesmamaneiraque,naW e bhumana,épossívelquebrarumaúnicarequi-
+siçãoemdiversasparaotimizarousodecache[75],sistemasforçarãomúltiplasre-
+quisições naAPIpararecuperarpequenospedaçosdeinformação. Essaspráticas
+dequebrarrequisições grandesemmenoreseutilizarhipermídiaparanavegarno
+sistemapermitemotimizações decacheepodemseradotadasporqualquersistema
+integradoatravésdaW e b .Reparequeéumaabordagemdiferentedaquecostuma
+seraplicadacomSOAP,ondeumagranularidademaiorérecomendada,evitando
+umnúmerograndederequisições.
+T o m a n d ocomoexemploumserviçoqueretornaumrelatóriocominformações
+financeirasdetalhadas,épossívelquebrararequisição, paraqueelassejamfeitas
+baseadasnoparâmetrodoano.Seoclientenecessitardainformaçãode4anosdife-
+rentes,fará4requisições. Avantagemseráquecadaumadessasrequisições poderá
+sercacheada,eatémesmotertemposdeexpiraçãodiferentes.Aproveita-sedofato
+dequeorelatóriofinanceirodosanosanterioresprovavelmentenãomudarão,ever
+dadosstalenãoéumgrandeproblema.Sefosseapenasumaúnicarequisição,não
+seriapossívelseaproveitartantoassimdocache.
+U m asoluçãomaiselaboradapodetercomoentrypointorelatóriodoanocor-
+rente,queseráentreguejuntocomumlinkparaosresultadosdoanoanterior.Os
+headersindicamumpossívelperíodocurtodecache.Aoseguirolink,osheaders
+indicamumperíododecachemuitomaiorelinksparanavegação(Figura7 . 1 3):
+Figura7.13:Relatóriobeneficiando-sedecachedevidoaousodehipermídianaque-
+bradeumrecursoportempo.
+HTTP/1.1 200 OK
+232
+
+## Página 255
+
+CasadoCódigo Capítulo7 .IntegraçãodesistemasnaW e beREST
+Date: Sun, 18 Sep 2011 18:09:00 GMT
+Cache-control: max-age: 63072000
+Content-type: application/xml
+<pagamentos>
+<pagamento>...</pagamento>
+<pagamento>...</pagamento>
+<pagamento>...</pagamento>
+<link rel=”next”
+href=”http://arquiteturajava.com.br/loja/pagamentos/2011”/>
+<link rel=”previous”
+href=”http://arquiteturajava.com.br/loja/pagamentos/2009”/>
+</pagamentos>
+Segmentarorecursoportempoéumapráticasimpleseefetivadesegmentation
+byfreshness[75],eusarhipermídiaéumpassoadiantequepermiteaotimizaçãodo
+cache.
+Emalgumassituações, ocachepodeserusadocomoumaformadeprolongar
+adisponibilidadedeserviçosquetemporariamenteestão foradoar. Utilizandoo
+headerdecache-controleseustale-if-error[148],épossívelindicarqueumares-
+postapodeserentreguedocache,mesmoqueesteestejaexpirado.E,seoservidor
+nãoestiverdisponível,éumatrocaconscienteentremostrarumdadopossivelmente
+desatualizadoouquebrarumaaplicação:
+HTTP/1.1 200 OK
+Cache-Control: max-age=6000, stale-if-error=12000
+Content-Type: application/json
+Atravésdostale-while-revalidate,damesmaRFC,épossívelminimizarosdanos
+doefeitodogpileemaplicações servidasnaW e bqueutilizamcachesHTTP[88].
+CombinarcabeçalhosetécnicasdecacheemHTTPéfundamentalparaobomuso
+daW e bcomoplataforma.
+233
+
+## Página 257
+
+CasadoCódigo ReferênciasBibliográficas
+ReferênciasBibliográficas
+[1]DefiningSoftwarearchitecture.2009.
+[2] SubbuALLAMANJARU.Restfuluris.2010.
+[3] SubbuALLAMANJARU.RESTfulW e bServicesCookbook.2010.
+[4] DeepakALUR,DanMalks,andJohnCrupi.Corej2eepatterns:Bestpractices
+anddesignstrategies.2.ed.2003.
+[5]MagnusALVESTAD.Memoryleakswheretheclassloadercannotbegarbage
+collected.
+[6] ScottAmbler.Theobject-relationalimpedancemismatch.
+[7] ScottAmbler.Introductiontotestdrivendesign(tdd).2003.
+[8] MikeAMUNDSEN.Designingahypermediaapiwithjson.2010.
+[9] MikeAMUNDSEN.Restfulprofiling:Xhtml-basedwebapis.2010.
+[10]MikeAMUNDSEN.Whywadlwhenyoucanrun?2010.
+[11]DianeJORDANanJohnEVDEMON.W e bservicesbusinessprocessexecu-
+tionlanguageversion2.0.2007.
+[12]GregoryR.ANDREWS.FoundationsofMultithreaded,Parallel,andDistribu-
+tedProgramming.2000.
+[13]AbelAvram.Practicingagilityinapplicationarchitecture.2008.
+[14]RolandBarcia. Tiredofhandcodingjdbc?useibatisasadatamappingfra-
+meworkinstead.2005.
+235
+
+## Página 258
+
+ReferênciasBibliográficas CasadoCódigo
+[15]KentBeck.Test-drivendevelopment:byexample.2002.
+[16]JoeBLANDYandJoshuaBLOCH.Whydoesn’tjavahaveanimmutabledate
+class?2003.
+[17]JoshuaBLOCH.EffectiveJava.2ed.2008.
+[18]JoshuaBLOCH.EffectiveJava.2.ed.2008.
+[19]JAVABLUEPRINTS.Model-view-controller.2000.
+[20] JonasBONÉR. Real-worldscala:Dependencyinjection(di).
+[21]GradyBOOCH.Object-orientedanalysisanddesignwithapplications.1993.
+[22] EvanBOTTCH.Continuousintegration–singlecodeline.2010.
+[23]TimBray.Don’tinventxmllanguages.2006.
+[24] AdrianBROCK.Jbossclassloaderhistory.
+[25]DonBrown.Myhistoryofstruts2.2006.
+[26] JulianBROWNE.Brewer’scaptheorem.2009.
+[27]SteveBURBECK. Applicationsprogramminginsmalltalk-80™:Howtouse
+model-view-controller(mvc).1987.
+[28] PhillipCALÇADO. Internaldatatransferobjects.
+[29] PhillipCALÇADO. Objetosfantoches.
+[30] PhillipCALÇADO. Howtowritearepository.2010.
+[31]PhillipCalçado.Howtowritearepository.2010.
+[32]NicholasCARR. TheBigSwitch:RewiringtheW o r l d ,fromEdisontoGoogle.
+2008.
+[33]RobertoCHINNICIandMarekPOTOCIAR.Jax-rs2.0:Thejavaapiforrest-
+fulwebservices.2011.
+[34] MandyChung. Monitoringandmanagingjavase6platformapplication.
+2006.
+236
+
+## Página 259
+
+CasadoCódigo ReferênciasBibliográficas
+[35]COMPUTERWORLD.Atozofprogramminglanguages:Smalltalk-80.2010.
+[36] MicrosoftCorporation.Extensionmethods(cprogrammingguide).
+[37]ORACLECORPORATION.Ergonomicsinthe5.0java™virtualmachine.
+[38]ORACLECORPORATION.Frequentlyaskedquestionsaboutthejavahots-
+potvm.
+[39] OracleCorporation. Thehistoryofjavatechnology.
+[40] ORACLECORPORATION.Javadocdojava.lang.ref.
+[41]ORACLECORPORATION.Javadocdométodovalueof(int)daclasseinteger.
+[42] ORACLECORPORATION.Javadocdosystem.gc().
+[43] ORACLECORPORATION.Tuningthememorymanagementsystem.
+[44] MikeDANYLCHUKandNitinSHETTI. Introducinganewrichsnippets
+format:Events.2010.
+[45] JosephDARCY.Projectcoin:Up d a t e darmspec.2010.
+[46] LindaDEMICHIEL.Javapersistence2.0proposedfinaldraft.2009.
+[47] EdsgerW .DIJKSTRA.Ontheroleofscientificthought.1974.
+[48] JBOSSDOCUMENTATION.Classcastexceptions–i’mnotyourtype.
+[49] JimDRISCOLL.Servlethistory.2005.
+[50] L.DUSSEAULT,LindenLAB,andJ .SNELL.Patchmethodforhttp.2010.
+[51]AmmonH.EdenandRickKazman. Architecture,design,implementation.
+25thInternationalConferenceonSoftwareEngineering–ICSE,2003.
+[52]DeWittetalClinton.Opensearchspecification.2000.
+[53]J .etalGREGORIO.U r itemplate.2010.
+[54] SavasetalPARASTATIDIS. Theroleofhypermediaindistributedsystem
+development.WS-REST‘10ProceedingsoftheFirstInternationalW o r k s h o pon
+RESTfulDesign,2010.
+237
+
+## Página 260
+
+ReferênciasBibliográficas CasadoCódigo
+[55]Royetal.SINGHAM. TheThoughtworksAnthology:essaysonSoftwareT e c h-
+nologyandInnovation.2008.
+[56] Stefanetal.TILKOV.Soamanifesto.2009.
+[57]EricEvans.Domain-drivendesign:Tacklingcomplexityintheheartofsoftware.
+2003.
+[58]MichaelFEATHERS. Thedeepsynergybetweentestabilityandgooddesign.
+2007.
+[59]RoyFIELDING.Architecturalstylesandthedesignofnetworkbasedsoftware
+architectures.2000.
+[60] NealFORD. Evolutionaryarchitectureandemergentdesign: Evolutionary
+architecture.2010.
+[61]MartinFowler.Anemicdomainmodel.
+[62] MartinFowler.Domain-specificlanguage.
+[63] MartinFowler.Errantarchitectures.
+[64] MartinFowler.Firstlawofdistributedobjectdesign.
+[65] MartinFOWLER.Inversionofcontrolcontainersandthedependencyinjec-
+tionpattern.
+[66] MartinFOWLER.Refactoring:ImprovingtheDesignofExistingCode.1999.
+[67] MartinFOWLER.PatternsofEnterpriseApplicationArchitecture.2002.
+[68] MartinFowler.PatternsofEnterpriseApplicationArchitecture.2003.
+[69] MartinFowler. UMLDistilled:abriefguidetothestandardobjectmodeling
+language.2003.
+[70] MartinFowler.Whoneedsanarchitect?IEEESoftware,v .20,2003.
+[71]MartinFowler.Isdesigndead?2004.
+[72]MartinFowler.Fluentinterface.2005.
+[73]MartinFowler.Gettereradication.2006.
+238
+
+## Página 261
+
+CasadoCódigo ReferênciasBibliográficas
+[74]MartinFOWLER.Businessreadabledsl.2008.
+[75]MartinFOWLER.Segmentationbyfreshness.2008.
+[76] MartinFOWLER.Bluegreendeployment.2010.
+[77] MartinFOWLER.2003.Anemicdomainmodel.
+[78] SteveFREEMANandNatPRYCE. Growingobject-orientedsoftware,guided
+bytests.2009.
+[79] ErichGAMMA,RichardHELM,RalphJOHNSON,andJohnM.VLISSIDES.
+DesignPatterns:elementsofreusableobject-orientedsoftware.1994.
+[80] ErichGAMMA,RichardHELM,RalphJOHNSON,andJohnM.VLISSIDES.
+DesignPatterns:elementsofreusableobject-orientedsoftware.1994.
+[81]SimsonGNANAM.Howinheritanceworksinhibernate.2008.
+[82] BrianGoetz.Javatheoryandpractice:T omutateornottomutate?2003.
+[83]BrianGOETZ.JavaConcurrencyinPractice.2006.
+[84] GOOGLE.Protocolbuffers.
+[85]JamesGosling,BillJoy,GuySteele,andGiladBracha. TheJava™Language
+Specification.3.ed.2005.
+[86] DerekGOTTFRID.Self-service,proratedsupercomputingfun!2007.
+[87] JoeGREGORIO.Doweneedwadl?2007.
+[88] IlyaGRIGORIK.Asynchronoushttpcachevalidations.2008.
+[89] PaulHAMMANT.Inversionofcontrolhistory.
+[90] DavidHAYDEN.W e bapplications:N-tiervs.n-laye.2005.
+[91]EricHERMAN.Compositionvs.inheritanceinjava.
+[92] JBOSSHIBERNATE.Batchprocessing.
+[93]JBOSSHIBERNATE.Configuraçãodoc3p0nohibernate.
+[94] JBOSSHIBERNATE.Improvingperformance.
+239
+
+## Página 262
+
+ReferênciasBibliográficas CasadoCódigo
+[95] JBOSSHIBERNATE.Querycache.2009.
+[96] EelcoHILLENIUS.Wicketisnotsuitedforwebsites.2011.
+[97] T o d dHOFF.Strategy:Breakupthememcachedogpile.2009.
+[98] T o d dHOFF. Netflix:U s elesschattyprotocolsinthecloud-plus26fixes.
+2010.
+[99] GregorHOHPEandBobbyWOLF.Enterpriseintegrationpatterns:designing,
+building,anddeployingmessagingsolutions.2003.
+[100] AllenHOLUB.Whygetterandsettermethodsareevil.2003.
+[101]JezHUMBLEandDavidFARLEY.Continuousdelivery:reliablesoftwarere-
+leasesthroughbuild,test,anddeploymentautomation.2010.
+[102]IANA.http://tools.ietf.org/html/rfc5789.2007.
+[103]IBM.Dpdchronology.
+[104]INNOQ.W e bservicesstandardsasofq12007.2007.
+[105]Ws-*istoRESTasTheoryistoPractice.2007.
+[106] NickKALLEN.Bigdatainreal-timeattwitter.2010.
+[107]FabioK u n g .Rubyanddependencyinjectioninadynamicworld.2010.
+[108]RamnivasLADDAD.AspectJinaction:EnterpriseAOPwithSpringApplica-
+tions.2.ed.2009.
+[109]CraigLarman. Protectedvariation: Theimportanceofbeingclosed. IEEE
+Software,v .18,2001.
+[110]CraigLARMAN. Applyingumlandpatterns: anintroductiontoobject-
+orientedanalysisanddesignanditerativedevelopment.3.ed.2004.
+[111]CraigLarman. Basdesign architecture.PracticesforScalingLeanandAg i l e
+Development,2010.
+[112]JulienLECOMTE.Y a h o ouicompressorandjavaclassloader.
+[113]TimLindholm. TheJava™V i r t u a lMachineSpecification.2.ed.1999.
+240
+
+## Página 263
+
+CasadoCódigo ReferênciasBibliográficas
+[114]TimLINDHOLMandFrankYELLIN.Thejavavirtualmachinespecification:
+Loading,linking,andinitializing.
+[115]SérgioLopes. Vivendonocloud:ainfraestruturaexternadacaelumem11
+soluções. 2011.
+[116]SubrayaMALLYA.Netflix’smovetoamazonec2–explained.2010.
+[117]FrankMANOLAandEricMILLER.Rdfprimer.2004.
+[118]RobertC.Martin.Dependencyinjectioninversion.
+[119]RobertC.Martin. Oodesignqualitymetrics-ananalysisofdependencies.
+1994.
+[120]RobertC.Martin. Thesingleresponsibilityprinciple.1995.
+[121]RobertC.MARTIN.Thedependencyinversionprinciple.1996.
+[122]RobertC.Martin. Theinterfacesegregationprinciple.1996.
+[123]RobertC.MARTIN.Theliskovsubstitutionprinciple.1996.
+[124]RobertC.Martin. Theopen-closedprinciple.1996.
+[125]RobertC.Martin.Stability.1997.
+[126]RobertC.Martin.Designprinciplesanddesignpatterns.2000.
+[127]RobertC.MARTIN. Ag i l eSoftwareDevelopment:Principles,Patterns,and
+Practices.2002.
+[128]RobertC.MARTIN.Railsconf2010keynote–cucumberscriptsandtesting
+businessrulesthroughtheui.2010.
+[129]JonMASAMITSU.Ourcollectors(sun).
+[130]MICROFORMATS.Plainoldxmlconsideredharmful.2008.
+[131]MICROFORMATS.Googleaddssupportforhcalendarandhreciperichsnip-
+pets.2010.
+[132]SUNMICROSYSTEMS.Corej2eepatternsfrontcontroller.
+241
+
+## Página 264
+
+ReferênciasBibliográficas CasadoCódigo
+[133]SUNMICROSYSTEMS.Códigofontedaclassestring.
+[134]SUNMICROSYSTEMS.Thegarbage-firstgarbagecollector.
+[135]SUNMICROSYSTEMS.Javase6javahotspot™virtualmachinegarbagecol-
+lectiontuning.
+[136]SUNMICROSYSTEMS.Jaxpcompatibilityguideforthej2se5platform.
+[137]SUNMICROSYSTEMS. Memorymanagementinthejavahotspot™virtual
+machine.2006.
+[138]SUNMICROSYSTEMS.Javapersistenceblueprints.2007.
+[139]SUN MICROSYSTEMS. Core j2ee patterns session façade.
+http://java.sun.com/blueprints/corej2eepatterns/Patterns/SessionFacade.html.
+[140]LibbyMILLERandDanBRICKLEY.Thefriendofafriendproject.2000.
+[141]HansMuller.Official:Swingisthedominantguitoolkit.2005.
+[142]M.Murata,S.ST.LAURENT,andD.Kohn.Xmlmediatypes.2001.
+[143]GlenfordMYERS. Theartofsoftwaretesting,2.ed.2004.
+[144]T .H.NELSON.Complexinformationprocessing:afilestructureforthecom-
+plex,thechangingandtheindeterminate.AC M‘65Proceedingsofthe196520th
+nationalconference,1965.
+[145]DanNORTHandAslakHELLESOY.Picocontainerdesignpatterns.
+[146]DanNORTHandAslakHELLESOY.Picocontainerdesignpatterns.
+[147]MarkNOTTINGHAM. Cachingtutorialforwebauthorsandwebmasters.
+1998-2010.
+[148]MarkNOTTINGHAM.Httpcache-controlextensionsforstalecontent.2010.
+[149]MarkNOTTINGHAM.W e blinking.2010.
+[150]DavidORCHARD.Versioningxmlvocabularies.2003.
+[151]Larry O’BRIEN.Designpatterns15yearslater: Aninterviewwitherich
+gamma,richardhelm,andralphjohnson.2009.
+242
+
+## Página 265
+
+CasadoCódigo ReferênciasBibliográficas
+[152]RajivPANT.Organizingawebtechnologydepartment.
+[153]VincentPARTINGTON. Jpaimplementationpatterns:Dataaccessobjects.
+2009.
+[154]VincentPARTINGTON. Jpaimplementationpatterns:Servicefacadesand
+datatransfersobjects.2009.
+[155]AnthonyPATRICIO.Ashortprimeronfetchingstrategies.2010.
+[156]SriniPENCHIKALA.Jdbc4.0enhancementsinjavase6.2006.
+[157]PICOCONTAINER.Picocontainersite.
+[158]LainPranshu.LayersandTiers.2006.
+[159]BrunoR.Preiss.Mark-and-sweepgarbagecollection.
+[160] T o n yPRINTEZIS. Garbagecollectioninthejavahotspot™virtualmachine
+(generationalalgorithm).2004.
+[161]T o n yPRINTEZIS.Howtohandlejavafinalization’smemory-retentionissues.
+2007.
+[162]DanPRITCHETT.Base:Anacidalternative.2008.
+[163]NatPRYCE."dependencyinjection"consideredharmful.2011.
+[164]MarkRICHARDS,RichardMONSON-HAEFEL,andDavidA.CHAPPELL.
+JavaMessageService.2.ed.2009.
+[165]MarkRICHARDS,RichardMONSON-HAEFEL,andDavidA.CHAPPELL.
+JavaMessageService.2.ed.2009.
+[166]MarkRICHARDS,RichardMONSON-HAEFEL,andDavidA.CHAPPELL.
+JavaMessageService.2.ed.2009.
+[167]MarkRICHARDS,RichardMONSON-HAEFEL,andDavidA.CHAPPELL.
+JavaMessageService.2.ed.2009.
+[168]LeonardRICHARDSON.Justicewilltakeusmillionsofintricatemoves.2008.
+[169]LeonardRICHARDSONandSamRUBY.Restfulwebservices.2007.
+243
+
+## Página 266
+
+ReferênciasBibliográficas CasadoCódigo
+[170]IanROBINSON.Usingtypedlinkstoforms.2010.
+[171]DouglasC.SCHMIDTandTimHARRISON. Double-checkedlocking:An
+optimizationpatternforefficientlyinitializingandaccessingthread-safeob-
+jects.1996.
+[172]AlecSHARP.Smalltalkbyexample:thedeveloper’sguide.1997.
+[173]JamesSHORW.TheArtofAg i l eDevelopment.2007.
+[174]RandySHOUP.ebaysarchitecturalprinciples.2008.
+[175]DavidSIEGEL.Pull:thepoweroftheSemanticW e btotransformyourbusiness.
+2009.
+[176]GuilhermeSilveira. Compondoseucomportamento:herança,chainofres-
+ponsabilityeinterceptors.2010.
+[177]GuilhermeSilveira. Deploycontínuo:poisintegração contínuanão basta.
+2010.
+[178]GuilhermeSILVEIRA.Brancheseintegraçãocontínua:oproblemadefeature
+branches.2011.
+[179]GuilhermeSILVEIRA.Martinfowlerandjezhumbleoncontinuousdelivery.
+2011.
+[180]PauloSilveira.Java6,asapisdexml,webserviceseclassloaders.2007.
+[181]PauloSilveira.Jpacomhibernate:herançaemapeamentos.2007.
+[182]PauloSilveira. Os7hábitosdosdesenvolvedoreshibernateejpaaltamente
+eficazes.2008.
+[183]PauloSilveira.2009.2009.
+[184]PauloSilveira.Enfrentandoalazyinitializationexceptionnohibernate.2009.
+[185]PauloSilveira. Guj:Acessoaoentitymanager:atravésdeumdaooudireta-
+mente?2009.
+[186]PauloSilveira.Trabalhandocomclosuresnojava8.2011.
+244
+
+## Página 267
+
+CasadoCódigo ReferênciasBibliográficas
+[187]JamesSNELL.Restfulrpc.2010.
+[188]JohnSOWA.Sowa’slawofstandards.1991.
+[189]GOOGLEP A G ESPEED.W e bperformancebestpractices.
+[190]JoelSpolsky.Don’tletarchitectureastronautsscareyou.2001.
+[191]JoelSpolsky.Languagewars.2006.
+[192]BernieSUMPTION.Inheritanceisevil,andmustbedestroyed.2007.
+[193]RichardE.Sweet. Themesaprogrammingenvironment. Proceedingsofthe
+AC MSIGPLAN85symposiumonLanguageissuesinprogrammingenviron-
+ments,1985.
+[194]AttilaSZEGEDI.Adayinthelifeofamemoryleakhunter.2005.
+[195]AndrewS.TANENBAUM.Computernetworks.2.ed.1988.
+[196]GilTENE.Azul’spauselessgarbagecollector.2010.
+[197]RoyansK.THARAKAN.Brewer’scaptheoremondistributedsystems.2010.
+[198]EricTHOLOMÉ.W e l learnedretirementforsoapsearch.2009.
+[199]StefanTILKOV.RESTundHTTP:Einsatzderarchitekturdeswebfürintegra-
+tionsszenarien.2009.
+[200] StefanTILKOV.Einstieginrest.2010.
+[201]StefanTILKOV.Einstieginrest.2010.
+[202] StefanTILKOV.Enterpriseitvs.www.2010.
+[203]StefanTILKOV,MarcHADLEY,andPaulSANDOZ.Jsr311final:Javaapifor
+restfulwebservices.2008.
+[204] RobertTolksdorf.Programminglanguagesforthejavavirtualmachinejvm
+andjavascript.
+[205] BillVENNERS.Inheritanceversuscomposition:Whichoneshouldyoucho-
+ose?1998.
+245
+
+## Página 268
+
+ReferênciasBibliográficas CasadoCódigo
+[206] BillVENNERS.Designprinciplesfromdesignpatterns–aconversationwith
+erichgamma,partiii.2005.
+[207] SteveVinoski.Welcometo"thefunctionalweb".2009.
+[208] LanVUONG. Extremetransactionprocessingpatterns: Write-behindca-
+ching.2009.
+[209] W3C.Simpleobjectaccessprotocol(soap)1.1.2000.
+[210]W3C.Soapversion1.2part0:Primer(secondedition).2007.
+[211]JimWEBBER,SavasPARASTATIDIS,andIanROBINSON.RESTinpractice:
+Hypermediaandsystemsarchitecture.2010.
+[212]EHCACHEWEBSITE.Hibernatecaching.
+[213]GOOGLEAPPENGINEWEBSITE. Choosingadatastoreforgoogleapp
+engine.
+[214]TOMCAT WEBSITE. T o m c a tmanager how to.
+http://tomcat.apache.org/tomcat-7.0-doc/manager-howto.html.
+[215]SimonWillison.Are-introductiontojavascript.2006.
+[216]GalderZAMARREÑO. Usinginfinispanasjpa/hibernatesecondlevelcache
+provider.2010.
+[217]K.ZYPandG.Court. Ajsonmediatypefordescribingthestructureand
+meaningofjsondocuments.2009-2010.
+[218]T a n t e kÇELIK. Facebookaddshcalendarandhcardmicroformatstomillions
+ofevents.2011.
+246
